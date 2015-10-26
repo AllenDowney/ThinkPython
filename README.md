@@ -1,7 +1,7 @@
 ThinkPython
 ===========
 
-Code examples and exercise solutions from Think Python: How to Think Like a Computer Scientist
+LaTeX source, code examples, and exercise solutions from Think Python: How to Think Like a Computer Scientist
 
 by Allen B. Downey
 
