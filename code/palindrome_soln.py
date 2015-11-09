@@ -13,7 +13,7 @@ def first(word):
 
 
 def last(word):
-    """Returns all but the first character of a string."""
+    """Returns the last character of a string."""
     return word[-1]
 
 
