@@ -11839,13 +11839,13 @@ the old value:
 Photo of John Cleese doing a silly walk.
 \end{verbatim}
 %
-Many dictionary methods, like {\tt keys} and {\tt items}, also
-work with database objects.  So does iteration with a {\tt for}
-statement.
+Some dictionary methods, like {\tt keys}, also
+work with database objects, so you can iterate through the database
+like this:
 \index{dictionary methods!anydbm module}
 
 \begin{verbatim}
-for key in db:
+for key in db.keys():
     print key
 \end{verbatim}
 %
