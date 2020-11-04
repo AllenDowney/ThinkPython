@@ -14,8 +14,7 @@ def test(a):
     e= cal(a)
     f=(math.sqrt(a))
     diff =(f-e)
-    return print('Number:',a,'MySqrt:',e,'PySqrt:',f,'Difference:',diff)  #NB 'a' is value to be found
-
+    return print('Number:',a,'MySqrt:',e,'PySqrt:',f,'Difference:',diff)  
         
         
 n=1.0
