@@ -1,7 +1,0 @@
-#import screenshot
-
-use gimp file->acquire->screenshot
-
-clean up upper corners
-
-convert screenshot.xcf -colorspace gray screenshot.eps
