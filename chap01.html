@@ -1,0 +1,1232 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Programming as a way of thinking &#8212; Think Python, 3rd edition</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chap01';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Think Python, 3rd edition" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Think Python, 3rd edition</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    Think Python, 3rd edition
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Programming as a way of thinking</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/AllenDowney/ThinkPython3" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/chap01.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Programming as a way of thinking</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arithmetic-operators">Arithmetic operators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#expressions">Expressions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arithmetic-functions">Arithmetic functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strings">Strings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#values-and-types">Values and types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formal-and-natural-languages">Formal and natural languages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">Debugging</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">Glossary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">Ask a virtual assistant</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Exercise</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">basename</span><span class="p">,</span> <span class="n">exists</span>
+
+<span class="k">def</span> <span class="nf">download</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+    <span class="n">filename</span> <span class="o">=</span> <span class="n">basename</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">exists</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+        <span class="kn">from</span> <span class="nn">urllib.request</span> <span class="kn">import</span> <span class="n">urlretrieve</span>
+
+        <span class="n">local</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">urlretrieve</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Downloaded &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">local</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">filename</span>
+
+<span class="n">download</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/AllenDowney/ThinkPython/v3/thinkpython.py&#39;</span><span class="p">)</span>
+<span class="n">download</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/AllenDowney/ThinkPython/v3/diagram.py&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Exception reporting mode: Minimal
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">thinkpython</span>
+
+<span class="o">%</span><span class="k">load_ext</span> autoreload
+<span class="o">%</span><span class="k">autoreload</span> 2
+</pre></div>
+</div>
+</div>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="programming-as-a-way-of-thinking">
+<h1>Programming as a way of thinking<a class="headerlink" href="#programming-as-a-way-of-thinking" title="Permalink to this heading">#</a></h1>
+<p>The first goal of this book is to teach you how to program in Python.
+But learning to program means learning a new way to think, so the second goal of this book is to help you think like a computer scientist.
+This way of thinking combines some of the best features of mathematics, engineering, and natural science. Like mathematicians, computer scientists use formal languages to denote ideas – specifically computations.
+Like engineers, they design things, assembling components into systems and evaluating trade-offs among alternatives.
+Like scientists, they observe the behavior of complex systems, form hypotheses, and test predictions.</p>
+<p>We will start with the most basic elements of programming and work our way up.
+In this chapter, you learn how Python represents numbers, letters, and words.
+And you’ll learn to perform arithmetic operations.</p>
+<p>You will also start to learn the vocabulary of programming, including terms like operator, expression, value, and type.
+This vocabulary is important – you will need it to understand the rest of the book, to communicate with other programmers, and to use and understand virtual assistants.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## TODO Jupyter introduction for the online version only</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="arithmetic-operators">
+<h2>Arithmetic operators<a class="headerlink" href="#arithmetic-operators" title="Permalink to this heading">#</a></h2>
+<p>An <strong>arithmetic operator</strong> is a symbol that represents an arithmetic computation. For example, the plus sign, <code class="docutils literal notranslate"><span class="pre">+</span></code>, performs addition.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">30</span> <span class="o">+</span> <span class="mi">12</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>42
+</pre></div>
+</div>
+</div>
+</div>
+<p>The minus sign, <code class="docutils literal notranslate"><span class="pre">-</span></code>, is the operator that performs subtraction.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">43</span> <span class="o">-</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>42
+</pre></div>
+</div>
+</div>
+</div>
+<p>The asterisk, <code class="docutils literal notranslate"><span class="pre">*</span></code>,  performs multiplication.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">6</span> <span class="o">*</span> <span class="mi">7</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>42
+</pre></div>
+</div>
+</div>
+</div>
+<p>And the forward slash, <code class="docutils literal notranslate"><span class="pre">/</span></code>, performs division:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">84</span> <span class="o">/</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>42.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice that the result of the division is <code class="docutils literal notranslate"><span class="pre">42.0</span></code> rather than <code class="docutils literal notranslate"><span class="pre">42</span></code>. That’s because there are two types of numbers in Python:</p>
+<ul class="simple">
+<li><p><strong>integers</strong>, which represent whole numbers, and</p></li>
+<li><p><strong>floating-point numbers</strong>, which represent numbers with a decimal point.</p></li>
+</ul>
+<p>If you add, subtract, or multiply two integers, the result is an integer.
+But if you divide two integers, the result is a floating-point number.
+Python provides another operator, <code class="docutils literal notranslate"><span class="pre">//</span></code>, that performs <strong>integer division</strong>.
+The result of integer division is always an integer.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">84</span> <span class="o">//</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>42
+</pre></div>
+</div>
+</div>
+</div>
+<p>Integer division is also called “floor division” because it always rounds down (toward the “floor”).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">85</span> <span class="o">//</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>42
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finally, the operator <code class="docutils literal notranslate"><span class="pre">**</span></code> performs exponentiation; that is, it raises a
+number to a power:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">7</span> <span class="o">**</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>49
+</pre></div>
+</div>
+</div>
+</div>
+<p>In some other languages, the caret, <code class="docutils literal notranslate"><span class="pre">^</span></code>, is used for exponentiation, but in Python
+it is a bitwise operator called XOR.
+If you are not familiar with bitwise operators, the result might be unexpected:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">7</span> <span class="o">^</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+</pre></div>
+</div>
+</div>
+</div>
+<p>I won’t cover bitwise operators in this book, but you can read about
+them at <a class="reference external" href="http://wiki.python.org/moin/BitwiseOperators">http://wiki.python.org/moin/BitwiseOperators</a>.</p>
+</section>
+<section id="expressions">
+<h2>Expressions<a class="headerlink" href="#expressions" title="Permalink to this heading">#</a></h2>
+<p>A collection of operators and numbers is called an <strong>expression</strong>.
+An expression can contain any number of operators and numbers.
+For example, here’s an expression that contains two operators.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">7</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">7</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>42
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice that exponentiation happens before subtraction.
+Python follows the order of operations you might have learned in a math class: exponentiation happens before multiplication and division, which happen before addition and subtraction.</p>
+<p>In the following example, multiplication happens before addition.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="o">*</span> <span class="mi">6</span> <span class="o">+</span> <span class="mi">12</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>42
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you want the addition to happen first, you can use parentheses.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="o">*</span> <span class="p">(</span><span class="mi">6</span> <span class="o">+</span> <span class="mi">12</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>90
+</pre></div>
+</div>
+</div>
+</div>
+<p>Every expression has a <strong>value</strong>.
+For example, the expression <code class="docutils literal notranslate"><span class="pre">6</span> <span class="pre">*</span> <span class="pre">7</span></code> has the value <code class="docutils literal notranslate"><span class="pre">42</span></code>.</p>
+</section>
+<section id="arithmetic-functions">
+<h2>Arithmetic functions<a class="headerlink" href="#arithmetic-functions" title="Permalink to this heading">#</a></h2>
+<p>In addition to the arithmetic operators, Python provides a few <strong>functions</strong> that work with numbers.
+For example, the <code class="docutils literal notranslate"><span class="pre">round</span></code> function takes a floating-point number and rounds it off to the nearest whole number.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">round</span><span class="p">(</span><span class="mf">42.4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>42
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">round</span><span class="p">(</span><span class="mf">42.6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>43
+</pre></div>
+</div>
+</div>
+</div>
+<p>Python provides a function called <code class="docutils literal notranslate"><span class="pre">abs</span></code> that computes the absolute value of a number.
+For a positive number, the absolute value is the number itself.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">abs</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>42
+</pre></div>
+</div>
+</div>
+</div>
+<p>For a negative number, the absolute value is positive.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">abs</span><span class="p">(</span><span class="o">-</span><span class="mi">42</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>42
+</pre></div>
+</div>
+</div>
+</div>
+<p>When we use a function like this, we say we’re <strong>calling</strong> the function – so
+an expression that calls a function is a <strong>function call</strong>.</p>
+<p>When you call a function, the parentheses are required.
+If you leave them out, you get an error message.</p>
+<p>NOTE TO EDITOR: Lines that begin with <code class="docutils literal notranslate"><span class="pre">%%expect</span></code> will be removed automatically.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">abs</span> <span class="mi">42</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">File</span> <span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">:</span><span class="mi">2</span>
+    <span class="nb">abs</span> <span class="mi">42</span>
+        <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can ignore the first line of this message; it doesn’t contain any information we need to understand right now.
+The second line is the line of code that contains the error, with a caret (<code class="docutils literal notranslate"><span class="pre">^</span></code>) beneath it to indicate where the error was discovered.</p>
+<p>The last line indicates that this is a <strong>syntax error</strong>, which means that there is something wrong with the structure of the expression.
+In this example, the problem is that a function call requires parentheses.</p>
+<p>Let’s see what happens if you leave out the parentheses <em>and</em> the value.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">abs</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;function abs(x, /)&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>A function name all by itself is a legal expression that has a value.
+When it’s displayed, the value indicates that <code class="docutils literal notranslate"><span class="pre">abs</span></code> is a function, and it includes some additional information I’ll explain later.</p>
+</section>
+<section id="strings">
+<h2>Strings<a class="headerlink" href="#strings" title="Permalink to this heading">#</a></h2>
+<p>In addition to numbers, Python can also represent sequences of letters, which are called <strong>strings</strong> because the letters are strung together like beads on a necklace.
+To write a string, we can put a sequence of letters inside straight quotation marks.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Hello&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Hello&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>It is also legal to use double quotation marks.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;world&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;world&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Double quotes make it easy to write a string that contains an apostrophe, which is the same symbol as a straight quote.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;it&#39;s a small &quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;it&#39;s a small &quot;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Strings can also contain spaces, punctuation, and digits.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Well, &#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Well, &#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">+</span></code> operator works with strings; it joins two strings into a single string, which is called <strong>concatenation</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Well, &#39;</span> <span class="o">+</span> <span class="s2">&quot;it&#39;s a small &quot;</span> <span class="o">+</span> <span class="s1">&#39;world.&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;Well, it&#39;s a small world.&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">*</span></code> operator also works with strings; it makes multiple copies of a string and concatenates them.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Spam, &#39;</span> <span class="o">*</span> <span class="mi">4</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Spam, Spam, Spam, Spam, &#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>The other arithmetic operators don’t work with strings.</p>
+<p>Python provides a function called <code class="docutils literal notranslate"><span class="pre">len</span></code> that computes the length of a string.`</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="s1">&#39;Spam&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice that <code class="docutils literal notranslate"><span class="pre">len</span></code> counts the letters between the quotes, but not the quotes.</p>
+<p>When you create a string, be sure to use straight quotes.
+The back quote, also known as a backtick, is not a legal character in Python.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+`Hello`
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  File &lt;string&gt;:2
+    `Hello`
+    ^
+SyntaxError: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
+<p>Smart quotes, also known as curly quotes, are also illegal.</p>
+</section>
+<section id="values-and-types">
+<h2>Values and types<a class="headerlink" href="#values-and-types" title="Permalink to this heading">#</a></h2>
+<p>So far we’ve seen three kinds of values:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">2</span></code> is an integer,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">42.0</span></code> is a floating-point number, and</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'Hello'</span></code> is a string.</p></li>
+</ul>
+<p>A kind of value is called a <strong>type</strong>.
+Every value has a type – or we sometimes say it “belongs to” a type.</p>
+<p>Python provides a function called <code class="docutils literal notranslate"><span class="pre">type</span></code> that tells you the type of any value.
+The type of an integer is <code class="docutils literal notranslate"><span class="pre">int</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>int
+</pre></div>
+</div>
+</div>
+</div>
+<p>The type of a floating-point number is <code class="docutils literal notranslate"><span class="pre">float</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="mf">42.0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>float
+</pre></div>
+</div>
+</div>
+</div>
+<p>And the type of a string is <code class="docutils literal notranslate"><span class="pre">str</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="s1">&#39;Hello, World!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>str
+</pre></div>
+</div>
+</div>
+</div>
+<p>The types <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>, and <code class="docutils literal notranslate"><span class="pre">str</span></code> can be used as functions.
+For example, <code class="docutils literal notranslate"><span class="pre">int</span></code> can take a floating-point number and convert it to an integer (always rounding down).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span><span class="p">(</span><span class="mf">42.9</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>42
+</pre></div>
+</div>
+</div>
+</div>
+<p>And <code class="docutils literal notranslate"><span class="pre">float</span></code> can convert an integer to a floating-point value.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">float</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>42.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, here’s something that can be confusing.
+What do you get if you put a sequence of digits in quotes?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;126&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;126&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>It looks like a number, but it is actually a string.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="s1">&#39;126&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>str
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you try to use it like a number, you might get an error.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;126&#39;</span> <span class="o">/</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="ne">TypeError</span>: unsupported operand type(s) for /: &#39;str&#39; and &#39;int&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>This example generates a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code>, which means that the values in the expression, which are called <strong>operands</strong>, have the wrong type.
+The error message indicates that the <code class="docutils literal notranslate"><span class="pre">/</span></code> operator does not support the types of these values, which are <code class="docutils literal notranslate"><span class="pre">str</span></code> and <code class="docutils literal notranslate"><span class="pre">int</span></code>.</p>
+<p>If you have a string that contains digits, you can use <code class="docutils literal notranslate"><span class="pre">int</span></code> to convert it to an integer.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span><span class="p">(</span><span class="s1">&#39;126&#39;</span><span class="p">)</span> <span class="o">/</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>42.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you have a string that contains digits and a decimal point, you can use <code class="docutils literal notranslate"><span class="pre">float</span></code> to convert it to a floating-point number.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">float</span><span class="p">(</span><span class="s1">&#39;12.6&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12.6
+</pre></div>
+</div>
+</div>
+</div>
+<p>When you write a large integer, you might be tempted to use commas
+between groups of digits, as in <code class="docutils literal notranslate"><span class="pre">1,000,000</span></code>.
+This is a legal expression in Python, but the result is not an integer.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span><span class="p">,</span><span class="mi">000</span><span class="p">,</span><span class="mi">000</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1, 0, 0)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Python interprets <code class="docutils literal notranslate"><span class="pre">1,000,000</span></code> as a comma-separated sequence of integers.
+We’ll learn more about this kind of sequence later.</p>
+</section>
+<section id="formal-and-natural-languages">
+<h2>Formal and natural languages<a class="headerlink" href="#formal-and-natural-languages" title="Permalink to this heading">#</a></h2>
+<p><strong>Natural languages</strong> are the languages people speak, like English, Spanish, and French. They were not designed by people; they evolved naturally.</p>
+<p><strong>Formal languages</strong> are languages that are designed by people for specific applications.
+For example, the notation that mathematicians use is a formal language that is particularly good at denoting relationships among numbers and symbols.
+Similarly, programming languages are formal languages that have been designed to express computations.</p>
+<p>Although formal and natural languages have some features in
+common there are important differences:</p>
+<ul class="simple">
+<li><p>Ambiguity: Natural languages are full of ambiguity, which people deal with by
+using contextual clues and other information. Formal languages are
+designed to be nearly or completely unambiguous, which means that
+any program has exactly one meaning, regardless of context.</p></li>
+<li><p>Redundancy: In order to make up for ambiguity and reduce misunderstandings,
+natural languages use redundancy. As a result, they are
+often verbose. Formal languages are less redundant and more concise.</p></li>
+<li><p>Literalness: Natural languages are full of idiom and metaphor. Formal languages mean exactly what they say.</p></li>
+</ul>
+<p>Because we all grow up speaking natural languages, it is sometimes hard to adjust to formal languages.
+Formal languages are more dense than natural languages, so it takes longer to read them.
+Also, the structure is important, so it is not always best to read from top to bottom, left to right.
+Finally, the details matter. Small errors in spelling and
+punctuation, which you can get away with in natural languages, can make
+a big difference in a formal language.</p>
+</section>
+<section id="debugging">
+<h2>Debugging<a class="headerlink" href="#debugging" title="Permalink to this heading">#</a></h2>
+<p>Programmers make mistakes. For whimsical reasons, programming errors are called <strong>bugs</strong> and the process of tracking them down is called <strong>debugging</strong>.</p>
+<p>Programming, and especially debugging, sometimes brings out strong emotions. If you are struggling with a difficult bug, you might feel angry, sad, or embarrassed.</p>
+<p>Preparing for these reactions might help you deal with them. One approach is to think of the computer as an employee with certain strengths, like speed and precision, and particular weaknesses, like lack of empathy and inability to grasp the big picture.</p>
+<p>Your job is to be a good manager: find ways to take advantage of the strengths and mitigate the weaknesses. And find ways to use your emotions to engage with the problem, without letting your reactions interfere with your ability to work effectively.</p>
+<p>Learning to debug can be frustrating, but it is a valuable skill that is useful for many activities beyond programming. At the end of each chapter there is a section, like this one, with my suggestions for debugging. I hope they help!</p>
+</section>
+<section id="glossary">
+<h2>Glossary<a class="headerlink" href="#glossary" title="Permalink to this heading">#</a></h2>
+<p><strong>arithmetic operator:</strong>
+A symbol, like <code class="docutils literal notranslate"><span class="pre">+</span></code> and <code class="docutils literal notranslate"><span class="pre">*</span></code>, that denotes an arithmetic operation like addition or multiplication.</p>
+<p><strong>integer:</strong>
+A type that represents whole numbers.</p>
+<p><strong>floating-point:</strong>
+A type that represents numbers with fractional parts.</p>
+<p><strong>integer division:</strong>
+An operator, <code class="docutils literal notranslate"><span class="pre">//</span></code>, that divides two numbers and rounds down to an integer.</p>
+<p><strong>expression:</strong>
+A combination of variables, values, and operators.</p>
+<p><strong>value:</strong>
+An integer, floating-point number, or string – or one of other kinds of values we will see later.</p>
+<p><strong>function:</strong>
+A named sequence of statements that performs some useful operation.
+Functions may or may not take arguments and may or may not produce a result.</p>
+<p><strong>function call:</strong>
+An expression – or part of an expression – that runs a function.
+It consists of the function name followed by an argument list in parentheses.</p>
+<p><strong>syntax error:</strong>
+An error in a program that makes it impossible to parse – and therefore impossible to run.</p>
+<p><strong>string:</strong>
+A type that represents sequences of characters.</p>
+<p><strong>concatenation:</strong>
+Joining two strings end-to-end.</p>
+<p><strong>type:</strong>
+A category of values.
+The types we have seen so far are integers (type <code class="docutils literal notranslate"><span class="pre">int</span></code>), floating-point numbers (type <code class="docutils literal notranslate"> <span class="pre">float</span></code>), and strings (type <code class="docutils literal notranslate"><span class="pre">str</span></code>).</p>
+<p><strong>operand:</strong>
+One of the values on which an operator operates.</p>
+<p><strong>natural language:</strong>
+Any of the languages that people speak that evolved naturally.</p>
+<p><strong>formal language:</strong>
+Any of the languages that people have designed for specific purposes, such as representing mathematical ideas or computer programs.
+All programming languages are formal languages.</p>
+<p><strong>bug:</strong>
+An error in a program.</p>
+<p><strong>debugging:</strong>
+The process of finding and correcting errors.</p>
+</section>
+<section id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h2>
+<section id="ask-a-virtual-assistant">
+<h3>Ask a virtual assistant<a class="headerlink" href="#ask-a-virtual-assistant" title="Permalink to this heading">#</a></h3>
+<p>As you work through this book, there are several ways you can use a chatbot or virtual assistant to help you learn.</p>
+<ul class="simple">
+<li><p>If you would like to learn more about any of the topics in the chapter, or anything is unclear, you can ask for an explanation.</p></li>
+<li><p>If you are having a hard time with any of the exercises, you can ask for help.</p></li>
+</ul>
+<p>In each chapter, I’ll suggest exercises you can do with a virtual assistant, but I encourage you to try things on your own and see what works for you.</p>
+<ul class="simple">
+<li><p>Earlier I mentioned bitwise operators but I didn’t explain why the value of <code class="docutils literal notranslate"><span class="pre">7</span> <span class="pre">^</span> <span class="pre">2</span></code> is 5. Try asking “What are the bitwise operators in Python?” or “What is the value of <code class="docutils literal notranslate"><span class="pre">7</span> <span class="pre">XOR</span> <span class="pre">2</span></code>?”</p></li>
+<li><p>I also mentioned the order of operations. For more details, ask “What is the order of operations in Python?”</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">round</span></code> function, which we used to round a floating-point number to the nearest whole number, can take a second argument. Try asking “What are the arguments of the round function?” or “How do I round pi off to three decimal places?”</p></li>
+<li><p>There’s one more arithmetic operator I didn’t mention: try asking “What is the modulus operator in Python?”</p></li>
+</ul>
+<p>Most virtual assistants know about Python, so they answer questions like this pretty reliably.
+But remember that chatbots make mistakes.
+If you get code from a chatbot, test it!</p>
+</section>
+<section id="exercise">
+<h3>Exercise<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h3>
+<p>You might wonder what <code class="docutils literal notranslate"><span class="pre">round</span></code> does if a number ends in <code class="docutils literal notranslate"><span class="pre">0.5</span></code>.
+The answer is that it sometimes rounds up and sometimes rounds down.
+Try these examples and see if you can figure out what rule it follows.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">round</span><span class="p">(</span><span class="mf">42.5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>42
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">round</span><span class="p">(</span><span class="mf">43.5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>44
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you are curious, ask a virtual assistant, “If a number ends in 0.5, does Python round up or down?”</p>
+</section>
+<section id="id1">
+<h3>Exercise<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<p>When you learn about a new feature, you should try it out and make mistakes on purpose.
+That way, you get to learn the error messages, and when you see them again, you will know what they mean.
+It is better to make mistakes now and deliberately than later and accidentally.</p>
+<ol class="arabic simple">
+<li><p>You can use a minus sign to make a negative number like <code class="docutils literal notranslate"><span class="pre">-2</span></code>. What happens if you put a plus sign before a number? What about <code class="docutils literal notranslate"><span class="pre">2++2</span></code>?</p></li>
+<li><p>What happens if you have two values with no operator between them, like <code class="docutils literal notranslate"><span class="pre">4</span> <span class="pre">2</span></code>?</p></li>
+<li><p>If you call a function like <code class="docutils literal notranslate"><span class="pre">round(42.5)</span></code>, what happens if you leave out one or both parentheses?</p></li>
+</ol>
+</section>
+<section id="id2">
+<h3>Exercise<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<p>In this chapter, I said that every expression has a value, every value has a type, and we can use the <code class="docutils literal notranslate"><span class="pre">type</span></code> function to find the type of any value.</p>
+<p>What is the type of the value of the following expressions? Make your best guess for each one, and then use <code class="docutils literal notranslate"><span class="pre">type</span></code> to find out.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">765</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">2.718</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'2</span> <span class="pre">pi'</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">abs(-7)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">abs(-7.0)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">abs</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">type</span></code></p></li>
+</ul>
+</section>
+<section id="id3">
+<h3>Exercise<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<p>The following questions give you a chance to practice arithmetic expressions.</p>
+<ol class="arabic simple">
+<li><p>How many seconds are there in 42 minutes 42 seconds?</p></li>
+<li><p>How many miles are there in 10 kilometers? Hint: there are 1.61
+kilometers in a mile.</p></li>
+<li><p>If you run a 10 kilometer race in 42 minutes 42 seconds, what is your average pace in seconds per mile?</p></li>
+<li><p>What is your average pace in minutes and seconds per mile?</p></li>
+<li><p>What is your average speed in miles per hour?</p></li>
+</ol>
+<p>If you already know about variables, you can use them for this exercise.
+If you don’t, you can do the exercise without them – and then we’ll see them in the next chapter.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Think Python, 3rd edition</p>
+      </div>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arithmetic-operators">Arithmetic operators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#expressions">Expressions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arithmetic-functions">Arithmetic functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strings">Strings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#values-and-types">Values and types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formal-and-natural-languages">Formal and natural languages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">Debugging</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">Glossary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">Ask a virtual assistant</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Exercise</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Allen B. Downey
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
