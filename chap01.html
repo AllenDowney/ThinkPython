@@ -339,41 +339,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">basename</span><span class="p">,</span> <span class="n">exists</span>
-
-<span class="k">def</span> <span class="nf">download</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
-    <span class="n">filename</span> <span class="o">=</span> <span class="n">basename</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">exists</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
-        <span class="kn">from</span> <span class="nn">urllib.request</span> <span class="kn">import</span> <span class="n">urlretrieve</span>
-
-        <span class="n">local</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">urlretrieve</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Downloaded &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">local</span><span class="p">))</span>
-    <span class="k">return</span> <span class="n">filename</span>
-
-<span class="n">download</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/AllenDowney/ThinkPython/v3/thinkpython.py&#39;</span><span class="p">)</span>
-<span class="n">download</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/AllenDowney/ThinkPython/v3/diagram.py&#39;</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Exception reporting mode: Minimal
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">thinkpython</span>
-
-<span class="o">%</span><span class="k">load_ext</span> autoreload
-<span class="o">%</span><span class="k">autoreload</span> 2
-</pre></div>
-</div>
-</div>
-</div>
-<section class="tex2jax_ignore mathjax_ignore" id="programming-as-a-way-of-thinking">
+  <section class="tex2jax_ignore mathjax_ignore" id="programming-as-a-way-of-thinking">
 <h1>Programming as a way of thinking<a class="headerlink" href="#programming-as-a-way-of-thinking" title="Permalink to this heading">#</a></h1>
 <p>The first goal of this book is to teach you how to program in Python.
 But learning to program means learning a new way to think, so the second goal of this book is to help you think like a computer scientist.
@@ -385,13 +351,6 @@ In this chapter, you learn how Python represents numbers, letters, and words.
 And you’ll learn to perform arithmetic operations.</p>
 <p>You will also start to learn the vocabulary of programming, including terms like operator, expression, value, and type.
 This vocabulary is important – you will need it to understand the rest of the book, to communicate with other programmers, and to use and understand virtual assistants.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## TODO Jupyter introduction for the online version only</span>
-</pre></div>
-</div>
-</div>
-</div>
 <section id="arithmetic-operators">
 <h2>Arithmetic operators<a class="headerlink" href="#arithmetic-operators" title="Permalink to this heading">#</a></h2>
 <p>An <strong>arithmetic operator</strong> is a symbol that represents an arithmetic computation. For example, the plus sign, <code class="docutils literal notranslate"><span class="pre">+</span></code>, performs addition.</p>
@@ -620,7 +579,7 @@ an expression that calls a function is a <strong>function call</strong>.</p>
 <p>When you call a function, the parentheses are required.
 If you leave them out, you get an error message.</p>
 <p>NOTE TO EDITOR: Lines that begin with <code class="docutils literal notranslate"><span class="pre">%%expect</span></code> will be removed automatically.</p>
-<div class="cell docutils container">
+<div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">abs</span> <span class="mi">42</span>
 </pre></div>
@@ -753,7 +712,7 @@ To write a string, we can put a sequence of letters inside straight quotation ma
 <p>Notice that <code class="docutils literal notranslate"><span class="pre">len</span></code> counts the letters between the quotes, but not the quotes.</p>
 <p>When you create a string, be sure to use straight quotes.
 The back quote, also known as a backtick, is not a legal character in Python.</p>
-<div class="cell docutils container">
+<div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
 `Hello`
@@ -876,7 +835,7 @@ What do you get if you put a sequence of digits in quotes?</p>
 </div>
 </div>
 <p>If you try to use it like a number, you might get an error.</p>
-<div class="cell docutils container">
+<div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;126&#39;</span> <span class="o">/</span> <span class="mi">3</span>
 </pre></div>
