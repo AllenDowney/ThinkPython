@@ -6,14 +6,14 @@
 
 For the third edition, the biggest changes are:
 
-* The book is now entirely in Jupyter notebooks, so you can read the text, run the code, and work on the exercises. Using the links below, you can run the notebooks on Colab, so you don't have to install anything to get started.
+* The book is now entirely in Jupyter notebooks, so you can read the text, run the code, and work on the exercises, all in one place. Using the links below, you can run the notebooks on Colab, so you don't have to install anything to get started.
 
 * The text is substantially revised and a few chapters have been reordered. There are more exercises now, and I think a lot of them are better.
 
-* At the end of every chapter, there are suggestions for using tools like ChatGPT and Colab AI to learn more and to help with the exercises.
+* At the end of every chapter, there are suggestions for using tools like ChatGPT and Colab AI to learn more and to get help with the exercises.
 
 The book is scheduled to be published by O'Reilly Media in July 2024, so it is a work in progress.
-Starting in January 2024, I plan to release new chapters here, about one per week.
+Starting in February 2024, I plan to release new chapters here, about one per week.
 
 [You can read the early release at O'Reilly Media](https://www.oreilly.com/library/view/think-python/9781098155421/)
 
@@ -25,3 +25,16 @@ Starting in January 2024, I plan to release new chapters here, about one per wee
 ### Chapter 1: Programming as a way of thinking
 
 * [Click here to run Chapter 1 on Colab](https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap01.ipynb)
+
+
+## Resources for teachers
+
+If you are teaching with this book, here are some resources you might find useful.
+
+* You can download notebooks with solutions [COMING SOON]
+
+* Quizzes for each chapter, and a summative quiz for the whole book, are available [COMING SOON]
+
+* *Teaching and Learning with Jupyter* is an online book with suggestions for using Jupyter effectively in the classroom. You can [read the book here](https://jupyter4edu.github.io/jupyter-edu-book).
+
+* One of the best ways to use notebooks in the classroom is live coding, where an instructor writes code and students follow along in their own notebooks. To learn about live coding -- and a lot of other great advice about teaching programming -- I recommend the teacher training provided by The Carpentries, [which you can read here](https://carpentries.github.io/instructor-training).
