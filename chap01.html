@@ -64,7 +64,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'chap01';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Think Python, 3rd edition" href="index.html" />
+    <link rel="prev" title="Preface" href="chap00.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -150,6 +150,7 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chap00.html">Preface</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Programming as a way of thinking</a></li>
 </ul>
 
@@ -321,7 +322,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">Debugging</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">Glossary</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-an-ai">Ask an AI</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">Ask a virtual assistant</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
@@ -343,14 +344,15 @@ document.write(`
 <h1>Programming as a way of thinking<a class="headerlink" href="#programming-as-a-way-of-thinking" title="Permalink to this heading">#</a></h1>
 <p>The first goal of this book is to teach you how to program in Python.
 But learning to program means learning a new way to think, so the second goal of this book is to help you think like a computer scientist.
-This way of thinking combines some of the best features of mathematics, engineering, and natural science. Like mathematicians, computer scientists use formal languages to denote ideas – specifically computations.
+This way of thinking combines some of the best features of mathematics, engineering, and natural science.
+Like mathematicians, computer scientists use formal languages to denote ideas – specifically computations.
 Like engineers, they design things, assembling components into systems and evaluating trade-offs among alternatives.
 Like scientists, they observe the behavior of complex systems, form hypotheses, and test predictions.</p>
 <p>We will start with the most basic elements of programming and work our way up.
 In this chapter, we’ll see how Python represents numbers, letters, and words.
 And you’ll learn to perform arithmetic operations.</p>
 <p>You will also start to learn the vocabulary of programming, including terms like operator, expression, value, and type.
-This vocabulary is important – you will need it to understand the rest of the book, to communicate with other programmers, and to use and understand AI assistants.</p>
+This vocabulary is important – you will need it to understand the rest of the book, to communicate with other programmers, and to use and understand virtual assistants.</p>
 <section id="arithmetic-operators">
 <h2>Arithmetic operators<a class="headerlink" href="#arithmetic-operators" title="Permalink to this heading">#</a></h2>
 <p>An <strong>arithmetic operator</strong> is a symbol that represents an arithmetic computation. For example, the plus sign, <code class="docutils literal notranslate"><span class="pre">+</span></code>, performs addition.</p>
@@ -478,7 +480,7 @@ An expression can contain any number of operators and numbers.
 For example, here’s an expression that contains two operators.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">7</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">7</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">6</span> <span class="o">+</span> <span class="mi">6</span> <span class="o">**</span> <span class="mi">2</span>
 </pre></div>
 </div>
 </div>
@@ -493,7 +495,7 @@ Python follows the order of operations you might have learned in a math class: e
 <p>In the following example, multiplication happens before addition.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="o">*</span> <span class="mi">6</span> <span class="o">+</span> <span class="mi">12</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">12</span> <span class="o">+</span> <span class="mi">5</span> <span class="o">*</span> <span class="mi">6</span>
 </pre></div>
 </div>
 </div>
@@ -506,12 +508,12 @@ Python follows the order of operations you might have learned in a math class: e
 <p>If you want the addition to happen first, you can use parentheses.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="o">*</span> <span class="p">(</span><span class="mi">6</span> <span class="o">+</span> <span class="mi">12</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">12</span> <span class="o">+</span> <span class="mi">5</span><span class="p">)</span> <span class="o">*</span> <span class="mi">6</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>90
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>102
 </pre></div>
 </div>
 </div>
@@ -547,7 +549,7 @@ For example, the <code class="docutils literal notranslate"><span class="pre">ro
 </div>
 </div>
 </div>
-<p>Python provides a function called <code class="docutils literal notranslate"><span class="pre">abs</span></code> that computes the absolute value of a number.
+<p>The <code class="docutils literal notranslate"><span class="pre">abs</span></code> function computes the absolute value of a number.
 For a positive number, the absolute value is the number itself.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -574,11 +576,10 @@ For a positive number, the absolute value is the number itself.</p>
 </div>
 </div>
 </div>
-<p>When we use a function like this, we say we’re <strong>calling</strong> the function – so
-an expression that calls a function is a <strong>function call</strong>.</p>
+<p>When we use a function like this, we say we’re <strong>calling</strong> the function.
+An expression that calls a function is a <strong>function call</strong>.</p>
 <p>When you call a function, the parentheses are required.
 If you leave them out, you get an error message.</p>
-<p>NOTE TO EDITOR: Lines that begin with <code class="docutils literal notranslate"><span class="pre">%%expect</span></code> will be removed automatically.</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">abs</span> <span class="mi">42</span>
@@ -586,7 +587,7 @@ If you leave them out, you get an error message.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">File</span> <span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">:</span><span class="mi">2</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">18</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
     <span class="nb">abs</span> <span class="mi">42</span>
         <span class="o">^</span>
 <span class="ne">SyntaxError</span>: invalid syntax
@@ -595,7 +596,7 @@ If you leave them out, you get an error message.</p>
 </div>
 </div>
 <p>You can ignore the first line of this message; it doesn’t contain any information we need to understand right now.
-The second line is the line of code that contains the error, with a caret (<code class="docutils literal notranslate"><span class="pre">^</span></code>) beneath it to indicate where the error was discovered.</p>
+The second line is the code that contains the error, with a caret (<code class="docutils literal notranslate"><span class="pre">^</span></code>) beneath it to indicate where the error was discovered.</p>
 <p>The last line indicates that this is a <strong>syntax error</strong>, which means that there is something wrong with the structure of the expression.
 In this example, the problem is that a function call requires parentheses.</p>
 <p>Let’s see what happens if you leave out the parentheses <em>and</em> the value.</p>
@@ -711,7 +712,7 @@ To write a string, we can put a sequence of letters inside straight quotation ma
 </div>
 <p>Notice that <code class="docutils literal notranslate"><span class="pre">len</span></code> counts the letters between the quotes, but not the quotes.</p>
 <p>When you create a string, be sure to use straight quotes.
-The back quote, also known as a backtick, is not a legal character in Python.</p>
+The back quote, also known as a backtick, causes a syntax error.</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
@@ -720,7 +721,7 @@ The back quote, also known as a backtick, is not a legal character in Python.</p
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  File &lt;string&gt;:2
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  Cell In[49], line 1
     `Hello`
     ^
 SyntaxError: invalid syntax
@@ -892,6 +893,19 @@ This is a legal expression in Python, but the result is not an integer.</p>
 </div>
 <p>Python interprets <code class="docutils literal notranslate"><span class="pre">1,000,000</span></code> as a comma-separated sequence of integers.
 We’ll learn more about this kind of sequence later.</p>
+<p>You can use underscores to make large numbers easier to read.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1_000_000</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1000000
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="formal-and-natural-languages">
 <h2>Formal and natural languages<a class="headerlink" href="#formal-and-natural-languages" title="Permalink to this heading">#</a></h2>
@@ -969,21 +983,21 @@ The process of finding and correcting errors.</p>
 </section>
 <section id="exercises">
 <h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h2>
-<section id="ask-an-ai">
-<h3>Ask an AI<a class="headerlink" href="#ask-an-ai" title="Permalink to this heading">#</a></h3>
-<p>As you work through this book, there are several ways you can use a chatbot or coding assistant to help you learn.</p>
+<section id="ask-a-virtual-assistant">
+<h3>Ask a virtual assistant<a class="headerlink" href="#ask-a-virtual-assistant" title="Permalink to this heading">#</a></h3>
+<p>As you work through this book, there are several ways you can use a virtual assistant or chatbot to help you learn.</p>
 <ul class="simple">
-<li><p>If you would like to learn more about any of the topics in the chapter, or anything is unclear, you can ask for an explanation.</p></li>
+<li><p>If you want to learn more about a topic in the chapter, or anything is unclear, you can ask for an explanation.</p></li>
 <li><p>If you are having a hard time with any of the exercises, you can ask for help.</p></li>
 </ul>
-<p>In each chapter, I’ll suggest exercises you can do with a coding assistant, but I encourage you to try things on your own and see what works for you.</p>
+<p>In each chapter, I’ll suggest exercises you can do with a virtual assistant, but I encourage you to try things on your own and see what works for you.</p>
 <ul class="simple">
 <li><p>Earlier I mentioned bitwise operators but I didn’t explain why the value of <code class="docutils literal notranslate"><span class="pre">7</span> <span class="pre">^</span> <span class="pre">2</span></code> is 5. Try asking “What are the bitwise operators in Python?” or “What is the value of <code class="docutils literal notranslate"><span class="pre">7</span> <span class="pre">XOR</span> <span class="pre">2</span></code>?”</p></li>
 <li><p>I also mentioned the order of operations. For more details, ask “What is the order of operations in Python?”</p></li>
 <li><p>The <code class="docutils literal notranslate"><span class="pre">round</span></code> function, which we used to round a floating-point number to the nearest whole number, can take a second argument. Try asking “What are the arguments of the round function?” or “How do I round pi off to three decimal places?”</p></li>
-<li><p>There’s one more arithmetic operator I didn’t mention: try asking “What is the modulus operator in Python?”</p></li>
+<li><p>There’s one more arithmetic operator I didn’t mention; try asking “What is the modulus operator in Python?”</p></li>
 </ul>
-<p>Most coding assistants know about Python, so they answer questions like this pretty reliably.
+<p>Most virtual assistants know about Python, so they answer questions like this pretty reliably.
 But remember that these tools make mistakes.
 If you get code from a chatbot, test it!</p>
 </section>
@@ -1021,7 +1035,7 @@ Try these examples and see if you can figure out what rule it follows.</p>
 <section id="id1">
 <h3>Exercise<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
 <p>When you learn about a new feature, you should try it out and make mistakes on purpose.
-That way, you get to learn the error messages, and when you see them again, you will know what they mean.
+That way, you learn the error messages, and when you see them again, you will know what they mean.
 It is better to make mistakes now and deliberately than later and accidentally.</p>
 <ol class="arabic simple">
 <li><p>You can use a minus sign to make a negative number like <code class="docutils literal notranslate"><span class="pre">-2</span></code>. What happens if you put a plus sign before a number? What about <code class="docutils literal notranslate"><span class="pre">2++2</span></code>?</p></li>
@@ -1031,7 +1045,7 @@ It is better to make mistakes now and deliberately than later and accidentally.<
 </section>
 <section id="id2">
 <h3>Exercise<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
-<p>In this chapter, I said that every expression has a value, every value has a type, and we can use the <code class="docutils literal notranslate"><span class="pre">type</span></code> function to find the type of any value.</p>
+<p>Recall that every expression has a value, every value has a type, and we can use the <code class="docutils literal notranslate"><span class="pre">type</span></code> function to find the type of any value.</p>
 <p>What is the type of the value of the following expressions? Make your best guess for each one, and then use <code class="docutils literal notranslate"><span class="pre">type</span></code> to find out.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">765</span></code></p></li>
@@ -1046,11 +1060,10 @@ It is better to make mistakes now and deliberately than later and accidentally.<
 </section>
 <section id="id3">
 <h3>Exercise<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
-<p>The following questions give you a chance to practice arithmetic expressions.</p>
+<p>The following questions give you a chance to practice writing arithmetic expressions.</p>
 <ol class="arabic simple">
 <li><p>How many seconds are there in 42 minutes 42 seconds?</p></li>
-<li><p>How many miles are there in 10 kilometers? Hint: there are 1.61
-kilometers in a mile.</p></li>
+<li><p>How many miles are there in 10 kilometers? Hint: there are 1.61 kilometers in a mile.</p></li>
 <li><p>If you run a 10 kilometer race in 42 minutes 42 seconds, what is your average pace in seconds per mile?</p></li>
 <li><p>What is your average pace in minutes and seconds per mile?</p></li>
 <li><p>What is your average speed in miles per hour?</p></li>
@@ -1093,12 +1106,12 @@ If you don’t, you can do the exercise without them – and then we’ll see th
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="index.html"
+       href="chap00.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Think Python, 3rd edition</p>
+        <p class="prev-next-title">Preface</p>
       </div>
     </a>
 </div></div>
@@ -1128,7 +1141,7 @@ If you don’t, you can do the exercise without them – and then we’ll see th
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">Debugging</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">Glossary</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-an-ai">Ask an AI</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">Ask a virtual assistant</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
