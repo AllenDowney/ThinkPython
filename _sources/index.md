@@ -27,6 +27,26 @@ Starting in February 2024, I plan to release new chapters here, about one per we
 * [Click here to run Chapter 1 on Colab](https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap01.ipynb)
 
 
+### Chapter 2: Variables and Statements
+
+* [Click here to run Chapter 2 on Colab](https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap02.ipynb)
+
+
+### Chapter 3: Functions
+
+* [Click here to run Chapter 3 on Colab](https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap03.ipynb)
+
+
+### Chapter 4: Functions and Interfaces
+
+* [Click here to run Chapter 4 on Colab](https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap04.ipynb)
+
+
+### Chapter 5: Conditionals and Recursion
+
+* [Click here to run Chapter 5 on Colab](https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap05.ipynb)
+
+
 ## Resources for teachers
 
 If you are teaching with this book, here are some resources you might find useful.
