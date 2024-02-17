@@ -1,0 +1,1686 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Conditionals and Recursion &#8212; Think Python, 3rd edition</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chap05';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Functions and Interfaces" href="chap04.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Think Python, 3rd edition</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    Think Python, 3rd edition
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chap00.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap01.html">Programming as a way of thinking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap02.html">Variables and Statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap03.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap04.html">Functions and Interfaces</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Conditionals and Recursion</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/AllenDowney/ThinkPython/tree/v3" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/chap05.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Conditionals and Recursion</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integer-division-and-modulus">Integer division and modulus</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-expressions">Boolean Expressions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logical-operators">Logical operators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-statements">if statements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-else-clause">The <code class="docutils literal notranslate"><span class="pre">else</span></code> clause</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chained-conditionals">Chained conditionals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nested-conditionals">Nested Conditionals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursion">Recursion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stack-diagrams-for-recursive-functions">Stack diagrams for recursive functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#infinite-recursion">Infinite recursion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#keyboard-input">Keyboard input</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">Debugging</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">Glossary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-an-assistant">Ask an assistant</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Exercise</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">thinkpython</span>
+
+<span class="n">thinkpython</span><span class="o">.</span><span class="n">traceback</span><span class="p">(</span><span class="s1">&#39;Minimal&#39;</span><span class="p">)</span>
+
+<span class="o">%</span><span class="k">load_ext</span> autoreload
+<span class="o">%</span><span class="k">autoreload</span> 2
+</pre></div>
+</div>
+</div>
+</div>
+<section id="conditionals-and-recursion">
+<h1>Conditionals and Recursion<a class="headerlink" href="#conditionals-and-recursion" title="Permalink to this heading">#</a></h1>
+<p>The main topic of this chapter is the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement, which executes different code depending on the state of the program.
+And with the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement we’ll be able to explore one of the most powerful ideas in computing, <strong>recursion</strong>.</p>
+<p>But we’ll start with three new features: the modulus operator, boolean expressions, and logical operators.</p>
+<section id="integer-division-and-modulus">
+<h2>Integer division and modulus<a class="headerlink" href="#integer-division-and-modulus" title="Permalink to this heading">#</a></h2>
+<p>Recall that the integer division operator, <code class="docutils literal notranslate"><span class="pre">//</span></code>, divides two numbers and rounds
+down to an integer.
+For example, suppose the run time of a movie is 105 minutes.
+You might want to know how long that is in hours.
+Conventional division returns a floating-point number:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">minutes</span> <span class="o">=</span> <span class="mi">105</span>
+<span class="n">minutes</span> <span class="o">/</span> <span class="mi">60</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.75
+</pre></div>
+</div>
+</div>
+</div>
+<p>But we don’t normally write hours with decimal points. Floor division
+returns the integer number of hours, rounding down:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">minutes</span> <span class="o">=</span> <span class="mi">105</span>
+<span class="n">hours</span> <span class="o">=</span> <span class="n">minutes</span> <span class="o">//</span> <span class="mi">60</span>
+<span class="n">hours</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
+<p>To get the remainder, you could subtract off one hour in minutes:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">remainder</span> <span class="o">=</span> <span class="n">minutes</span> <span class="o">-</span> <span class="n">hours</span> <span class="o">*</span> <span class="mi">60</span>
+<span class="n">remainder</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>45
+</pre></div>
+</div>
+</div>
+</div>
+<p>Or you could use the <strong>modulus operator</strong>, <code class="docutils literal notranslate"><span class="pre">%</span></code>, which divides two numbers and returns the remainder.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">remainder</span> <span class="o">=</span> <span class="n">minutes</span> <span class="o">%</span> <span class="mi">60</span>
+<span class="n">remainder</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>45
+</pre></div>
+</div>
+</div>
+</div>
+<p>The modulus operator is more useful than it might seem.
+For example, it can check whether one number is divisible by another – if <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">%</span> <span class="pre">y</span></code> is zero, then <code class="docutils literal notranslate"><span class="pre">x</span></code> is divisible by <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p>
+<p>Also, it can extract the right-most digit or digits from a number.
+For example, <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">%</span> <span class="pre">10</span></code> yields the right-most digit of <code class="docutils literal notranslate"><span class="pre">x</span></code> (in base 10).
+Similarly, <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">%</span> <span class="pre">100</span></code> yields the last two digits.</p>
+<p>Finally, the modulus operator can do “clock arithmetic”.
+For example, if an event starts at 11 AM and it lasts three hours, we can use the modulus operator to figure out what time it ends.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start</span> <span class="o">=</span> <span class="mi">11</span>
+<span class="n">duration</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">end</span> <span class="o">=</span> <span class="p">(</span><span class="n">start</span> <span class="o">+</span> <span class="n">duration</span><span class="p">)</span> <span class="o">%</span> <span class="mi">12</span>
+<span class="n">end</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+<p>The event would end at 2 PM.</p>
+</section>
+<section id="boolean-expressions">
+<h2>Boolean Expressions<a class="headerlink" href="#boolean-expressions" title="Permalink to this heading">#</a></h2>
+<p>A <strong>boolean expression</strong> is an expression that is either true or false.
+For example, the following expressions use the equals operator, <code class="docutils literal notranslate"><span class="pre">==</span></code>, which compares two values and produces <code class="docutils literal notranslate"><span class="pre">True</span></code> if they are equal and <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="o">==</span> <span class="mi">5</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="o">==</span> <span class="mi">7</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>A common error is to use a single equal sign (<code class="docutils literal notranslate"><span class="pre">=</span></code>) instead of a double equal sign (<code class="docutils literal notranslate"><span class="pre">==</span></code>).
+Remember that <code class="docutils literal notranslate"><span class="pre">=</span></code> assigns a value to a variable and <code class="docutils literal notranslate"><span class="pre">==</span></code> compares two values.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">7</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">==</span> <span class="n">y</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code> are special values that belong to the type <code class="docutils literal notranslate"><span class="pre">bool</span></code>;
+they are not strings:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>bool
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>bool
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">==</span></code> operator is one of the <strong>relational operators</strong>; the others are:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">!=</span> <span class="n">y</span>               <span class="c1"># x is not equal to y</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span>                <span class="c1"># x is greater than y</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span>               <span class="c1"># x is less than to y</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">&gt;=</span> <span class="n">y</span>               <span class="c1"># x is greater than or equal to y</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">&lt;=</span> <span class="n">y</span>               <span class="c1"># x is less than or equal to y</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="logical-operators">
+<h2>Logical operators<a class="headerlink" href="#logical-operators" title="Permalink to this heading">#</a></h2>
+<p>To combine boolean values into expressions, we can use <strong>logical operators</strong>.
+The most common are <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"> <span class="pre">or</span></code>, and <code class="docutils literal notranslate"><span class="pre">not</span></code>.
+The meaning of these operators is similar to their meaning in English.
+For example, the value of the following expression is <code class="docutils literal notranslate"><span class="pre">True</span></code> only if <code class="docutils literal notranslate"><span class="pre">x</span></code> is greater than <code class="docutils literal notranslate"><span class="pre">0</span></code> <em>and</em> less than <code class="docutils literal notranslate"><span class="pre">10</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">10</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>The following expression is <code class="docutils literal notranslate"><span class="pre">True</span></code> if <em>either or both</em> of the conditions is true, that is, if the number is divisible by 2 <em>or</em> 3:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finally, the <code class="docutils literal notranslate"><span class="pre">not</span></code> operator negates a boolean expression, so the following expression is <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&gt;</span> <span class="pre">y</span></code> is <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="ow">not</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>Strictly speaking, the operands of a logical operator should be boolean expressions, but Python is not very strict.
+Any nonzero number is interpreted as <code class="docutils literal notranslate"><span class="pre">True</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">42</span> <span class="ow">and</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>This flexibility can be useful, but there are some subtleties to it that can be confusing.
+You might want to avoid it.</p>
+</section>
+<section id="if-statements">
+<h2>if statements<a class="headerlink" href="#if-statements" title="Permalink to this heading">#</a></h2>
+<p>In order to write useful programs, we almost always need the ability to
+check conditions and change the behavior of the program accordingly.
+<strong>Conditional statements</strong> give us this ability. The simplest form is
+the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x is positive&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x is positive
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">if</span></code> is a Python keyword.
+<code class="docutils literal notranslate"><span class="pre">if</span></code> statements have the same structure as function definitions: a
+header followed by an indented statement or sequence of statements called a <strong>block</strong>.</p>
+<p>The boolean expression after <code class="docutils literal notranslate"><span class="pre">if</span></code> is called the <strong>condition</strong>.
+If it is true, the statements in the indented block run. If not, they don’t.</p>
+<p>There is no limit to the number of statements that can appear in the block, but there has to be at least one.
+Occasionally, it is useful to have a block that does nothing – usually as a place keeper for code you haven’t written yet.
+In that case, you can use the <code class="docutils literal notranslate"><span class="pre">pass</span></code> statement, which does nothing.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="k">pass</span>          <span class="c1"># TODO: need to handle negative values!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The word <code class="docutils literal notranslate"><span class="pre">TODO</span></code> in a comment is a conventional reminder that there’s something you need to do later.</p>
+</section>
+<section id="the-else-clause">
+<h2>The <code class="docutils literal notranslate"><span class="pre">else</span></code> clause<a class="headerlink" href="#the-else-clause" title="Permalink to this heading">#</a></h2>
+<p>An <code class="docutils literal notranslate"><span class="pre">if</span></code> statement can have a second part, called an <code class="docutils literal notranslate"><span class="pre">else</span></code> clause.
+The syntax looks like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x is even&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x is odd&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x is odd
+</pre></div>
+</div>
+</div>
+</div>
+<p>If the condition is true, the first indented statement runs; otherwise, the second indented statement runs.</p>
+<p>In this example, if <code class="docutils literal notranslate"><span class="pre">x</span></code> is even, the remainder when <code class="docutils literal notranslate"><span class="pre">x</span></code> is divided by <code class="docutils literal notranslate"><span class="pre">2</span></code> is <code class="docutils literal notranslate"><span class="pre">0</span></code>, so the condition is true and the program displays <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">is</span> <span class="pre">even</span></code>.
+If <code class="docutils literal notranslate"><span class="pre">x</span></code> is odd, the remainder is <code class="docutils literal notranslate"><span class="pre">1</span></code>, so the condition
+is false, and the program displays <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">is</span> <span class="pre">odd</span></code>.</p>
+<p>Since the condition must be true or false, exactly one of the alternatives will run.
+The alternatives are called <strong>branches</strong>.</p>
+</section>
+<section id="chained-conditionals">
+<h2>Chained conditionals<a class="headerlink" href="#chained-conditionals" title="Permalink to this heading">#</a></h2>
+<p>Sometimes there are more than two possibilities and we need more than two branches.
+One way to express a computation like that is a <strong>chained conditional</strong>, which includes an <code class="docutils literal notranslate"><span class="pre">elif</span></code> clause.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x is less than y&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x is greater than y&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x and y are equal&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x is less than y
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">elif</span></code> is an abbreviation of “else if”.
+There is no limit on the number of <code class="docutils literal notranslate"><span class="pre">elif</span></code> clauses.
+If there is an <code class="docutils literal notranslate"><span class="pre">else</span></code> clause, it has to be at the end, but there doesn’t have to be
+one.</p>
+<p>Each condition is checked in order.
+If the first is false, the next is checked, and so on.
+If one of them is true, the corresponding branch runs and the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement ends.
+Even if more than one condition is true, only the first true branch runs.</p>
+</section>
+<section id="nested-conditionals">
+<h2>Nested Conditionals<a class="headerlink" href="#nested-conditionals" title="Permalink to this heading">#</a></h2>
+<p>One conditional can also be nested within another.
+We could have written the example in the previous section like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x and y are equal&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x is less than y&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x is greater than y&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x is less than y
+</pre></div>
+</div>
+</div>
+</div>
+<p>The outer <code class="docutils literal notranslate"><span class="pre">if</span></code> statement contains two branches.
+The first branch contains a simple statement. The second branch contains another <code class="docutils literal notranslate"><span class="pre">if</span></code> statement, which has two branches of its own.
+Those two branches are both simple statements, although they could have been conditional statements as well.</p>
+<p>Although the indentation of the statements makes the structure apparent, <strong>nested conditionals</strong> can be difficult to read.
+I suggest you avoid them when you can.</p>
+<p>Logical operators often provide a way to simplify nested conditional statements.
+Here’s an example with a nested conditional.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="n">x</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x is a positive single-digit number.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x is a positive single-digit number.
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">print</span></code> statement runs only if we make it past both conditionals, so we get the same effect with the <code class="docutils literal notranslate"><span class="pre">and</span></code> operator.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="n">x</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x is a positive single-digit number.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x is a positive single-digit number.
+</pre></div>
+</div>
+</div>
+</div>
+<p>For this kind of condition, Python provides a more concise option:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x is a positive single-digit number.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x is a positive single-digit number.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="recursion">
+<h2>Recursion<a class="headerlink" href="#recursion" title="Permalink to this heading">#</a></h2>
+<p>It is legal for a function to call itself.
+It may not be obvious why that is a good thing, but it turns out to be one of the most magical things a program can do.
+Here’s an example.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">countdown</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Blastoff!&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+        <span class="n">countdown</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If <code class="docutils literal notranslate"><span class="pre">n</span></code> is 0 or negative, <code class="docutils literal notranslate"><span class="pre">countdown</span></code> outputs the word, “Blastoff!” Otherwise, it
+outputs <code class="docutils literal notranslate"><span class="pre">n</span></code> and then calls itself, passing <code class="docutils literal notranslate"><span class="pre">n-1</span></code> as an argument.</p>
+<p>Here’s what happens when we call this function with the argument <code class="docutils literal notranslate"><span class="pre">3</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">countdown</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+2
+1
+Blastoff!
+</pre></div>
+</div>
+</div>
+</div>
+<p>The execution of <code class="docutils literal notranslate"><span class="pre">countdown</span></code> begins with <code class="docutils literal notranslate"><span class="pre">n=3</span></code>, and since <code class="docutils literal notranslate"><span class="pre">n</span></code> is greater
+than <code class="docutils literal notranslate"><span class="pre">0</span></code>, it displays <code class="docutils literal notranslate"><span class="pre">3</span></code>, and then calls itself…</p>
+<blockquote>
+<div><p>The execution of <code class="docutils literal notranslate"><span class="pre">countdown</span></code> begins with <code class="docutils literal notranslate"><span class="pre">n=2</span></code>, and since <code class="docutils literal notranslate"><span class="pre">n</span></code> is
+greater than <code class="docutils literal notranslate"><span class="pre">0</span></code>, it displays <code class="docutils literal notranslate"><span class="pre">2</span></code>, and then calls itself…</p>
+<blockquote>
+<div><p>The execution of <code class="docutils literal notranslate"><span class="pre">countdown</span></code> begins with <code class="docutils literal notranslate"><span class="pre">n=1</span></code>, and since <code class="docutils literal notranslate"><span class="pre">n</span></code> is
+greater than <code class="docutils literal notranslate"><span class="pre">0</span></code>, it displays <code class="docutils literal notranslate"><span class="pre">1</span></code>, and then calls itself…</p>
+<blockquote>
+<div><p>The execution of <code class="docutils literal notranslate"><span class="pre">countdown</span></code> begins with <code class="docutils literal notranslate"><span class="pre">n=0</span></code>, and since <code class="docutils literal notranslate"><span class="pre">n</span></code> is
+not greater than <code class="docutils literal notranslate"><span class="pre">0</span></code>, it displays “Blastoff!” and returns.</p>
+</div></blockquote>
+<p>The <code class="docutils literal notranslate"><span class="pre">countdown</span></code> that got <code class="docutils literal notranslate"><span class="pre">n=1</span></code> returns.</p>
+</div></blockquote>
+<p>The <code class="docutils literal notranslate"><span class="pre">countdown</span></code> that got <code class="docutils literal notranslate"><span class="pre">n=2</span></code> returns.</p>
+</div></blockquote>
+<p>The <code class="docutils literal notranslate"><span class="pre">countdown</span></code> that got <code class="docutils literal notranslate"><span class="pre">n=3</span></code> returns.</p>
+<p>A function that calls itself is <strong>recursive</strong>.
+As another example, we can write a function that prints a string <code class="docutils literal notranslate"><span class="pre">n</span></code> times.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_n_times</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+        <span class="n">print_n_times</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If <code class="docutils literal notranslate"><span class="pre">n</span></code> is positive, <code class="docutils literal notranslate"><span class="pre">print_n_times</span></code> displays the value of <code class="docutils literal notranslate"><span class="pre">string</span></code> and then calls itself, passing along <code class="docutils literal notranslate"><span class="pre">string</span></code> and <code class="docutils literal notranslate"><span class="pre">n-1</span></code> as arguments.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">n</span></code> is <code class="docutils literal notranslate"><span class="pre">0</span></code> or negative, the condition is false and <code class="docutils literal notranslate"><span class="pre">print_n_times</span></code> does nothing.</p>
+<p>Here’s how it works.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">print_n_times</span><span class="p">(</span><span class="s2">&quot;Spam &quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Spam 
+Spam 
+Spam 
+Spam 
+</pre></div>
+</div>
+</div>
+</div>
+<p>For simple examples like this, it is probably easier to use a <code class="docutils literal notranslate"><span class="pre">for</span></code>
+loop. But we will see examples later that are hard to write with a <code class="docutils literal notranslate"><span class="pre">for</span></code>
+loop and easy to write with recursion, so it is good to start early.</p>
+</section>
+<section id="stack-diagrams-for-recursive-functions">
+<h2>Stack diagrams for recursive functions<a class="headerlink" href="#stack-diagrams-for-recursive-functions" title="Permalink to this heading">#</a></h2>
+<p>Here’s a stack diagram that shows the frames created when we called <code class="docutils literal notranslate"><span class="pre">countdown</span></code> with <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">3</span></code>.</p>
+<div class="cell tag_remove-input docutils container">
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="_images/7f47a09e3238bc00bf039de47d56c0c4984a8232ad79a5ab481c7d96a7adfcd8.png" src="_images/7f47a09e3238bc00bf039de47d56c0c4984a8232ad79a5ab481c7d96a7adfcd8.png" />
+</div>
+</div>
+<p>The four <code class="docutils literal notranslate"><span class="pre">countdown</span></code> frames have different values for the parameter <code class="docutils literal notranslate"><span class="pre">n</span></code>.
+The bottom of the stack, where <code class="docutils literal notranslate"><span class="pre">n=0</span></code>, is called the <strong>base case</strong>.
+It does not make a recursive call, so there are no more frames.</p>
+</section>
+<section id="infinite-recursion">
+<h2>Infinite recursion<a class="headerlink" href="#infinite-recursion" title="Permalink to this heading">#</a></h2>
+<p>If a recursion never reaches a base case, it goes on making recursive
+calls forever, and the program never terminates. This is known as
+<strong>infinite recursion</strong>, and it is generally not a good idea.
+Here’s a minimal function with an infinite recursion.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">recurse</span><span class="p">():</span>
+    <span class="n">recurse</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Every time <code class="docutils literal notranslate"><span class="pre">recurse</span></code> is called, it calls itself, which creates another frame.
+In Python, there is a limit to the number of frames that can be on the stack at the same time.
+If a program exceeds the limit, it causes a runtime error.</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">expect</span> RecursionError
+recurse()
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">RecursionError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">40</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">recurse</span><span class="p">()</span>
+
+<span class="nn">Cell In[38], line 2,</span> in <span class="ni">recurse</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span> <span class="nf">recurse</span><span class="p">():</span>
+<span class="ne">----&gt; </span><span class="mi">2</span>     <span class="n">recurse</span><span class="p">()</span>
+
+<span class="nn">Cell In[38], line 2,</span> in <span class="ni">recurse</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span> <span class="nf">recurse</span><span class="p">():</span>
+<span class="ne">----&gt; </span><span class="mi">2</span>     <span class="n">recurse</span><span class="p">()</span>
+
+    <span class="p">[</span><span class="o">...</span> <span class="n">skipping</span> <span class="n">similar</span> <span class="n">frames</span><span class="p">:</span> <span class="n">recurse</span> <span class="n">at</span> <span class="n">line</span> <span class="mi">2</span> <span class="p">(</span><span class="mi">2958</span> <span class="n">times</span><span class="p">)]</span>
+
+<span class="nn">Cell In[38], line 2,</span> in <span class="ni">recurse</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span> <span class="nf">recurse</span><span class="p">():</span>
+<span class="ne">----&gt; </span><span class="mi">2</span>     <span class="n">recurse</span><span class="p">()</span>
+
+<span class="ne">RecursionError</span>: maximum recursion depth exceeded
+</pre></div>
+</div>
+</div>
+</div>
+<p>The traceback indicates that there were almost 3000 frames on the stack when the error occurred.</p>
+<p>If you encounter an infinite recursion by accident, review your function to confirm that there is a base case that does not make a recursive call. And if there is a base case, check whether you are guaranteed to reach it.</p>
+</section>
+<section id="keyboard-input">
+<h2>Keyboard input<a class="headerlink" href="#keyboard-input" title="Permalink to this heading">#</a></h2>
+<p>The programs we have written so far accept no input from the user. They
+just do the same thing every time.</p>
+<p>Python provides a built-in function called <code class="docutils literal notranslate"><span class="pre">input</span></code> that stops the
+program and waits for the user to type something. When the user presses
+<em>Return</em> or <em>Enter</em>, the program resumes and <code class="docutils literal notranslate"><span class="pre">input</span></code> returns what the user
+typed as a string.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Before getting input from the user, you might want to display a prompt
+telling the user what to type. <code class="docutils literal notranslate"><span class="pre">input</span></code> can take a prompt as an argument:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;What...is your name?</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">name</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>What...is your name?
+It is Arthur, King of the Britons
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;It is Arthur, King of the Britons&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>The sequence <code class="docutils literal notranslate"><span class="pre">\n</span></code> at the end of the prompt represents a <strong>newline</strong>, which is a special character that causes a line break – that way the user’s input appears below the prompt.</p>
+<p>If you expect the user to type an integer, you can use the <code class="docutils literal notranslate"><span class="pre">int</span></code> function to convert the return value to <code class="docutils literal notranslate"><span class="pre">int</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prompt</span> <span class="o">=</span> <span class="s1">&#39;What...is the airspeed velocity of an unladen swallow?</span><span class="se">\n</span><span class="s1">&#39;</span>
+<span class="n">speed</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+<span class="n">speed</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>What...is the airspeed velocity of an unladen swallow?
+What do you mean: an African or European swallow?
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;What do you mean: an African or European swallow?&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>But if they type something that’s not an integer, you’ll get a runtime error.</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">expect</span> ValueError
+
+int(speed)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="ne">ValueError</span>: invalid literal for int() with base 10: &#39;What do you mean: an African or European swallow?&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>We will see how to handle this kind of error later.</p>
+</section>
+<section id="debugging">
+<h2>Debugging<a class="headerlink" href="#debugging" title="Permalink to this heading">#</a></h2>
+<p>When a syntax or runtime error occurs, the error message contains a lot
+of information, but it can be overwhelming. The most useful parts are
+usually:</p>
+<ul class="simple">
+<li><p>What kind of error it was, and</p></li>
+<li><p>Where it occurred.</p></li>
+</ul>
+<p>Syntax errors are usually easy to find, but there are a few gotchas.
+Errors related to spaces and tabs can be tricky because they are invisible
+and we are used to ignoring them.</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">expect</span> IndentationError
+x = 5
+ y = 6
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">49</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="mi">6</span>
+    <span class="o">^</span>
+<span class="ne">IndentationError</span>: unexpected indent
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this example, the problem is that the second line is indented by one space.
+But the error message points to <code class="docutils literal notranslate"><span class="pre">y</span></code>, which is misleading.
+Error messages indicate where the problem was discovered, but the actual error might be earlier in the code.</p>
+<p>The same is true of runtime errors.
+For example, suppose you are trying to convert a ratio to decibels, like this:</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">expect</span> ValueError
+import math
+numerator = 9
+denominator = 10
+ratio = numerator // denominator
+decibels = 10 * math.log10(ratio)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">51</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">denominator</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">ratio</span> <span class="o">=</span> <span class="n">numerator</span> <span class="o">//</span> <span class="n">denominator</span>
+<span class="ne">----&gt; </span><span class="mi">5</span> <span class="n">decibels</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">ratio</span><span class="p">)</span>
+
+<span class="ne">ValueError</span>: math domain error
+</pre></div>
+</div>
+</div>
+</div>
+<p>The error message indicates line 5, but there is nothing wrong with that line.
+The problem is in line 4, which uses floor division instead of floating-point division – as a result, the value of <code class="docutils literal notranslate"><span class="pre">ratio</span></code> is <code class="docutils literal notranslate"><span class="pre">0</span></code>.
+When we call <code class="docutils literal notranslate"><span class="pre">math.log10</span></code>, we get a <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> with the message <code class="docutils literal notranslate"><span class="pre">math</span> <span class="pre">domain</span> <span class="pre">error</span></code>, because <code class="docutils literal notranslate"><span class="pre">0</span></code> is not in the “domain” of valid arguments for <code class="docutils literal notranslate"><span class="pre">math.log10</span></code>, because the logarithm of <code class="docutils literal notranslate"><span class="pre">0</span></code> is undefined.</p>
+<p>In general, you should take the time to read error messages carefully, but don’t assume that everything they say is correct.</p>
+</section>
+<section id="glossary">
+<h2>Glossary<a class="headerlink" href="#glossary" title="Permalink to this heading">#</a></h2>
+<p><strong>recursion:</strong>
+The process of calling the function that is currently executing.</p>
+<p><strong>modulus operator:</strong>
+An operator, <code class="docutils literal notranslate"><span class="pre">%</span></code>, that works on integers and returns the remainder when one number is divided by another.</p>
+<p><strong>boolean expression:</strong>
+An expression whose value is either <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<p><strong>relational operator:</strong>
+One of the operators that compares its operands: <code class="docutils literal notranslate"><span class="pre">==</span></code>, <code class="docutils literal notranslate"><span class="pre">!=</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>, and <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>.</p>
+<p><strong>logical operator:</strong>
+One of the operators that combines boolean expressions, including <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code>, and <code class="docutils literal notranslate"><span class="pre">not</span></code>.</p>
+<p><strong>conditional statement:</strong>
+A statement that controls the flow of execution depending on some condition.</p>
+<p><strong>condition:</strong>
+The boolean expression in a conditional statement that determines which branch runs.</p>
+<p><strong>block:</strong>
+One or more statements indented to indicate they are part of another statement.</p>
+<p><strong>branch:</strong>
+One of the alternative sequences of statements in a conditional statement.</p>
+<p><strong>chained conditional:</strong>
+A conditional statement with a series of alternative branches.</p>
+<p><strong>nested conditional:</strong>
+A conditional statement that appears in one of the branches of another conditional statement.</p>
+<p><strong>recursive:</strong>
+A function that calls itself is recursive.</p>
+<p><strong>base case:</strong>
+A conditional branch in a recursive function that does not make a recursive call.</p>
+<p><strong>infinite recursion:</strong>
+A recursion that doesn’t have a base case, or never reaches it.
+Eventually, an infinite recursion causes a runtime error.</p>
+<p><strong>newline:</strong>
+A character that creates a line break between two parts of a string.</p>
+</section>
+<section id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h2>
+<section id="ask-an-assistant">
+<h3>Ask an assistant<a class="headerlink" href="#ask-an-assistant" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Ask a virtual assistant, “What are some uses of the modulus operator?”</p></li>
+<li><p>Python provides operators to compute the logical operations <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code>, and <code class="docutils literal notranslate"><span class="pre">not</span></code>, but it doesn’t have an operator that computes the exclusive <code class="docutils literal notranslate"><span class="pre">or</span></code> operation, usually written <code class="docutils literal notranslate"><span class="pre">xor</span></code>. Ask an assistant “What is the logical xor operation and how do I compute it in Python?”</p></li>
+</ul>
+<p>In this chapter, we saw two ways to write an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement with three branches, using a chained conditional or a nested conditional.
+You can use a virtual assistant to convert from one to the other.
+For example, ask a VA, “Convert this statement to a chained conditional.”</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x and y are equal&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x is less than y&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x is greater than y&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x is less than y
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ask a VA, “Rewrite this statement with a single conditional.”</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="n">x</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x is a positive single-digit number.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x is a positive single-digit number.
+</pre></div>
+</div>
+</div>
+</div>
+<p>See if a VA can simplify this unnecessary complexity.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="ow">not</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x is a positive single-digit number.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x is a positive single-digit number.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here’s an attempt at a recursive function that counts down by two.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">countdown_by_two</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Blastoff!&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+        <span class="n">countdown_by_two</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>It seems to work.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">countdown_by_two</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
+4
+2
+Blastoff!
+</pre></div>
+</div>
+</div>
+</div>
+<p>But it has an error. Ask a virtual assistant what’s wrong and how to fix it.
+Paste the solution it provides back here and test it.</p>
+</section>
+<section id="exercise">
+<h3>Exercise<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">time</span></code> module provides a function, also called <code class="docutils literal notranslate"><span class="pre">time</span></code>, that returns
+returns the number of seconds since the “Unix epoch”, which is January 1, 1970, 00:00:00 UTC (Coordinated Universal Time).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">time</span>
+
+<span class="n">now</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
+<span class="n">now</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1708023665.8504143
+</pre></div>
+</div>
+</div>
+</div>
+<p>Use floor division and the modulus operator to compute the number of days since January 1, 1970 and the current time of day in hours, minutes, and seconds.</p>
+<p>You can read more about the <code class="docutils literal notranslate"><span class="pre">time</span></code> module at <a class="reference external" href="https://docs.python.org/3/library/time.html">https://docs.python.org/3/library/time.html</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solution</span>
+
+<span class="n">seconds_per_day</span> <span class="o">=</span> <span class="mi">24</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span>
+<span class="n">days</span> <span class="o">=</span> <span class="n">now</span> <span class="o">//</span> <span class="n">seconds_per_day</span>
+<span class="n">days</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>19768.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solution</span>
+
+<span class="n">remainder</span> <span class="o">=</span> <span class="n">now</span> <span class="o">%</span> <span class="n">seconds_per_day</span>
+
+<span class="n">hours</span> <span class="o">=</span> <span class="n">remainder</span> <span class="o">//</span> <span class="mi">3600</span>
+<span class="n">hours</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>19.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solution</span>
+
+<span class="n">remainder</span> <span class="o">=</span> <span class="n">remainder</span> <span class="o">%</span> <span class="mi">3600</span>
+
+<span class="n">minutes</span> <span class="o">=</span> <span class="n">remainder</span> <span class="o">//</span> <span class="mi">60</span>
+<span class="n">minutes</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solution</span>
+
+<span class="n">seconds</span> <span class="o">=</span> <span class="n">remainder</span> <span class="o">%</span> <span class="mi">60</span>
+<span class="n">seconds</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.850414276123047
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id1">
+<h3>Exercise<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<p>If you are given three sticks, you may or may not be able to arrange
+them in a triangle. For example, if one of the sticks is 12 inches long
+and the other two are one inch long, you will not be able to get the
+short sticks to meet in the middle. For any three lengths, there is a
+test to see if it is possible to form a triangle:</p>
+<blockquote>
+<div><p>If any of the three lengths is greater than the sum of the other two,
+then you cannot form a triangle. Otherwise, you can. (If the sum of
+two lengths equals the third, they form what is called a “degenerate”
+triangle.)</p>
+</div></blockquote>
+<p>Write a function named <code class="docutils literal notranslate"><span class="pre">is_triangle</span></code> that takes three integers as
+arguments, and that prints either “Yes” or “No”, depending on
+whether you can or cannot form a triangle from sticks with the given
+lengths. Hint: Use a chained conditional.</p>
+</section>
+<section id="id2">
+<h3>Exercise<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<p>What is the output of the following program? Draw a stack diagram that
+shows the state of the program when it prints the result.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">recurse</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">s</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">recurse</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="n">s</span><span class="p">)</span>
+
+<span class="n">recurse</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solution</span>
+
+<span class="sd">&quot;&quot;&quot;Adds up the numbers from 1 to `n`</span>
+
+<span class="sd">n: integer</span>
+<span class="sd">s: the sum of the numbers so far</span>
+<span class="sd">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Adds up the numbers from 1 to `n`\n\nn: integer\ns: the sum of the numbers so far\n&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id3">
+<h3>Exercise<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<p>The following exercises use the <code class="docutils literal notranslate"><span class="pre">Turtle</span></code> module, described in Chapter 4.</p>
+<p>Read the following function and see if you can figure out what it does.
+Then run it and see if you got it right.
+Adjust the values of <code class="docutils literal notranslate"><span class="pre">length</span></code>, <code class="docutils literal notranslate"><span class="pre">angle</span></code> and <code class="docutils literal notranslate"><span class="pre">factor</span></code> and see what effect they have on the result.
+If you are not sure you understand how it works, try asking a virtual assistant.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">Turtle</span> <span class="kn">import</span> <span class="n">forward</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">back</span>
+
+<span class="k">def</span> <span class="nf">draw</span><span class="p">(</span><span class="n">length</span><span class="p">):</span>
+    <span class="n">angle</span> <span class="o">=</span> <span class="mi">50</span>
+    <span class="n">factor</span> <span class="o">=</span> <span class="mf">0.6</span>
+    
+    <span class="k">if</span> <span class="n">length</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="n">forward</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
+        <span class="n">left</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
+        <span class="n">draw</span><span class="p">(</span><span class="n">factor</span> <span class="o">*</span> <span class="n">length</span><span class="p">)</span>
+        <span class="n">right</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">angle</span><span class="p">)</span>
+        <span class="n">draw</span><span class="p">(</span><span class="n">factor</span> <span class="o">*</span> <span class="n">length</span><span class="p">)</span>
+        <span class="n">left</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
+        <span class="n">back</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">Turtle</span> <span class="kn">import</span> <span class="n">make_turtle</span>
+
+<span class="n">make_turtle</span><span class="p">(</span><span class="n">speed</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">draw</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+      <svg width="300" height="150">
+        <rect width="100%" height="100%" fill="white"/>
+        <line x1="150" y1="75" x2="200.0" y2="75.0" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="200.0" y1="75.0" x2="219.284" y2="52.019" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="219.284" y1="52.019" x2="216.158" y2="34.292" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="216.158" y1="34.292" x2="206.805" y2="28.892" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="206.805" y1="28.892" x2="200.716" y2="31.108" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="200.716" y1="31.108" x2="206.805" y2="28.892" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="206.805" y1="28.892" x2="205.68" y2="22.51" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="205.68" y1="22.51" x2="206.805" y2="28.892" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="206.805" y1="28.892" x2="216.158" y2="34.292" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="216.158" y1="34.292" x2="223.1" y2="26.019" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="223.1" y1="26.019" x2="221.975" y2="19.637" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="221.975" y1="19.637" x2="223.1" y2="26.019" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="223.1" y1="26.019" x2="229.58" y2="26.019" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="229.58" y1="26.019" x2="223.1" y2="26.019" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="223.1" y1="26.019" x2="216.158" y2="34.292" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="216.158" y1="34.292" x2="219.284" y2="52.019" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="219.284" y1="52.019" x2="237.284" y2="52.019" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="237.284" y1="52.019" x2="244.226" y2="43.746" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="244.226" y1="43.746" x2="243.101" y2="37.364" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="243.101" y1="37.364" x2="244.226" y2="43.746" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="244.226" y1="43.746" x2="250.706" y2="43.746" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="250.706" y1="43.746" x2="244.226" y2="43.746" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="244.226" y1="43.746" x2="237.284" y2="52.019" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="237.284" y1="52.019" x2="244.226" y2="60.292" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="244.226" y1="60.292" x2="250.706" y2="60.292" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="250.706" y1="60.292" x2="244.226" y2="60.292" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="244.226" y1="60.292" x2="243.101" y2="66.674" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="243.101" y1="66.674" x2="244.226" y2="60.292" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="244.226" y1="60.292" x2="237.284" y2="52.019" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="237.284" y1="52.019" x2="219.284" y2="52.019" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="219.284" y1="52.019" x2="200.0" y2="75.0" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="200.0" y1="75.0" x2="219.284" y2="97.981" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="219.284" y1="97.981" x2="237.284" y2="97.981" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="237.284" y1="97.981" x2="244.226" y2="89.708" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="244.226" y1="89.708" x2="243.101" y2="83.326" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="243.101" y1="83.326" x2="244.226" y2="89.708" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="244.226" y1="89.708" x2="250.706" y2="89.708" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="250.706" y1="89.708" x2="244.226" y2="89.708" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="244.226" y1="89.708" x2="237.284" y2="97.981" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="237.284" y1="97.981" x2="244.226" y2="106.254" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="244.226" y1="106.254" x2="250.706" y2="106.254" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="250.706" y1="106.254" x2="244.226" y2="106.254" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="244.226" y1="106.254" x2="243.101" y2="112.636" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="243.101" y1="112.636" x2="244.226" y2="106.254" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="244.226" y1="106.254" x2="237.284" y2="97.981" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="237.284" y1="97.981" x2="219.284" y2="97.981" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="219.284" y1="97.981" x2="216.158" y2="115.708" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="216.158" y1="115.708" x2="223.1" y2="123.981" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="223.1" y1="123.981" x2="229.58" y2="123.981" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="229.58" y1="123.981" x2="223.1" y2="123.981" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="223.1" y1="123.981" x2="221.975" y2="130.363" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="221.975" y1="130.363" x2="223.1" y2="123.981" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="223.1" y1="123.981" x2="216.158" y2="115.708" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="216.158" y1="115.708" x2="206.805" y2="121.108" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="206.805" y1="121.108" x2="205.68" y2="127.49" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="205.68" y1="127.49" x2="206.805" y2="121.108" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="206.805" y1="121.108" x2="200.716" y2="118.892" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="200.716" y1="118.892" x2="206.805" y2="121.108" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="206.805" y1="121.108" x2="216.158" y2="115.708" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="216.158" y1="115.708" x2="219.284" y2="97.981" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="219.284" y1="97.981" x2="200.0" y2="75.0" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="200.0" y1="75.0" x2="150.0" y2="75.0" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/>
+        
+      <g visibility="visible" transform="rotate(-90,150.0,75.0) translate(150.0, 75.0)">
+        <circle stroke="gray" stroke-width="2" fill="transparent" r="5.5" cx="0" cy="0"/>
+        <polygon points="0,12 2,9 -2,9" style="fill:gray;stroke:gray;stroke-width:2"/>
+      </g>
+    
+      </svg>
+    </div></div>
+</div>
+</section>
+<section id="id4">
+<h3>Exercise<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<p>Ask a virtual assistant “What is the Koch curve?”</p>
+<p>To draw a Koch curve with length <code class="docutils literal notranslate"><span class="pre">x</span></code>, all you
+have to do is</p>
+<ol class="arabic simple">
+<li><p>Draw a Koch curve with length <code class="docutils literal notranslate"><span class="pre">x/3</span></code>.</p></li>
+<li><p>Turn left 60 degrees.</p></li>
+<li><p>Draw a Koch curve with length <code class="docutils literal notranslate"><span class="pre">x/3</span></code>.</p></li>
+<li><p>Turn right 120 degrees.</p></li>
+<li><p>Draw a Koch curve with length <code class="docutils literal notranslate"><span class="pre">x/3</span></code>.</p></li>
+<li><p>Turn left 60 degrees.</p></li>
+<li><p>Draw a Koch curve with length <code class="docutils literal notranslate"><span class="pre">x/3</span></code>.</p></li>
+</ol>
+<p>The exception is if <code class="docutils literal notranslate"><span class="pre">x</span></code> is less than <code class="docutils literal notranslate"><span class="pre">5</span></code> – in that case, you can just draw a straight line with length <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+<p>Write a function called <code class="docutils literal notranslate"><span class="pre">koch</span></code> that takes <code class="docutils literal notranslate"><span class="pre">x</span></code> as a parameter and draws a Koch curve with the given length.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solution</span>
+
+<span class="k">def</span> <span class="nf">koch</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Draws a koch curve with length n.&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="n">forward</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">koch</span><span class="p">(</span><span class="n">x</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span>
+        <span class="n">left</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+        <span class="n">koch</span><span class="p">(</span><span class="n">x</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span>
+        <span class="n">right</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>
+        <span class="n">koch</span><span class="p">(</span><span class="n">x</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span>
+        <span class="n">left</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+        <span class="n">koch</span><span class="p">(</span><span class="n">x</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The result should look like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">make_turtle</span><span class="p">(</span><span class="n">speed</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+<span class="n">koch</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+      <svg width="300" height="150">
+        <rect width="100%" height="100%" fill="white"/>
+        <line x1="150" y1="75" x2="154.444" y2="75.0" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="154.444" y1="75.0" x2="156.666" y2="71.151" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="156.666" y1="71.151" x2="158.888" y2="75.0" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="158.888" y1="75.0" x2="163.332" y2="75.0" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="163.332" y1="75.0" x2="165.554" y2="71.151" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="165.554" y1="71.151" x2="163.332" y2="67.302" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="163.332" y1="67.302" x2="167.776" y2="67.302" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="167.776" y1="67.302" x2="169.998" y2="63.453" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="169.998" y1="63.453" x2="172.22" y2="67.302" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="172.22" y1="67.302" x2="176.664" y2="67.302" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="176.664" y1="67.302" x2="174.442" y2="71.151" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="174.442" y1="71.151" x2="176.664" y2="75.0" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="176.664" y1="75.0" x2="181.108" y2="75.0" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="181.108" y1="75.0" x2="183.33" y2="71.151" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="183.33" y1="71.151" x2="185.552" y2="75.0" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="185.552" y1="75.0" x2="189.996" y2="75.0" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="189.996" y1="75.0" x2="192.218" y2="71.151" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="192.218" y1="71.151" x2="189.996" y2="67.302" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="189.996" y1="67.302" x2="194.44" y2="67.302" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="194.44" y1="67.302" x2="196.662" y2="63.453" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="196.662" y1="63.453" x2="194.44" y2="59.604" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="194.44" y1="59.604" x2="189.996" y2="59.604" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="189.996" y1="59.604" x2="192.218" y2="55.755" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="192.218" y1="55.755" x2="189.996" y2="51.906" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="189.996" y1="51.906" x2="194.44" y2="51.906" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="194.44" y1="51.906" x2="196.662" y2="48.057" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="196.662" y1="48.057" x2="198.884" y2="51.906" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="198.884" y1="51.906" x2="203.328" y2="51.906" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="203.328" y1="51.906" x2="205.55" y2="48.057" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="205.55" y1="48.057" x2="203.328" y2="44.208" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="203.328" y1="44.208" x2="207.772" y2="44.208" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="207.772" y1="44.208" x2="209.994" y2="40.359" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="209.994" y1="40.359" x2="212.216" y2="44.208" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="212.216" y1="44.208" x2="216.66" y2="44.208" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="216.66" y1="44.208" x2="214.438" y2="48.057" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="214.438" y1="48.057" x2="216.66" y2="51.906" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="216.66" y1="51.906" x2="221.104" y2="51.906" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="221.104" y1="51.906" x2="223.326" y2="48.057" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="223.326" y1="48.057" x2="225.548" y2="51.906" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="225.548" y1="51.906" x2="229.992" y2="51.906" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="229.992" y1="51.906" x2="227.77" y2="55.755" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="227.77" y1="55.755" x2="229.992" y2="59.604" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="229.992" y1="59.604" x2="225.548" y2="59.604" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="225.548" y1="59.604" x2="223.326" y2="63.453" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="223.326" y1="63.453" x2="225.548" y2="67.302" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="225.548" y1="67.302" x2="229.992" y2="67.302" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="229.992" y1="67.302" x2="227.77" y2="71.151" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="227.77" y1="71.151" x2="229.992" y2="75.0" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="229.992" y1="75.0" x2="234.436" y2="75.0" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="234.436" y1="75.0" x2="236.658" y2="71.151" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="236.658" y1="71.151" x2="238.88" y2="75.0" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="238.88" y1="75.0" x2="243.324" y2="75.0" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="243.324" y1="75.0" x2="245.546" y2="71.151" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="245.546" y1="71.151" x2="243.324" y2="67.302" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="243.324" y1="67.302" x2="247.768" y2="67.302" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="247.768" y1="67.302" x2="249.99" y2="63.453" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="249.99" y1="63.453" x2="252.212" y2="67.302" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="252.212" y1="67.302" x2="256.656" y2="67.302" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="256.656" y1="67.302" x2="254.434" y2="71.151" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="254.434" y1="71.151" x2="256.656" y2="75.0" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="256.656" y1="75.0" x2="261.1" y2="75.0" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="261.1" y1="75.0" x2="263.322" y2="71.151" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="263.322" y1="71.151" x2="265.544" y2="75.0" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="265.544" y1="75.0" x2="269.988" y2="75.0" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/>
+        
+      <g visibility="visible" transform="rotate(-90,269.988,75.0) translate(269.988, 75.0)">
+        <circle stroke="gray" stroke-width="2" fill="transparent" r="5.5" cx="0" cy="0"/>
+        <polygon points="0,12 2,9 -2,9" style="fill:gray;stroke:gray;stroke-width:2"/>
+      </g>
+    
+      </svg>
+    </div></div>
+</div>
+</section>
+<section id="id5">
+<h3>Exercise<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<p>Virtual assistants know about the functions in the <code class="docutils literal notranslate"><span class="pre">Turtle</span></code> module, but there are many versions of these functions, with different names, so a VA might not know which one you are talking about.</p>
+<p>To solve this problem, you can provide additional information before you ask a question.
+For example, you could start a prompt with “Here’s a program that uses the <code class="docutils literal notranslate"><span class="pre">Turtle</span></code> module,” and then paste in one of the examples from this chapter.
+After that, the VA should be able to generate code that uses this module.</p>
+<p>As an example, ask a VA for a program that draws a Sierpiński triangle.
+The code you get should be a good starting place, but you might have to do some debugging.
+If the first attempt doesn’t work, you can tell the VA what happened and ask for help – or you can debug it yourself.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solution</span>
+
+<span class="c1"># Here&#39;s the code I got from ChatGPT in June 2023, with just a few corrections</span>
+
+<span class="k">def</span> <span class="nf">draw_sierpinski</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">depth</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">depth</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+            <span class="n">forward</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
+            <span class="n">left</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">draw_sierpinski</span><span class="p">(</span><span class="n">length</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">depth</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">forward</span><span class="p">(</span><span class="n">length</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">draw_sierpinski</span><span class="p">(</span><span class="n">length</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">depth</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">back</span><span class="p">(</span><span class="n">length</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">left</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+        <span class="n">forward</span><span class="p">(</span><span class="n">length</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">right</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+        <span class="n">draw_sierpinski</span><span class="p">(</span><span class="n">length</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">depth</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">left</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+        <span class="n">back</span><span class="p">(</span><span class="n">length</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">right</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here’s what the result might look like, although the version you get might be different.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">make_turtle</span><span class="p">(</span><span class="n">speed</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+
+<span class="n">draw_sierpinski</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+      <svg width="300" height="200">
+        <rect width="100%" height="100%" fill="white"/>
+        <line x1="150" y1="100" x2="162.5" y2="100.0" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="162.5" y1="100.0" x2="156.25" y2="89.175" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="156.25" y1="89.175" x2="150.0" y2="100.0" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="150.0" y1="100.0" x2="162.5" y2="100.0" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="162.5" y1="100.0" x2="175.0" y2="100.0" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="175.0" y1="100.0" x2="168.75" y2="89.175" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="168.75" y1="89.175" x2="162.5" y2="100.0" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="162.5" y1="100.0" x2="150.0" y2="100.0" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="150.0" y1="100.0" x2="156.25" y2="89.175" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="156.25" y1="89.175" x2="168.75" y2="89.175" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="168.75" y1="89.175" x2="162.5" y2="78.35" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="162.5" y1="78.35" x2="156.25" y2="89.175" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="156.25" y1="89.175" x2="150.0" y2="100.0" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="150.0" y1="100.0" x2="175.0" y2="100.0" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="175.0" y1="100.0" x2="187.5" y2="100.0" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="187.5" y1="100.0" x2="181.25" y2="89.175" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="181.25" y1="89.175" x2="175.0" y2="100.0" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="175.0" y1="100.0" x2="187.5" y2="100.0" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="187.5" y1="100.0" x2="200.0" y2="100.0" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="200.0" y1="100.0" x2="193.75" y2="89.175" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="193.75" y1="89.175" x2="187.5" y2="100.0" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="187.5" y1="100.0" x2="175.0" y2="100.0" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="175.0" y1="100.0" x2="181.25" y2="89.175" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="181.25" y1="89.175" x2="193.75" y2="89.175" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="193.75" y1="89.175" x2="187.5" y2="78.35" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="187.5" y1="78.35" x2="181.25" y2="89.175" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="181.25" y1="89.175" x2="175.0" y2="100.0" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="175.0" y1="100.0" x2="150.0" y2="100.0" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="150.0" y1="100.0" x2="162.5" y2="78.349" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="162.5" y1="78.349" x2="175.0" y2="78.349" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="175.0" y1="78.349" x2="168.75" y2="67.524" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="168.75" y1="67.524" x2="162.5" y2="78.349" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="162.5" y1="78.349" x2="175.0" y2="78.349" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="175.0" y1="78.349" x2="187.5" y2="78.349" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="187.5" y1="78.349" x2="181.25" y2="67.524" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="181.25" y1="67.524" x2="175.0" y2="78.349" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="175.0" y1="78.349" x2="162.5" y2="78.349" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="162.5" y1="78.349" x2="168.75" y2="67.524" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="168.75" y1="67.524" x2="181.25" y2="67.524" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="181.25" y1="67.524" x2="175.0" y2="56.699" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="175.0" y1="56.699" x2="168.75" y2="67.524" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="168.75" y1="67.524" x2="162.5" y2="78.349" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="162.5" y1="78.349" x2="150.0" y2="100.0" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="150.0" y1="100.0" x2="200.0" y2="100.0" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="200.0" y1="100.0" x2="212.5" y2="100.0" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="212.5" y1="100.0" x2="206.25" y2="89.175" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="206.25" y1="89.175" x2="200.0" y2="100.0" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="200.0" y1="100.0" x2="212.5" y2="100.0" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="212.5" y1="100.0" x2="225.0" y2="100.0" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="225.0" y1="100.0" x2="218.75" y2="89.175" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="218.75" y1="89.175" x2="212.5" y2="100.0" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="212.5" y1="100.0" x2="200.0" y2="100.0" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="200.0" y1="100.0" x2="206.25" y2="89.175" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="206.25" y1="89.175" x2="218.75" y2="89.175" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="218.75" y1="89.175" x2="212.5" y2="78.35" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="212.5" y1="78.35" x2="206.25" y2="89.175" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="206.25" y1="89.175" x2="200.0" y2="100.0" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="200.0" y1="100.0" x2="225.0" y2="100.0" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="225.0" y1="100.0" x2="237.5" y2="100.0" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="237.5" y1="100.0" x2="231.25" y2="89.175" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="231.25" y1="89.175" x2="225.0" y2="100.0" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="225.0" y1="100.0" x2="237.5" y2="100.0" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="237.5" y1="100.0" x2="250.0" y2="100.0" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="250.0" y1="100.0" x2="243.75" y2="89.175" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="243.75" y1="89.175" x2="237.5" y2="100.0" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="237.5" y1="100.0" x2="225.0" y2="100.0" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="225.0" y1="100.0" x2="231.25" y2="89.175" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="231.25" y1="89.175" x2="243.75" y2="89.175" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="243.75" y1="89.175" x2="237.5" y2="78.35" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="237.5" y1="78.35" x2="231.25" y2="89.175" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="231.25" y1="89.175" x2="225.0" y2="100.0" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="225.0" y1="100.0" x2="200.0" y2="100.0" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="200.0" y1="100.0" x2="212.5" y2="78.349" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="212.5" y1="78.349" x2="225.0" y2="78.349" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="225.0" y1="78.349" x2="218.75" y2="67.524" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="218.75" y1="67.524" x2="212.5" y2="78.349" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="212.5" y1="78.349" x2="225.0" y2="78.349" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="225.0" y1="78.349" x2="237.5" y2="78.349" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="237.5" y1="78.349" x2="231.25" y2="67.524" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="231.25" y1="67.524" x2="225.0" y2="78.349" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="225.0" y1="78.349" x2="212.5" y2="78.349" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="212.5" y1="78.349" x2="218.75" y2="67.524" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="218.75" y1="67.524" x2="231.25" y2="67.524" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="231.25" y1="67.524" x2="225.0" y2="56.699" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="225.0" y1="56.699" x2="218.75" y2="67.524" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="218.75" y1="67.524" x2="212.5" y2="78.349" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="212.5" y1="78.349" x2="200.0" y2="100.0" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="200.0" y1="100.0" x2="150.0" y2="100.0" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="150.0" y1="100.0" x2="175.0" y2="56.699" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="175.0" y1="56.699" x2="187.5" y2="56.699" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="187.5" y1="56.699" x2="181.25" y2="45.874" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="181.25" y1="45.874" x2="175.0" y2="56.699" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="175.0" y1="56.699" x2="187.5" y2="56.699" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="187.5" y1="56.699" x2="200.0" y2="56.699" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="200.0" y1="56.699" x2="193.75" y2="45.874" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="193.75" y1="45.874" x2="187.5" y2="56.699" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="187.5" y1="56.699" x2="175.0" y2="56.699" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="175.0" y1="56.699" x2="181.25" y2="45.874" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="181.25" y1="45.874" x2="193.75" y2="45.874" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="193.75" y1="45.874" x2="187.5" y2="35.049" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="187.5" y1="35.049" x2="181.25" y2="45.874" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="181.25" y1="45.874" x2="175.0" y2="56.699" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="175.0" y1="56.699" x2="200.0" y2="56.699" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="200.0" y1="56.699" x2="212.5" y2="56.699" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="212.5" y1="56.699" x2="206.25" y2="45.874" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="206.25" y1="45.874" x2="200.0" y2="56.699" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="200.0" y1="56.699" x2="212.5" y2="56.699" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="212.5" y1="56.699" x2="225.0" y2="56.699" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="225.0" y1="56.699" x2="218.75" y2="45.874" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="218.75" y1="45.874" x2="212.5" y2="56.699" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="212.5" y1="56.699" x2="200.0" y2="56.699" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="200.0" y1="56.699" x2="206.25" y2="45.874" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="206.25" y1="45.874" x2="218.75" y2="45.874" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="218.75" y1="45.874" x2="212.5" y2="35.049" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="212.5" y1="35.049" x2="206.25" y2="45.874" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="206.25" y1="45.874" x2="200.0" y2="56.699" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="200.0" y1="56.699" x2="175.0" y2="56.699" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="175.0" y1="56.699" x2="187.5" y2="35.048" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="187.5" y1="35.048" x2="200.0" y2="35.048" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="200.0" y1="35.048" x2="193.75" y2="24.223" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="193.75" y1="24.223" x2="187.5" y2="35.048" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="187.5" y1="35.048" x2="200.0" y2="35.048" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="200.0" y1="35.048" x2="212.5" y2="35.048" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="212.5" y1="35.048" x2="206.25" y2="24.223" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="206.25" y1="24.223" x2="200.0" y2="35.048" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="200.0" y1="35.048" x2="187.5" y2="35.048" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="187.5" y1="35.048" x2="193.75" y2="24.223" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="193.75" y1="24.223" x2="206.25" y2="24.223" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="206.25" y1="24.223" x2="200.0" y2="13.398" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="200.0" y1="13.398" x2="193.75" y2="24.223" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="193.75" y1="24.223" x2="187.5" y2="35.048" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="187.5" y1="35.048" x2="175.0" y2="56.699" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/><line x1="175.0" y1="56.699" x2="150.0" y2="100.0" stroke-linecap="round" style="stroke:#663399;stroke-width:2"/>
+        
+      <g visibility="visible" transform="rotate(-90,150.0,100.0) translate(150.0, 100.0)">
+        <circle stroke="gray" stroke-width="2" fill="transparent" r="5.5" cx="0" cy="0"/>
+        <polygon points="0,12 2,9 -2,9" style="fill:gray;stroke:gray;stroke-width:2"/>
+      </g>
+    
+      </svg>
+    </div></div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="chap04.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Functions and Interfaces</p>
+      </div>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integer-division-and-modulus">Integer division and modulus</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-expressions">Boolean Expressions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logical-operators">Logical operators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-statements">if statements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-else-clause">The <code class="docutils literal notranslate"><span class="pre">else</span></code> clause</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chained-conditionals">Chained conditionals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nested-conditionals">Nested Conditionals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursion">Recursion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stack-diagrams-for-recursive-functions">Stack diagrams for recursive functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#infinite-recursion">Infinite recursion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#keyboard-input">Keyboard input</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">Debugging</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">Glossary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-an-assistant">Ask an assistant</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Exercise</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Allen B. Downey
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

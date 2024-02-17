@@ -158,6 +158,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Variables and Statements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chap03.html">Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chap04.html">Functions and Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap05.html">Conditionals and Recursion</a></li>
 </ul>
 
     </div>
@@ -469,7 +470,9 @@ variable names.</p>
 The name <code class="docutils literal notranslate"><span class="pre">million!</span></code> is illegal because it contains punctuation.</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">million</span><span class="o">!</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1000000</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">expect</span> SyntaxError
+
+million! = 1000000
 </pre></div>
 </div>
 </div>
@@ -485,7 +488,9 @@ The name <code class="docutils literal notranslate"><span class="pre">million!</
 <p><code class="docutils literal notranslate"><span class="pre">76trombones</span></code> is illegal because it starts with a number.</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">76</span><span class="n">trombones</span> <span class="o">=</span> <span class="s1">&#39;big parade&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">expect</span> SyntaxError
+
+76trombones = &#39;big parade&#39;
 </pre></div>
 </div>
 </div>
@@ -501,7 +506,8 @@ The name <code class="docutils literal notranslate"><span class="pre">million!</
 <p><code class="docutils literal notranslate"><span class="pre">class</span></code> is also illegal, but it might not be obvious why.</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">expect</span> SyntaxError
+
 class = &#39;Self-Defence Against Fresh Fruit&#39;
 </pre></div>
 </div>
@@ -776,7 +782,9 @@ For example, <code class="docutils literal notranslate"><span class="pre">int</s
 <p>If you call a function and provide too many arguments, that’s a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code>.</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">float</span><span class="p">(</span><span class="s1">&#39;123.0&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">expect</span> TypeError
+
+float(&#39;123.0&#39;, 2)
 </pre></div>
 </div>
 </div>
@@ -789,7 +797,9 @@ For example, <code class="docutils literal notranslate"><span class="pre">int</s
 <p>If you provide too few arguments, that’s also a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code>.</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">expect</span> TypeError
+
+math.pow(2)
 </pre></div>
 </div>
 </div>
@@ -802,7 +812,9 @@ For example, <code class="docutils literal notranslate"><span class="pre">int</s
 <p>And if you provide an argument with a type the function can’t handle, that’s a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code>, too.</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="s1">&#39;123&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">expect</span> TypeError
+
+math.sqrt(&#39;123&#39;)
 </pre></div>
 </div>
 </div>
@@ -866,13 +878,15 @@ make complex expressions hard to read, so there is a tradeoff.</p>
 It is useful to distinguish between them in order to track them down more quickly.</p>
 <ul class="simple">
 <li><p><strong>Syntax error</strong>: “Syntax” refers to the structure of a program and the rules about that structure. If there is a syntax error anywhere in your program, Python does not run the program. It displays an error message immediately.</p></li>
-<li><p><strong>Runtime error</strong>: If there are no syntax errors in your program, it can start running. But if something goes wrong, Python displays an error message and stops. This type of error is called a runtime error. It is are also called an <strong>exception</strong> because it indicates that something exceptional has happened.</p></li>
+<li><p><strong>Runtime error</strong>: If there are no syntax errors in your program, it can start running. But if something goes wrong, Python displays an error message and stops. This type of error is called a runtime error. It is also called an <strong>exception</strong> because it indicates that something exceptional has happened.</p></li>
 <li><p><strong>Semantic error</strong>: The third type of error is “semantic”, which means related to meaning. If there is a semantic error in your program, it runs without generating error messages, but it does not do what you intended. Identifying semantic errors can be tricky because it requires you to work backward by looking at the output of the program and trying to figure out what it is doing.</p></li>
 </ul>
 <p>As we’ve seen, an illegal variable name is a syntax error.</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">million</span><span class="o">!</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1000000</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">expect</span> SyntaxError
+
+million! = 1000000
 </pre></div>
 </div>
 </div>
@@ -888,7 +902,9 @@ It is useful to distinguish between them in order to track them down more quickl
 <p>If you use an operator with a type it doesn’t support, that’s a runtime error.</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;126&#39;</span> <span class="o">/</span> <span class="mi">3</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">expect</span> TypeError
+
+&#39;126&#39; / 3
 </pre></div>
 </div>
 </div>
@@ -980,10 +996,41 @@ happens if you put a semi-colon at the end of a Python statement?</p></li>
 <p>Practice using the Python interpreter as a calculator:</p>
 <p><strong>Part 1.</strong>  The volume of a sphere with radius <span class="math notranslate nohighlight">\(r\)</span> is <span class="math notranslate nohighlight">\(\frac{4}{3} \pi r^3\)</span>.
 What is the volume of a sphere with radius 5? Start with a variable named <code class="docutils literal notranslate"><span class="pre">radius</span></code> and then assign the result to a variable named <code class="docutils literal notranslate"><span class="pre">volume</span></code>. Display the result. Add comments to indicate that <code class="docutils literal notranslate"><span class="pre">radius</span></code> is in centimeters and <code class="docutils literal notranslate"><span class="pre">volume</span></code> in cubic centimeters.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solution</span>
+
+<span class="n">radius</span> <span class="o">=</span> <span class="mi">5</span>                            <span class="c1"># in cm</span>
+<span class="n">volume</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">/</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">radius</span><span class="o">**</span><span class="mi">3</span>  <span class="c1"># in cubic cm</span>
+<span class="n">volume</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>523.5987755982989
+</pre></div>
+</div>
+</div>
+</div>
 <p><strong>Part 2.</strong> A rule of trigonometry says that for any value of <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\((\cos x)^2 + (\sin x)^2 = 1\)</span>. Let’s see if it’s true for a specific value of <span class="math notranslate nohighlight">\(x\)</span> like 42.</p>
 <p>Create a variable named <code class="docutils literal notranslate"><span class="pre">x</span></code> with this value.
 Then use <code class="docutils literal notranslate"><span class="pre">math.cos</span></code> and <code class="docutils literal notranslate"><span class="pre">math.sin</span></code> to compute the sine and cosine of <span class="math notranslate nohighlight">\(x\)</span>, and the sum of their squared.</p>
 <p>The result should be close to 1. It might not be exactly 1 because floating-point arithmetic is not exact—it is only approximately correct.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solution</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="mi">42</span>
+<span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
+</pre></div>
+</div>
+</div>
+</div>
 <p><strong>Part 3.</strong> In addition to <code class="docutils literal notranslate"><span class="pre">pi</span></code>, the other variable defined in the <code class="docutils literal notranslate"><span class="pre">math</span></code> module is <code class="docutils literal notranslate"><span class="pre">e</span></code>, which represents the base of the natural logarithm, written in math notation as <span class="math notranslate nohighlight">\(e\)</span>. If you are not familiar with this value, ask a virtual assistant “What is <code class="docutils literal notranslate"><span class="pre">math.e</span></code>?” Now let’s compute <span class="math notranslate nohighlight">\(e^2\)</span> three ways:</p>
 <ul class="simple">
 <li><p>Use <code class="docutils literal notranslate"><span class="pre">math.e</span></code> and the exponentiation operator (<code class="docutils literal notranslate"><span class="pre">**</span></code>).</p></li>
@@ -992,6 +1039,48 @@ Then use <code class="docutils literal notranslate"><span class="pre">math.cos</
 </ul>
 <p>You might notice that the last result is slightly different from the other two.
 See if you can find out which is correct.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solution</span>
+
+<span class="n">math</span><span class="o">.</span><span class="n">e</span> <span class="o">**</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7.3890560989306495
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solution</span>
+
+<span class="n">math</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">e</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7.3890560989306495
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solution</span>
+
+<span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7.38905609893065
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 </section>

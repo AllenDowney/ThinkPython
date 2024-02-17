@@ -156,6 +156,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="chap02.html">Variables and Statements</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chap04.html">Functions and Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap05.html">Conditionals and Recursion</a></li>
 </ul>
 
     </div>
@@ -702,7 +703,9 @@ Always look on the bright side of life.
 If we try to display it, we get a <code class="docutils literal notranslate"><span class="pre">NameError</span></code>:</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">cat</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">expect</span> NameError
+
+print(cat)
 </pre></div>
 </div>
 </div>
@@ -753,7 +756,9 @@ To see an example, I’ll define a version of <code class="docutils literal notr
 <p>Now here’s what happens when we run <code class="docutils literal notranslate"><span class="pre">cat_twice</span></code>.</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cat_twice</span><span class="p">(</span><span class="n">line1</span><span class="p">,</span> <span class="n">line2</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">expect</span> NameError
+
+cat_twice(line1, line2)
 </pre></div>
 </div>
 </div>
@@ -863,6 +868,23 @@ If you are curious about the history of this great debate, ask a virtual assista
 <section id="exercise">
 <h3>Exercise<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h3>
 <p>Write a function named <code class="docutils literal notranslate"><span class="pre">print_right</span></code> that takes a string named <code class="docutils literal notranslate"><span class="pre">text</span></code> as a parameter and prints the string with enough leading spaces that the last letter of the string is in the 40th column of the display.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solution</span>
+
+<span class="k">def</span> <span class="nf">print_right</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Print the text so the last letter is in column 70. </span>
+<span class="sd">    </span>
+<span class="sd">    text: string</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">columns</span> <span class="o">=</span> <span class="mi">40</span>
+    <span class="n">space</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span>
+    <span class="n">num_spaces</span> <span class="o">=</span> <span class="n">columns</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">space</span> <span class="o">*</span> <span class="n">num_spaces</span> <span class="o">+</span> <span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 <p>Hint: Use the <code class="docutils literal notranslate"><span class="pre">len</span></code> function, the string concatenation operator (<code class="docutils literal notranslate"><span class="pre">+</span></code>) and the string repetition operator (<code class="docutils literal notranslate"><span class="pre">*</span></code>).</p>
 <p>Here’s an example that shows how it should work.</p>
 <div class="cell docutils container">
@@ -963,6 +985,38 @@ Take one down, pass it around<br />
 <p>Then the second verse is the same, except that it starts with 98 bottles and ends with 97. The song continues – for a very long time – until there are 0 bottles of beer.</p>
 <p>Write a function called <code class="docutils literal notranslate"><span class="pre">bottle_verse</span></code> that takes a number as a parameter and displays the verse that starts with the given number of bottles.</p>
 <p>Hint: Consider starting with a function that can print the first, second, or last line of the verse, and then use it to write <code class="docutils literal notranslate"><span class="pre">bottle_verse</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solution</span>
+
+<span class="k">def</span> <span class="nf">bottle_line</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">suffix</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Display a line from 99 Bottles of Beer.</span>
+<span class="sd">    </span>
+<span class="sd">    n: integer</span>
+<span class="sd">    suffix: string</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="s1">&#39;bottles of beer&#39;</span><span class="p">,</span> <span class="n">suffix</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solution</span>
+
+<span class="k">def</span> <span class="nf">bottle_verse</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Display a verse from 99 Bottles of Beer.</span>
+<span class="sd">    </span>
+<span class="sd">    n: integer</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">bottle_line</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="s1">&#39;on the wall&#39;</span><span class="p">)</span>
+    <span class="n">bottle_line</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Take one down, pass it around&#39;</span><span class="p">)</span>
+    <span class="n">bottle_line</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;on the wall&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 <p>Use this function call to display the first verse.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
