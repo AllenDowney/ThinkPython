@@ -346,7 +346,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="programming-as-a-way-of-thinking">
-<h1>Programming as a way of thinking<a class="headerlink" href="#programming-as-a-way-of-thinking" title="Permalink to this heading">#</a></h1>
+<span id="chapter-programming"></span><h1>Programming as a way of thinking<a class="headerlink" href="#programming-as-a-way-of-thinking" title="Permalink to this heading">#</a></h1>
 <p>The first goal of this book is to teach you how to program in Python.
 But learning to program means learning a new way to think, so the second goal of this book is to help you think like a computer scientist.
 This way of thinking combines some of the best features of mathematics, engineering, and natural science.
@@ -587,9 +587,7 @@ An expression that calls a function is a <strong>function call</strong>.</p>
 If you leave them out, you get an error message.</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">expect</span> SyntaxError
-
-abs 42
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">abs</span> <span class="mi">42</span>
 </pre></div>
 </div>
 </div>
@@ -722,8 +720,7 @@ To write a string, we can put a sequence of letters inside straight quotation ma
 The back quote, also known as a backtick, causes a syntax error.</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">expect</span> SyntaxError
-
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
 `Hello`
 </pre></div>
 </div>
@@ -846,9 +843,7 @@ What do you get if you put a sequence of digits in quotes?</p>
 <p>If you try to use it like a number, you might get an error.</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">expect</span> TypeError
-
-&#39;126&#39; / 3
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;126&#39;</span> <span class="o">/</span> <span class="mi">3</span>
 </pre></div>
 </div>
 </div>
@@ -1080,104 +1075,6 @@ It is better to make mistakes now and deliberately than later and accidentally.<
 </ol>
 <p>If you already know about variables, you can use them for this exercise.
 If you don’t, you can do the exercise without them – and then we’ll see them in the next chapter.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solution</span>
-<span class="c1"># total seconds</span>
-<span class="mi">42</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">+</span> <span class="mi">42</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2562
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solution</span>
-<span class="c1"># number of miles</span>
-<span class="mi">10</span> <span class="o">/</span> <span class="mf">1.61</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.211180124223602
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solution</span>
-<span class="c1"># seconds per mile</span>
-<span class="mi">2562</span> <span class="o">/</span> <span class="mf">6.21118</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>412.48200824964016
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solution</span>
-<span class="c1"># minute part of pace</span>
-<span class="mf">412.48</span> <span class="o">//</span> <span class="mi">60</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.0
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solution</span>
-<span class="c1"># seconds part of pace</span>
-<span class="mf">412.48</span> <span class="o">%</span> <span class="mi">60</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>52.48000000000002
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solution</span>
-<span class="c1"># hours</span>
-<span class="mi">2562</span> <span class="o">/</span> <span class="mi">60</span> <span class="o">/</span> <span class="mi">60</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7116666666666667
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solution</span>
-<span class="c1"># miles per hour</span>
-<span class="mf">6.1118</span> <span class="o">/</span> <span class="mf">0.711666</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8.588017412662682
-</pre></div>
-</div>
-</div>
-</div>
 </section>
 </section>
 </section>
