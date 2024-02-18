@@ -13,6 +13,9 @@ def traceback(mode):
         get_ipython().run_cell(f'%xmode {mode}')
     
 
+traceback('Minimal')
+
+
 def extract_function_name(text):
     """Find a function definition and return its name.
 
