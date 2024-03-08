@@ -157,6 +157,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="chap03.html">Functions</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Functions and Interfaces</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chap05.html">Conditionals and Recursion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap06.html">Return Values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap07.html">Iteration and Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap08.html">Strings and Regular Expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap09.html">Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap10.html">Dictionaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap11.html">Tuples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap12.html">Text Analysis and Generation</a></li>
 </ul>
 
     </div>
@@ -318,7 +325,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-turtle-module">The Turtle module</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-jupyturtle-module">The jupyturtle module</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-a-square">Making a square</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encapsulation-and-generalization">Encapsulation and generalization</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#approximating-a-circle">Approximating a circle</a></li>
@@ -352,12 +359,11 @@ document.write(`
                   
   <section id="functions-and-interfaces">
 <h1>Functions and Interfaces<a class="headerlink" href="#functions-and-interfaces" title="Permalink to this heading">#</a></h1>
-<p>This chapter introduces a module called <code class="docutils literal notranslate"><span class="pre">Turtle</span></code>, which allows you to create simple drawings by giving instructions to an imaginary turtle.
+<p>This chapter introduces a module called <code class="docutils literal notranslate"><span class="pre">jupyturtle</span></code>, which allows you to create simple drawings by giving instructions to an imaginary turtle.
 We will use this module to write functions that draw squares, polygons, and circles – and to demonstrate <strong>interface design</strong>, which is a way of designing functions that work together.</p>
-<p>This chapter is the first of several case studies, which means there is less new content than in other chapters, and more exercises.</p>
-<section id="the-turtle-module">
-<span id="section-turtle-module"></span><h2>The Turtle module<a class="headerlink" href="#the-turtle-module" title="Permalink to this heading">#</a></h2>
-<p>To use the <code class="docutils literal notranslate"><span class="pre">Turtle</span></code> module, we can import it like this.</p>
+<section id="the-jupyturtle-module">
+<span id="section-turtle-module"></span><h2>The jupyturtle module<a class="headerlink" href="#the-jupyturtle-module" title="Permalink to this heading">#</a></h2>
+<p>To use the <code class="docutils literal notranslate"><span class="pre">jupyturtle</span></code> module, we can import it like this.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">jupyturtle</span>
@@ -391,7 +397,7 @@ We will use this module to write functions that draw squares, polygons, and circ
 The circle shows the location of the turtle and the triangle indicates the direction it is facing.</p>
 <p><code class="docutils literal notranslate"><span class="pre">forward</span></code> moves the turtle a given distance in the direction it’s facing, drawing a line segment along the way.
 The distance is in arbitrary units – the actual size depends on your computer’s screen.</p>
-<p>We will use functions defined in the <code class="docutils literal notranslate"><span class="pre">Turtle</span></code> module many times, so it would be nice if we did not have to write the name of the module every time.
+<p>We will use functions defined in the <code class="docutils literal notranslate"><span class="pre">jupyturtle</span></code> module many times, so it would be nice if we did not have to write the name of the module every time.
 That’s possible if we import the module like this.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -400,7 +406,7 @@ That’s possible if we import the module like this.</p>
 </div>
 </div>
 </div>
-<p>This version of the import statement imports <code class="docutils literal notranslate"><span class="pre">make_turtle</span></code> and <code class="docutils literal notranslate"><span class="pre">forward</span></code> from the <code class="docutils literal notranslate"><span class="pre">Turtle</span></code> module so we can call them like this.</p>
+<p>This version of the import statement imports <code class="docutils literal notranslate"><span class="pre">make_turtle</span></code> and <code class="docutils literal notranslate"><span class="pre">forward</span></code> from the <code class="docutils literal notranslate"><span class="pre">jupyturtle</span></code> module so we can call them like this.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">make_turtle</span><span class="p">()</span>
@@ -422,7 +428,7 @@ That’s possible if we import the module like this.</p>
 
 </svg></div></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">Turtle</span></code> provides two other functions we’ll use, called <code class="docutils literal notranslate"><span class="pre">left</span></code> and <code class="docutils literal notranslate"><span class="pre">right</span></code>.
+<p><code class="docutils literal notranslate"><span class="pre">jupyturtle</span></code> provides two other functions we’ll use, called <code class="docutils literal notranslate"><span class="pre">left</span></code> and <code class="docutils literal notranslate"><span class="pre">right</span></code>.
 We’ll import them like this.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1031,7 +1037,7 @@ With <code class="docutils literal notranslate"><span class="pre">delay=0</span>
 
 </svg></div></div>
 </div>
-<p>In this example, we started with working code and rewrote it with different functions???.
+<p>In this example, we started with working code and reorganized it with different functions.
 Changes like this, which improve the code without changing its behavior, are called <strong>refactoring</strong>.</p>
 <p>If we had planned ahead, we might have written <code class="docutils literal notranslate"><span class="pre">polyline</span></code> first and avoided refactoring, but often you don’t know enough at the beginning of a project to design all the functions.
 Once you start coding, you understand the problem better.
@@ -1052,7 +1058,7 @@ Parameters are local, which means you can use the same parameter name in differe
 <section id="a-development-plan">
 <h2>A development plan<a class="headerlink" href="#a-development-plan" title="Permalink to this heading">#</a></h2>
 <p>A <strong>development plan</strong> is a process for writing programs.
-The process we used in this case study is “encapsulation and generalization”.
+The process we used in this chapter is “encapsulation and generalization”.
 The steps of this process are:</p>
 <ol class="arabic simple">
 <li><p>Start by writing a small program with no function definitions.</p></li>
@@ -1189,13 +1195,7 @@ A requirement that should be satisfied by the function before it ends.</p>
 <h3>Exercise<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h3>
 <p>Write a function called <code class="docutils literal notranslate"><span class="pre">rectangle</span></code> that draws a rectangle with given side lengths.
 For example, here’s a rectangle that’s <code class="docutils literal notranslate"><span class="pre">80</span></code> units wide and <code class="docutils literal notranslate"><span class="pre">40</span></code> units tall.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">make_turtle</span><span class="p">()</span>
-<span class="n">rectangle</span><span class="p">(</span><span class="mi">80</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><svg width="300" height="150">
     <rect width="100%" height="100%" fill="#F3F3F7" />
@@ -1233,13 +1233,7 @@ For example, here’s a rectangle that’s <code class="docutils literal notrans
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">make_turtle</span><span class="p">()</span>
-<span class="n">rhombus</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><svg width="300" height="150">
     <rect width="100%" height="100%" fill="#F3F3F7" />
@@ -1263,19 +1257,7 @@ For example, here’s a rectangle that’s <code class="docutils literal notrans
 <section id="id2">
 <h3>Exercise<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
 <p>Now write a more general function called <code class="docutils literal notranslate"><span class="pre">parallelogram</span></code> that draws a quadrilateral with parallel sides. Then rewrite <code class="docutils literal notranslate"><span class="pre">rectangle</span></code> and <code class="docutils literal notranslate"><span class="pre">rhombus</span></code> to use <code class="docutils literal notranslate"><span class="pre">parallelogram</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">make_turtle</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
-<span class="n">jump</span><span class="p">(</span><span class="o">-</span><span class="mi">120</span><span class="p">)</span>
-
-<span class="n">rectangle</span><span class="p">(</span><span class="mi">80</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
-<span class="n">jump</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
-<span class="n">rhombus</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
-<span class="n">jump</span><span class="p">(</span><span class="mi">80</span><span class="p">)</span>
-<span class="n">parallelogram</span><span class="p">(</span><span class="mi">80</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><svg width="400" height="150">
     <rect width="100%" height="100%" fill="#F3F3F7" />
@@ -3379,11 +3361,11 @@ For example, here’s a rectangle that’s <code class="docutils literal notrans
 </section>
 <section id="ask-an-assistant">
 <h3>Ask an assistant<a class="headerlink" href="#ask-an-assistant" title="Permalink to this heading">#</a></h3>
-<p>There are several modules like <code class="docutils literal notranslate"><span class="pre">Turtle</span></code> in Python, and the one we used in this chapter has been customized for this book.
+<p>There are several modules like <code class="docutils literal notranslate"><span class="pre">jupyturtle</span></code> in Python, and the one we used in this chapter has been customized for this book.
 So if you ask a virtual assistant for help, it won’t know which module to use.
 But if you give it a few examples to work with, it can probably figure it out.
 For example, try this prompt and see if it can write a function that draws a spiral:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">following</span> <span class="n">program</span> <span class="n">uses</span> <span class="n">a</span> <span class="n">Turtle</span> <span class="n">module</span> <span class="n">to</span> <span class="n">draw</span> <span class="n">a</span> <span class="n">circle</span><span class="p">:</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">following</span> <span class="n">program</span> <span class="n">uses</span> <span class="n">a</span> <span class="n">turtle</span> <span class="n">graphics</span> <span class="n">module</span> <span class="n">to</span> <span class="n">draw</span> <span class="n">a</span> <span class="n">circle</span><span class="p">:</span>
 
 <span class="kn">from</span> <span class="nn">jupyturtle</span> <span class="kn">import</span> <span class="n">make_turtle</span><span class="p">,</span> <span class="n">forward</span><span class="p">,</span> <span class="n">left</span>
 <span class="kn">import</span> <span class="nn">math</span>
@@ -3480,7 +3462,7 @@ If you didn’t get what you wanted, try modifying the prompt.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-turtle-module">The Turtle module</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-jupyturtle-module">The jupyturtle module</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-a-square">Making a square</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encapsulation-and-generalization">Encapsulation and generalization</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#approximating-a-circle">Approximating a circle</a></li>

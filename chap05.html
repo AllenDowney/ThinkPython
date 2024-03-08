@@ -64,6 +64,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'chap05';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Return Values" href="chap06.html" />
     <link rel="prev" title="Functions and Interfaces" href="chap04.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -156,6 +157,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="chap03.html">Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chap04.html">Functions and Interfaces</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Conditionals and Recursion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap06.html">Return Values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap07.html">Iteration and Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap08.html">Strings and Regular Expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap09.html">Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap10.html">Dictionaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap11.html">Tuples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap12.html">Text Analysis and Generation</a></li>
 </ul>
 
     </div>
@@ -455,6 +463,20 @@ For example, if an event starts at 11 AM and it lasts three hours, we can use th
 </div>
 </div>
 <p>The event would end at 2 PM.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">25</span> <span class="o">//</span> <span class="mi">10</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">25</span> <span class="o">%</span> <span class="mi">10</span>
+<span class="n">a</span><span class="p">,</span> <span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2, 5)
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="boolean-expressions">
 <h2>Boolean Expressions<a class="headerlink" href="#boolean-expressions" title="Permalink to this heading">#</a></h2>
@@ -1239,7 +1261,7 @@ returns the number of seconds since the “Unix epoch”, which is January 1, 19
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1709330456.272177
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1709908595.7334914
 </pre></div>
 </div>
 </div>
@@ -1290,7 +1312,7 @@ shows the state of the program when it prints the result.</p>
 </section>
 <section id="id3">
 <h3>Exercise<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
-<p>The following exercises use the <code class="docutils literal notranslate"><span class="pre">Turtle</span></code> module, described in Chapter 4.</p>
+<p>The following exercises use the <code class="docutils literal notranslate"><span class="pre">jupyturtle</span></code> module, described in Chapter 4.</p>
 <p>Read the following function and see if you can figure out what it does.
 Then run it and see if you got it right.
 Adjust the values of <code class="docutils literal notranslate"><span class="pre">length</span></code>, <code class="docutils literal notranslate"><span class="pre">angle</span></code> and <code class="docutils literal notranslate"><span class="pre">factor</span></code> and see what effect they have on the result.
@@ -1635,9 +1657,9 @@ have to do is</p>
 </section>
 <section id="id5">
 <h3>Exercise<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
-<p>Virtual assistants know about the functions in the <code class="docutils literal notranslate"><span class="pre">Turtle</span></code> module, but there are many versions of these functions, with different names, so a VA might not know which one you are talking about.</p>
+<p>Virtual assistants know about the functions in the <code class="docutils literal notranslate"><span class="pre">jupyturtle</span></code> module, but there are many versions of these functions, with different names, so a VA might not know which one you are talking about.</p>
 <p>To solve this problem, you can provide additional information before you ask a question.
-For example, you could start a prompt with “Here’s a program that uses the <code class="docutils literal notranslate"><span class="pre">Turtle</span></code> module,” and then paste in one of the examples from this chapter.
+For example, you could start a prompt with “Here’s a program that uses the <code class="docutils literal notranslate"><span class="pre">jupyturtle</span></code> module,” and then paste in one of the examples from this chapter.
 After that, the VA should be able to generate code that uses this module.</p>
 <p>As an example, ask a VA for a program that draws a Sierpiński triangle.
 The code you get should be a good starting place, but you might have to do some debugging.
@@ -1972,6 +1994,15 @@ If the first attempt doesn’t work, you can tell the VA what happened and ask f
         <p class="prev-next-subtitle">previous</p>
         <p class="prev-next-title">Functions and Interfaces</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="chap06.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Return Values</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div></div>
   

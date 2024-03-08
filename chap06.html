@@ -1,0 +1,1427 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Return Values &#8212; Think Python, 3rd edition</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]]}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chap06';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Iteration and Search" href="chap07.html" />
+    <link rel="prev" title="Conditionals and Recursion" href="chap05.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Think Python, 3rd edition</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    Think Python, 3rd edition
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chap00.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap01.html">Programming as a way of thinking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap02.html">Variables and Statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap03.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap04.html">Functions and Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap05.html">Conditionals and Recursion</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Return Values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap07.html">Iteration and Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap08.html">Strings and Regular Expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap09.html">Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap10.html">Dictionaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap11.html">Tuples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap12.html">Text Analysis and Generation</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/AllenDowney/ThinkPython/tree/v3" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/chap06.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Return Values</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-functions-have-return-values">Some functions have return values</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#and-some-have-none">And some have None</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#return-values-and-conditionals">Return values and conditionals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#incremental-development">Incremental development</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-functions">Boolean functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursion-with-return-values">Recursion with return values</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leap-of-faith">Leap of faith</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fibonacci">Fibonacci</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-types">Checking types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">Debugging</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">Glossary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">Ask a virtual assistant</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Exercise</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="return-values">
+<h1>Return Values<a class="headerlink" href="#return-values" title="Permalink to this heading">#</a></h1>
+<p>In previous chapters, we’ve used built-in functions – like <code class="docutils literal notranslate"><span class="pre">abs</span></code> and <code class="docutils literal notranslate"><span class="pre">round</span></code> – and functions in the math module – like <code class="docutils literal notranslate"><span class="pre">sqrt</span></code> and <code class="docutils literal notranslate"><span class="pre">pow</span></code>.
+When you call one of these functions, it returns a value you can assign to a variable or use as part of an expression.</p>
+<p>The functions we have written so far are different.
+Some use the <code class="docutils literal notranslate"><span class="pre">print</span></code> function to display values, and some use <code class="docutils literal notranslate"><span class="pre">Turtle</span></code> functions to draw figures.
+But they don’t return values we assign to variables or use in expressions.</p>
+<p>In this chapter, we’ll see how to write functions that return values.</p>
+<section id="some-functions-have-return-values">
+<h2>Some functions have return values<a class="headerlink" href="#some-functions-have-return-values" title="Permalink to this heading">#</a></h2>
+<p>When you call a function like <code class="docutils literal notranslate"><span class="pre">math.sqrt</span></code>, the result is called a <strong>return value</strong>.
+If the function call appears at the end of a cell, Jupyter displays the return value immediately.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">42</span> <span class="o">/</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.656366395715726
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you assign the return value to a variable, it doesn’t get displayed.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">radius</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">42</span> <span class="o">/</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>But you can display it later.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">radius</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.656366395715726
+</pre></div>
+</div>
+</div>
+</div>
+<p>Or you can use the return value as part of an expression.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">radius</span> <span class="o">+</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">42</span> <span class="o">/</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7.312732791431452
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here’s an example of a function that returns a value.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">circle_area</span><span class="p">(</span><span class="n">radius</span><span class="p">):</span>
+    <span class="n">area</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">radius</span><span class="o">**</span><span class="mi">2</span>
+    <span class="k">return</span> <span class="n">area</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">circle_area</span></code> takes <code class="docutils literal notranslate"><span class="pre">radius</span></code> as a parameter and computes the area of a circle with that radius.</p>
+<p>The last line is a <code class="docutils literal notranslate"><span class="pre">return</span></code> statement that returns the value of <code class="docutils literal notranslate"><span class="pre">area</span></code>.</p>
+<p>If we call the function like this, Jupyter displays the return value.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">circle_area</span><span class="p">(</span><span class="n">radius</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>42.00000000000001
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can assign the return value to a variable.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">circle_area</span><span class="p">(</span><span class="n">radius</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Or use it as part of an expression.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">circle_area</span><span class="p">(</span><span class="n">radius</span><span class="p">)</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">circle_area</span><span class="p">(</span><span class="n">radius</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>63.000000000000014
+</pre></div>
+</div>
+</div>
+</div>
+<p>Later we can display the value of the variable we assigned the result to.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>42.00000000000001
+</pre></div>
+</div>
+</div>
+</div>
+<p>But we can’t access <code class="docutils literal notranslate"><span class="pre">area</span></code>.</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">area</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="ne">NameError</span>: name &#39;area&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">area</span></code> is a local variable in a function, so we can’t access it from outside the function.</p>
+</section>
+<section id="and-some-have-none">
+<h2>And some have None<a class="headerlink" href="#and-some-have-none" title="Permalink to this heading">#</a></h2>
+<p>If a function doesn’t have a <code class="docutils literal notranslate"><span class="pre">return</span></code> statement, it returns <code class="docutils literal notranslate"><span class="pre">None</span></code>, which is a special value like <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code>.
+For example, here’s the <code class="docutils literal notranslate"><span class="pre">repeat</span></code> function from Chapter 3.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">repeat</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">word</span> <span class="o">*</span> <span class="n">n</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we call it like this, it displays the first line of the Monty Python song “Finland”.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">repeat</span><span class="p">(</span><span class="s1">&#39;Finland, &#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Finland, Finland, Finland, 
+</pre></div>
+</div>
+</div>
+</div>
+<p>This function uses the <code class="docutils literal notranslate"><span class="pre">print</span></code> function to display a string, but it does not use a <code class="docutils literal notranslate"><span class="pre">return</span></code> statement to return a value.
+If we assign the result to a variable, it displays the string anyway.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">repeat</span><span class="p">(</span><span class="s1">&#39;Finland, &#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Finland, Finland, Finland, 
+</pre></div>
+</div>
+</div>
+</div>
+<p>And if we display the value of the variable, we get nothing.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">result</span></code> actually has a value, but Jupyter doesn’t show it.
+However, we can display it like this.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>None
+</pre></div>
+</div>
+</div>
+</div>
+<p>The return value from <code class="docutils literal notranslate"><span class="pre">repeat</span></code> is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<p>Now here’s a function similar to <code class="docutils literal notranslate"><span class="pre">repeat</span></code> except that has a return value.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">repeat_string</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">word</span> <span class="o">*</span> <span class="n">n</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice that we can use an expression in a <code class="docutils literal notranslate"><span class="pre">return</span></code> statement, not just a variable.</p>
+<p>With this version, we can assign the result to a variable.
+When the function runs, it doesn’t display anything.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">line</span> <span class="o">=</span> <span class="n">repeat_string</span><span class="p">(</span><span class="s1">&#39;Spam, &#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>But later we can display the value assigned to <code class="docutils literal notranslate"><span class="pre">line</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">line</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Spam, Spam, Spam, Spam, &#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>A function like this is called a <strong>pure function</strong> because it doesn’t display anything or have any other effect – other than returning a value.</p>
+</section>
+<section id="return-values-and-conditionals">
+<h2>Return values and conditionals<a class="headerlink" href="#return-values-and-conditionals" title="Permalink to this heading">#</a></h2>
+<p>If Python did not provide <code class="docutils literal notranslate"><span class="pre">abs</span></code>, we could write it like this.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">absolute_value</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="o">-</span><span class="n">x</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">x</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If <code class="docutils literal notranslate"><span class="pre">x</span></code> is negative, the first <code class="docutils literal notranslate"><span class="pre">return</span></code> statement returns <code class="docutils literal notranslate"><span class="pre">-x</span></code> and the function ends immediately.
+Otherwise, the second <code class="docutils literal notranslate"><span class="pre">return</span></code> statement returns <code class="docutils literal notranslate"><span class="pre">x</span></code> and the function ends.
+So this function is correct.</p>
+<p>However, if you put <code class="docutils literal notranslate"><span class="pre">return</span></code> statements in a conditional, you have to make sure that every possible path through the program hits a <code class="docutils literal notranslate"><span class="pre">return</span></code> statement.
+For example, here’s an incorrect version of <code class="docutils literal notranslate"><span class="pre">absolute_value</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">absolute_value_wrong</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="o">-</span><span class="n">x</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">x</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here’s what happens if we call this function with <code class="docutils literal notranslate"><span class="pre">0</span></code> as an argument.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">absolute_value_wrong</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We get nothing! Here’s the problem: when <code class="docutils literal notranslate"><span class="pre">x</span></code> is <code class="docutils literal notranslate"><span class="pre">0</span></code>, neither condition is true, and the function ends without hitting a <code class="docutils literal notranslate"><span class="pre">return</span></code> statement, which means that the return value is <code class="docutils literal notranslate"><span class="pre">None</span></code>, so Jupyter displays nothing.</p>
+<p>As another example, here’s a version of <code class="docutils literal notranslate"><span class="pre">absolute_value</span></code> with an extra <code class="docutils literal notranslate"><span class="pre">return</span></code> statement at the end.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">absolute_value_extra_return</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="o">-</span><span class="n">x</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">x</span>
+    
+    <span class="k">return</span> <span class="s1">&#39;This is dead code&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If <code class="docutils literal notranslate"><span class="pre">x</span></code> is negative, the first <code class="docutils literal notranslate"><span class="pre">return</span></code> statement runs and the function ends.
+Otherwise the second <code class="docutils literal notranslate"><span class="pre">return</span></code> statement runs and the function ends.
+Either way, we never get to the third <code class="docutils literal notranslate"><span class="pre">return</span></code> statement – so it can never run.</p>
+<p>Code that can never run is called <strong>dead code</strong>.
+In general, dead code doesn’t do any harm, but it often indicates a misunderstanding, and it might be confusing to someone trying to understand the program.</p>
+</section>
+<section id="incremental-development">
+<span id="section-incremental"></span><h2>Incremental development<a class="headerlink" href="#incremental-development" title="Permalink to this heading">#</a></h2>
+<p>As you write larger functions, you might find yourself spending more
+time debugging.
+To deal with increasingly complex programs, you might want to try <strong>incremental development</strong>, which is a way of adding and testing only a small amount of code at a time.</p>
+<p>As an example, suppose you want to find the distance between two points represented by the coordinates <span class="math notranslate nohighlight">\((x_1, y_1)\)</span> and <span class="math notranslate nohighlight">\((x_2, y_2)\)</span>.
+By the Pythagorean theorem, the distance is:</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{distance} = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}\]</div>
+<p>The first step is to consider what a <code class="docutils literal notranslate"><span class="pre">distance</span></code> function should look like in Python – that is, what are the inputs (parameters) and what is the output (return value)?</p>
+<p>For this function, the inputs are the coordinates of the points.
+The return value is the distance.
+Immediately you can write an outline of the function:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">distance</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mf">0.0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This version doesn’t compute distances yet – it always returns zero.
+But it is a complete function with a return value, which means that you can test it before you make it more complicated.</p>
+<p>To test the new function, we’ll call it with sample arguments:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">distance</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>I chose these values so that the horizontal distance is <code class="docutils literal notranslate"><span class="pre">3</span></code> and the
+vertical distance is <code class="docutils literal notranslate"><span class="pre">4</span></code>.
+That way, the result is <code class="docutils literal notranslate"><span class="pre">5</span></code>, the hypotenuse of a <code class="docutils literal notranslate"><span class="pre">3-4-5</span></code> right triangle. When testing a function, it is useful to know the right answer.</p>
+<p>At this point we have confirmed that the function runs and returns a value, and we can start adding code to the body.
+A good next step is to find the differences <code class="docutils literal notranslate"><span class="pre">x2</span> <span class="pre">-</span> <span class="pre">x1</span></code> and <code class="docutils literal notranslate"><span class="pre">y2</span> <span class="pre">-</span> <span class="pre">y1</span></code>.
+Here’s a version that stores those values in temporary variables and displays them.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">distance</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">):</span>
+    <span class="n">dx</span> <span class="o">=</span> <span class="n">x2</span> <span class="o">-</span> <span class="n">x1</span>
+    <span class="n">dy</span> <span class="o">=</span> <span class="n">y2</span> <span class="o">-</span> <span class="n">y1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;dx is&#39;</span><span class="p">,</span> <span class="n">dx</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;dy is&#39;</span><span class="p">,</span> <span class="n">dy</span><span class="p">)</span>
+    <span class="k">return</span> <span class="mf">0.0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If the function is working, it should display <code class="docutils literal notranslate"><span class="pre">dx</span> <span class="pre">is</span> <span class="pre">3</span></code> and <code class="docutils literal notranslate"><span class="pre">dy</span> <span class="pre">is</span> <span class="pre">4</span></code>.
+If so, we know that the function is getting the right arguments and
+performing the first computation correctly. If not, there are only a few
+lines to check.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">distance</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dx is 3
+dy is 4
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Good so far. Next we compute the sum of squares of <code class="docutils literal notranslate"><span class="pre">dx</span></code> and <code class="docutils literal notranslate"><span class="pre">dy</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">distance</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">):</span>
+    <span class="n">dx</span> <span class="o">=</span> <span class="n">x2</span> <span class="o">-</span> <span class="n">x1</span>
+    <span class="n">dy</span> <span class="o">=</span> <span class="n">y2</span> <span class="o">-</span> <span class="n">y1</span>
+    <span class="n">dsquared</span> <span class="o">=</span> <span class="n">dx</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">dy</span><span class="o">**</span><span class="mi">2</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;dsquared is: &#39;</span><span class="p">,</span> <span class="n">dsquared</span><span class="p">)</span>
+    <span class="k">return</span> <span class="mf">0.0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Again, we can run the function and check the output, which should be <code class="docutils literal notranslate"><span class="pre">25</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">distance</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dsquared is:  25
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finally, we can use <code class="docutils literal notranslate"><span class="pre">math.sqrt</span></code> to compute the distance:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">distance</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">):</span>
+    <span class="n">dx</span> <span class="o">=</span> <span class="n">x2</span> <span class="o">-</span> <span class="n">x1</span>
+    <span class="n">dy</span> <span class="o">=</span> <span class="n">y2</span> <span class="o">-</span> <span class="n">y1</span>
+    <span class="n">dsquared</span> <span class="o">=</span> <span class="n">dx</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">dy</span><span class="o">**</span><span class="mi">2</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">dsquared</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;result is&quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>And test it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">distance</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>result is 5.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>The result is correct, but this version of the function displays the result rather than returning it, so the return value is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<p>We can fix that by replacing the <code class="docutils literal notranslate"><span class="pre">print</span></code> function with a <code class="docutils literal notranslate"><span class="pre">return</span></code> statement.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">distance</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">):</span>
+    <span class="n">dx</span> <span class="o">=</span> <span class="n">x2</span> <span class="o">-</span> <span class="n">x1</span>
+    <span class="n">dy</span> <span class="o">=</span> <span class="n">y2</span> <span class="o">-</span> <span class="n">y1</span>
+    <span class="n">dsquared</span> <span class="o">=</span> <span class="n">dx</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">dy</span><span class="o">**</span><span class="mi">2</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">dsquared</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This version of <code class="docutils literal notranslate"><span class="pre">distance</span></code> is a pure function.
+If we call it like this, only the result is displayed.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">distance</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>And if we assign the result to a variable, nothing is displayed.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="n">distance</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">print</span></code> statements we wrote are useful for debugging, but once the function is working, we can remove them.
+Code like that is called <strong>scaffolding</strong> because it is helpful for building the program but is not part of the final product.</p>
+<p>This example demonstrates incremental development.
+The key aspects of this process are:</p>
+<ol class="arabic simple">
+<li><p>Start with a working program, make small changes, and test after every change.</p></li>
+<li><p>Use variables to hold intermediate values so you can display and check them.</p></li>
+<li><p>Once the program is working, remove the scaffolding.</p></li>
+</ol>
+<p>At any point, if there is an error, you should have a good idea where it is.
+Incremental development can save you a lot of debugging time.</p>
+</section>
+<section id="boolean-functions">
+<h2>Boolean functions<a class="headerlink" href="#boolean-functions" title="Permalink to this heading">#</a></h2>
+<p>Functions can return the boolean values <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code>, which is often convenient for encapsulating a complex test in a function.
+For example, <code class="docutils literal notranslate"><span class="pre">is_divisible</span></code> checks whether <code class="docutils literal notranslate"><span class="pre">x</span></code> is divisible by <code class="docutils literal notranslate"><span class="pre">y</span></code> with no remainder.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">is_divisible</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="n">y</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here’s how we use it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">is_divisible</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">is_divisible</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>Inside the function, the result of the <code class="docutils literal notranslate"><span class="pre">==</span></code> operator is a boolean, so we can write the
+function more concisely by returning it directly.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">is_divisible</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">%</span> <span class="n">y</span> <span class="o">==</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Boolean functions are often used in conditional statements.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">is_divisible</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;divisible&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>divisible
+</pre></div>
+</div>
+</div>
+</div>
+<p>It might be tempting to write something like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">is_divisible</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;divisible&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>divisible
+</pre></div>
+</div>
+</div>
+</div>
+<p>But the comparison is unnecessary.</p>
+</section>
+<section id="recursion-with-return-values">
+<h2>Recursion with return values<a class="headerlink" href="#recursion-with-return-values" title="Permalink to this heading">#</a></h2>
+<p>Now that we can write functions with return values, we can write recursive functions with return values, and with that capability, we have passed an important threshold – the subset of Python we have is now <strong>Turing complete</strong>, which means that we can perform any computation that can be described by an algorithm.</p>
+<p>To demonstrate recursion with return values, we’ll evaluate a few recursively defined mathematical functions.
+A recursive definition is similar to a circular definition, in the sense that the definition refers to the thing being defined. A truly circular definition is not very useful:</p>
+<blockquote>
+<div><p>vorpal: An adjective used to describe something that is vorpal.</p>
+</div></blockquote>
+<p>If you saw that definition in the dictionary, you might be annoyed.
+On the other hand, if you looked up the definition of the factorial function, denoted with the symbol <span class="math notranslate nohighlight">\(!\)</span>, you might get something like this:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+0! &amp;= 1 \\
+n! &amp;= n~(n-1)!
+\end{aligned}\end{split}\]</div>
+<p>This definition says that the factorial of 0 is 1, and the factorial of any other value, <span class="math notranslate nohighlight">\(n\)</span>, is <span class="math notranslate nohighlight">\(n\)</span> multiplied by the factorial of <span class="math notranslate nohighlight">\(n-1\)</span>.</p>
+<p>If you can write a recursive definition of something, you can write a Python program to evaluate it.
+Following an incremental development process, we’ll start with a function that take <code class="docutils literal notranslate"><span class="pre">n</span></code> as a parameter and always returns <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now let’s add the first part of the definition – if the argument happens to be 0, all we have to do is return 1:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now let’s fill in the second part – if <code class="docutils literal notranslate"><span class="pre">n</span></code> is not <code class="docutils literal notranslate"><span class="pre">0</span></code>, we have to make a recursive
+call to find the factorial of <span class="math notranslate nohighlight">\(n-1\)</span> and then multiply the result by <span class="math notranslate nohighlight">\(n\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">recurse</span> <span class="o">=</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">recurse</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The flow of execution for this program is similar to the flow of <code class="docutils literal notranslate"><span class="pre">countdown</span></code> in Chapter 5.
+If we call <code class="docutils literal notranslate"><span class="pre">factorial</span></code> with the value <code class="docutils literal notranslate"><span class="pre">3</span></code>:</p>
+<p>Since <code class="docutils literal notranslate"><span class="pre">3</span></code> is not <code class="docutils literal notranslate"><span class="pre">0</span></code>, we take the second branch and calculate the factorial
+of <code class="docutils literal notranslate"><span class="pre">n-1</span></code>…</p>
+<blockquote>
+<div><p>Since <code class="docutils literal notranslate"><span class="pre">2</span></code> is not <code class="docutils literal notranslate"><span class="pre">0</span></code>, we take the second branch and calculate the
+factorial of <code class="docutils literal notranslate"><span class="pre">n-1</span></code>…</p>
+<blockquote>
+<div><p>Since <code class="docutils literal notranslate"><span class="pre">1</span></code> is not <code class="docutils literal notranslate"><span class="pre">0</span></code>, we take the second branch and calculate the
+factorial of <code class="docutils literal notranslate"><span class="pre">n-1</span></code>…</p>
+<blockquote>
+<div><p>Since <code class="docutils literal notranslate"><span class="pre">0</span></code> equals <code class="docutils literal notranslate"><span class="pre">0</span></code>, we take the first branch and return <code class="docutils literal notranslate"><span class="pre">1</span></code> without
+making any more recursive calls.</p>
+</div></blockquote>
+<p>The return value, <code class="docutils literal notranslate"><span class="pre">1</span></code>, is multiplied by <code class="docutils literal notranslate"><span class="pre">n</span></code>, which is <code class="docutils literal notranslate"><span class="pre">1</span></code>, and the
+result is returned.</p>
+</div></blockquote>
+<p>The return value, <code class="docutils literal notranslate"><span class="pre">1</span></code>, is multiplied by <code class="docutils literal notranslate"><span class="pre">n</span></code>, which is <code class="docutils literal notranslate"><span class="pre">2</span></code>, and the result
+is returned.</p>
+</div></blockquote>
+<p>The return value <code class="docutils literal notranslate"><span class="pre">2</span></code> is multiplied by <code class="docutils literal notranslate"><span class="pre">n</span></code>, which is <code class="docutils literal notranslate"><span class="pre">3</span></code>, and the result,
+<code class="docutils literal notranslate"><span class="pre">6</span></code>, becomes the return value of the function call that started the whole
+process.</p>
+<p>The following figure shows the stack diagram for this sequence of function calls.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="_images/6581493295a2da25d28868c080ec1282d309cd94e46c90b3ef4119a057d8ca12.png" src="_images/6581493295a2da25d28868c080ec1282d309cd94e46c90b3ef4119a057d8ca12.png" />
+</div>
+</div>
+<p>The return values are shown being passed back up the stack.
+In each frame, the return value is the product of <code class="docutils literal notranslate"><span class="pre">n</span></code> and <code class="docutils literal notranslate"><span class="pre">recurse</span></code>.</p>
+<p>In the last frame, the local variable <code class="docutils literal notranslate"><span class="pre">recurse</span></code> does not exist because the branch that creates it does not run.</p>
+</section>
+<section id="leap-of-faith">
+<h2>Leap of faith<a class="headerlink" href="#leap-of-faith" title="Permalink to this heading">#</a></h2>
+<p>Following the flow of execution is one way to read programs, but it can quickly become overwhelming. An alternative is what I call the “leap of faith”. When you come to a function call, instead of following the flow of execution, you <em>assume</em> that the function works correctly and returns the right result.</p>
+<p>In fact, you are already practicing this leap of faith when you use built-in functions.
+When you call <code class="docutils literal notranslate"><span class="pre">abs</span></code> or <code class="docutils literal notranslate"><span class="pre">math.sqrt</span></code>, you don’t examine the bodies of those functions – you just assume that they work.</p>
+<p>The same is true when you call one of your own functions. For example, earlier we wrote a function called <code class="docutils literal notranslate"><span class="pre">is_divisible</span></code> that determines whether one number is divisible by another. Once we convince ourselves that this function is correct, we can use it without looking at the body again.</p>
+<p>The same is true of recursive programs.
+When you get to the recursive call, instead of following the flow of execution, you should assume that the recursive call works and then ask yourself, “Assuming that I can compute the factorial of <span class="math notranslate nohighlight">\(n-1\)</span>, can I compute the factorial of <span class="math notranslate nohighlight">\(n\)</span>?”
+The recursive definition of factorial implies that you can, by multiplying by <span class="math notranslate nohighlight">\(n\)</span>.</p>
+<p>Of course, it’s a bit strange to assume that the function works correctly when you haven’t finished writing it, but that’s why it’s called a leap of faith!</p>
+</section>
+<section id="fibonacci">
+<span id="section-fibonacci"></span><h2>Fibonacci<a class="headerlink" href="#fibonacci" title="Permalink to this heading">#</a></h2>
+<p>After <code class="docutils literal notranslate"><span class="pre">factorial</span></code>, the most common example of a recursive function is <code class="docutils literal notranslate"><span class="pre">fibonacci</span></code>, which has the following definition:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\mathrm{fibonacci}(0) &amp;= 0 \\
+\mathrm{fibonacci}(1) &amp;= 1 \\
+\mathrm{fibonacci}(n) &amp;= \mathrm{fibonacci}(n-1) + \mathrm{fibonacci}(n-2)
+\end{aligned}\end{split}\]</div>
+<p>Translated into Python, it looks like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">elif</span>  <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you try to follow the flow of execution here, even for small values of <span class="math notranslate nohighlight">\(n\)</span>, your head explodes.
+But according to the leap of faith, if you assume that the two recursive calls work correctly, you can be confident that the last return statement is correct.</p>
+<p>As an aside, this way of computing Fibonacci numbers is very inefficient.
+In <a class="reference internal" href="chap10.html#section-memos"><span class="std std-ref">Chapter 10</span></a> I’ll explain why and suggest a way to improve it.</p>
+</section>
+<section id="checking-types">
+<h2>Checking types<a class="headerlink" href="#checking-types" title="Permalink to this heading">#</a></h2>
+<p>What happens if we call <code class="docutils literal notranslate"><span class="pre">factorial</span></code> and give it <code class="docutils literal notranslate"><span class="pre">1.5</span></code> as an argument?</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">factorial</span><span class="p">(</span><span class="mf">1.5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="ne">RecursionError</span>: maximum recursion depth exceeded in comparison
+</pre></div>
+</div>
+</div>
+</div>
+<p>It looks like an infinite recursion. How can that be? The function has a
+base case – when <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">==</span> <span class="pre">0</span></code>.
+But if <code class="docutils literal notranslate"><span class="pre">n</span></code> is not an integer, we can <em>miss</em> the base case and recurse forever.</p>
+<p>In this example, the initial value of <code class="docutils literal notranslate"><span class="pre">n</span></code> is <code class="docutils literal notranslate"><span class="pre">1.5</span></code>.
+In the first recursive call, the value of <code class="docutils literal notranslate"><span class="pre">n</span></code> is <code class="docutils literal notranslate"><span class="pre">0.5</span></code>.
+In the next, it is <code class="docutils literal notranslate"><span class="pre">-0.5</span></code>.
+From there, it gets smaller (more negative), but it will never be <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
+<p>To avoid infinite recursion we can use the built-in function <code class="docutils literal notranslate"><span class="pre">isinstance</span></code> to check the type of the argument.
+Here’s how we check whether a value is an integer.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">isinstance</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">isinstance</span><span class="p">(</span><span class="mf">1.5</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now here’s a version of <code class="docutils literal notranslate"><span class="pre">factorial</span></code> with error-checking.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;factorial is only defined for integers.&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="k">elif</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;factorial is not defined for negative numbers.&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="k">elif</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>First it checks whether <code class="docutils literal notranslate"><span class="pre">n</span></code> is an integer.
+If not, it displays an error message and returns <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">factorial</span><span class="p">(</span><span class="s1">&#39;crunchy frog&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>factorial is only defined for integers.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Then it checks whether <code class="docutils literal notranslate"><span class="pre">n</span></code> is negative.
+If so, it displays an error message and returns <code class="docutils literal notranslate"><span class="pre">None.</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">factorial</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>factorial is not defined for negative numbers.
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we get past both checks, we know that <code class="docutils literal notranslate"><span class="pre">n</span></code> is a non-negative integer, so we can be confident the recursion will terminate.
+Checking the parameters of a function to make sure they have the correct types and values is called <strong>input validation</strong>.</p>
+</section>
+<section id="debugging">
+<span id="section-debugging-factorial"></span><h2>Debugging<a class="headerlink" href="#debugging" title="Permalink to this heading">#</a></h2>
+<p>Breaking a large program into smaller functions creates natural checkpoints for debugging.
+If a function is not working, there are three possibilities to consider:</p>
+<ul class="simple">
+<li><p>There is something wrong with the arguments the function is getting – that is, a precondition is violated.</p></li>
+<li><p>There is something wrong with the function – that is, a postcondition is violated.</p></li>
+<li><p>The caller is doing something wrong with the return value.</p></li>
+</ul>
+<p>To rule out the first possibility, you can add a <code class="docutils literal notranslate"><span class="pre">print</span></code> statement at the beginning of the function that displays the values of the parameters (and maybe their types).
+Or you can write code that checks the preconditions explicitly.</p>
+<p>If the parameters look good, you can add a <code class="docutils literal notranslate"><span class="pre">print</span></code> statement before each <code class="docutils literal notranslate"><span class="pre">return</span></code> statement and display the return value.
+If possible, call the function with arguments that make it easy check the result.</p>
+<p>If the function seems to be working, look at the function call to make sure the return value is being used correctly – or used at all!</p>
+<p>Adding <code class="docutils literal notranslate"><span class="pre">print</span></code> statements at the beginning and end of a function can help make the flow of execution more visible.
+For example, here is a version of <code class="docutils literal notranslate"><span class="pre">factorial</span></code> with print statements:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">space</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span> <span class="o">*</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">n</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">space</span><span class="p">,</span> <span class="s1">&#39;factorial&#39;</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">space</span><span class="p">,</span> <span class="s1">&#39;returning 1&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">recurse</span> <span class="o">=</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">n</span> <span class="o">*</span> <span class="n">recurse</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">space</span><span class="p">,</span> <span class="s1">&#39;returning&#39;</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">result</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">space</span></code> is a string of space characters that controls the indentation of
+the output. Here is the result of <code class="docutils literal notranslate"><span class="pre">factorial(4)</span></code> :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">factorial</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             factorial 3
+         factorial 2
+     factorial 1
+ factorial 0
+ returning 1
+     returning 1
+         returning 2
+             returning 6
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you are confused about the flow of execution, this kind of output can be helpful.
+It takes some time to develop effective scaffolding, but a little bit of scaffolding can save a lot of debugging.</p>
+</section>
+<section id="glossary">
+<h2>Glossary<a class="headerlink" href="#glossary" title="Permalink to this heading">#</a></h2>
+<p><strong>return value:</strong>
+The result of a function. If a function call is used as an expression, the return value is the value of the expression.</p>
+<p><strong>pure function:</strong>
+A function that does not display anything or have any other effect, other than returning a return value.</p>
+<p><strong>dead code:</strong>
+Part of a program that can never run, often because it appears after a <code class="docutils literal notranslate"><span class="pre">return</span></code> statement.</p>
+<p><strong>incremental development:</strong>
+A program development plan intended to avoid debugging by adding and testing only a small amount of code at a time.</p>
+<p><strong>scaffolding:</strong>
+Code that is used during program development but is not part of the final version.</p>
+<p><strong>Turing complete:</strong>
+A language, or subset of a language, is Turing complete if it can perform any computation that can be described by an algorithm.</p>
+<p><strong>input validation:</strong>
+Checking the parameters of a function to make sure they have the correct types and values</p>
+</section>
+<section id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h2>
+<section id="ask-a-virtual-assistant">
+<h3>Ask a virtual assistant<a class="headerlink" href="#ask-a-virtual-assistant" title="Permalink to this heading">#</a></h3>
+<p>In this chapter, we saw an incorrect function that can end without returning a value.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">absolute_value_wrong</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="o">-</span><span class="n">x</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">x</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>And a version of the same function that has dead code at the end.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">absolute_value_extra_return</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="o">-</span><span class="n">x</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">x</span>
+    
+    <span class="k">return</span> <span class="s1">&#39;This is dead code.&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>And we saw the following example, which is correct but not idiomatic.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">is_divisible</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="n">y</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ask a virtual assistant what’s wrong with each of these functions and see if it can spot the errors or improve the style.</p>
+<p>Then ask “Write a function that takes coordinates of two points and computes the distance between them.” See if the result resembles the version of <code class="docutils literal notranslate"><span class="pre">distance</span></code> we wrote in this chapter.</p>
+</section>
+<section id="exercise">
+<h3>Exercise<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h3>
+<p>Use incremental development to write a function called <code class="docutils literal notranslate"><span class="pre">hypot</span></code> that returns the length of the hypotenuse of a right triangle given the lengths of the other two legs as arguments.</p>
+<p>Note: There’s a function in the math module called <code class="docutils literal notranslate"><span class="pre">hypot</span></code> that does the same thing, but you should not use it for this exercise!</p>
+<p>Even if you can write the function correctly on the first try, start with a function that always returns <code class="docutils literal notranslate"><span class="pre">0</span></code> and practice making small changes, testing as you go.
+When you are done, the function should only return a value – it should not display anything.</p>
+</section>
+<section id="id1">
+<h3>Exercise<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<p>Write a boolean function, <code class="docutils literal notranslate"><span class="pre">is_between(x,</span> <span class="pre">y,</span> <span class="pre">z)</span></code>, that returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if <span class="math notranslate nohighlight">\(x &lt; y &lt; z\)</span> or if
+<span class="math notranslate nohighlight">\(z &lt; y &lt; x\)</span>, and<code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise.</p>
+</section>
+<section id="id2">
+<h3>Exercise<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<p>The Ackermann function, <span class="math notranslate nohighlight">\(A(m, n)\)</span>, is defined:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+A(m, n) = \begin{cases} 
+              n+1 &amp; \mbox{if } m = 0 \\ 
+        A(m-1, 1) &amp; \mbox{if } m &gt; 0 \mbox{ and } n = 0 \\ 
+A(m-1, A(m, n-1)) &amp; \mbox{if } m &gt; 0 \mbox{ and } n &gt; 0.
+\end{cases} 
+\end{aligned}\end{split}\]</div>
+<p>Write a function named <code class="docutils literal notranslate"><span class="pre">ackermann</span></code> that evaluates the Ackermann function.
+What happens if you call <code class="docutils literal notranslate"><span class="pre">ackermann(5,</span> <span class="pre">5)</span></code>?</p>
+</section>
+<section id="id3">
+<h3>Exercise<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<p>The greatest common divisor (GCD) of <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> is the largest number
+that divides both of them with no remainder.</p>
+<p>One way to find the GCD of two numbers is based on the observation that
+if <span class="math notranslate nohighlight">\(r\)</span> is the remainder when <span class="math notranslate nohighlight">\(a\)</span> is divided by <span class="math notranslate nohighlight">\(b\)</span>, then <span class="math notranslate nohighlight">\(gcd(a,
+b) = gcd(b, r)\)</span>. As a base case, we can use <span class="math notranslate nohighlight">\(gcd(a, 0) = a\)</span>.</p>
+<p>Write a function called <code class="docutils literal notranslate"><span class="pre">gcd</span></code> that takes parameters <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code> and
+returns their greatest common divisor.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="chap05.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Conditionals and Recursion</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="chap07.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Iteration and Search</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-functions-have-return-values">Some functions have return values</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#and-some-have-none">And some have None</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#return-values-and-conditionals">Return values and conditionals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#incremental-development">Incremental development</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-functions">Boolean functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursion-with-return-values">Recursion with return values</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leap-of-faith">Leap of faith</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fibonacci">Fibonacci</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-types">Checking types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">Debugging</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">Glossary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">Ask a virtual assistant</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Exercise</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Allen B. Downey
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

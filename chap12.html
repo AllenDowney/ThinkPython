@@ -1,0 +1,1582 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Text Analysis and Generation &#8212; Think Python, 3rd edition</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chap12';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Tuples" href="chap11.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Think Python, 3rd edition</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    Think Python, 3rd edition
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chap00.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap01.html">Programming as a way of thinking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap02.html">Variables and Statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap03.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap04.html">Functions and Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap05.html">Conditionals and Recursion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap06.html">Return Values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap07.html">Iteration and Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap08.html">Strings and Regular Expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap09.html">Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap10.html">Dictionaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap11.html">Tuples</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Text Analysis and Generation</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/AllenDowney/ThinkPython/tree/v3" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/chap12.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Text Analysis and Generation</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unique-words">Unique words</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#punctuation">Punctuation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#word-frequencies">Word frequencies</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-parameters">Optional parameters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionary-subtraction">Dictionary subtraction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#random-numbers">Random numbers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bigrams">Bigrams</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#markov-analysis">Markov analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-text">Generating text</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">Debugging</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">Glossary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">Ask a virtual assistant</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="text-analysis-and-generation">
+<h1>Text Analysis and Generation<a class="headerlink" href="#text-analysis-and-generation" title="Permalink to this heading">#</a></h1>
+<p>At this point we have covered Python’s core data structures – lists, dictionaries, and tuples – and and some algorithms that use them.
+In this chapter, we’ll use them to explore text analysis and Markov generation:</p>
+<ul class="simple">
+<li><p>Text analysis is a way to describe the statistical relationships between the words in a document, like the probability that one word is followed by another, and</p></li>
+<li><p>Markov generation is a way to generate new text with words and phrases similar to the original text.</p></li>
+</ul>
+<p>These algorithms are similar to parts of a Large Language Model (LLM), which is the key component of a chatbot.</p>
+<p>We’ll start by counting the number of times each word appears in a book.
+Then we’ll look at pairs of words, and make a list of the words that can follow each word.
+We’ll make a simple version of a Markov generator, and as an exercise, you’ll have a chance to make a more general version.</p>
+<section id="unique-words">
+<h2>Unique words<a class="headerlink" href="#unique-words" title="Permalink to this heading">#</a></h2>
+<p>As a first step toward text analysis, let’s read a book – <em>The Strange Case Of Dr. Jekyll And Mr. Hyde</em> by Robert Louis Stevenson – and count the number of unique words.
+Instructions for downloading the book are in the notebook for this chapter.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;dr_jekyll.txt&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We’ll use a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to read lines from the file and <code class="docutils literal notranslate"><span class="pre">split</span></code> to divide the lines into words.
+Then, to keep track of unique words, we’ll store each word as a key in a dictionary.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unique_words</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="n">seq</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">seq</span><span class="p">:</span>
+        <span class="n">unique_words</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="nb">len</span><span class="p">(</span><span class="n">unique_words</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6040
+</pre></div>
+</div>
+</div>
+</div>
+<p>The length of the dictionary is the number of unique words – about <code class="docutils literal notranslate"><span class="pre">6000</span></code> by this way of counting.
+But if we inspect them, we’ll see that some are not valid words.</p>
+<p>For example, let’s look at the longest words in <code class="docutils literal notranslate"><span class="pre">unique_words</span></code>.
+We can use <code class="docutils literal notranslate"><span class="pre">sorted</span></code> to sort the words, passing the <code class="docutils literal notranslate"><span class="pre">len</span></code> function as a keyword argument so the words are sorted by length.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">sorted</span><span class="p">(</span><span class="n">unique_words</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="nb">len</span><span class="p">)[</span><span class="o">-</span><span class="mi">5</span><span class="p">:]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;chocolate-coloured&#39;,
+ &#39;superiors—behold!”&#39;,
+ &#39;coolness—frightened&#39;,
+ &#39;gentleman—something&#39;,
+ &#39;pocket-handkerchief.&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>The slice index, <code class="docutils literal notranslate"><span class="pre">[-5:]</span></code>, selects the last <code class="docutils literal notranslate"><span class="pre">5</span></code> elements of the sorted list, which are the longest words.</p>
+<p>The list includes some legitimately long words, like “circumscription”, and some hyphenated words, like “chocolate-coloured”.
+But some of the longest “words” are actually two words separated by a dash.
+And other words include punctuation like periods, exclamation points, and quotation marks.</p>
+<p>So, before we move on, let’s deal with dashes and other punctuation.</p>
+</section>
+<section id="punctuation">
+<h2>Punctuation<a class="headerlink" href="#punctuation" title="Permalink to this heading">#</a></h2>
+<p>To identify the words in the text, we need to deal with two issues:</p>
+<ul class="simple">
+<li><p>When a dash appears in a line, we should replace it with a space – then when we use <code class="docutils literal notranslate"><span class="pre">split</span></code>, the words will be separated.</p></li>
+<li><p>After splitting the words, we can use <code class="docutils literal notranslate"><span class="pre">strip</span></code> to remove punctuation.</p></li>
+</ul>
+<p>To handle the first issue, we can use the following function, which takes a string, replaces dashes with spaces, splits the string, and returns the resulting list.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">split_line</span><span class="p">(</span><span class="n">line</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">line</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;—&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice that <code class="docutils literal notranslate"><span class="pre">split_line</span></code> only replaces dashes, not hyphens.
+We’ll deal with hyphens later.</p>
+<p>Here’s an example.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">split_line</span><span class="p">(</span><span class="s1">&#39;coolness—frightened&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;coolness&#39;, &#39;frightened&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, to remove punctuation from the beginning and end of each word, we can use <code class="docutils literal notranslate"><span class="pre">strip</span></code>, but we need a list of characters that are considered punctuation.</p>
+<p>Characters in Python strings are in Unicode, which is an international standard used to represent letters in nearly every alphabet, numbers, symbols, punctuation marks, and more.
+The <code class="docutils literal notranslate"><span class="pre">unicodedata</span></code> module provides a <code class="docutils literal notranslate"><span class="pre">category</span></code> function we can use to tell which characters are punctuation.
+Given a letter, it returns a string with information about what category the letter is in.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">unicodedata</span>
+
+<span class="n">unicodedata</span><span class="o">.</span><span class="n">category</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Lu&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>The category string of <code class="docutils literal notranslate"><span class="pre">A</span></code> is <code class="docutils literal notranslate"><span class="pre">Lu</span></code> – the <code class="docutils literal notranslate"><span class="pre">L</span></code> means it is a letter and the <code class="docutils literal notranslate"><span class="pre">u</span></code> means it is uppercase.</p>
+<p>The category string of <code class="docutils literal notranslate"><span class="pre">.</span></code> is <code class="docutils literal notranslate"><span class="pre">Po</span></code> – the <code class="docutils literal notranslate"><span class="pre">P</span></code> means it is punctuation, the <code class="docutils literal notranslate"><span class="pre">o</span></code> means its subcategory is “other”.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unicodedata</span><span class="o">.</span><span class="n">category</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Po&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can find the punctuation marks in the book by checking for characters with categories that begin with <code class="docutils literal notranslate"><span class="pre">P</span></code>.
+The following loop stores the unique punctuation marks in a dictionary.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">punc_marks</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
+        <span class="n">category</span> <span class="o">=</span> <span class="n">unicodedata</span><span class="o">.</span><span class="n">category</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">category</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;P&#39;</span><span class="p">):</span>
+            <span class="n">punc_marks</span><span class="p">[</span><span class="n">char</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To make a list of punctuation marks, we can join the keys of the dictionary into a string.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">punctuation</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">punc_marks</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">punctuation</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>.’;,-“”:?—‘!()_
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now that we know which characters in the book are punctuation, we can write a function that takes a word, strips punctuation from the beginning and end, and converts it to lower case.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">clean_word</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">word</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="n">punctuation</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here’s an example.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clean_word</span><span class="p">(</span><span class="s1">&#39;“Behold!”&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;behold&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Because <code class="docutils literal notranslate"><span class="pre">strip</span></code> removes characters from the beginning and end, it leaves hyphenated words alone.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clean_word</span><span class="p">(</span><span class="s1">&#39;pocket-handkerchief&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;pocket-handkerchief&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now here’s a loop that uses <code class="docutils literal notranslate"><span class="pre">split_line</span></code> and <code class="docutils literal notranslate"><span class="pre">clean_word</span></code> to identify the unique words in the book.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unique_words2</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">split_line</span><span class="p">(</span><span class="n">line</span><span class="p">):</span>
+        <span class="n">word</span> <span class="o">=</span> <span class="n">clean_word</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+        <span class="n">unique_words2</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="nb">len</span><span class="p">(</span><span class="n">unique_words2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4005
+</pre></div>
+</div>
+</div>
+</div>
+<p>With this stricter definition of what a word is, there are about 4000 unique words.
+And we can confirm that the list of longest words has been cleaned up.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">sorted</span><span class="p">(</span><span class="n">unique_words2</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="nb">len</span><span class="p">)[</span><span class="o">-</span><span class="mi">5</span><span class="p">:]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;circumscription&#39;,
+ &#39;unimpressionable&#39;,
+ &#39;fellow-creatures&#39;,
+ &#39;chocolate-coloured&#39;,
+ &#39;pocket-handkerchief&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now let’s see how many times each word is used.</p>
+</section>
+<section id="word-frequencies">
+<h2>Word frequencies<a class="headerlink" href="#word-frequencies" title="Permalink to this heading">#</a></h2>
+<p>The following loop computes the frequency of each unique word.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">word_counter</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">split_line</span><span class="p">(</span><span class="n">line</span><span class="p">):</span>
+        <span class="n">word</span> <span class="o">=</span> <span class="n">clean_word</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">word</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">word_counter</span><span class="p">:</span>
+            <span class="n">word_counter</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">word_counter</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The first time we see a word, we initialize its frequency to <code class="docutils literal notranslate"><span class="pre">1</span></code>. If we see the same word again later, we increment its frequency.</p>
+<p>To see which words appear most often, we can use <code class="docutils literal notranslate"><span class="pre">items</span></code> to get the key-value pairs from <code class="docutils literal notranslate"><span class="pre">word_counter</span></code>, and sort them by the second element of the pair, which is the frequency.
+First we’ll define a function that selects the second element.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">second_element</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we can use <code class="docutils literal notranslate"><span class="pre">sorted</span></code> with two keyword arguments:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key=second_element</span></code> means the items will be sorted according to the frequencies of the words.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">reverse=True</span></code> means they items will be sorted in reverse order, with the most frequent words first.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">items</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">word_counter</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="n">second_element</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here are the five most frequent words.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">word</span><span class="p">,</span> <span class="n">freq</span> <span class="ow">in</span> <span class="n">items</span><span class="p">[:</span><span class="mi">5</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">word</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1614	the
+972	and
+941	of
+640	to
+640	i
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the next section, we’ll encapsulate this loop in a function.
+And we’ll use it to demonstrate a new feature – optional parameters.</p>
+</section>
+<section id="optional-parameters">
+<h2>Optional parameters<a class="headerlink" href="#optional-parameters" title="Permalink to this heading">#</a></h2>
+<p>We’ve used built-in functions that take optional parameters.
+For example, <code class="docutils literal notranslate"><span class="pre">round</span></code> takes an optional parameters called <code class="docutils literal notranslate"><span class="pre">ndigits</span></code> that indicates how many decimal places to keep.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">round</span><span class="p">(</span><span class="mf">3.141592653589793</span><span class="p">,</span> <span class="n">ndigits</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.142
+</pre></div>
+</div>
+</div>
+</div>
+<p>But it’s not just built-in functions – we can write functions with optional parameters, too.
+For example, the following function takes two parameters, <code class="docutils literal notranslate"><span class="pre">word_counter</span></code> and <code class="docutils literal notranslate"><span class="pre">num</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_most_common</span><span class="p">(</span><span class="n">word_counter</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
+    <span class="n">items</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">word_counter</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="n">second_element</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">word</span><span class="p">,</span> <span class="n">freq</span> <span class="ow">in</span> <span class="n">items</span><span class="p">[:</span><span class="n">num</span><span class="p">]:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">word</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The second parameter looks like an assignment statement, but it’s not – it’s an optional parameter.</p>
+<p>If you call this function with one argument, <code class="docutils literal notranslate"><span class="pre">num</span></code> gets the <strong>default value</strong>, which is <code class="docutils literal notranslate"><span class="pre">5</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">print_most_common</span><span class="p">(</span><span class="n">word_counter</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1614	the
+972	and
+941	of
+640	to
+640	i
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you call this function with two arguments, the second argument gets assigned to <code class="docutils literal notranslate"><span class="pre">num</span></code> instead of the default value.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">print_most_common</span><span class="p">(</span><span class="n">word_counter</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1614	the
+972	and
+941	of
+</pre></div>
+</div>
+</div>
+</div>
+<p>In that case, we would say the optional argument <strong>overrides</strong> the default value.</p>
+<p>If a function has both required and optional parameters, all of the required parameters have to come first, followed by the optional ones.</p>
+</section>
+<section id="dictionary-subtraction">
+<span id="section-dictionary-subtraction"></span><h2>Dictionary subtraction<a class="headerlink" href="#dictionary-subtraction" title="Permalink to this heading">#</a></h2>
+<p>Suppose we want to spell-check a book – that is, find a list of words that might be misspelled.
+One way to do that is to find words in the book that don’t appear in a list of valid words.
+In previous chapters, we’ve used a list of words that are considered valid in word games like Scrabble.
+Now we’ll use this list to spell-check Robert Louis Stevenson.</p>
+<p>We can think of this problem as set subtraction – that is, we want to find all the words from one set (the words in the book) that are not in the other (the words in the list).</p>
+<p>As we’ve done before, we can read the contents of <code class="docutils literal notranslate"><span class="pre">words.txt</span></code> and split it into a list of strings.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">word_list</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;words.txt&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The we’ll store the words as keys in a dictionary so we can use the <code class="docutils literal notranslate"><span class="pre">in</span></code> operator to check quickly whether a word is valid.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">valid_words</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">word_list</span><span class="p">:</span>
+    <span class="n">valid_words</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, to identify words that appear in the book but not in the word list, we’ll use <code class="docutils literal notranslate"><span class="pre">subtract</span></code>, which takes two dictionaries as parameters and returns a new dictionary that contains all the keys from one that are not in the other.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">subtract</span><span class="p">(</span><span class="n">d1</span><span class="p">,</span> <span class="n">d2</span><span class="p">):</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">d1</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">d2</span><span class="p">:</span>
+            <span class="n">res</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">d1</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">res</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here’s how we use it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">diff</span> <span class="o">=</span> <span class="n">subtract</span><span class="p">(</span><span class="n">word_counter</span><span class="p">,</span> <span class="n">valid_words</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To get a sample of words that might be misspelled, we can print the most common words in <code class="docutils literal notranslate"><span class="pre">diff</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">print_most_common</span><span class="p">(</span><span class="n">diff</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>640	i
+628	a
+128	utterson
+124	mr
+98	hyde
+</pre></div>
+</div>
+</div>
+</div>
+<p>The most common “misspelled” words are mostly names and a few single-letter words (Mr. Utterson is Dr. Jekyll’s friend and lawyer).</p>
+<p>If we select words that only appear once, they are more likely to be actual misspellings.
+We can do that by looping through the items and making a list of words with frequency <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">singletons</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">word</span><span class="p">,</span> <span class="n">freq</span> <span class="ow">in</span> <span class="n">diff</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">freq</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">singletons</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here are the last few elements of the list.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">singletons</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">:]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;gesticulated&#39;, &#39;abjection&#39;, &#39;circumscription&#39;, &#39;reindue&#39;, &#39;fearstruck&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Most of them are valid words that are not in the word list.
+But <code class="docutils literal notranslate"><span class="pre">reindue</span></code> appears to be a misspelling of <code class="docutils literal notranslate"><span class="pre">reinduce</span></code>, so at least we found one legitimate error.</p>
+</section>
+<section id="random-numbers">
+<h2>Random numbers<a class="headerlink" href="#random-numbers" title="Permalink to this heading">#</a></h2>
+<p>As a step toward Markov text generation, next we’ll choose a random sequence of words from <code class="docutils literal notranslate"><span class="pre">word_counter</span></code>.
+But first let’s talk about randomness.</p>
+<p>Given the same inputs, most computer programs are <strong>deterministic</strong>, which means they generate the same outputs every time.
+Determinism is usually a good thing, since we expect the same calculation to yield the same result.
+For some applications, though, we want the computer to be unpredictable.
+Games are one example, but there are more.</p>
+<p>Making a program truly nondeterministic turns out to be difficult, but there are ways to fake it.
+One is to use algorithms that generate <strong>pseudorandom</strong> numbers.
+Pseudorandom numbers are not truly random because they are generated by a deterministic computation, but just by looking at the numbers it is all but impossible to distinguish them from random.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">random</span></code> module provides functions that generate pseudorandom numbers – which I will simply call “random” from here on.
+We can import it like this.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">random</span></code> module provides a function called <code class="docutils literal notranslate"><span class="pre">choice</span></code> that chooses an element from a list at random, with every element having the same probability of being chosen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you call the function again, you might get the same element again, or a different one.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the long run, we expect to get every element about the same number of times.</p>
+<p>If you use <code class="docutils literal notranslate"><span class="pre">choice</span></code> with a dictionary, you get a <code class="docutils literal notranslate"><span class="pre">KeyError</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">word_counter</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="ne">KeyError</span>: 422
+</pre></div>
+</div>
+</div>
+</div>
+<p>To choose a random key, you have to put the keys in a list and then call <code class="docutils literal notranslate"><span class="pre">choice</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">words</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">word_counter</span><span class="p">)</span>
+<span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;posture&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we generate a random sequence of words, it doesn’t make much sense.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span>
+    <span class="n">word</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ill-contained written apocryphal nor busy spoke 
+</pre></div>
+</div>
+</div>
+</div>
+<p>Part of the problem is that we are not taking into account that some words are more common than others.
+The results will be better if we choose words with different “weights”, so that some are chosen more often than others.</p>
+<p>If we use the values from <code class="docutils literal notranslate"><span class="pre">word_counter</span></code> as weights, each word is chosen with a probability that depends on its frequency.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">weights</span> <span class="o">=</span> <span class="n">word_counter</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">random</span></code> module provides another function called <code class="docutils literal notranslate"><span class="pre">choices</span></code> that takes weights as an optional argument.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">random</span><span class="o">.</span><span class="n">choices</span><span class="p">(</span><span class="n">words</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">weights</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;than&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>And it takes another optional argument, <code class="docutils literal notranslate"><span class="pre">k</span></code>, that specifies the number of words to select.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">random_words</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choices</span><span class="p">(</span><span class="n">words</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">weights</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+<span class="n">random_words</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;reach&#39;, &#39;streets&#39;, &#39;edward&#39;, &#39;a&#39;, &#39;said&#39;, &#39;to&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>The result is a list of strings that we can join into something that’s looks more like a sentence.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">random_words</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;reach streets edward a said to&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you choose words from the book at random, you get a sense of the vocabulary, but a series of random words seldom makes sense because there is no relationship between successive words.
+For example, in a real sentence you expect an article like “the” to be followed by an adjective or a noun, and probably not a verb or adverb.
+So the next step is to look at these relationships between words.</p>
+</section>
+<section id="bigrams">
+<h2>Bigrams<a class="headerlink" href="#bigrams" title="Permalink to this heading">#</a></h2>
+<p>Instead of looking at one word at a time, now we’ll look at sequences of two words, which are called <strong>bigrams</strong>.
+A sequence of three words is called a <strong>trigram</strong>, and a sequence with some unspecified number of words is called an <strong>n-gram</strong>.</p>
+<p>Let’s write a program that finds all of the bigrams in the book and the number of times each one appears.
+To store the results, we’ll use a dictionary where</p>
+<ul class="simple">
+<li><p>The keys are tuples of strings that represent bigrams, and</p></li>
+<li><p>The values are integers that represent frequencies.</p></li>
+</ul>
+<p>Let’s call it <code class="docutils literal notranslate"><span class="pre">bigram_counter</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bigram_counter</span> <span class="o">=</span> <span class="p">{}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The following function takes a list of two strings as a parameter.
+First it makes a tuple of the two strings, which can be used as a key in a dictionary.
+Then it adds the key to <code class="docutils literal notranslate"><span class="pre">bigram_counter</span></code>, if it doesn’t exist, or increments the frequency if it does.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count_bigram</span><span class="p">(</span><span class="n">bigram</span><span class="p">):</span>
+    <span class="n">key</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">bigram</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">bigram_counter</span><span class="p">:</span>
+        <span class="n">bigram_counter</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">bigram_counter</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>As we go through the book, we have to keep track of each pair of consecutive words.
+So if we see the sequence “man is not truly one”, we would add the bigrams “man is”, “is not”, “not truly”, and so on.</p>
+<p>To keep track of these bigrams, we’ll use a list called <code class="docutils literal notranslate"><span class="pre">window</span></code>, because it is like a window that slides over the pages of the book, showing only two words at a time.
+Initially, <code class="docutils literal notranslate"><span class="pre">window</span></code> is empty.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">window</span> <span class="o">=</span> <span class="p">[]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We’ll use the following function to process the words one at a time.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">process_word</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>
+    <span class="n">window</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">window</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="n">count_bigram</span><span class="p">(</span><span class="n">window</span><span class="p">)</span>
+        <span class="n">window</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The first time this function is called, it appends the given word to <code class="docutils literal notranslate"><span class="pre">window</span></code>.
+Since there is only one word in the window, we don’t have a bigram yet, so the function ends.</p>
+<p>The second time it’s called – and every time thereafter – it appends a second word to <code class="docutils literal notranslate"><span class="pre">window</span></code>.
+Since there are two words in the window, it calls <code class="docutils literal notranslate"><span class="pre">count_bigram</span></code> to keep track of how many times each bigram appears.
+Then it uses <code class="docutils literal notranslate"><span class="pre">pop</span></code> to remove the first word from the window.</p>
+<p>The following program loops through the words in the book and processes them one at a time.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">split_line</span><span class="p">(</span><span class="n">line</span><span class="p">):</span>
+        <span class="n">word</span> <span class="o">=</span> <span class="n">clean_word</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+        <span class="n">process_word</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The result is a dictionary that maps from each bigram to the number of times it appears.
+We can use <code class="docutils literal notranslate"><span class="pre">print_most_common</span></code> to see the most common bigrams.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">print_most_common</span><span class="p">(</span><span class="n">bigram_counter</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>178	(&#39;of&#39;, &#39;the&#39;)
+139	(&#39;in&#39;, &#39;the&#39;)
+94	(&#39;it&#39;, &#39;was&#39;)
+80	(&#39;and&#39;, &#39;the&#39;)
+73	(&#39;to&#39;, &#39;the&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Looking at these results, we can get a sense of which pairs of words are most likely to appear together.
+We can also use the results to generate random text, like this.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bigrams</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">bigram_counter</span><span class="p">)</span>
+<span class="n">weights</span> <span class="o">=</span> <span class="n">bigram_counter</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+<span class="n">random_bigrams</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choices</span><span class="p">(</span><span class="n">bigrams</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">weights</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">bigrams</span></code> is a list of the bigrams that appear in the books.
+<code class="docutils literal notranslate"><span class="pre">weights</span></code> is a list of their frequencies, so <code class="docutils literal notranslate"><span class="pre">random_bigrams</span></code> is a sample where the probability a bigram is selected is proportional to its frequency.</p>
+<p>Here are the results.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">pair</span> <span class="ow">in</span> <span class="n">random_bigrams</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">pair</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>to suggest this preface to detain fact is above all the laboratory 
+</pre></div>
+</div>
+</div>
+</div>
+<p>This way of generating text is better than choosing random words, but still doesn’t make a lot of sense.</p>
+</section>
+<section id="markov-analysis">
+<h2>Markov analysis<a class="headerlink" href="#markov-analysis" title="Permalink to this heading">#</a></h2>
+<p>We can do better with Markov chain text analysis, which computes, for each word in a text, the list of words that come next.
+As an example, we’ll analyze these lyrics from the Monty Python song <em>Eric, the Half a Bee</em>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">song</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">Half a bee, philosophically,</span>
+<span class="s2">Must, ipso facto, half not be.</span>
+<span class="s2">But half the bee has got to be</span>
+<span class="s2">Vis a vis, its entity. D&#39;you see?</span>
+<span class="s2">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To store the results, we’ll use a dictionary that maps from each word to the list of words that follow it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">successor_map</span> <span class="o">=</span> <span class="p">{}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>As an example, let’s start with the first two words of the song.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first</span> <span class="o">=</span> <span class="s1">&#39;half&#39;</span>
+<span class="n">second</span> <span class="o">=</span> <span class="s1">&#39;a&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If the first word is not in <code class="docutils literal notranslate"><span class="pre">successor_map</span></code>, we have to add a new item that maps from the first word to a list containing the second word.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">successor_map</span><span class="p">[</span><span class="n">first</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">second</span><span class="p">]</span>
+<span class="n">successor_map</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;half&#39;: [&#39;a&#39;]}
+</pre></div>
+</div>
+</div>
+</div>
+<p>If the first word is already in the dictionary, we can look it up to get the list of successors we’ve seen so far, and append the new one.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first</span> <span class="o">=</span> <span class="s1">&#39;half&#39;</span>
+<span class="n">second</span> <span class="o">=</span> <span class="s1">&#39;not&#39;</span>
+
+<span class="n">successor_map</span><span class="p">[</span><span class="n">first</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">second</span><span class="p">)</span>
+<span class="n">successor_map</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;half&#39;: [&#39;a&#39;, &#39;not&#39;]}
+</pre></div>
+</div>
+</div>
+</div>
+<p>The following function encapsulates these steps.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add_bigram</span><span class="p">(</span><span class="n">bigram</span><span class="p">):</span>
+    <span class="n">first</span><span class="p">,</span> <span class="n">second</span> <span class="o">=</span> <span class="n">bigram</span>
+    
+    <span class="k">if</span> <span class="n">first</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">successor_map</span><span class="p">:</span>
+        <span class="n">successor_map</span><span class="p">[</span><span class="n">first</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">second</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">successor_map</span><span class="p">[</span><span class="n">first</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">second</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If the same bigram appears more that once, the second word is added to the list more than once.
+In this way, <code class="docutils literal notranslate"><span class="pre">successor_map</span></code> keeps track of how many times each successor appears.</p>
+<p>As we did in the previous section, we’ll use a list called <code class="docutils literal notranslate"><span class="pre">window</span></code> to store pairs of consecutive words.
+And we’ll use the following function to process the words one at a time.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">process_word_bigram</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>
+    <span class="n">window</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">window</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="n">add_bigram</span><span class="p">(</span><span class="n">window</span><span class="p">)</span>
+        <span class="n">window</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here’s how we use it to process the words in the song.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">successor_map</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">window</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">song</span><span class="o">.</span><span class="n">split</span><span class="p">():</span>
+    <span class="n">word</span> <span class="o">=</span> <span class="n">clean_word</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+    <span class="n">process_word_bigram</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>And here are the results.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">successor_map</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;half&#39;: [&#39;a&#39;, &#39;not&#39;, &#39;the&#39;],
+ &#39;a&#39;: [&#39;bee&#39;, &#39;vis&#39;],
+ &#39;bee&#39;: [&#39;philosophically&#39;, &#39;has&#39;],
+ &#39;philosophically&#39;: [&#39;must&#39;],
+ &#39;must&#39;: [&#39;ipso&#39;],
+ &#39;ipso&#39;: [&#39;facto&#39;],
+ &#39;facto&#39;: [&#39;half&#39;],
+ &#39;not&#39;: [&#39;be&#39;],
+ &#39;be&#39;: [&#39;but&#39;, &#39;vis&#39;],
+ &#39;but&#39;: [&#39;half&#39;],
+ &#39;the&#39;: [&#39;bee&#39;],
+ &#39;has&#39;: [&#39;got&#39;],
+ &#39;got&#39;: [&#39;to&#39;],
+ &#39;to&#39;: [&#39;be&#39;],
+ &#39;vis&#39;: [&#39;a&#39;, &#39;its&#39;],
+ &#39;its&#39;: [&#39;entity&#39;],
+ &#39;entity&#39;: [&quot;d&#39;you&quot;],
+ &quot;d&#39;you&quot;: [&#39;see&#39;]}
+</pre></div>
+</div>
+</div>
+</div>
+<p>The word <code class="docutils literal notranslate"><span class="pre">half</span></code> can be followed by <code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">not</span></code>, or <code class="docutils literal notranslate"><span class="pre">the</span></code>.
+The word <code class="docutils literal notranslate"><span class="pre">a</span></code> can be followed by <code class="docutils literal notranslate"><span class="pre">bee</span></code> or <code class="docutils literal notranslate"><span class="pre">vis</span></code>.
+Most of the other words appear only once, so they are followed by only a single word.</p>
+<p>Now let’s analyze the book.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">successor_map</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">window</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">split_line</span><span class="p">(</span><span class="n">line</span><span class="p">):</span>
+        <span class="n">word</span> <span class="o">=</span> <span class="n">clean_word</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+        <span class="n">process_word_bigram</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can look up any word and find the words that can follow it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">successor_map</span><span class="p">[</span><span class="s1">&#39;going&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;east&#39;, &#39;in&#39;, &#39;to&#39;, &#39;to&#39;, &#39;up&#39;, &#39;to&#39;, &#39;of&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this list of successors, notice that the word <code class="docutils literal notranslate"><span class="pre">to</span></code> appears three times – the other successors only appear once.</p>
+</section>
+<section id="generating-text">
+<h2>Generating text<a class="headerlink" href="#generating-text" title="Permalink to this heading">#</a></h2>
+<p>We can use the results from the previous section to generate new text with the same relationships between consecutive words as in the original.
+Here’s how it works:</p>
+<ul class="simple">
+<li><p>Starting with any word that appears in the text, we look up its possible successors and choose one at random.</p></li>
+<li><p>Then, using the chosen word, we look up its possible successors, and choose one at random.</p></li>
+</ul>
+<p>We can repeat this process to generate as many words as we want.
+As an example, let’s start with the word <code class="docutils literal notranslate"><span class="pre">although</span></code>.
+Here are the words that can follow it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">word</span> <span class="o">=</span> <span class="s1">&#39;although&#39;</span>
+<span class="n">successors</span> <span class="o">=</span> <span class="n">successor_map</span><span class="p">[</span><span class="n">word</span><span class="p">]</span>
+<span class="n">successors</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;i&#39;, &#39;a&#39;, &#39;it&#39;, &#39;the&#39;, &#39;we&#39;, &#39;they&#39;, &#39;i&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can use <code class="docutils literal notranslate"><span class="pre">choice</span></code> to choose from the list with equal probability.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">word</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">successors</span><span class="p">)</span>
+<span class="n">word</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;i&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>If the same word appears more than once in the list, it is more likely to be selected.</p>
+<p>Repeating these steps, we can use the following loop to generate a longer series.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">successors</span> <span class="o">=</span> <span class="n">successor_map</span><span class="p">[</span><span class="n">word</span><span class="p">]</span>
+    <span class="n">word</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">successors</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>continue to hesitate and swallowed the smile withered from that 
+</pre></div>
+</div>
+</div>
+</div>
+<p>The result sounds more like a real sentence, but it still doesn’t make much sense.</p>
+<p>We can do better using more than one word as a key in <code class="docutils literal notranslate"><span class="pre">successor_map</span></code>.
+For example, we can make a dictionary that maps from each bigram – or trigram – to the list of words that come next.
+As an exercise, you’ll have a chance to implement this analysis and see what the results look like.</p>
+</section>
+<section id="debugging">
+<span id="section-debugging-12"></span><h2>Debugging<a class="headerlink" href="#debugging" title="Permalink to this heading">#</a></h2>
+<p>At this point we are writing more substantial programs, and you might find that you are spending more time debugging.
+If you are stuck on a difficult bug, here are a few things to try:</p>
+<ul class="simple">
+<li><p>Reading: Examine your code, read it back to yourself, and check that it says what you meant to say.</p></li>
+<li><p>Running: Experiment by making changes and running different versions. Often if you display the right thing at the right place in the program, the problem becomes obvious, but sometimes you have to build scaffolding.</p></li>
+<li><p>Ruminating: Take some time to think! What kind of error is it: syntax, runtime,
+or semantic? What information can you get from the error messages,
+or from the output of the program? What kind of error could cause
+the problem you’re seeing? What did you change last, before the
+problem appeared?</p></li>
+<li><p>Rubberducking: If you explain the problem to someone else, you sometimes find the
+answer before you finish asking the question. Often you don’t need
+the other person; you could just talk to a rubber duck. And that’s
+the origin of the well-known strategy called <strong>rubber duck
+debugging</strong>. I am not making this up – see
+<a class="reference external" href="https://en.wikipedia.org/wiki/Rubber_duck_debugging">https://en.wikipedia.org/wiki/Rubber_duck_debugging</a>.</p></li>
+<li><p>Retreating: At some point, the best thing to do is back up – undoing recent
+changes – until you get to a program that works. Then you can start rebuilding.</p></li>
+<li><p>Resting: If you give your brain a break, sometime it will find the problem for you.</p></li>
+</ul>
+<p>Beginning programmers sometimes get stuck on one of these activities and forget the others. Each activity comes with its own failure mode.</p>
+<p>For example, reading your code works if the problem is a typographical error, but not if the problem is a conceptual misunderstanding.
+If you don’t understand what your program does, you can read it 100 times and never see the error, because the error is in your head.</p>
+<p>Running experiments can work, especially if you run small, simple tests.
+But if you run experiments without thinking or reading your code, it can take a long time to figure out what’s happening.</p>
+<p>You have to take time to think. Debugging is like an experimental science. You should have at least one hypothesis about what the problem is. If there are two or more possibilities, try to think of a test that would eliminate one of them.</p>
+<p>But even the best debugging techniques will fail if there are too many
+errors, or if the code you are trying to fix is too big and complicated.
+Sometimes the best option is to retreat, simplifying the program until
+you get back to something that works.</p>
+<p>Beginning programmers are often reluctant to retreat because they can’t
+stand to delete a line of code (even if it’s wrong). If it makes you
+feel better, copy your program into another file before you start
+stripping it down. Then you can copy the pieces back one at a time.</p>
+<p>Finding a hard bug requires reading, running, ruminating, retreating, and sometimes resting.
+If you get stuck on one of these activities, try the others.</p>
+</section>
+<section id="glossary">
+<h2>Glossary<a class="headerlink" href="#glossary" title="Permalink to this heading">#</a></h2>
+<p><strong>default value:</strong>
+The value assigned to a parameter if no argument is provided.</p>
+<p><strong>override:</strong>
+To replace a default value with an argument.</p>
+<p><strong>deterministic:</strong>
+A deterministic program does the same thing each time it runs, given the same inputs.</p>
+<p><strong>pseudorandom:</strong>
+A pseudorandom sequence of numbers appears to be random, but is generated by a deterministic program.</p>
+<p><strong>bigram:</strong>
+A sequence of two elements, often words.</p>
+<p><strong>trigram:</strong>
+A sequence of three elements.</p>
+<p><strong>n-gram:</strong>
+A sequence of an unspecified number of elements.</p>
+</section>
+<section id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h2>
+<section id="ask-a-virtual-assistant">
+<h3>Ask a virtual assistant<a class="headerlink" href="#ask-a-virtual-assistant" title="Permalink to this heading">#</a></h3>
+<p>In <code class="docutils literal notranslate"><span class="pre">add_bigram</span></code>, the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement creates a new list or appends an element to an existing list, depending on whether the key is already in the dictionary.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add_bigram</span><span class="p">(</span><span class="n">bigram</span><span class="p">):</span>
+    <span class="n">first</span><span class="p">,</span> <span class="n">second</span> <span class="o">=</span> <span class="n">bigram</span>
+    
+    <span class="k">if</span> <span class="n">first</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">successor_map</span><span class="p">:</span>
+        <span class="n">successor_map</span><span class="p">[</span><span class="n">first</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">second</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">successor_map</span><span class="p">[</span><span class="n">first</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">second</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Dictionaries provide a method called <code class="docutils literal notranslate"><span class="pre">setdefault</span></code> that we can use to do the same thing more concisely.
+Ask a virtual assistant how it works, or copy <code class="docutils literal notranslate"><span class="pre">add_word</span></code> into a virtual assistant and ask “Can you rewrite this using <code class="docutils literal notranslate"><span class="pre">setdefault</span></code>?”</p>
+<p>In this chapter we implemented Markov chain text analysis and generation.
+If you are curious, you can ask a virtual assistant for more information on the topic.
+One of the things you might learn is that virtual assistants use algorithms that are similar in many ways – but also different in important ways.
+Ask a VA, “What are the differences between large language models like GPT and Markov chain text analysis?”</p>
+</section>
+<section id="exercise">
+<h3>Exercise<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h3>
+<p>Write a function that counts the number of times each trigram (sequence of three words) appears.
+If you test your function with the text of <em>Dr. Jekyll and Mr. Hyde</em>, you should find that the most common trigram is “said the lawyer”.</p>
+<p>Hint: Write a function called <code class="docutils literal notranslate"><span class="pre">count_trigram</span></code> that is similar to <code class="docutils literal notranslate"><span class="pre">count_bigram</span></code>. Then write a function called <code class="docutils literal notranslate"><span class="pre">process_word_trigram</span></code> that is similar to <code class="docutils literal notranslate"><span class="pre">process_word_bigram</span></code>.</p>
+</section>
+<section id="id1">
+<h3>Exercise<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<p>Now let’s implement Markov chain text analysis with a mapping from each bigram to a list of possible successors.</p>
+<p>Starting with <code class="docutils literal notranslate"><span class="pre">add_bigram</span></code>, write a function called <code class="docutils literal notranslate"><span class="pre">add_trigram</span></code> that takes a list of three words and either adds or updates an item in <code class="docutils literal notranslate"><span class="pre">successor_map</span></code>, using the first two words as the key and the third word as a possible successor.</p>
+<p>Here’s a version of <code class="docutils literal notranslate"><span class="pre">process_word_trigram</span></code> that calls <code class="docutils literal notranslate"><span class="pre">add_trigram</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">process_word_trigram</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>
+    <span class="n">window</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">window</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="n">add_trigram</span><span class="p">(</span><span class="n">window</span><span class="p">)</span>
+        <span class="n">window</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can use the following loop to test your function with the words from the book.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">successor_map</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">window</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">split_line</span><span class="p">(</span><span class="n">line</span><span class="p">):</span>
+        <span class="n">word</span> <span class="o">=</span> <span class="n">clean_word</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+        <span class="n">process_word_trigram</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the next exercise, you’ll use the results to generate new random text.</p>
+</section>
+<section id="id2">
+<h3>Exercise<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<p>For this exercise, we’ll assume that <code class="docutils literal notranslate"><span class="pre">successor_map</span></code> is a dictionary that maps from each bigram to the list of words that follow it.</p>
+<p>To generate random text, we’ll start by choosing a random key from <code class="docutils literal notranslate"><span class="pre">successor_map</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">successors</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">successor_map</span><span class="p">)</span>
+<span class="n">bigram</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">successors</span><span class="p">)</span>
+<span class="n">bigram</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;doubted&#39;, &#39;if&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now write a loop that generates <code class="docutils literal notranslate"><span class="pre">50</span></code> more words following these steps:</p>
+<ol class="arabic simple">
+<li><p>In <code class="docutils literal notranslate"><span class="pre">successor_map</span></code>, look up the list of words that can follow <code class="docutils literal notranslate"><span class="pre">bigram</span></code>.</p></li>
+<li><p>Choose one of them at random and print it.</p></li>
+<li><p>For the next iteration, make a new bigram that contains the second word from <code class="docutils literal notranslate"><span class="pre">bigram</span></code> and the chosen successor.</p></li>
+</ol>
+<p>For example, if we start with the bigram <code class="docutils literal notranslate"><span class="pre">('doubted',</span> <span class="pre">'if')</span></code> and choose <code class="docutils literal notranslate"><span class="pre">'from'</span></code> as its successor, the next bigram is <code class="docutils literal notranslate"><span class="pre">('if',</span> <span class="pre">'from')</span></code>.</p>
+<p>If everything is working, you should find that the generated text is recognizably similar in style to the original, and some phrases make sense, but the text might wander from one topic to another.</p>
+<p>As a bonus exercise, modify your solution to the last two exercises to use trigrams as keys in <code class="docutils literal notranslate"><span class="pre">successor_map</span></code>, and see what effect it has on the results.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="chap11.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Tuples</p>
+      </div>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unique-words">Unique words</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#punctuation">Punctuation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#word-frequencies">Word frequencies</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-parameters">Optional parameters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionary-subtraction">Dictionary subtraction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#random-numbers">Random numbers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bigrams">Bigrams</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#markov-analysis">Markov analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-text">Generating text</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">Debugging</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">Glossary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">Ask a virtual assistant</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Allen B. Downey
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

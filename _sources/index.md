@@ -46,6 +46,34 @@ Starting in February 2024, I plan to release new chapters here, about one per we
 
 * [Click here to run Chapter 5 on Colab](https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap05.ipynb)
 
+### Chapter 6: Return Values
+
+* [Click here to run Chapter 5 on Colab](https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap06.ipynb)
+
+### Chapter 7: Iteration and Search
+
+* [Click here to run Chapter 5 on Colab](https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap07.ipynb)
+
+### Chapter 8: Strings and Regular Expressions
+
+* [Click here to run Chapter 5 on Colab](https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap08.ipynb)
+
+### Chapter 9: Lists
+
+* [Click here to run Chapter 5 on Colab](https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap09.ipynb)
+
+### Chapter 10: Dictionaries
+
+* [Click here to run Chapter 5 on Colab](https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap10.ipynb)
+
+### Chapter 11: Tuples
+
+* [Click here to run Chapter 5 on Colab](https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap11.ipynb)
+
+### Chapter 12: Text Analysis and Generation
+
+* [Click here to run Chapter 5 on Colab](https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap12.ipynb)
+
 
 ## Resources for teachers
 

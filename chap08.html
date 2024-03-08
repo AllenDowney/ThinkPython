@@ -1,0 +1,1477 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Strings and Regular Expressions &#8212; Think Python, 3rd edition</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chap08';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Lists" href="chap09.html" />
+    <link rel="prev" title="Iteration and Search" href="chap07.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Think Python, 3rd edition</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    Think Python, 3rd edition
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chap00.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap01.html">Programming as a way of thinking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap02.html">Variables and Statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap03.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap04.html">Functions and Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap05.html">Conditionals and Recursion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap06.html">Return Values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap07.html">Iteration and Search</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Strings and Regular Expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap09.html">Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap10.html">Dictionaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap11.html">Tuples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap12.html">Text Analysis and Generation</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/AllenDowney/ThinkPython/tree/v3" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/chap08.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Strings and Regular Expressions</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-string-is-a-sequence">A string is a sequence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-slices">String slices</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strings-are-immutable">Strings are immutable</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-comparison">String comparison</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-methods">String methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-files">Writing files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#find-and-replace">Find and replace</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regular-expressions">Regular expressions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-substitution">String substitution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">Debugging</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">Glossary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">Ask a virtual assistant</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Exercise</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="strings-and-regular-expressions">
+<h1>Strings and Regular Expressions<a class="headerlink" href="#strings-and-regular-expressions" title="Permalink to this heading">#</a></h1>
+<p>Strings are not like integers, floats, and booleans. A string is a <strong>sequence</strong>, which means it contains multiple values in a particular order.
+In this chapter we’ll see how to access the values that make up a string, and we’ll use functions that process strings.</p>
+<p>We’ll also use regular expressions, which are a powerful tool for finding patterns in a string and performing operations like search and replace.</p>
+<p>As an exercise, you’ll have a chance to apply these tools to a word game called Wordle.</p>
+<section id="a-string-is-a-sequence">
+<h2>A string is a sequence<a class="headerlink" href="#a-string-is-a-sequence" title="Permalink to this heading">#</a></h2>
+<p>A string is a sequence of characters. A <strong>character</strong> can be a letter (in almost any alphabet), a digit, a punctuation mark, or white space.</p>
+<p>You can select a character from a string with the bracket operator.
+This example statement selects character number 1 from <code class="docutils literal notranslate"><span class="pre">fruit</span></code> and
+assigns it to <code class="docutils literal notranslate"><span class="pre">letter</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fruit</span> <span class="o">=</span> <span class="s1">&#39;banana&#39;</span>
+<span class="n">letter</span> <span class="o">=</span> <span class="n">fruit</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The expression in brackets is an <strong>index</strong>, so called because it <em>indicates</em> which character in the sequence to select.
+But the result might not be what you expect.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">letter</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;a&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>The letter with index <code class="docutils literal notranslate"><span class="pre">1</span></code> is actually the second letter of the string.
+An index is an offset from the beginning of the string, so the offset of the first letter is <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fruit</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;b&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can think of <code class="docutils literal notranslate"><span class="pre">b</span></code> as the 0th letter of <code class="docutils literal notranslate"><span class="pre">banana</span></code> – pronounced “zero-eth”.</p>
+<p>The index in brackets can be a variable.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">fruit</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;a&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Or an expression that contains variables and operators.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fruit</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;n&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>But the value of the index has to be an integer – otherwise you get a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code>.</p>
+<div class="cell tag_raises-excpetion docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fruit</span><span class="p">[</span><span class="mf">1.5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="ne">TypeError</span>: string indices must be integers
+</pre></div>
+</div>
+</div>
+</div>
+<p>As we saw in Chapter 1, we can use the built-in function <code class="docutils literal notranslate"><span class="pre">len</span></code> to get the length of a string.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">fruit</span><span class="p">)</span>
+<span class="n">n</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
+</pre></div>
+</div>
+</div>
+</div>
+<p>To get the last letter of a string, you might be tempted to write this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fruit</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="ne">IndexError</span>: string index out of range
+</pre></div>
+</div>
+</div>
+</div>
+<p>But that causes an <code class="docutils literal notranslate"><span class="pre">IndexError</span></code> because there is no letter in <code class="docutils literal notranslate"><span class="pre">'banana'</span></code> with the index 6. Because we started counting at <code class="docutils literal notranslate"><span class="pre">0</span></code>, the six letters are numbered <code class="docutils literal notranslate"><span class="pre">0</span></code> to <code class="docutils literal notranslate"><span class="pre">5</span></code>. To get the last character, you have to subtract <code class="docutils literal notranslate"><span class="pre">1</span></code> from <code class="docutils literal notranslate"><span class="pre">n</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fruit</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;a&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>But there’s an easier way.
+To get the last letter in a string, you can use a negative index, which counts backward from the end.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fruit</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;a&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>The index <code class="docutils literal notranslate"><span class="pre">-1</span></code> selects the last letter, <code class="docutils literal notranslate"><span class="pre">-2</span></code> selects the second to last, and so on.</p>
+</section>
+<section id="string-slices">
+<h2>String slices<a class="headerlink" href="#string-slices" title="Permalink to this heading">#</a></h2>
+<p>A segment of a string is called a <strong>slice</strong>.
+Selecting a slice is similar to selecting a character.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fruit</span> <span class="o">=</span> <span class="s1">&#39;banana&#39;</span>
+<span class="n">fruit</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;ban&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>The operator <code class="docutils literal notranslate"><span class="pre">[n:m]</span></code> returns the part of the string from the <code class="docutils literal notranslate"><span class="pre">n</span></code>th
+character to the <code class="docutils literal notranslate"><span class="pre">m</span></code>th character, including the first but excluding the second.
+This behavior is counterintuitive, but it might help to imagine the indices pointing <em>between</em> the characters, as in this figure:</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="_images/5c9d8e380cfabbeb1b708d127fe4de7b00b09eb817cb30b7357e747f8f696fa1.png" src="_images/5c9d8e380cfabbeb1b708d127fe4de7b00b09eb817cb30b7357e747f8f696fa1.png" />
+</div>
+</div>
+<p>For example, the slice <code class="docutils literal notranslate"><span class="pre">[3:6]</span></code> selects the letters <code class="docutils literal notranslate"><span class="pre">ana</span></code>, which means that <code class="docutils literal notranslate"><span class="pre">6</span></code> is legal as part of a slice, but not legal as an index.</p>
+<p>If you omit the first index, the slice starts at the beginning of the string.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fruit</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;ban&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you omit the second index, the slice goes to the end of the string:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fruit</span><span class="p">[</span><span class="mi">3</span><span class="p">:]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;ana&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>If the first index is greater than or equal to the second, the result is an <strong>empty string</strong>, represented by two quotation marks:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fruit</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>An empty string contains no characters and has length 0.</p>
+<p>Continuing this example, what do you think <code class="docutils literal notranslate"><span class="pre">fruit[:]</span></code> means? Try it and
+see.</p>
+</section>
+<section id="strings-are-immutable">
+<h2>Strings are immutable<a class="headerlink" href="#strings-are-immutable" title="Permalink to this heading">#</a></h2>
+<p>It is tempting to use the <code class="docutils literal notranslate"><span class="pre">[]</span></code> operator on the left side of an
+assignment, with the intention of changing a character in a string, like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">greeting</span> <span class="o">=</span> <span class="s1">&#39;Hello, world!&#39;</span>
+<span class="n">greeting</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;J&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="ne">TypeError</span>: &#39;str&#39; object does not support item assignment
+</pre></div>
+</div>
+</div>
+</div>
+<p>The result is a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code>.
+In the error message, the “object” is the string and the “item” is the character
+we tried to assign.
+For now, an <strong>object</strong> is the same thing as a value, but we will refine that definition later.</p>
+<p>The reason for this error is that strings are <strong>immutable</strong>, which means you can’t change an existing string.
+The best you can do is create a new string that is a variation of the original.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_greeting</span> <span class="o">=</span> <span class="s1">&#39;J&#39;</span> <span class="o">+</span> <span class="n">greeting</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+<span class="n">new_greeting</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Jello, world!&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>This example concatenates a new first letter onto a slice of <code class="docutils literal notranslate"><span class="pre">greeting</span></code>.
+It has no effect on the original string.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">greeting</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Hello, world!&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="string-comparison">
+<h2>String comparison<a class="headerlink" href="#string-comparison" title="Permalink to this heading">#</a></h2>
+<p>The relational operators work on strings. To see if two strings are
+equal, we can use the <code class="docutils literal notranslate"><span class="pre">==</span></code> operator.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">word</span> <span class="o">=</span> <span class="s1">&#39;banana&#39;</span>
+
+<span class="k">if</span> <span class="n">word</span> <span class="o">==</span> <span class="s1">&#39;banana&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;All right, banana.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>All right, banana.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Other relational operations are useful for putting words in alphabetical
+order:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">compare_word</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">word</span> <span class="o">&lt;</span> <span class="s1">&#39;banana&#39;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="s1">&#39;comes before banana.&#39;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">word</span> <span class="o">&gt;</span> <span class="s1">&#39;banana&#39;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="s1">&#39;comes after banana.&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;All right, banana.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">compare_word</span><span class="p">(</span><span class="s1">&#39;apple&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>apple comes before banana.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Python does not handle uppercase and lowercase letters the same way
+people do. All the uppercase letters come before all the lowercase
+letters, so:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">compare_word</span><span class="p">(</span><span class="s1">&#39;Pineapple&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pineapple comes before banana.
+</pre></div>
+</div>
+</div>
+</div>
+<p>To solve this problem, we can convert strings to a standard format, such as all lowercase, before performing the comparison.
+Keep that in mind if you have to defend yourself against a man armed with a Pineapple.</p>
+</section>
+<section id="string-methods">
+<h2>String methods<a class="headerlink" href="#string-methods" title="Permalink to this heading">#</a></h2>
+<p>Strings provide methods that perform a variety of useful operations.
+A method is similar to a function – it takes arguments and returns a value – but the syntax is different.
+For example, the method <code class="docutils literal notranslate"><span class="pre">upper</span></code> takes a string and returns a new string with all uppercase letters.</p>
+<p>Instead of the function syntax <code class="docutils literal notranslate"><span class="pre">upper(word)</span></code>, it uses the method syntax <code class="docutils literal notranslate"><span class="pre">word.upper()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">word</span> <span class="o">=</span> <span class="s1">&#39;banana&#39;</span>
+<span class="n">new_word</span> <span class="o">=</span> <span class="n">word</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+<span class="n">new_word</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;BANANA&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>This use of the dot operator specifies the name of the method, <code class="docutils literal notranslate"><span class="pre">upper</span></code>, and the name of the string to apply the method to, <code class="docutils literal notranslate"><span class="pre">word</span></code>.
+The empty parentheses indicate that this method takes no arguments.</p>
+<p>A method call is called an <strong>invocation</strong>; in this case, we would say that we are invoking <code class="docutils literal notranslate"><span class="pre">upper</span></code> on <code class="docutils literal notranslate"><span class="pre">word</span></code>.</p>
+</section>
+<section id="writing-files">
+<span id="section-writing-files"></span><h2>Writing files<a class="headerlink" href="#writing-files" title="Permalink to this heading">#</a></h2>
+<p>String operators and methods are useful for reading and writing text files.
+As an example, we’ll work with the text of <em>Dracula</em>, a novel by Bram Stoker that is available from Project Gutenberg (<a class="reference external" href="https://www.gutenberg.org/ebooks/345">https://www.gutenberg.org/ebooks/345</a>).</p>
+<p>I’ve downloaded the book in a plain text file called <code class="docutils literal notranslate"><span class="pre">pg345.txt</span></code>, which we can open for reading like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reader</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;pg345.txt&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In addition to the text of the book, this file contains a section at the beginning with information about the book and a section at the end with information about the license.
+Before we process the text, we can remove this extra material by finding the special lines at the beginning and end that begin with <code class="docutils literal notranslate"><span class="pre">***</span></code>.</p>
+<p>The following function takes a line and checks whether it is one of the special lines.
+It uses the <code class="docutils literal notranslate"><span class="pre">startswith</span></code> method, which checks whether a string starts with a given sequence of characters.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">is_special_line</span><span class="p">(</span><span class="n">line</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;*** &#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can use this function to loop through the lines in the file and print only the special lines.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">is_special_line</span><span class="p">(</span><span class="n">line</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>*** START OF THE PROJECT GUTENBERG EBOOK DRACULA ***
+*** END OF THE PROJECT GUTENBERG EBOOK DRACULA ***
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now let’s create a new file, called <code class="docutils literal notranslate"><span class="pre">pg345_cleaned.txt</span></code>, that contains only the text of the book.
+In order to loop through the book again, we have to open it again for reading.
+And, to write a new file, we can open it for writing.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reader</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;pg345.txt&#39;</span><span class="p">)</span>
+<span class="n">writer</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;pg345_cleaned.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">open</span></code> takes an optional parameters that specifies the “mode” – in this example, <code class="docutils literal notranslate"><span class="pre">w</span></code> indicates that we’re opening the file for writing.
+If the file doesn’t exist, it will be created; if it already exists, the contents will be replaced.</p>
+<p>As a first step, we’ll loop through the file until we find the first special line.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">is_special_line</span><span class="p">(</span><span class="n">line</span><span class="p">):</span>
+        <span class="k">break</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">break</span></code> statement “breaks” out of the loop – that is, it causes the loop to end immediately, before we get to the end of the file.</p>
+<p>When the loop exits, <code class="docutils literal notranslate"><span class="pre">line</span></code> contains the special line that made the conditional true.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">line</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;*** START OF THE PROJECT GUTENBERG EBOOK DRACULA ***\n&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Because <code class="docutils literal notranslate"><span class="pre">reader</span></code> keeps track of where it is in the file, we can use a second loop to pick up where we left off.</p>
+<p>The following loop reads the rest of the file, one line at a time.
+When it finds the special line that indicates the end of the text, it breaks out of the loop.
+Otherwise, it writes the line to the output file.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">is_special_line</span><span class="p">(</span><span class="n">line</span><span class="p">):</span>
+        <span class="k">break</span>
+    <span class="n">writer</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>When this loop exits, <code class="docutils literal notranslate"><span class="pre">line</span></code> contains the second special line.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">line</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;*** END OF THE PROJECT GUTENBERG EBOOK DRACULA ***\n&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>At this point <code class="docutils literal notranslate"><span class="pre">reader</span></code> and <code class="docutils literal notranslate"><span class="pre">writer</span></code> are still open, which means we could keep reading lines from <code class="docutils literal notranslate"><span class="pre">reader</span></code> or writing lines to <code class="docutils literal notranslate"><span class="pre">writer</span></code>.
+To indicate that we’re done, we can close both files by invoking the <code class="docutils literal notranslate"><span class="pre">close</span></code> method.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reader</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="n">writer</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To check whether this process was successful, we can read the first few lines from the new file we just created.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;pg345_cleaned.txt&#39;</span><span class="p">):</span>
+    <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">line</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;Stoker&#39;</span><span class="p">):</span>
+        <span class="k">break</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DRACULA
+_by_
+Bram Stoker
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">endswidth</span></code> method checks whether a string ends with a given sequence of characters.</p>
+</section>
+<section id="find-and-replace">
+<h2>Find and replace<a class="headerlink" href="#find-and-replace" title="Permalink to this heading">#</a></h2>
+<p>In the Icelandic translation of <em>Dracula</em> from 1901, the name of one of the characters was changed from “Jonathan” to “Thomas”.
+To make this change in the English version, we can loop through the book, use the <code class="docutils literal notranslate"><span class="pre">replace</span></code> method to replace one name with another, and write the result to a new file.</p>
+<p>We’ll start by counting the lines in the cleaned version of the file.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;pg345_cleaned.txt&#39;</span><span class="p">):</span>
+    <span class="n">total</span> <span class="o">+=</span> <span class="mi">1</span>
+    
+<span class="n">total</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15499
+</pre></div>
+</div>
+</div>
+</div>
+<p>To see whether a line contains “Jonathan”, we can use the <code class="docutils literal notranslate"><span class="pre">in</span></code> operator, which checks whether this sequence of characters appears anywhere in the line.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;pg345_cleaned.txt&#39;</span><span class="p">):</span>
+    <span class="k">if</span> <span class="s1">&#39;Jonathan&#39;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
+        <span class="n">total</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="n">total</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>199
+</pre></div>
+</div>
+</div>
+</div>
+<p>There are 199 lines that contain the name, but that’s not quite the total number of times it appears, because it can appear more than once in a line.
+To get the total, we can use the <code class="docutils literal notranslate"><span class="pre">count</span></code> method, which returns the number of times a sequence appears in a string.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;pg345_cleaned.txt&#39;</span><span class="p">):</span>
+    <span class="n">total</span> <span class="o">+=</span> <span class="n">line</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;Jonathan&#39;</span><span class="p">)</span>
+
+<span class="n">total</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>200
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we can replace <code class="docutils literal notranslate"><span class="pre">Jonathan</span></code> with <code class="docutils literal notranslate"><span class="pre">Thomas</span></code> like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">writer</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;pg345_replaced.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;pg345_cleaned.txt&#39;</span><span class="p">):</span>
+    <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;Jonathan&#39;</span><span class="p">,</span> <span class="s1">&#39;Thomas&#39;</span><span class="p">)</span>
+    <span class="n">writer</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The result is a new file called <code class="docutils literal notranslate"><span class="pre">pg345_replaced.txt</span></code> that contains a version of <em>Dracula</em> where Jonathan Harker is called Thomas.</p>
+</section>
+<section id="regular-expressions">
+<h2>Regular expressions<a class="headerlink" href="#regular-expressions" title="Permalink to this heading">#</a></h2>
+<p>If we know exactly what sequence of characters we’re looking for, we can use the <code class="docutils literal notranslate"><span class="pre">in</span></code> operator to find it and the <code class="docutils literal notranslate"><span class="pre">replace</span></code> method to replace it.
+But there is another tool, called a <strong>regular expression</strong> that can also perform these operations – and a lot more.</p>
+<p>To demonstrate, I’ll start with a simple example and we’ll work our way up.
+Suppose, again, that we want to find all lines that contain a particular word.
+For a change, let’s look for references to the titular character of the book, Count Dracula.
+Here’s a line that mentions him.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;I am Dracula; and I bid you welcome, Mr. Harker, to my house.&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>And here’s the <strong>pattern</strong> we’ll use to search.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pattern</span> <span class="o">=</span> <span class="s1">&#39;Dracula&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>A module called <code class="docutils literal notranslate"><span class="pre">re</span></code> provides functions related to regular expressions.
+We can import it like this and use the <code class="docutils literal notranslate"><span class="pre">search</span></code> function to check whether the pattern appears in the text.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+<span class="n">result</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;re.Match object; span=(5, 12), match=&#39;Dracula&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>If the pattern appears in the text, <code class="docutils literal notranslate"><span class="pre">search</span></code> returns a <code class="docutils literal notranslate"><span class="pre">Match</span></code> object that contains the results of the search.
+Among other information, it has a variable named <code class="docutils literal notranslate"><span class="pre">string</span></code> that contains the text that was searched.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result</span><span class="o">.</span><span class="n">string</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;I am Dracula; and I bid you welcome, Mr. Harker, to my house.&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>It also provides a function called <code class="docutils literal notranslate"><span class="pre">group</span></code> that returns the part of the text that matched the pattern.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Dracula&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>And it provides a function called <code class="docutils literal notranslate"><span class="pre">span</span></code> that returns the index in the text where the pattern starts and ends.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result</span><span class="o">.</span><span class="n">span</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(5, 12)
+</pre></div>
+</div>
+</div>
+</div>
+<p>If the pattern doesn’t appear in the text, the return value from <code class="docutils literal notranslate"><span class="pre">search</span></code> is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;Count&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>None
+</pre></div>
+</div>
+</div>
+</div>
+<p>So we can check whether the search was successful by checking whether the result is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">==</span> <span class="kc">None</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>Putting all that together, here’s a function that loops through the lines in the book until it finds one that matches the given pattern, and returns the <code class="docutils literal notranslate"><span class="pre">Match</span></code> object.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">find_first</span><span class="p">(</span><span class="n">pattern</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;pg345_cleaned.txt&#39;</span><span class="p">):</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">line</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">result</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">result</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can use it to find the first mention of a character.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">find_first</span><span class="p">(</span><span class="s1">&#39;Harker&#39;</span><span class="p">)</span>
+<span class="n">result</span><span class="o">.</span><span class="n">string</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;CHAPTER I. Jonathan Harker’s Journal\n&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>For this example, we didn’t have to use regular expressions – we could have done the same thing more easily with the <code class="docutils literal notranslate"><span class="pre">in</span></code> operator.
+But regular expressions can do things the <code class="docutils literal notranslate"><span class="pre">in</span></code> operator cannot.</p>
+<p>For example, if the pattern includes the vertical bar character, <code class="docutils literal notranslate"><span class="pre">|</span></code>, it can match either the sequence on the left or the sequence on the right.
+Suppose we want to find the first mention of Mina Murray in the book, but we are not sure whether she is referred to by first name or last.
+We can use the following pattern, which matches either name.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;Mina|Murray&#39;</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">find_first</span><span class="p">(</span><span class="n">pattern</span><span class="p">)</span>
+<span class="n">result</span><span class="o">.</span><span class="n">string</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;CHAPTER V. Letters—Lucy and Mina\n&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can use a pattern like this to see how many times a character is mentioned by either name.
+Here’s a function that loops through the book and counts the number of lines that match the given pattern.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count_matches</span><span class="p">(</span><span class="n">pattern</span><span class="p">):</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;pg345_cleaned.txt&#39;</span><span class="p">):</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">line</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">result</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">count</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now let’s see how many times Mina is mentioned.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">count_matches</span><span class="p">(</span><span class="s1">&#39;Mina|Murray&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>229
+</pre></div>
+</div>
+</div>
+</div>
+<p>The special character <code class="docutils literal notranslate"><span class="pre">^</span></code> matches the beginning of a string, so we can find a line that starts with a given pattern.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">find_first</span><span class="p">(</span><span class="s1">&#39;^Dracula&#39;</span><span class="p">)</span>
+<span class="n">result</span><span class="o">.</span><span class="n">string</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Dracula, jumping to his feet, said:--\n&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>And the special character <code class="docutils literal notranslate"><span class="pre">$</span></code> matches the end of a string, so we can find a line that ends with a given pattern (ignoring the newline at the end).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">find_first</span><span class="p">(</span><span class="s1">&#39;Harker$&#39;</span><span class="p">)</span>
+<span class="n">result</span><span class="o">.</span><span class="n">string</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;by five o&#39;clock, we must start off; for it won&#39;t do to leave Mrs. Harker\n&quot;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="string-substitution">
+<h2>String substitution<a class="headerlink" href="#string-substitution" title="Permalink to this heading">#</a></h2>
+<p>Bram Stoker was born in Ireland, and when <em>Dracula</em> was published in 1897, he was living in England.
+So we would expect him to use the British spelling of words like “centre” and “colour”.
+To check, we can use the following pattern, which matches either “centre” or the American spelling “center”.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pattern</span> <span class="o">=</span> <span class="s1">&#39;cent(er|re)&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this pattern, the parentheses enclose the part of the pattern the vertical bar applies to.
+So this pattern matches a sequence that starts with <code class="docutils literal notranslate"><span class="pre">cent</span></code> and ends with either <code class="docutils literal notranslate"><span class="pre">er</span></code> or <code class="docutils literal notranslate"><span class="pre">re</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">find_first</span><span class="p">(</span><span class="n">pattern</span><span class="p">)</span>
+<span class="n">result</span><span class="o">.</span><span class="n">string</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;horseshoe of the Carpathians, as if it were the centre of some sort of\n&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>As expected, he used the British spelling.</p>
+<p>We can also check whether he used the British spelling of “colour”.
+The following pattern uses the special character <code class="docutils literal notranslate"><span class="pre">?</span></code>, which means that the previous character is optional.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pattern</span> <span class="o">=</span> <span class="s1">&#39;colou?r&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This pattern matches either “colour” with the <code class="docutils literal notranslate"><span class="pre">u</span></code> or “color” without it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">find_first</span><span class="p">(</span><span class="n">pattern</span><span class="p">)</span>
+<span class="n">line</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">string</span>
+<span class="n">line</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;undergarment with long double apron, front, and back, of coloured stuff\n&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Again, as expected, he used the British spelling.</p>
+<p>Now suppose we want to produce an edition of the book with American spellings.
+We can use the <code class="docutils literal notranslate"><span class="pre">sub</span></code> function in the <code class="docutils literal notranslate"><span class="pre">re</span></code> module, which does <strong>string substitution</strong>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="s1">&#39;color&#39;</span><span class="p">,</span> <span class="n">line</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;undergarment with long double apron, front, and back, of colored stuff\n&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>The first argument is the pattern we want to find and replace, the second is what we want to replace it with, and the third is the string we want to search.
+In the result, you can see that “colour” has been replaced with “color”.</p>
+</section>
+<section id="debugging">
+<h2>Debugging<a class="headerlink" href="#debugging" title="Permalink to this heading">#</a></h2>
+<p>When you are reading and writing files, debugging can be tricky.
+If you are working in a Jupyter notebook, you can use <strong>shell commands</strong> to help.
+For example, to display the first few lines of file, you can use the command <code class="docutils literal notranslate"><span class="pre">!head</span></code>, like this:</p>
+<div class="cell tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>head<span class="w"> </span>pg345_cleaned.txt
+</pre></div>
+</div>
+</div>
+</div>
+<p>The initial exclamation point, <code class="docutils literal notranslate"><span class="pre">!</span></code>, indicates that this is a shell command, which is not part of Python.
+To display the last few lines, you can use <code class="docutils literal notranslate"><span class="pre">!tail</span></code>.</p>
+<div class="cell tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>tail<span class="w"> </span>pg345_cleaned.txt
+</pre></div>
+</div>
+</div>
+</div>
+<p>When you are working with large files, debugging can be difficult because there might be too much output to check by hand.
+A good debugging strategy is to start with just part of the file, get the program working, and then run it with the whole file.</p>
+<p>To make a small file that contains part of a larger file, we can use <code class="docutils literal notranslate"><span class="pre">!head</span></code> again with the redirect operator, <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, which indicates that the results should be written to a file rather than displayed.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>head<span class="w"> </span>pg345_cleaned.txt<span class="w"> </span>&gt;<span class="w"> </span>pg345_cleaned_10_lines.txt
+</pre></div>
+</div>
+</div>
+</div>
+<p>By default, <code class="docutils literal notranslate"><span class="pre">!head</span></code> reads the first 10 lines, but it takes an optional argument that indicates the number of lines to read.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>head<span class="w"> </span>-100<span class="w"> </span>pg345_cleaned.txt<span class="w"> </span>&gt;<span class="w"> </span>pg345_cleaned_100_lines.txt
+</pre></div>
+</div>
+</div>
+</div>
+<p>This shell command reads the first 100 lines from <code class="docutils literal notranslate"><span class="pre">pg345_cleaned.txt</span></code> and writes them to a file called <code class="docutils literal notranslate"><span class="pre">pg345_cleaned_100_lines.txt</span></code>.</p>
+<p>Note: The shell commands <code class="docutils literal notranslate"><span class="pre">!head</span></code> and <code class="docutils literal notranslate"><span class="pre">!tail</span></code> are not available on all operating systems.
+If they don’t work for you, we can write similar functions in Python.
+See the first exercise at the end of this chapter for suggestions.</p>
+</section>
+<section id="glossary">
+<h2>Glossary<a class="headerlink" href="#glossary" title="Permalink to this heading">#</a></h2>
+<p><strong>sequence:</strong>
+An ordered collection of values where each value is identified by an integer index.</p>
+<p><strong>character:</strong>
+An element of a string, including letters, numbers, and symbols.</p>
+<p><strong>index:</strong>
+An integer value used to select an item in a sequence, such as a character in a string. In Python indices start from <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
+<p><strong>slice:</strong>
+A part of a string specified by a range of indices.</p>
+<p><strong>empty string:</strong>
+A string that contains no characters and has length <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
+<p><strong>object:</strong>
+Something a variable can refer to. An object has a type and a value.</p>
+<p><strong>immutable:</strong>
+If the elements of an object cannot be changed, the object is immutable.</p>
+<p><strong>invocation:</strong>
+An expression – or part of an expression – that calls a method.</p>
+<p><strong>regular expression:</strong>
+A sequence of characters that defines a search pattern.</p>
+<p><strong>pattern:</strong>
+A rule that specifies the requirements a string has to meet to constitute a match.</p>
+<p><strong>string substitution:</strong>
+Replacement of a string, or part of a string, with another string.</p>
+<p><strong>shell command:</strong>
+A statement in a shell language, which is a language used to interact with an operating system.</p>
+<p><strong>raw string:</strong>
+A Python string that is preceded by the letter <code class="docutils literal notranslate"><span class="pre">r</span></code>, which indicates that backslashes that appear in the string should not be considered part of a special sequence.</p>
+</section>
+<section id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h2>
+<section id="ask-a-virtual-assistant">
+<h3>Ask a virtual assistant<a class="headerlink" href="#ask-a-virtual-assistant" title="Permalink to this heading">#</a></h3>
+<p>In this chapter, we only scratched the surface of what regular expressions can do.
+To get an idea of what’s possible, ask a virtual assistant, “What are the most common special characters used in Python regular expressions?”</p>
+<p>You can also ask for a pattern that matches particular kinds of strings.
+For example, try asking:</p>
+<ul class="simple">
+<li><p>Write a Python regular expression that matches a 10-digit phone number with hyphens.</p></li>
+<li><p>Write a Python regular expression that matches a street address with a number and a street name, followed by <code class="docutils literal notranslate"><span class="pre">ST</span></code> or <code class="docutils literal notranslate"><span class="pre">AVE</span></code>.</p></li>
+<li><p>Write a Python regular expression that matches a full name with any common title like <code class="docutils literal notranslate"><span class="pre">Mr</span></code> or <code class="docutils literal notranslate"><span class="pre">Mrs</span></code> followed by any number of names beginning with capital letters, possibly with hyphens between some names.</p></li>
+</ul>
+<p>And if you want to see something more complicated, try asking for a regular expression that matches any legal URL.</p>
+<p>A regular expression often has the letter <code class="docutils literal notranslate"><span class="pre">r</span></code> before the quotation mark, which indicates that it is a <strong>raw string</strong>.
+For more information, ask a virtual assistant, “What is a raw string in Python?”</p>
+</section>
+<section id="exercise">
+<h3>Exercise<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h3>
+<p>See if you can write a function that does the same thing as the shell command <code class="docutils literal notranslate"><span class="pre">!head</span></code>.
+It should take as arguments the name of a file to read, the number of lines to read, and the name of the file to write the lines into.
+If the third parameter is <code class="docutils literal notranslate"><span class="pre">None</span></code>, it should display the lines rather than write them to a file.</p>
+<p>Consider asking a virtual assistant for help, but if you do, tell it not to use a <code class="docutils literal notranslate"><span class="pre">with</span></code> statement or a <code class="docutils literal notranslate"><span class="pre">try</span></code> statement.</p>
+</section>
+<section id="id1">
+<h3>Exercise<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<p>“Wordle” is an online word game where the objective is to guess a five-letter word in six or fewer attempts.
+Each attempt has to be recognized as a word, not including proper nouns.
+After each attempt, you get information about which of the letters you guessed appear in the target word, and which ones are in the correct position.</p>
+<p>For example, suppose the target word is <code class="docutils literal notranslate"><span class="pre">MOWER</span></code> and you guess <code class="docutils literal notranslate"><span class="pre">TRIED</span></code>. You would learn that <code class="docutils literal notranslate"><span class="pre">E</span></code> is in the word and in the correct position, <code class="docutils literal notranslate"><span class="pre">R</span></code> is in the word but not in the correct position, and <code class="docutils literal notranslate"><span class="pre">T</span></code>, <code class="docutils literal notranslate"><span class="pre">I</span></code>, and <code class="docutils literal notranslate"><span class="pre">D</span></code> are not in the word.</p>
+<p>As a different example, suppose you have guessed the words <code class="docutils literal notranslate"><span class="pre">SPADE</span></code> and <code class="docutils literal notranslate"><span class="pre">CLERK</span></code>, and you’ve learned that <code class="docutils literal notranslate"><span class="pre">E</span></code> is in the word, but not in either of those positions, and none of the other letters appear in the word.</p>
+<p>Of the words in the word list, how many could be the target word?
+Write a function called <code class="docutils literal notranslate"><span class="pre">check_word</span></code> that takes a five-letter word and checks whether it could be the target word.</p>
+<p>You can use any of the functions from the previous chapter, like <code class="docutils literal notranslate"><span class="pre">uses_any</span></code>.</p>
+</section>
+<section id="id2">
+<h3>Exercise<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<p>Continuing the previous exercise, suppose you guess the work <code class="docutils literal notranslate"><span class="pre">TOTEM</span></code> and learn that the <code class="docutils literal notranslate"><span class="pre">E</span></code> is <em>still</em> not in the right place, but the <code class="docutils literal notranslate"><span class="pre">M</span></code> is. How many words are left?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;words.txt&#39;</span><span class="p">):</span>
+    <span class="n">word</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="o">==</span> <span class="mi">5</span> <span class="ow">and</span> <span class="n">check_word2</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>begum
+enzym
+genom
+venom
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="id3">
+<h2>Exercise<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<p><em>The Count of Monte Cristo</em> is a novel by Alexandre Dumas that is considered a classic.
+Nevertheless, in the introduction of an English translation of the book, the writer Umberto Eco confesses that he found the book to be “one of the most badly written novels of all time”.</p>
+<p>In particular, he says it is “shameless in its repetition of the same adjective,” and mentions in particular the number of times “its characters either shudder or turn pale.”</p>
+<p>To see whether his objection is valid, let’s count the number number of times the word <code class="docutils literal notranslate"><span class="pre">pale</span></code> appears in any form, including <code class="docutils literal notranslate"><span class="pre">pale</span></code>, <code class="docutils literal notranslate"><span class="pre">pales</span></code>, <code class="docutils literal notranslate"><span class="pre">paled</span></code>, and <code class="docutils literal notranslate"><span class="pre">paleness</span></code>, as well as the related word <code class="docutils literal notranslate"><span class="pre">pallor</span></code>.
+Use a single regular expression that matches all of these words and no others.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="chap07.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Iteration and Search</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="chap09.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Lists</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-string-is-a-sequence">A string is a sequence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-slices">String slices</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strings-are-immutable">Strings are immutable</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-comparison">String comparison</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-methods">String methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-files">Writing files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#find-and-replace">Find and replace</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regular-expressions">Regular expressions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-substitution">String substitution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">Debugging</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">Glossary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">Ask a virtual assistant</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Exercise</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Allen B. Downey
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
