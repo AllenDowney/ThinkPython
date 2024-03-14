@@ -48,31 +48,31 @@ Starting in February 2024, I plan to release new chapters here, about one per we
 
 ### Chapter 6: Return Values
 
-* [Click here to run Chapter 5 on Colab](https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap06.ipynb)
+* [Click here to run Chapter 6 on Colab](https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap06.ipynb)
 
 ### Chapter 7: Iteration and Search
 
-* [Click here to run Chapter 5 on Colab](https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap07.ipynb)
+* [Click here to run Chapter 7 on Colab](https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap07.ipynb)
 
 ### Chapter 8: Strings and Regular Expressions
 
-* [Click here to run Chapter 5 on Colab](https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap08.ipynb)
+* [Click here to run Chapter 8 on Colab](https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap08.ipynb)
 
 ### Chapter 9: Lists
 
-* [Click here to run Chapter 5 on Colab](https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap09.ipynb)
+* [Click here to run Chapter 9 on Colab](https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap09.ipynb)
 
 ### Chapter 10: Dictionaries
 
-* [Click here to run Chapter 5 on Colab](https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap10.ipynb)
+* [Click here to run Chapter 10 on Colab](https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap10.ipynb)
 
 ### Chapter 11: Tuples
 
-* [Click here to run Chapter 5 on Colab](https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap11.ipynb)
+* [Click here to run Chapter 11 on Colab](https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap11.ipynb)
 
 ### Chapter 12: Text Analysis and Generation
 
-* [Click here to run Chapter 5 on Colab](https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap12.ipynb)
+* [Click here to run Chapter 12 on Colab](https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap12.ipynb)
 
 
 ## Resources for teachers
