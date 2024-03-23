@@ -7,7 +7,9 @@ from IPython.core.magic_arguments import argument, magic_arguments, parse_argstr
 
 
 def traceback(mode):
-    """
+    """Set the traceback mode.
+
+    mode: string
     """
     with contextlib.redirect_stdout(io.StringIO()):
         get_ipython().run_cell(f'%xmode {mode}')
