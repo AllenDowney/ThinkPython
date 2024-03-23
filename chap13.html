@@ -1,0 +1,1523 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Files and Databases &#8212; Think Python, 3rd edition</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chap13';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Classes and Functions" href="chap14.html" />
+    <link rel="prev" title="Text Analysis and Generation" href="chap12.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Think Python, 3rd edition</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    Think Python, 3rd edition
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chap00.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap01.html">Programming as a way of thinking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap02.html">Variables and Statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap03.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap04.html">Functions and Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap05.html">Conditionals and Recursion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap06.html">Return Values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap07.html">Iteration and Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap08.html">Strings and Regular Expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap09.html">Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap10.html">Dictionaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap11.html">Tuples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap12.html">Text Analysis and Generation</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Files and Databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap14.html">Classes and Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap15.html">Classes and Methods</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/AllenDowney/ThinkPython/tree/v3" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/chap13.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Files and Databases</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filenames-and-paths">Filenames and paths</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#f-strings">f-strings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#yaml">YAML</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shelve">Shelve</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#storing-data-structures">Storing data structures</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-for-equivalent-files">Checking for equivalent files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#walking-directories">Walking directories</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">Debugging</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">Glossary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">Ask a virtual assistant</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="files-and-databases">
+<h1>Files and Databases<a class="headerlink" href="#files-and-databases" title="Permalink to this heading">#</a></h1>
+<p>Most of the programs we have seen so far are <strong>ephemeral</strong> in the sense that they run for a short time and produce output, but when they end, their data disappears.
+Each time you run an ephemeral program, it starts with a clean slate.</p>
+<p>Other programs are <strong>persistent</strong>: they run for a long time (or all the time); they keep at least some of their data in long-term storage; and if they shut down and restart, they pick up where they left off.</p>
+<p>A simple way for programs to maintain their data is by reading and writing text files.
+A more versatile alternative is to store data in a database.
+Databases are specialized files that can be read and written more efficiently than text files, and they provide additional capabilities.</p>
+<p>In this chapter, we’ll write programs that read and write text files and databases, and as an exercise you’ll write a program that searches a collection of photos for duplicates.
+But before you can work with a file, you have to find it, so we’ll start with file names, paths, and directories.</p>
+<section id="filenames-and-paths">
+<h2>Filenames and paths<a class="headerlink" href="#filenames-and-paths" title="Permalink to this heading">#</a></h2>
+<p>Files are organized into <strong>directories</strong>, also called “folders”.
+Every running program has a <strong>current working directory</strong>, which is the default directory for most operations.
+For example, when you open a file, Python looks for it in the current working directory.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">os</span></code> module provides functions for working with files and directories (“os” stands for “operating system”).
+It provides a function called <code class="docutils literal notranslate"><span class="pre">getcwd</span></code> that gets the name of the current working directory.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/home/dinsdale&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>The result in this example is the home directory of a user named <code class="docutils literal notranslate"><span class="pre">dinsdale</span></code>.
+A string like <code class="docutils literal notranslate"><span class="pre">'/home/dinsdale'</span></code> that identifies a file or directory is called a <strong>path</strong>.</p>
+<p>A simple filename, like <code class="docutils literal notranslate"><span class="pre">memo.txt</span></code> is also considered a path, but it is a <strong>relative path</strong> because it specifies a file name relative to the current directory.
+In this example, the current directory is <code class="docutils literal notranslate"><span class="pre">/home/dinsdale</span></code>, so <code class="docutils literal notranslate"><span class="pre">memo.txt</span></code> is equivalent to the complete path <code class="docutils literal notranslate"><span class="pre">/home/dinsdale/memo.txt</span></code>.</p>
+<p>A path that begins with <code class="docutils literal notranslate"><span class="pre">/</span></code> does not depend on the current directory – it is called an <strong>absolute path</strong>.
+To find the absolute path to a file, you can use <code class="docutils literal notranslate"><span class="pre">abspath</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;memo.txt&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/home/dinsdale/memo.txt&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">os</span></code> module provides other functions for working with filenames and paths.
+<code class="docutils literal notranslate"><span class="pre">listdir</span></code> returns a list of the contents of the given directory, including files and other directories.
+Here’s an example that lists the contents of a directory named <code class="docutils literal notranslate"><span class="pre">photos</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s1">&#39;photos&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;notes.txt&#39;, &#39;mar-2023&#39;, &#39;jan-2023&#39;, &#39;feb-2023&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>This directory contains a text file named <code class="docutils literal notranslate"><span class="pre">notes.txt</span></code> and three directories.
+The directories contain image files in the JPEG format.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s1">&#39;photos/jan-2023&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;photo3.jpg&#39;, &#39;photo2.jpg&#39;, &#39;photo1.jpg&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>To check whether a file or directory exists, we can use <code class="docutils literal notranslate"><span class="pre">os.path.exists</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s1">&#39;photos&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s1">&#39;photos/apr-2023&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>To check whether a path refers to a file or directory, we can use <code class="docutils literal notranslate"><span class="pre">isdir</span></code>, which return <code class="docutils literal notranslate"><span class="pre">True</span></code> if a path refers to a directory.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="s1">&#39;photos&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>And <code class="docutils literal notranslate"><span class="pre">isfile</span></code> which returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if a path refers to a file.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="s1">&#39;photos/notes.txt&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>One challenge of working with paths is that they look different on different operating systems.
+On macOS and UNIX systems like Linux, the directory and file names in a path are separated by a forward slash, <code class="docutils literal notranslate"><span class="pre">/</span></code>.
+Windows uses a backward slash, <code class="docutils literal notranslate"><span class="pre">\</span></code>.
+So, if you you run these examples on Windows, you will see backward slashes in the paths, and you’ll have to replace the forward slashes in the examples.</p>
+<p>Or, to write code that works on both systems, you can use <code class="docutils literal notranslate"><span class="pre">os.path.join</span></code>, which joins directory and filenames into a path using a forward or backward slash, depending on which operating system you are using.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;photos&#39;</span><span class="p">,</span> <span class="s1">&#39;jan-2023&#39;</span><span class="p">,</span> <span class="s1">&#39;photo1.jpg&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;photos/jan-2023/photo1.jpg&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Later in this chapter we’ll use these functions to search a set of directories and find all of the image files.</p>
+</section>
+<section id="f-strings">
+<h2>f-strings<a class="headerlink" href="#f-strings" title="Permalink to this heading">#</a></h2>
+<p>One way for programs to store data is to write it to a text file.
+For example, suppose you are a camel spotter, and you want to record the number of camels you have seen during a period of observation.
+And suppose that in one and a half years, you have spotted <code class="docutils literal notranslate"><span class="pre">23</span></code> camels.
+The data in your camel-spotting book might look like this.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num_years</span> <span class="o">=</span> <span class="mf">1.5</span>
+<span class="n">num_camels</span> <span class="o">=</span> <span class="mi">23</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To write this data to a file, you can use the <code class="docutils literal notranslate"><span class="pre">write</span></code> method, which we saw in <a class="reference internal" href="chap08.html#section-writing-files"><span class="std std-ref">Chapter 8</span></a>.
+The argument of <code class="docutils literal notranslate"><span class="pre">write</span></code> has to be a string, so if we want to put other values in a file, we have to convert them to strings.
+The easiest way to do that is with the built-in function <code class="docutils literal notranslate"><span class="pre">str</span></code>.</p>
+<p>Here’s what that looks like:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">writer</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;camel-spotting-book.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+<span class="n">writer</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">num_years</span><span class="p">))</span>
+<span class="n">writer</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">num_camels</span><span class="p">))</span>
+<span class="n">writer</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>That works, but <code class="docutils literal notranslate"><span class="pre">write</span></code> doesn’t add a space or newline unless you include it explicitly.
+If we read back the file, we see that the two numbers are run together.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;camel-spotting-book.txt&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;1.523&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>At the very least, we should add whitespace between the numbers.
+And while we’re at it, let’s add some explanatory text.</p>
+<p>To write a combination of strings and other values, we can use an <strong>f-string</strong>, which is a string that has the letter <code class="docutils literal notranslate"><span class="pre">f</span></code> before the opening quotation mark, and contains one or more Python expressions in curly braces.
+The following f-string contains one expression, which is a variable name.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sa">f</span><span class="s1">&#39;I have spotted </span><span class="si">{</span><span class="n">num_camels</span><span class="si">}</span><span class="s1"> camels&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;I have spotted 23 camels&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>The result is a string where the expression has been evaluated and replaced with the result.
+There can be more than one expression.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sa">f</span><span class="s1">&#39;In </span><span class="si">{</span><span class="n">num_years</span><span class="si">}</span><span class="s1"> years I have spotted </span><span class="si">{</span><span class="n">num_camels</span><span class="si">}</span><span class="s1"> camels&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;In 1.5 years I have spotted 23 camels&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>And the expressions can contain operators and function calls.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">line</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;In </span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">num_years</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">12</span><span class="p">)</span><span class="si">}</span><span class="s1"> months I have spotted </span><span class="si">{</span><span class="n">num_camels</span><span class="si">}</span><span class="s1"> camels&#39;</span>
+<span class="n">line</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;In 18 months I have spotted 23 camels&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>So we could write the data to a text file like this.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">writer</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;camel-spotting-book.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+<span class="n">writer</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Years of observation: </span><span class="si">{</span><span class="n">num_years</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">writer</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Camels spotted: </span><span class="si">{</span><span class="n">num_camels</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">writer</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Both f-strings end with the sequence <code class="docutils literal notranslate"><span class="pre">\n</span></code>, which adds a newline character.</p>
+<p>We can read the file back like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;camel-spotting-book.txt&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Years of observation: 1.5
+Camels spotted: 23
+</pre></div>
+</div>
+</div>
+</div>
+<p>In an f-string, an expression in curly brace is converted to a string, so you can include lists, dictionaries, and other types.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;one&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
+<span class="sa">f</span><span class="s1">&#39;Here is a list </span><span class="si">{</span><span class="n">t</span><span class="si">}</span><span class="s1"> and a dictionary </span><span class="si">{</span><span class="n">d</span><span class="si">}</span><span class="s1">&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;Here is a list [1, 2, 3] and a dictionary {&#39;one&#39;: 1}&quot;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="yaml">
+<h2>YAML<a class="headerlink" href="#yaml" title="Permalink to this heading">#</a></h2>
+<p>One of the reasons programs read and write files is to store <strong>configuration data</strong>, which is information that specifies what the program should do and how.</p>
+<p>For example, in a program that searches for duplicate photos, we might have a dictionary called <code class="docutils literal notranslate"><span class="pre">config</span></code> that contains the name of the directory to search, the name of another directory where it should store the results, and a list of file extensions it should use to identify image files.</p>
+<p>Here’s what it might look like:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">config</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;photo_dir&#39;</span><span class="p">:</span> <span class="s1">&#39;photos&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;data_dir&#39;</span><span class="p">:</span> <span class="s1">&#39;photo_info&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;extensions&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;jpg&#39;</span><span class="p">,</span> <span class="s1">&#39;jpeg&#39;</span><span class="p">],</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To write this data in a text file, we could use f-strings, as in the previous section. But it is easier to use a module called <code class="docutils literal notranslate"><span class="pre">yaml</span></code> that is designed for just this sort of thing.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">yaml</span></code> module provides functions to work with YAML files, which are text files formatted to be easy for humans <em>and</em> programs to read and write.</p>
+<p>Here’s an example that uses the <code class="docutils literal notranslate"><span class="pre">dump</span></code> function to write the <code class="docutils literal notranslate"><span class="pre">config</span></code> dictionary to a YAML file.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">yaml</span>
+
+<span class="n">config_filename</span> <span class="o">=</span> <span class="s1">&#39;config.yaml&#39;</span>
+<span class="n">writer</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">config_filename</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+<span class="n">yaml</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="n">writer</span><span class="p">)</span>
+<span class="n">writer</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we read back the contents of the file, we can see what the YAML format looks like.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">readback</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">config_filename</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">readback</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data_dir: photo_info
+extensions:
+- jpg
+- jpeg
+photo_dir: photos
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, we can use <code class="docutils literal notranslate"><span class="pre">safe_load</span></code> to read back the YAML file.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reader</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">config_filename</span><span class="p">)</span>
+<span class="n">config_readback</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">safe_load</span><span class="p">(</span><span class="n">reader</span><span class="p">)</span>
+<span class="n">config_readback</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;data_dir&#39;: &#39;photo_info&#39;,
+ &#39;extensions&#39;: [&#39;jpg&#39;, &#39;jpeg&#39;],
+ &#39;photo_dir&#39;: &#39;photos&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>The result is new dictionary that contains the same information as the original, but it is not the same dictionary.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">config</span> <span class="ow">is</span> <span class="n">config_readback</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>Converting an object like a dictionary to a string is called <strong>serialization</strong>.
+Converting the string back to an object is called <strong>deserialization</strong>.
+If you serialize and then deserialize an object, the result should be equivalent to the original.</p>
+</section>
+<section id="shelve">
+<h2>Shelve<a class="headerlink" href="#shelve" title="Permalink to this heading">#</a></h2>
+<p>So far we’ve been reading and writing text files – now let’s consider databases.
+A <strong>database</strong> is a file that is organized for storing data.
+Some databases are organized like a table with rows and columns of information.
+Others are organized like a dictionary that maps from keys to values; they are sometimes called <strong>key-value stores</strong>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">shelve</span></code> module provides functions for creating and updating a key-value store called a “shelf”.
+As an example, we’ll create a shelf to contain captions for the figures in the <code class="docutils literal notranslate"><span class="pre">photos</span></code> directory.
+We’ll use the <code class="docutils literal notranslate"><span class="pre">config</span></code> dictionary to get the name of the directory where we should put the shelf.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;data_dir&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;photo_info&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can use <code class="docutils literal notranslate"><span class="pre">os.makedirs</span></code> to create this directory, if it doesn’t already exist.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;data_dir&#39;</span><span class="p">],</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>And <code class="docutils literal notranslate"><span class="pre">os.path.join</span></code> to make a path that includes the name of the directory and the name of the shelf file, <code class="docutils literal notranslate"><span class="pre">captions</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">db_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;data_dir&#39;</span><span class="p">],</span> <span class="s1">&#39;captions&#39;</span><span class="p">)</span>
+<span class="n">db_file</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;photo_info/captions&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we can use <code class="docutils literal notranslate"><span class="pre">shelve.open</span></code> to open the shelf file.
+The argument <code class="docutils literal notranslate"><span class="pre">c</span></code> indicates that the file should be created if necessary.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">shelve</span>
+
+<span class="n">db</span> <span class="o">=</span> <span class="n">shelve</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">db_file</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">)</span>
+<span class="n">db</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;shelve.DbfilenameShelf at 0x7f5a2021c310&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>The return value is officially a <code class="docutils literal notranslate"><span class="pre">DbfilenameShelf</span></code> object, more casually called a shelf object.</p>
+<p>The shelf object behaves in many ways like a dictionary.
+For example, we can use the bracket operator to add an item, which is a mapping from a key to a value.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;jan-2023/photo1.jpg&#39;</span> 
+<span class="n">db</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Cat nose&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this example, the key is the path to an image file and the value is a string that describes the image.</p>
+<p>We also use the bracket operator to look up a key and get the corresponding value.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">value</span> <span class="o">=</span> <span class="n">db</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+<span class="n">value</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Cat nose&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you make another assignment to an existing key, <code class="docutils literal notranslate"><span class="pre">dbm</span></code> replaces the old value.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Close up view of a cat nose&#39;</span>
+<span class="n">db</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Close up view of a cat nose&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Some dictionary methods, like <code class="docutils literal notranslate"><span class="pre">keys</span></code>, <code class="docutils literal notranslate"><span class="pre">values</span></code> and <code class="docutils literal notranslate"><span class="pre">items</span></code>, also work with database objects.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;jan-2023/photo1.jpg&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Close up view of a cat nose&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can use the <code class="docutils literal notranslate"><span class="pre">in</span></code> operator to check whether a key appears in the shelf.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">key</span> <span class="ow">in</span> <span class="n">db</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>And we can use a <code class="docutils literal notranslate"><span class="pre">for</span></code> statement to loop through the keys.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">db</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">db</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>jan-2023/photo1.jpg : Close up view of a cat nose
+</pre></div>
+</div>
+</div>
+</div>
+<p>As with other files, you should close the database when you are done.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now if we list the contents of the data directory, we see two files.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;data_dir&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;captions.dir&#39;, &#39;captions.dat&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">config.dat</span></code> contains the data we just stored.
+<code class="docutils literal notranslate"><span class="pre">config.dir</span></code> contains information about the organization of the database that makes it more efficient to access.
+The suffix <code class="docutils literal notranslate"><span class="pre">dir</span></code> stands for “directory”, but it has nothing to do with the directories we’ve been working with that contain files.</p>
+</section>
+<section id="storing-data-structures">
+<span id="section-storing-data-structure"></span><h2>Storing data structures<a class="headerlink" href="#storing-data-structures" title="Permalink to this heading">#</a></h2>
+<p>In the previous example, the keys and values in the shelf are strings.
+But we can also use a shelf to contain data structures like lists and dictionaries.</p>
+<p>As an example, let’s revisit the anagram example from an exercise in <a class="reference internal" href="chap11.html#section-exercise11"><span class="std std-ref">Chapter 11</span></a>.
+Recall that we made a dictionary that maps from a sorted string of letters to the
+list of words that can be spelled with those letters.
+For example, the key <code class="docutils literal notranslate"><span class="pre">'opst'</span></code> maps to the list <code class="docutils literal notranslate"><span class="pre">['opts',</span> <span class="pre">'post',</span> <span class="pre">'pots',</span> <span class="pre">'spot',</span> <span class="pre">'stop',</span> <span class="pre">'tops']</span></code>.</p>
+<p>We’ll use the following function to sort the letters in a word.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sort_word</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>
+    <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">word</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>And here’s an example.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">word</span> <span class="o">=</span> <span class="s1">&#39;pots&#39;</span>
+<span class="n">key</span> <span class="o">=</span> <span class="n">sort_word</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+<span class="n">key</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;opst&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now let’s open a shelf called <code class="docutils literal notranslate"><span class="pre">anagram_map</span></code>.
+The argument <code class="docutils literal notranslate"><span class="pre">'n'</span></code> means we should always create a new, empty shelf, even if one already exists.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">shelve</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;anagram_map&#39;</span><span class="p">,</span> <span class="s1">&#39;n&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we can add an item to the shelf like this.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">word</span><span class="p">]</span>
+<span class="n">db</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;pots&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this item, the key is a string and the value is a list of strings.</p>
+<p>Now suppose we find another word that contains the same letters, like <code class="docutils literal notranslate"><span class="pre">tops</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">word</span> <span class="o">=</span> <span class="s1">&#39;tops&#39;</span>
+<span class="n">key</span> <span class="o">=</span> <span class="n">sort_word</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+<span class="n">key</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;opst&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>The key is the same as in the previous example, so we want to append a second word to the same list of strings.
+Here’s how we would do it if <code class="docutils literal notranslate"><span class="pre">anagrams</span></code> were a dictionary.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>          <span class="c1"># INCORRECT</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>But if we run that and then look up the key in the shelf, it looks like it has not been updated.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;pots&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here’s the problem: when we look up the key, we get a list of strings, but if we modify the list of strings, it does not affect the shelf.
+If we want to update the shelf, we have to read the old value, update it, and then write the new value back to the shelf.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">anagram_list</span> <span class="o">=</span> <span class="n">db</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+<span class="n">anagram_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+<span class="n">db</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">anagram_list</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now the value in the shelf is updated.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;pots&#39;, &#39;tops&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>As an exercise, you can finish this example by reading the word list and storing all of the anagrams in a shelf.</p>
+</section>
+<section id="checking-for-equivalent-files">
+<span id="section-md5-digest"></span><h2>Checking for equivalent files<a class="headerlink" href="#checking-for-equivalent-files" title="Permalink to this heading">#</a></h2>
+<p>Now let’s get back to the goal of this chapter: searching for different files that contain the same data.
+One way to check is to read the contents of both files and compare.</p>
+<p>If the files contain images, we have to open them with mode <code class="docutils literal notranslate"><span class="pre">rb</span></code>, where <code class="docutils literal notranslate"><span class="pre">r</span></code> means we want to read the contents and <code class="docutils literal notranslate"><span class="pre">b</span></code> indicates <strong>binary mode</strong>.
+In binary mode, the contents are not interpreted as text – they are treated as a sequence of bytes.</p>
+<p>Here’s an example that opens and reads an image file.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">path1</span> <span class="o">=</span> <span class="s1">&#39;photos/jan-2023/photo1.jpg&#39;</span>
+<span class="n">data1</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">path1</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">data1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>bytes
+</pre></div>
+</div>
+</div>
+</div>
+<p>The result from <code class="docutils literal notranslate"><span class="pre">read</span></code> is a <code class="docutils literal notranslate"><span class="pre">bytes</span></code> object – as the name suggests, it contains a sequence of bytes.</p>
+<p>In general the contents of an image file and not human-readable.
+But if we read the contents from a second file, we can use the <code class="docutils literal notranslate"><span class="pre">==</span></code> operator to compare.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">path2</span> <span class="o">=</span> <span class="s1">&#39;photos/jan-2023/photo2.jpg&#39;</span>
+<span class="n">data2</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">path2</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="n">data1</span> <span class="o">==</span> <span class="n">data2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>These two files are not equivalent.</p>
+<p>Let’s encapsulate what we have so far in a function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">same_contents</span><span class="p">(</span><span class="n">path1</span><span class="p">,</span> <span class="n">path2</span><span class="p">):</span>
+    <span class="n">data1</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">path1</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="n">data2</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">path2</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">data1</span> <span class="o">==</span> <span class="n">data2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we have only two files, this function is a good option.
+But suppose we have a large number of files and we want to know whether any two of them contain the same data.
+It would be inefficient to compare every pair of files.</p>
+<p>An alternative is to use a <strong>hash function</strong>, which takes the contents of a file and computes a <strong>digest</strong>, which is usually a large integer.
+If two files contain the same data, they will have the same digest.
+If two files differ, they will <em>almost always</em> have different digests.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">hashlib</span></code> module provides several hash functions – the one we’ll use is called <code class="docutils literal notranslate"><span class="pre">md5</span></code>.
+We’ll start by using <code class="docutils literal notranslate"><span class="pre">hashlib.md5</span></code> to create a <code class="docutils literal notranslate"><span class="pre">HASH</span></code> object.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">hashlib</span>
+
+<span class="n">md5_hash</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">md5</span><span class="p">()</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">md5_hash</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>_hashlib.HASH
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">HASH</span></code> object provides an <code class="docutils literal notranslate"><span class="pre">update</span></code> function that takes the contents of the file as an argument.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">md5_hash</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">data1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we can use <code class="docutils literal notranslate"><span class="pre">hexdigest</span></code> to get the digest as a string of hexadecimal digits that represent an integer in base 16.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">digest</span> <span class="o">=</span> <span class="n">md5_hash</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
+<span class="n">digest</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;aa1d2fc25b7ae247b2931f5a0882fa37&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>The following function encapsulates these steps.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">md5_digest</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="n">md5_hash</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">md5</span><span class="p">()</span>
+    <span class="n">md5_hash</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">digest</span> <span class="o">=</span> <span class="n">md5_hash</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">digest</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we hash the contents of a different file, we can confirm that we get a different digest.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filename2</span> <span class="o">=</span> <span class="s1">&#39;photos/feb-2023/photo2.jpg&#39;</span>
+<span class="n">md5_digest</span><span class="p">(</span><span class="n">filename2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;6a501b11b01f89af9c3f6591d7f02c49&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we have almost everything we need to find equivalent files.
+The last step is to search a directory and find all of the images files.</p>
+</section>
+<section id="walking-directories">
+<span id="section-walking-directories"></span><h2>Walking directories<a class="headerlink" href="#walking-directories" title="Permalink to this heading">#</a></h2>
+<p>The following function takes as an argument the directory we want to search.
+It uses <code class="docutils literal notranslate"><span class="pre">listdir</span></code> to loop through the contents of the directory.
+When it finds a file, it prints its complete path.
+When it finds a directory, it calls itself recursively to search the subdirectory.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">walk</span><span class="p">(</span><span class="n">dirname</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">dirname</span><span class="p">):</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dirname</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+            <span class="n">walk</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can use it like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">walk</span><span class="p">(</span><span class="s1">&#39;photos&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>photos/notes.txt
+photos/mar-2023/photo2.jpg
+photos/mar-2023/photo1.jpg
+photos/jan-2023/photo3.jpg
+photos/jan-2023/photo2.jpg
+photos/jan-2023/photo1.jpg
+photos/feb-2023/photo2.jpg
+photos/feb-2023/photo1.jpg
+</pre></div>
+</div>
+</div>
+</div>
+<p>The order of the results depends on details of the operating system.</p>
+<p>Here is a more general version of <code class="docutils literal notranslate"><span class="pre">walk</span></code> that takes as a second parameter a function object.
+Instead of printing the path of the files it discovers, it calls this function and passes the path as a parameter.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">walk</span><span class="p">(</span><span class="n">dirname</span><span class="p">,</span> <span class="n">visit_func</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">dirname</span><span class="p">):</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dirname</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+            <span class="n">visit_func</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">walk</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">visit_func</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here’s an example where we pass <code class="docutils literal notranslate"><span class="pre">print</span></code> as an argument, so when <code class="docutils literal notranslate"><span class="pre">walk</span></code> calls <code class="docutils literal notranslate"><span class="pre">visit_func</span></code>, it prints the paths of the files it discovers.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">walk</span><span class="p">(</span><span class="s1">&#39;photos&#39;</span><span class="p">,</span> <span class="nb">print</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>photos/notes.txt
+photos/mar-2023/photo2.jpg
+photos/mar-2023/photo1.jpg
+photos/jan-2023/photo3.jpg
+photos/jan-2023/photo2.jpg
+photos/jan-2023/photo1.jpg
+photos/feb-2023/photo2.jpg
+photos/feb-2023/photo1.jpg
+</pre></div>
+</div>
+</div>
+</div>
+<p>The parameter is called <code class="docutils literal notranslate"><span class="pre">visit_func</span></code> because it suggests that as we “walk” around the directory, we “visit” each file.</p>
+</section>
+<section id="debugging">
+<h2>Debugging<a class="headerlink" href="#debugging" title="Permalink to this heading">#</a></h2>
+<p>When you are reading and writing files, you might run into problems with
+whitespace. These errors can be hard to debug because spaces, tabs and
+newlines are normally invisible:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;1 2</span><span class="se">\t</span><span class="s1"> 3</span><span class="se">\n</span><span class="s1"> 4&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1 2	 3
+ 4
+</pre></div>
+</div>
+</div>
+</div>
+<p>The built-in function <code class="docutils literal notranslate"><span class="pre">repr</span></code> can help. It takes any object as an
+argument and returns a string representation of the object. For strings,
+it represents whitespace characters with backslash sequences:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;1 2\t 3\n 4&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>This can be helpful for debugging.</p>
+<p>One other problem you might run into is that different systems use different characters to indicate the end of a line. Some systems use a newline, represented <code class="docutils literal notranslate"><span class="pre">\n</span></code>. Others use a return character, represented <code class="docutils literal notranslate"><span class="pre">\r</span></code>.
+Some use both. If you move files between different systems, these
+inconsistencies can cause problems.</p>
+<p>File name capitalization is another issue you might encounter if you work with different operating systems.
+In macOS and UNIX, file names can contain lowercase and uppercase letters, digits, and most symbols.
+But many Windows applications ignore the difference between lowercase and uppercase letters, and several symbols that are allowed in macOS and UNIX are not allowed in Windows.</p>
+</section>
+<section id="glossary">
+<h2>Glossary<a class="headerlink" href="#glossary" title="Permalink to this heading">#</a></h2>
+<p><strong>ephemeral:</strong>
+An ephemeral program typically runs for a short time and, when it ends, its data are lost.</p>
+<p><strong>persistent:</strong>
+A persistent program runs indefinitely and keeps at least some of its data in permanent storage.</p>
+<p><strong>directory:</strong>
+A collection of files and other directories.</p>
+<p><strong>current working directory:</strong>
+The default directory used by a program unless another directory is specified.</p>
+<p><strong>path:</strong>
+A string that specifies a sequence of directories, often leading to a file.</p>
+<p><strong>relative path:</strong>
+A path that starts from the current working directory, or some other specified directory.</p>
+<p><strong>absolute path:</strong>
+A path that does not depend on the current directory.</p>
+<p><strong>f-string:</strong>
+A string that has the letter <code class="docutils literal notranslate"><span class="pre">f</span></code> before the opening quotation mark, and contains one or more expressions in curly braces.</p>
+<p><strong>configuration data:</strong>
+Data, often stored in a file, that specifies what a program should do and how.</p>
+<p><strong>serialization:</strong>
+Converting an object to a string.</p>
+<p><strong>deserialization:</strong>
+Converting a string to an object.</p>
+<p><strong>database:</strong>
+A file whose contents are organized to perform certain operations efficiently.</p>
+<p><strong>key-value stores:</strong>
+A database whose contents are organized like a dictionary with keys that correspond to values.</p>
+<p><strong>binary mode:</strong>
+A way of writing a file so the contents are interpreted as sequence of bytes rather than a sequence of characters.</p>
+<p><strong>hash function:</strong>
+A function that takes and object and computes an integer, which is sometimes called a digest.</p>
+<p><strong>digest:</strong>
+The result of a hash function, especially when it is used to check whether two objects are the same.</p>
+</section>
+<section id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h2>
+<section id="ask-a-virtual-assistant">
+<h3>Ask a virtual assistant<a class="headerlink" href="#ask-a-virtual-assistant" title="Permalink to this heading">#</a></h3>
+<p>There are several topics that came up in this chapter that I did not explain in detail.
+Here are some questions you can ask a virtual assistant to get more information.</p>
+<ul class="simple">
+<li><p>“What are the differences between ephemeral and persistent programs?”</p></li>
+<li><p>“What are some examples of persistent programs?”</p></li>
+<li><p>“What’s the difference between a relative path and an absolute path?”</p></li>
+<li><p>“Why does the <code class="docutils literal notranslate"><span class="pre">yaml</span></code> module have functions called <code class="docutils literal notranslate"><span class="pre">load</span></code> and <code class="docutils literal notranslate"><span class="pre">safe_load</span></code>?”</p></li>
+<li><p>“When I write a Python shelf, what are the files with suffixes <code class="docutils literal notranslate"><span class="pre">dat</span></code> and <code class="docutils literal notranslate"><span class="pre">dir</span></code>?”</p></li>
+<li><p>“Other than key-values stores, what other kinds of databases are there?”</p></li>
+<li><p>“When I read a file, what’s the difference between binary mode and text mode?”</p></li>
+<li><p>“What are the differences between a bytes object and a string?”</p></li>
+<li><p>“What is a hash function?”</p></li>
+<li><p>“What is an MD5 digest?”</p></li>
+</ul>
+<p>As always, if you get stuck on any of the following exercises, consider asking a VA for help.  Along with your question, you might want to paste in the relevant functions from this chapter.</p>
+</section>
+<section id="exercise">
+<h3>Exercise<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h3>
+<p>Write a function called <code class="docutils literal notranslate"><span class="pre">replace_all</span></code> that takes as arguments a pattern string, a replacement string, and two filenames.
+It should read the first file and write the contents into the second file (creating it if necessary).
+If the pattern string appears anywhere in the contents, it should be replaced with the replacement string.</p>
+<p>To test your function, read <code class="docutils literal notranslate"><span class="pre">photos/notes.txt</span></code> and replace <code class="docutils literal notranslate"><span class="pre">photos</span></code> with <code class="docutils literal notranslate"><span class="pre">images</span></code>.</p>
+</section>
+<section id="id1">
+<h3>Exercise<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<p>In <a class="reference internal" href="#section-storing-data-structure"><span class="std std-ref">a previous section</span></a>, we used the <code class="docutils literal notranslate"><span class="pre">shelve</span></code> module to make a key-value store that maps from a sorted string of letters to a list of anagrams.
+To finish the example, write a function called <code class="docutils literal notranslate"><span class="pre">add_word</span></code> that takes as arguments a string and a shelf object.</p>
+<p>It should sort the letters of the word to make a key, then check whether the key is already in the shelf. If not, it should make a list that contains the new word and add it to the shelf. If so, it should append the new word to the existing value.</p>
+</section>
+<section id="id2">
+<h3>Exercise<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<p>In a large collection of files, there may be more than one copy of the same file, stored in different directories or with different file names.
+The goal of this exercise is to search for duplicates.
+As an example, we’ll work with image files in the <code class="docutils literal notranslate"><span class="pre">photos</span></code> directory.</p>
+<p>Here’s how it will work:</p>
+<ul class="simple">
+<li><p>We’ll use the <code class="docutils literal notranslate"><span class="pre">walk</span></code> function from <a class="reference internal" href="#section-walking-directories"><span class="std std-ref">Walking directories</span></a> to search this directory for files that end with one of the extensions in <code class="docutils literal notranslate"><span class="pre">config['extensions']</span></code>.</p></li>
+<li><p>For each file, we’ll use <code class="docutils literal notranslate"><span class="pre">md5_digest</span></code> from <a class="reference internal" href="#section-md5-digest"><span class="std std-ref">Checking for equivalent files</span></a> to compute a digest of the contents.</p></li>
+<li><p>Using a shelf, we’ll make a mapping from each digest to a list of paths with that digest.</p></li>
+<li><p>Finally, we’ll search the shelf for any digests that map to multiple files.</p></li>
+<li><p>If we find any, we’ll use <code class="docutils literal notranslate"><span class="pre">same_contents</span></code> to confirm that the files contain the same data.</p></li>
+</ul>
+<p>I’ll suggest some functions to write first, then we’ll bring it all together.</p>
+<ol class="arabic simple">
+<li><p>To identify image files, write a function called <code class="docutils literal notranslate"><span class="pre">is_image</span></code> that takes a path and a list of file extensions, and returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if the path ends with one of the extensions in the list. Hint: Use <code class="docutils literal notranslate"><span class="pre">os.path.splitext</span></code> – or ask a virtual assistant to write this function for you.</p></li>
+</ol>
+<ol class="arabic simple" start="2">
+<li><p>Write a function called <code class="docutils literal notranslate"><span class="pre">add_path</span></code> that takes as arguments a path and a shelf. It should use <code class="docutils literal notranslate"><span class="pre">md5_digest</span></code> to compute a digest of the file contents. Then it should update the shelf, either creating a new item that maps from the digest to a list containing the path, or appending the path to the list if it exists.</p></li>
+</ol>
+<ol class="arabic simple" start="3">
+<li><p>Write a function called <code class="docutils literal notranslate"><span class="pre">process_path</span></code> that takes a path, uses <code class="docutils literal notranslate"><span class="pre">is_image</span></code> to check whether it’s an image file, and uses <code class="docutils literal notranslate"><span class="pre">add_path</span></code> to add it to the shelf.</p></li>
+</ol>
+<p>When everything is working, you can use the following program to create the shelf, search the <code class="docutils literal notranslate"><span class="pre">photos</span></code> directory and add paths to the shelf, and then check whether there are multiple files with the same digest.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">shelve</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;photos/digests&#39;</span><span class="p">,</span> <span class="s1">&#39;n&#39;</span><span class="p">)</span>
+<span class="n">walk</span><span class="p">(</span><span class="s1">&#39;photos&#39;</span><span class="p">,</span> <span class="n">process_path</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">digest</span><span class="p">,</span> <span class="n">paths</span> <span class="ow">in</span> <span class="n">db</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">paths</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">paths</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;photos/mar-2023/photo2.jpg&#39;, &#39;photos/jan-2023/photo1.jpg&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>You should find one pair of files that have the same digest.
+Use <code class="docutils literal notranslate"><span class="pre">same_contents</span></code> to check whether they contain the same data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">same_contents</span><span class="p">(</span><span class="n">path1</span><span class="p">,</span> <span class="n">path2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="chap12.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Text Analysis and Generation</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="chap14.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Classes and Functions</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filenames-and-paths">Filenames and paths</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#f-strings">f-strings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#yaml">YAML</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shelve">Shelve</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#storing-data-structures">Storing data structures</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-for-equivalent-files">Checking for equivalent files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#walking-directories">Walking directories</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">Debugging</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">Glossary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">Ask a virtual assistant</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Allen B. Downey
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,1092 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Classes and Methods &#8212; Think Python, 3rd edition</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chap15';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Classes and Functions" href="chap14.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Think Python, 3rd edition</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    Think Python, 3rd edition
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chap00.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap01.html">Programming as a way of thinking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap02.html">Variables and Statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap03.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap04.html">Functions and Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap05.html">Conditionals and Recursion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap06.html">Return Values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap07.html">Iteration and Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap08.html">Strings and Regular Expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap09.html">Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap10.html">Dictionaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap11.html">Tuples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap12.html">Text Analysis and Generation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap13.html">Files and Databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap14.html">Classes and Functions</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Classes and Methods</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/AllenDowney/ThinkPython/tree/v3" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/chap15.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Classes and Methods</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-methods">Defining methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#another-method">Another method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#static-methods">Static methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-time-objects">Comparing Time objects</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-str-method">The <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-init-method">The <strong>init</strong> method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operator-overloading">Operator overloading</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">Debugging</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">Glossary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">Ask a virtual assistant</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">basename</span><span class="p">,</span> <span class="n">exists</span>
+
+<span class="k">def</span> <span class="nf">download</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+    <span class="n">filename</span> <span class="o">=</span> <span class="n">basename</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">exists</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+        <span class="kn">from</span> <span class="nn">urllib.request</span> <span class="kn">import</span> <span class="n">urlretrieve</span>
+
+        <span class="n">local</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">urlretrieve</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Downloaded &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">local</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">filename</span>
+
+<span class="n">download</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/AllenDowney/ThinkPython/v3/thinkpython.py&#39;</span><span class="p">)</span>
+<span class="n">download</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/AllenDowney/ThinkPython/v3/diagram.py&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">thinkpython</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="classes-and-methods">
+<h1>Classes and Methods<a class="headerlink" href="#classes-and-methods" title="Permalink to this heading">#</a></h1>
+<p>Python is an <strong>object-oriented language</strong> – that is, it provides features that support object-oriented programming, which has these defining characteristics:</p>
+<ul class="simple">
+<li><p>Most of the computation is expressed in terms of operations on objects.</p></li>
+<li><p>Objects often represent things in the real world, and methods often correspond to the ways things in the real world interact.</p></li>
+<li><p>Programs include class and method definitions.</p></li>
+</ul>
+<p>For example, in the previous chapter we defined a <code class="docutils literal notranslate"><span class="pre">Time</span></code> class that corresponds to the way people record the time of day, and we defined functions that correspond to the kinds of things people do with times.
+But there was no explicit connection between the definition of the <code class="docutils literal notranslate"><span class="pre">Time</span></code> class and the function definitions that follow.
+We can make the connection explicit by rewriting a function as a <strong>method</strong>, which is defined inside a class definition.</p>
+<section id="defining-methods">
+<h2>Defining methods<a class="headerlink" href="#defining-methods" title="Permalink to this heading">#</a></h2>
+<p>In the previous chapter we defined a class named <code class="docutils literal notranslate"><span class="pre">Time</span></code> and wrote a function named <code class="docutils literal notranslate"><span class="pre">print_time</span></code> that displays a time of day.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Time</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Represents the time of day.&quot;&quot;&quot;</span>
+
+<span class="k">def</span> <span class="nf">print_time</span><span class="p">(</span><span class="n">time</span><span class="p">):</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">hour</span><span class="si">:</span><span class="s1">02d</span><span class="si">}</span><span class="s1">:</span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">minute</span><span class="si">:</span><span class="s1">02d</span><span class="si">}</span><span class="s1">:</span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">second</span><span class="si">:</span><span class="s1">02d</span><span class="si">}</span><span class="s1">&#39;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To make <code class="docutils literal notranslate"><span class="pre">print_time</span></code> a method, all we have to do is move the function
+definition inside the class definition. Notice the change in
+indentation.</p>
+<p>At the same time, we’ll change the name of the parameter from <code class="docutils literal notranslate"><span class="pre">time</span></code> to <code class="docutils literal notranslate"><span class="pre">self</span></code>.
+This change is not necessary, but it is conventional for the first parameter of a method to be named <code class="docutils literal notranslate"><span class="pre">self</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Time</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Represents the time of day.&quot;&quot;&quot;</span>    
+
+    <span class="k">def</span> <span class="nf">print_time</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">hour</span><span class="si">:</span><span class="s1">02d</span><span class="si">}</span><span class="s1">:</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">minute</span><span class="si">:</span><span class="s1">02d</span><span class="si">}</span><span class="s1">:</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">second</span><span class="si">:</span><span class="s1">02d</span><span class="si">}</span><span class="s1">&#39;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To call this function, you have to pass a <code class="docutils literal notranslate"><span class="pre">Time</span></code> object as an argument.
+Here’s the function we’ll use to make a <code class="docutils literal notranslate"><span class="pre">Time</span></code> object.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">make_time</span><span class="p">(</span><span class="n">hour</span><span class="p">,</span> <span class="n">minute</span><span class="p">,</span> <span class="n">second</span><span class="p">):</span>
+    <span class="n">time</span> <span class="o">=</span> <span class="n">Time</span><span class="p">()</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">hour</span> <span class="o">=</span> <span class="n">hour</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">minute</span> <span class="o">=</span> <span class="n">minute</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">second</span> <span class="o">=</span> <span class="n">second</span>
+    <span class="k">return</span> <span class="n">time</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>And here’s a <code class="docutils literal notranslate"><span class="pre">Time</span></code> instance.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start</span> <span class="o">=</span> <span class="n">make_time</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now there are two ways to call <code class="docutils literal notranslate"><span class="pre">print_time</span></code>. The first (and less common)
+way is to use function syntax.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Time</span><span class="o">.</span><span class="n">print_time</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>09:40:00
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this version, <code class="docutils literal notranslate"><span class="pre">Time</span></code> is the name of the class, <code class="docutils literal notranslate"><span class="pre">print_time</span></code> is the name of the method, and <code class="docutils literal notranslate"><span class="pre">start</span></code> is passed as a parameter.
+The second (and more idiomatic) way is to use method syntax:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start</span><span class="o">.</span><span class="n">print_time</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>09:40:00
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this version, <code class="docutils literal notranslate"><span class="pre">start</span></code> is the object the method is invoked on, which is called the <strong>receiver</strong>, based on the analogy that invoking a method is like sending a message to an object.</p>
+<p>Regardless of the syntax, the behavior of the method is the same.
+The receiver is assigned to the first parameter, so inside the method, <code class="docutils literal notranslate"><span class="pre">self</span></code> refers to the same object as <code class="docutils literal notranslate"><span class="pre">start</span></code>.</p>
+</section>
+<section id="another-method">
+<h2>Another method<a class="headerlink" href="#another-method" title="Permalink to this heading">#</a></h2>
+<p>Here’s the <code class="docutils literal notranslate"><span class="pre">time_to_int</span></code> function from the previous chapter.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">time_to_int</span><span class="p">(</span><span class="n">time</span><span class="p">):</span>
+    <span class="n">minutes</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">hour</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">+</span> <span class="n">time</span><span class="o">.</span><span class="n">minute</span>
+    <span class="n">seconds</span> <span class="o">=</span> <span class="n">minutes</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">+</span> <span class="n">time</span><span class="o">.</span><span class="n">second</span>
+    <span class="k">return</span> <span class="n">seconds</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>And here’s a version rewritten as a method.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">add_method_to</span> Time
+
+    def time_to_int(self):
+        minutes = self.hour * 60 + self.minute
+        seconds = minutes * 60 + self.second
+        return seconds
+</pre></div>
+</div>
+</div>
+</div>
+<p>The first line uses the special command <code class="docutils literal notranslate"><span class="pre">add_method_to</span></code>, which adds a method to a previously-defined class.
+This command works in a Jupyter notebook, but it is not part of Python, so it won’t work in other environments.
+Normally, all methods of a class are inside the class definition, so they get defined at the same time as the class.
+But for this book, it is helpful to define one method at a time.</p>
+<p>As in the previous example, the method definition is indented and the name of the parameter is <code class="docutils literal notranslate"><span class="pre">self</span></code>.
+Other than that, the method is identical to the function.
+Here’s how we invoke it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start</span><span class="o">.</span><span class="n">time_to_int</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>34800
+</pre></div>
+</div>
+</div>
+</div>
+<p>It is common to say that we “call” a function and “invoke” a method, but they mean the same thing.</p>
+</section>
+<section id="static-methods">
+<h2>Static methods<a class="headerlink" href="#static-methods" title="Permalink to this heading">#</a></h2>
+<p>As another example, let’s consider the <code class="docutils literal notranslate"><span class="pre">int_to_time</span></code> function.
+Here’s the version from the previous chapter.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">int_to_time</span><span class="p">(</span><span class="n">seconds</span><span class="p">):</span>
+    <span class="n">minute</span><span class="p">,</span> <span class="n">second</span> <span class="o">=</span> <span class="nb">divmod</span><span class="p">(</span><span class="n">seconds</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="n">hour</span><span class="p">,</span> <span class="n">minute</span> <span class="o">=</span> <span class="nb">divmod</span><span class="p">(</span><span class="n">minute</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">make_time</span><span class="p">(</span><span class="n">hour</span><span class="p">,</span> <span class="n">minute</span><span class="p">,</span> <span class="n">second</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This function takes <code class="docutils literal notranslate"><span class="pre">seconds</span></code> as a parameter and returns a new <code class="docutils literal notranslate"><span class="pre">Time</span></code> object.
+If we transform it into a method of the <code class="docutils literal notranslate"><span class="pre">Time</span></code> class, we have to invoke it on a <code class="docutils literal notranslate"><span class="pre">Time</span></code> object.
+But if we’re trying to create a new <code class="docutils literal notranslate"><span class="pre">Time</span></code> object, what are we supposed to invoke it on?</p>
+<p>We can solve this chicken-and-egg problem using a <strong>static method</strong>, which is a method that does not require an instance of the class to be invoked.
+Here’s how we rewrite this function as a static method.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">add_method_to</span> Time
+
+    def int_to_time(seconds):
+        minute, second = divmod(seconds, 60)
+        hour, minute = divmod(minute, 60)
+        return make_time(hour, minute, second)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Because it is a static method, it does not have <code class="docutils literal notranslate"><span class="pre">self</span></code> as a parameter.
+To invoke it, we use <code class="docutils literal notranslate"><span class="pre">Time</span></code>, which is the class object.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start</span> <span class="o">=</span> <span class="n">Time</span><span class="o">.</span><span class="n">int_to_time</span><span class="p">(</span><span class="mi">34800</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The result is a new object that represents <code class="docutils literal notranslate"><span class="pre">9:40</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start</span><span class="o">.</span><span class="n">print_time</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>09:40:00
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now that we have <code class="docutils literal notranslate"><span class="pre">Time.from_seconds</span></code>, we can use it to write <code class="docutils literal notranslate"><span class="pre">add_time</span></code> as a method.
+Here’s the function from the previous chapter.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add_time</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">hours</span><span class="p">,</span> <span class="n">minutes</span><span class="p">,</span> <span class="n">seconds</span><span class="p">):</span>
+    <span class="n">duration</span> <span class="o">=</span> <span class="n">make_time</span><span class="p">(</span><span class="n">hours</span><span class="p">,</span> <span class="n">minutes</span><span class="p">,</span> <span class="n">seconds</span><span class="p">)</span>
+    <span class="n">seconds</span> <span class="o">=</span> <span class="n">time_to_int</span><span class="p">(</span><span class="n">time</span><span class="p">)</span> <span class="o">+</span> <span class="n">time_to_int</span><span class="p">(</span><span class="n">duration</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">int_to_time</span><span class="p">(</span><span class="n">seconds</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>And here’s a version rewritten as a method.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">add_method_to</span> Time
+
+    def add_time(self, hours, minutes, seconds):
+        duration = make_time(hours, minutes, seconds)
+        seconds = time_to_int(self) + time_to_int(duration)
+        return Time.int_to_time(seconds)
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">add_time</span></code> has <code class="docutils literal notranslate"><span class="pre">self</span></code> as a parameter because it is not a static method.
+It is an ordinary method – also called an <strong>instance method</strong>.
+To invoke it, we need a <code class="docutils literal notranslate"><span class="pre">Time</span></code> instance.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">end</span> <span class="o">=</span> <span class="n">start</span><span class="o">.</span><span class="n">add_time</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">print_time</span><span class="p">(</span><span class="n">end</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11:12:00
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="comparing-time-objects">
+<h2>Comparing Time objects<a class="headerlink" href="#comparing-time-objects" title="Permalink to this heading">#</a></h2>
+<p>As one more example, let’s write <code class="docutils literal notranslate"><span class="pre">is_after</span></code> as a method.
+Here’s the <code class="docutils literal notranslate"><span class="pre">is_after</span></code> function, which is a solution to an exercise in the previous chapter.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">is_after</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">time_to_int</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">time_to_int</span><span class="p">(</span><span class="n">t2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>And here it is as a method.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">add_method_to</span> Time
+
+    def is_after(self, other):
+        return self.time_to_int() &gt; other.time_to_int()
+</pre></div>
+</div>
+</div>
+</div>
+<p>Because we’re comparing two objects, and the first parameter is <code class="docutils literal notranslate"><span class="pre">self</span></code>, we’ll call the second parameter <code class="docutils literal notranslate"><span class="pre">other</span></code>.
+To use this method, we have to invoke it on one object and pass the
+other as an argument.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">end</span><span class="o">.</span><span class="n">is_after</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>One nice thing about this syntax is that it almost reads like a question,
+“<code class="docutils literal notranslate"><span class="pre">end</span></code> is after <code class="docutils literal notranslate"><span class="pre">start</span></code>?”</p>
+</section>
+<section id="the-str-method">
+<h2>The <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method<a class="headerlink" href="#the-str-method" title="Permalink to this heading">#</a></h2>
+<p>When you write a method, you can choose almost any name you want.
+However, some names have special meanings.
+For example, if an object has a method named <code class="docutils literal notranslate"><span class="pre">__str__</span></code>, Python uses that method to convert the object to a string.
+For example, here is a <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method for a time object.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">add_method_to</span> Time
+
+    def __str__(self):
+        s = f&#39;{self.hour:02d}:{self.minute:02d}:{self.second:02d}&#39;
+        return s
+</pre></div>
+</div>
+</div>
+</div>
+<p>This method is similar to <code class="docutils literal notranslate"><span class="pre">print_time</span></code>, from the previous chapter, except that it returns the string rather than printing it.</p>
+<p>You can invoke this method in the usual way.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">end</span><span class="o">.</span><span class="fm">__str__</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;11:12:00&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>But Python can also invoke it for you.
+If you use the built-in function <code class="docutils literal notranslate"><span class="pre">str</span></code> to convert a <code class="docutils literal notranslate"><span class="pre">Time</span></code> object to a string, Python uses the <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method in the <code class="docutils literal notranslate"><span class="pre">Time</span></code> class.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">str</span><span class="p">(</span><span class="n">end</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;11:12:00&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>And it does the same if you print a <code class="docutils literal notranslate"><span class="pre">Time</span></code> object.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">end</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11:12:00
+</pre></div>
+</div>
+</div>
+</div>
+<p>Methods like <code class="docutils literal notranslate"><span class="pre">__str__</span></code> are called <strong>special methods</strong>.
+You can identify them because their names begin and end with two underscores.</p>
+</section>
+<section id="the-init-method">
+<h2>The <strong>init</strong> method<a class="headerlink" href="#the-init-method" title="Permalink to this heading">#</a></h2>
+<p>The most special of the special methods is <code class="docutils literal notranslate"><span class="pre">__init__</span></code>, so-called because it initializes the attributes of a new object.
+An <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method for the <code class="docutils literal notranslate"><span class="pre">Time</span></code> class might look like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">add_method_to</span> Time
+
+    def __init__(self, hour=0, minute=0, second=0):
+        self.hour = hour
+        self.minute = minute
+        self.second = second
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now when we instantiate a <code class="docutils literal notranslate"><span class="pre">Time</span></code> object, Python invokes <code class="docutils literal notranslate"><span class="pre">__init__</span></code>, and passes along the arguments.
+So we can create an object and initialize the attributes at the same time.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">time</span> <span class="o">=</span> <span class="n">Time</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">time</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>09:40:00
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this example, the parameters are optional, so if you call <code class="docutils literal notranslate"><span class="pre">Time</span></code> with no arguments,
+you get the default values.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">time</span> <span class="o">=</span> <span class="n">Time</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">time</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>00:00:00
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you provide one argument, it overrides <code class="docutils literal notranslate"><span class="pre">hour</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">time</span> <span class="o">=</span> <span class="n">Time</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">time</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>09:00:00
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you provide two arguments, they override <code class="docutils literal notranslate"><span class="pre">hour</span></code> and <code class="docutils literal notranslate"><span class="pre">minute</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">time</span> <span class="o">=</span> <span class="n">Time</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">45</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">time</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>09:45:00
+</pre></div>
+</div>
+</div>
+</div>
+<p>And if you provide three arguments, they override all three default
+values.</p>
+<p>When I write a new class, I almost always start by writing <code class="docutils literal notranslate"><span class="pre">__init__</span></code>, which makes it easier to create objects, and <code class="docutils literal notranslate"><span class="pre">__str__</span></code>, which is useful for debugging.</p>
+</section>
+<section id="operator-overloading">
+<h2>Operator overloading<a class="headerlink" href="#operator-overloading" title="Permalink to this heading">#</a></h2>
+<p>By defining other special methods, you can specify the behavior of
+operators on programmer-defined types. For example, if you define a
+method named <code class="docutils literal notranslate"><span class="pre">__add__</span></code> for the <code class="docutils literal notranslate"><span class="pre">Time</span></code> class, you can use the <code class="docutils literal notranslate"><span class="pre">+</span></code>
+operator on Time objects.</p>
+<p>Here is an <code class="docutils literal notranslate"><span class="pre">__add__</span></code> method.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">add_method_to</span> Time
+
+    def __add__(self, other):
+        seconds = self.time_to_int() + other.time_to_int()
+        return Time.int_to_time(seconds)
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can use it like this.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">duration</span> <span class="o">=</span> <span class="n">Time</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="n">end</span> <span class="o">=</span> <span class="n">start</span> <span class="o">+</span> <span class="n">duration</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">end</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11:12:00
+</pre></div>
+</div>
+</div>
+</div>
+<p>There is a lot happening when we run these three lines of code:</p>
+<ul class="simple">
+<li><p>When we instantiate a <code class="docutils literal notranslate"><span class="pre">Time</span></code> object, the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method is invoked.</p></li>
+<li><p>When we use the <code class="docutils literal notranslate"><span class="pre">+</span></code> operator with a <code class="docutils literal notranslate"><span class="pre">Time</span></code> object, its <code class="docutils literal notranslate"><span class="pre">__add__</span></code> method is invoked.</p></li>
+<li><p>And when we print a <code class="docutils literal notranslate"><span class="pre">Time</span></code> object, its <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method is invoked.</p></li>
+</ul>
+<p>Changing the behavior of an operator so that it works with programmer-defined types is called <strong>operator overloading</strong>.
+For every operator, like <code class="docutils literal notranslate"><span class="pre">+</span></code>, there is a corresponding special method, like <code class="docutils literal notranslate"><span class="pre">__add__</span></code>.</p>
+</section>
+<section id="debugging">
+<h2>Debugging<a class="headerlink" href="#debugging" title="Permalink to this heading">#</a></h2>
+<p>A <code class="docutils literal notranslate"><span class="pre">Time</span></code> object is valid if the values of <code class="docutils literal notranslate"><span class="pre">minute</span></code> and <code class="docutils literal notranslate"><span class="pre">second</span></code> are between <code class="docutils literal notranslate"><span class="pre">0</span></code> and <code class="docutils literal notranslate"><span class="pre">60</span></code> – including <code class="docutils literal notranslate"><span class="pre">0</span></code> but not <code class="docutils literal notranslate"><span class="pre">60</span></code> – and if <code class="docutils literal notranslate"><span class="pre">hour</span></code> is positive.
+Also, <code class="docutils literal notranslate"><span class="pre">hour</span></code> and <code class="docutils literal notranslate"><span class="pre">minute</span></code> should be integer values, but we might allow <code class="docutils literal notranslate"><span class="pre">second</span></code> to have a fraction part.
+Requirements like these are called <strong>invariants</strong> because they should always be true.
+To put it a different way, if they are not true, something has gone wrong.</p>
+<p>Writing code to check invariants can help detect errors and find their causes.
+For example, you might have a method like <code class="docutils literal notranslate"><span class="pre">is_valid</span></code> that takes a Time object and returns <code class="docutils literal notranslate"><span class="pre">False</span></code> if it violates an invariant.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">add_method_to</span> Time
+
+    def is_valid(self):
+        if self.hour &lt; 0 or self.minute &lt; 0 or self.second &lt; 0:
+            return False
+        if self.minute &gt;= 60 or self.second &gt;= 60:
+            return False
+        if not isinstance(self.hour, int):
+            return False
+        if not isinstance(self.minute, int):
+            return False
+        return True
+</pre></div>
+</div>
+</div>
+</div>
+<p>Then, at the beginning of each method you can check the arguments to make sure they are valid.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">add_method_to</span> Time
+
+    def is_after(self, other):
+        assert self.is_valid(), &#39;self is not a valid Time&#39;
+        assert other.is_valid(), &#39;self is not a valid Time&#39;
+        return self.time_to_int() &gt; other.time_to_int()
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">assert</span></code> statement evaluates the expression that follows. If the result is <code class="docutils literal notranslate"><span class="pre">True</span></code>, it does nothing; if the result is <code class="docutils literal notranslate"><span class="pre">False</span></code>, it causes an <code class="docutils literal notranslate"><span class="pre">AssertionError</span></code>.
+Here’s an example.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">duration</span> <span class="o">=</span> <span class="n">Time</span><span class="p">(</span><span class="n">minute</span><span class="o">=</span><span class="mi">132</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">duration</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>00:132:00
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start</span><span class="o">.</span><span class="n">is_after</span><span class="p">(</span><span class="n">duration</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="ne">AssertionError</span>: self is not a valid Time
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">assert</span></code> statements are useful because they distinguish code that deals with normal conditions from code that checks for errors.</p>
+</section>
+<section id="glossary">
+<h2>Glossary<a class="headerlink" href="#glossary" title="Permalink to this heading">#</a></h2>
+<p><strong>object-oriented language:</strong>
+A language that provides features to support object-oriented programming, notably user-defined types and inheritance.</p>
+<p><strong>method:</strong>
+A function that is defined inside a class definition and is invoked on instances of that class.</p>
+<p><strong>receiver:</strong>
+The object a method is invoked on.</p>
+<p><strong>static method:</strong>
+A method that can be invoked without an object as receiver.</p>
+<p><strong>instance method:</strong>
+A method that must be invoked with an object as receiver.</p>
+<p><strong>special method:</strong>
+A method that changes the way operators and some functions work with an object.</p>
+<p><strong>operator overloading:</strong>
+The process of using special methods to change the way operators with with user-defined types.</p>
+<p><strong>invariant:</strong>
+A condition that should always be true during the execution of a program.</p>
+</section>
+<section id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h2>
+<section id="ask-a-virtual-assistant">
+<h3>Ask a virtual assistant<a class="headerlink" href="#ask-a-virtual-assistant" title="Permalink to this heading">#</a></h3>
+<p>For more information about static methods, ask a virtual assistant:</p>
+<ul class="simple">
+<li><p>“What’s the difference between an instance method and a static method?”</p></li>
+<li><p>“Why are static methods called static?”</p></li>
+</ul>
+<p>If you ask a virtual assistant to generate a static method, the result will probably begin with <code class="docutils literal notranslate"><span class="pre">&#64;staticmethod</span></code>, which is a “decorator” that indicates that it is a static method.
+Decorators are not covered in this book, but if you are curious, you can ask a VA for more information.</p>
+<p>In this chapter we rewrote several functions as methods.
+Virtual assistants are generally good at this kind of code transformation.
+As an example, paste the following function into a VA and ask it, “Rewrite this function as a method of the <code class="docutils literal notranslate"><span class="pre">Time</span></code> class.”</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">subtract_time</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">time_to_int</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span> <span class="o">-</span> <span class="n">time_to_int</span><span class="p">(</span><span class="n">t2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise">
+<h3>Exercise<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h3>
+<p>In the previous chapter, a series of exercises asked you to write a <code class="docutils literal notranslate"><span class="pre">Date</span></code> class and several functions that work with <code class="docutils literal notranslate"><span class="pre">Date</span></code> objects.
+Now let’s practice rewriting those functions as methods.</p>
+<ol class="arabic simple">
+<li><p>Write a definition for a <code class="docutils literal notranslate"><span class="pre">Date</span></code> class that represents a date – that is, a year, month, and day of the month.</p></li>
+<li><p>Write an <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method that takes <code class="docutils literal notranslate"><span class="pre">year</span></code>, <code class="docutils literal notranslate"><span class="pre">month</span></code>, and <code class="docutils literal notranslate"><span class="pre">day</span></code> as parameters and assigns the parameters to attributes. Create an object that represents June 22, 1933.</p></li>
+<li><p>Write <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method that uses a format string to format the attributes and returns the result. If you test it with the <code class="docutils literal notranslate"><span class="pre">Date</span></code> you created, the result should be <code class="docutils literal notranslate"><span class="pre">1933-06-22</span></code>.</p></li>
+<li><p>Write a method called <code class="docutils literal notranslate"><span class="pre">is_after</span></code> that takes two <code class="docutils literal notranslate"><span class="pre">Date</span></code> objects and returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if the first comes after the second. Create a second object that represents September 17, 1933, and check whether it comes after the first object.</p></li>
+</ol>
+<p>Hint: You might find it useful write a method called <code class="docutils literal notranslate"><span class="pre">to_tuple</span></code> that returns a tuple that contains the attributes of a <code class="docutils literal notranslate"><span class="pre">Date</span></code> object in year-month-day order.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="chap14.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Classes and Functions</p>
+      </div>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-methods">Defining methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#another-method">Another method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#static-methods">Static methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-time-objects">Comparing Time objects</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-str-method">The <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-init-method">The <strong>init</strong> method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operator-overloading">Operator overloading</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">Debugging</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">Glossary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">Ask a virtual assistant</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Allen B. Downey
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,1320 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Classes and Functions &#8212; Think Python, 3rd edition</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chap14';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Classes and Methods" href="chap15.html" />
+    <link rel="prev" title="Files and Databases" href="chap13.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Think Python, 3rd edition</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    Think Python, 3rd edition
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chap00.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap01.html">Programming as a way of thinking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap02.html">Variables and Statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap03.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap04.html">Functions and Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap05.html">Conditionals and Recursion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap06.html">Return Values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap07.html">Iteration and Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap08.html">Strings and Regular Expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap09.html">Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap10.html">Dictionaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap11.html">Tuples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap12.html">Text Analysis and Generation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap13.html">Files and Databases</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Classes and Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap15.html">Classes and Methods</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/AllenDowney/ThinkPython/tree/v3" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/chap14.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Classes and Functions</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programmer-defined-types">Programmer-defined types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#attributes">Attributes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objects-as-return-values">Objects as return values</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objects-are-mutable">Objects are mutable</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#copying">Copying</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pure-functions">Pure functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prototype-and-patch">Prototype and patch</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#design-first-development">Design-first development</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">Debugging</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">Glossary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">Ask a virtual assistant</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Exercise</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="classes-and-functions">
+<h1>Classes and Functions<a class="headerlink" href="#classes-and-functions" title="Permalink to this heading">#</a></h1>
+<p>At this point you know how to use functions to organize code and how to use built-in types to organize data.
+The next step is <strong>object-oriented programming</strong>, which uses programmer-defined types to organize both code and data.</p>
+<p>Object-oriented programming is a big topic, so we will proceed gradually.
+In this chapter, we’ll start with code that is not idiomatic – that is, it is not the kind of code experienced programmers write – but it is a good place to start.
+In the next two chapters, we will use additional features to write more idiomatic code.</p>
+<section id="programmer-defined-types">
+<h2>Programmer-defined types<a class="headerlink" href="#programmer-defined-types" title="Permalink to this heading">#</a></h2>
+<p>We have used many of Python’s built-in types – now we will define a new type.
+As a first example, we’ll create a type called <code class="docutils literal notranslate"><span class="pre">Time</span></code> that represents a time of day.
+A programmer-defined type is also called a <strong>class</strong>.
+A class definition looks like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Time</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Represents a time of day.&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The header indicates that the new class is called <code class="docutils literal notranslate"><span class="pre">Time</span></code>.
+The body is a docstring that explains what the class is for.
+Defining a class creates a <strong>class object</strong>.</p>
+<p>The class object is like a factory for creating objects.
+To create a <code class="docutils literal notranslate"><span class="pre">Time</span></code> object, you call <code class="docutils literal notranslate"><span class="pre">Time</span></code> as if it were a function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lunch</span> <span class="o">=</span> <span class="n">Time</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The result is a new object whose type is <code class="docutils literal notranslate"><span class="pre">__main__.Time</span></code>, where <code class="docutils literal notranslate"><span class="pre">__main__</span></code> is the name of the  module where <code class="docutils literal notranslate"><span class="pre">Time</span></code> is defined.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">lunch</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>__main__.Time
+</pre></div>
+</div>
+</div>
+</div>
+<p>When you print an object, Python tells you what type it is and where it is stored in memory (the prefix <code class="docutils literal notranslate"><span class="pre">0x</span></code> means that the following number is in hexadecimal).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">lunch</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Time object at 0x7fbf2c427280&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Creating a new object is called <strong>instantiation</strong>, and the object is an <strong>instance</strong> of the class.</p>
+</section>
+<section id="attributes">
+<h2>Attributes<a class="headerlink" href="#attributes" title="Permalink to this heading">#</a></h2>
+<p>An object can contain variables, which are called <strong>attributes</strong> and pronounced with the emphasis on the first syllable, like “AT-trib-ute”, rather than the second syllable, like “a-TRIB-ute”.
+We can create attributes using dot notation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lunch</span><span class="o">.</span><span class="n">hour</span> <span class="o">=</span> <span class="mi">11</span>
+<span class="n">lunch</span><span class="o">.</span><span class="n">minute</span> <span class="o">=</span> <span class="mi">59</span>
+<span class="n">lunch</span><span class="o">.</span><span class="n">second</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This example creates attributes called <code class="docutils literal notranslate"><span class="pre">hour</span></code>, <code class="docutils literal notranslate"><span class="pre">minute</span></code>, and <code class="docutils literal notranslate"><span class="pre">second</span></code>, which contain the hours, minutes, and seconds of the time <code class="docutils literal notranslate"><span class="pre">11:59:01</span></code>, which is lunch time as far as I am concerned.</p>
+<p>The following diagram shows the state of <code class="docutils literal notranslate"><span class="pre">lunch</span></code> and its attributes after these assignments.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1.82, 1.24, 0.3, 0.85]
+</pre></div>
+</div>
+<img alt="_images/da8c348b52e5da557e68dac285fc0f39c40aa803ea9d4d94628d9e8aa9d577a6.png" src="_images/da8c348b52e5da557e68dac285fc0f39c40aa803ea9d4d94628d9e8aa9d577a6.png" />
+</div>
+</div>
+<p>The variable <code class="docutils literal notranslate"><span class="pre">lunch</span></code> refers to a <code class="docutils literal notranslate"><span class="pre">Time</span></code> object, which contains three attributes.
+Each attribute refers to an integer.
+A state diagram like this – which shows an object and its attributes – is called an <strong>object diagram</strong>.</p>
+<p>You can read the value of an attribute using the dot operator.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lunch</span><span class="o">.</span><span class="n">hour</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can use an attribute as part of any expression.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">total_minutes</span> <span class="o">=</span> <span class="n">lunch</span><span class="o">.</span><span class="n">hour</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">+</span> <span class="n">lunch</span><span class="o">.</span><span class="n">minute</span>
+<span class="n">total_minutes</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>719
+</pre></div>
+</div>
+</div>
+</div>
+<p>And you can use the dot operator in an expression in an f-string.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">lunch</span><span class="o">.</span><span class="n">hour</span><span class="si">}</span><span class="s1">:</span><span class="si">{</span><span class="n">lunch</span><span class="o">.</span><span class="n">minute</span><span class="si">}</span><span class="s1">:</span><span class="si">{</span><span class="n">lunch</span><span class="o">.</span><span class="n">second</span><span class="si">}</span><span class="s1">&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;11:59:1&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>But notice that the previous example is not in the standard format.
+To fix it, we have to print the <code class="docutils literal notranslate"><span class="pre">minute</span></code> and <code class="docutils literal notranslate"><span class="pre">second</span></code> attributes with a leading zero.
+We can do that by extending the expressions in curly braces with a <strong>format specifier</strong>.
+In the following example, the format specifiers indicate that <code class="docutils literal notranslate"><span class="pre">minute</span></code> and <code class="docutils literal notranslate"><span class="pre">second</span></code> should be displayed with at least two digits and a leading zero if needed.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">lunch</span><span class="o">.</span><span class="n">hour</span><span class="si">}</span><span class="s1">:</span><span class="si">{</span><span class="n">lunch</span><span class="o">.</span><span class="n">minute</span><span class="si">:</span><span class="s1">02d</span><span class="si">}</span><span class="s1">:</span><span class="si">{</span><span class="n">lunch</span><span class="o">.</span><span class="n">second</span><span class="si">:</span><span class="s1">02d</span><span class="si">}</span><span class="s1">&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;11:59:01&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>We’ll use this f-string to write a function that displays the value of time objects.
+You can pass an object as an argument in the usual way.
+For example, the following function takes a <code class="docutils literal notranslate"><span class="pre">Time</span></code> object as an argument.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_time</span><span class="p">(</span><span class="n">time</span><span class="p">):</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">hour</span><span class="si">:</span><span class="s1">02d</span><span class="si">}</span><span class="s1">:</span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">minute</span><span class="si">:</span><span class="s1">02d</span><span class="si">}</span><span class="s1">:</span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">second</span><span class="si">:</span><span class="s1">02d</span><span class="si">}</span><span class="s1">&#39;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>When we call it, we can pass <code class="docutils literal notranslate"><span class="pre">lunch</span></code> as an argument.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">print_time</span><span class="p">(</span><span class="n">lunch</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11:59:01
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="objects-as-return-values">
+<h2>Objects as return values<a class="headerlink" href="#objects-as-return-values" title="Permalink to this heading">#</a></h2>
+<p>Functions can return objects. For example, <code class="docutils literal notranslate"><span class="pre">make_time</span></code> takes parameters called <code class="docutils literal notranslate"><span class="pre">hour</span></code>, <code class="docutils literal notranslate"><span class="pre">minute</span></code>, and <code class="docutils literal notranslate"><span class="pre">second</span></code>, stores them as attributes in a <code class="docutils literal notranslate"><span class="pre">Time</span></code> object, and returns the new object.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">make_time</span><span class="p">(</span><span class="n">hour</span><span class="p">,</span> <span class="n">minute</span><span class="p">,</span> <span class="n">second</span><span class="p">):</span>
+    <span class="n">time</span> <span class="o">=</span> <span class="n">Time</span><span class="p">()</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">hour</span> <span class="o">=</span> <span class="n">hour</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">minute</span> <span class="o">=</span> <span class="n">minute</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">second</span> <span class="o">=</span> <span class="n">second</span>
+    <span class="k">return</span> <span class="n">time</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>It might be surprising that the parameters have the same names as the attributes, but that’s a common way to write a function like this.
+Here’s how we use <code class="docutils literal notranslate"><span class="pre">make_time</span></code> to create a <code class="docutils literal notranslate"><span class="pre">Time</span></code> object.`</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">time</span> <span class="o">=</span> <span class="n">make_time</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">59</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">print_time</span><span class="p">(</span><span class="n">time</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11:59:01
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="objects-are-mutable">
+<h2>Objects are mutable<a class="headerlink" href="#objects-are-mutable" title="Permalink to this heading">#</a></h2>
+<p>Suppose you are going to a screening of a movie, like <em>Monty Python and the Holy Grail</em>, which starts at <code class="docutils literal notranslate"><span class="pre">9:20</span> <span class="pre">PM</span></code> and runs for <code class="docutils literal notranslate"><span class="pre">92</span></code> minutes, which is one hour <code class="docutils literal notranslate"><span class="pre">32</span></code> minutes.
+What time will the movie end?</p>
+<p>First, we’ll create a <code class="docutils literal notranslate"><span class="pre">Time</span></code> object that represents the start time.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start</span> <span class="o">=</span> <span class="n">make_time</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">print_time</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>09:20:00
+</pre></div>
+</div>
+</div>
+</div>
+<p>To find the end time, we can modify the attributes of the <code class="docutils literal notranslate"><span class="pre">Time</span></code> object, adding the duration of the movie.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start</span><span class="o">.</span><span class="n">hour</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="n">start</span><span class="o">.</span><span class="n">minute</span> <span class="o">+=</span> <span class="mi">32</span>
+<span class="n">print_time</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10:52:00
+</pre></div>
+</div>
+</div>
+</div>
+<p>The movie will be over at 10:52 PM.</p>
+<p>Let’s encapsulate this computation in a function and generalize it to take the duration of the movie in three parameters: <code class="docutils literal notranslate"><span class="pre">hours</span></code>, <code class="docutils literal notranslate"><span class="pre">minutes</span></code>, and <code class="docutils literal notranslate"><span class="pre">seconds</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">increment_time</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">hours</span><span class="p">,</span> <span class="n">minutes</span><span class="p">,</span> <span class="n">seconds</span><span class="p">):</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">hour</span> <span class="o">+=</span> <span class="n">hours</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">minute</span> <span class="o">+=</span> <span class="n">minutes</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">second</span> <span class="o">+=</span> <span class="n">seconds</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here is an example that demonstrates the effect.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start</span> <span class="o">=</span> <span class="n">make_time</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">increment_time</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">print_time</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10:52:00
+</pre></div>
+</div>
+</div>
+</div>
+<p>The following stack diagram shows the state of the program just before <code class="docutils literal notranslate"><span class="pre">increment_time</span></code> modifies the object.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="_images/ff10ea6e95b38529e79f7bf3839576a6ceff4d6278072416be525068c76ec2df.png" src="_images/ff10ea6e95b38529e79f7bf3839576a6ceff4d6278072416be525068c76ec2df.png" />
+</div>
+</div>
+<p>Inside the function, <code class="docutils literal notranslate"><span class="pre">time</span></code> is an alias for <code class="docutils literal notranslate"><span class="pre">start</span></code>, so when <code class="docutils literal notranslate"><span class="pre">time</span></code> is modified, <code class="docutils literal notranslate"><span class="pre">start</span></code> changes.</p>
+<p>This function works, but after it runs, we’re left with a variable named <code class="docutils literal notranslate"><span class="pre">start</span></code> that refers to an object that represents the <em>end</em> time, and we no longer have an object that represents the start time.
+It would be better to leave <code class="docutils literal notranslate"><span class="pre">start</span></code> unchanged and make a new object to represent the end time.
+We can do that by copying <code class="docutils literal notranslate"><span class="pre">start</span></code> and modifying the copy.</p>
+</section>
+<section id="copying">
+<h2>Copying<a class="headerlink" href="#copying" title="Permalink to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">copy</span></code> module provides a function called <code class="docutils literal notranslate"><span class="pre">copy</span></code> that can duplicate any object.
+We can import it like this.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">copy</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To see how it works, let’s start with a new <code class="docutils literal notranslate"><span class="pre">Time</span></code> object that represents the start time of the movie.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start</span> <span class="o">=</span> <span class="n">make_time</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>And make a copy.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">end</span> <span class="o">=</span> <span class="n">copy</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now <code class="docutils literal notranslate"><span class="pre">start</span></code> and <code class="docutils literal notranslate"><span class="pre">end</span></code> contain the same data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">print_time</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>
+<span class="n">print_time</span><span class="p">(</span><span class="n">end</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>09:20:00
+09:20:00
+</pre></div>
+</div>
+</div>
+</div>
+<p>But the <code class="docutils literal notranslate"><span class="pre">is</span></code> operator confirms that they are not the same object.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start</span> <span class="ow">is</span> <span class="n">end</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s see what the <code class="docutils literal notranslate"><span class="pre">==</span></code> operator does.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start</span> <span class="o">==</span> <span class="n">end</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>You might expect <code class="docutils literal notranslate"><span class="pre">==</span></code> to yield <code class="docutils literal notranslate"><span class="pre">True</span></code> because the objects contain the same data.
+But for programmer-defined classes, the default behavior of the <code class="docutils literal notranslate"><span class="pre">==</span></code> operator is the same as the <code class="docutils literal notranslate"><span class="pre">is</span></code> operator – it checks identity, not equivalence.</p>
+</section>
+<section id="pure-functions">
+<h2>Pure functions<a class="headerlink" href="#pure-functions" title="Permalink to this heading">#</a></h2>
+<p>We can use <code class="docutils literal notranslate"><span class="pre">copy</span></code> to write pure functions that don’t modify their parameters.
+For example, here’s a function that takes a <code class="docutils literal notranslate"><span class="pre">Time</span></code> object and a duration in hours, minutes and seconds.
+It makes a copy of the original object, uses <code class="docutils literal notranslate"><span class="pre">increment_time</span></code> to modify the copy, and returns it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add_time</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">hours</span><span class="p">,</span> <span class="n">minutes</span><span class="p">,</span> <span class="n">seconds</span><span class="p">):</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="n">copy</span><span class="p">(</span><span class="n">time</span><span class="p">)</span>
+    <span class="n">increment_time</span><span class="p">(</span><span class="n">total</span><span class="p">,</span> <span class="n">hours</span><span class="p">,</span> <span class="n">minutes</span><span class="p">,</span> <span class="n">seconds</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">total</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here’s how we use it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">end</span> <span class="o">=</span> <span class="n">add_time</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">print_time</span><span class="p">(</span><span class="n">end</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10:52:00
+</pre></div>
+</div>
+</div>
+</div>
+<p>The return value is a new object representing the end time of the movie.
+And we can confirm that <code class="docutils literal notranslate"><span class="pre">start</span></code> is unchanged.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">print_time</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>09:20:00
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">add_time</span></code> is a <strong>pure function</strong> because it does not modify any of the objects passed to it as arguments and its only effect is to return a value.</p>
+<p>Anything that can be done with modifiers can also be done with pure functions.
+In fact, some programming languages only allow pure functions.
+Programs that use pure functions might be less error-prone than programs that use modifiers.
+But modifiers are sometimes convenient and can be more efficient.</p>
+<p>In general, I suggest you write pure functions whenever it is reasonable and resort to modifiers only if there is a compelling advantage.
+This approach might be called a <strong>functional programming style</strong>.</p>
+</section>
+<section id="prototype-and-patch">
+<h2>Prototype and patch<a class="headerlink" href="#prototype-and-patch" title="Permalink to this heading">#</a></h2>
+<p>In the previous example, <code class="docutils literal notranslate"><span class="pre">increment_time</span></code> and <code class="docutils literal notranslate"><span class="pre">add_time</span></code> seem to work, but if we try another example, we’ll see that they are not quite correct.</p>
+<p>Suppose you arrive at the theater and discover that the movie starts at <code class="docutils literal notranslate"><span class="pre">9:40</span></code>, not <code class="docutils literal notranslate"><span class="pre">9:20</span></code>.
+Here’s what happens when we compute the updated end time.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start</span> <span class="o">=</span> <span class="n">make_time</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">end</span> <span class="o">=</span> <span class="n">add_time</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">print_time</span><span class="p">(</span><span class="n">end</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10:72:00
+</pre></div>
+</div>
+</div>
+</div>
+<p>The result is not a valid time.
+The problem is that <code class="docutils literal notranslate"><span class="pre">increment_time</span></code> does not deal with cases where the number of seconds or minutes adds up to more than <code class="docutils literal notranslate"><span class="pre">60</span></code>.</p>
+<p>Here’s an improved version that checks whether <code class="docutils literal notranslate"><span class="pre">second</span></code> exceeds <code class="docutils literal notranslate"><span class="pre">60</span></code> – if so, it increments <code class="docutils literal notranslate"><span class="pre">minute</span></code> – then checks whether <code class="docutils literal notranslate"><span class="pre">minute</span></code> exceeds <code class="docutils literal notranslate"><span class="pre">60</span></code> – if so, it increments <code class="docutils literal notranslate"><span class="pre">hour</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">increment_time</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">hours</span><span class="p">,</span> <span class="n">minutes</span><span class="p">,</span> <span class="n">seconds</span><span class="p">):</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">hour</span> <span class="o">+=</span> <span class="n">hours</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">minute</span> <span class="o">+=</span> <span class="n">minutes</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">second</span> <span class="o">+=</span> <span class="n">seconds</span>
+
+    <span class="k">if</span> <span class="n">time</span><span class="o">.</span><span class="n">second</span> <span class="o">&gt;=</span> <span class="mi">60</span><span class="p">:</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">second</span> <span class="o">-=</span> <span class="mi">60</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">minute</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="k">if</span> <span class="n">time</span><span class="o">.</span><span class="n">minute</span> <span class="o">&gt;=</span> <span class="mi">60</span><span class="p">:</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">minute</span> <span class="o">-=</span> <span class="mi">60</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">hour</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Fixing <code class="docutils literal notranslate"><span class="pre">increment_time</span></code> also fixes <code class="docutils literal notranslate"><span class="pre">add_time</span></code>, which uses it.
+So now the previous example works correctly.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">end</span> <span class="o">=</span> <span class="n">add_time</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">print_time</span><span class="p">(</span><span class="n">end</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11:12:00
+</pre></div>
+</div>
+</div>
+</div>
+<p>But this function is still not correct, because the arguments might be bigger than <code class="docutils literal notranslate"><span class="pre">60</span></code>.
+For example, suppose we are given the run time as <code class="docutils literal notranslate"><span class="pre">92</span></code> minutes, rather than <code class="docutils literal notranslate"><span class="pre">1</span></code> hours and <code class="docutils literal notranslate"><span class="pre">32</span></code> minutes.
+We might call <code class="docutils literal notranslate"><span class="pre">add_time</span></code> like this.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">end</span> <span class="o">=</span> <span class="n">add_time</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">92</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">print_time</span><span class="p">(</span><span class="n">end</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10:72:00
+</pre></div>
+</div>
+</div>
+</div>
+<p>The result is not a valid time.
+So let’s try a different approach, using the <code class="docutils literal notranslate"><span class="pre">divmod</span></code> function.
+We’ll make a copy of <code class="docutils literal notranslate"><span class="pre">start</span></code> and modify it by incrementing the <code class="docutils literal notranslate"><span class="pre">minutes</span></code> field.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">end</span> <span class="o">=</span> <span class="n">copy</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>
+<span class="n">end</span><span class="o">.</span><span class="n">minute</span> <span class="o">=</span> <span class="n">start</span><span class="o">.</span><span class="n">minute</span> <span class="o">+</span> <span class="mi">92</span>
+<span class="n">end</span><span class="o">.</span><span class="n">minute</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>132
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now <code class="docutils literal notranslate"><span class="pre">minute</span></code> is <code class="docutils literal notranslate"><span class="pre">132</span></code>, which is <code class="docutils literal notranslate"><span class="pre">2</span></code> hours and <code class="docutils literal notranslate"><span class="pre">12</span></code> minutes.
+We can use <code class="docutils literal notranslate"><span class="pre">divmod</span></code> to divide by <code class="docutils literal notranslate"><span class="pre">60</span></code> and return the number of whole hours and the number of minutes left over.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">carry</span><span class="p">,</span> <span class="n">end</span><span class="o">.</span><span class="n">minute</span> <span class="o">=</span> <span class="nb">divmod</span><span class="p">(</span><span class="n">end</span><span class="o">.</span><span class="n">minute</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+<span class="n">carry</span><span class="p">,</span> <span class="n">end</span><span class="o">.</span><span class="n">minute</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2, 12)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now <code class="docutils literal notranslate"><span class="pre">minute</span></code> is correct, and we can add the hours to <code class="docutils literal notranslate"><span class="pre">hour</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">end</span><span class="o">.</span><span class="n">hour</span> <span class="o">+=</span> <span class="n">carry</span>
+<span class="n">print_time</span><span class="p">(</span><span class="n">end</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11:12:00
+</pre></div>
+</div>
+</div>
+</div>
+<p>The result is a valid time.
+We can do the same thing with <code class="docutils literal notranslate"><span class="pre">hour</span></code> and <code class="docutils literal notranslate"><span class="pre">second</span></code>, and encapsulate the whole process in a function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">increment_time</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">hours</span><span class="p">,</span> <span class="n">minutes</span><span class="p">,</span> <span class="n">seconds</span><span class="p">):</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">hour</span> <span class="o">+=</span> <span class="n">hours</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">minute</span> <span class="o">+=</span> <span class="n">minutes</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">second</span> <span class="o">+=</span> <span class="n">seconds</span>
+    
+    <span class="n">carry</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">second</span> <span class="o">=</span> <span class="nb">divmod</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">second</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="n">carry</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">minute</span> <span class="o">=</span> <span class="nb">divmod</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">minute</span> <span class="o">+</span> <span class="n">carry</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="n">carry</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">hour</span> <span class="o">=</span> <span class="nb">divmod</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">hour</span> <span class="o">+</span> <span class="n">carry</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>With this version of <code class="docutils literal notranslate"><span class="pre">increment_time</span></code>, <code class="docutils literal notranslate"><span class="pre">add_time</span></code> works correctly, even if the arguments exceed <code class="docutils literal notranslate"><span class="pre">60</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">end</span> <span class="o">=</span> <span class="n">add_time</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">120</span><span class="p">)</span>
+<span class="n">print_time</span><span class="p">(</span><span class="n">end</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11:12:00
+</pre></div>
+</div>
+</div>
+</div>
+<p>This section demonstrates a program development plan I call <strong>prototype and patch</strong>.
+We started with a simple prototype that worked correctly for the first example.
+Then we tested it with more difficult examples – when we found an error, we modified the program to fix it, like putting a patch on tire with a puncture.</p>
+<p>This approach can be effective, especially if you don’t yet have a deep understanding of the problem.
+But incremental corrections can generate code that is unnecessarily complicated – since it deals with many special cases – and unreliable – since it is hard to know if you have
+found all the errors.</p>
+</section>
+<section id="design-first-development">
+<h2>Design-first development<a class="headerlink" href="#design-first-development" title="Permalink to this heading">#</a></h2>
+<p>An alternative plan is <strong>design-first development</strong>, which involves more planning before prototyping. In a design-first process, sometimes a high-level insight into the problem makes the programming much easier.</p>
+<p>In this case, the insight is that we can think of a <code class="docutils literal notranslate"><span class="pre">Time</span></code> object as a three-digit number in base 60 – also known as sexagesimal.
+The <code class="docutils literal notranslate"><span class="pre">second</span></code> attribute is the “ones column”, the <code class="docutils literal notranslate"><span class="pre">minute</span></code> attribute is the “sixties column”,
+and the <code class="docutils literal notranslate"><span class="pre">hour</span></code> attribute is the “thirty-six hundreds column”.
+When we wrote <code class="docutils literal notranslate"><span class="pre">increment_time</span></code>, we were effectively doing addition in base 60, which is why we had to carry from one column to the next.</p>
+<p>This observation suggests another approach to the whole problem – we can convert <code class="docutils literal notranslate"><span class="pre">Time</span></code> objects to integers and take advantage of the fact that Python knows how to do integer arithmetic.</p>
+<p>Here is a function that converts from a <code class="docutils literal notranslate"><span class="pre">Time</span></code> to an integer.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">time_to_int</span><span class="p">(</span><span class="n">time</span><span class="p">):</span>
+    <span class="n">minutes</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">hour</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">+</span> <span class="n">time</span><span class="o">.</span><span class="n">minute</span>
+    <span class="n">seconds</span> <span class="o">=</span> <span class="n">minutes</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">+</span> <span class="n">time</span><span class="o">.</span><span class="n">second</span>
+    <span class="k">return</span> <span class="n">seconds</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The result is the number of seconds since the beginning of the day.
+For example, <code class="docutils literal notranslate"><span class="pre">01:01:01</span></code> is <code class="docutils literal notranslate"><span class="pre">1</span></code> hour, <code class="docutils literal notranslate"><span class="pre">1</span></code> minute and <code class="docutils literal notranslate"><span class="pre">1</span></code> second from the beginning of the day, with is the sum of <code class="docutils literal notranslate"><span class="pre">3600</span></code> seconds, <code class="docutils literal notranslate"><span class="pre">60</span></code> seconds, and <code class="docutils literal notranslate"><span class="pre">1</span></code> second.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">time</span> <span class="o">=</span> <span class="n">make_time</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">print_time</span><span class="p">(</span><span class="n">time</span><span class="p">)</span>
+<span class="n">time_to_int</span><span class="p">(</span><span class="n">time</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>01:01:01
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3661
+</pre></div>
+</div>
+</div>
+</div>
+<p>And here’s a function that goes in the other direction – converting an integer to a <code class="docutils literal notranslate"><span class="pre">Time</span></code> object – using the <code class="docutils literal notranslate"><span class="pre">divmod</span></code> function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">int_to_time</span><span class="p">(</span><span class="n">seconds</span><span class="p">):</span>
+    <span class="n">minute</span><span class="p">,</span> <span class="n">second</span> <span class="o">=</span> <span class="nb">divmod</span><span class="p">(</span><span class="n">seconds</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="n">hour</span><span class="p">,</span> <span class="n">minute</span> <span class="o">=</span> <span class="nb">divmod</span><span class="p">(</span><span class="n">minute</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">make_time</span><span class="p">(</span><span class="n">hour</span><span class="p">,</span> <span class="n">minute</span><span class="p">,</span> <span class="n">second</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can test it by converting the previous example back to a <code class="docutils literal notranslate"><span class="pre">Time</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">time</span> <span class="o">=</span> <span class="n">int_to_time</span><span class="p">(</span><span class="mi">3661</span><span class="p">)</span>
+<span class="n">print_time</span><span class="p">(</span><span class="n">time</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>01:01:01
+</pre></div>
+</div>
+</div>
+</div>
+<p>Using these functions, we can write a more concise version of <code class="docutils literal notranslate"><span class="pre">add_time</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add_time</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">hours</span><span class="p">,</span> <span class="n">minutes</span><span class="p">,</span> <span class="n">seconds</span><span class="p">):</span>
+    <span class="n">duration</span> <span class="o">=</span> <span class="n">make_time</span><span class="p">(</span><span class="n">hours</span><span class="p">,</span> <span class="n">minutes</span><span class="p">,</span> <span class="n">seconds</span><span class="p">)</span>
+    <span class="n">seconds</span> <span class="o">=</span> <span class="n">time_to_int</span><span class="p">(</span><span class="n">time</span><span class="p">)</span> <span class="o">+</span> <span class="n">time_to_int</span><span class="p">(</span><span class="n">duration</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">int_to_time</span><span class="p">(</span><span class="n">seconds</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The first line converts the arguments to a <code class="docutils literal notranslate"><span class="pre">Time</span></code> object called <code class="docutils literal notranslate"><span class="pre">duration</span></code>.
+The second line converts <code class="docutils literal notranslate"><span class="pre">time</span></code> and <code class="docutils literal notranslate"><span class="pre">duration</span></code> to seconds and adds them.
+The third line converts the sum to a <code class="docutils literal notranslate"><span class="pre">Time</span></code> object and returns it.</p>
+<p>Here’s how it works.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start</span> <span class="o">=</span> <span class="n">make_time</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">end</span> <span class="o">=</span> <span class="n">add_time</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">print_time</span><span class="p">(</span><span class="n">end</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11:12:00
+</pre></div>
+</div>
+</div>
+</div>
+<p>In some ways, converting from base 60 to base 10 and back is harder than
+just dealing with times. Base conversion is more abstract; our intuition
+for dealing with time values is better.</p>
+<p>But if we have the insight to treat times as base 60 numbers – and invest the effort to write the conversion functions <code class="docutils literal notranslate"><span class="pre">time_to_int</span></code> and <code class="docutils literal notranslate"><span class="pre">int_to_time</span></code> – we get a program that is shorter, easier to read and debug, and more reliable.</p>
+<p>It is also easier to add features later. For example, imagine subtracting two <code class="docutils literal notranslate"><span class="pre">Time</span></code> objects to find the duration between them.
+The naive approach is to implement subtraction with borrowing.
+Using the conversion functions is easier and more likely to be correct.</p>
+<p>Ironically, sometimes making a problem harder – or more general – makes it easier, because there are fewer special cases and fewer opportunities for error.</p>
+</section>
+<section id="debugging">
+<span id="section-debugging-14"></span><h2>Debugging<a class="headerlink" href="#debugging" title="Permalink to this heading">#</a></h2>
+<p>Python provides several built-in functions that are useful for testing and debugging programs that work with objects.
+For example, if you are not sure what type an object is, you can ask.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>__main__.Time
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can also use <code class="docutils literal notranslate"><span class="pre">isinstance</span></code> to check whether an object is an instance of a particular class.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">isinstance</span><span class="p">(</span><span class="n">end</span><span class="p">,</span> <span class="n">Time</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you are not sure whether an object has a particular attribute, you
+can use the built-in function <code class="docutils literal notranslate"><span class="pre">hasattr</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">hasattr</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="s1">&#39;hour&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>To get all of the attributes, and their values, in a dictionary, you can use <code class="docutils literal notranslate"><span class="pre">vars</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">vars</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;hour&#39;: 9, &#39;minute&#39;: 40, &#39;second&#39;: 0}
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">structshape</span></code> module, which we saw in <a class="reference internal" href="chap11.html#section-debugging-11"><span class="std std-ref">Chapter 11</span></a>, also works with programmer-defined types.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">structshape</span> <span class="kn">import</span> <span class="n">structshape</span>
+
+<span class="n">t</span> <span class="o">=</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span>
+<span class="n">structshape</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;tuple of 2 Time&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="glossary">
+<h2>Glossary<a class="headerlink" href="#glossary" title="Permalink to this heading">#</a></h2>
+<p><strong>object-oriented programming:</strong>
+A style of programming that uses objects to organize code and data.</p>
+<p><strong>class:</strong>
+A programmer-defined type. A class definition creates a new class object.</p>
+<p><strong>class object:</strong>
+An object that represents a class – it is the result of a class definition.</p>
+<p><strong>instantiation:</strong>
+The process of creating an object that belongs to a class.</p>
+<p><strong>instance:</strong>
+An object that belongs to a class.</p>
+<p><strong>attribute:</strong>
+A variable associated with an object, also called an instance variable.</p>
+<p><strong>object diagram:</strong>
+A graphical representation of an object, its attributes, and their values.</p>
+<p><strong>format specifier:</strong>
+In an f-string, a format specifier determines how a value is converted to a string.</p>
+<p><strong>pure function:</strong>
+A function that does not modify its parameters or have any effect other than returning a value.</p>
+<p><strong>functional programming style:</strong>
+A way of programming that uses pure functions whenever possible.</p>
+<p><strong>prototype and patch:</strong>
+A way of developing programs by starting with a rough draft and gradually adding features and fixing bugs.</p>
+<p><strong>design-first development:</strong>
+A way of developing programs with more careful planning that prototype and patch.</p>
+</section>
+<section id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h2>
+<section id="ask-a-virtual-assistant">
+<h3>Ask a virtual assistant<a class="headerlink" href="#ask-a-virtual-assistant" title="Permalink to this heading">#</a></h3>
+<p>There is a lot of new vocabulary in this chapter.
+A conversation with a virtual assistant can help solidify your understanding.
+Consider asking:</p>
+<ul class="simple">
+<li><p>“What is the difference between a class and a type?”</p></li>
+<li><p>“What is the difference between an object and an instance?”</p></li>
+<li><p>“What is the difference between a variable and an attribute?”</p></li>
+<li><p>“What are the pros and cons of pure functions compared to modifiers?”</p></li>
+</ul>
+<p>Because we are just getting started with object oriented programming, the code in this chapter is not idiomatic – it is not the kind of code experienced programmers write.
+If you ask a virtual assistant for help with the exercises, you will probably see features we have not covered yet.
+In particular, you are likely to see a method called <code class="docutils literal notranslate"><span class="pre">__init__</span></code> used to initialize the attributes of an instance.</p>
+<p>If these features make sense to you, go ahead and use them.
+But if not, be patient – we will get there soon.
+In the meantime, see if you can solve the following exercises using only the features we have covered so far.</p>
+<p>Also, in this chapter we saw one example of a format specifier. For more information, ask “What format specifiers can be used in a Python f-string?”</p>
+</section>
+</section>
+<section id="id1">
+<h2>Exercises<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<section id="exercise">
+<h3>Exercise<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h3>
+<p>Write a function called <code class="docutils literal notranslate"><span class="pre">subtract_time</span></code> that takes two <code class="docutils literal notranslate"><span class="pre">Time</span></code> objects and returns the interval between them in seconds – assuming that they are two times during the same day.</p>
+</section>
+<section id="id2">
+<h3>Exercise<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<p>Write a function called <code class="docutils literal notranslate"><span class="pre">is_after</span></code> that takes two <code class="docutils literal notranslate"><span class="pre">Time</span></code> objects and returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if the second time is later in the day than the first, and <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">is_after</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Checks whether `t1` is after `t2`.</span>
+<span class="sd">    </span>
+<span class="sd">    &gt;&gt;&gt; is_after(make_time(3, 2, 1), make_time(3, 2, 0))</span>
+<span class="sd">    True</span>
+<span class="sd">    &gt;&gt;&gt; is_after(make_time(3, 2, 1), make_time(3, 2, 1))</span>
+<span class="sd">    True</span>
+<span class="sd">    &gt;&gt;&gt; is_after(make_time(11, 12, 0), make_time(9, 40, 0))</span>
+<span class="sd">    False</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="kc">None</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id3">
+<h3>Exercise<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<p>Here’s a definition for a <code class="docutils literal notranslate"><span class="pre">Date</span></code> class that represents a date – that is, a year, month, and day of the month.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Date</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Represents a year, month, and day&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple">
+<li><p>Write a function called <code class="docutils literal notranslate"><span class="pre">make_date</span></code> that takes <code class="docutils literal notranslate"><span class="pre">year</span></code>, <code class="docutils literal notranslate"><span class="pre">month</span></code>, and <code class="docutils literal notranslate"><span class="pre">day</span></code> as parameters, makes a <code class="docutils literal notranslate"><span class="pre">Date</span></code> object, assigns the parameters to attributes, and returns the result the new object. Create an object that represents June 22, 1933.</p></li>
+<li><p>Write a function called <code class="docutils literal notranslate"><span class="pre">print_date</span></code> that takes a <code class="docutils literal notranslate"><span class="pre">Date</span></code> object, uses an f-string to format the attributes, and prints the result. If you test it with the <code class="docutils literal notranslate"><span class="pre">Date</span></code> you created, the result should be <code class="docutils literal notranslate"><span class="pre">1933-06-22</span></code>.</p></li>
+<li><p>Write a function called <code class="docutils literal notranslate"><span class="pre">is_after</span></code> that takes two <code class="docutils literal notranslate"><span class="pre">Date</span></code> objects as parameters and returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if the first comes after the second. Create a second object that represents September 17, 1933, and check whether it comes after the first object.</p></li>
+</ol>
+<p>Hint: You might find it useful to write a function called <code class="docutils literal notranslate"><span class="pre">date_to_tuple</span></code> that takes a <code class="docutils literal notranslate"><span class="pre">Date</span></code> object and returns a tuple that contains its attributes in year, month, day order.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="chap13.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Files and Databases</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="chap15.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Classes and Methods</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programmer-defined-types">Programmer-defined types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#attributes">Attributes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objects-as-return-values">Objects as return values</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objects-are-mutable">Objects are mutable</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#copying">Copying</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pure-functions">Pure functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prototype-and-patch">Prototype and patch</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#design-first-development">Design-first development</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">Debugging</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">Glossary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">Ask a virtual assistant</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Exercise</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Allen B. Downey
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
