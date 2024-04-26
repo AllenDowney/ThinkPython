@@ -167,6 +167,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="chap13.html">Files and Databases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chap14.html">Classes and Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chap15.html">Classes and Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap16.html">Classes and Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap17.html">Inheritance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap18.html">Python Extras</a></li>
 </ul>
 
     </div>
@@ -341,8 +344,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">Ask a virtual assistant</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#section-exercise11">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#section-exercise-11">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Exercise</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Exercise</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Exercise</a></li>
@@ -1399,6 +1402,16 @@ A collection of values, organized to perform certain operations efficiently.</p>
 </section>
 <section id="exercises">
 <h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This cell tells Jupyter to provide detailed debugging information</span>
+<span class="c1"># when a runtime error occurs. Run it before working on the exercises.</span>
+
+<span class="o">%</span><span class="k">xmode</span> Verbose
+</pre></div>
+</div>
+</div>
+</div>
 <section id="ask-a-virtual-assistant">
 <h3>Ask a virtual assistant<a class="headerlink" href="#ask-a-virtual-assistant" title="Permalink to this heading">#</a></h3>
 <p>The exercises in this chapter might be more difficult than exercises in previous chapters, so I encourage you to get help from a virtual assistant.
@@ -1446,8 +1459,8 @@ But that is not always true.</p>
 </div>
 <p>For more on this topic, ask a virtual assistant, “Are Python tuples always hashable?”</p>
 </section>
-<section id="id1">
-<h3>Exercise<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<section id="section-exercise-11">
+<span id="id1"></span><h3>Exercise<a class="headerlink" href="#section-exercise-11" title="Permalink to this heading">#</a></h3>
 <p>In this chapter we made a dictionary that maps from each letter to its index in the alphabet.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1494,8 +1507,8 @@ by a fixed number of places in the alphabet, wrapping around to the beginning if
 Loop through the letters of the word, shift each one, and append the result to a list of letters.
 Then use <code class="docutils literal notranslate"><span class="pre">join</span></code> to concatenate the letters into a string.</p>
 </section>
-<section id="section-exercise11">
-<span id="id2"></span><h3>Exercise<a class="headerlink" href="#section-exercise11" title="Permalink to this heading">#</a></h3>
+<section id="id2">
+<h3>Exercise<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
 <p>Write a function called <code class="docutils literal notranslate"><span class="pre">most_frequent_letters</span></code> that takes a string and prints the letters in decreasing order of frequency.</p>
 <p>To get the items in decreasing order, you can use <code class="docutils literal notranslate"><span class="pre">reversed</span></code> along with <code class="docutils literal notranslate"><span class="pre">sorted</span></code> or you can pass <code class="docutils literal notranslate"><span class="pre">reverse=True</span></code> as a keyword parameter to <code class="docutils literal notranslate"><span class="pre">sorted</span></code>.</p>
 </section>
@@ -1609,8 +1622,8 @@ Write a program that finds all of the metathesis pairs in the word list.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">Ask a virtual assistant</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#section-exercise11">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#section-exercise-11">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Exercise</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Exercise</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Exercise</a></li>

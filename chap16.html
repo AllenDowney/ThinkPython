@@ -1,0 +1,1348 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Classes and Objects &#8212; Think Python, 3rd edition</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chap16';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Inheritance" href="chap17.html" />
+    <link rel="prev" title="Classes and Methods" href="chap15.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Think Python, 3rd edition</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    Think Python, 3rd edition
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chap00.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap01.html">Programming as a way of thinking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap02.html">Variables and Statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap03.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap04.html">Functions and Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap05.html">Conditionals and Recursion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap06.html">Return Values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap07.html">Iteration and Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap08.html">Strings and Regular Expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap09.html">Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap10.html">Dictionaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap11.html">Tuples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap12.html">Text Analysis and Generation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap13.html">Files and Databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap14.html">Classes and Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap15.html">Classes and Methods</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Classes and Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap17.html">Inheritance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap18.html">Python Extras</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/AllenDowney/ThinkPython/tree/v3" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/chap16.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Classes and Objects</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-point">Creating a Point</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-line">Creating a Line</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equivalence-and-identity">Equivalence and identity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-rectangle">Creating a Rectangle</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#changing-rectangles">Changing rectangles</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deep-copy">Deep copy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polymorphism">Polymorphism</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">Debugging</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">Glossary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">Ask a virtual assistant</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Exercise</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="classes-and-objects">
+<h1>Classes and Objects<a class="headerlink" href="#classes-and-objects" title="Permalink to this heading">#</a></h1>
+<p>At this point we have defined classes and created objects that represent the time of day and the day of the year.
+And we’ve defined methods that create, modify, and perform computations with these objects.</p>
+<p>In this chapter we’ll continue our tour of object-oriented programming (OOP) by defining classes that represent geometric objects, including points, lines, rectangles, and circles.
+We’ll write methods that create and modify these objects, and we’ll use the <code class="docutils literal notranslate"><span class="pre">jupyturtle</span></code> module to draw them.</p>
+<p>I’ll use these classes to demonstrate OOP topics including object identity and equivalence, shallow and deep copying, and polymorphism.</p>
+<section id="creating-a-point">
+<span id="section-create-point"></span><h2>Creating a Point<a class="headerlink" href="#creating-a-point" title="Permalink to this heading">#</a></h2>
+<p>In computer graphics a location on the screen is often represented using a pair of coordinates in an <code class="docutils literal notranslate"><span class="pre">x</span></code>-<code class="docutils literal notranslate"><span class="pre">y</span></code> plane.
+By convention, the point <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">0)</span></code> usually represents the upper-left corner of the screen, and  <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y)</span></code> represents the point <code class="docutils literal notranslate"><span class="pre">x</span></code> units to the right and <code class="docutils literal notranslate"><span class="pre">y</span></code> units down from the origin.
+Compared to the Cartesian coordinate system you might have seen in a math class, the <code class="docutils literal notranslate"><span class="pre">y</span></code> axis is upside-down.</p>
+<p>There are several ways we might represent a point in Python:</p>
+<ul class="simple">
+<li><p>We can store the coordinates separately in two variables, <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p></li>
+<li><p>We can store the coordinates as elements in a list or tuple.</p></li>
+<li><p>We can create a new type to represent points as objects.</p></li>
+</ul>
+<p>In object-oriented programming, it would be most idiomatic to create a new type.
+To do that, we’ll start with a class definition for <code class="docutils literal notranslate"><span class="pre">Point</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Represents a point in 2-D space.&quot;&quot;&quot;</span>
+    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+        
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;Point(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="si">}</span><span class="s1">)&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method takes the coordinates as parameters and assigns them to attributes <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>.
+The <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method returns a string representation of the <code class="docutils literal notranslate"><span class="pre">Point</span></code>.</p>
+<p>Now we can instantiate and display a <code class="docutils literal notranslate"><span class="pre">Point</span></code> object like this.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Point(0, 0)
+</pre></div>
+</div>
+</div>
+</div>
+<p>The following diagram shows the state of the new object.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="_images/6e851969c74483fc4efb36d87b6fcdd9ee1479e2274f2efebc840e7f3520ce6f.png" src="_images/6e851969c74483fc4efb36d87b6fcdd9ee1479e2274f2efebc840e7f3520ce6f.png" />
+</div>
+</div>
+<p>As usual, a programmer-defined type is represented by a box with the name of the type outside and the attributes inside.</p>
+<p>In general, programmer-defined types are mutable, so we can write a method like <code class="docutils literal notranslate"><span class="pre">translate</span></code> that takes two numbers, <code class="docutils literal notranslate"><span class="pre">dx</span></code> and <code class="docutils literal notranslate"><span class="pre">dy</span></code>, and adds them to the attributes <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">add_method_to</span> Point
+
+    def translate(self, dx, dy):
+        self.x += dx
+        self.y += dy
+</pre></div>
+</div>
+</div>
+</div>
+<p>This function translates the <code class="docutils literal notranslate"><span class="pre">Point</span></code> from one location in the plane to another.
+If we don’t want to modify an existing <code class="docutils literal notranslate"><span class="pre">Point</span></code>, we can use <code class="docutils literal notranslate"><span class="pre">copy</span></code> to copy the original object and then modify the copy.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">copy</span>
+
+<span class="n">end1</span> <span class="o">=</span> <span class="n">copy</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>
+<span class="n">end1</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">end1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Point(300, 0)
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can encapsulate those steps in another method called <code class="docutils literal notranslate"><span class="pre">translated</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">add_method_to</span> Point
+
+    def translated(self, dx=0, dy=0):
+        point = copy(self)
+        point.translate(dx, dy)
+        return point
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the same way that the built in function <code class="docutils literal notranslate"><span class="pre">sort</span></code> modifies a list, and the <code class="docutils literal notranslate"><span class="pre">sorted</span></code> function creates a new list, now we have a <code class="docutils literal notranslate"><span class="pre">translate</span></code> method that modifies a <code class="docutils literal notranslate"><span class="pre">Point</span></code> and a <code class="docutils literal notranslate"><span class="pre">translated</span></code> method that creates a new one.</p>
+<p>Here’s an example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">end2</span> <span class="o">=</span> <span class="n">start</span><span class="o">.</span><span class="n">translated</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">150</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">end2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Point(0, 150)
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the next section, we’ll use these points to define and draw a line.</p>
+</section>
+<section id="creating-a-line">
+<h2>Creating a Line<a class="headerlink" href="#creating-a-line" title="Permalink to this heading">#</a></h2>
+<p>Now let’s define a class that represents the line segment between two points.
+As usual, we’ll start with an <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method and a <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Line</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">p1</span> <span class="o">=</span> <span class="n">p1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">p2</span> <span class="o">=</span> <span class="n">p2</span>
+        
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;Line(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">p1</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">p2</span><span class="si">}</span><span class="s1">)&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>With those two methods, we can instantiate and display a <code class="docutils literal notranslate"><span class="pre">Line</span></code> object we’ll use to represent the <code class="docutils literal notranslate"><span class="pre">x</span></code> axis.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">line1</span> <span class="o">=</span> <span class="n">Line</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">line1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Line(Point(0, 0), Point(300, 0))
+</pre></div>
+</div>
+</div>
+</div>
+<p>When we call <code class="docutils literal notranslate"><span class="pre">print</span></code> and pass <code class="docutils literal notranslate"><span class="pre">line</span></code> as a parameter, <code class="docutils literal notranslate"><span class="pre">print</span></code> invokes <code class="docutils literal notranslate"><span class="pre">__str__</span></code> on <code class="docutils literal notranslate"><span class="pre">line</span></code>.
+The <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method uses an f-string to create a string representation of the <code class="docutils literal notranslate"><span class="pre">line</span></code>.</p>
+<p>The f-string contains two expressions in curly braces, <code class="docutils literal notranslate"><span class="pre">self.p1</span></code> and <code class="docutils literal notranslate"><span class="pre">self.p2</span></code>.
+When those expressions are evaluated, the results are <code class="docutils literal notranslate"><span class="pre">Point</span></code> objects.
+Then, when they are converted to strings, the <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method from the <code class="docutils literal notranslate"><span class="pre">Point</span></code> class gets invoked.</p>
+<p>That’s why, when we display a <code class="docutils literal notranslate"><span class="pre">Line</span></code>, the result contains the string representations of the <code class="docutils literal notranslate"><span class="pre">Point</span></code> objects.</p>
+<p>The following object diagram shows the state of this <code class="docutils literal notranslate"><span class="pre">Line</span></code> object.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="_images/4aaaffd556f4fee05dc8c25d40d9a66f559504d4c1b89fbe148c631e206580b0.png" src="_images/4aaaffd556f4fee05dc8c25d40d9a66f559504d4c1b89fbe148c631e206580b0.png" />
+</div>
+</div>
+<p>String representations and object diagrams are useful for debugging, but the point of this example is to generate graphics, not text!
+So we’ll use the <code class="docutils literal notranslate"><span class="pre">jupyturtle</span></code> module to draw lines on the screen.</p>
+<p>As we did in <a class="reference internal" href="chap04.html#section-turtle-module"><span class="std std-ref">Chapter 4</span></a>, we’ll use <code class="docutils literal notranslate"><span class="pre">make_turtle</span></code> to create a <code class="docutils literal notranslate"><span class="pre">Turtle</span></code> object and a small canvas where it can draw.
+To draw lines, we’ll use two new functions from the <code class="docutils literal notranslate"><span class="pre">jupyturtle</span></code> module:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">jumpto</span></code>, which takes two coordinates and moves the <code class="docutils literal notranslate"><span class="pre">Turtle</span></code> to the given location without drawing a line, and</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">moveto</span></code>, which moves the <code class="docutils literal notranslate"><span class="pre">Turtle</span></code> from its current location to the given location, and draws a line segment between them.</p></li>
+</ul>
+<p>Here’s how we import them.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">jupyturtle</span> <span class="kn">import</span> <span class="n">make_turtle</span><span class="p">,</span> <span class="n">jumpto</span><span class="p">,</span> <span class="n">moveto</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>And here’s a method that draws a <code class="docutils literal notranslate"><span class="pre">Line</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">add_method_to</span> Line
+
+    def draw(self):
+        jumpto(self.p1.x, self.p1.y)
+        moveto(self.p2.x, self.p2.y)
+</pre></div>
+</div>
+</div>
+</div>
+<p>To show how it’s used, I’ll create a second line that represents the <code class="docutils literal notranslate"><span class="pre">y</span></code> axis.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">line2</span> <span class="o">=</span> <span class="n">Line</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">line2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Line(Point(0, 0), Point(0, 150))
+</pre></div>
+</div>
+</div>
+</div>
+<p>And then draw the axes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">make_turtle</span><span class="p">()</span>
+<span class="n">line1</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="n">line2</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><svg width="300" height="150">
+    <rect width="100%" height="100%" fill="#F3F3F7" />
+
+<line x1="0" y1="0" x2="300" y2="0"
+    stroke="#663399" stroke-width="2" />
+<line x1="0" y1="0" x2="0" y2="150"
+    stroke="#663399" stroke-width="2" />
+
+<g transform="rotate(-90.0,0,150) translate(0, 150)">
+    <circle stroke="#63A375" stroke-width="2" fill="transparent" r="5.5" cx="0" cy="0"/>
+    <polygon points="0,12 2,9 -2,9" style="fill:#63A375;stroke:#63A375;stroke-width:2"/>
+</g>
+
+</svg></div></div>
+</div>
+<p>As we define and draw more objects, we’ll use these lines again.
+But first let’s talk about object equivalence and identity.</p>
+</section>
+<section id="equivalence-and-identity">
+<h2>Equivalence and identity<a class="headerlink" href="#equivalence-and-identity" title="Permalink to this heading">#</a></h2>
+<p>Suppose we create two points with the same coordinates.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p1</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we use the <code class="docutils literal notranslate"><span class="pre">==</span></code> operator to compare them, we get the default behavior for programmer-defined types – the result is <code class="docutils literal notranslate"><span class="pre">True</span></code> only if they are the same object, which they are not.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p1</span> <span class="o">==</span> <span class="n">p2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we want to change that behavior, we can provide a special method called <code class="docutils literal notranslate"><span class="pre">__eq__</span></code> that defines what it means for two <code class="docutils literal notranslate"><span class="pre">Point</span></code> objects to be equal.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">add_method_to</span> Point
+
+def __eq__(self, other):
+    return (self.x == other.x) and (self.y == other.y)
+</pre></div>
+</div>
+</div>
+</div>
+<p>This definition considers two <code class="docutils literal notranslate"><span class="pre">Points</span></code> to be equal if their attributes are equal.
+Now when we use the <code class="docutils literal notranslate"><span class="pre">==</span></code> operator, it invokes the <code class="docutils literal notranslate"><span class="pre">__eq__</span></code> method, which indicates that <code class="docutils literal notranslate"><span class="pre">p1</span></code> and <code class="docutils literal notranslate"><span class="pre">p2</span></code> are considered equal.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p1</span> <span class="o">==</span> <span class="n">p2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>But the <code class="docutils literal notranslate"><span class="pre">is</span></code> operator still indicates that they are different objects.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p1</span> <span class="ow">is</span> <span class="n">p2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>It’s not possible to override the <code class="docutils literal notranslate"><span class="pre">is</span></code> operator – it always checks whether the objects are <strong>identical</strong>.
+But for programmer-defined types, you can override the <code class="docutils literal notranslate"><span class="pre">==</span></code> operator so it checks whether the objects are <strong>equivalent</strong>.
+And you can define what equivalent means.</p>
+</section>
+<section id="creating-a-rectangle">
+<h2>Creating a Rectangle<a class="headerlink" href="#creating-a-rectangle" title="Permalink to this heading">#</a></h2>
+<p>Now let’s define a class that represents and draws rectangles.
+To keep things simple, we’ll assume that the rectangles are either vertical or horizontal, not at an angle.
+What attributes do you think we should use to specify the location and size of a rectangle?</p>
+<p>There are at least two possibilities:</p>
+<ul class="simple">
+<li><p>You could specify the width and height of the rectangle and the location of one corner.</p></li>
+<li><p>You could specify two opposing corners.</p></li>
+</ul>
+<p>At this point it’s hard to say whether either is better than the other, so let’s implement the first one.
+Here is the class definition.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Rectangle</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Represents a rectangle. </span>
+
+<span class="sd">    attributes: width, height, corner.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">corner</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">width</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">height</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">corner</span> <span class="o">=</span> <span class="n">corner</span>
+        
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;Rectangle(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">corner</span><span class="si">}</span><span class="s1">)&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>As usual, the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method assigns the parameters to attributes and the <code class="docutils literal notranslate"><span class="pre">__str__</span></code> returns a string representation of the object.
+Now we can instantiate a <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code> object, using a <code class="docutils literal notranslate"><span class="pre">Point</span></code> as the location of the upper-left corner.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">corner</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">box1</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="n">corner</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">box1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Rectangle(100, 50, Point(30, 20))
+</pre></div>
+</div>
+</div>
+</div>
+<p>The following diagram shows the state of this object.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="_images/93ab30dffba5edf8630e6bc3afd2c786600c5a1461f0695f96fd869a561a08c7.png" src="_images/93ab30dffba5edf8630e6bc3afd2c786600c5a1461f0695f96fd869a561a08c7.png" />
+</div>
+</div>
+<p>To draw a rectangle, we’ll use the following method to make four <code class="docutils literal notranslate"><span class="pre">Point</span></code> objects to represent the corners.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">add_method_to</span> Rectangle
+
+    def make_points(self):
+        p1 = self.corner
+        p2 = p1.translated(self.width, 0)
+        p3 = p2.translated(0, self.height)
+        p4 = p3.translated(-self.width, 0)
+        return p1, p2, p3, p4
+</pre></div>
+</div>
+</div>
+</div>
+<p>Then we’ll make four <code class="docutils literal notranslate"><span class="pre">Line</span></code> objects to represent the sides.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">add_method_to</span> Rectangle
+
+    def make_lines(self):
+        p1, p2, p3, p4 = self.make_points()
+        return Line(p1, p2), Line(p2, p3), Line(p3, p4), Line(p4, p1)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Then we’ll draw the sides.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">add_method_to</span> Rectangle
+
+    def draw(self):
+        lines = self.make_lines()
+        for line in lines:
+            line.draw()
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here’s an example.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">make_turtle</span><span class="p">()</span>
+<span class="n">line1</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="n">line2</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="n">box1</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><svg width="300" height="150">
+    <rect width="100%" height="100%" fill="#F3F3F7" />
+
+<line x1="0" y1="0" x2="300" y2="0"
+    stroke="#663399" stroke-width="2" />
+<line x1="0" y1="0" x2="0" y2="150"
+    stroke="#663399" stroke-width="2" />
+<line x1="30" y1="20" x2="130" y2="20"
+    stroke="#663399" stroke-width="2" />
+<line x1="130" y1="20" x2="130" y2="70"
+    stroke="#663399" stroke-width="2" />
+<line x1="130" y1="70" x2="30" y2="70"
+    stroke="#663399" stroke-width="2" />
+<line x1="30" y1="70" x2="30" y2="20"
+    stroke="#663399" stroke-width="2" />
+
+<g transform="rotate(-90.0,30,20) translate(30, 20)">
+    <circle stroke="#63A375" stroke-width="2" fill="transparent" r="5.5" cx="0" cy="0"/>
+    <polygon points="0,12 2,9 -2,9" style="fill:#63A375;stroke:#63A375;stroke-width:2"/>
+</g>
+
+</svg></div></div>
+</div>
+<p>The figure includes two lines to represent the axes.</p>
+</section>
+<section id="changing-rectangles">
+<h2>Changing rectangles<a class="headerlink" href="#changing-rectangles" title="Permalink to this heading">#</a></h2>
+<p>Now let’s consider two methods that modify rectangles, <code class="docutils literal notranslate"><span class="pre">grow</span></code> and <code class="docutils literal notranslate"><span class="pre">translate</span></code>.
+We’ll see that <code class="docutils literal notranslate"><span class="pre">grow</span></code> works as expected, but <code class="docutils literal notranslate"><span class="pre">translate</span></code> has a subtle bug.
+See if you can figure it out before I explain.</p>
+<p><code class="docutils literal notranslate"><span class="pre">grow</span></code> takes two numbers, <code class="docutils literal notranslate"><span class="pre">dwidth</span></code> and <code class="docutils literal notranslate"><span class="pre">dheight</span></code>, and adds them to the <code class="docutils literal notranslate"><span class="pre">width</span></code> and <code class="docutils literal notranslate"><span class="pre">height</span></code> attributes of the rectangle.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">add_method_to</span> Rectangle
+
+    def grow(self, dwidth, dheight):
+        self.width += dwidth
+        self.height += dheight
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here’s an example that demonstrates the effect by making a copy of <code class="docutils literal notranslate"><span class="pre">box1</span></code> and invoking <code class="docutils literal notranslate"><span class="pre">grow</span></code> on the copy.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">box2</span> <span class="o">=</span> <span class="n">copy</span><span class="p">(</span><span class="n">box1</span><span class="p">)</span>
+<span class="n">box2</span><span class="o">.</span><span class="n">grow</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">box2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Rectangle(160, 90, Point(30, 20))
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we draw <code class="docutils literal notranslate"><span class="pre">box1</span></code> and <code class="docutils literal notranslate"><span class="pre">box2</span></code>, we can confirm that <code class="docutils literal notranslate"><span class="pre">grow</span></code> works as expected.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">make_turtle</span><span class="p">()</span>
+<span class="n">line1</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="n">line2</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="n">box1</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="n">box2</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><svg width="300" height="150">
+    <rect width="100%" height="100%" fill="#F3F3F7" />
+
+<line x1="0" y1="0" x2="300" y2="0"
+    stroke="#663399" stroke-width="2" />
+<line x1="0" y1="0" x2="0" y2="150"
+    stroke="#663399" stroke-width="2" />
+<line x1="30" y1="20" x2="130" y2="20"
+    stroke="#663399" stroke-width="2" />
+<line x1="130" y1="20" x2="130" y2="70"
+    stroke="#663399" stroke-width="2" />
+<line x1="130" y1="70" x2="30" y2="70"
+    stroke="#663399" stroke-width="2" />
+<line x1="30" y1="70" x2="30" y2="20"
+    stroke="#663399" stroke-width="2" />
+<line x1="30" y1="20" x2="190" y2="20"
+    stroke="#663399" stroke-width="2" />
+<line x1="190" y1="20" x2="190" y2="110"
+    stroke="#663399" stroke-width="2" />
+<line x1="190" y1="110" x2="30" y2="110"
+    stroke="#663399" stroke-width="2" />
+<line x1="30" y1="110" x2="30" y2="20"
+    stroke="#663399" stroke-width="2" />
+
+<g transform="rotate(-90.0,30,20) translate(30, 20)">
+    <circle stroke="#63A375" stroke-width="2" fill="transparent" r="5.5" cx="0" cy="0"/>
+    <polygon points="0,12 2,9 -2,9" style="fill:#63A375;stroke:#63A375;stroke-width:2"/>
+</g>
+
+</svg></div></div>
+</div>
+<p>Now let’s see about <code class="docutils literal notranslate"><span class="pre">translate</span></code>.
+It takes two numbers, <code class="docutils literal notranslate"><span class="pre">dx</span></code> and <code class="docutils literal notranslate"><span class="pre">dy</span></code>, and moves the rectangle the given distances in the <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> directions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">add_method_to</span> Rectangle
+
+    def translate(self, dx, dy):
+        self.corner.translate(dx, dy)
+</pre></div>
+</div>
+</div>
+</div>
+<p>To demonstrate the effect, we’ll translate <code class="docutils literal notranslate"><span class="pre">box2</span></code> to the right and down.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">box2</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">box2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Rectangle(160, 90, Point(60, 40))
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now let’s see what happens if we draw <code class="docutils literal notranslate"><span class="pre">box1</span></code> and <code class="docutils literal notranslate"><span class="pre">box2</span></code> again.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">make_turtle</span><span class="p">()</span>
+<span class="n">line1</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="n">line2</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="n">box1</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="n">box2</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><svg width="300" height="150">
+    <rect width="100%" height="100%" fill="#F3F3F7" />
+
+<line x1="0" y1="0" x2="300" y2="0"
+    stroke="#663399" stroke-width="2" />
+<line x1="0" y1="0" x2="0" y2="150"
+    stroke="#663399" stroke-width="2" />
+<line x1="60" y1="40" x2="160" y2="40"
+    stroke="#663399" stroke-width="2" />
+<line x1="160" y1="40" x2="160" y2="90"
+    stroke="#663399" stroke-width="2" />
+<line x1="160" y1="90" x2="60" y2="90"
+    stroke="#663399" stroke-width="2" />
+<line x1="60" y1="90" x2="60" y2="40"
+    stroke="#663399" stroke-width="2" />
+<line x1="60" y1="40" x2="220" y2="40"
+    stroke="#663399" stroke-width="2" />
+<line x1="220" y1="40" x2="220" y2="130"
+    stroke="#663399" stroke-width="2" />
+<line x1="220" y1="130" x2="60" y2="130"
+    stroke="#663399" stroke-width="2" />
+<line x1="60" y1="130" x2="60" y2="40"
+    stroke="#663399" stroke-width="2" />
+
+<g transform="rotate(-90.0,60,40) translate(60, 40)">
+    <circle stroke="#63A375" stroke-width="2" fill="transparent" r="5.5" cx="0" cy="0"/>
+    <polygon points="0,12 2,9 -2,9" style="fill:#63A375;stroke:#63A375;stroke-width:2"/>
+</g>
+
+</svg></div></div>
+</div>
+<p>It looks like both rectangles moved, which is not what we intended!
+The next section explains what went wrong.</p>
+</section>
+<section id="deep-copy">
+<h2>Deep copy<a class="headerlink" href="#deep-copy" title="Permalink to this heading">#</a></h2>
+<p>When we use <code class="docutils literal notranslate"><span class="pre">copy</span></code> to duplicate <code class="docutils literal notranslate"><span class="pre">box1</span></code>, it copies the <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code> object but not the <code class="docutils literal notranslate"><span class="pre">Point</span></code> object it contains.
+So <code class="docutils literal notranslate"><span class="pre">box1</span></code> and <code class="docutils literal notranslate"><span class="pre">box2</span></code> are different objects, as intended.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">box1</span> <span class="ow">is</span> <span class="n">box2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>But their <code class="docutils literal notranslate"><span class="pre">corner</span></code> attributes refer to the same object.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">box1</span><span class="o">.</span><span class="n">corner</span> <span class="ow">is</span> <span class="n">box2</span><span class="o">.</span><span class="n">corner</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>The following diagram shows the state of these objects.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="_images/351c7b94fa9021934acda94ae1dd3d5b3af81e1fc228a8aaee3ea80575486ff0.png" src="_images/351c7b94fa9021934acda94ae1dd3d5b3af81e1fc228a8aaee3ea80575486ff0.png" />
+</div>
+</div>
+<p>What <code class="docutils literal notranslate"><span class="pre">copy</span></code> does is called a <strong>shallow copy</strong> because it copies the object but not the objects it contains.
+As a result, changing the <code class="docutils literal notranslate"><span class="pre">width</span></code> or <code class="docutils literal notranslate"><span class="pre">height</span></code> of one <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code> does not affect the other, but changing the attributes of the shared <code class="docutils literal notranslate"><span class="pre">Point</span></code> affects both!
+This behavior is confusing and error-prone.</p>
+<p>Fortunately, the <code class="docutils literal notranslate"><span class="pre">copy</span></code> module provides another function, called <code class="docutils literal notranslate"><span class="pre">deepcopy</span></code>, that copies not only the object but also the objects it refers to, and the objects <em>they</em> refer to, and so on.
+This operation is called a <strong>deep copy</strong>.</p>
+<p>To demonstrate, let’s start with a new <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code> that contains a new <code class="docutils literal notranslate"><span class="pre">Point</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">corner</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">box3</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="n">corner</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">box3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Rectangle(100, 50, Point(20, 20))
+</pre></div>
+</div>
+</div>
+</div>
+<p>And we’ll make a deep copy.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">deepcopy</span>
+
+<span class="n">box4</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">box3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can confirm that the two <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code> objects refer to different <code class="docutils literal notranslate"><span class="pre">Point</span></code> objects.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">box3</span><span class="o">.</span><span class="n">corner</span> <span class="ow">is</span> <span class="n">box4</span><span class="o">.</span><span class="n">corner</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>Because <code class="docutils literal notranslate"><span class="pre">box3</span></code> and <code class="docutils literal notranslate"><span class="pre">box4</span></code> are completely separate objects, we can modify one without affecting the other.
+To demonstrate, we’ll move <code class="docutils literal notranslate"><span class="pre">box3</span></code> and grow <code class="docutils literal notranslate"><span class="pre">box4</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">box3</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+<span class="n">box4</span><span class="o">.</span><span class="n">grow</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>And we can confirm that the effect is as expected.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">make_turtle</span><span class="p">()</span>
+<span class="n">line1</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="n">line2</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="n">box3</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="n">box4</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><svg width="300" height="150">
+    <rect width="100%" height="100%" fill="#F3F3F7" />
+
+<line x1="0" y1="0" x2="300" y2="0"
+    stroke="#663399" stroke-width="2" />
+<line x1="0" y1="0" x2="0" y2="150"
+    stroke="#663399" stroke-width="2" />
+<line x1="70" y1="50" x2="170" y2="50"
+    stroke="#663399" stroke-width="2" />
+<line x1="170" y1="50" x2="170" y2="100"
+    stroke="#663399" stroke-width="2" />
+<line x1="170" y1="100" x2="70" y2="100"
+    stroke="#663399" stroke-width="2" />
+<line x1="70" y1="100" x2="70" y2="50"
+    stroke="#663399" stroke-width="2" />
+<line x1="20" y1="20" x2="220" y2="20"
+    stroke="#663399" stroke-width="2" />
+<line x1="220" y1="20" x2="220" y2="130"
+    stroke="#663399" stroke-width="2" />
+<line x1="220" y1="130" x2="20" y2="130"
+    stroke="#663399" stroke-width="2" />
+<line x1="20" y1="130" x2="20" y2="20"
+    stroke="#663399" stroke-width="2" />
+
+<g transform="rotate(-90.0,20,20) translate(20, 20)">
+    <circle stroke="#63A375" stroke-width="2" fill="transparent" r="5.5" cx="0" cy="0"/>
+    <polygon points="0,12 2,9 -2,9" style="fill:#63A375;stroke:#63A375;stroke-width:2"/>
+</g>
+
+</svg></div></div>
+</div>
+</section>
+<section id="polymorphism">
+<h2>Polymorphism<a class="headerlink" href="#polymorphism" title="Permalink to this heading">#</a></h2>
+<p>In the previous example, we invoked the <code class="docutils literal notranslate"><span class="pre">draw</span></code> method on two <code class="docutils literal notranslate"><span class="pre">Line</span></code> objects and two <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code> objects.
+We can do the same thing more concisely by making a list of objects.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">shapes</span> <span class="o">=</span> <span class="p">[</span><span class="n">line1</span><span class="p">,</span> <span class="n">line2</span><span class="p">,</span> <span class="n">box3</span><span class="p">,</span> <span class="n">box4</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The elements of this list are different types, but they all provide a <code class="docutils literal notranslate"><span class="pre">draw</span></code> method, so we can loop through the list and invoke <code class="docutils literal notranslate"><span class="pre">draw</span></code> on each one.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">make_turtle</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">shape</span> <span class="ow">in</span> <span class="n">shapes</span><span class="p">:</span>
+    <span class="n">shape</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><svg width="300" height="150">
+    <rect width="100%" height="100%" fill="#F3F3F7" />
+
+<line x1="0" y1="0" x2="300" y2="0"
+    stroke="#663399" stroke-width="2" />
+<line x1="0" y1="0" x2="0" y2="150"
+    stroke="#663399" stroke-width="2" />
+<line x1="70" y1="50" x2="170" y2="50"
+    stroke="#663399" stroke-width="2" />
+<line x1="170" y1="50" x2="170" y2="100"
+    stroke="#663399" stroke-width="2" />
+<line x1="170" y1="100" x2="70" y2="100"
+    stroke="#663399" stroke-width="2" />
+<line x1="70" y1="100" x2="70" y2="50"
+    stroke="#663399" stroke-width="2" />
+<line x1="20" y1="20" x2="220" y2="20"
+    stroke="#663399" stroke-width="2" />
+<line x1="220" y1="20" x2="220" y2="130"
+    stroke="#663399" stroke-width="2" />
+<line x1="220" y1="130" x2="20" y2="130"
+    stroke="#663399" stroke-width="2" />
+<line x1="20" y1="130" x2="20" y2="20"
+    stroke="#663399" stroke-width="2" />
+
+<g transform="rotate(-90.0,20,20) translate(20, 20)">
+    <circle stroke="#63A375" stroke-width="2" fill="transparent" r="5.5" cx="0" cy="0"/>
+    <polygon points="0,12 2,9 -2,9" style="fill:#63A375;stroke:#63A375;stroke-width:2"/>
+</g>
+
+</svg></div></div>
+</div>
+<p>The first and second time through the loop, <code class="docutils literal notranslate"><span class="pre">shape</span></code> refers to a <code class="docutils literal notranslate"><span class="pre">Line</span></code> object, so when <code class="docutils literal notranslate"><span class="pre">draw</span></code> is invoked, the method that runs is the one defined in the <code class="docutils literal notranslate"><span class="pre">Line</span></code> class.</p>
+<p>The third and fourth time through the loop, <code class="docutils literal notranslate"><span class="pre">shape</span></code> refers to a <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code> object, so when <code class="docutils literal notranslate"><span class="pre">draw</span></code> is invoked, the method that runs is the one defined in the <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code> class.</p>
+<p>In a sense, each object knows how to draw itself.
+This feature is called <strong>polymorphism</strong>.
+The word comes from Greek roots that mean “many shaped”.
+In object-oriented programming, polymorphism is the ability of different types to provide the same methods, which makes it possible to perform many computations – like drawing shapes – by invoking the same method on different types of objects.</p>
+<p>As an exercise at the end of this chapter, you’ll define a new class that represents a circle and provides a <code class="docutils literal notranslate"><span class="pre">draw</span></code> method.
+Then you can use polymorphism to draw lines, rectangles, and circles.</p>
+</section>
+<section id="debugging">
+<h2>Debugging<a class="headerlink" href="#debugging" title="Permalink to this heading">#</a></h2>
+<p>In this chapter, we ran into a subtle bug that happened because we created a <code class="docutils literal notranslate"><span class="pre">Point</span></code> that was shared by two <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code> objects, and then we modified the <code class="docutils literal notranslate"><span class="pre">Point</span></code>.
+In general, there are two ways to avoid problems like this: you can avoid sharing objects or you can avoid modifying them.</p>
+<p>To avoid sharing objects, you can use deep copy, as we did in this chapter.</p>
+<p>To avoid modifying objects, consider replacing modifiers like <code class="docutils literal notranslate"><span class="pre">translate</span></code> with pure functions like <code class="docutils literal notranslate"><span class="pre">translated</span></code>.
+For example, here’s a version of <code class="docutils literal notranslate"><span class="pre">translated</span></code> that creates a new <code class="docutils literal notranslate"><span class="pre">Point</span></code> and never modifies its attributes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">translated</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dx</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">dy</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">dx</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">dy</span>
+        <span class="k">return</span> <span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Python provides features that make it easier to avoid modifying objects.
+They are beyond the scope of this book, but if you are curious, ask a virtual assistant, “How do I make a Python object immutable?”</p>
+<p>Creating a new object takes more time than modifying an existing one, but the difference seldom matters in practice.
+Programs that avoid shared objects and modifiers are often easier to develop, test, and debug – and the best kind of debugging is the kind you don’t have to do.</p>
+</section>
+<section id="glossary">
+<h2>Glossary<a class="headerlink" href="#glossary" title="Permalink to this heading">#</a></h2>
+<p><strong>identical:</strong>
+Being the same object (which implies equivalence).</p>
+<p><strong>equivalent:</strong>
+Having the same value.</p>
+<p><strong>shallow copy:</strong>
+A copy operation that does not copy nested objects.</p>
+<p><strong>deep copy:</strong>
+A copy operation that also copies nested objects.</p>
+<p><strong>polymorphism:</strong>
+The ability of a method or operator to work with multiple types of objects.</p>
+</section>
+<section id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This cell tells Jupyter to provide detailed debugging information</span>
+<span class="c1"># when a runtime error occurs. Run it before working on the exercises.</span>
+
+<span class="o">%</span><span class="k">xmode</span> Verbose
+</pre></div>
+</div>
+</div>
+</div>
+<section id="ask-a-virtual-assistant">
+<h3>Ask a virtual assistant<a class="headerlink" href="#ask-a-virtual-assistant" title="Permalink to this heading">#</a></h3>
+<p>For all of the following exercises, consider asking a virtual assistant for help.
+If you do, you’ll want include as part of the prompt the class definitions for <code class="docutils literal notranslate"><span class="pre">Point</span></code>, <code class="docutils literal notranslate"><span class="pre">Line</span></code>, and <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code> – otherwise the VA will make a guess about their attributes and functions, and the code it generates won’t work.</p>
+</section>
+<section id="exercise">
+<h3>Exercise<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h3>
+<p>Write an <code class="docutils literal notranslate"><span class="pre">__eq__</span></code> method for the <code class="docutils literal notranslate"><span class="pre">Line</span></code> class that returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if the <code class="docutils literal notranslate"><span class="pre">Line</span></code> objects refer to <code class="docutils literal notranslate"><span class="pre">Point</span></code> objects that are equivalent, in either order.</p>
+</section>
+<section id="id1">
+<h3>Exercise<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<p>Write a <code class="docutils literal notranslate"><span class="pre">Line</span></code> method called <code class="docutils literal notranslate"><span class="pre">midpoint</span></code> that computes the midpoint of a line segment and returns the result as a <code class="docutils literal notranslate"><span class="pre">Point</span></code> object.</p>
+</section>
+<section id="id2">
+<h3>Exercise<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<p>Write a <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code> method called <code class="docutils literal notranslate"><span class="pre">midpoint</span></code> that find the point in the center of a rectangle and returns the result as a <code class="docutils literal notranslate"><span class="pre">Point</span></code> object.</p>
+</section>
+<section id="id3">
+<h3>Exercise<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<p>Write a <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code> method called <code class="docutils literal notranslate"><span class="pre">make_cross</span></code> that:</p>
+<ol class="arabic simple">
+<li><p>Uses <code class="docutils literal notranslate"><span class="pre">make_lines</span></code> to get a list of <code class="docutils literal notranslate"><span class="pre">Line</span></code> objects that represent the four sides of the rectangle.</p></li>
+<li><p>Computes the midpoints of the four lines.</p></li>
+<li><p>Makes and returns a list of two <code class="docutils literal notranslate"><span class="pre">Line</span></code> objects that represent lines connecting opposite midpoints, forming a cross through the middle of the rectangle.</p></li>
+</ol>
+</section>
+<section id="id4">
+<h3>Exercise<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<p>Write a definition for a class named <code class="docutils literal notranslate"><span class="pre">Circle</span></code> with attributes <code class="docutils literal notranslate"><span class="pre">center</span></code> and <code class="docutils literal notranslate"><span class="pre">radius</span></code>, where <code class="docutils literal notranslate"><span class="pre">center</span></code> is a Point object and <code class="docutils literal notranslate"><span class="pre">radius</span></code> is a number.
+Include special methods <code class="docutils literal notranslate"><span class="pre">__init__</span></code> and a <code class="docutils literal notranslate"><span class="pre">__str__</span></code>, and a method called <code class="docutils literal notranslate"><span class="pre">draw</span></code> that uses <code class="docutils literal notranslate"><span class="pre">jupyturtle</span></code> functions to draw the circle.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="chap15.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Classes and Methods</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="chap17.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Inheritance</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-point">Creating a Point</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-line">Creating a Line</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equivalence-and-identity">Equivalence and identity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-rectangle">Creating a Rectangle</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#changing-rectangles">Changing rectangles</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deep-copy">Deep copy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polymorphism">Polymorphism</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">Debugging</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">Glossary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">Ask a virtual assistant</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Exercise</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Allen B. Downey
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

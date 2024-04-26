@@ -1,0 +1,1727 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Inheritance &#8212; Think Python, 3rd edition</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chap17';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Python Extras" href="chap18.html" />
+    <link rel="prev" title="Classes and Objects" href="chap16.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Think Python, 3rd edition</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    Think Python, 3rd edition
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chap00.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap01.html">Programming as a way of thinking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap02.html">Variables and Statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap03.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap04.html">Functions and Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap05.html">Conditionals and Recursion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap06.html">Return Values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap07.html">Iteration and Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap08.html">Strings and Regular Expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap09.html">Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap10.html">Dictionaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap11.html">Tuples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap12.html">Text Analysis and Generation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap13.html">Files and Databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap14.html">Classes and Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap15.html">Classes and Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap16.html">Classes and Objects</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Inheritance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap18.html">Python Extras</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/AllenDowney/ThinkPython/tree/v3" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/chap17.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Inheritance</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#representing-cards">Representing cards</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#card-attributes">Card attributes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#printing-cards">Printing cards</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-cards">Comparing cards</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#decks">Decks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#printing-the-deck">Printing the deck</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-remove-shuffle-and-sort">Add, remove, shuffle and sort</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parents-and-children">Parents and children</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specialization">Specialization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">Debugging</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">Glossary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">Ask a Virtual Assistant</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Exercise</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="inheritance">
+<span id="chapter-inheritance"></span><h1>Inheritance<a class="headerlink" href="#inheritance" title="Permalink to this heading">#</a></h1>
+<p>The language feature most often associated with object-oriented programming is <strong>inheritance</strong>.
+Inheritance is the ability to define a new class that is a modified version of an existing class.
+In this chapter I demonstrate inheritance using classes that represent playing cards, decks of cards, and poker hands.
+If you don’t play poker, don’t worry – I’ll tell you what you need to know.</p>
+<section id="representing-cards">
+<h2>Representing cards<a class="headerlink" href="#representing-cards" title="Permalink to this heading">#</a></h2>
+<p>There are 52 playing cards in a standard deck – each of them belongs to one of four suits and one of thirteen ranks.
+The suits are Spades, Hearts, Diamonds, and Clubs.
+The ranks are Ace, 2, 3, 4, 5, 6, 7, 8, 9, 10, Jack, Queen, and King.
+Depending on which game you are playing, an Ace can be higher than King or lower than 2.</p>
+<p>If we want to define a new object to represent a playing card, it is obvious what the attributes should be: <code class="docutils literal notranslate"><span class="pre">rank</span></code> and <code class="docutils literal notranslate"><span class="pre">suit</span></code>.
+It is less obvious what type the attributes should be.
+One possibility is to use strings containing words like <code class="docutils literal notranslate"><span class="pre">'Spade'</span></code> for suits and <code class="docutils literal notranslate"><span class="pre">'Queen'</span></code> for ranks.
+A problem with this implementation is that it would not be easy to compare cards to see which had a higher rank or suit.</p>
+<p>An alternative is to use integers to <strong>encode</strong> the ranks and suits.
+In this context, “encode” means that we are going to define a mapping between numbers and suits, or between numbers and ranks.
+This kind of encoding is not meant to be a secret (that would be “encryption”).</p>
+<p>For example, this table shows the suits and the corresponding integer codes:</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Suit</p></th>
+<th class="head"><p>Code</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Spades</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-odd"><td><p>Hearts</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>Diamonds</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>Clubs</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+<p>With this encoding, we can compare suits by comparing their codes.</p>
+<p>To encode the ranks, we’ll use the integer <code class="docutils literal notranslate"><span class="pre">2</span></code> to represent the rank <code class="docutils literal notranslate"><span class="pre">2</span></code>, <code class="docutils literal notranslate"><span class="pre">3</span></code> to represent <code class="docutils literal notranslate"><span class="pre">3</span></code>, and so on up to <code class="docutils literal notranslate"><span class="pre">10</span></code>.
+The following table shows the codes for the face cards.</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Rank</p></th>
+<th class="head"><p>Code</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Jack</p></td>
+<td><p>11</p></td>
+</tr>
+<tr class="row-odd"><td><p>Queen</p></td>
+<td><p>12</p></td>
+</tr>
+<tr class="row-even"><td><p>King</p></td>
+<td><p>13</p></td>
+</tr>
+</tbody>
+</table>
+<p>And we can use either <code class="docutils literal notranslate"><span class="pre">1</span></code> or <code class="docutils literal notranslate"><span class="pre">14</span></code> to represent an Ace, depending on whether we want it to be considered lower or higher than the other ranks.</p>
+<p>To represent these encodings, we will use two lists of strings, one with the names of the suits and the other with the names of the ranks.</p>
+<p>Here’s a definition for a class that represents a playing card, with these lists of strings as <strong>class variables</strong>, which are variables defined inside a class definition, but not inside a method.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Card</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Represents a standard playing card.&quot;&quot;&quot;</span>
+
+    <span class="n">suit_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Clubs&#39;</span><span class="p">,</span> <span class="s1">&#39;Diamonds&#39;</span><span class="p">,</span> <span class="s1">&#39;Hearts&#39;</span><span class="p">,</span> <span class="s1">&#39;Spades&#39;</span><span class="p">]</span>
+    <span class="n">rank_names</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;Ace&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="s1">&#39;4&#39;</span><span class="p">,</span> <span class="s1">&#39;5&#39;</span><span class="p">,</span> <span class="s1">&#39;6&#39;</span><span class="p">,</span> <span class="s1">&#39;7&#39;</span><span class="p">,</span> 
+                  <span class="s1">&#39;8&#39;</span><span class="p">,</span> <span class="s1">&#39;9&#39;</span><span class="p">,</span> <span class="s1">&#39;10&#39;</span><span class="p">,</span> <span class="s1">&#39;Jack&#39;</span><span class="p">,</span> <span class="s1">&#39;Queen&#39;</span><span class="p">,</span> <span class="s1">&#39;King&#39;</span><span class="p">,</span> <span class="s1">&#39;Ace&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The first element of <code class="docutils literal notranslate"><span class="pre">rank_names</span></code> is <code class="docutils literal notranslate"><span class="pre">None</span></code> because there is no card with rank zero. By including <code class="docutils literal notranslate"><span class="pre">None</span></code> as a place-keeper, we get a list with the nice property that the index 2 maps to the string <code class="docutils literal notranslate"><span class="pre">'2'</span></code>, and so on.</p>
+<p>Class variables are associated with the class, rather than an instance of the class, so we can access them like this.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Card</span><span class="o">.</span><span class="n">suit_names</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Clubs&#39;, &#39;Diamonds&#39;, &#39;Hearts&#39;, &#39;Spades&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can use <code class="docutils literal notranslate"><span class="pre">suit_names</span></code> to look up a suit and get the corresponding string.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Card</span><span class="o">.</span><span class="n">suit_names</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Clubs&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>And <code class="docutils literal notranslate"><span class="pre">rank_names</span></code> to look up a rank.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Card</span><span class="o">.</span><span class="n">rank_names</span><span class="p">[</span><span class="mi">11</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Jack&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="card-attributes">
+<h2>Card attributes<a class="headerlink" href="#card-attributes" title="Permalink to this heading">#</a></h2>
+<p>Here’s an <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method for the <code class="docutils literal notranslate"><span class="pre">Card</span></code> class – it takes <code class="docutils literal notranslate"><span class="pre">suit</span></code> and <code class="docutils literal notranslate"><span class="pre">rank</span></code> as parameters and assigns them to attributes with the same names.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">add_method_to</span> Card
+
+    def __init__(self, suit, rank):
+        self.suit = suit
+        self.rank = rank
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we can create a <code class="docutils literal notranslate"><span class="pre">Card</span></code> object like this.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">queen</span> <span class="o">=</span> <span class="n">Card</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can use the new instance to access the attributes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">queen</span><span class="o">.</span><span class="n">suit</span><span class="p">,</span> <span class="n">queen</span><span class="o">.</span><span class="n">rank</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1, 12)
+</pre></div>
+</div>
+</div>
+</div>
+<p>It is also legal to use the instance to access the class variables.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">queen</span><span class="o">.</span><span class="n">suit_names</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Clubs&#39;, &#39;Diamonds&#39;, &#39;Hearts&#39;, &#39;Spades&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>But if you use the class, it is clearer that they are class variables, not attributes.</p>
+</section>
+<section id="printing-cards">
+<h2>Printing cards<a class="headerlink" href="#printing-cards" title="Permalink to this heading">#</a></h2>
+<p>Here’s a <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method for <code class="docutils literal notranslate"><span class="pre">Card</span></code> objects.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">add_method_to</span> Card
+
+    def __str__(self):
+        rank_name = Card.rank_names[self.rank]
+        suit_name = Card.suit_names[self.suit]
+        return f&#39;{rank_name} of {suit_name}&#39; 
+</pre></div>
+</div>
+</div>
+</div>
+<p>When we print a <code class="docutils literal notranslate"><span class="pre">Card</span></code>, Python calls the <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method to get a human-readable representation of the card.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">queen</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Queen of Diamonds
+</pre></div>
+</div>
+</div>
+</div>
+<p>The following is a diagram of the <code class="docutils literal notranslate"><span class="pre">Card</span></code> class object and the Card instance.
+<code class="docutils literal notranslate"><span class="pre">Card</span></code> is a class object, so its type is <code class="docutils literal notranslate"><span class="pre">type</span></code>.
+<code class="docutils literal notranslate"><span class="pre">queen</span></code> is an instance of <code class="docutils literal notranslate"><span class="pre">Card</span></code>, so its type is <code class="docutils literal notranslate"><span class="pre">Card</span></code>.
+To save space, I didn’t draw the contents of <code class="docutils literal notranslate"><span class="pre">suit_names</span></code> and <code class="docutils literal notranslate"><span class="pre">rank_names</span></code>.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="_images/5f1d5a265aab792dbe104aaedafa1a65dded15806c5dff8a8854f2f3896703eb.png" src="_images/5f1d5a265aab792dbe104aaedafa1a65dded15806c5dff8a8854f2f3896703eb.png" />
+</div>
+</div>
+<p>Every <code class="docutils literal notranslate"><span class="pre">Card</span></code> instance has its own <code class="docutils literal notranslate"><span class="pre">suit</span></code> and <code class="docutils literal notranslate"><span class="pre">rank</span></code> attributes, but there is only one <code class="docutils literal notranslate"><span class="pre">Card</span></code> class object, and only one copy of the class variables <code class="docutils literal notranslate"><span class="pre">suit_names</span></code> and <code class="docutils literal notranslate"><span class="pre">rank_names</span></code>.</p>
+</section>
+<section id="comparing-cards">
+<h2>Comparing cards<a class="headerlink" href="#comparing-cards" title="Permalink to this heading">#</a></h2>
+<p>Suppose we create a second <code class="docutils literal notranslate"><span class="pre">Card</span></code> object with the same suit and rank.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">queen2</span> <span class="o">=</span> <span class="n">Card</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">queen2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Queen of Diamonds
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we use the <code class="docutils literal notranslate"><span class="pre">==</span></code> operator to compare them, it checks whether <code class="docutils literal notranslate"><span class="pre">queen</span></code> and <code class="docutils literal notranslate"><span class="pre">queen2</span></code> refer to the same object.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">queen</span> <span class="o">==</span> <span class="n">queen2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>They don’t, so it returns false.
+We can change this behavior by defining a special method called <code class="docutils literal notranslate"><span class="pre">__eq__</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">add_method_to</span> Card
+
+    def __eq__(self, other):
+        return self.suit == other.suit and self.rank == other.rank
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">__eq__</span></code> takes two <code class="docutils literal notranslate"><span class="pre">Card</span></code> objects as parameters and returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if they have the same suit and rank, even if they are not the same object.
+In other words, it checks whether they are equivalent, even if they are not identical.</p>
+<p>When we use the <code class="docutils literal notranslate"><span class="pre">==</span></code> operator with <code class="docutils literal notranslate"><span class="pre">Card</span></code> objects, Python calls the <code class="docutils literal notranslate"><span class="pre">__eq__</span></code> method.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">queen</span> <span class="o">==</span> <span class="n">queen2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>As a second test, let’s create a card with the same suit and a different rank.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">six</span> <span class="o">=</span> <span class="n">Card</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">six</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6 of Diamonds
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can confirm that <code class="docutils literal notranslate"><span class="pre">queen</span></code> and <code class="docutils literal notranslate"><span class="pre">six</span></code> are not equivalent.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">queen</span> <span class="o">==</span> <span class="n">six</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we use the <code class="docutils literal notranslate"><span class="pre">!=</span></code> operator, Python invokes a special method called <code class="docutils literal notranslate"><span class="pre">__ne__</span></code>, if it exists.
+Otherwise it invokes<code class="docutils literal notranslate"><span class="pre">__eq__</span></code> and inverts the result – so if <code class="docutils literal notranslate"><span class="pre">__eq__</span></code> returns <code class="docutils literal notranslate"><span class="pre">True</span></code>, the result of the <code class="docutils literal notranslate"><span class="pre">!=</span></code> operator is <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">queen</span> <span class="o">!=</span> <span class="n">queen2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">queen</span> <span class="o">!=</span> <span class="n">six</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now suppose we want to compare two cards to see which is bigger.
+If we use one of the relational operators, we get a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">queen</span> <span class="o">&lt;</span> <span class="n">queen2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="ne">TypeError</span>: &#39;&lt;&#39; not supported between instances of &#39;Card&#39; and &#39;Card&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>To change the behavior of the <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> operator, we can define a special method called <code class="docutils literal notranslate"><span class="pre">__lt__</span></code>, which is short for “less than”.
+For the sake of this example, let’s assume that suit is more important than rank – so all Spades outrank all Hearts, which outrank all Diamonds, and so on.
+If two cards have the same suit, the one with the higher rank wins.</p>
+<p>To implement this logic, we’ll use the following method, which returns a tuple containing a card’s suit and rank, in that order.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">add_method_to</span> Card
+
+    def to_tuple(self):
+        return (self.suit, self.rank)
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can use this method to write <code class="docutils literal notranslate"><span class="pre">__lt__</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">add_method_to</span> Card
+
+    def __lt__(self, other):
+        return self.to_tuple() &lt; other.to_tuple()
+</pre></div>
+</div>
+</div>
+</div>
+<p>Tuple comparison compares the first elements from each tuple, which represent the suits.
+If they are the same, it compares the second elements, which represent the ranks.</p>
+<p>Now if we use the <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> operator, it invokes the <code class="docutils literal notranslate"><span class="pre">__lt__</span></code> operator.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">six</span> <span class="o">&lt;</span> <span class="n">queen</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we use the <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> operator, it invokes a special method called <code class="docutils literal notranslate"><span class="pre">__gt__</span></code>, if it exists.
+Otherwise it invokes <code class="docutils literal notranslate"><span class="pre">__lt__</span></code> with the arguments in the opposite order.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">queen</span> <span class="o">&lt;</span> <span class="n">queen2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">queen</span> <span class="o">&gt;</span> <span class="n">queen2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finally, if we use the <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code> operator, it invokes a special method called <code class="docutils literal notranslate"><span class="pre">__le__</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">add_method_to</span> Card
+
+    def __le__(self, other):
+        return self.to_tuple() &lt;= other.to_tuple()
+</pre></div>
+</div>
+</div>
+</div>
+<p>So we can check whether one card is less than or equal to another.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">queen</span> <span class="o">&lt;=</span> <span class="n">queen2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">queen</span> <span class="o">&lt;=</span> <span class="n">six</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we use the <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> operator, it uses <code class="docutils literal notranslate"><span class="pre">__ge__</span></code> if it exists. Otherwise, it invokes <code class="docutils literal notranslate"><span class="pre">__le__</span></code> with the arguments in the opposite order.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">queen</span> <span class="o">&gt;=</span> <span class="n">six</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>As we have defined them, these methods are complete in the sense that we can compare any two <code class="docutils literal notranslate"><span class="pre">Card</span></code> objects, and consistent in the sense that results from different operators don’t contradict each other.
+With these two properties, we can say that <code class="docutils literal notranslate"><span class="pre">Card</span></code> objects are <strong>totally ordered</strong>.
+And that means, as we’ll see soon, that they can be sorted.</p>
+</section>
+<section id="decks">
+<h2>Decks<a class="headerlink" href="#decks" title="Permalink to this heading">#</a></h2>
+<p>Now that we have objects that represent cards, let’s define objects that represent decks.
+The following is a class definition for <code class="docutils literal notranslate"><span class="pre">Deck</span></code> with
+an <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method takes a list of <code class="docutils literal notranslate"><span class="pre">Card</span></code> objects as a parameter and assigns it to an attribute called <code class="docutils literal notranslate"><span class="pre">cards</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Deck</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cards</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cards</span> <span class="o">=</span> <span class="n">cards</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To create a list that contains the 52 cards in a standard deck, we’ll use the following static method.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">add_method_to</span> Deck
+
+    def make_cards():
+        cards = []
+        for suit in range(4):
+            for rank in range(2, 15):
+                card = Card(suit, rank)
+                cards.append(card)
+        return cards
+</pre></div>
+</div>
+</div>
+</div>
+<p>In <code class="docutils literal notranslate"><span class="pre">make_cards</span></code>, the outer loop enumerates the suits from <code class="docutils literal notranslate"><span class="pre">0</span></code> to <code class="docutils literal notranslate"><span class="pre">3</span></code>.
+The inner loop enumerates the ranks from <code class="docutils literal notranslate"><span class="pre">2</span></code> to <code class="docutils literal notranslate"><span class="pre">14</span></code> – where <code class="docutils literal notranslate"><span class="pre">14</span></code> represents an Ace that outranks a King.
+Each iteration creates a new <code class="docutils literal notranslate"><span class="pre">Card</span></code> with the current suit and rank, and appends it to <code class="docutils literal notranslate"><span class="pre">cards</span></code>.</p>
+<p>Here’s how we make a list of cards and a <code class="docutils literal notranslate"><span class="pre">Deck</span></code> object that contains it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cards</span> <span class="o">=</span> <span class="n">Deck</span><span class="o">.</span><span class="n">make_cards</span><span class="p">()</span>
+<span class="n">deck</span> <span class="o">=</span> <span class="n">Deck</span><span class="p">(</span><span class="n">cards</span><span class="p">)</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">deck</span><span class="o">.</span><span class="n">cards</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>52
+</pre></div>
+</div>
+</div>
+</div>
+<p>It contains 52 cards, as intended.</p>
+</section>
+<section id="printing-the-deck">
+<span id="section-print-deck"></span><h2>Printing the deck<a class="headerlink" href="#printing-the-deck" title="Permalink to this heading">#</a></h2>
+<p>Here is a <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method for <code class="docutils literal notranslate"><span class="pre">Deck</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">add_method_to</span> Deck
+
+    def __str__(self):
+        res = []
+        for card in self.cards:
+            res.append(str(card))
+        return &#39;\n&#39;.join(res)
+</pre></div>
+</div>
+</div>
+</div>
+<p>This method demonstrates an efficient way to accumulate a large string – building a list of strings and then using the string method <code class="docutils literal notranslate"><span class="pre">join</span></code>.</p>
+<p>We’ll test this method with a deck that only contains two cards.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">small_deck</span> <span class="o">=</span> <span class="n">Deck</span><span class="p">([</span><span class="n">queen</span><span class="p">,</span> <span class="n">six</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we call <code class="docutils literal notranslate"><span class="pre">str</span></code>, it invokes <code class="docutils literal notranslate"><span class="pre">__str__</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">str</span><span class="p">(</span><span class="n">small_deck</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Queen of Diamonds\n6 of Diamonds&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>When Jupyter displays a string, it shows the “representational” form of the string, which represents a newline with the sequence <code class="docutils literal notranslate"><span class="pre">\n</span></code>.</p>
+<p>However, if we print the result, Jupyter shows the “printable” form of the string, which prints the newline as whitespace.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">small_deck</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Queen of Diamonds
+6 of Diamonds
+</pre></div>
+</div>
+</div>
+</div>
+<p>So the cards appear on separate lines.</p>
+</section>
+<section id="add-remove-shuffle-and-sort">
+<h2>Add, remove, shuffle and sort<a class="headerlink" href="#add-remove-shuffle-and-sort" title="Permalink to this heading">#</a></h2>
+<p>To deal cards, we would like a method that removes a card from the deck
+and returns it. The list method <code class="docutils literal notranslate"><span class="pre">pop</span></code> provides a convenient way to do
+that.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">add_method_to</span> Deck
+
+    def take_card(self):
+        return self.cards.pop()
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here’s how we use it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">card</span> <span class="o">=</span> <span class="n">deck</span><span class="o">.</span><span class="n">take_card</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">card</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ace of Spades
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can confirm that there are <code class="docutils literal notranslate"><span class="pre">51</span></code> cards left in the deck.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">deck</span><span class="o">.</span><span class="n">cards</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>51
+</pre></div>
+</div>
+</div>
+</div>
+<p>To add a card, we can use the list method <code class="docutils literal notranslate"><span class="pre">append</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">add_method_to</span> Deck
+
+    def put_card(self, card):
+        self.cards.append(card)
+</pre></div>
+</div>
+</div>
+</div>
+<p>As an example, we can put back the card we just popped.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">deck</span><span class="o">.</span><span class="n">put_card</span><span class="p">(</span><span class="n">card</span><span class="p">)</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">deck</span><span class="o">.</span><span class="n">cards</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>52
+</pre></div>
+</div>
+</div>
+</div>
+<p>To shuffle the deck, we can use the <code class="docutils literal notranslate"><span class="pre">shuffle</span></code> function from the <code class="docutils literal notranslate"><span class="pre">random</span></code> module:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">add_method_to</span> Deck
+            
+    def shuffle(self):
+        random.shuffle(self.cards)
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we shuffle the deck and print the first few cards, we can see that they are in no apparent order.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">deck</span><span class="o">.</span><span class="n">shuffle</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">card</span> <span class="ow">in</span> <span class="n">deck</span><span class="o">.</span><span class="n">cards</span><span class="p">[:</span><span class="mi">4</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">card</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2 of Diamonds
+4 of Hearts
+5 of Clubs
+8 of Diamonds
+</pre></div>
+</div>
+</div>
+</div>
+<p>To sort the cards, we can use the list method <code class="docutils literal notranslate"><span class="pre">sort</span></code>, which sorts the elements “in place” – that is, it modifies the list rather than creating a new list.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">add_method_to</span> Deck
+            
+    def sort(self):
+        self.cards.sort()
+</pre></div>
+</div>
+</div>
+</div>
+<p>When we invoke <code class="docutils literal notranslate"><span class="pre">sort</span></code>, it uses the <code class="docutils literal notranslate"><span class="pre">__lt__</span></code> method to compare cards.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">deck</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we print the first few cards, we can confirm that they are in increasing order.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">card</span> <span class="ow">in</span> <span class="n">deck</span><span class="o">.</span><span class="n">cards</span><span class="p">[:</span><span class="mi">4</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">card</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2 of Clubs
+3 of Clubs
+4 of Clubs
+5 of Clubs
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this example, <code class="docutils literal notranslate"><span class="pre">Deck.sort</span></code> doesn’t do anything other than invoke <code class="docutils literal notranslate"><span class="pre">list.sort</span></code>.
+Passing along responsibility like this is called <strong>delegation</strong>.</p>
+</section>
+<section id="parents-and-children">
+<h2>Parents and children<a class="headerlink" href="#parents-and-children" title="Permalink to this heading">#</a></h2>
+<p>Inheritance is the ability to define a new class that is a modified version of an existing class.
+As an example, let’s say we want a class to represent a “hand”, that is, the cards held by one player.</p>
+<ul class="simple">
+<li><p>A hand is similar to a deck – both are made up of a collection of cards, and both require operations like adding and removing cards.</p></li>
+<li><p>A hand is also different from a deck – there are operations we want for hands that don’t make sense for a deck. For example, in poker we might compare two hands to see which one wins. In bridge, we might compute a score for a hand in order to make a bid.</p></li>
+</ul>
+<p>This relationship between classes – where one is a specialized version of another – lends itself to inheritance.</p>
+<p>To define a new class that is based on an existing class, we put the name of the existing class in parentheses.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Hand</span><span class="p">(</span><span class="n">Deck</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Represents a hand of playing cards.&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This definition indicates that <code class="docutils literal notranslate"><span class="pre">Hand</span></code> inherits from <code class="docutils literal notranslate"><span class="pre">Deck</span></code>, which means that <code class="docutils literal notranslate"><span class="pre">Hand</span></code> objects can access methods defined in <code class="docutils literal notranslate"><span class="pre">Deck</span></code>, like <code class="docutils literal notranslate"><span class="pre">take_card</span></code> and <code class="docutils literal notranslate"><span class="pre">put_card</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Hand</span></code> also inherits <code class="docutils literal notranslate"><span class="pre">__init__</span></code> from <code class="docutils literal notranslate"><span class="pre">Deck</span></code>, but if we define <code class="docutils literal notranslate"><span class="pre">__init__</span></code> in the <code class="docutils literal notranslate"><span class="pre">Hand</span></code> class, it overrides the one in the <code class="docutils literal notranslate"><span class="pre">Deck</span></code> class.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">add_method_to</span> Hand
+
+    def __init__(self, label=&#39;&#39;):
+        self.label = label
+        self.cards = []
+</pre></div>
+</div>
+</div>
+</div>
+<p>This version of <code class="docutils literal notranslate"><span class="pre">__init__</span></code> takes an optional string as a parameter, and always starts with an empty list of cards.
+When we create a <code class="docutils literal notranslate"><span class="pre">Hand</span></code>, Python invokes this method, not the one in <code class="docutils literal notranslate"><span class="pre">Deck</span></code> – which we can confirm by checking that the result has a <code class="docutils literal notranslate"><span class="pre">label</span></code> attribute.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hand</span> <span class="o">=</span> <span class="n">Hand</span><span class="p">(</span><span class="s1">&#39;player 1&#39;</span><span class="p">)</span>
+<span class="n">hand</span><span class="o">.</span><span class="n">label</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;player 1&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>To deal a card, we can use <code class="docutils literal notranslate"><span class="pre">take_card</span></code> to remove a card from a <code class="docutils literal notranslate"><span class="pre">Deck</span></code>, and <code class="docutils literal notranslate"><span class="pre">put_card</span></code> to add the card to a <code class="docutils literal notranslate"><span class="pre">Hand</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">deck</span> <span class="o">=</span> <span class="n">Deck</span><span class="p">(</span><span class="n">cards</span><span class="p">)</span>
+<span class="n">card</span> <span class="o">=</span> <span class="n">deck</span><span class="o">.</span><span class="n">take_card</span><span class="p">()</span>
+<span class="n">hand</span><span class="o">.</span><span class="n">put_card</span><span class="p">(</span><span class="n">card</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">hand</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ace of Spades
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s encapsulate this code in a <code class="docutils literal notranslate"><span class="pre">Deck</span></code> method called <code class="docutils literal notranslate"><span class="pre">move_cards</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">add_method_to</span> Deck
+
+    def move_cards(self, other, num):
+        for i in range(num):
+            card = self.take_card()
+            other.put_card(card)
+</pre></div>
+</div>
+</div>
+</div>
+<p>This method is polymorphic – that is, it works with more than one type: <code class="docutils literal notranslate"><span class="pre">self</span></code> and <code class="docutils literal notranslate"><span class="pre">other</span></code> can be either a <code class="docutils literal notranslate"><span class="pre">Hand</span></code> or a <code class="docutils literal notranslate"><span class="pre">Deck</span></code>.
+So we can use this method to deal a card from <code class="docutils literal notranslate"><span class="pre">Deck</span></code> to a <code class="docutils literal notranslate"><span class="pre">Hand</span></code>, from one <code class="docutils literal notranslate"><span class="pre">Hand</span></code> to another, or from a <code class="docutils literal notranslate"><span class="pre">Hand</span></code> back to a <code class="docutils literal notranslate"><span class="pre">Deck</span></code>.</p>
+<p>When a new class inherits from an existing one, the existing one is called the <strong>parent</strong> and the new class is called the <strong>child</strong>. In general:</p>
+<ul class="simple">
+<li><p>Instances of the child class should have all of the attributes of the parent class, but they can have additional attributes.</p></li>
+<li><p>The child class should have all of the methods of the parent class, but it can have additional methods.</p></li>
+<li><p>If a child class overrides a method from the parent class, the new method should take the same parameters and return a compatible result.</p></li>
+</ul>
+<p>This set of rules is called the “Liskov substitution principle” after computer scientist Barbara Liskov.</p>
+<p>If you follow these rules, any function or method designed to work with an instance of a parent class, like a <code class="docutils literal notranslate"><span class="pre">Deck</span></code>, will also work with instances of a child class, like <code class="docutils literal notranslate"><span class="pre">Hand</span></code>.
+If you violate these rules, your code will collapse like a house of cards (sorry).</p>
+</section>
+<section id="specialization">
+<h2>Specialization<a class="headerlink" href="#specialization" title="Permalink to this heading">#</a></h2>
+<p>Let’s make a class called <code class="docutils literal notranslate"><span class="pre">BridgeHand</span></code> that represents a hand in bridge – a widely played card game.
+We’ll inherit from <code class="docutils literal notranslate"><span class="pre">Hand</span></code> and add a new method called <code class="docutils literal notranslate"><span class="pre">high_card_point_count</span></code> that evaluates a hand using a “high card point” method, which adds up points for the high cards in the hand.</p>
+<p>Here’s a class definition that contains as a class variable a dictionary that maps from card names to their point values.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">BridgeHand</span><span class="p">(</span><span class="n">Hand</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Represents a bridge hand.&quot;&quot;&quot;</span>
+
+    <span class="n">hcp_dict</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;Ace&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+        <span class="s1">&#39;King&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+        <span class="s1">&#39;Queen&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="s1">&#39;Jack&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Given the rank of a card, like <code class="docutils literal notranslate"><span class="pre">12</span></code>, we can use <code class="docutils literal notranslate"><span class="pre">Card.rank_names</span></code> to get the string representation of the rank, and then use <code class="docutils literal notranslate"><span class="pre">hcp_dict</span></code> to get its score.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rank</span> <span class="o">=</span> <span class="mi">12</span>
+<span class="n">rank_name</span> <span class="o">=</span> <span class="n">Card</span><span class="o">.</span><span class="n">rank_names</span><span class="p">[</span><span class="n">rank</span><span class="p">]</span>
+<span class="n">score</span> <span class="o">=</span> <span class="n">BridgeHand</span><span class="o">.</span><span class="n">hcp_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">rank_name</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">rank_name</span><span class="p">,</span> <span class="n">score</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;Queen&#39;, 2)
+</pre></div>
+</div>
+</div>
+</div>
+<p>The following method loops through the cards in a <code class="docutils literal notranslate"><span class="pre">BridgeHand</span></code> and adds up their scores.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">add_method_to</span> BridgeHand
+
+    def high_card_point_count(self):
+        count = 0
+        for card in self.cards:
+            rank_name = Card.rank_names[card.rank]
+            count += BridgeHand.hcp_dict.get(rank_name, 0)
+        return count
+</pre></div>
+</div>
+</div>
+</div>
+<p>To test it, we’ll deal a hand with five cards – a bridge hand usually has thirteen, but it’s  easier to test code with small examples.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hand</span> <span class="o">=</span> <span class="n">BridgeHand</span><span class="p">(</span><span class="s1">&#39;player 2&#39;</span><span class="p">)</span>
+
+<span class="n">deck</span><span class="o">.</span><span class="n">shuffle</span><span class="p">()</span>
+<span class="n">deck</span><span class="o">.</span><span class="n">move_cards</span><span class="p">(</span><span class="n">hand</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">hand</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4 of Diamonds
+King of Hearts
+10 of Hearts
+10 of Clubs
+Queen of Diamonds
+</pre></div>
+</div>
+</div>
+</div>
+<p>And here is the total score for the King and Queen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hand</span><span class="o">.</span><span class="n">high_card_point_count</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">BridgeHand</span></code> inherits the variables and methods of <code class="docutils literal notranslate"><span class="pre">Hand</span></code> and adds a class variable and a method that are specific to bridge.
+This way of using inheritance is called <strong>specialization</strong> because it defines a new class that is specialized for a particular use, like playing bridge.</p>
+</section>
+<section id="debugging">
+<h2>Debugging<a class="headerlink" href="#debugging" title="Permalink to this heading">#</a></h2>
+<p>Inheritance is a useful feature.
+Some programs that would be repetitive without inheritance can be written more concisely with it.
+Also, inheritance can facilitate code reuse, since you can customize the behavior of a parent class without having to modify it.
+In some cases, the inheritance structure reflects the natural structure of the problem, which makes the design easier to understand.</p>
+<p>On the other hand, inheritance can make programs difficult to read.
+When a method is invoked, it is sometimes not clear where to find its definition – the relevant code may be spread across several modules.</p>
+<p>Any time you are unsure about the flow of execution through your program, the simplest solution is to add print statements at the beginning of the relevant methods.
+If <code class="docutils literal notranslate"><span class="pre">Deck.shuffle</span></code> prints a message that says something like <code class="docutils literal notranslate"><span class="pre">Running</span> <span class="pre">Deck.shuffle</span></code>, then as the program runs it traces the flow of execution.</p>
+<p>As an alternative, you could use the following function, which takes an object and a method name (as a string) and returns the class that provides the definition of the method.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">find_defining_class</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">method_name</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">typ</span> <span class="ow">in</span> <span class="nb">type</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span><span class="o">.</span><span class="n">mro</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">method_name</span> <span class="ow">in</span> <span class="nb">vars</span><span class="p">(</span><span class="n">typ</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">typ</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;Method </span><span class="si">{</span><span class="n">method_name</span><span class="si">}</span><span class="s1"> not found.&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">find_defining_class</span></code> uses the <code class="docutils literal notranslate"><span class="pre">mro</span></code> method to get the list of class objects (types) that will be searched for methods.
+“MRO” stands for “method resolution order”, which is the sequence of classes Python searches to “resolve” a method name – that is, to find the function object the name refers to.</p>
+<p>As an example, let’s instantiate a <code class="docutils literal notranslate"><span class="pre">BridgeHand</span></code> and then find the defining class of <code class="docutils literal notranslate"><span class="pre">shuffle</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hand</span> <span class="o">=</span> <span class="n">BridgeHand</span><span class="p">(</span><span class="s1">&#39;player 3&#39;</span><span class="p">)</span>
+<span class="n">find_defining_class</span><span class="p">(</span><span class="n">hand</span><span class="p">,</span> <span class="s1">&#39;shuffle&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>__main__.Deck
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">shuffle</span></code> method for the <code class="docutils literal notranslate"><span class="pre">BridgeHand</span></code> object is the one in <code class="docutils literal notranslate"><span class="pre">Deck</span></code>.</p>
+</section>
+<section id="glossary">
+<h2>Glossary<a class="headerlink" href="#glossary" title="Permalink to this heading">#</a></h2>
+<p><strong>inheritance:</strong>
+The ability to define a new class that is a modified version of a previously defined class.</p>
+<p><strong>encode:</strong>
+To represent one set of values using another set of values by constructing a mapping between them.</p>
+<p><strong>class variable:</strong>
+A variable defined inside a class definition, but not inside any method.</p>
+<p><strong>totally ordered:</strong>
+A set of objects is totally ordered if we can compare any two elements and the results are consistent.</p>
+<p><strong>delegation:</strong>
+When one method passes responsibility to another method to do most or all of the work.</p>
+<p><strong>parent class:</strong>
+A class that is inherited from.</p>
+<p><strong>child class:</strong>
+A class that inherits from another class.</p>
+<p><strong>specialization:</strong>
+A way of using inheritance to create a new class that is a specialized version of an existing class.</p>
+</section>
+<section id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This cell tells Jupyter to provide detailed debugging information</span>
+<span class="c1"># when a runtime error occurs. Run it before working on the exercises.</span>
+
+<span class="o">%</span><span class="k">xmode</span> Verbose
+</pre></div>
+</div>
+</div>
+</div>
+<section id="ask-a-virtual-assistant">
+<h3>Ask a Virtual Assistant<a class="headerlink" href="#ask-a-virtual-assistant" title="Permalink to this heading">#</a></h3>
+<p>When it goes well, object-oriented programming can make programs more readable, testable, and reusable.
+But it can also make programs complicated and hard to maintain.
+As a result, OOP is a topic of controversy – some people love it, and some people don’t.</p>
+<p>To learn more about the topic, ask a virtual assistant:</p>
+<ul class="simple">
+<li><p>What are some pros and cons of object-oriented programming?</p></li>
+<li><p>What does it mean when people say “favor composition over inheritance”?</p></li>
+<li><p>What is the Liskov substitution principle?</p></li>
+<li><p>Is Python an object-oriented language?</p></li>
+<li><p>What are the requirements for a set to be totally ordered?</p></li>
+</ul>
+<p>And as always, consider using a virtual assistant to help with the following exercises.</p>
+</section>
+<section id="exercise">
+<h3>Exercise<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h3>
+<p>In contract bridge, a “trick” is a round of play in which each of four players plays one card.
+To represent those cards, we’ll define a class that inherits from <code class="docutils literal notranslate"><span class="pre">Deck</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Trick</span><span class="p">(</span><span class="n">Deck</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Represents a trick in contract bridge.&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>As an example, consider this trick, where the first player leads with the 3 of Diamonds, which means that Diamonds are the “led suit”.
+The second and third players “follow suit”, which means they play a card with the led suit.
+The fourth player plays a card of a different suit, which means they cannot win the trick.
+So the winner of this trick is the third player, because they played the highest card in the led suit.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cards</span> <span class="o">=</span> <span class="p">[</span><span class="n">Card</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span>
+         <span class="n">Card</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span>
+         <span class="n">Card</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">12</span><span class="p">),</span>
+         <span class="n">Card</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">13</span><span class="p">)]</span>
+<span class="n">trick</span> <span class="o">=</span> <span class="n">Trick</span><span class="p">(</span><span class="n">cards</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">trick</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3 of Diamonds
+10 of Diamonds
+Queen of Diamonds
+King of Hearts
+</pre></div>
+</div>
+</div>
+</div>
+<p>Write a <code class="docutils literal notranslate"><span class="pre">Trick</span></code> method called <code class="docutils literal notranslate"><span class="pre">find_winner</span></code> that loops through the cards in the <code class="docutils literal notranslate"><span class="pre">Trick</span></code> and returns the index of the card that wins.
+In the previous example, the index of the winning card is <code class="docutils literal notranslate"><span class="pre">2</span></code>.</p>
+</section>
+<section id="id1">
+<h3>Exercise<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<p>The next few exercises ask to you write functions that classify poker hands.
+If you are not familiar with poker, I’ll explain what you need to know.
+We’ll use the following class to represent poker hands.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">PokerHand</span><span class="p">(</span><span class="n">Hand</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Represents a poker hand.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">get_suit_counts</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">counter</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">card</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">cards</span><span class="p">:</span>
+            <span class="n">key</span> <span class="o">=</span> <span class="n">card</span><span class="o">.</span><span class="n">suit</span>
+            <span class="n">counter</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">counter</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="n">counter</span>
+    
+    <span class="k">def</span> <span class="nf">get_rank_counts</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">counter</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">card</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">cards</span><span class="p">:</span>
+            <span class="n">key</span> <span class="o">=</span> <span class="n">card</span><span class="o">.</span><span class="n">rank</span>
+            <span class="n">counter</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">counter</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="n">counter</span>    
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">PokerHand</span></code> provides two methods that will help with the exercises.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">get_suit_counts</span></code> loops through the cards in the <code class="docutils literal notranslate"><span class="pre">PokerHand</span></code>, counts the number of cards in each suit, and returns a dictionary that maps from each suit code to the number of times it appears.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">get_rank_counts</span></code> does the same thing with the ranks of the cards, returning a dictionary that maps from each rank code to the number of times it appears.</p></li>
+</ul>
+<p>All of the exercises that follow can be done using only the Python features we have learned so far, but some of them are more difficult than most of the previous exercises.
+I encourage you to ask an AI for help.</p>
+<p>For problems like this, it often works well to ask for general advice about strategies and algorithms.
+Then you can either write the code yourself or ask for code.
+If you ask for code, you might want to provide the relevant class definitions as part of the prompt.</p>
+<p>As a first exercise, we’ll write a method called <code class="docutils literal notranslate"><span class="pre">has_flush</span></code> that checks whether a hand has a “flush” – that is, whether it contains at least five cards of the same suit.</p>
+<p>In most varieties of poker, a hand contains either five or seven cards, but there are some exotic variations where a hand contains other numbers of cards.
+But regardless of how many cards there are in a hand, the only ones that count are the five that make the best hand.</p>
+</section>
+<section id="id2">
+<h3>Exercise<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<p>Write a method called <code class="docutils literal notranslate"><span class="pre">has_straight</span></code> that checks whether a hand contains a straight, which is a set of five cards with consecutive ranks.
+For example, if a hand contains ranks <code class="docutils literal notranslate"><span class="pre">5</span></code>, <code class="docutils literal notranslate"><span class="pre">6</span></code>, <code class="docutils literal notranslate"><span class="pre">7</span></code>, <code class="docutils literal notranslate"><span class="pre">8</span></code>, and <code class="docutils literal notranslate"><span class="pre">9</span></code>, it contains a straight.</p>
+<p>An Ace can come before a two or after a King, so <code class="docutils literal notranslate"><span class="pre">Ace</span></code>, <code class="docutils literal notranslate"><span class="pre">2</span></code>, <code class="docutils literal notranslate"><span class="pre">3</span></code>, <code class="docutils literal notranslate"><span class="pre">4</span></code>, <code class="docutils literal notranslate"><span class="pre">5</span></code> is a straight and so it <code class="docutils literal notranslate"><span class="pre">10</span></code>, <code class="docutils literal notranslate"><span class="pre">Jack</span></code>, <code class="docutils literal notranslate"><span class="pre">Queen</span></code>, <code class="docutils literal notranslate"><span class="pre">King</span></code>, <code class="docutils literal notranslate"><span class="pre">Ace</span></code>.
+But a straight cannot “wrap around”, so <code class="docutils literal notranslate"><span class="pre">King</span></code>, <code class="docutils literal notranslate"><span class="pre">Ace</span></code>, <code class="docutils literal notranslate"><span class="pre">2</span></code>, <code class="docutils literal notranslate"><span class="pre">3</span></code>, <code class="docutils literal notranslate"><span class="pre">4</span></code> is not a straight.</p>
+</section>
+<section id="id3">
+<h3>Exercise<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<p>A hand has a straight flush if it contains a set of five cards that are both a straight and a flush – that is, five cards of the same suit with consecutive ranks.
+Write a <code class="docutils literal notranslate"><span class="pre">PokerHand</span></code> method that checks whether a hand has a straight flush.</p>
+</section>
+<section id="id4">
+<h3>Exercise<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<p>A poker hand has a pair if it contains two or more cards with the same rank.
+Write a <code class="docutils literal notranslate"><span class="pre">PokerHand</span></code> method that checks whether a hand contains a pair.</p>
+<p>You can use the following outline to get started.</p>
+<p>To test your method, here’s a hand that has a pair.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pair</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">bad_hand</span><span class="p">)</span>
+<span class="n">pair</span><span class="o">.</span><span class="n">put_card</span><span class="p">(</span><span class="n">Card</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pair</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2 of Clubs
+3 of Clubs
+4 of Hearts
+5 of Spades
+7 of Clubs
+2 of Diamonds
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pair</span><span class="o">.</span><span class="n">has_pair</span><span class="p">()</span>    <span class="c1"># should return True</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bad_hand</span><span class="o">.</span><span class="n">has_pair</span><span class="p">()</span>    <span class="c1"># should return False</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">good_hand</span><span class="o">.</span><span class="n">has_pair</span><span class="p">()</span>   <span class="c1"># should return False</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id5">
+<h3>Exercise<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<p>A hand has a full house if it contains three cards of one rank and two cards of another rank.
+Write a <code class="docutils literal notranslate"><span class="pre">PokerHand</span></code> method that checks whether a hand has a full house.</p>
+</section>
+<section id="id6">
+<h3>Exercise<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<p>This exercise is a cautionary tale about a common error that can be difficult to debug.
+Consider the following class definition.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Kangaroo</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A Kangaroo is a marsupial.&quot;&quot;&quot;</span>
+    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">contents</span><span class="o">=</span><span class="p">[]):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize the pouch contents.</span>
+
+<span class="sd">        name: string</span>
+<span class="sd">        contents: initial pouch contents.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">contents</span> <span class="o">=</span> <span class="n">contents</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return a string representaion of this Kangaroo.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="p">[</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s1">&#39; has pouch contents:&#39;</span> <span class="p">]</span>
+        <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">contents</span><span class="p">:</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;    &#39;</span> <span class="o">+</span> <span class="nb">object</span><span class="o">.</span><span class="fm">__str__</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+            <span class="n">t</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+        <span class="k">return</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">put_in_pouch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a new item to the pouch contents.</span>
+
+<span class="sd">        item: object to be added</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">contents</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">__init__</span></code> takes two parameters: <code class="docutils literal notranslate"><span class="pre">name</span></code> is required, but <code class="docutils literal notranslate"><span class="pre">contents</span></code> is optional – if it’s not provided, the default value is an empty list.</p>
+<p><code class="docutils literal notranslate"><span class="pre">__str__</span></code> returns a string representation of the object that includes the name and the contents of the pouch.</p>
+<p><code class="docutils literal notranslate"><span class="pre">put_in_pouch</span></code> takes any object and appends it to <code class="docutils literal notranslate"><span class="pre">contents</span></code>.</p>
+<p>Now let’s see how this class works.
+We’ll create two <code class="docutils literal notranslate"><span class="pre">Kangaroo</span></code> objects with the names Kanga and Roo.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kanga</span> <span class="o">=</span> <span class="n">Kangaroo</span><span class="p">(</span><span class="s1">&#39;Kanga&#39;</span><span class="p">)</span>
+<span class="n">roo</span> <span class="o">=</span> <span class="n">Kangaroo</span><span class="p">(</span><span class="s1">&#39;Roo&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To Kanga’s pouch we’ll add two strings and Roo.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kanga</span><span class="o">.</span><span class="n">put_in_pouch</span><span class="p">(</span><span class="s1">&#39;wallet&#39;</span><span class="p">)</span>
+<span class="n">kanga</span><span class="o">.</span><span class="n">put_in_pouch</span><span class="p">(</span><span class="s1">&#39;car keys&#39;</span><span class="p">)</span>
+<span class="n">kanga</span><span class="o">.</span><span class="n">put_in_pouch</span><span class="p">(</span><span class="n">roo</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we print <code class="docutils literal notranslate"><span class="pre">kanga</span></code>, it seems like everything worked.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">kanga</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Kanga has pouch contents:
+    &#39;wallet&#39;
+    &#39;car keys&#39;
+    &lt;__main__.Kangaroo object at 0x7f6e2ea11900&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>But what happens if we print <code class="docutils literal notranslate"><span class="pre">roo</span></code>?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">roo</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Roo has pouch contents:
+    &#39;wallet&#39;
+    &#39;car keys&#39;
+    &lt;__main__.Kangaroo object at 0x7f6e2ea11900&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Roo’s pouch contains the same contents as Kanga’s, including a reference to <code class="docutils literal notranslate"><span class="pre">roo</span></code>!</p>
+<p>See if you can figure out what went wrong.
+Then ask a virtual assistant, “What’s wrong with the following program?” and paste in the definition of <code class="docutils literal notranslate"><span class="pre">Kangaroo</span></code>.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="chap16.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Classes and Objects</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="chap18.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Python Extras</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#representing-cards">Representing cards</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#card-attributes">Card attributes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#printing-cards">Printing cards</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-cards">Comparing cards</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#decks">Decks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#printing-the-deck">Printing the deck</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-remove-shuffle-and-sort">Add, remove, shuffle and sort</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parents-and-children">Parents and children</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specialization">Specialization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">Debugging</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">Glossary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">Ask a Virtual Assistant</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Exercise</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Allen B. Downey
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

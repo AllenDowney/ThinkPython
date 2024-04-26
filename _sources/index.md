@@ -78,7 +78,7 @@ Starting in February 2024, I plan to release new chapters here, about one per we
 
 * [Click here to run Chapter 13 on Colab](https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap13.ipynb)
 
-### Chapter 14: Classes and Function
+### Chapter 14: Classes and Functions
 
 * [Click here to run Chapter 14 on Colab](https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap14.ipynb)
 

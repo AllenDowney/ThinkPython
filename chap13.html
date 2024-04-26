@@ -167,6 +167,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Files and Databases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chap14.html">Classes and Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chap15.html">Classes and Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap16.html">Classes and Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap17.html">Inheritance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap18.html">Python Extras</a></li>
 </ul>
 
     </div>
@@ -896,7 +899,7 @@ The suffix <code class="docutils literal notranslate"><span class="pre">dir</spa
 <span id="section-storing-data-structure"></span><h2>Storing data structures<a class="headerlink" href="#storing-data-structures" title="Permalink to this heading">#</a></h2>
 <p>In the previous example, the keys and values in the shelf are strings.
 But we can also use a shelf to contain data structures like lists and dictionaries.</p>
-<p>As an example, let’s revisit the anagram example from an exercise in <a class="reference internal" href="chap11.html#section-exercise11"><span class="std std-ref">Chapter 11</span></a>.
+<p>As an example, let’s revisit the anagram example from an exercise in <a class="reference internal" href="chap11.html#section-exercise-11"><span class="std std-ref">Chapter 11</span></a>.
 Recall that we made a dictionary that maps from a sorted string of letters to the
 list of words that can be spelled with those letters.
 For example, the key <code class="docutils literal notranslate"><span class="pre">'opst'</span></code> maps to the list <code class="docutils literal notranslate"><span class="pre">['opts',</span> <span class="pre">'post',</span> <span class="pre">'pots',</span> <span class="pre">'spot',</span> <span class="pre">'stop',</span> <span class="pre">'tops']</span></code>.</p>
@@ -964,7 +967,7 @@ The argument <code class="docutils literal notranslate"><span class="pre">'n'</s
 </div>
 </div>
 <p>The key is the same as in the previous example, so we want to append a second word to the same list of strings.
-Here’s how we would do it if <code class="docutils literal notranslate"><span class="pre">anagrams</span></code> were a dictionary.</p>
+Here’s how we would do it if <code class="docutils literal notranslate"><span class="pre">db</span></code> were a dictionary.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>          <span class="c1"># INCORRECT</span>
@@ -1294,6 +1297,16 @@ The result of a hash function, especially when it is used to check whether two o
 </section>
 <section id="exercises">
 <h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This cell tells Jupyter to provide detailed debugging information</span>
+<span class="c1"># when a runtime error occurs. Run it before working on the exercises.</span>
+
+<span class="o">%</span><span class="k">xmode</span> Verbose
+</pre></div>
+</div>
+</div>
+</div>
 <section id="ask-a-virtual-assistant">
 <h3>Ask a virtual assistant<a class="headerlink" href="#ask-a-virtual-assistant" title="Permalink to this heading">#</a></h3>
 <p>There are several topics that came up in this chapter that I did not explain in detail.

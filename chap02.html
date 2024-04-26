@@ -169,6 +169,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="chap13.html">Files and Databases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chap14.html">Classes and Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chap15.html">Classes and Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap16.html">Classes and Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap17.html">Inheritance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap18.html">Python Extras</a></li>
 </ul>
 
     </div>
@@ -464,7 +467,7 @@ So we can display the value of <code class="docutils literal notranslate"><span 
 an arrow pointing to its value.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="_images/41bb7f6224804927e13a6b33f420d665911efd99c70e892e4617de280ff6a39b.png" src="_images/41bb7f6224804927e13a6b33f420d665911efd99c70e892e4617de280ff6a39b.png" />
+<img alt="_images/54319c437cca81caa5fa9ee52a1edfb01810e693b7ebd67c56de713f1d132655.png" src="_images/54319c437cca81caa5fa9ee52a1edfb01810e693b7ebd67c56de713f1d132655.png" />
 </div>
 </div>
 <p>This kind of figure is called a <strong>state diagram</strong> because it shows what state each of the variables is in (think of it as the variable’s state of mind).
@@ -485,7 +488,7 @@ The name <code class="docutils literal notranslate"><span class="pre">million!</
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">15</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
     <span class="n">million</span><span class="o">!</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1000000</span>
            <span class="o">^</span>
 <span class="ne">SyntaxError</span>: invalid syntax
@@ -501,7 +504,7 @@ The name <code class="docutils literal notranslate"><span class="pre">million!</
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">16</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="g g-Whitespace">    </span><span class="mi">76</span><span class="n">trombones</span> <span class="o">=</span> <span class="s1">&#39;big parade&#39;</span>
      <span class="o">^</span>
 <span class="ne">SyntaxError</span>: invalid decimal literal
@@ -518,7 +521,7 @@ class = &#39;Self-Defence Against Fresh Fruit&#39;
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  Cell In[17], line 1
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  Cell In[14], line 1
     class = &#39;Self-Defence Against Fresh Fruit&#39;
           ^
 SyntaxError: invalid syntax
@@ -888,7 +891,7 @@ It is useful to distinguish between them in order to track them down more quickl
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">43</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">40</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
     <span class="n">million</span><span class="o">!</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1000000</span>
            <span class="o">^</span>
 <span class="ne">SyntaxError</span>: invalid syntax
@@ -963,6 +966,16 @@ An error that causes a program to do the wrong thing, but not to display an erro
 </section>
 <section id="exercises">
 <h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This cell tells Jupyter to provide detailed debugging information</span>
+<span class="c1"># when a runtime error occurs. Run it before working on the exercises.</span>
+
+<span class="o">%</span><span class="k">xmode</span> Verbose
+</pre></div>
+</div>
+</div>
+</div>
 <section id="ask-a-virtual-assistant">
 <h3>Ask a virtual assistant<a class="headerlink" href="#ask-a-virtual-assistant" title="Permalink to this heading">#</a></h3>
 <p>Again, I encourage you to use a virtual assistant to learn more about any of the topics in this chapter.</p>
