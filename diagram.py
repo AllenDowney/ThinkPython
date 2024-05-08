@@ -34,7 +34,7 @@ def diagram(width=5, height=1, **options):
     fig, ax = plt.subplots(**options)
 
     # TODO: dpi in the notebook should be 100, in the book it should be 300 or 600
-    fig.set_dpi(100)
+    # fig.set_dpi(100)
 
     # Set figure size
     fig.set_size_inches(width, height)
