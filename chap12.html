@@ -170,6 +170,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="chap16.html">Classes and Objects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chap17.html">Inheritance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chap18.html">Python Extras</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap19.html">Final thoughts</a></li>
 </ul>
 
     </div>
@@ -345,8 +346,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">Ask a virtual assistant</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
 </ul>
 </li>
 </ul>
@@ -721,7 +722,7 @@ For example, the following function takes two parameters, <code class="docutils 
 <p>If a function has both required and optional parameters, all of the required parameters have to come first, followed by the optional ones.</p>
 </section>
 <section id="dictionary-subtraction">
-<span id="id1"></span><span id="section-dictionary-subtraction"></span><h2>Dictionary subtraction<a class="headerlink" href="#dictionary-subtraction" title="Permalink to this heading">#</a></h2>
+<span id="section-dictionary-subtraction"></span><h2>Dictionary subtraction<a class="headerlink" href="#dictionary-subtraction" title="Permalink to this heading">#</a></h2>
 <p>Suppose we want to spell-check a book – that is, find a list of words that might be misspelled.
 One way to do that is to find words in the book that don’t appear in a list of valid words.
 In previous chapters, we’ve used a list of words that are considered valid in word games like Scrabble.
@@ -861,7 +862,7 @@ We can import it like this.</p>
 </div>
 <p>In the long run, we expect to get every element about the same number of times.</p>
 <p>If you use <code class="docutils literal notranslate"><span class="pre">choice</span></code> with a dictionary, you get a <code class="docutils literal notranslate"><span class="pre">KeyError</span></code>.</p>
-<div class="cell docutils container">
+<div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">word_counter</span><span class="p">)</span>
 </pre></div>
@@ -1307,7 +1308,7 @@ For example, we can make a dictionary that maps from each bigram – or trigram 
 As an exercise, you’ll have a chance to implement this analysis and see what the results look like.</p>
 </section>
 <section id="debugging">
-<span id="id2"></span><span id="section-debugging-12"></span><h2>Debugging<a class="headerlink" href="#debugging" title="Permalink to this heading">#</a></h2>
+<span id="section-debugging-12"></span><h2>Debugging<a class="headerlink" href="#debugging" title="Permalink to this heading">#</a></h2>
 <p>At this point we are writing more substantial programs, and you might find that you are spending more time debugging.
 If you are stuck on a difficult bug, here are a few things to try:</p>
 <ul class="simple">
@@ -1366,7 +1367,7 @@ A way of debugging by explaining a problem aloud to an inanimate object.</p>
 </section>
 <section id="exercises">
 <h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h2>
-<div class="cell docutils container">
+<div class="cell tag_remove-print docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This cell tells Jupyter to provide detailed debugging information</span>
 <span class="c1"># when a runtime error occurs. Run it before working on the exercises.</span>
@@ -1405,8 +1406,8 @@ Ask a VA, “What are the differences between large language models like GPT and
 If you test your function with the text of <em>Dr. Jekyll and Mr. Hyde</em>, you should find that the most common trigram is “said the lawyer”.</p>
 <p>Hint: Write a function called <code class="docutils literal notranslate"><span class="pre">count_trigram</span></code> that is similar to <code class="docutils literal notranslate"><span class="pre">count_bigram</span></code>. Then write a function called <code class="docutils literal notranslate"><span class="pre">process_word_trigram</span></code> that is similar to <code class="docutils literal notranslate"><span class="pre">process_word_bigram</span></code>.</p>
 </section>
-<section id="id3">
-<h3>Exercise<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<section id="id1">
+<h3>Exercise<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
 <p>Now let’s implement Markov chain text analysis with a mapping from each bigram to a list of possible successors.</p>
 <p>Starting with <code class="docutils literal notranslate"><span class="pre">add_bigram</span></code>, write a function called <code class="docutils literal notranslate"><span class="pre">add_trigram</span></code> that takes a list of three words and either adds or updates an item in <code class="docutils literal notranslate"><span class="pre">successor_map</span></code>, using the first two words as the key and the third word as a possible successor.</p>
 <p>Here’s a version of <code class="docutils literal notranslate"><span class="pre">process_word_trigram</span></code> that calls <code class="docutils literal notranslate"><span class="pre">add_trigram</span></code>.</p>
@@ -1438,8 +1439,8 @@ If you test your function with the text of <em>Dr. Jekyll and Mr. Hyde</em>, you
 </div>
 <p>In the next exercise, you’ll use the results to generate new random text.</p>
 </section>
-<section id="id4">
-<h3>Exercise<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<section id="id2">
+<h3>Exercise<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
 <p>For this exercise, we’ll assume that <code class="docutils literal notranslate"><span class="pre">successor_map</span></code> is a dictionary that maps from each bigram to the list of words that follow it.</p>
 <p>To generate random text, we’ll start by choosing a random key from <code class="docutils literal notranslate"><span class="pre">successor_map</span></code>.</p>
 <div class="cell docutils container">
@@ -1550,8 +1551,8 @@ If you test your function with the text of <em>Dr. Jekyll and Mr. Hyde</em>, you
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">Ask a virtual assistant</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
 </ul>
 </li>
 </ul>

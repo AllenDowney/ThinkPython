@@ -170,6 +170,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="chap16.html">Classes and Objects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chap17.html">Inheritance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chap18.html">Python Extras</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap19.html">Final thoughts</a></li>
 </ul>
 
     </div>
@@ -746,6 +747,21 @@ To see an example, I’ll define a version of <code class="docutils literal notr
 </div>
 </div>
 <p>Now here’s what happens when we run <code class="docutils literal notranslate"><span class="pre">cat_twice</span></code>.</p>
+<div class="cell tag_remove-print docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This cell tells Jupyter to provide detailed debugging information</span>
+<span class="c1"># when a runtime error occurs, including a traceback.</span>
+
+<span class="o">%</span><span class="k">xmode</span> Verbose
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Exception reporting mode: Plain
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cat_twice</span><span class="p">(</span><span class="n">line1</span><span class="p">,</span> <span class="n">line2</span><span class="p">)</span>
@@ -832,7 +848,7 @@ A list of the functions that are executing, printed when an exception occurs.</p
 </section>
 <section id="exercises">
 <h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h2>
-<div class="cell docutils container">
+<div class="cell tag_remove-print docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This cell tells Jupyter to provide detailed debugging information</span>
 <span class="c1"># when a runtime error occurs. Run it before working on the exercises.</span>
@@ -892,20 +908,6 @@ If you are curious about the history of this great debate, ask a virtual assista
 <p>Write a function called <code class="docutils literal notranslate"><span class="pre">triangle</span></code> that takes a string and an integer and draws a pyramid with the given height, made up using copies of the string. Here’s an example of a pyramid with 4 levels, using the string <code class="docutils literal notranslate"><span class="pre">'L'</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">triangle</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Make a triangle shape by printing a string repeatedly.</span>
-<span class="sd">    </span>
-<span class="sd">    string: characters to be repeated</span>
-<span class="sd">    height: number of lines in the triangle</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">height</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">string</span> <span class="o">*</span> <span class="n">i</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">triangle</span><span class="p">(</span><span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -924,21 +926,6 @@ LLLLL
 <section id="id2">
 <h3>Exercise<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
 <p>Write a function called <code class="docutils literal notranslate"><span class="pre">rectangle</span></code> that takes a string and two integers and draws a rectangle with the given height and width, made up using copies of the string. Here’s an example of a pyramid with 4 levels, using the string <code class="docutils literal notranslate"><span class="pre">'L'</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">rectangle</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Make a rectangle by printing a string repeatedly.</span>
-<span class="sd">    </span>
-<span class="sd">    string: characters to be repeated</span>
-<span class="sd">    width: number of repetitions on each line</span>
-<span class="sd">    height: number of lines</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">height</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">string</span> <span class="o">*</span> <span class="n">width</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rectangle</span><span class="p">(</span><span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>

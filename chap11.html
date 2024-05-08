@@ -170,6 +170,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="chap16.html">Classes and Objects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chap17.html">Inheritance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chap18.html">Python Extras</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap19.html">Final thoughts</a></li>
 </ul>
 
     </div>
@@ -344,11 +345,11 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">Ask a virtual assistant</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#section-exercise-11">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Exercise</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Exercise</a></li>
 </ul>
 </li>
 </ul>
@@ -363,7 +364,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="tuples">
-<span id="id1"></span><span id="chapter-tuples"></span><h1>Tuples<a class="headerlink" href="#tuples" title="Permalink to this heading">#</a></h1>
+<span id="chapter-tuples"></span><h1>Tuples<a class="headerlink" href="#tuples" title="Permalink to this heading">#</a></h1>
 <p>This chapter introduces one more built-in type, the tuple, and then shows how lists, dictionaries, and tuples work together.
 It also presents tuple assignment and a useful feature for functions with variable-length argument lists: the packing and unpacking operators.</p>
 <p>In the exercises, we’ll use tuples, along with lists and dictionaries, to solve more word puzzles and implement efficient algorithms.</p>
@@ -558,7 +559,7 @@ For example, the bracket operator indexes an element.</p>
 <section id="but-tuples-are-immutable">
 <h2>But tuples are immutable<a class="headerlink" href="#but-tuples-are-immutable" title="Permalink to this heading">#</a></h2>
 <p>If you try to modify a tuple with the bracket operator, you get a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code>.</p>
-<div class="cell docutils container">
+<div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;L&#39;</span>
 </pre></div>
@@ -571,7 +572,7 @@ For example, the bracket operator indexes an element.</p>
 </div>
 </div>
 <p>And tuples don’t have any of the methods that modify lists, like <code class="docutils literal notranslate"><span class="pre">append</span></code> and <code class="docutils literal notranslate"><span class="pre">remove</span></code>.</p>
-<div class="cell docutils container">
+<div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;l&#39;</span><span class="p">)</span>
 </pre></div>
@@ -688,7 +689,7 @@ For example, to split an email address into a user name and a domain, you could 
 </div>
 <p>The number of variables on the left and the number of values on the
 right have to be the same – otherwise you get a <code class="docutils literal notranslate"><span class="pre">ValueError</span></code>.</p>
-<div class="cell docutils container">
+<div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span>
 </pre></div>
@@ -843,7 +844,7 @@ of two values, the quotient and remainder.</p>
 </div>
 </section>
 <section id="argument-packing">
-<span id="id2"></span><span id="section-argument-pack"></span><h2>Argument packing<a class="headerlink" href="#argument-packing" title="Permalink to this heading">#</a></h2>
+<span id="section-argument-pack"></span><h2>Argument packing<a class="headerlink" href="#argument-packing" title="Permalink to this heading">#</a></h2>
 <p>Functions can take a variable number of arguments.
 A parameter name that begins with the <code class="docutils literal notranslate"><span class="pre">*</span></code> operator <strong>packs</strong> arguments into a tuple.
 For example, the following function takes any number of arguments and computes their arithmetic mean – that is, their sum divided by the number of arguments.</p>
@@ -871,7 +872,7 @@ We can call the function like this:</p>
 </div>
 <p>If you have a sequence of values and you want to pass them to a function as multiple arguments, you can use the <code class="docutils literal notranslate"><span class="pre">*</span></code> operator to <strong>unpack</strong> the tuple.
 For example, <code class="docutils literal notranslate"><span class="pre">divmod</span></code> takes exactly two arguments – if you pass a tuple as a parameter, you get an error.</p>
-<div class="cell docutils container">
+<div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="nb">divmod</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
@@ -1293,7 +1294,7 @@ Otherwise it is appended to the existing list.</p>
 We will see more!</p>
 </section>
 <section id="debugging">
-<span id="id3"></span><span id="section-debugging-11"></span><h2>Debugging<a class="headerlink" href="#debugging" title="Permalink to this heading">#</a></h2>
+<span id="section-debugging-11"></span><h2>Debugging<a class="headerlink" href="#debugging" title="Permalink to this heading">#</a></h2>
 <p>Lists, dictionaries and tuples are <strong>data structures</strong>.
 In this chapter we are starting to see compound data structures, like lists of tuples, or dictionaries that contain tuples as keys and lists as values.
 Compound data structures are useful, but they are prone to errors caused when a data structure has the wrong type, size, or structure.
@@ -1402,7 +1403,7 @@ A collection of values, organized to perform certain operations efficiently.</p>
 </section>
 <section id="exercises">
 <h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h2>
-<div class="cell docutils container">
+<div class="cell tag_remove-print docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This cell tells Jupyter to provide detailed debugging information</span>
 <span class="c1"># when a runtime error occurs. Run it before working on the exercises.</span>
@@ -1445,10 +1446,22 @@ But that is not always true.</p>
 </div>
 <p>Write a line of code that appends the value <code class="docutils literal notranslate"><span class="pre">6</span></code> to the end of the second list in <code class="docutils literal notranslate"><span class="pre">t</span></code>. If you display <code class="docutils literal notranslate"><span class="pre">t</span></code>, the result should be <code class="docutils literal notranslate"><span class="pre">([1,</span> <span class="pre">2,</span> <span class="pre">3],</span> <span class="pre">[4,</span> <span class="pre">5,</span> <span class="pre">6])</span></code>.</p>
 <p>Try to create a dictionary that maps from <code class="docutils literal notranslate"><span class="pre">t</span></code> to a string, and confirm that you get a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code>.</p>
+<div class="cell tag_solution tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="n">t</span><span class="p">:</span> <span class="s1">&#39;this tuple contains two lists&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>UsageError: Cell magic `%%expect` not found.
+</pre></div>
+</div>
+</div>
+</div>
 <p>For more on this topic, ask a virtual assistant, “Are Python tuples always hashable?”</p>
 </section>
-<section id="id4">
-<span id="section-exercise-11"></span><span id="id5"></span><h3>Exercise<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<section id="section-exercise-11">
+<span id="id1"></span><h3>Exercise<a class="headerlink" href="#section-exercise-11" title="Permalink to this heading">#</a></h3>
 <p>In this chapter we made a dictionary that maps from each letter to its index in the alphabet.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1495,13 +1508,13 @@ by a fixed number of places in the alphabet, wrapping around to the beginning if
 Loop through the letters of the word, shift each one, and append the result to a list of letters.
 Then use <code class="docutils literal notranslate"><span class="pre">join</span></code> to concatenate the letters into a string.</p>
 </section>
-<section id="id6">
-<h3>Exercise<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<section id="id2">
+<h3>Exercise<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
 <p>Write a function called <code class="docutils literal notranslate"><span class="pre">most_frequent_letters</span></code> that takes a string and prints the letters in decreasing order of frequency.</p>
 <p>To get the items in decreasing order, you can use <code class="docutils literal notranslate"><span class="pre">reversed</span></code> along with <code class="docutils literal notranslate"><span class="pre">sorted</span></code> or you can pass <code class="docutils literal notranslate"><span class="pre">reverse=True</span></code> as a keyword parameter to <code class="docutils literal notranslate"><span class="pre">sorted</span></code>.</p>
 </section>
-<section id="id7">
-<h3>Exercise<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
+<section id="id3">
+<h3>Exercise<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
 <p>In a previous exercise, we tested whether two strings are anagrams by sorting the letters in both words and checking whether the sorted letters are the same.
 Now let’s make the problem a little more challenging.</p>
 <p>We’ll write a program that takes a list of words and prints all the sets of words that are anagrams.
@@ -1514,13 +1527,13 @@ Here is an example of what the output might look like:</p>
 </div>
 <p>Hint: For each word in the word list, sort the letters and join them back into a string. Make a dictionary that maps from this sorted string to a list of words that are anagrams of it.</p>
 </section>
-<section id="id8">
-<h3>Exercise<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
+<section id="id4">
+<h3>Exercise<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
 <p>Write a function called <code class="docutils literal notranslate"><span class="pre">word_distance</span></code> that takes two words with the same length and returns the number of places where the two words differ.</p>
 <p>Hint: Use <code class="docutils literal notranslate"><span class="pre">zip</span></code> to loop through the corresponding letters of the words.</p>
 </section>
-<section id="id9">
-<h3>Exercise<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
+<section id="id5">
+<h3>Exercise<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
 <p>“Metathesis” is the transposition of letters in a word.
 Two words form a “metathesis pair” if you can transform one into the other by swapping two letters, like <code class="docutils literal notranslate"><span class="pre">converse</span></code> and <code class="docutils literal notranslate"><span class="pre">conserve</span></code>.
 Write a program that finds all of the metathesis pairs in the word list.</p>
@@ -1610,11 +1623,11 @@ Write a program that finds all of the metathesis pairs in the word list.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">Ask a virtual assistant</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#section-exercise-11">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Exercise</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Exercise</a></li>
 </ul>
 </li>
 </ul>

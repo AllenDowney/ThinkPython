@@ -170,6 +170,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="chap16.html">Classes and Objects</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Inheritance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chap18.html">Python Extras</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap19.html">Final thoughts</a></li>
 </ul>
 
     </div>
@@ -345,12 +346,12 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">Ask a Virtual Assistant</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Exercise</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Exercise</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Exercise</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Exercise</a></li>
 </ul>
 </li>
 </ul>
@@ -365,7 +366,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="inheritance">
-<span id="id1"></span><span id="chapter-inheritance"></span><h1>Inheritance<a class="headerlink" href="#inheritance" title="Permalink to this heading">#</a></h1>
+<span id="chapter-inheritance"></span><h1>Inheritance<a class="headerlink" href="#inheritance" title="Permalink to this heading">#</a></h1>
 <p>The language feature most often associated with object-oriented programming is <strong>inheritance</strong>.
 Inheritance is the ability to define a new class that is a modified version of an existing class.
 In this chapter I demonstrate inheritance using classes that represent playing cards, decks of cards, and poker hands.
@@ -682,7 +683,7 @@ Otherwise it invokes<code class="docutils literal notranslate"><span class="pre"
 </div>
 <p>Now suppose we want to compare two cards to see which is bigger.
 If we use one of the relational operators, we get a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code>.</p>
-<div class="cell docutils container">
+<div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">queen</span> <span class="o">&lt;</span> <span class="n">queen2</span>
 </pre></div>
@@ -865,7 +866,7 @@ Each iteration creates a new <code class="docutils literal notranslate"><span cl
 <p>It contains 52 cards, as intended.</p>
 </section>
 <section id="printing-the-deck">
-<span id="id2"></span><span id="section-print-deck"></span><h2>Printing the deck<a class="headerlink" href="#printing-the-deck" title="Permalink to this heading">#</a></h2>
+<span id="section-print-deck"></span><h2>Printing the deck<a class="headerlink" href="#printing-the-deck" title="Permalink to this heading">#</a></h2>
 <p>Here is a <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method for <code class="docutils literal notranslate"><span class="pre">Deck</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1299,7 +1300,7 @@ A way of using inheritance to create a new class that is a specialized version o
 </section>
 <section id="exercises">
 <h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h2>
-<div class="cell docutils container">
+<div class="cell tag_remove-print docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This cell tells Jupyter to provide detailed debugging information</span>
 <span class="c1"># when a runtime error occurs. Run it before working on the exercises.</span>
@@ -1363,8 +1364,8 @@ King of Hearts
 <p>Write a <code class="docutils literal notranslate"><span class="pre">Trick</span></code> method called <code class="docutils literal notranslate"><span class="pre">find_winner</span></code> that loops through the cards in the <code class="docutils literal notranslate"><span class="pre">Trick</span></code> and returns the index of the card that wins.
 In the previous example, the index of the winning card is <code class="docutils literal notranslate"><span class="pre">2</span></code>.</p>
 </section>
-<section id="id3">
-<h3>Exercise<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<section id="id1">
+<h3>Exercise<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
 <p>The next few exercises ask to you write functions that classify poker hands.
 If you are not familiar with poker, I’ll explain what you need to know.
 We’ll use the following class to represent poker hands.</p>
@@ -1404,20 +1405,20 @@ If you ask for code, you might want to provide the relevant class definitions as
 <p>In most varieties of poker, a hand contains either five or seven cards, but there are some exotic variations where a hand contains other numbers of cards.
 But regardless of how many cards there are in a hand, the only ones that count are the five that make the best hand.</p>
 </section>
-<section id="id4">
-<h3>Exercise<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<section id="id2">
+<h3>Exercise<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
 <p>Write a method called <code class="docutils literal notranslate"><span class="pre">has_straight</span></code> that checks whether a hand contains a straight, which is a set of five cards with consecutive ranks.
 For example, if a hand contains ranks <code class="docutils literal notranslate"><span class="pre">5</span></code>, <code class="docutils literal notranslate"><span class="pre">6</span></code>, <code class="docutils literal notranslate"><span class="pre">7</span></code>, <code class="docutils literal notranslate"><span class="pre">8</span></code>, and <code class="docutils literal notranslate"><span class="pre">9</span></code>, it contains a straight.</p>
 <p>An Ace can come before a two or after a King, so <code class="docutils literal notranslate"><span class="pre">Ace</span></code>, <code class="docutils literal notranslate"><span class="pre">2</span></code>, <code class="docutils literal notranslate"><span class="pre">3</span></code>, <code class="docutils literal notranslate"><span class="pre">4</span></code>, <code class="docutils literal notranslate"><span class="pre">5</span></code> is a straight and so it <code class="docutils literal notranslate"><span class="pre">10</span></code>, <code class="docutils literal notranslate"><span class="pre">Jack</span></code>, <code class="docutils literal notranslate"><span class="pre">Queen</span></code>, <code class="docutils literal notranslate"><span class="pre">King</span></code>, <code class="docutils literal notranslate"><span class="pre">Ace</span></code>.
 But a straight cannot “wrap around”, so <code class="docutils literal notranslate"><span class="pre">King</span></code>, <code class="docutils literal notranslate"><span class="pre">Ace</span></code>, <code class="docutils literal notranslate"><span class="pre">2</span></code>, <code class="docutils literal notranslate"><span class="pre">3</span></code>, <code class="docutils literal notranslate"><span class="pre">4</span></code> is not a straight.</p>
 </section>
-<section id="id5">
-<h3>Exercise<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<section id="id3">
+<h3>Exercise<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
 <p>A hand has a straight flush if it contains a set of five cards that are both a straight and a flush – that is, five cards of the same suit with consecutive ranks.
 Write a <code class="docutils literal notranslate"><span class="pre">PokerHand</span></code> method that checks whether a hand has a straight flush.</p>
 </section>
-<section id="id6">
-<h3>Exercise<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<section id="id4">
+<h3>Exercise<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
 <p>A poker hand has a pair if it contains two or more cards with the same rank.
 Write a <code class="docutils literal notranslate"><span class="pre">PokerHand</span></code> method that checks whether a hand contains a pair.</p>
 <p>You can use the following outline to get started.</p>
@@ -1478,13 +1479,13 @@ Write a <code class="docutils literal notranslate"><span class="pre">PokerHand</
 </div>
 </div>
 </section>
-<section id="id7">
-<h3>Exercise<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
+<section id="id5">
+<h3>Exercise<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
 <p>A hand has a full house if it contains three cards of one rank and two cards of another rank.
 Write a <code class="docutils literal notranslate"><span class="pre">PokerHand</span></code> method that checks whether a hand has a full house.</p>
 </section>
-<section id="id8">
-<h3>Exercise<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
+<section id="id6">
+<h3>Exercise<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
 <p>This exercise is a cautionary tale about a common error that can be difficult to debug.
 Consider the following class definition.</p>
 <div class="cell docutils container">
@@ -1663,12 +1664,12 @@ Then ask a virtual assistant, “What’s wrong with the following program?” a
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">Ask a Virtual Assistant</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Exercise</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Exercise</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Exercise</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Exercise</a></li>
 </ul>
 </li>
 </ul>
