@@ -12,8 +12,7 @@ For the third edition, the biggest changes are:
 
 * At the end of every chapter, there are suggestions for using tools like ChatGPT and Colab AI to learn more and to get help with the exercises.
 
-The book is scheduled to be published by O'Reilly Media in July 2024, so it is a work in progress.
-Starting in February 2024, I plan to release new chapters here, about one per week.
+The book is scheduled to be published by O'Reilly Media in June 2024, so it is a work in progress.
 
 [You can read the early release at O'Reilly Media](https://www.oreilly.com/library/view/think-python/9781098155421/)
 
@@ -85,6 +84,22 @@ Starting in February 2024, I plan to release new chapters here, about one per we
 ### Chapter 15: Classes and Methods
 
 * [Click here to run Chapter 15 on Colab](https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap15.ipynb)
+
+### Chapter 16: Classes and Objects
+
+* [Click here to run Chapter 16 on Colab](https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap16.ipynb)
+
+### Chapter 17: Inheritance
+
+* [Click here to run Chapter 17 on Colab](https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap17.ipynb)
+
+### Chapter 18: Python Extras
+
+* [Click here to run Chapter 18 on Colab](https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap18.ipynb)
+
+### Chapter 19: Final Thoughts
+
+* [Click here to run Chapter 19 on Colab](https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap19.ipynb)
 
 
 ## Resources for teachers
