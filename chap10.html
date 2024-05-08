@@ -344,10 +344,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-an-assistant">Ask an assistant</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Exercise</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Exercise</a></li>
 </ul>
 </li>
 </ul>
@@ -544,7 +544,7 @@ We can make an empty dictionary like this.</p>
 <p>It is often useful to make a copy before performing operations that modify dictionaries.</p>
 </section>
 <section id="the-in-operator">
-<span id="section-dictionary-in-operator"></span><h2>The in operator<a class="headerlink" href="#the-in-operator" title="Permalink to this heading">#</a></h2>
+<span id="id1"></span><span id="section-dictionary-in-operator"></span><h2>The in operator<a class="headerlink" href="#the-in-operator" title="Permalink to this heading">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">in</span></code> operator works on dictionaries, too; it tells you whether something appears as a <em>key</em> in the dictionary.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -870,7 +870,7 @@ That’s why keys have to be hashable, and why mutable types like lists aren’t
 But they <em>can</em> be used as values.</p>
 </section>
 <section id="accumulating-a-list">
-<span id="section-palindrome-list"></span><h2>Accumulating a list<a class="headerlink" href="#accumulating-a-list" title="Permalink to this heading">#</a></h2>
+<span id="id2"></span><span id="section-palindrome-list"></span><h2>Accumulating a list<a class="headerlink" href="#accumulating-a-list" title="Permalink to this heading">#</a></h2>
 <p>For many programming tasks, it is useful to loop through one list or dictionary while building another.
 As an example, we’ll loop through the words in <code class="docutils literal notranslate"><span class="pre">word_dict</span></code> and make a list of palindromes – that is, words that are spelled the same backward and forward, like “noon” and “rotator”.</p>
 <p>In the previous chapter, one of the exercises asked you to write a function that checks whether a word is a palindrome.
@@ -958,8 +958,8 @@ We can loop through <code class="docutils literal notranslate"><span class="pre"
 <p>Looping through a list like this, selecting some elements and omitting others, is called <strong>filtering</strong>.</p>
 </section>
 <section id="memos">
-<span id="section-memos"></span><h2>Memos<a class="headerlink" href="#memos" title="Permalink to this heading">#</a></h2>
-<p>If you ran the <code class="docutils literal notranslate"><span class="pre">fibonacci</span></code> function from <a class="reference internal" href="chap06.html#section-fibonacci"><span class="std std-ref">Chapter 6</span></a>, maybe you noticed that the bigger the argument you provide, the longer the function takes to run.</p>
+<span id="id3"></span><span id="section-memos"></span><h2>Memos<a class="headerlink" href="#memos" title="Permalink to this heading">#</a></h2>
+<p>If you ran the <code class="docutils literal notranslate"><span class="pre">fibonacci</span></code> function from <span class="xref myst">Chapter 6</span>, maybe you noticed that the bigger the argument you provide, the longer the function takes to run.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
@@ -1044,7 +1044,7 @@ check” because it detects results that are “insane”.</p>
 </li>
 </ol>
 <ol class="arabic" start="4">
-<li><p>Format the output: Formatting debugging output can make it easier to spot an error. We saw an example in <a class="reference internal" href="chap06.html#section-debugging-factorial"><span class="std std-ref">Chapter 6</span></a>. Another tool you might find useful is the <code class="docutils literal notranslate"><span class="pre">pprint</span></code> module, which provides a <code class="docutils literal notranslate"><span class="pre">pprint</span></code> function that displays built-in types in a more human-readable format (<code class="docutils literal notranslate"><span class="pre">pprint</span></code> stands for “pretty print”).</p>
+<li><p>Format the output: Formatting debugging output can make it easier to spot an error. We saw an example in <span class="xref myst">Chapter 6</span>. Another tool you might find useful is the <code class="docutils literal notranslate"><span class="pre">pprint</span></code> module, which provides a <code class="docutils literal notranslate"><span class="pre">pprint</span></code> function that displays built-in types in a more human-readable format (<code class="docutils literal notranslate"><span class="pre">pprint</span></code> stands for “pretty print”).</p>
 <p>Again, time you spend building scaffolding can reduce the time you spend debugging.</p>
 </li>
 </ol>
@@ -1092,7 +1092,7 @@ A computed value stored to avoid unnecessary future computation.</p>
 <section id="ask-an-assistant">
 <h3>Ask an assistant<a class="headerlink" href="#ask-an-assistant" title="Permalink to this heading">#</a></h3>
 <p>In this chapter, I said the keys in a dictionary have to be hashable and I gave a short explanation. If you would like more details, ask a virtual assistant, “Why do keys in Python dictionaries have to be hashable?”</p>
-<p>In <a class="reference internal" href="#section-dictionary-in-operator"><span class="std std-ref">a previous section</span></a>, we stored a list of words as keys in a dictionary so that we could use an efficient version of the <code class="docutils literal notranslate"><span class="pre">in</span></code> operator.
+<p>In <span class="xref myst">a previous section</span>, we stored a list of words as keys in a dictionary so that we could use an efficient version of the <code class="docutils literal notranslate"><span class="pre">in</span></code> operator.
 We could have done the same thing using a <code class="docutils literal notranslate"><span class="pre">set</span></code>, which is another built-in data type.
 Ask a virtual assistant, “How do I make a Python set from a list of strings and check whether a string is an element of the set?”</p>
 </section>
@@ -1137,14 +1137,14 @@ For example, here’s a dictionary that maps from the letters in a string to the
 <p>Use <code class="docutils literal notranslate"><span class="pre">get</span></code> to write a more concise version of <code class="docutils literal notranslate"><span class="pre">value_counts</span></code>.
 You should be able to eliminate the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement.</p>
 </section>
-<section id="id1">
-<h3>Exercise<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<section id="id4">
+<h3>Exercise<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
 <p>What is the longest word you can think of where each letter appears only once?
 Let’s see if we can find one longer than <code class="docutils literal notranslate"><span class="pre">unpredictably</span></code>.</p>
 <p>Write a function named <code class="docutils literal notranslate"><span class="pre">has_duplicates</span></code> that takes a sequence – like a list or string – as a parameter and returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if there is any element that appears in the sequence more than once.</p>
 </section>
-<section id="id2">
-<h3>Exercise<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<section id="id5">
+<h3>Exercise<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
 <p>Write function called <code class="docutils literal notranslate"><span class="pre">find_repeats</span></code> that takes a dictionary that maps from each key to a counter, like the result from <code class="docutils literal notranslate"><span class="pre">value_counts</span></code>.
 It should loop through the dictionary and return a list of keys that have counts greater than <code class="docutils literal notranslate"><span class="pre">1</span></code>.
 You can use the following outline to get started.</p>
@@ -1163,8 +1163,8 @@ You can use the following outline to get started.</p>
 </div>
 </div>
 </section>
-<section id="id3">
-<h3>Exercise<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<section id="id6">
+<h3>Exercise<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
 <p>Suppose you run <code class="docutils literal notranslate"><span class="pre">value_counts</span></code> with two different words and save the results in two dictionaries.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1179,8 +1179,8 @@ Write a function called <code class="docutils literal notranslate"><span class="
 <p>There are many ways to solve this problem.
 Once you have a working solution, consider asking a virtual assistant for different solutions.</p>
 </section>
-<section id="id4">
-<h3>Exercise<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<section id="id7">
+<h3>Exercise<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
 <p>A word is “interlocking” if we can split it into two words by taking alternating letters.
 For example, “schooled” is an interlocking word because it can be split into “shoe” and “cold”.</p>
 <p>To select alternating letters from a string, you can use a slice operator with three components that indicate where to start, where to stop, and the “step size” between the letters.</p>
@@ -1301,10 +1301,10 @@ For example, the following slice selects alternating letters, starting with the 
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-an-assistant">Ask an assistant</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Exercise</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Exercise</a></li>
 </ul>
 </li>
 </ul>

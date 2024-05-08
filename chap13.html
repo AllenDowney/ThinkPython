@@ -343,8 +343,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">Ask a virtual assistant</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Exercise</a></li>
 </ul>
 </li>
 </ul>
@@ -520,7 +520,7 @@ The data in your camel-spotting book might look like this.</p>
 </div>
 </div>
 </div>
-<p>To write this data to a file, you can use the <code class="docutils literal notranslate"><span class="pre">write</span></code> method, which we saw in <a class="reference internal" href="chap08.html#section-writing-files"><span class="std std-ref">Chapter 8</span></a>.
+<p>To write this data to a file, you can use the <code class="docutils literal notranslate"><span class="pre">write</span></code> method, which we saw in <span class="xref myst">Chapter 8</span>.
 The argument of <code class="docutils literal notranslate"><span class="pre">write</span></code> has to be a string, so if we want to put other values in a file, we have to convert them to strings.
 The easiest way to do that is with the built-in function <code class="docutils literal notranslate"><span class="pre">str</span></code>.</p>
 <p>Here’s what that looks like:</p>
@@ -896,10 +896,10 @@ For example, we can use the bracket operator to add an item, which is a mapping 
 The suffix <code class="docutils literal notranslate"><span class="pre">dir</span></code> stands for “directory”, but it has nothing to do with the directories we’ve been working with that contain files.</p>
 </section>
 <section id="storing-data-structures">
-<span id="section-storing-data-structure"></span><h2>Storing data structures<a class="headerlink" href="#storing-data-structures" title="Permalink to this heading">#</a></h2>
+<span id="id1"></span><span id="section-storing-data-structure"></span><h2>Storing data structures<a class="headerlink" href="#storing-data-structures" title="Permalink to this heading">#</a></h2>
 <p>In the previous example, the keys and values in the shelf are strings.
 But we can also use a shelf to contain data structures like lists and dictionaries.</p>
-<p>As an example, let’s revisit the anagram example from an exercise in <a class="reference internal" href="chap11.html#section-exercise-11"><span class="std std-ref">Chapter 11</span></a>.
+<p>As an example, let’s revisit the anagram example from an exercise in <span class="xref myst">Chapter 11</span>.
 Recall that we made a dictionary that maps from a sorted string of letters to the
 list of words that can be spelled with those letters.
 For example, the key <code class="docutils literal notranslate"><span class="pre">'opst'</span></code> maps to the list <code class="docutils literal notranslate"><span class="pre">['opts',</span> <span class="pre">'post',</span> <span class="pre">'pots',</span> <span class="pre">'spot',</span> <span class="pre">'stop',</span> <span class="pre">'tops']</span></code>.</p>
@@ -1015,7 +1015,7 @@ If we want to update the shelf, we have to read the old value, update it, and th
 <p>As an exercise, you can finish this example by reading the word list and storing all of the anagrams in a shelf.</p>
 </section>
 <section id="checking-for-equivalent-files">
-<span id="section-md5-digest"></span><h2>Checking for equivalent files<a class="headerlink" href="#checking-for-equivalent-files" title="Permalink to this heading">#</a></h2>
+<span id="id2"></span><span id="section-md5-digest"></span><h2>Checking for equivalent files<a class="headerlink" href="#checking-for-equivalent-files" title="Permalink to this heading">#</a></h2>
 <p>Now let’s get back to the goal of this chapter: searching for different files that contain the same data.
 One way to check is to read the contents of both files and compare.</p>
 <p>If the files contain images, we have to open them with mode <code class="docutils literal notranslate"><span class="pre">rb</span></code>, where <code class="docutils literal notranslate"><span class="pre">r</span></code> means we want to read the contents and <code class="docutils literal notranslate"><span class="pre">b</span></code> indicates <strong>binary mode</strong>.
@@ -1140,7 +1140,7 @@ We’ll start by using <code class="docutils literal notranslate"><span class="p
 The last step is to search a directory and find all of the images files.</p>
 </section>
 <section id="walking-directories">
-<span id="section-walking-directories"></span><h2>Walking directories<a class="headerlink" href="#walking-directories" title="Permalink to this heading">#</a></h2>
+<span id="id3"></span><span id="section-walking-directories"></span><h2>Walking directories<a class="headerlink" href="#walking-directories" title="Permalink to this heading">#</a></h2>
 <p>The following function takes as an argument the directory we want to search.
 It uses <code class="docutils literal notranslate"><span class="pre">listdir</span></code> to loop through the contents of the directory.
 When it finds a file, it prints its complete path.
@@ -1332,21 +1332,21 @@ It should read the first file and write the contents into the second file (creat
 If the pattern string appears anywhere in the contents, it should be replaced with the replacement string.</p>
 <p>To test your function, read <code class="docutils literal notranslate"><span class="pre">photos/notes.txt</span></code> and replace <code class="docutils literal notranslate"><span class="pre">photos</span></code> with <code class="docutils literal notranslate"><span class="pre">images</span></code>.</p>
 </section>
-<section id="id1">
-<h3>Exercise<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
-<p>In <a class="reference internal" href="#section-storing-data-structure"><span class="std std-ref">a previous section</span></a>, we used the <code class="docutils literal notranslate"><span class="pre">shelve</span></code> module to make a key-value store that maps from a sorted string of letters to a list of anagrams.
+<section id="id4">
+<h3>Exercise<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<p>In <span class="xref myst">a previous section</span>, we used the <code class="docutils literal notranslate"><span class="pre">shelve</span></code> module to make a key-value store that maps from a sorted string of letters to a list of anagrams.
 To finish the example, write a function called <code class="docutils literal notranslate"><span class="pre">add_word</span></code> that takes as arguments a string and a shelf object.</p>
 <p>It should sort the letters of the word to make a key, then check whether the key is already in the shelf. If not, it should make a list that contains the new word and add it to the shelf. If so, it should append the new word to the existing value.</p>
 </section>
-<section id="id2">
-<h3>Exercise<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<section id="id5">
+<h3>Exercise<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
 <p>In a large collection of files, there may be more than one copy of the same file, stored in different directories or with different file names.
 The goal of this exercise is to search for duplicates.
 As an example, we’ll work with image files in the <code class="docutils literal notranslate"><span class="pre">photos</span></code> directory.</p>
 <p>Here’s how it will work:</p>
 <ul class="simple">
-<li><p>We’ll use the <code class="docutils literal notranslate"><span class="pre">walk</span></code> function from <a class="reference internal" href="#section-walking-directories"><span class="std std-ref">Walking directories</span></a> to search this directory for files that end with one of the extensions in <code class="docutils literal notranslate"><span class="pre">config['extensions']</span></code>.</p></li>
-<li><p>For each file, we’ll use <code class="docutils literal notranslate"><span class="pre">md5_digest</span></code> from <a class="reference internal" href="#section-md5-digest"><span class="std std-ref">Checking for equivalent files</span></a> to compute a digest of the contents.</p></li>
+<li><p>We’ll use the <code class="docutils literal notranslate"><span class="pre">walk</span></code> function from <span class="xref myst"></span> to search this directory for files that end with one of the extensions in <code class="docutils literal notranslate"><span class="pre">config['extensions']</span></code>.</p></li>
+<li><p>For each file, we’ll use <code class="docutils literal notranslate"><span class="pre">md5_digest</span></code> from <span class="xref myst"></span> to compute a digest of the contents.</p></li>
 <li><p>Using a shelf, we’ll make a mapping from each digest to a list of paths with that digest.</p></li>
 <li><p>Finally, we’ll search the shelf for any digests that map to multiple files.</p></li>
 <li><p>If we find any, we’ll use <code class="docutils literal notranslate"><span class="pre">same_contents</span></code> to confirm that the files contain the same data.</p></li>
@@ -1476,8 +1476,8 @@ Use <code class="docutils literal notranslate"><span class="pre">same_contents</
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">Ask a virtual assistant</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Exercise</a></li>
 </ul>
 </li>
 </ul>

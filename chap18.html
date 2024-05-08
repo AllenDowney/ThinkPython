@@ -498,7 +498,7 @@ For example, the <code class="docutils literal notranslate"><span class="pre">-<
 </div>
 </div>
 </div>
-<p>In <a class="reference internal" href="chap12.html#section-dictionary-subtraction"><span class="std std-ref">Chapter 12</span></a> we used dictionaries to find the words that appear in a document but not in a word list.
+<p>In <span class="xref myst">Chapter 12</span> we used dictionaries to find the words that appear in a document but not in a word list.
 We used the following function, which takes two dictionaries and returns a new dictionary that contains only the keys from the first that don’t appear in the second.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -712,7 +712,7 @@ So if we modify <code class="docutils literal notranslate"><span class="pre">t</
 </div>
 <p>If you are making a dictionary of lists, you can often write simpler
 code using <code class="docutils literal notranslate"><span class="pre">defaultdict</span></code>.</p>
-<p>In one of the exercises in <a class="reference internal" href="chap11.html#chapter-tuples"><span class="std std-ref">Chapter 11</span></a>, I made a dictionary that maps from a sorted string of letters to the list of words that can be spelled with those letters.
+<p>In one of the exercises in <span class="xref myst">Chapter 11</span>, I made a dictionary that maps from a sorted string of letters to the list of words that can be spelled with those letters.
 For example, the string <code class="docutils literal notranslate"><span class="pre">'opst'</span></code> maps to the list <code class="docutils literal notranslate"><span class="pre">['opts',</span> <span class="pre">'post',</span> <span class="pre">'pots',</span> <span class="pre">'spot',</span> <span class="pre">'stop',</span> <span class="pre">'tops']</span></code>.
 Here’s the original code.</p>
 <div class="cell docutils container">
@@ -884,7 +884,7 @@ For example, suppose we have a string that contains the title of a movie, and we
 The expression inside the brackets specifies the elements of the list, and the <code class="docutils literal notranslate"><span class="pre">for</span></code> clause indicates what sequence we are looping through.</p>
 <p>The syntax of a list comprehension might seem strange, because the loop variable – <code class="docutils literal notranslate"><span class="pre">word</span></code> in this example – appears in the expression before we get to its definition.
 But you get used to it.</p>
-<p>As another example, in <a class="reference internal" href="chap09.html#section-word-list"><span class="std std-ref">Chapter 9</span></a> we used this loop to read words from a file and append them to a list.</p>
+<p>As another example, in <span class="xref myst">Chapter 9</span> we used this loop to read words from a file and append them to a list.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">word_list</span> <span class="o">=</span> <span class="p">[]</span>
@@ -905,7 +905,7 @@ But you get used to it.</p>
 </div>
 </div>
 <p>A list comprehension can also have an <code class="docutils literal notranslate"><span class="pre">if</span></code> clause that determines which elements are included in the list.
-For example, here’s a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop we used in <a class="reference internal" href="chap10.html#section-palindrome-list"><span class="std std-ref">Chapter 10</span></a> to make a list of only the words in <code class="docutils literal notranslate"><span class="pre">word_list</span></code> that are palindromes.</p>
+For example, here’s a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop we used in <span class="xref myst">Chapter 10</span> to make a list of only the words in <code class="docutils literal notranslate"><span class="pre">word_list</span></code> that are palindromes.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">palindromes</span> <span class="o">=</span> <span class="p">[]</span>
@@ -992,7 +992,7 @@ Or consider writing and debugging a <code class="docutils literal notranslate"><
 </div>
 </div>
 <p>That example isn’t very useful because it does the same thing as the <code class="docutils literal notranslate"><span class="pre">in</span></code> operator.
-But we could use <code class="docutils literal notranslate"><span class="pre">any</span></code> to write concise solutions to some of the exercises in <a class="reference internal" href="chap07.html#chapter-search"><span class="std std-ref">Chapter 7</span></a>. For example, we can write <code class="docutils literal notranslate"><span class="pre">uses_none</span></code> like this.</p>
+But we could use <code class="docutils literal notranslate"><span class="pre">any</span></code> to write concise solutions to some of the exercises in <span class="xref myst">Chapter 7</span>. For example, we can write <code class="docutils literal notranslate"><span class="pre">uses_none</span></code> like this.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">uses_none</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">forbidden</span><span class="p">):</span>
@@ -1020,7 +1020,7 @@ We can use it to write a concise version of <code class="docutils literal notran
 <section id="named-tuples">
 <h2>Named tuples<a class="headerlink" href="#named-tuples" title="Permalink to this heading">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">collections</span></code> module provides a function called <code class="docutils literal notranslate"><span class="pre">namedtuple</span></code> that can be used to create simple classes.
-For example, the <code class="docutils literal notranslate"><span class="pre">Point</span></code> object in <a class="reference internal" href="chap16.html#section-create-point"><span class="std std-ref">Chapter 16</span></a> has only two attributes, <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>.
+For example, the <code class="docutils literal notranslate"><span class="pre">Point</span></code> object in <span class="xref myst">Chapter 16</span> has only two attributes, <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>.
 Here’s how we defined it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1160,7 +1160,7 @@ In that case, you can define a new class that inherits from the named tuple.</p>
 </section>
 <section id="packing-keyword-arguments">
 <h2>Packing keyword arguments<a class="headerlink" href="#packing-keyword-arguments" title="Permalink to this heading">#</a></h2>
-<p>In <a class="reference internal" href="chap11.html#section-argument-pack"><span class="std std-ref">Chapter 11</span></a>, we wrote a function that packs its arguments into a tuple.</p>
+<p>In <span class="xref myst">Chapter 11</span>, we wrote a function that packs its arguments into a tuple.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">mean</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
@@ -1490,7 +1490,7 @@ For example, if we have tiles with the letters <code class="docutils literal not
 </section>
 <section id="id2">
 <h3>Exercise<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
-<p>In one of the exercises from <a class="reference internal" href="chap17.html#chapter-inheritance"><span class="std std-ref">Chapter 17</span></a>, my solution to <code class="docutils literal notranslate"><span class="pre">has_straightflush</span></code> uses the following method, which partitions a <code class="docutils literal notranslate"><span class="pre">PokerHand</span></code> into a list of four hands, where each hand contains cards of the same suit.</p>
+<p>In one of the exercises from <span class="xref myst">Chapter 17</span>, my solution to <code class="docutils literal notranslate"><span class="pre">has_straightflush</span></code> uses the following method, which partitions a <code class="docutils literal notranslate"><span class="pre">PokerHand</span></code> into a list of four hands, where each hand contains cards of the same suit.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">partition</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -1555,7 +1555,7 @@ recursively.</p>
 </div>
 <p>Rewrite the body of the function using nested conditional expressions.</p>
 <p>This function is not very efficient because it ends up computing the same values over and over.
-Make it more efficient by memoizing it, as described in <a class="reference internal" href="chap10.html#section-memos"><span class="std std-ref">Chapter 10</span></a>.</p>
+Make it more efficient by memoizing it, as described in <span class="xref myst">Chapter 10</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">binomial_coeff</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>    <span class="c1"># should be 210</span>
@@ -1571,7 +1571,7 @@ Make it more efficient by memoizing it, as described in <a class="reference inte
 </section>
 <section id="id5">
 <h3>Exercise<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
-<p>Here’s the <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method from the <code class="docutils literal notranslate"><span class="pre">Deck</span></code> class in <a class="reference internal" href="chap17.html#section-print-deck"><span class="std std-ref">Chapter 17</span></a>.</p>
+<p>Here’s the <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method from the <code class="docutils literal notranslate"><span class="pre">Deck</span></code> class in <span class="xref myst">Chapter 17</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">add_method_to</span> Deck

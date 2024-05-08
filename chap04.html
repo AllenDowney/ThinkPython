@@ -345,10 +345,10 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Exercise</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Exercise</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">Ask a virtual assistant</a></li>
 </ul>
 </li>
@@ -368,7 +368,7 @@ document.write(`
 <p>This chapter introduces a module called <code class="docutils literal notranslate"><span class="pre">jupyturtle</span></code>, which allows you to create simple drawings by giving instructions to an imaginary turtle.
 We will use this module to write functions that draw squares, polygons, and circles – and to demonstrate <strong>interface design</strong>, which is a way of designing functions that work together.</p>
 <section id="the-jupyturtle-module">
-<span id="section-turtle-module"></span><h2>The jupyturtle module<a class="headerlink" href="#the-jupyturtle-module" title="Permalink to this heading">#</a></h2>
+<span id="id1"></span><span id="section-turtle-module"></span><h2>The jupyturtle module<a class="headerlink" href="#the-jupyturtle-module" title="Permalink to this heading">#</a></h2>
 <p>To use the <code class="docutils literal notranslate"><span class="pre">jupyturtle</span></code> module, we can import it like this.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -546,7 +546,7 @@ Before you go on, see if you can modify the previous program to make a square.</
 </div>
 </section>
 <section id="encapsulation-and-generalization">
-<span id="section-encapsulation"></span><h2>Encapsulation and generalization<a class="headerlink" href="#encapsulation-and-generalization" title="Permalink to this heading">#</a></h2>
+<span id="id2"></span><span id="section-encapsulation"></span><h2>Encapsulation and generalization<a class="headerlink" href="#encapsulation-and-generalization" title="Permalink to this heading">#</a></h2>
 <p>Let’s take the square-drawing code from the previous section and put it in a function called <code class="docutils literal notranslate"><span class="pre">square</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1108,7 +1108,7 @@ This approach lets you design as you go along.</p>
 <p>These two functions have the same interface – they take the same parameters and do the same thing – but they have different implementations.</p>
 </section>
 <section id="docstrings">
-<span id="section-docstring"></span><h2>Docstrings<a class="headerlink" href="#docstrings" title="Permalink to this heading">#</a></h2>
+<span id="id3"></span><span id="section-docstring"></span><h2>Docstrings<a class="headerlink" href="#docstrings" title="Permalink to this heading">#</a></h2>
 <p>A <strong>docstring</strong> is a string at the beginning of a function that explains the interface (“doc” is short for “documentation”).
 Here is an example:</p>
 <div class="cell docutils container">
@@ -1239,8 +1239,8 @@ For example, here’s a rectangle that’s <code class="docutils literal notrans
 </div>
 </section>
 </section>
-<section id="id1">
-<h2>Exercise<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<section id="id4">
+<h2>Exercise<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
 <p>Write a function called <code class="docutils literal notranslate"><span class="pre">rhombus</span></code> that draws a rhombus with a given side length and a given interior angle. For example, here’s a rhombus with side length <code class="docutils literal notranslate"><span class="pre">50</span></code> and an interior angle of <code class="docutils literal notranslate"><span class="pre">60</span></code> degrees.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1275,8 +1275,8 @@ For example, here’s a rectangle that’s <code class="docutils literal notrans
 
 </svg></div></div>
 </div>
-<section id="id2">
-<h3>Exercise<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<section id="id5">
+<h3>Exercise<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
 <p>Now write a more general function called <code class="docutils literal notranslate"><span class="pre">parallelogram</span></code> that draws a quadrilateral with parallel sides. Then rewrite <code class="docutils literal notranslate"><span class="pre">rectangle</span></code> and <code class="docutils literal notranslate"><span class="pre">rhombus</span></code> to use <code class="docutils literal notranslate"><span class="pre">parallelogram</span></code>.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
@@ -1316,8 +1316,8 @@ For example, here’s a rectangle that’s <code class="docutils literal notrans
 </svg></div></div>
 </div>
 </section>
-<section id="id3">
-<h3>Exercise<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<section id="id6">
+<h3>Exercise<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
 <p>Write an appropriately general set of functions that can draw shapes like this.</p>
 <p>Hint: Write a function called <code class="docutils literal notranslate"><span class="pre">triangle</span></code> that draws one triangular segment, and then a function called <code class="docutils literal notranslate"><span class="pre">draw_pie</span></code> that uses <code class="docutils literal notranslate"><span class="pre">triangle</span></code>.</p>
 <div class="cell tag_remove-input docutils container">
@@ -1442,8 +1442,8 @@ For example, here’s a rectangle that’s <code class="docutils literal notrans
 </svg></div></div>
 </div>
 </section>
-<section id="id4">
-<h3>Exercise<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<section id="id7">
+<h3>Exercise<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
 <p>Write an appropriately general set of functions that can draw flowers like this.</p>
 <p>Hint: Use <code class="docutils literal notranslate"><span class="pre">arc</span></code> to write a function called <code class="docutils literal notranslate"><span class="pre">petal</span></code> that draws one flower petal.</p>
 <div class="cell tag_remove-input docutils container">
@@ -3497,10 +3497,10 @@ If you didn’t get what you wanted, try modifying the prompt.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Exercise</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Exercise</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">Ask a virtual assistant</a></li>
 </ul>
 </li>

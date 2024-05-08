@@ -347,9 +347,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">Ask a virtual assistant</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Exercise</a></li>
 </ul>
 </li>
 </ul>
@@ -653,7 +653,7 @@ Either way, we never get to the third <code class="docutils literal notranslate"
 In general, dead code doesn’t do any harm, but it often indicates a misunderstanding, and it might be confusing to someone trying to understand the program.</p>
 </section>
 <section id="incremental-development">
-<span id="section-incremental"></span><h2>Incremental development<a class="headerlink" href="#incremental-development" title="Permalink to this heading">#</a></h2>
+<span id="id1"></span><span id="section-incremental"></span><h2>Incremental development<a class="headerlink" href="#incremental-development" title="Permalink to this heading">#</a></h2>
 <p>As you write larger functions, you might find yourself spending more
 time debugging.
 To deal with increasingly complex programs, you might want to try <strong>incremental development</strong>, which is a way of adding and testing only a small amount of code at a time.</p>
@@ -1006,7 +1006,7 @@ The recursive definition of factorial implies that you can, by multiplying by <s
 <p>Of course, it’s a bit strange to assume that the function works correctly when you haven’t finished writing it, but that’s why it’s called a leap of faith!</p>
 </section>
 <section id="fibonacci">
-<span id="section-fibonacci"></span><h2>Fibonacci<a class="headerlink" href="#fibonacci" title="Permalink to this heading">#</a></h2>
+<span id="id2"></span><span id="section-fibonacci"></span><h2>Fibonacci<a class="headerlink" href="#fibonacci" title="Permalink to this heading">#</a></h2>
 <p>After <code class="docutils literal notranslate"><span class="pre">factorial</span></code>, the most common example of a recursive function is <code class="docutils literal notranslate"><span class="pre">fibonacci</span></code>, which has the following definition:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
@@ -1031,7 +1031,7 @@ The recursive definition of factorial implies that you can, by multiplying by <s
 <p>If you try to follow the flow of execution here, even for small values of <span class="math notranslate nohighlight">\(n\)</span>, your head explodes.
 But according to the leap of faith, if you assume that the two recursive calls work correctly, you can be confident that the last return statement is correct.</p>
 <p>As an aside, this way of computing Fibonacci numbers is very inefficient.
-In <a class="reference internal" href="chap10.html#section-memos"><span class="std std-ref">Chapter 10</span></a> I’ll explain why and suggest a way to improve it.</p>
+In <span class="xref myst">Chapter 10</span> I’ll explain why and suggest a way to improve it.</p>
 </section>
 <section id="checking-types">
 <h2>Checking types<a class="headerlink" href="#checking-types" title="Permalink to this heading">#</a></h2>
@@ -1131,7 +1131,7 @@ If so, it displays an error message and returns <code class="docutils literal no
 Checking the parameters of a function to make sure they have the correct types and values is called <strong>input validation</strong>.</p>
 </section>
 <section id="debugging">
-<span id="section-debugging-factorial"></span><h2>Debugging<a class="headerlink" href="#debugging" title="Permalink to this heading">#</a></h2>
+<span id="id3"></span><span id="section-debugging-factorial"></span><h2>Debugging<a class="headerlink" href="#debugging" title="Permalink to this heading">#</a></h2>
 <p>Breaking a large program into smaller functions creates natural checkpoints for debugging.
 If a function is not working, there are three possibilities to consider:</p>
 <ul class="simple">
@@ -1274,13 +1274,13 @@ Checking the parameters of a function to make sure they have the correct types a
 <p>Even if you can write the function correctly on the first try, start with a function that always returns <code class="docutils literal notranslate"><span class="pre">0</span></code> and practice making small changes, testing as you go.
 When you are done, the function should only return a value – it should not display anything.</p>
 </section>
-<section id="id1">
-<h3>Exercise<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<section id="id4">
+<h3>Exercise<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
 <p>Write a boolean function, <code class="docutils literal notranslate"><span class="pre">is_between(x,</span> <span class="pre">y,</span> <span class="pre">z)</span></code>, that returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if <span class="math notranslate nohighlight">\(x &lt; y &lt; z\)</span> or if
 <span class="math notranslate nohighlight">\(z &lt; y &lt; x\)</span>, and<code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise.</p>
 </section>
-<section id="id2">
-<h3>Exercise<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<section id="id5">
+<h3>Exercise<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
 <p>The Ackermann function, <span class="math notranslate nohighlight">\(A(m, n)\)</span>, is defined:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
@@ -1293,8 +1293,8 @@ A(m-1, A(m, n-1)) &amp; \mbox{if } m &gt; 0 \mbox{ and } n &gt; 0.
 <p>Write a function named <code class="docutils literal notranslate"><span class="pre">ackermann</span></code> that evaluates the Ackermann function.
 What happens if you call <code class="docutils literal notranslate"><span class="pre">ackermann(5,</span> <span class="pre">5)</span></code>?</p>
 </section>
-<section id="id3">
-<h3>Exercise<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<section id="id6">
+<h3>Exercise<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
 <p>The greatest common divisor (GCD) of <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> is the largest number
 that divides both of them with no remainder.</p>
 <p>One way to find the GCD of two numbers is based on the observation that
@@ -1387,9 +1387,9 @@ returns their greatest common divisor.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">Ask a virtual assistant</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Exercise</a></li>
 </ul>
 </li>
 </ul>

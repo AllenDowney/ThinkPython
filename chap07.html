@@ -342,12 +342,12 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">Ask a virtual assistant</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Exercise</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Exercise</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Exercise</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Exercise</a></li>
 </ul>
 </li>
 </ul>
@@ -362,7 +362,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="iteration-and-search">
-<span id="chapter-search"></span><h1>Iteration and Search<a class="headerlink" href="#iteration-and-search" title="Permalink to this heading">#</a></h1>
+<span id="id1"></span><span id="chapter-search"></span><h1>Iteration and Search<a class="headerlink" href="#iteration-and-search" title="Permalink to this heading">#</a></h1>
 <p>In 1939 Ernest Vincent Wright published a 50,000 word novel called <em>Gadsby</em> that does not contain the letter “e”. Since “e” is the most common letter in English, writing even a few words without using it is difficult.
 To get a sense of how difficult, in this chapter we’ll compute the fraction of English words have at least one “e”.</p>
 <p>For that, we’ll use <code class="docutils literal notranslate"><span class="pre">for</span></code> statements to loop through the letters in a string and the words in a file, and we’ll update variables in a loop to count the number of words that contain an “e”.
@@ -864,7 +864,7 @@ In the exercises at the end of this chapter, you’ll write more functions that 
 </section>
 <section id="doctest">
 <h2>Doctest<a class="headerlink" href="#doctest" title="Permalink to this heading">#</a></h2>
-<p>In <a class="reference internal" href="chap04.html#section-docstring"><span class="std std-ref">Chapter 4</span></a> we used a docstring to document a function – that is, to explain what it does.
+<p>In <span class="xref myst">Chapter 4</span> we used a docstring to document a function – that is, to explain what it does.
 It is also possible to use a docstring to <em>test</em> a function.
 Here’s a version of <code class="docutils literal notranslate"><span class="pre">uses_any</span></code> with a docstring that includes tests.</p>
 <div class="cell docutils container">
@@ -1045,8 +1045,8 @@ Fill in the function so it passes these tests, and add at least one more doctest
 </div>
 </div>
 </section>
-<section id="id1">
-<h3>Exercise<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<section id="id2">
+<h3>Exercise<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
 <p>Write a function called <code class="docutils literal notranslate"><span class="pre">uses_only</span></code> that takes a word and a string of letters, and that returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if the word contains only letters in the string.</p>
 <p>Here’s an outline of the function that includes two doctests.
 Fill in the function so it passes these tests, and add at least one more doctest.</p>
@@ -1066,8 +1066,8 @@ Fill in the function so it passes these tests, and add at least one more doctest
 </div>
 </div>
 </section>
-<section id="id2">
-<h3>Exercise<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<section id="id3">
+<h3>Exercise<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
 <p>Write a function called <code class="docutils literal notranslate"><span class="pre">uses_all</span></code> that takes a word and a string of letters, and that returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if the word contains all of the letters in the string at least once.</p>
 <p>Here’s an outline of the function that includes two doctests.
 Fill in the function so it passes these tests, and add at least one more doctest.</p>
@@ -1094,8 +1094,8 @@ Fill in the function so it passes these tests, and add at least one more doctest
 </div>
 </div>
 </section>
-<section id="id3">
-<h3>Exercise<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<section id="id4">
+<h3>Exercise<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
 <p><em>The New York Times</em> publishes a daily puzzle called “Spelling Bee” that challenges readers to spell as many words as possible using only seven letters, where one of the letters is required.
 The words must have at least four letters.</p>
 <p>For example, on the day I wrote this, the letters were <code class="docutils literal notranslate"><span class="pre">ACDLORT</span></code>, with <code class="docutils literal notranslate"><span class="pre">R</span></code> as the required letter.
@@ -1154,8 +1154,8 @@ You can assume that the word is acceptable.</p>
 </div>
 </div>
 </section>
-<section id="id4">
-<h3>Exercise<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<section id="id5">
+<h3>Exercise<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
 <p>You might have noticed that the functions you wrote in the previous exercises had a lot in common.
 In fact, they are so similar you can often use one function to write another.</p>
 <p>For example, if a word uses none of a set forbidden letters, that means it doesn’t use any. So we can write a version of <code class="docutils literal notranslate"><span class="pre">uses_none</span></code> like this.</p>
@@ -1179,13 +1179,13 @@ In fact, they are so similar you can often use one function to write another.</p
 <p>There is also a similarity between <code class="docutils literal notranslate"><span class="pre">uses_only</span></code> and <code class="docutils literal notranslate"><span class="pre">uses_all</span></code> that you can take advantage of.
 If you have a working version of <code class="docutils literal notranslate"><span class="pre">uses_only</span></code>, see if you can write a version of <code class="docutils literal notranslate"><span class="pre">uses_all</span></code> that calls <code class="docutils literal notranslate"><span class="pre">uses_only</span></code>.</p>
 </section>
-<section id="id5">
-<h3>Exercise<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<section id="id6">
+<h3>Exercise<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
 <p>If you got stuck on the previous question, try asking a virtual assistant, “Given a function, <code class="docutils literal notranslate"><span class="pre">uses_only</span></code>, which takes two strings and checks that the first uses only the letters in the second, use it to write <code class="docutils literal notranslate"><span class="pre">uses_all</span></code>, which takes two strings and checks whether the first uses all the letters in the second, allowing repeats.”</p>
 <p>Use <code class="docutils literal notranslate"><span class="pre">run_doctests</span></code> to check the answer.</p>
 </section>
-<section id="id6">
-<h3>Exercise<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<section id="id7">
+<h3>Exercise<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
 <p>Now let’s see if we can write <code class="docutils literal notranslate"><span class="pre">uses_all</span></code> based on <code class="docutils literal notranslate"><span class="pre">uses_any</span></code>.</p>
 <p>Ask a virtual assistant, “Given a function, <code class="docutils literal notranslate"><span class="pre">uses_any</span></code>, which takes two strings and checks whether the first uses any of the letters in the second, can you use it to write <code class="docutils literal notranslate"><span class="pre">uses_all</span></code>, which takes two strings and checks whether the first uses all the letters in the second, allowing repeats.”</p>
 <p>If it says it can, be sure to test the result!</p>
@@ -1271,12 +1271,12 @@ If you have a working version of <code class="docutils literal notranslate"><spa
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">Ask a virtual assistant</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Exercise</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Exercise</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Exercise</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Exercise</a></li>
 </ul>
 </li>
 </ul>
