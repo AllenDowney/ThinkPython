@@ -417,7 +417,7 @@ To create a <code class="docutils literal notranslate"><span class="pre">Time</s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Time object at 0x7f7a700f5060&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Time object at 0x7fe904edded0&gt;
 </pre></div>
 </div>
 </div>
@@ -441,7 +441,7 @@ We can create attributes using dot notation.</p>
 <p>The following diagram shows the state of <code class="docutils literal notranslate"><span class="pre">lunch</span></code> and its attributes after these assignments.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="_images/770ceeb2462a7ba44933c1b10f11ff0e2ff61c58050f517b653c73af6426146c.png" src="_images/770ceeb2462a7ba44933c1b10f11ff0e2ff61c58050f517b653c73af6426146c.png" />
+<img alt="_images/79b2dbc2a66bedacd471711c8756ef7145d45b5c0d6850b443c583976fa3b41f.png" src="_images/79b2dbc2a66bedacd471711c8756ef7145d45b5c0d6850b443c583976fa3b41f.png" />
 </div>
 </div>
 <p>The variable <code class="docutils literal notranslate"><span class="pre">lunch</span></code> refers to a <code class="docutils literal notranslate"><span class="pre">Time</span></code> object, which contains three attributes.
@@ -623,7 +623,7 @@ What time will the movie end?</p>
 <p>The following stack diagram shows the state of the program just before <code class="docutils literal notranslate"><span class="pre">increment_time</span></code> modifies the object.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="_images/f78317014c48f96ac4c6195dcfbda320d5e15904334bb3e2987ecb27a19eccb2.png" src="_images/f78317014c48f96ac4c6195dcfbda320d5e15904334bb3e2987ecb27a19eccb2.png" />
+<img alt="_images/ec55f16021188c53e3422f59671281ee881bbcc825c63d318957ce747f8e27e1.png" src="_images/ec55f16021188c53e3422f59671281ee881bbcc825c63d318957ce747f8e27e1.png" />
 </div>
 </div>
 <p>Inside the function, <code class="docutils literal notranslate"><span class="pre">time</span></code> is an alias for <code class="docutils literal notranslate"><span class="pre">start</span></code>, so when <code class="docutils literal notranslate"><span class="pre">time</span></code> is modified, <code class="docutils literal notranslate"><span class="pre">start</span></code> changes.</p>
@@ -1119,6 +1119,11 @@ A way of developing programs with more careful planning that prototype and patch
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Exception reporting mode: Verbose
+</pre></div>
+</div>
+</div>
 </div>
 <section id="ask-a-virtual-assistant">
 <h3>Ask a virtual assistant<a class="headerlink" href="#ask-a-virtual-assistant" title="Permalink to this heading">#</a></h3>
@@ -1157,9 +1162,9 @@ In the meantime, see if you can solve the following exercises using only the fea
 <span class="sd">    &gt;&gt;&gt; is_after(make_time(3, 2, 1), make_time(3, 2, 0))</span>
 <span class="sd">    True</span>
 <span class="sd">    &gt;&gt;&gt; is_after(make_time(3, 2, 1), make_time(3, 2, 1))</span>
-<span class="sd">    True</span>
-<span class="sd">    &gt;&gt;&gt; is_after(make_time(11, 12, 0), make_time(9, 40, 0))</span>
 <span class="sd">    False</span>
+<span class="sd">    &gt;&gt;&gt; is_after(make_time(11, 12, 0), make_time(9, 40, 0))</span>
+<span class="sd">    True</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="kc">None</span>
 </pre></div>
