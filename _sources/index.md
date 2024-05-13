@@ -104,9 +104,9 @@ You can pre-order now from
 
 If you are teaching with this book, here are some resources you might find useful.
 
-* You can download notebooks with solutions [COMING SOON]
+* You can download notebooks with solutions from [this GitHub repository](https://github.com/AllenDowney/ThinkPythonSolutions/tree/v3/soln).
 
-* Quizzes for each chapter, and a summative quiz for the whole book, are available [COMING SOON]
+* Quizzes for each chapter, and a summative quiz for the whole book, are available on request.
 
 * *Teaching and Learning with Jupyter* is an online book with suggestions for using Jupyter effectively in the classroom. You can [read the book here](https://jupyter4edu.github.io/jupyter-edu-book).
 
