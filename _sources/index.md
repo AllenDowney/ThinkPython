@@ -12,11 +12,9 @@ For the third edition, the biggest changes are:
 
 * At the end of every chapter, there are suggestions for using tools like ChatGPT and Colab AI to learn more and to get help with the exercises.
 
-The book is scheduled to be published by O'Reilly Media in June 2024, so it is a work in progress.
-
-[You can read the early release at O'Reilly Media](https://www.oreilly.com/library/view/think-python/9781098155421/)
-
-[You can preorder the third edition on Amazon](https://www.amazon.com/_/dp/1098155432?smid=ATVPDKIKX0DER&_encoding=UTF8&tag=oreilly20-20&_encoding=UTF8&tag=greenteapre01-20&linkCode=ur2&linkId=e2a529f94920295d27ec8a06e757dc7c&camp=1789&creative=9325)
+The book is scheduled to be published by O'Reilly Media in June 2024.
+You can pre-order now from
+[O'Reilly Media](https://www.oreilly.com/library/view/think-python/9781098155421/) or [Amazon](https://www.amazon.com/_/dp/1098155432?smid=ATVPDKIKX0DER&_encoding=UTF8&tag=oreilly20-20&_encoding=UTF8&tag=greenteapre01-20&linkCode=ur2&linkId=e2a529f94920295d27ec8a06e757dc7c&camp=1789&creative=9325) or, if you would like to support local bookstores, [Bookshop.org](https://bookshop.org/a/98697/9781098155438).
 
 
 ## The notebooks
