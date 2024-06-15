@@ -392,8 +392,8 @@ It provides a function called <code class="docutils literal notranslate"><span c
 </div>
 <p>The result in this example is the home directory of a user named <code class="docutils literal notranslate"><span class="pre">dinsdale</span></code>.
 A string like <code class="docutils literal notranslate"><span class="pre">'/home/dinsdale'</span></code> that identifies a file or directory is called a <strong>path</strong>.</p>
-<p>A simple filename, like <code class="docutils literal notranslate"><span class="pre">memo.txt</span></code> is also considered a path, but it is a <strong>relative path</strong> because it specifies a file name relative to the current directory.
-In this example, the current directory is <code class="docutils literal notranslate"><span class="pre">/home/dinsdale</span></code>, so <code class="docutils literal notranslate"><span class="pre">memo.txt</span></code> is equivalent to the complete path <code class="docutils literal notranslate"><span class="pre">/home/dinsdale/memo.txt</span></code>.</p>
+<p>A simple filename like <code class="docutils literal notranslate"><span class="pre">'memo.txt'</span></code> is also considered a path, but it is a <strong>relative path</strong> because it specifies a file name relative to the current directory.
+In this example, the current directory is <code class="docutils literal notranslate"><span class="pre">/home/dinsdale</span></code>, so <code class="docutils literal notranslate"><span class="pre">'memo.txt'</span></code> is equivalent to the complete path <code class="docutils literal notranslate"><span class="pre">'/home/dinsdale/memo.txt'</span></code>.</p>
 <p>A path that begins with <code class="docutils literal notranslate"><span class="pre">/</span></code> does not depend on the current directory – it is called an <strong>absolute path</strong>.
 To find the absolute path to a file, you can use <code class="docutils literal notranslate"><span class="pre">abspath</span></code>.</p>
 <div class="cell docutils container">
@@ -892,8 +892,8 @@ For example, we can use the bracket operator to add an item, which is a mapping 
 </div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">config.dat</span></code> contains the data we just stored.
-<code class="docutils literal notranslate"><span class="pre">config.dir</span></code> contains information about the organization of the database that makes it more efficient to access.
+<p><code class="docutils literal notranslate"><span class="pre">captions.dat</span></code> contains the data we just stored.
+<code class="docutils literal notranslate"><span class="pre">captions.dir</span></code> contains information about the organization of the database that makes it more efficient to access.
 The suffix <code class="docutils literal notranslate"><span class="pre">dir</span></code> stands for “directory”, but it has nothing to do with the directories we’ve been working with that contain files.</p>
 </section>
 <section id="storing-data-structures">
@@ -1019,13 +1019,13 @@ If we want to update the shelf, we have to read the old value, update it, and th
 <span id="section-md5-digest"></span><h2>Checking for equivalent files<a class="headerlink" href="#checking-for-equivalent-files" title="Permalink to this heading">#</a></h2>
 <p>Now let’s get back to the goal of this chapter: searching for different files that contain the same data.
 One way to check is to read the contents of both files and compare.</p>
-<p>If the files contain images, we have to open them with mode <code class="docutils literal notranslate"><span class="pre">rb</span></code>, where <code class="docutils literal notranslate"><span class="pre">r</span></code> means we want to read the contents and <code class="docutils literal notranslate"><span class="pre">b</span></code> indicates <strong>binary mode</strong>.
+<p>If the files contain images, we have to open them with mode <code class="docutils literal notranslate"><span class="pre">'rb'</span></code>, where <code class="docutils literal notranslate"><span class="pre">'r'</span></code> means we want to read the contents and <code class="docutils literal notranslate"><span class="pre">'b'</span></code> indicates <strong>binary mode</strong>.
 In binary mode, the contents are not interpreted as text – they are treated as a sequence of bytes.</p>
 <p>Here’s an example that opens and reads an image file.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">path1</span> <span class="o">=</span> <span class="s1">&#39;photos/jan-2023/photo1.jpg&#39;</span>
-<span class="n">data1</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">path1</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="n">data1</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">path1</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 <span class="nb">type</span><span class="p">(</span><span class="n">data1</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1058,7 +1058,7 @@ But if we read the contents from a second file, we can use the <code class="docu
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">same_contents</span><span class="p">(</span><span class="n">path1</span><span class="p">,</span> <span class="n">path2</span><span class="p">):</span>
-    <span class="n">data1</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">path1</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="n">data1</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">path1</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
     <span class="n">data2</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">path2</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
     <span class="k">return</span> <span class="n">data1</span> <span class="o">==</span> <span class="n">data2</span>
 </pre></div>
@@ -1114,7 +1114,7 @@ We’ll start by using <code class="docutils literal notranslate"><span class="p
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">md5_digest</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
-    <span class="n">data</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
     <span class="n">md5_hash</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">md5</span><span class="p">()</span>
     <span class="n">md5_hash</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
     <span class="n">digest</span> <span class="o">=</span> <span class="n">md5_hash</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
@@ -1331,7 +1331,7 @@ Here are some questions you can ask a virtual assistant to get more information.
 <p>Write a function called <code class="docutils literal notranslate"><span class="pre">replace_all</span></code> that takes as arguments a pattern string, a replacement string, and two filenames.
 It should read the first file and write the contents into the second file (creating it if necessary).
 If the pattern string appears anywhere in the contents, it should be replaced with the replacement string.</p>
-<p>To test your function, read <code class="docutils literal notranslate"><span class="pre">photos/notes.txt</span></code> and replace <code class="docutils literal notranslate"><span class="pre">photos</span></code> with <code class="docutils literal notranslate"><span class="pre">images</span></code>.</p>
+<p>To test your function, read the file <code class="docutils literal notranslate"><span class="pre">photos/notes.txt</span></code>, replace <code class="docutils literal notranslate"><span class="pre">'photos'</span></code> with <code class="docutils literal notranslate"><span class="pre">'images'</span></code>, and write the result to the file <code class="docutils literal notranslate"><span class="pre">photos/new_notes.txt</span></code>.</p>
 </section>
 <section id="id1">
 <h3>Exercise<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
@@ -1363,7 +1363,7 @@ As an example, we’ll work with image files in the <code class="docutils litera
 <li><p>Write a function called <code class="docutils literal notranslate"><span class="pre">process_path</span></code> that takes a path, uses <code class="docutils literal notranslate"><span class="pre">is_image</span></code> to check whether it’s an image file, and uses <code class="docutils literal notranslate"><span class="pre">add_path</span></code> to add it to the shelf.</p></li>
 </ol>
 <p>When everything is working, you can use the following program to create the shelf, search the <code class="docutils literal notranslate"><span class="pre">photos</span></code> directory and add paths to the shelf, and then check whether there are multiple files with the same digest.</p>
-<div class="cell docutils container">
+<div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">shelve</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;photos/digests&#39;</span><span class="p">,</span> <span class="s1">&#39;n&#39;</span><span class="p">)</span>
 <span class="n">walk</span><span class="p">(</span><span class="s1">&#39;photos&#39;</span><span class="p">,</span> <span class="n">process_path</span><span class="p">)</span>
@@ -1374,26 +1374,9 @@ As an example, we’ll work with image files in the <code class="docutils litera
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;photos/mar-2023/photo2.jpg&#39;, &#39;photos/jan-2023/photo1.jpg&#39;]
-</pre></div>
-</div>
-</div>
 </div>
 <p>You should find one pair of files that have the same digest.
 Use <code class="docutils literal notranslate"><span class="pre">same_contents</span></code> to check whether they contain the same data.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">same_contents</span><span class="p">(</span><span class="n">path1</span><span class="p">,</span> <span class="n">path2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-</pre></div>
-</div>
-</div>
-</div>
 </section>
 </section>
 </section>

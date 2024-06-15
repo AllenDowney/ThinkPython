@@ -721,10 +721,7 @@ A frame is a box with the name of a function on the outside and the parameters a
 <p>Here’s the stack diagram for the previous example.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3.8, 2.91, 1.15, 2.66]
-</pre></div>
-</div>
-<img alt="_images/8de34bce42fbf74cc8a5fd9039005a09c39c1125757f812597b9334441f64abe.png" src="_images/8de34bce42fbf74cc8a5fd9039005a09c39c1125757f812597b9334441f64abe.png" />
+<img alt="_images/4203fc81cc8d5aa986a00dafa5e0a563fbc55ef01723367c46fda7d7b1dee11c.png" src="_images/4203fc81cc8d5aa986a00dafa5e0a563fbc55ef01723367c46fda7d7b1dee11c.png" />
 </div>
 </div>
 <p>The frames are arranged in a stack that indicates which function called
@@ -736,7 +733,7 @@ If you are curious, ask a virtual assistant, “What are the parameters of the P
 <section id="tracebacks">
 <h2>Tracebacks<a class="headerlink" href="#tracebacks" title="Permalink to this heading">#</a></h2>
 <p>When a runtime error occurs in a function, Python displays the name of the function that was running, the name of the function that called it, and so on, up the stack.
-To see an example, I’ll define a version of <code class="docutils literal notranslate"><span class="pre">print_twice</span></code> that contains an error—it tries to print <code class="docutils literal notranslate"><span class="pre">cat</span></code>, which is a local variable in another function.</p>
+To see an example, I’ll define a version of <code class="docutils literal notranslate"><span class="pre">print_twice</span></code> that contains an error – it tries to print <code class="docutils literal notranslate"><span class="pre">cat</span></code>, which is a local variable in another function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_twice</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
@@ -757,7 +754,7 @@ To see an example, I’ll define a version of <code class="docutils literal notr
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Exception reporting mode: Plain
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Exception reporting mode: Verbose
 </pre></div>
 </div>
 </div>
@@ -769,15 +766,23 @@ To see an example, I’ll define a version of <code class="docutils literal notr
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">27</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">cat_twice</span><span class="p">(</span><span class="n">line1</span><span class="p">,</span> <span class="n">line2</span><span class="p">)</span>
+        <span class="n">line1</span> <span class="o">=</span> <span class="s1">&#39;Always look on the &#39;</span>
+        <span class="n">line2</span> <span class="o">=</span> <span class="s1">&#39;bright side of life.&#39;</span>
 
-  <span class="n">File</span> <span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">:</span><span class="mi">2</span>
+<span class="nn">Cell In[20], line 3,</span> in <span class="ni">cat_twice</span><span class="nt">(part1=&#39;Always look on the &#39;, part2=&#39;bright side of life.&#39;)</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span> <span class="nf">cat_twice</span><span class="p">(</span><span class="n">part1</span><span class="p">,</span> <span class="n">part2</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="n">cat</span> <span class="o">=</span> <span class="n">part1</span> <span class="o">+</span> <span class="n">part2</span>
+<span class="ne">----&gt; </span><span class="mi">3</span>     <span class="n">print_twice</span><span class="p">(</span><span class="n">cat</span><span class="p">)</span>
+        <span class="n">cat</span> <span class="o">=</span> <span class="s1">&#39;Always look on the bright side of life.&#39;</span>
 
-  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">21</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span> <span class="ow">in</span> <span class="n">cat_twice</span>
-    <span class="n">print_twice</span><span class="p">(</span><span class="n">cat</span><span class="p">)</span>
-
-  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">26</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span> <span class="ow">in</span> <span class="n">print_twice</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">cat</span><span class="p">)</span>            <span class="c1"># NameError</span>
+<span class="nn">Cell In[25], line 2,</span> in <span class="ni">print_twice</span><span class="nt">(string=&#39;Always look on the bright side of life.&#39;)</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span> <span class="nf">print_twice</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
+<span class="ne">----&gt; </span><span class="mi">2</span>     <span class="nb">print</span><span class="p">(</span><span class="n">cat</span><span class="p">)</span>            <span class="c1"># NameError</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="nb">print</span><span class="p">(</span><span class="n">cat</span><span class="p">)</span>
 
 <span class="ne">NameError</span>: name &#39;cat&#39; is not defined
 </pre></div>
@@ -857,6 +862,11 @@ A list of the functions that are executing, printed when an exception occurs.</p
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Exception reporting mode: Verbose
+</pre></div>
+</div>
+</div>
 </div>
 <section id="ask-a-virtual-assistant">
 <h3>Ask a virtual assistant<a class="headerlink" href="#ask-a-virtual-assistant" title="Permalink to this heading">#</a></h3>
@@ -905,7 +915,7 @@ If you are curious about the history of this great debate, ask a virtual assista
 </section>
 <section id="id1">
 <h3>Exercise<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
-<p>Write a function called <code class="docutils literal notranslate"><span class="pre">triangle</span></code> that takes a string and an integer and draws a pyramid with the given height, made up using copies of the string. Here’s an example of a pyramid with 4 levels, using the string <code class="docutils literal notranslate"><span class="pre">'L'</span></code>.</p>
+<p>Write a function called <code class="docutils literal notranslate"><span class="pre">triangle</span></code> that takes a string and an integer and draws a pyramid with the given height, made up using copies of the string. Here’s an example of a pyramid with <code class="docutils literal notranslate"><span class="pre">5</span></code> levels, using the string <code class="docutils literal notranslate"><span class="pre">'L'</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">triangle</span><span class="p">(</span><span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
@@ -925,7 +935,7 @@ LLLLL
 </section>
 <section id="id2">
 <h3>Exercise<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
-<p>Write a function called <code class="docutils literal notranslate"><span class="pre">rectangle</span></code> that takes a string and two integers and draws a rectangle with the given height and width, made up using copies of the string. Here’s an example of a rectangle that’s 5 by 4, made up of the string <code class="docutils literal notranslate"><span class="pre">'H'</span></code>.</p>
+<p>Write a function called <code class="docutils literal notranslate"><span class="pre">rectangle</span></code> that takes a string and two integers and draws a rectangle with the given width and height, made up using copies of the string. Here’s an example of a rectangle with width <code class="docutils literal notranslate"><span class="pre">5</span></code> and height <code class="docutils literal notranslate"><span class="pre">4</span></code>, made up of the string <code class="docutils literal notranslate"><span class="pre">'H'</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rectangle</span><span class="p">(</span><span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>

@@ -536,7 +536,7 @@ For example, the bracket operator indexes an element.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;reversed at 0x7f56c0072110&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;reversed at 0x7f114c1217b0&gt;
 </pre></div>
 </div>
 </div>
@@ -964,7 +964,7 @@ We’ll use <code class="docutils literal notranslate"><span class="pre">zip</sp
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;zip at 0x7f3e9c74f0c0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;zip at 0x7f1136705b80&gt;
 </pre></div>
 </div>
 </div>
@@ -1060,7 +1060,7 @@ For example, here’s how we can make a dictionary that maps from each letter to
 </div>
 </div>
 </div>
-<p>In this mapping, the index of <code class="docutils literal notranslate"><span class="pre">a</span></code> is <code class="docutils literal notranslate"><span class="pre">0</span></code> and the index of <code class="docutils literal notranslate"><span class="pre">z</span></code> is <code class="docutils literal notranslate"><span class="pre">25</span></code>.</p>
+<p>In this mapping, the index of <code class="docutils literal notranslate"><span class="pre">'a'</span></code> is <code class="docutils literal notranslate"><span class="pre">0</span></code> and the index of <code class="docutils literal notranslate"><span class="pre">'z'</span></code> is <code class="docutils literal notranslate"><span class="pre">25</span></code>.</p>
 <p>If you need to loop through the elements of a sequence and their indices, you can use the built-in function <code class="docutils literal notranslate"><span class="pre">enumerate</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1069,7 +1069,7 @@ For example, here’s how we can make a dictionary that maps from each letter to
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;enumerate at 0x7f3e9c620cc0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;enumerate at 0x7f114c127640&gt;
 </pre></div>
 </div>
 </div>
@@ -1138,7 +1138,7 @@ In the previous chapter, we wrote <code class="docutils literal notranslate"><sp
 </div>
 </div>
 </div>
-<p>Here is the result for the string <code class="docutils literal notranslate"><span class="pre">banana</span></code>.</p>
+<p>Here is the result for the string <code class="docutils literal notranslate"><span class="pre">'banana'</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">counter</span> <span class="o">=</span> <span class="n">value_counts</span><span class="p">(</span><span class="s1">&#39;banana&#39;</span><span class="p">)</span>
@@ -1152,7 +1152,7 @@ In the previous chapter, we wrote <code class="docutils literal notranslate"><sp
 </div>
 </div>
 </div>
-<p>With only three items, we can easily see that the most frequent letter is <code class="docutils literal notranslate"><span class="pre">a</span></code>, which appears three times.
+<p>With only three items, we can easily see that the most frequent letter is <code class="docutils literal notranslate"><span class="pre">'a'</span></code>, which appears three times.
 But if there were more items, it would be useful to sort them automatically.</p>
 <p>We can get the items from <code class="docutils literal notranslate"><span class="pre">counter</span></code> like this.</p>
 <div class="cell docutils container">
@@ -1257,7 +1257,7 @@ As an example, let’s count the letters in <code class="docutils literal notran
 </div>
 </div>
 </div>
-<p>If we invert this dictionary, the result should be <code class="docutils literal notranslate"><span class="pre">{1:</span> <span class="pre">['p',</span> <span class="pre">'a',</span> <span class="pre">'o',</span> <span class="pre">'t'],</span> <span class="pre">2:</span> <span class="pre">['r']}</span></code>, which indicates that the letters that appear once are <code class="docutils literal notranslate"><span class="pre">p</span></code>, <code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">o</span></code>, and <code class="docutils literal notranslate"><span class="pre">t</span></code>, and the letter than appears twice is <code class="docutils literal notranslate"><span class="pre">2</span></code>.</p>
+<p>If we invert this dictionary, the result should be <code class="docutils literal notranslate"><span class="pre">{1:</span> <span class="pre">['p',</span> <span class="pre">'a',</span> <span class="pre">'o',</span> <span class="pre">'t'],</span> <span class="pre">2:</span> <span class="pre">['r']}</span></code>, which indicates that the letters that appear once are <code class="docutils literal notranslate"><span class="pre">'p'</span></code>, <code class="docutils literal notranslate"><span class="pre">'a'</span></code>, <code class="docutils literal notranslate"><span class="pre">'o'</span></code>, and <code class="docutils literal notranslate"><span class="pre">'t'</span></code>, and the letter than appears twice is <code class="docutils literal notranslate"><span class="pre">'r'</span></code>.</p>
 <p>The following function takes a dictionary and returns its inverse as a new dictionary.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1412,6 +1412,11 @@ A collection of values, organized to perform certain operations efficiently.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Exception reporting mode: Verbose
+</pre></div>
+</div>
+</div>
 </div>
 <section id="ask-a-virtual-assistant">
 <h3>Ask a virtual assistant<a class="headerlink" href="#ask-a-virtual-assistant" title="Permalink to this heading">#</a></h3>
@@ -1453,7 +1458,14 @@ But that is not always true.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>UsageError: Cell magic `%%expect` not found.
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">76</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="n">t</span><span class="p">:</span> <span class="s1">&#39;this tuple contains two lists&#39;</span><span class="p">}</span>
+        <span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="s1">&#39;c&#39;</span><span class="p">}</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
+
+<span class="ne">TypeError</span>: unhashable type: &#39;list&#39;
 </pre></div>
 </div>
 </div>
@@ -1472,7 +1484,7 @@ But that is not always true.</p>
 </div>
 </div>
 </div>
-<p>For example, the index of <code class="docutils literal notranslate"><span class="pre">a</span></code> is <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
+<p>For example, the index of <code class="docutils literal notranslate"><span class="pre">'a'</span></code> is <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">letter_map</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span>
@@ -1486,7 +1498,7 @@ But that is not always true.</p>
 </div>
 </div>
 <p>To go in the other direction, we can use list indexing.
-For example, the letter at index <code class="docutils literal notranslate"><span class="pre">1</span></code> is <code class="docutils literal notranslate"><span class="pre">b</span></code>.</p>
+For example, the letter at index <code class="docutils literal notranslate"><span class="pre">1</span></code> is <code class="docutils literal notranslate"><span class="pre">'b'</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">letters</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
@@ -1501,10 +1513,10 @@ For example, the letter at index <code class="docutils literal notranslate"><spa
 </div>
 <p>We can use <code class="docutils literal notranslate"><span class="pre">letter_map</span></code> and <code class="docutils literal notranslate"><span class="pre">letters</span></code> to encode and decode words using a Caesar cipher.</p>
 <p>A Caesar cipher is a weak form of encryption that involves shifting each letter
-by a fixed number of places in the alphabet, wrapping around to the beginning if necessary. For example, <code class="docutils literal notranslate"><span class="pre">a</span></code> shifted by 2 is <code class="docutils literal notranslate"><span class="pre">c</span></code> and <code class="docutils literal notranslate"><span class="pre">z</span></code> shifted by 1 is <code class="docutils literal notranslate"><span class="pre">a</span></code>.</p>
+by a fixed number of places in the alphabet, wrapping around to the beginning if necessary. For example, <code class="docutils literal notranslate"><span class="pre">'a'</span></code> shifted by 2 is <code class="docutils literal notranslate"><span class="pre">'c'</span></code> and <code class="docutils literal notranslate"><span class="pre">'z'</span></code> shifted by 1 is <code class="docutils literal notranslate"><span class="pre">'a'</span></code>.</p>
 <p>Write a function called <code class="docutils literal notranslate"><span class="pre">shift_word</span></code> that takes as parameters a string and an integer, and returns a new string that contains the letters from the string shifted by the given number of places.</p>
 <p>To test your function, confirm that “cheer” shifted by 7 is “jolly” and “melon” shifted by 16 is “cubed”.</p>
-<p>Hints: Use the modulus operator to wrap around from <code class="docutils literal notranslate"><span class="pre">z</span></code> back to <code class="docutils literal notranslate"><span class="pre">a</span></code>.
+<p>Hints: Use the modulus operator to wrap around from <code class="docutils literal notranslate"><span class="pre">'z'</span></code> back to <code class="docutils literal notranslate"><span class="pre">'a'</span></code>.
 Loop through the letters of the word, shift each one, and append the result to a list of letters.
 Then use <code class="docutils literal notranslate"><span class="pre">join</span></code> to concatenate the letters into a string.</p>
 </section>

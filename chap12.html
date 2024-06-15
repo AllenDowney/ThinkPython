@@ -447,8 +447,7 @@ And other words include punctuation like periods, exclamation points, and quotat
 </div>
 </div>
 <p>Notice that <code class="docutils literal notranslate"><span class="pre">split_line</span></code> only replaces dashes, not hyphens.
-We’ll deal with hyphens later.</p>
-<p>Here’s an example.</p>
+Here’s an example.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">split_line</span><span class="p">(</span><span class="s1">&#39;coolness—frightened&#39;</span><span class="p">)</span>
@@ -479,8 +478,8 @@ Given a letter, it returns a string with information about what category the let
 </div>
 </div>
 </div>
-<p>The category string of <code class="docutils literal notranslate"><span class="pre">A</span></code> is <code class="docutils literal notranslate"><span class="pre">Lu</span></code> – the <code class="docutils literal notranslate"><span class="pre">L</span></code> means it is a letter and the <code class="docutils literal notranslate"><span class="pre">u</span></code> means it is uppercase.</p>
-<p>The category string of <code class="docutils literal notranslate"><span class="pre">.</span></code> is <code class="docutils literal notranslate"><span class="pre">Po</span></code> – the <code class="docutils literal notranslate"><span class="pre">P</span></code> means it is punctuation, the <code class="docutils literal notranslate"><span class="pre">o</span></code> means its subcategory is “other”.</p>
+<p>The category string of <code class="docutils literal notranslate"><span class="pre">'A'</span></code> is <code class="docutils literal notranslate"><span class="pre">'Lu'</span></code> – the <code class="docutils literal notranslate"><span class="pre">'L'</span></code> means it is a letter and the <code class="docutils literal notranslate"><span class="pre">'u'</span></code> means it is uppercase.</p>
+<p>The category string of <code class="docutils literal notranslate"><span class="pre">'.'</span></code> is <code class="docutils literal notranslate"><span class="pre">'Po'</span></code> – the <code class="docutils literal notranslate"><span class="pre">'P'</span></code> means it is punctuation and the <code class="docutils literal notranslate"><span class="pre">'o'</span></code> means its subcategory is “other”.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unicodedata</span><span class="o">.</span><span class="n">category</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
@@ -493,7 +492,7 @@ Given a letter, it returns a string with information about what category the let
 </div>
 </div>
 </div>
-<p>We can find the punctuation marks in the book by checking for characters with categories that begin with <code class="docutils literal notranslate"><span class="pre">P</span></code>.
+<p>We can find the punctuation marks in the book by checking for characters with categories that begin with <code class="docutils literal notranslate"><span class="pre">'P'</span></code>.
 The following loop stores the unique punctuation marks in a dictionary.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -811,7 +810,7 @@ We can do that by looping through the items and making a list of words with freq
 </div>
 </div>
 <p>Most of them are valid words that are not in the word list.
-But <code class="docutils literal notranslate"><span class="pre">reindue</span></code> appears to be a misspelling of <code class="docutils literal notranslate"><span class="pre">reinduce</span></code>, so at least we found one legitimate error.</p>
+But <code class="docutils literal notranslate"><span class="pre">'reindue'</span></code> appears to be a misspelling of <code class="docutils literal notranslate"><span class="pre">'reinduce'</span></code>, so at least we found one legitimate error.</p>
 </section>
 <section id="random-numbers">
 <h2>Random numbers<a class="headerlink" href="#random-numbers" title="Permalink to this heading">#</a></h2>
@@ -1214,8 +1213,8 @@ And we’ll use the following function to process the words one at a time.</p>
 </div>
 </div>
 </div>
-<p>The word <code class="docutils literal notranslate"><span class="pre">half</span></code> can be followed by <code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">not</span></code>, or <code class="docutils literal notranslate"><span class="pre">the</span></code>.
-The word <code class="docutils literal notranslate"><span class="pre">a</span></code> can be followed by <code class="docutils literal notranslate"><span class="pre">bee</span></code> or <code class="docutils literal notranslate"><span class="pre">vis</span></code>.
+<p>The word <code class="docutils literal notranslate"><span class="pre">'half'</span></code> can be followed by <code class="docutils literal notranslate"><span class="pre">'a'</span></code>, <code class="docutils literal notranslate"><span class="pre">'not'</span></code>, or <code class="docutils literal notranslate"><span class="pre">'the'</span></code>.
+The word <code class="docutils literal notranslate"><span class="pre">'a'</span></code> can be followed by <code class="docutils literal notranslate"><span class="pre">'bee'</span></code> or <code class="docutils literal notranslate"><span class="pre">'vis'</span></code>.
 Most of the other words appear only once, so they are followed by only a single word.</p>
 <p>Now let’s analyze the book.</p>
 <div class="cell docutils container">
@@ -1244,7 +1243,7 @@ Most of the other words appear only once, so they are followed by only a single 
 </div>
 </div>
 </div>
-<p>In this list of successors, notice that the word <code class="docutils literal notranslate"><span class="pre">to</span></code> appears three times – the other successors only appear once.</p>
+<p>In this list of successors, notice that the word <code class="docutils literal notranslate"><span class="pre">'to'</span></code> appears three times – the other successors only appear once.</p>
 </section>
 <section id="generating-text">
 <h2>Generating text<a class="headerlink" href="#generating-text" title="Permalink to this heading">#</a></h2>
@@ -1255,7 +1254,7 @@ Here’s how it works:</p>
 <li><p>Then, using the chosen word, we look up its possible successors, and choose one at random.</p></li>
 </ul>
 <p>We can repeat this process to generate as many words as we want.
-As an example, let’s start with the word <code class="docutils literal notranslate"><span class="pre">although</span></code>.
+As an example, let’s start with the word <code class="docutils literal notranslate"><span class="pre">'although'</span></code>.
 Here are the words that can follow it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

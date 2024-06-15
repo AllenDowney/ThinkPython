@@ -379,7 +379,7 @@ The ranks are Ace, 2, 3, 4, 5, 6, 7, 8, 9, 10, Jack, Queen, and King.
 Depending on which game you are playing, an Ace can be higher than King or lower than 2.</p>
 <p>If we want to define a new object to represent a playing card, it is obvious what the attributes should be: <code class="docutils literal notranslate"><span class="pre">rank</span></code> and <code class="docutils literal notranslate"><span class="pre">suit</span></code>.
 It is less obvious what type the attributes should be.
-One possibility is to use strings containing words like <code class="docutils literal notranslate"><span class="pre">'Spade'</span></code> for suits and <code class="docutils literal notranslate"><span class="pre">'Queen'</span></code> for ranks.
+One possibility is to use strings like <code class="docutils literal notranslate"><span class="pre">'Spade'</span></code> for suits and <code class="docutils literal notranslate"><span class="pre">'Queen'</span></code> for ranks.
 A problem with this implementation is that it would not be easy to compare cards to see which had a higher rank or suit.</p>
 <p>An alternative is to use integers to <strong>encode</strong> the ranks and suits.
 In this context, “encode” means that we are going to define a mapping between numbers and suits, or between numbers and ranks.
@@ -601,7 +601,7 @@ To save space, I didn’t draw the contents of <code class="docutils literal not
 </div>
 </div>
 </div>
-<p>They don’t, so it returns false.
+<p>They don’t, so it returns <code class="docutils literal notranslate"><span class="pre">False</span></code>.
 We can change this behavior by defining a special method called <code class="docutils literal notranslate"><span class="pre">__eq__</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

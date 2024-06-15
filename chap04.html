@@ -1056,7 +1056,7 @@ Sometimes refactoring is a sign that you have learned something.</p>
 We can use a stack diagram to show this sequence of function calls and the parameters for each one.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="_images/92e303702d06597847739633fef20d2b08ccd373273752d5cbf8c1c93eaeb26d.png" src="_images/92e303702d06597847739633fef20d2b08ccd373273752d5cbf8c1c93eaeb26d.png" />
+<img alt="_images/59257b8247a80bf28afcd9a47269dd05934cfa39f63183b798c002de8852e170.png" src="_images/59257b8247a80bf28afcd9a47269dd05934cfa39f63183b798c002de8852e170.png" />
 </div>
 </div>
 <p>Notice that the value of <code class="docutils literal notranslate"><span class="pre">angle</span></code> in <code class="docutils literal notranslate"><span class="pre">polyline</span></code> is different from the value of <code class="docutils literal notranslate"><span class="pre">angle</span></code> in <code class="docutils literal notranslate"><span class="pre">arc</span></code>.
@@ -1243,18 +1243,6 @@ For example, here’s a rectangle that’s <code class="docutils literal notrans
 <section id="id1">
 <h2>Exercise<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
 <p>Write a function called <code class="docutils literal notranslate"><span class="pre">rhombus</span></code> that draws a rhombus with a given side length and a given interior angle. For example, here’s a rhombus with side length <code class="docutils literal notranslate"><span class="pre">50</span></code> and an interior angle of <code class="docutils literal notranslate"><span class="pre">60</span></code> degrees.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">rhombus</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">angle</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
-        <span class="n">forward</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
-        <span class="n">left</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
-        <span class="n">forward</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
-        <span class="n">left</span><span class="p">(</span><span class="mi">180</span><span class="o">-</span><span class="n">angle</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><svg width="300" height="150">

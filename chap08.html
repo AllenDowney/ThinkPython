@@ -410,7 +410,7 @@ An index is an offset from the beginning of the string, so the offset of the fir
 </div>
 </div>
 </div>
-<p>You can think of <code class="docutils literal notranslate"><span class="pre">b</span></code> as the 0th letter of <code class="docutils literal notranslate"><span class="pre">banana</span></code> – pronounced “zero-eth”.</p>
+<p>You can think of <code class="docutils literal notranslate"><span class="pre">'b'</span></code> as the 0th letter of <code class="docutils literal notranslate"><span class="pre">'banana'</span></code> – pronounced “zero-eth”.</p>
 <p>The index in brackets can be a variable.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -728,7 +728,7 @@ As an example, we’ll work with the text of <em>Dracula</em>, a novel by Bram S
 </div>
 </div>
 <p>In addition to the text of the book, this file contains a section at the beginning with information about the book and a section at the end with information about the license.
-Before we process the text, we can remove this extra material by finding the special lines at the beginning and end that begin with <code class="docutils literal notranslate"><span class="pre">***</span></code>.</p>
+Before we process the text, we can remove this extra material by finding the special lines at the beginning and end that begin with <code class="docutils literal notranslate"><span class="pre">'***'</span></code>.</p>
 <p>The following function takes a line and checks whether it is one of the special lines.
 It uses the <code class="docutils literal notranslate"><span class="pre">startswith</span></code> method, which checks whether a string starts with a given sequence of characters.</p>
 <div class="cell docutils container">
@@ -766,7 +766,7 @@ And, to write a new file, we can open it for writing.</p>
 </div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">open</span></code> takes an optional parameters that specifies the “mode” – in this example, <code class="docutils literal notranslate"><span class="pre">w</span></code> indicates that we’re opening the file for writing.
+<p><code class="docutils literal notranslate"><span class="pre">open</span></code> takes an optional parameters that specifies the “mode” – in this example, <code class="docutils literal notranslate"><span class="pre">'w'</span></code> indicates that we’re opening the file for writing.
 If the file doesn’t exist, it will be created; if it already exists, the contents will be replaced.</p>
 <p>As a first step, we’ll loop through the file until we find the first special line.</p>
 <div class="cell docutils container">
@@ -908,7 +908,7 @@ To get the total, we can use the <code class="docutils literal notranslate"><spa
 </div>
 </div>
 </div>
-<p>Now we can replace <code class="docutils literal notranslate"><span class="pre">Jonathan</span></code> with <code class="docutils literal notranslate"><span class="pre">Thomas</span></code> like this:</p>
+<p>Now we can replace <code class="docutils literal notranslate"><span class="pre">'Jonathan'</span></code> with <code class="docutils literal notranslate"><span class="pre">'Thomas'</span></code> like this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">writer</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;pg345_replaced.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
@@ -1057,7 +1057,7 @@ Among other information, it has a variable named <code class="docutils literal n
 </div>
 <p>For this example, we didn’t have to use regular expressions – we could have done the same thing more easily with the <code class="docutils literal notranslate"><span class="pre">in</span></code> operator.
 But regular expressions can do things the <code class="docutils literal notranslate"><span class="pre">in</span></code> operator cannot.</p>
-<p>For example, if the pattern includes the vertical bar character, <code class="docutils literal notranslate"><span class="pre">|</span></code>, it can match either the sequence on the left or the sequence on the right.
+<p>For example, if the pattern includes the vertical bar character, <code class="docutils literal notranslate"><span class="pre">'|'</span></code>, it can match either the sequence on the left or the sequence on the right.
 Suppose we want to find the first mention of Mina Murray in the book, but we are not sure whether she is referred to by first name or last.
 We can use the following pattern, which matches either name.</p>
 <div class="cell docutils container">
@@ -1102,7 +1102,7 @@ Here’s a function that loops through the book and counts the number of lines t
 </div>
 </div>
 </div>
-<p>The special character <code class="docutils literal notranslate"><span class="pre">^</span></code> matches the beginning of a string, so we can find a line that starts with a given pattern.</p>
+<p>The special character <code class="docutils literal notranslate"><span class="pre">'^'</span></code> matches the beginning of a string, so we can find a line that starts with a given pattern.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">find_first</span><span class="p">(</span><span class="s1">&#39;^Dracula&#39;</span><span class="p">)</span>
@@ -1116,7 +1116,7 @@ Here’s a function that loops through the book and counts the number of lines t
 </div>
 </div>
 </div>
-<p>And the special character <code class="docutils literal notranslate"><span class="pre">$</span></code> matches the end of a string, so we can find a line that ends with a given pattern (ignoring the newline at the end).</p>
+<p>And the special character <code class="docutils literal notranslate"><span class="pre">'$'</span></code> matches the end of a string, so we can find a line that ends with a given pattern (ignoring the newline at the end).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">find_first</span><span class="p">(</span><span class="s1">&#39;Harker$&#39;</span><span class="p">)</span>
@@ -1144,7 +1144,7 @@ To check, we can use the following pattern, which matches either “centre” or
 </div>
 </div>
 <p>In this pattern, the parentheses enclose the part of the pattern the vertical bar applies to.
-So this pattern matches a sequence that starts with <code class="docutils literal notranslate"><span class="pre">cent</span></code> and ends with either <code class="docutils literal notranslate"><span class="pre">er</span></code> or <code class="docutils literal notranslate"><span class="pre">re</span></code>.</p>
+So this pattern matches a sequence that starts with <code class="docutils literal notranslate"><span class="pre">'cent'</span></code> and ends with either <code class="docutils literal notranslate"><span class="pre">'er'</span></code> or <code class="docutils literal notranslate"><span class="pre">'re'</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">find_first</span><span class="p">(</span><span class="n">pattern</span><span class="p">)</span>
@@ -1160,7 +1160,7 @@ So this pattern matches a sequence that starts with <code class="docutils litera
 </div>
 <p>As expected, he used the British spelling.</p>
 <p>We can also check whether he used the British spelling of “colour”.
-The following pattern uses the special character <code class="docutils literal notranslate"><span class="pre">?</span></code>, which means that the previous character is optional.</p>
+The following pattern uses the special character <code class="docutils literal notranslate"><span class="pre">'?'</span></code>, which means that the previous character is optional.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pattern</span> <span class="o">=</span> <span class="s1">&#39;colou?r&#39;</span>
@@ -1168,7 +1168,7 @@ The following pattern uses the special character <code class="docutils literal n
 </div>
 </div>
 </div>
-<p>This pattern matches either “colour” with the <code class="docutils literal notranslate"><span class="pre">u</span></code> or “color” without it.</p>
+<p>This pattern matches either “colour” with the <code class="docutils literal notranslate"><span class="pre">'u'</span></code> or “color” without it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">find_first</span><span class="p">(</span><span class="n">pattern</span><span class="p">)</span>
@@ -1205,7 +1205,7 @@ In the result, you can see that “colour” has been replaced with “color”.
 <h2>Debugging<a class="headerlink" href="#debugging" title="Permalink to this heading">#</a></h2>
 <p>When you are reading and writing files, debugging can be tricky.
 If you are working in a Jupyter notebook, you can use <strong>shell commands</strong> to help.
-For example, to display the first few lines of file, you can use the command <code class="docutils literal notranslate"><span class="pre">!head</span></code>, like this:</p>
+For example, to display the first few lines of a file, you can use the command <code class="docutils literal notranslate"><span class="pre">!head</span></code>, like this:</p>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>head<span class="w"> </span>pg345_cleaned.txt
@@ -1322,24 +1322,6 @@ Write a function called <code class="docutils literal notranslate"><span class="
 <section id="id2">
 <h3>Exercise<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
 <p>Continuing the previous exercise, suppose you guess the work <code class="docutils literal notranslate"><span class="pre">TOTEM</span></code> and learn that the <code class="docutils literal notranslate"><span class="pre">E</span></code> is <em>still</em> not in the right place, but the <code class="docutils literal notranslate"><span class="pre">M</span></code> is. How many words are left?</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;words.txt&#39;</span><span class="p">):</span>
-    <span class="n">word</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="o">==</span> <span class="mi">5</span> <span class="ow">and</span> <span class="n">check_word2</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>begum
-enzym
-genom
-venom
-</pre></div>
-</div>
-</div>
-</div>
 </section>
 <section id="id3">
 <h3>Exercise<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
