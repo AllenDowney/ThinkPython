@@ -4,6 +4,11 @@
 
 [Here is the landing page for the book at Green Tea Press](https://greenteapress.com/wp/think-python-3rd-edition/).
 
+You can order print and electronic versions of *Think Python 3e* from
+[O'Reilly Media](https://www.oreilly.com/library/view/think-python/9781098155421/) and
+[Bookshop.org](https://bookshop.org/a/98697/9781098155438) and
+[Amazon](https://www.amazon.com/_/dp/1098155432?smid=ATVPDKIKX0DER&_encoding=UTF8&tag=oreilly20-20&_encoding=UTF8&tag=greenteapre01-20&linkCode=ur2&linkId=e2a529f94920295d27ec8a06e757dc7c&camp=1789&creative=9325).
+
 For the third edition, the biggest changes are:
 
 * The book is now entirely in Jupyter notebooks, so you can read the text, run the code, and work on the exercises, all in one place. Using the links below, you can run the notebooks on Colab, so you don't have to install anything to get started.
@@ -12,9 +17,6 @@ For the third edition, the biggest changes are:
 
 * At the end of every chapter, there are suggestions for using tools like ChatGPT and Colab AI to learn more and to get help with the exercises.
 
-The book is scheduled to be published by O'Reilly Media in June 2024.
-You can pre-order now from
-[O'Reilly Media](https://www.oreilly.com/library/view/think-python/9781098155421/) or [Amazon](https://www.amazon.com/_/dp/1098155432?smid=ATVPDKIKX0DER&_encoding=UTF8&tag=oreilly20-20&_encoding=UTF8&tag=greenteapre01-20&linkCode=ur2&linkId=e2a529f94920295d27ec8a06e757dc7c&camp=1789&creative=9325) or, if you would like to support local bookstores, [Bookshop.org](https://bookshop.org/a/98697/9781098155438).
 
 
 ## The notebooks
