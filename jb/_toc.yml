@@ -1,0 +1,23 @@
+format: jb-book
+root: index
+chapters:
+- file: chap00
+- file: chap01
+- file: chap02
+- file: chap03
+- file: chap04
+- file: chap05
+- file: chap06
+- file: chap07
+- file: chap08
+- file: chap09
+- file: chap10
+- file: chap11
+- file: chap12
+- file: chap13
+- file: chap14
+- file: chap15
+- file: chap16
+- file: chap17
+- file: chap18
+- file: chap19
