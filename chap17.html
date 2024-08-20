@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Inheritance &#8212; Think Python, 3rd edition</title>
   
@@ -15,52 +14,49 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chap17';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -75,19 +71,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -109,12 +109,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -129,6 +137,9 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="index.html">
@@ -137,10 +148,22 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
+  
     <p class="title logo__title">Think Python, 3rd edition</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -186,7 +209,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -195,14 +218,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -292,26 +315,28 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -363,19 +388,19 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
-  <p>You can order print and electronic versions of <em>Think Python 3e</em> from
+  <p>You can order print and ebook versions of <em>Think Python 3e</em> from
 <a class="reference external" href="https://bookshop.org/a/98697/9781098155438">Bookshop.org</a> and
-<a class="reference external" href="https://www.amazon.com/_/dp/1098155432?smid=ATVPDKIKX0DER&amp;_encoding=UTF8&amp;tag=oreilly20-20&amp;_encoding=UTF8&amp;tag=greenteapre01-20&amp;linkCode=ur2&amp;linkId=e2a529f94920295d27ec8a06e757dc7c&amp;camp=1789&amp;creative=9325">Amazon</a>.</p>
+<a class="reference external" href="https://www.amazon.com/_/dp/1098155432?smid=ATVPDKIKX0DER&amp;amp;_encoding=UTF8&amp;amp;tag=oreilly20-20&amp;amp;_encoding=UTF8&amp;amp;tag=greenteapre01-20&amp;amp;linkCode=ur2&amp;amp;linkId=e2a529f94920295d27ec8a06e757dc7c&amp;amp;camp=1789&amp;amp;creative=9325">Amazon</a>.</p>
 <section id="inheritance">
-<span id="chapter-inheritance"></span><h1>Inheritance<a class="headerlink" href="#inheritance" title="Permalink to this heading">#</a></h1>
+<span id="chapter-inheritance"></span><h1>Inheritance<a class="headerlink" href="#inheritance" title="Link to this heading">#</a></h1>
 <p>The language feature most often associated with object-oriented programming is <strong>inheritance</strong>.
 Inheritance is the ability to define a new class that is a modified version of an existing class.
 In this chapter I demonstrate inheritance using classes that represent playing cards, decks of cards, and poker hands.
 If you don’t play poker, don’t worry – I’ll tell you what you need to know.</p>
 <section id="representing-cards">
-<h2>Representing cards<a class="headerlink" href="#representing-cards" title="Permalink to this heading">#</a></h2>
+<h2>Representing cards<a class="headerlink" href="#representing-cards" title="Link to this heading">#</a></h2>
 <p>There are 52 playing cards in a standard deck – each of them belongs to one of four suits and one of thirteen ranks.
 The suits are Spades, Hearts, Diamonds, and Clubs.
 The ranks are Ace, 2, 3, 4, 5, 6, 7, 8, 9, 10, Jack, Queen, and King.
@@ -388,7 +413,7 @@ A problem with this implementation is that it would not be easy to compare cards
 In this context, “encode” means that we are going to define a mapping between numbers and suits, or between numbers and ranks.
 This kind of encoding is not meant to be a secret (that would be “encryption”).</p>
 <p>For example, this table shows the suits and the corresponding integer codes:</p>
-<table class="table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Suit</p></th>
 <th class="head"><p>Code</p></th>
@@ -409,10 +434,11 @@ This kind of encoding is not meant to be a secret (that would be “encryption�
 </tr>
 </tbody>
 </table>
+</div>
 <p>With this encoding, we can compare suits by comparing their codes.</p>
 <p>To encode the ranks, we’ll use the integer <code class="docutils literal notranslate"><span class="pre">2</span></code> to represent the rank <code class="docutils literal notranslate"><span class="pre">2</span></code>, <code class="docutils literal notranslate"><span class="pre">3</span></code> to represent <code class="docutils literal notranslate"><span class="pre">3</span></code>, and so on up to <code class="docutils literal notranslate"><span class="pre">10</span></code>.
 The following table shows the codes for the face cards.</p>
-<table class="table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Rank</p></th>
 <th class="head"><p>Code</p></th>
@@ -430,6 +456,7 @@ The following table shows the codes for the face cards.</p>
 </tr>
 </tbody>
 </table>
+</div>
 <p>And we can use either <code class="docutils literal notranslate"><span class="pre">1</span></code> or <code class="docutils literal notranslate"><span class="pre">14</span></code> to represent an Ace, depending on whether we want it to be considered lower or higher than the other ranks.</p>
 <p>To represent these encodings, we will use two lists of strings, one with the names of the suits and the other with the names of the ranks.</p>
 <p>Here’s a definition for a class that represents a playing card, with these lists of strings as <strong>class variables</strong>, which are variables defined inside a class definition, but not inside a method.</p>
@@ -487,7 +514,7 @@ The following table shows the codes for the face cards.</p>
 </div>
 </section>
 <section id="card-attributes">
-<h2>Card attributes<a class="headerlink" href="#card-attributes" title="Permalink to this heading">#</a></h2>
+<h2>Card attributes<a class="headerlink" href="#card-attributes" title="Link to this heading">#</a></h2>
 <p>Here’s an <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method for the <code class="docutils literal notranslate"><span class="pre">Card</span></code> class – it takes <code class="docutils literal notranslate"><span class="pre">suit</span></code> and <code class="docutils literal notranslate"><span class="pre">rank</span></code> as parameters and assigns them to attributes with the same names.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -537,7 +564,7 @@ The following table shows the codes for the face cards.</p>
 <p>But if you use the class, it is clearer that they are class variables, not attributes.</p>
 </section>
 <section id="printing-cards">
-<h2>Printing cards<a class="headerlink" href="#printing-cards" title="Permalink to this heading">#</a></h2>
+<h2>Printing cards<a class="headerlink" href="#printing-cards" title="Link to this heading">#</a></h2>
 <p>Here’s a <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method for <code class="docutils literal notranslate"><span class="pre">Card</span></code> objects.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -576,7 +603,7 @@ To save space, I didn’t draw the contents of <code class="docutils literal not
 <p>Every <code class="docutils literal notranslate"><span class="pre">Card</span></code> instance has its own <code class="docutils literal notranslate"><span class="pre">suit</span></code> and <code class="docutils literal notranslate"><span class="pre">rank</span></code> attributes, but there is only one <code class="docutils literal notranslate"><span class="pre">Card</span></code> class object, and only one copy of the class variables <code class="docutils literal notranslate"><span class="pre">suit_names</span></code> and <code class="docutils literal notranslate"><span class="pre">rank_names</span></code>.</p>
 </section>
 <section id="comparing-cards">
-<h2>Comparing cards<a class="headerlink" href="#comparing-cards" title="Permalink to this heading">#</a></h2>
+<h2>Comparing cards<a class="headerlink" href="#comparing-cards" title="Link to this heading">#</a></h2>
 <p>Suppose we create a second <code class="docutils literal notranslate"><span class="pre">Card</span></code> object with the same suit and rank.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -818,7 +845,7 @@ With these two properties, we can say that <code class="docutils literal notrans
 And that means, as we’ll see soon, that they can be sorted.</p>
 </section>
 <section id="decks">
-<h2>Decks<a class="headerlink" href="#decks" title="Permalink to this heading">#</a></h2>
+<h2>Decks<a class="headerlink" href="#decks" title="Link to this heading">#</a></h2>
 <p>Now that we have objects that represent cards, let’s define objects that represent decks.
 The following is a class definition for <code class="docutils literal notranslate"><span class="pre">Deck</span></code> with
 an <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method takes a list of <code class="docutils literal notranslate"><span class="pre">Card</span></code> objects as a parameter and assigns it to an attribute called <code class="docutils literal notranslate"><span class="pre">cards</span></code>.</p>
@@ -869,7 +896,7 @@ Each iteration creates a new <code class="docutils literal notranslate"><span cl
 <p>It contains 52 cards, as intended.</p>
 </section>
 <section id="printing-the-deck">
-<span id="section-print-deck"></span><h2>Printing the deck<a class="headerlink" href="#printing-the-deck" title="Permalink to this heading">#</a></h2>
+<span id="section-print-deck"></span><h2>Printing the deck<a class="headerlink" href="#printing-the-deck" title="Link to this heading">#</a></h2>
 <p>Here is a <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method for <code class="docutils literal notranslate"><span class="pre">Deck</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -924,7 +951,7 @@ Each iteration creates a new <code class="docutils literal notranslate"><span cl
 <p>So the cards appear on separate lines.</p>
 </section>
 <section id="add-remove-shuffle-and-sort">
-<h2>Add, remove, shuffle and sort<a class="headerlink" href="#add-remove-shuffle-and-sort" title="Permalink to this heading">#</a></h2>
+<h2>Add, remove, shuffle and sort<a class="headerlink" href="#add-remove-shuffle-and-sort" title="Link to this heading">#</a></h2>
 <p>To deal cards, we would like a method that removes a card from the deck
 and returns it. The list method <code class="docutils literal notranslate"><span class="pre">pop</span></code> provides a convenient way to do
 that.</p>
@@ -1066,7 +1093,7 @@ that.</p>
 Passing along responsibility like this is called <strong>delegation</strong>.</p>
 </section>
 <section id="parents-and-children">
-<h2>Parents and children<a class="headerlink" href="#parents-and-children" title="Permalink to this heading">#</a></h2>
+<h2>Parents and children<a class="headerlink" href="#parents-and-children" title="Link to this heading">#</a></h2>
 <p>Inheritance is the ability to define a new class that is a modified version of an existing class.
 As an example, let’s say we want a class to represent a “hand”, that is, the cards held by one player.</p>
 <ul class="simple">
@@ -1153,7 +1180,7 @@ So we can use this method to deal a card from <code class="docutils literal notr
 If you violate these rules, your code will collapse like a house of cards (sorry).</p>
 </section>
 <section id="specialization">
-<h2>Specialization<a class="headerlink" href="#specialization" title="Permalink to this heading">#</a></h2>
+<h2>Specialization<a class="headerlink" href="#specialization" title="Link to this heading">#</a></h2>
 <p>Let’s make a class called <code class="docutils literal notranslate"><span class="pre">BridgeHand</span></code> that represents a hand in bridge – a widely played card game.
 We’ll inherit from <code class="docutils literal notranslate"><span class="pre">Hand</span></code> and add a new method called <code class="docutils literal notranslate"><span class="pre">high_card_point_count</span></code> that evaluates a hand using a “high card point” method, which adds up points for the high cards in the hand.</p>
 <p>Here’s a class definition that contains as a class variable a dictionary that maps from card names to their point values.</p>
@@ -1241,7 +1268,7 @@ Queen of Diamonds
 This way of using inheritance is called <strong>specialization</strong> because it defines a new class that is specialized for a particular use, like playing bridge.</p>
 </section>
 <section id="debugging">
-<h2>Debugging<a class="headerlink" href="#debugging" title="Permalink to this heading">#</a></h2>
+<h2>Debugging<a class="headerlink" href="#debugging" title="Link to this heading">#</a></h2>
 <p>Inheritance is a useful feature.
 Some programs that would be repetitive without inheritance can be written more concisely with it.
 Also, inheritance can facilitate code reuse, since you can customize the behavior of a parent class without having to modify it.
@@ -1283,7 +1310,7 @@ If <code class="docutils literal notranslate"><span class="pre">Deck.shuffle</sp
 <p>The <code class="docutils literal notranslate"><span class="pre">shuffle</span></code> method for the <code class="docutils literal notranslate"><span class="pre">BridgeHand</span></code> object is the one in <code class="docutils literal notranslate"><span class="pre">Deck</span></code>.</p>
 </section>
 <section id="glossary">
-<h2>Glossary<a class="headerlink" href="#glossary" title="Permalink to this heading">#</a></h2>
+<h2>Glossary<a class="headerlink" href="#glossary" title="Link to this heading">#</a></h2>
 <p><strong>inheritance:</strong>
 The ability to define a new class that is a modified version of a previously defined class.</p>
 <p><strong>encode:</strong>
@@ -1302,7 +1329,7 @@ A class that inherits from another class.</p>
 A way of using inheritance to create a new class that is a specialized version of an existing class.</p>
 </section>
 <section id="exercises">
-<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h2>
+<h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
 <div class="cell tag_remove-print docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This cell tells Jupyter to provide detailed debugging information</span>
@@ -1314,7 +1341,7 @@ A way of using inheritance to create a new class that is a specialized version o
 </div>
 </div>
 <section id="ask-a-virtual-assistant">
-<h3>Ask a Virtual Assistant<a class="headerlink" href="#ask-a-virtual-assistant" title="Permalink to this heading">#</a></h3>
+<h3>Ask a Virtual Assistant<a class="headerlink" href="#ask-a-virtual-assistant" title="Link to this heading">#</a></h3>
 <p>When it goes well, object-oriented programming can make programs more readable, testable, and reusable.
 But it can also make programs complicated and hard to maintain.
 As a result, OOP is a topic of controversy – some people love it, and some people don’t.</p>
@@ -1329,7 +1356,7 @@ As a result, OOP is a topic of controversy – some people love it, and some peo
 <p>And as always, consider using a virtual assistant to help with the following exercises.</p>
 </section>
 <section id="exercise">
-<h3>Exercise<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h3>
+<h3>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h3>
 <p>In contract bridge, a “trick” is a round of play in which each of four players plays one card.
 To represent those cards, we’ll define a class that inherits from <code class="docutils literal notranslate"><span class="pre">Deck</span></code>.</p>
 <div class="cell docutils container">
@@ -1368,7 +1395,7 @@ King of Hearts
 In the previous example, the index of the winning card is <code class="docutils literal notranslate"><span class="pre">2</span></code>.</p>
 </section>
 <section id="id1">
-<h3>Exercise<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<h3>Exercise<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p>The next few exercises ask to you write functions that classify poker hands.
 If you are not familiar with poker, I’ll explain what you need to know.
 We’ll use the following class to represent poker hands.</p>
@@ -1409,19 +1436,19 @@ If you ask for code, you might want to provide the relevant class definitions as
 But regardless of how many cards there are in a hand, the only ones that count are the five that make the best hand.</p>
 </section>
 <section id="id2">
-<h3>Exercise<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<h3>Exercise<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <p>Write a method called <code class="docutils literal notranslate"><span class="pre">has_straight</span></code> that checks whether a hand contains a straight, which is a set of five cards with consecutive ranks.
 For example, if a hand contains ranks <code class="docutils literal notranslate"><span class="pre">5</span></code>, <code class="docutils literal notranslate"><span class="pre">6</span></code>, <code class="docutils literal notranslate"><span class="pre">7</span></code>, <code class="docutils literal notranslate"><span class="pre">8</span></code>, and <code class="docutils literal notranslate"><span class="pre">9</span></code>, it contains a straight.</p>
 <p>An Ace can come before a two or after a King, so <code class="docutils literal notranslate"><span class="pre">Ace</span></code>, <code class="docutils literal notranslate"><span class="pre">2</span></code>, <code class="docutils literal notranslate"><span class="pre">3</span></code>, <code class="docutils literal notranslate"><span class="pre">4</span></code>, <code class="docutils literal notranslate"><span class="pre">5</span></code> is a straight and so it <code class="docutils literal notranslate"><span class="pre">10</span></code>, <code class="docutils literal notranslate"><span class="pre">Jack</span></code>, <code class="docutils literal notranslate"><span class="pre">Queen</span></code>, <code class="docutils literal notranslate"><span class="pre">King</span></code>, <code class="docutils literal notranslate"><span class="pre">Ace</span></code>.
 But a straight cannot “wrap around”, so <code class="docutils literal notranslate"><span class="pre">King</span></code>, <code class="docutils literal notranslate"><span class="pre">Ace</span></code>, <code class="docutils literal notranslate"><span class="pre">2</span></code>, <code class="docutils literal notranslate"><span class="pre">3</span></code>, <code class="docutils literal notranslate"><span class="pre">4</span></code> is not a straight.</p>
 </section>
 <section id="id3">
-<h3>Exercise<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<h3>Exercise<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <p>A hand has a straight flush if it contains a set of five cards that are both a straight and a flush – that is, five cards of the same suit with consecutive ranks.
 Write a <code class="docutils literal notranslate"><span class="pre">PokerHand</span></code> method that checks whether a hand has a straight flush.</p>
 </section>
 <section id="id4">
-<h3>Exercise<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<h3>Exercise<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <p>A poker hand has a pair if it contains two or more cards with the same rank.
 Write a <code class="docutils literal notranslate"><span class="pre">PokerHand</span></code> method that checks whether a hand contains a pair.</p>
 <p>You can use the following outline to get started.</p>
@@ -1483,12 +1510,12 @@ Write a <code class="docutils literal notranslate"><span class="pre">PokerHand</
 </div>
 </section>
 <section id="id5">
-<h3>Exercise<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<h3>Exercise<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
 <p>A hand has a full house if it contains three cards of one rank and two cards of another rank.
 Write a <code class="docutils literal notranslate"><span class="pre">PokerHand</span></code> method that checks whether a hand has a full house.</p>
 </section>
 <section id="id6">
-<h3>Exercise<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<h3>Exercise<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
 <p>This exercise is a cautionary tale about a common error that can be difficult to debug.
 Consider the following class definition.</p>
 <div class="cell docutils container">
@@ -1611,11 +1638,10 @@ Then ask a virtual assistant, “What’s wrong with the following program?” a
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="chap16.html"
@@ -1635,10 +1661,7 @@ Then ask a virtual assistant, “What’s wrong with the following program?” a
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -1646,6 +1669,7 @@ Then ask a virtual assistant, “What’s wrong with the following program?” a
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1696,9 +1720,10 @@ By Allen B. Downey
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -1711,6 +1736,20 @@ By Allen B. Downey
   
   <div class="footer-item">
     
+<div class="extra_footer">
+  <div style="text-align: left;">
+  <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+    <img alt="Creative Commons License" style="border-width:0"
+         src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" />
+  </a>
+  <br />
+  This work is licensed under a
+  <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+    Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License
+  </a>.
+</div>
+
+</div>
   </div>
   
 </div>
@@ -1722,8 +1761,8 @@ By Allen B. Downey
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

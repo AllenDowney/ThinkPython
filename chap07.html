@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Iteration and Search &#8212; Think Python, 3rd edition</title>
   
@@ -15,52 +14,49 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chap07';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -75,19 +71,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -109,12 +109,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -129,6 +137,9 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="index.html">
@@ -137,10 +148,22 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
+  
     <p class="title logo__title">Think Python, 3rd edition</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -186,7 +209,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -195,14 +218,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -292,26 +315,28 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -360,20 +385,20 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
-  <p>You can order print and electronic versions of <em>Think Python 3e</em> from
+  <p>You can order print and ebook versions of <em>Think Python 3e</em> from
 <a class="reference external" href="https://bookshop.org/a/98697/9781098155438">Bookshop.org</a> and
-<a class="reference external" href="https://www.amazon.com/_/dp/1098155432?smid=ATVPDKIKX0DER&amp;_encoding=UTF8&amp;tag=oreilly20-20&amp;_encoding=UTF8&amp;tag=greenteapre01-20&amp;linkCode=ur2&amp;linkId=e2a529f94920295d27ec8a06e757dc7c&amp;camp=1789&amp;creative=9325">Amazon</a>.</p>
+<a class="reference external" href="https://www.amazon.com/_/dp/1098155432?smid=ATVPDKIKX0DER&amp;amp;_encoding=UTF8&amp;amp;tag=oreilly20-20&amp;amp;_encoding=UTF8&amp;amp;tag=greenteapre01-20&amp;amp;linkCode=ur2&amp;amp;linkId=e2a529f94920295d27ec8a06e757dc7c&amp;amp;camp=1789&amp;amp;creative=9325">Amazon</a>.</p>
 <section id="iteration-and-search">
-<span id="chapter-search"></span><h1>Iteration and Search<a class="headerlink" href="#iteration-and-search" title="Permalink to this heading">#</a></h1>
+<span id="chapter-search"></span><h1>Iteration and Search<a class="headerlink" href="#iteration-and-search" title="Link to this heading">#</a></h1>
 <p>In 1939 Ernest Vincent Wright published a 50,000 word novel called <em>Gadsby</em> that does not contain the letter “e”. Since “e” is the most common letter in English, writing even a few words without using it is difficult.
 To get a sense of how difficult, in this chapter we’ll compute the fraction of English words have at least one “e”.</p>
 <p>For that, we’ll use <code class="docutils literal notranslate"><span class="pre">for</span></code> statements to loop through the letters in a string and the words in a file, and we’ll update variables in a loop to count the number of words that contain an “e”.
 We’ll use the <code class="docutils literal notranslate"><span class="pre">in</span></code> operator to check whether a letter appears in a word, and you’ll learn a programming pattern called a “linear search”.</p>
 <p>As an exercise, you’ll use these tools to solve a word puzzle called “Spelling Bee”.</p>
 <section id="loops-and-strings">
-<h2>Loops and strings<a class="headerlink" href="#loops-and-strings" title="Permalink to this heading">#</a></h2>
+<h2>Loops and strings<a class="headerlink" href="#loops-and-strings" title="Link to this heading">#</a></h2>
 <p>In Chapter 3 we saw a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop that uses the <code class="docutils literal notranslate"><span class="pre">range</span></code> function to display a sequence of numbers.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -477,7 +502,7 @@ The variable defined in a <code class="docutils literal notranslate"><span class
 </div>
 </section>
 <section id="reading-the-word-list">
-<h2>Reading the word list<a class="headerlink" href="#reading-the-word-list" title="Permalink to this heading">#</a></h2>
+<h2>Reading the word list<a class="headerlink" href="#reading-the-word-list" title="Link to this heading">#</a></h2>
 <p>To see how many words contain an “e”, we’ll need a word list.
 The one we’ll use is a list of about 114,000 official crosswords; that is, words that are considered valid in crossword puzzles and other word games.</p>
 <p>The word list is in a file called <code class="docutils literal notranslate"><span class="pre">words.txt</span></code>, which is downloaded in the notebook for this chapter.
@@ -551,7 +576,7 @@ This program reads <code class="docutils literal notranslate"><span class="pre">
 For that, we will need the ability to update variables.</p>
 </section>
 <section id="updating-variables">
-<h2>Updating variables<a class="headerlink" href="#updating-variables" title="Permalink to this heading">#</a></h2>
+<h2>Updating variables<a class="headerlink" href="#updating-variables" title="Link to this heading">#</a></h2>
 <p>As you may have discovered, it is legal to make more than one assignment
 to the same variable.
 A new assignment makes an existing variable refer to a new value (and stop referring to the old value).</p>
@@ -634,7 +659,7 @@ with a simple assignment:</p>
 <p>Increasing the value of a variable is called an <strong>increment</strong>; decreasing the value is called a <strong>decrement</strong>.</p>
 </section>
 <section id="looping-and-counting">
-<h2>Looping and counting<a class="headerlink" href="#looping-and-counting" title="Permalink to this heading">#</a></h2>
+<h2>Looping and counting<a class="headerlink" href="#looping-and-counting" title="Link to this heading">#</a></h2>
 <p>The following program counts the number of words in the word list.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -707,7 +732,7 @@ So when the loop exits, <code class="docutils literal notranslate"><span class="
 <p>So you can understand why it’s difficult to craft a book without using any such words.</p>
 </section>
 <section id="the-in-operator">
-<h2>The in operator<a class="headerlink" href="#the-in-operator" title="Permalink to this heading">#</a></h2>
+<h2>The in operator<a class="headerlink" href="#the-in-operator" title="Link to this heading">#</a></h2>
 <p>The version of <code class="docutils literal notranslate"><span class="pre">has_e</span></code> we wrote in this chapter is more complicated than it needs to be.
 Python provides an operator, <code class="docutils literal notranslate"><span class="pre">in</span></code>,  that checks whether a character appears in a string.</p>
 <div class="cell docutils container">
@@ -806,7 +831,7 @@ Here’s an example.</p>
 </div>
 </section>
 <section id="search">
-<h2>Search<a class="headerlink" href="#search" title="Permalink to this heading">#</a></h2>
+<h2>Search<a class="headerlink" href="#search" title="Link to this heading">#</a></h2>
 <p>Based on this simpler version of <code class="docutils literal notranslate"><span class="pre">has_e</span></code>, let’s write a more general function called <code class="docutils literal notranslate"><span class="pre">uses_any</span></code> that takes a second parameter that is a string of letters.
 If returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if the word uses any of the letters and <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise.</p>
 <div class="cell docutils container">
@@ -867,7 +892,7 @@ If it gets all the way through the loop without finding any, it returns <code cl
 In the exercises at the end of this chapter, you’ll write more functions that use this pattern.</p>
 </section>
 <section id="doctest">
-<h2>Doctest<a class="headerlink" href="#doctest" title="Permalink to this heading">#</a></h2>
+<h2>Doctest<a class="headerlink" href="#doctest" title="Link to this heading">#</a></h2>
 <p>In <a class="reference internal" href="chap04.html#section-docstring"><span class="std std-ref">Chapter 4</span></a> we used a docstring to document a function – that is, to explain what it does.
 It is also possible to use a docstring to <em>test</em> a function.
 Here’s a version of <code class="docutils literal notranslate"><span class="pre">uses_any</span></code> with a docstring that includes tests.</p>
@@ -963,7 +988,7 @@ Got:
 <p>If you are not sure why this test failed, you’ll have a chance to debug it as an exercise.</p>
 </section>
 <section id="glossary">
-<h2>Glossary<a class="headerlink" href="#glossary" title="Permalink to this heading">#</a></h2>
+<h2>Glossary<a class="headerlink" href="#glossary" title="Link to this heading">#</a></h2>
 <p><strong>loop variable:</strong>
 A variable defined in the header of a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop.</p>
 <p><strong>file object:</strong>
@@ -988,7 +1013,7 @@ If a test runs and the result is as expected, the test passes.</p>
 If a test runs and the result is not as expected, the test fails.</p>
 </section>
 <section id="exercises">
-<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h2>
+<h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
 <div class="cell tag_remove-print docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This cell tells Jupyter to provide detailed debugging information</span>
@@ -1000,7 +1025,7 @@ If a test runs and the result is not as expected, the test fails.</p>
 </div>
 </div>
 <section id="ask-a-virtual-assistant">
-<h3>Ask a virtual assistant<a class="headerlink" href="#ask-a-virtual-assistant" title="Permalink to this heading">#</a></h3>
+<h3>Ask a virtual assistant<a class="headerlink" href="#ask-a-virtual-assistant" title="Link to this heading">#</a></h3>
 <p>In <code class="docutils literal notranslate"><span class="pre">uses_any</span></code>, you might have noticed that the first <code class="docutils literal notranslate"><span class="pre">return</span></code> statement is inside the loop and the second is outside.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1029,7 +1054,7 @@ If a test runs and the result is not as expected, the test fails.</p>
 <p>Ask a virtual assistant what’s wrong with this version.</p>
 </section>
 <section id="exercise">
-<h3>Exercise<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h3>
+<h3>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h3>
 <p>Write a function named <code class="docutils literal notranslate"><span class="pre">uses_none</span></code> that takes a word and a string of forbidden letters, and returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if the word does not use any of the forbidden letters.</p>
 <p>Here’s an outline of the function that includes two doctests.
 Fill in the function so it passes these tests, and add at least one more doctest.</p>
@@ -1050,7 +1075,7 @@ Fill in the function so it passes these tests, and add at least one more doctest
 </div>
 </section>
 <section id="id1">
-<h3>Exercise<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<h3>Exercise<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p>Write a function called <code class="docutils literal notranslate"><span class="pre">uses_only</span></code> that takes a word and a string of letters, and that returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if the word contains only letters in the string.</p>
 <p>Here’s an outline of the function that includes two doctests.
 Fill in the function so it passes these tests, and add at least one more doctest.</p>
@@ -1071,7 +1096,7 @@ Fill in the function so it passes these tests, and add at least one more doctest
 </div>
 </section>
 <section id="id2">
-<h3>Exercise<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<h3>Exercise<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <p>Write a function called <code class="docutils literal notranslate"><span class="pre">uses_all</span></code> that takes a word and a string of letters, and that returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if the word contains all of the letters in the string at least once.</p>
 <p>Here’s an outline of the function that includes two doctests.
 Fill in the function so it passes these tests, and add at least one more doctest.</p>
@@ -1092,7 +1117,7 @@ Fill in the function so it passes these tests, and add at least one more doctest
 </div>
 </section>
 <section id="id3">
-<h3>Exercise<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<h3>Exercise<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <p><em>The New York Times</em> publishes a daily puzzle called “Spelling Bee” that challenges readers to spell as many words as possible using only seven letters, where one of the letters is required.
 The words must have at least four letters.</p>
 <p>For example, on the day I wrote this, the letters were <code class="docutils literal notranslate"><span class="pre">ACDLORT</span></code>, with <code class="docutils literal notranslate"><span class="pre">R</span></code> as the required letter.
@@ -1152,7 +1177,7 @@ You can assume that the word is acceptable.</p>
 </div>
 </section>
 <section id="id4">
-<h3>Exercise<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<h3>Exercise<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <p>You might have noticed that the functions you wrote in the previous exercises had a lot in common.
 In fact, they are so similar you can often use one function to write another.</p>
 <p>For example, if a word uses none of a set forbidden letters, that means it doesn’t use any. So we can write a version of <code class="docutils literal notranslate"><span class="pre">uses_none</span></code> like this.</p>
@@ -1177,12 +1202,12 @@ In fact, they are so similar you can often use one function to write another.</p
 If you have a working version of <code class="docutils literal notranslate"><span class="pre">uses_only</span></code>, see if you can write a version of <code class="docutils literal notranslate"><span class="pre">uses_all</span></code> that calls <code class="docutils literal notranslate"><span class="pre">uses_only</span></code>.</p>
 </section>
 <section id="id5">
-<h3>Exercise<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<h3>Exercise<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
 <p>If you got stuck on the previous question, try asking a virtual assistant, “Given a function, <code class="docutils literal notranslate"><span class="pre">uses_only</span></code>, which takes two strings and checks that the first uses only the letters in the second, use it to write <code class="docutils literal notranslate"><span class="pre">uses_all</span></code>, which takes two strings and checks whether the first uses all the letters in the second, allowing repeats.”</p>
 <p>Use <code class="docutils literal notranslate"><span class="pre">run_doctests</span></code> to check the answer.</p>
 </section>
 <section id="id6">
-<h3>Exercise<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<h3>Exercise<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
 <p>Now let’s see if we can write <code class="docutils literal notranslate"><span class="pre">uses_all</span></code> based on <code class="docutils literal notranslate"><span class="pre">uses_any</span></code>.</p>
 <p>Ask a virtual assistant, “Given a function, <code class="docutils literal notranslate"><span class="pre">uses_any</span></code>, which takes two strings and checks whether the first uses any of the letters in the second, can you use it to write <code class="docutils literal notranslate"><span class="pre">uses_all</span></code>, which takes two strings and checks whether the first uses all the letters in the second, allowing repeats.”</p>
 <p>If it says it can, be sure to test the result!</p>
@@ -1215,11 +1240,10 @@ If you have a working version of <code class="docutils literal notranslate"><spa
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="chap06.html"
@@ -1239,10 +1263,7 @@ If you have a working version of <code class="docutils literal notranslate"><spa
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -1250,6 +1271,7 @@ If you have a working version of <code class="docutils literal notranslate"><spa
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1297,9 +1319,10 @@ By Allen B. Downey
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -1312,6 +1335,20 @@ By Allen B. Downey
   
   <div class="footer-item">
     
+<div class="extra_footer">
+  <div style="text-align: left;">
+  <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+    <img alt="Creative Commons License" style="border-width:0"
+         src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" />
+  </a>
+  <br />
+  This work is licensed under a
+  <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+    Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License
+  </a>.
+</div>
+
+</div>
   </div>
   
 </div>
@@ -1323,8 +1360,8 @@ By Allen B. Downey
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

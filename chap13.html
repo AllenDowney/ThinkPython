@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Files and Databases &#8212; Think Python, 3rd edition</title>
   
@@ -15,52 +14,49 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chap13';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -75,19 +71,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -109,12 +109,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -129,6 +137,9 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="index.html">
@@ -137,10 +148,22 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
+  
     <p class="title logo__title">Think Python, 3rd edition</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -186,7 +209,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -195,14 +218,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -292,26 +315,28 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -357,13 +382,13 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
-  <p>You can order print and electronic versions of <em>Think Python 3e</em> from
+  <p>You can order print and ebook versions of <em>Think Python 3e</em> from
 <a class="reference external" href="https://bookshop.org/a/98697/9781098155438">Bookshop.org</a> and
-<a class="reference external" href="https://www.amazon.com/_/dp/1098155432?smid=ATVPDKIKX0DER&amp;_encoding=UTF8&amp;tag=oreilly20-20&amp;_encoding=UTF8&amp;tag=greenteapre01-20&amp;linkCode=ur2&amp;linkId=e2a529f94920295d27ec8a06e757dc7c&amp;camp=1789&amp;creative=9325">Amazon</a>.</p>
+<a class="reference external" href="https://www.amazon.com/_/dp/1098155432?smid=ATVPDKIKX0DER&amp;amp;_encoding=UTF8&amp;amp;tag=oreilly20-20&amp;amp;_encoding=UTF8&amp;amp;tag=greenteapre01-20&amp;amp;linkCode=ur2&amp;amp;linkId=e2a529f94920295d27ec8a06e757dc7c&amp;amp;camp=1789&amp;amp;creative=9325">Amazon</a>.</p>
 <section id="files-and-databases">
-<h1>Files and Databases<a class="headerlink" href="#files-and-databases" title="Permalink to this heading">#</a></h1>
+<h1>Files and Databases<a class="headerlink" href="#files-and-databases" title="Link to this heading">#</a></h1>
 <p>Most of the programs we have seen so far are <strong>ephemeral</strong> in the sense that they run for a short time and produce output, but when they end, their data disappears.
 Each time you run an ephemeral program, it starts with a clean slate.</p>
 <p>Other programs are <strong>persistent</strong>: they run for a long time (or all the time); they keep at least some of their data in long-term storage; and if they shut down and restart, they pick up where they left off.</p>
@@ -373,7 +398,7 @@ Databases are specialized files that can be read and written more efficiently th
 <p>In this chapter, we’ll write programs that read and write text files and databases, and as an exercise you’ll write a program that searches a collection of photos for duplicates.
 But before you can work with a file, you have to find it, so we’ll start with file names, paths, and directories.</p>
 <section id="filenames-and-paths">
-<h2>Filenames and paths<a class="headerlink" href="#filenames-and-paths" title="Permalink to this heading">#</a></h2>
+<h2>Filenames and paths<a class="headerlink" href="#filenames-and-paths" title="Link to this heading">#</a></h2>
 <p>Files are organized into <strong>directories</strong>, also called “folders”.
 Every running program has a <strong>current working directory</strong>, which is the default directory for most operations.
 For example, when you open a file, Python looks for it in the current working directory.</p>
@@ -511,7 +536,7 @@ So, if you you run these examples on Windows, you will see backward slashes in t
 <p>Later in this chapter we’ll use these functions to search a set of directories and find all of the image files.</p>
 </section>
 <section id="f-strings">
-<h2>f-strings<a class="headerlink" href="#f-strings" title="Permalink to this heading">#</a></h2>
+<h2>f-strings<a class="headerlink" href="#f-strings" title="Link to this heading">#</a></h2>
 <p>One way for programs to store data is to write it to a text file.
 For example, suppose you are a camel spotter, and you want to record the number of camels you have seen during a period of observation.
 And suppose that in one and a half years, you have spotted <code class="docutils literal notranslate"><span class="pre">23</span></code> camels.
@@ -640,7 +665,7 @@ Camels spotted: 23
 </div>
 </section>
 <section id="yaml">
-<h2>YAML<a class="headerlink" href="#yaml" title="Permalink to this heading">#</a></h2>
+<h2>YAML<a class="headerlink" href="#yaml" title="Link to this heading">#</a></h2>
 <p>One of the reasons programs read and write files is to store <strong>configuration data</strong>, which is information that specifies what the program should do and how.</p>
 <p>For example, in a program that searches for duplicate photos, we might have a dictionary called <code class="docutils literal notranslate"><span class="pre">config</span></code> that contains the name of the directory to search, the name of another directory where it should store the results, and a list of file extensions it should use to identify image files.</p>
 <p>Here’s what it might look like:</p>
@@ -723,7 +748,7 @@ Converting the string back to an object is called <strong>deserialization</stron
 If you serialize and then deserialize an object, the result should be equivalent to the original.</p>
 </section>
 <section id="shelve">
-<h2>Shelve<a class="headerlink" href="#shelve" title="Permalink to this heading">#</a></h2>
+<h2>Shelve<a class="headerlink" href="#shelve" title="Link to this heading">#</a></h2>
 <p>So far we’ve been reading and writing text files – now let’s consider databases.
 A <strong>database</strong> is a file that is organized for storing data.
 Some databases are organized like a table with rows and columns of information.
@@ -900,7 +925,7 @@ For example, we can use the bracket operator to add an item, which is a mapping 
 The suffix <code class="docutils literal notranslate"><span class="pre">dir</span></code> stands for “directory”, but it has nothing to do with the directories we’ve been working with that contain files.</p>
 </section>
 <section id="storing-data-structures">
-<span id="section-storing-data-structure"></span><h2>Storing data structures<a class="headerlink" href="#storing-data-structures" title="Permalink to this heading">#</a></h2>
+<span id="section-storing-data-structure"></span><h2>Storing data structures<a class="headerlink" href="#storing-data-structures" title="Link to this heading">#</a></h2>
 <p>In the previous example, the keys and values in the shelf are strings.
 But we can also use a shelf to contain data structures like lists and dictionaries.</p>
 <p>As an example, let’s revisit the anagram example from an exercise in <a class="reference internal" href="chap11.html#section-exercise-11"><span class="std std-ref">Chapter 11</span></a>.
@@ -1019,7 +1044,7 @@ If we want to update the shelf, we have to read the old value, update it, and th
 <p>As an exercise, you can finish this example by reading the word list and storing all of the anagrams in a shelf.</p>
 </section>
 <section id="checking-for-equivalent-files">
-<span id="section-md5-digest"></span><h2>Checking for equivalent files<a class="headerlink" href="#checking-for-equivalent-files" title="Permalink to this heading">#</a></h2>
+<span id="section-md5-digest"></span><h2>Checking for equivalent files<a class="headerlink" href="#checking-for-equivalent-files" title="Link to this heading">#</a></h2>
 <p>Now let’s get back to the goal of this chapter: searching for different files that contain the same data.
 One way to check is to read the contents of both files and compare.</p>
 <p>If the files contain images, we have to open them with mode <code class="docutils literal notranslate"><span class="pre">'rb'</span></code>, where <code class="docutils literal notranslate"><span class="pre">'r'</span></code> means we want to read the contents and <code class="docutils literal notranslate"><span class="pre">'b'</span></code> indicates <strong>binary mode</strong>.
@@ -1144,7 +1169,7 @@ We’ll start by using <code class="docutils literal notranslate"><span class="p
 The last step is to search a directory and find all of the images files.</p>
 </section>
 <section id="walking-directories">
-<span id="section-walking-directories"></span><h2>Walking directories<a class="headerlink" href="#walking-directories" title="Permalink to this heading">#</a></h2>
+<span id="section-walking-directories"></span><h2>Walking directories<a class="headerlink" href="#walking-directories" title="Link to this heading">#</a></h2>
 <p>The following function takes as an argument the directory we want to search.
 It uses <code class="docutils literal notranslate"><span class="pre">listdir</span></code> to loop through the contents of the directory.
 When it finds a file, it prints its complete path.
@@ -1223,7 +1248,7 @@ photos/feb-2023/photo1.jpg
 <p>The parameter is called <code class="docutils literal notranslate"><span class="pre">visit_func</span></code> because it suggests that as we “walk” around the directory, we “visit” each file.</p>
 </section>
 <section id="debugging">
-<h2>Debugging<a class="headerlink" href="#debugging" title="Permalink to this heading">#</a></h2>
+<h2>Debugging<a class="headerlink" href="#debugging" title="Link to this heading">#</a></h2>
 <p>When you are reading and writing files, you might run into problems with
 whitespace. These errors can be hard to debug because spaces, tabs and
 newlines are normally invisible:</p>
@@ -1265,7 +1290,7 @@ In macOS and UNIX, file names can contain lowercase and uppercase letters, digit
 But many Windows applications ignore the difference between lowercase and uppercase letters, and several symbols that are allowed in macOS and UNIX are not allowed in Windows.</p>
 </section>
 <section id="glossary">
-<h2>Glossary<a class="headerlink" href="#glossary" title="Permalink to this heading">#</a></h2>
+<h2>Glossary<a class="headerlink" href="#glossary" title="Link to this heading">#</a></h2>
 <p><strong>ephemeral:</strong>
 An ephemeral program typically runs for a short time and, when it ends, its data are lost.</p>
 <p><strong>persistent:</strong>
@@ -1300,7 +1325,7 @@ A function that takes and object and computes an integer, which is sometimes cal
 The result of a hash function, especially when it is used to check whether two objects are the same.</p>
 </section>
 <section id="exercises">
-<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h2>
+<h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
 <div class="cell tag_remove-print docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This cell tells Jupyter to provide detailed debugging information</span>
@@ -1312,7 +1337,7 @@ The result of a hash function, especially when it is used to check whether two o
 </div>
 </div>
 <section id="ask-a-virtual-assistant">
-<h3>Ask a virtual assistant<a class="headerlink" href="#ask-a-virtual-assistant" title="Permalink to this heading">#</a></h3>
+<h3>Ask a virtual assistant<a class="headerlink" href="#ask-a-virtual-assistant" title="Link to this heading">#</a></h3>
 <p>There are several topics that came up in this chapter that I did not explain in detail.
 Here are some questions you can ask a virtual assistant to get more information.</p>
 <ul class="simple">
@@ -1330,20 +1355,20 @@ Here are some questions you can ask a virtual assistant to get more information.
 <p>As always, if you get stuck on any of the following exercises, consider asking a VA for help.  Along with your question, you might want to paste in the relevant functions from this chapter.</p>
 </section>
 <section id="exercise">
-<h3>Exercise<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h3>
+<h3>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h3>
 <p>Write a function called <code class="docutils literal notranslate"><span class="pre">replace_all</span></code> that takes as arguments a pattern string, a replacement string, and two filenames.
 It should read the first file and write the contents into the second file (creating it if necessary).
 If the pattern string appears anywhere in the contents, it should be replaced with the replacement string.</p>
 <p>To test your function, read the file <code class="docutils literal notranslate"><span class="pre">photos/notes.txt</span></code>, replace <code class="docutils literal notranslate"><span class="pre">'photos'</span></code> with <code class="docutils literal notranslate"><span class="pre">'images'</span></code>, and write the result to the file <code class="docutils literal notranslate"><span class="pre">photos/new_notes.txt</span></code>.</p>
 </section>
 <section id="id1">
-<h3>Exercise<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<h3>Exercise<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p>In <a class="reference internal" href="#section-storing-data-structure"><span class="std std-ref">a previous section</span></a>, we used the <code class="docutils literal notranslate"><span class="pre">shelve</span></code> module to make a key-value store that maps from a sorted string of letters to a list of anagrams.
 To finish the example, write a function called <code class="docutils literal notranslate"><span class="pre">add_word</span></code> that takes as arguments a string and a shelf object.</p>
 <p>It should sort the letters of the word to make a key, then check whether the key is already in the shelf. If not, it should make a list that contains the new word and add it to the shelf. If so, it should append the new word to the existing value.</p>
 </section>
 <section id="id2">
-<h3>Exercise<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<h3>Exercise<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <p>In a large collection of files, there may be more than one copy of the same file, stored in different directories or with different file names.
 The goal of this exercise is to search for duplicates.
 As an example, we’ll work with image files in the <code class="docutils literal notranslate"><span class="pre">photos</span></code> directory.</p>
@@ -1409,11 +1434,10 @@ Use <code class="docutils literal notranslate"><span class="pre">same_contents</
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="chap12.html"
@@ -1433,10 +1457,7 @@ Use <code class="docutils literal notranslate"><span class="pre">same_contents</
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -1444,6 +1465,7 @@ Use <code class="docutils literal notranslate"><span class="pre">same_contents</
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1488,9 +1510,10 @@ By Allen B. Downey
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -1503,6 +1526,20 @@ By Allen B. Downey
   
   <div class="footer-item">
     
+<div class="extra_footer">
+  <div style="text-align: left;">
+  <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+    <img alt="Creative Commons License" style="border-width:0"
+         src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" />
+  </a>
+  <br />
+  This work is licensed under a
+  <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+    Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License
+  </a>.
+</div>
+
+</div>
   </div>
   
 </div>
@@ -1514,8 +1551,8 @@ By Allen B. Downey
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

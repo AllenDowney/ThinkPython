@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Conditionals and Recursion &#8212; Think Python, 3rd edition</title>
   
@@ -15,52 +14,49 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chap05';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -75,19 +71,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -109,12 +109,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -129,6 +137,9 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="index.html">
@@ -137,10 +148,22 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
+  
     <p class="title logo__title">Think Python, 3rd edition</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -186,7 +209,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -195,14 +218,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -292,26 +315,28 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -364,18 +389,18 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
-  <p>You can order print and electronic versions of <em>Think Python 3e</em> from
+  <p>You can order print and ebook versions of <em>Think Python 3e</em> from
 <a class="reference external" href="https://bookshop.org/a/98697/9781098155438">Bookshop.org</a> and
-<a class="reference external" href="https://www.amazon.com/_/dp/1098155432?smid=ATVPDKIKX0DER&amp;_encoding=UTF8&amp;tag=oreilly20-20&amp;_encoding=UTF8&amp;tag=greenteapre01-20&amp;linkCode=ur2&amp;linkId=e2a529f94920295d27ec8a06e757dc7c&amp;camp=1789&amp;creative=9325">Amazon</a>.</p>
+<a class="reference external" href="https://www.amazon.com/_/dp/1098155432?smid=ATVPDKIKX0DER&amp;amp;_encoding=UTF8&amp;amp;tag=oreilly20-20&amp;amp;_encoding=UTF8&amp;amp;tag=greenteapre01-20&amp;amp;linkCode=ur2&amp;amp;linkId=e2a529f94920295d27ec8a06e757dc7c&amp;amp;camp=1789&amp;amp;creative=9325">Amazon</a>.</p>
 <section id="conditionals-and-recursion">
-<h1>Conditionals and Recursion<a class="headerlink" href="#conditionals-and-recursion" title="Permalink to this heading">#</a></h1>
+<h1>Conditionals and Recursion<a class="headerlink" href="#conditionals-and-recursion" title="Link to this heading">#</a></h1>
 <p>The main topic of this chapter is the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement, which executes different code depending on the state of the program.
 And with the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement we’ll be able to explore one of the most powerful ideas in computing, <strong>recursion</strong>.</p>
 <p>But we’ll start with three new features: the modulus operator, boolean expressions, and logical operators.</p>
 <section id="integer-division-and-modulus">
-<h2>Integer division and modulus<a class="headerlink" href="#integer-division-and-modulus" title="Permalink to this heading">#</a></h2>
+<h2>Integer division and modulus<a class="headerlink" href="#integer-division-and-modulus" title="Link to this heading">#</a></h2>
 <p>Recall that the integer division operator, <code class="docutils literal notranslate"><span class="pre">//</span></code>, divides two numbers and rounds
 down to an integer.
 For example, suppose the run time of a movie is 105 minutes.
@@ -394,8 +419,8 @@ Conventional division returns a floating-point number:</p>
 </div>
 </div>
 </div>
-<p>But we don’t normally write hours with decimal points. Floor division
-returns the integer number of hours, rounding down:</p>
+<p>But we don’t normally write hours with decimal points.
+Integer division returns the integer number of hours, rounding down:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">minutes</span> <span class="o">=</span> <span class="mi">105</span>
@@ -443,6 +468,31 @@ For example, it can check whether one number is divisible by another – if <cod
 <p>Also, it can extract the right-most digit or digits from a number.
 For example, <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">%</span> <span class="pre">10</span></code> yields the right-most digit of <code class="docutils literal notranslate"><span class="pre">x</span></code> (in base 10).
 Similarly, <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">%</span> <span class="pre">100</span></code> yields the last two digits.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">123</span>
+<span class="n">x</span> <span class="o">%</span> <span class="mi">10</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">%</span> <span class="mi">100</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>23
+</pre></div>
+</div>
+</div>
+</div>
 <p>Finally, the modulus operator can do “clock arithmetic”.
 For example, if an event starts at 11 AM and lasts three hours, we can use the modulus operator to figure out what time it ends.</p>
 <div class="cell docutils container">
@@ -461,23 +511,9 @@ For example, if an event starts at 11 AM and lasts three hours, we can use the m
 </div>
 </div>
 <p>The event would end at 2 PM.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">25</span> <span class="o">//</span> <span class="mi">10</span>
-<span class="n">b</span> <span class="o">=</span> <span class="mi">25</span> <span class="o">%</span> <span class="mi">10</span>
-<span class="n">a</span><span class="p">,</span> <span class="n">b</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2, 5)
-</pre></div>
-</div>
-</div>
-</div>
 </section>
 <section id="boolean-expressions">
-<h2>Boolean Expressions<a class="headerlink" href="#boolean-expressions" title="Permalink to this heading">#</a></h2>
+<h2>Boolean Expressions<a class="headerlink" href="#boolean-expressions" title="Link to this heading">#</a></h2>
 <p>A <strong>boolean expression</strong> is an expression that is either true or false.
 For example, the following expressions use the equals operator, <code class="docutils literal notranslate"><span class="pre">==</span></code>, which compares two values and produces <code class="docutils literal notranslate"><span class="pre">True</span></code> if they are equal and <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise:</p>
 <div class="cell docutils container">
@@ -615,7 +651,7 @@ they are not strings:</p>
 </div>
 </section>
 <section id="logical-operators">
-<h2>Logical operators<a class="headerlink" href="#logical-operators" title="Permalink to this heading">#</a></h2>
+<h2>Logical operators<a class="headerlink" href="#logical-operators" title="Link to this heading">#</a></h2>
 <p>To combine boolean values into expressions, we can use <strong>logical operators</strong>.
 The most common are <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"> <span class="pre">or</span></code>, and <code class="docutils literal notranslate"><span class="pre">not</span></code>.
 The meaning of these operators is similar to their meaning in English.
@@ -676,7 +712,7 @@ Any nonzero number is interpreted as <code class="docutils literal notranslate">
 You might want to avoid it.</p>
 </section>
 <section id="if-statements">
-<h2>if statements<a class="headerlink" href="#if-statements" title="Permalink to this heading">#</a></h2>
+<h2>if statements<a class="headerlink" href="#if-statements" title="Link to this heading">#</a></h2>
 <p>In order to write useful programs, we almost always need the ability to
 check conditions and change the behavior of the program accordingly.
 <strong>Conditional statements</strong> give us this ability. The simplest form is
@@ -713,7 +749,7 @@ In that case, you can use the <code class="docutils literal notranslate"><span c
 <p>The word <code class="docutils literal notranslate"><span class="pre">TODO</span></code> in a comment is a conventional reminder that there’s something you need to do later.</p>
 </section>
 <section id="the-else-clause">
-<h2>The <code class="docutils literal notranslate"><span class="pre">else</span></code> clause<a class="headerlink" href="#the-else-clause" title="Permalink to this heading">#</a></h2>
+<h2>The <code class="docutils literal notranslate"><span class="pre">else</span></code> clause<a class="headerlink" href="#the-else-clause" title="Link to this heading">#</a></h2>
 <p>An <code class="docutils literal notranslate"><span class="pre">if</span></code> statement can have a second part, called an <code class="docutils literal notranslate"><span class="pre">else</span></code> clause.
 The syntax looks like this:</p>
 <div class="cell docutils container">
@@ -739,7 +775,7 @@ is false, and the program displays <code class="docutils literal notranslate"><s
 The alternatives are called <strong>branches</strong>.</p>
 </section>
 <section id="chained-conditionals">
-<h2>Chained conditionals<a class="headerlink" href="#chained-conditionals" title="Permalink to this heading">#</a></h2>
+<h2>Chained conditionals<a class="headerlink" href="#chained-conditionals" title="Link to this heading">#</a></h2>
 <p>Sometimes there are more than two possibilities and we need more than two branches.
 One way to express a computation like that is a <strong>chained conditional</strong>, which includes an <code class="docutils literal notranslate"><span class="pre">elif</span></code> clause.</p>
 <div class="cell docutils container">
@@ -769,7 +805,7 @@ If one of them is true, the corresponding branch runs and the <code class="docut
 Even if more than one condition is true, only the first true branch runs.</p>
 </section>
 <section id="nested-conditionals">
-<h2>Nested Conditionals<a class="headerlink" href="#nested-conditionals" title="Permalink to this heading">#</a></h2>
+<h2>Nested Conditionals<a class="headerlink" href="#nested-conditionals" title="Link to this heading">#</a></h2>
 <p>One conditional can also be nested within another.
 We could have written the example in the previous section like this:</p>
 <div class="cell docutils container">
@@ -841,7 +877,7 @@ Here’s an example with a nested conditional.</p>
 </div>
 </section>
 <section id="recursion">
-<h2>Recursion<a class="headerlink" href="#recursion" title="Permalink to this heading">#</a></h2>
+<h2>Recursion<a class="headerlink" href="#recursion" title="Link to this heading">#</a></h2>
 <p>It is legal for a function to call itself.
 It may not be obvious why that is a good thing, but it turns out to be one of the most magical things a program can do.
 Here’s an example.</p>
@@ -876,13 +912,13 @@ Blastoff!
 </div>
 </div>
 <p>The execution of <code class="docutils literal notranslate"><span class="pre">countdown</span></code> begins with <code class="docutils literal notranslate"><span class="pre">n=3</span></code>, and since <code class="docutils literal notranslate"><span class="pre">n</span></code> is greater
-than <code class="docutils literal notranslate"><span class="pre">0</span></code>, it displays <code class="docutils literal notranslate"><span class="pre">3</span></code>, and then calls itself…</p>
+than <code class="docutils literal notranslate"><span class="pre">0</span></code>, it displays <code class="docutils literal notranslate"><span class="pre">3</span></code>, and then calls itself.…</p>
 <blockquote>
 <div><p>The execution of <code class="docutils literal notranslate"><span class="pre">countdown</span></code> begins with <code class="docutils literal notranslate"><span class="pre">n=2</span></code>, and since <code class="docutils literal notranslate"><span class="pre">n</span></code> is
-greater than <code class="docutils literal notranslate"><span class="pre">0</span></code>, it displays <code class="docutils literal notranslate"><span class="pre">2</span></code>, and then calls itself…</p>
+greater than <code class="docutils literal notranslate"><span class="pre">0</span></code>, it displays <code class="docutils literal notranslate"><span class="pre">2</span></code>, and then calls itself.…</p>
 <blockquote>
 <div><p>The execution of <code class="docutils literal notranslate"><span class="pre">countdown</span></code> begins with <code class="docutils literal notranslate"><span class="pre">n=1</span></code>, and since <code class="docutils literal notranslate"><span class="pre">n</span></code> is
-greater than <code class="docutils literal notranslate"><span class="pre">0</span></code>, it displays <code class="docutils literal notranslate"><span class="pre">1</span></code>, and then calls itself…</p>
+greater than <code class="docutils literal notranslate"><span class="pre">0</span></code>, it displays <code class="docutils literal notranslate"><span class="pre">1</span></code>, and then calls itself.…</p>
 <blockquote>
 <div><p>The execution of <code class="docutils literal notranslate"><span class="pre">countdown</span></code> begins with <code class="docutils literal notranslate"><span class="pre">n=0</span></code>, and since <code class="docutils literal notranslate"><span class="pre">n</span></code> is
 not greater than <code class="docutils literal notranslate"><span class="pre">0</span></code>, it displays “Blastoff!” and returns.</p>
@@ -927,7 +963,7 @@ loop. But we will see examples later that are hard to write with a <code class="
 loop and easy to write with recursion, so it is good to start early.</p>
 </section>
 <section id="stack-diagrams-for-recursive-functions">
-<h2>Stack diagrams for recursive functions<a class="headerlink" href="#stack-diagrams-for-recursive-functions" title="Permalink to this heading">#</a></h2>
+<h2>Stack diagrams for recursive functions<a class="headerlink" href="#stack-diagrams-for-recursive-functions" title="Link to this heading">#</a></h2>
 <p>Here’s a stack diagram that shows the frames created when we called <code class="docutils literal notranslate"><span class="pre">countdown</span></code> with <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">3</span></code>.</p>
 <div class="cell tag_remove-input docutils container">
 </div>
@@ -941,7 +977,7 @@ The bottom of the stack, where <code class="docutils literal notranslate"><span 
 It does not make a recursive call, so there are no more frames.</p>
 </section>
 <section id="infinite-recursion">
-<h2>Infinite recursion<a class="headerlink" href="#infinite-recursion" title="Permalink to this heading">#</a></h2>
+<h2>Infinite recursion<a class="headerlink" href="#infinite-recursion" title="Link to this heading">#</a></h2>
 <p>If a recursion never reaches a base case, it goes on making recursive
 calls forever, and the program never terminates. This is known as
 <strong>infinite recursion</strong>, and it is generally not a good idea.
@@ -992,7 +1028,7 @@ If a program exceeds the limit, it causes a runtime error.</p>
 <p>If you encounter an infinite recursion by accident, review your function to confirm that there is a base case that does not make a recursive call. And if there is a base case, check whether you are guaranteed to reach it.</p>
 </section>
 <section id="keyboard-input">
-<h2>Keyboard input<a class="headerlink" href="#keyboard-input" title="Permalink to this heading">#</a></h2>
+<h2>Keyboard input<a class="headerlink" href="#keyboard-input" title="Link to this heading">#</a></h2>
 <p>The programs we have written so far accept no input from the user. They
 just do the same thing every time.</p>
 <p>Python provides a built-in function called <code class="docutils literal notranslate"><span class="pre">input</span></code> that stops the
@@ -1061,7 +1097,7 @@ What do you mean: an African or European swallow?
 <p>We will see how to handle this kind of error later.</p>
 </section>
 <section id="debugging">
-<h2>Debugging<a class="headerlink" href="#debugging" title="Permalink to this heading">#</a></h2>
+<h2>Debugging<a class="headerlink" href="#debugging" title="Link to this heading">#</a></h2>
 <p>When a syntax or runtime error occurs, the error message contains a lot
 of information, but it can be overwhelming. The most useful parts are
 usually:</p>
@@ -1117,12 +1153,12 @@ For example, suppose you are trying to convert a ratio to decibels, like this:</
 </div>
 </div>
 <p>The error message indicates line 5, but there is nothing wrong with that line.
-The problem is in line 4, which uses floor division instead of floating-point division – as a result, the value of <code class="docutils literal notranslate"><span class="pre">ratio</span></code> is <code class="docutils literal notranslate"><span class="pre">0</span></code>.
+The problem is in line 4, which uses integer division instead of floating-point division – as a result, the value of <code class="docutils literal notranslate"><span class="pre">ratio</span></code> is <code class="docutils literal notranslate"><span class="pre">0</span></code>.
 When we call <code class="docutils literal notranslate"><span class="pre">math.log10</span></code>, we get a <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> with the message <code class="docutils literal notranslate"><span class="pre">math</span> <span class="pre">domain</span> <span class="pre">error</span></code>, because <code class="docutils literal notranslate"><span class="pre">0</span></code> is not in the “domain” of valid arguments for <code class="docutils literal notranslate"><span class="pre">math.log10</span></code>, because the logarithm of <code class="docutils literal notranslate"><span class="pre">0</span></code> is undefined.</p>
 <p>In general, you should take the time to read error messages carefully, but don’t assume that everything they say is correct.</p>
 </section>
 <section id="glossary">
-<h2>Glossary<a class="headerlink" href="#glossary" title="Permalink to this heading">#</a></h2>
+<h2>Glossary<a class="headerlink" href="#glossary" title="Link to this heading">#</a></h2>
 <p><strong>recursion:</strong>
 The process of calling the function that is currently executing.</p>
 <p><strong>modulus operator:</strong>
@@ -1156,7 +1192,7 @@ Eventually, an infinite recursion causes a runtime error.</p>
 A character that creates a line break between two parts of a string.</p>
 </section>
 <section id="exercises">
-<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h2>
+<h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
 <div class="cell tag_remove-print docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This cell tells Jupyter to provide detailed debugging information</span>
@@ -1173,7 +1209,7 @@ A character that creates a line break between two parts of a string.</p>
 </div>
 </div>
 <section id="ask-a-virtual-assistant">
-<h3>Ask a virtual assistant<a class="headerlink" href="#ask-a-virtual-assistant" title="Permalink to this heading">#</a></h3>
+<h3>Ask a virtual assistant<a class="headerlink" href="#ask-a-virtual-assistant" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Ask a virtual assistant, “What are some uses of the modulus operator?”</p></li>
 <li><p>Python provides operators to compute the logical operations <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code>, and <code class="docutils literal notranslate"><span class="pre">not</span></code>, but it doesn’t have an operator that computes the exclusive <code class="docutils literal notranslate"><span class="pre">or</span></code> operation, usually written <code class="docutils literal notranslate"><span class="pre">xor</span></code>. Ask an assistant “What is the logical xor operation and how do I compute it in Python?”</p></li>
@@ -1261,7 +1297,7 @@ Blastoff!
 Paste the solution it provides back here and test it.</p>
 </section>
 <section id="exercise">
-<h3>Exercise<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h3>
+<h3>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">time</span></code> module provides a function, also called <code class="docutils literal notranslate"><span class="pre">time</span></code>, that returns
 returns the number of seconds since the “Unix epoch”, which is January 1, 1970, 00:00:00 UTC (Coordinated Universal Time).</p>
 <div class="cell docutils container">
@@ -1279,11 +1315,11 @@ returns the number of seconds since the “Unix epoch”, which is January 1, 19
 </div>
 </div>
 </div>
-<p>Use floor division and the modulus operator to compute the number of days since January 1, 1970 and the current time of day in hours, minutes, and seconds.</p>
+<p>Use integer division and the modulus operator to compute the number of days since January 1, 1970 and the current time of day in hours, minutes, and seconds.</p>
 <p>You can read more about the <code class="docutils literal notranslate"><span class="pre">time</span></code> module at <a class="reference external" href="https://docs.python.org/3/library/time.html">https://docs.python.org/3/library/time.html</a>.</p>
 </section>
 <section id="id1">
-<h3>Exercise<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<h3>Exercise<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p>If you are given three sticks, you may or may not be able to arrange
 them in a triangle. For example, if one of the sticks is 12 inches long
 and the other two are one inch long, you will not be able to get the
@@ -1301,7 +1337,7 @@ whether you can or cannot form a triangle from sticks with the given
 lengths. Hint: Use a chained conditional.</p>
 </section>
 <section id="id2">
-<h3>Exercise<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<h3>Exercise<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <p>What is the output of the following program? Draw a stack diagram that
 shows the state of the program when it prints the result.</p>
 <div class="cell docutils container">
@@ -1324,7 +1360,7 @@ shows the state of the program when it prints the result.</p>
 </div>
 </section>
 <section id="id3">
-<h3>Exercise<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<h3>Exercise<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <p>The following exercises use the <code class="docutils literal notranslate"><span class="pre">jupyturtle</span></code> module, described in Chapter 4.</p>
 <p>Read the following function and see if you can figure out what it does.
 Then run it and see if you got it right.
@@ -1352,7 +1388,7 @@ If you are not sure you understand how it works, try asking a virtual assistant.
 </div>
 </section>
 <section id="id4">
-<h3>Exercise<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<h3>Exercise<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <p>Ask a virtual assistant “What is the Koch curve?”</p>
 <p>To draw a Koch curve with length <code class="docutils literal notranslate"><span class="pre">x</span></code>, all you
 have to do is</p>
@@ -1366,7 +1402,7 @@ have to do is</p>
 <li><p>Draw a Koch curve with length <code class="docutils literal notranslate"><span class="pre">x/3</span></code>.</p></li>
 </ol>
 <p>The exception is if <code class="docutils literal notranslate"><span class="pre">x</span></code> is less than <code class="docutils literal notranslate"><span class="pre">5</span></code> – in that case, you can just draw a straight line with length <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
-<p>Write a function called <code class="docutils literal notranslate"><span class="pre">koch</span></code> that takes <code class="docutils literal notranslate"><span class="pre">x</span></code> as a parameter and draws a Koch curve with the given length.</p>
+<p>Write a function called <code class="docutils literal notranslate"><span class="pre">koch</span></code> that takes <code class="docutils literal notranslate"><span class="pre">x</span></code> as an argument and draws a Koch curve with the given length.</p>
 <p>The result should look like this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1517,7 +1553,7 @@ have to do is</p>
 </div>
 </section>
 <section id="id5">
-<h3>Exercise<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<h3>Exercise<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
 <p>Virtual assistants know about the functions in the <code class="docutils literal notranslate"><span class="pre">jupyturtle</span></code> module, but there are many versions of these functions, with different names, so a VA might not know which one you are talking about.</p>
 <p>To solve this problem, you can provide additional information before you ask a question.
 For example, you could start a prompt with “Here’s a program that uses the <code class="docutils literal notranslate"><span class="pre">jupyturtle</span></code> module,” and then paste in one of the examples from this chapter.
@@ -1841,11 +1877,10 @@ If the first attempt doesn’t work, you can tell the VA what happened and ask f
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="chap04.html"
@@ -1865,10 +1900,7 @@ If the first attempt doesn’t work, you can tell the VA what happened and ask f
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -1876,6 +1908,7 @@ If the first attempt doesn’t work, you can tell the VA what happened and ask f
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1927,9 +1960,10 @@ By Allen B. Downey
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -1942,6 +1976,20 @@ By Allen B. Downey
   
   <div class="footer-item">
     
+<div class="extra_footer">
+  <div style="text-align: left;">
+  <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+    <img alt="Creative Commons License" style="border-width:0"
+         src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" />
+  </a>
+  <br />
+  This work is licensed under a
+  <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+    Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License
+  </a>.
+</div>
+
+</div>
   </div>
   
 </div>
@@ -1953,8 +2001,8 @@ By Allen B. Downey
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

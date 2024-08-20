@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Classes and Functions &#8212; Think Python, 3rd edition</title>
   
@@ -15,52 +14,49 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chap14';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -75,19 +71,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -109,12 +109,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -129,6 +137,9 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="index.html">
@@ -137,10 +148,22 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
+  
     <p class="title logo__title">Think Python, 3rd edition</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -186,7 +209,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -195,14 +218,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -292,26 +315,28 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -361,20 +386,20 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
-  <p>You can order print and electronic versions of <em>Think Python 3e</em> from
+  <p>You can order print and ebook versions of <em>Think Python 3e</em> from
 <a class="reference external" href="https://bookshop.org/a/98697/9781098155438">Bookshop.org</a> and
-<a class="reference external" href="https://www.amazon.com/_/dp/1098155432?smid=ATVPDKIKX0DER&amp;_encoding=UTF8&amp;tag=oreilly20-20&amp;_encoding=UTF8&amp;tag=greenteapre01-20&amp;linkCode=ur2&amp;linkId=e2a529f94920295d27ec8a06e757dc7c&amp;camp=1789&amp;creative=9325">Amazon</a>.</p>
+<a class="reference external" href="https://www.amazon.com/_/dp/1098155432?smid=ATVPDKIKX0DER&amp;amp;_encoding=UTF8&amp;amp;tag=oreilly20-20&amp;amp;_encoding=UTF8&amp;amp;tag=greenteapre01-20&amp;amp;linkCode=ur2&amp;amp;linkId=e2a529f94920295d27ec8a06e757dc7c&amp;amp;camp=1789&amp;amp;creative=9325">Amazon</a>.</p>
 <section id="classes-and-functions">
-<h1>Classes and Functions<a class="headerlink" href="#classes-and-functions" title="Permalink to this heading">#</a></h1>
+<h1>Classes and Functions<a class="headerlink" href="#classes-and-functions" title="Link to this heading">#</a></h1>
 <p>At this point you know how to use functions to organize code and how to use built-in types to organize data.
 The next step is <strong>object-oriented programming</strong>, which uses programmer-defined types to organize both code and data.</p>
 <p>Object-oriented programming is a big topic, so we will proceed gradually.
 In this chapter, we’ll start with code that is not idiomatic – that is, it is not the kind of code experienced programmers write – but it is a good place to start.
 In the next two chapters, we will use additional features to write more idiomatic code.</p>
 <section id="programmer-defined-types">
-<h2>Programmer-defined types<a class="headerlink" href="#programmer-defined-types" title="Permalink to this heading">#</a></h2>
+<h2>Programmer-defined types<a class="headerlink" href="#programmer-defined-types" title="Link to this heading">#</a></h2>
 <p>We have used many of Python’s built-in types – now we will define a new type.
 As a first example, we’ll create a type called <code class="docutils literal notranslate"><span class="pre">Time</span></code> that represents a time of day.
 A programmer-defined type is also called a <strong>class</strong>.
@@ -428,7 +453,7 @@ To create a <code class="docutils literal notranslate"><span class="pre">Time</s
 <p>Creating a new object is called <strong>instantiation</strong>, and the object is an <strong>instance</strong> of the class.</p>
 </section>
 <section id="attributes">
-<h2>Attributes<a class="headerlink" href="#attributes" title="Permalink to this heading">#</a></h2>
+<h2>Attributes<a class="headerlink" href="#attributes" title="Link to this heading">#</a></h2>
 <p>An object can contain variables, which are called <strong>attributes</strong> and pronounced with the emphasis on the first syllable, like “AT-trib-ute”, rather than the second syllable, like “a-TRIB-ute”.
 We can create attributes using dot notation.</p>
 <div class="cell docutils container">
@@ -533,7 +558,7 @@ For example, the following function takes a <code class="docutils literal notran
 </div>
 </section>
 <section id="objects-as-return-values">
-<h2>Objects as return values<a class="headerlink" href="#objects-as-return-values" title="Permalink to this heading">#</a></h2>
+<h2>Objects as return values<a class="headerlink" href="#objects-as-return-values" title="Link to this heading">#</a></h2>
 <p>Functions can return objects. For example, <code class="docutils literal notranslate"><span class="pre">make_time</span></code> takes parameters called <code class="docutils literal notranslate"><span class="pre">hour</span></code>, <code class="docutils literal notranslate"><span class="pre">minute</span></code>, and <code class="docutils literal notranslate"><span class="pre">second</span></code>, stores them as attributes in a <code class="docutils literal notranslate"><span class="pre">Time</span></code> object, and returns the new object.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -564,7 +589,7 @@ Here’s how we use <code class="docutils literal notranslate"><span class="pre"
 </div>
 </section>
 <section id="objects-are-mutable">
-<h2>Objects are mutable<a class="headerlink" href="#objects-are-mutable" title="Permalink to this heading">#</a></h2>
+<h2>Objects are mutable<a class="headerlink" href="#objects-are-mutable" title="Link to this heading">#</a></h2>
 <p>Suppose you are going to a screening of a movie, like <em>Monty Python and the Holy Grail</em>, which starts at <code class="docutils literal notranslate"><span class="pre">9:20</span> <span class="pre">PM</span></code> and runs for <code class="docutils literal notranslate"><span class="pre">92</span></code> minutes, which is one hour <code class="docutils literal notranslate"><span class="pre">32</span></code> minutes.
 What time will the movie end?</p>
 <p>First, we’ll create a <code class="docutils literal notranslate"><span class="pre">Time</span></code> object that represents the start time.</p>
@@ -635,7 +660,7 @@ It would be better to leave <code class="docutils literal notranslate"><span cla
 We can do that by copying <code class="docutils literal notranslate"><span class="pre">start</span></code> and modifying the copy.</p>
 </section>
 <section id="copying">
-<h2>Copying<a class="headerlink" href="#copying" title="Permalink to this heading">#</a></h2>
+<h2>Copying<a class="headerlink" href="#copying" title="Link to this heading">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">copy</span></code> module provides a function called <code class="docutils literal notranslate"><span class="pre">copy</span></code> that can duplicate any object.
 We can import it like this.</p>
 <div class="cell docutils container">
@@ -706,7 +731,7 @@ We can import it like this.</p>
 But for programmer-defined classes, the default behavior of the <code class="docutils literal notranslate"><span class="pre">==</span></code> operator is the same as the <code class="docutils literal notranslate"><span class="pre">is</span></code> operator – it checks identity, not equivalence.</p>
 </section>
 <section id="pure-functions">
-<h2>Pure functions<a class="headerlink" href="#pure-functions" title="Permalink to this heading">#</a></h2>
+<h2>Pure functions<a class="headerlink" href="#pure-functions" title="Link to this heading">#</a></h2>
 <p>We can use <code class="docutils literal notranslate"><span class="pre">copy</span></code> to write pure functions that don’t modify their parameters.
 For example, here’s a function that takes a <code class="docutils literal notranslate"><span class="pre">Time</span></code> object and a duration in hours, minutes and seconds.
 It makes a copy of the original object, uses <code class="docutils literal notranslate"><span class="pre">increment_time</span></code> to modify the copy, and returns it.</p>
@@ -757,7 +782,7 @@ But modifiers are sometimes convenient and can be more efficient.</p>
 This approach might be called a <strong>functional programming style</strong>.</p>
 </section>
 <section id="prototype-and-patch">
-<h2>Prototype and patch<a class="headerlink" href="#prototype-and-patch" title="Permalink to this heading">#</a></h2>
+<h2>Prototype and patch<a class="headerlink" href="#prototype-and-patch" title="Link to this heading">#</a></h2>
 <p>In the previous example, <code class="docutils literal notranslate"><span class="pre">increment_time</span></code> and <code class="docutils literal notranslate"><span class="pre">add_time</span></code> seem to work, but if we try another example, we’ll see that they are not quite correct.</p>
 <p>Suppose you arrive at the theater and discover that the movie starts at <code class="docutils literal notranslate"><span class="pre">9:40</span></code>, not <code class="docutils literal notranslate"><span class="pre">9:20</span></code>.
 Here’s what happens when we compute the updated end time.</p>
@@ -911,7 +936,7 @@ But incremental corrections can generate code that is unnecessarily complicated 
 found all the errors.</p>
 </section>
 <section id="design-first-development">
-<h2>Design-first development<a class="headerlink" href="#design-first-development" title="Permalink to this heading">#</a></h2>
+<h2>Design-first development<a class="headerlink" href="#design-first-development" title="Link to this heading">#</a></h2>
 <p>An alternative plan is <strong>design-first development</strong>, which involves more planning before prototyping. In a design-first process, sometimes a high-level insight into the problem makes the programming much easier.</p>
 <p>In this case, the insight is that we can think of a <code class="docutils literal notranslate"><span class="pre">Time</span></code> object as a three-digit number in base 60 – also known as sexagesimal.
 The <code class="docutils literal notranslate"><span class="pre">second</span></code> attribute is the “ones column”, the <code class="docutils literal notranslate"><span class="pre">minute</span></code> attribute is the “sixties column”,
@@ -1012,7 +1037,7 @@ Using the conversion functions is easier and more likely to be correct.</p>
 <p>Ironically, sometimes making a problem harder – or more general – makes it easier, because there are fewer special cases and fewer opportunities for error.</p>
 </section>
 <section id="debugging">
-<span id="section-debugging-14"></span><h2>Debugging<a class="headerlink" href="#debugging" title="Permalink to this heading">#</a></h2>
+<span id="section-debugging-14"></span><h2>Debugging<a class="headerlink" href="#debugging" title="Link to this heading">#</a></h2>
 <p>Python provides several built-in functions that are useful for testing and debugging programs that work with objects.
 For example, if you are not sure what type an object is, you can ask.</p>
 <div class="cell docutils container">
@@ -1085,7 +1110,7 @@ can use the built-in function <code class="docutils literal notranslate"><span c
 </div>
 </section>
 <section id="glossary">
-<h2>Glossary<a class="headerlink" href="#glossary" title="Permalink to this heading">#</a></h2>
+<h2>Glossary<a class="headerlink" href="#glossary" title="Link to this heading">#</a></h2>
 <p><strong>object-oriented programming:</strong>
 A style of programming that uses objects to organize code and data.</p>
 <p><strong>class:</strong>
@@ -1112,7 +1137,7 @@ A way of developing programs by starting with a rough draft and gradually adding
 A way of developing programs with more careful planning that prototype and patch.</p>
 </section>
 <section id="exercises">
-<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h2>
+<h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
 <div class="cell tag_remove-print docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This cell tells Jupyter to provide detailed debugging information</span>
@@ -1129,7 +1154,7 @@ A way of developing programs with more careful planning that prototype and patch
 </div>
 </div>
 <section id="ask-a-virtual-assistant">
-<h3>Ask a virtual assistant<a class="headerlink" href="#ask-a-virtual-assistant" title="Permalink to this heading">#</a></h3>
+<h3>Ask a virtual assistant<a class="headerlink" href="#ask-a-virtual-assistant" title="Link to this heading">#</a></h3>
 <p>There is a lot of new vocabulary in this chapter.
 A conversation with a virtual assistant can help solidify your understanding.
 Consider asking:</p>
@@ -1149,13 +1174,13 @@ In the meantime, see if you can solve the following exercises using only the fea
 </section>
 </section>
 <section id="id1">
-<h2>Exercises<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<h2>Exercises<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <section id="exercise">
-<h3>Exercise<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h3>
+<h3>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h3>
 <p>Write a function called <code class="docutils literal notranslate"><span class="pre">subtract_time</span></code> that takes two <code class="docutils literal notranslate"><span class="pre">Time</span></code> objects and returns the interval between them in seconds – assuming that they are two times during the same day.</p>
 </section>
 <section id="id2">
-<h3>Exercise<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<h3>Exercise<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <p>Write a function called <code class="docutils literal notranslate"><span class="pre">is_after</span></code> that takes two <code class="docutils literal notranslate"><span class="pre">Time</span></code> objects and returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if the first time is later in the day than the second, and <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1176,7 +1201,7 @@ In the meantime, see if you can solve the following exercises using only the fea
 </div>
 </section>
 <section id="id3">
-<h3>Exercise<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<h3>Exercise<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <p>Here’s a definition for a <code class="docutils literal notranslate"><span class="pre">Date</span></code> class that represents a date – that is, a year, month, and day of the month.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1221,11 +1246,10 @@ In the meantime, see if you can solve the following exercises using only the fea
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="chap13.html"
@@ -1245,10 +1269,7 @@ In the meantime, see if you can solve the following exercises using only the fea
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -1256,6 +1277,7 @@ In the meantime, see if you can solve the following exercises using only the fea
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1304,9 +1326,10 @@ By Allen B. Downey
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -1319,6 +1342,20 @@ By Allen B. Downey
   
   <div class="footer-item">
     
+<div class="extra_footer">
+  <div style="text-align: left;">
+  <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+    <img alt="Creative Commons License" style="border-width:0"
+         src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" />
+  </a>
+  <br />
+  This work is licensed under a
+  <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+    Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License
+  </a>.
+</div>
+
+</div>
   </div>
   
 </div>
@@ -1330,8 +1367,8 @@ By Allen B. Downey
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

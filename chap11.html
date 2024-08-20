@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Tuples &#8212; Think Python, 3rd edition</title>
   
@@ -15,52 +14,49 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chap11';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -75,19 +71,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -109,12 +109,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -129,6 +137,9 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="index.html">
@@ -137,10 +148,22 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
+  
     <p class="title logo__title">Think Python, 3rd edition</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -186,7 +209,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -195,14 +218,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -292,26 +315,28 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -361,13 +386,13 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
-  <p>You can order print and electronic versions of <em>Think Python 3e</em> from
+  <p>You can order print and ebook versions of <em>Think Python 3e</em> from
 <a class="reference external" href="https://bookshop.org/a/98697/9781098155438">Bookshop.org</a> and
-<a class="reference external" href="https://www.amazon.com/_/dp/1098155432?smid=ATVPDKIKX0DER&amp;_encoding=UTF8&amp;tag=oreilly20-20&amp;_encoding=UTF8&amp;tag=greenteapre01-20&amp;linkCode=ur2&amp;linkId=e2a529f94920295d27ec8a06e757dc7c&amp;camp=1789&amp;creative=9325">Amazon</a>.</p>
+<a class="reference external" href="https://www.amazon.com/_/dp/1098155432?smid=ATVPDKIKX0DER&amp;amp;_encoding=UTF8&amp;amp;tag=oreilly20-20&amp;amp;_encoding=UTF8&amp;amp;tag=greenteapre01-20&amp;amp;linkCode=ur2&amp;amp;linkId=e2a529f94920295d27ec8a06e757dc7c&amp;amp;camp=1789&amp;amp;creative=9325">Amazon</a>.</p>
 <section id="tuples">
-<span id="chapter-tuples"></span><h1>Tuples<a class="headerlink" href="#tuples" title="Permalink to this heading">#</a></h1>
+<span id="chapter-tuples"></span><h1>Tuples<a class="headerlink" href="#tuples" title="Link to this heading">#</a></h1>
 <p>This chapter introduces one more built-in type, the tuple, and then shows how lists, dictionaries, and tuples work together.
 It also presents tuple assignment and a useful feature for functions with variable-length argument lists: the packing and unpacking operators.</p>
 <p>In the exercises, we’ll use tuples, along with lists and dictionaries, to solve more word puzzles and implement efficient algorithms.</p>
@@ -375,7 +400,7 @@ It also presents tuple assignment and a useful feature for functions with variab
 Some people say “tuh-ple”, which rhymes with “supple”.
 But in the context of programming, most people say “too-ple”, which rhymes with “quadruple”.</p>
 <section id="tuples-are-like-lists">
-<h2>Tuples are like lists<a class="headerlink" href="#tuples-are-like-lists" title="Permalink to this heading">#</a></h2>
+<h2>Tuples are like lists<a class="headerlink" href="#tuples-are-like-lists" title="Link to this heading">#</a></h2>
 <p>A tuple is a sequence of values. The values can be any type, and they are indexed by integers, so tuples are a lot like lists.
 The important difference is that tuples are immutable.</p>
 <p>To create a tuple, you can write a comma-separated list of values.</p>
@@ -560,7 +585,7 @@ For example, the bracket operator indexes an element.</p>
 <p>Based on the examples so far, it might seem like tuples are the same as lists.</p>
 </section>
 <section id="but-tuples-are-immutable">
-<h2>But tuples are immutable<a class="headerlink" href="#but-tuples-are-immutable" title="Permalink to this heading">#</a></h2>
+<h2>But tuples are immutable<a class="headerlink" href="#but-tuples-are-immutable" title="Link to this heading">#</a></h2>
 <p>If you try to modify a tuple with the bracket operator, you get a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code>.</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
@@ -644,7 +669,7 @@ For example, the following dictionary contains two tuples as keys that map to in
 </div>
 </section>
 <section id="tuple-assignment">
-<h2>Tuple assignment<a class="headerlink" href="#tuple-assignment" title="Permalink to this heading">#</a></h2>
+<h2>Tuple assignment<a class="headerlink" href="#tuple-assignment" title="Link to this heading">#</a></h2>
 <p>You can put a tuple of variables on the left side of an assignment, and a tuple of values on the right.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -762,7 +787,7 @@ two -&gt; 2
 <p>Each time through the loop, a key and the corresponding value are assigned directly to <code class="docutils literal notranslate"><span class="pre">key</span></code> and <code class="docutils literal notranslate"><span class="pre">value</span></code>.</p>
 </section>
 <section id="tuples-as-return-values">
-<h2>Tuples as return values<a class="headerlink" href="#tuples-as-return-values" title="Permalink to this heading">#</a></h2>
+<h2>Tuples as return values<a class="headerlink" href="#tuples-as-return-values" title="Link to this heading">#</a></h2>
 <p>Strictly speaking, a function can only return one value, but if the
 value is a tuple, the effect is the same as returning multiple values.
 For example, if you want to divide two integers and compute the quotient
@@ -847,7 +872,7 @@ of two values, the quotient and remainder.</p>
 </div>
 </section>
 <section id="argument-packing">
-<span id="section-argument-pack"></span><h2>Argument packing<a class="headerlink" href="#argument-packing" title="Permalink to this heading">#</a></h2>
+<span id="section-argument-pack"></span><h2>Argument packing<a class="headerlink" href="#argument-packing" title="Link to this heading">#</a></h2>
 <p>Functions can take a variable number of arguments.
 A parameter name that begins with the <code class="docutils literal notranslate"><span class="pre">*</span></code> operator <strong>packs</strong> arguments into a tuple.
 For example, the following function takes any number of arguments and computes their arithmetic mean – that is, their sum divided by the number of arguments.</p>
@@ -947,7 +972,7 @@ Finally it unpacks the list so the elements are passed to <code class="docutils 
 <p>This kind of “trimmed” mean is used in some sports with subjective judging – like diving and gymnastics – to reduce the effect of a judge whose score deviates from the others.</p>
 </section>
 <section id="zip">
-<h2>Zip<a class="headerlink" href="#zip" title="Permalink to this heading">#</a></h2>
+<h2>Zip<a class="headerlink" href="#zip" title="Link to this heading">#</a></h2>
 <p>Tuples are useful for looping through the elements of two sequences and performing operations on corresponding elements.
 For example, suppose two teams play a series of seven games, and we record their scores in two lists, one for each team.</p>
 <div class="cell docutils container">
@@ -1095,7 +1120,7 @@ For example, here’s how we can make a dictionary that maps from each letter to
 </div>
 </section>
 <section id="comparing-and-sorting">
-<h2>Comparing and Sorting<a class="headerlink" href="#comparing-and-sorting" title="Permalink to this heading">#</a></h2>
+<h2>Comparing and Sorting<a class="headerlink" href="#comparing-and-sorting" title="Link to this heading">#</a></h2>
 <p>The relational operators work with tuples and other sequences.
 For example, if you use the <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> operator with tuples, it starts by comparing the first element from each sequence.
 If they are equal, it goes on to the next pair of elements, and so on, until it finds a pair that differ.</p>
@@ -1241,7 +1266,7 @@ We can use <code class="docutils literal notranslate"><span class="pre">max</spa
 <p>To find the letter with the lowest count, we could use <code class="docutils literal notranslate"><span class="pre">min</span></code> the same way.</p>
 </section>
 <section id="inverting-a-dictionary">
-<h2>Inverting a dictionary<a class="headerlink" href="#inverting-a-dictionary" title="Permalink to this heading">#</a></h2>
+<h2>Inverting a dictionary<a class="headerlink" href="#inverting-a-dictionary" title="Link to this heading">#</a></h2>
 <p>Suppose you want to invert a dictionary so you can look up a value and get the corresponding key.
 For example, if you have a word counter that maps from each word to the number of times it appears, you could make a dictionary that maps from integers to the words that appear that number of times.</p>
 <p>But there’s a problem – the keys in a dictionary have to be unique, but the values don’t. For example, in a word counter, there could be many words with the same count.</p>
@@ -1297,7 +1322,7 @@ Otherwise it is appended to the existing list.</p>
 We will see more!</p>
 </section>
 <section id="debugging">
-<span id="section-debugging-11"></span><h2>Debugging<a class="headerlink" href="#debugging" title="Permalink to this heading">#</a></h2>
+<span id="section-debugging-11"></span><h2>Debugging<a class="headerlink" href="#debugging" title="Link to this heading">#</a></h2>
 <p>Lists, dictionaries and tuples are <strong>data structures</strong>.
 In this chapter we are starting to see compound data structures, like lists of tuples, or dictionaries that contain tuples as keys and lists as values.
 Compound data structures are useful, but they are prone to errors caused when a data structure has the wrong type, size, or structure.
@@ -1390,7 +1415,7 @@ them by type.</p>
 <code class="docutils literal notranslate"><span class="pre">structshape</span></code> can help.</p>
 </section>
 <section id="glossary">
-<h2>Glossary<a class="headerlink" href="#glossary" title="Permalink to this heading">#</a></h2>
+<h2>Glossary<a class="headerlink" href="#glossary" title="Link to this heading">#</a></h2>
 <p><strong>pack:</strong>
 Collect multiple arguments into a tuple.</p>
 <p><strong>unpack:</strong>
@@ -1405,7 +1430,7 @@ A value, or function that computes a value, used to sort the elements of a colle
 A collection of values, organized to perform certain operations efficiently.</p>
 </section>
 <section id="exercises">
-<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h2>
+<h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
 <div class="cell tag_remove-print docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This cell tells Jupyter to provide detailed debugging information</span>
@@ -1422,7 +1447,7 @@ A collection of values, organized to perform certain operations efficiently.</p>
 </div>
 </div>
 <section id="ask-a-virtual-assistant">
-<h3>Ask a virtual assistant<a class="headerlink" href="#ask-a-virtual-assistant" title="Permalink to this heading">#</a></h3>
+<h3>Ask a virtual assistant<a class="headerlink" href="#ask-a-virtual-assistant" title="Link to this heading">#</a></h3>
 <p>The exercises in this chapter might be more difficult than exercises in previous chapters, so I encourage you to get help from a virtual assistant.
 When you pose more difficult questions, you might find that the answers are not correct on the first attempt, so this is a chance to practice crafting good prompts and following up with good refinements.</p>
 <p>One strategy you might consider is to break a big problems into pieces that can be solved with simple functions.
@@ -1432,7 +1457,7 @@ Then, once they are working, ask for a solution to the original problem.</p>
 You might find these suggestions useful when you work on the problems, but they are also good prompts to pass along to a virtual assistant.</p>
 </section>
 <section id="exercise">
-<h3>Exercise<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h3>
+<h3>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h3>
 <p>In this chapter I said that tuples can be used as keys in dictionaries because they are hashable, and they are hashable because they are immutable.
 But that is not always true.</p>
 <p>If a tuple contains a mutable value, like a list or a dictionary, the tuple is no longer hashable because it contains elements that are not hashable. As an example, here’s a tuple that contains two lists of integers.</p>
@@ -1476,7 +1501,7 @@ But that is not always true.</p>
 <p>For more on this topic, ask a virtual assistant, “Are Python tuples always hashable?”</p>
 </section>
 <section id="section-exercise-11">
-<span id="id1"></span><h3>Exercise<a class="headerlink" href="#section-exercise-11" title="Permalink to this heading">#</a></h3>
+<span id="id1"></span><h3>Exercise<a class="headerlink" href="#section-exercise-11" title="Link to this heading">#</a></h3>
 <p>In this chapter we made a dictionary that maps from each letter to its index in the alphabet.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1524,12 +1549,12 @@ Loop through the letters of the word, shift each one, and append the result to a
 Then use <code class="docutils literal notranslate"><span class="pre">join</span></code> to concatenate the letters into a string.</p>
 </section>
 <section id="id2">
-<h3>Exercise<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<h3>Exercise<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <p>Write a function called <code class="docutils literal notranslate"><span class="pre">most_frequent_letters</span></code> that takes a string and prints the letters in decreasing order of frequency.</p>
 <p>To get the items in decreasing order, you can use <code class="docutils literal notranslate"><span class="pre">reversed</span></code> along with <code class="docutils literal notranslate"><span class="pre">sorted</span></code> or you can pass <code class="docutils literal notranslate"><span class="pre">reverse=True</span></code> as a keyword parameter to <code class="docutils literal notranslate"><span class="pre">sorted</span></code>.</p>
 </section>
 <section id="id3">
-<h3>Exercise<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<h3>Exercise<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <p>In a previous exercise, we tested whether two strings are anagrams by sorting the letters in both words and checking whether the sorted letters are the same.
 Now let’s make the problem a little more challenging.</p>
 <p>We’ll write a program that takes a list of words and prints all the sets of words that are anagrams.
@@ -1543,12 +1568,12 @@ Here is an example of what the output might look like:</p>
 <p>Hint: For each word in the word list, sort the letters and join them back into a string. Make a dictionary that maps from this sorted string to a list of words that are anagrams of it.</p>
 </section>
 <section id="id4">
-<h3>Exercise<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<h3>Exercise<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <p>Write a function called <code class="docutils literal notranslate"><span class="pre">word_distance</span></code> that takes two words with the same length and returns the number of places where the two words differ.</p>
 <p>Hint: Use <code class="docutils literal notranslate"><span class="pre">zip</span></code> to loop through the corresponding letters of the words.</p>
 </section>
 <section id="id5">
-<h3>Exercise<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<h3>Exercise<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
 <p>“Metathesis” is the transposition of letters in a word.
 Two words form a “metathesis pair” if you can transform one into the other by swapping two letters, like <code class="docutils literal notranslate"><span class="pre">converse</span></code> and <code class="docutils literal notranslate"><span class="pre">conserve</span></code>.
 Write a program that finds all of the metathesis pairs in the word list.</p>
@@ -1583,11 +1608,10 @@ Write a program that finds all of the metathesis pairs in the word list.</p>
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="chap10.html"
@@ -1607,10 +1631,7 @@ Write a program that finds all of the metathesis pairs in the word list.</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -1618,6 +1639,7 @@ Write a program that finds all of the metathesis pairs in the word list.</p>
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1666,9 +1688,10 @@ By Allen B. Downey
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -1681,6 +1704,20 @@ By Allen B. Downey
   
   <div class="footer-item">
     
+<div class="extra_footer">
+  <div style="text-align: left;">
+  <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+    <img alt="Creative Commons License" style="border-width:0"
+         src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" />
+  </a>
+  <br />
+  This work is licensed under a
+  <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+    Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License
+  </a>.
+</div>
+
+</div>
   </div>
   
 </div>
@@ -1692,8 +1729,8 @@ By Allen B. Downey
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
