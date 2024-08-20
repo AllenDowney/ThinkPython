@@ -4,14 +4,13 @@
 
 [Here is the landing page for the book at Green Tea Press](https://greenteapress.com/wp/think-python-3rd-edition/).
 
-You can order print and electronic versions of *Think Python 3e* from
-[O'Reilly Media](https://www.oreilly.com/library/view/think-python/9781098155421/) and
+You can order print and ebook versions of *Think Python 3e* from
 [Bookshop.org](https://bookshop.org/a/98697/9781098155438) and
 [Amazon](https://www.amazon.com/_/dp/1098155432?smid=ATVPDKIKX0DER&_encoding=UTF8&tag=oreilly20-20&_encoding=UTF8&tag=greenteapre01-20&linkCode=ur2&linkId=e2a529f94920295d27ec8a06e757dc7c&camp=1789&creative=9325).
 
 For the third edition, the biggest changes are:
 
-* The book is now entirely in Jupyter notebooks, so you can read the text, run the code, and work on the exercises, all in one place. Using the links below, you can run the notebooks on Colab, so you don't have to install anything to get started.
+* The book is now entirely in Jupyter notebooks, so you can read the text, run the code, and work on the exercises -- all in one place. Using the links below, you can run the notebooks on Colab, so you don't have to install anything to get started.
 
 * The text is substantially revised and a few chapters have been reordered. There are more exercises now, and I think a lot of them are better.
 
