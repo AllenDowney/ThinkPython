@@ -1,7 +1,9 @@
-# Think Python, 3rd edition
+# Think Python
 
 *Think Python* is an introduction to Python for people who have never programmed before -- or for people who have tried and had a hard time.
+
 <img width="200" src="https://raw.githubusercontent.com/AllenDowney/ThinkPython/v3/think_python_3e.jpg" style="float: right; margin-left: 10px;">
+
 [Here is the landing page for the book at Green Tea Press](https://greenteapress.com/wp/think-python-3rd-edition/).
 
 You can order print and ebook versions of *Think Python 3e* from
