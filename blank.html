@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Think Python &#8212; Think Python</title>
+    <title>Blank Notebooks &#8212; Think Python</title>
   
   
   
@@ -57,12 +57,10 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]]}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'blank';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Preface" href="chap00.html" />
+    <link rel="prev" title="19. Final thoughts" href="chap19.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -125,8 +123,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -145,7 +141,7 @@
     
   
 
-<a class="navbar-brand logo" href="#">
+<a class="navbar-brand logo" href="index.html">
   
   
   
@@ -170,8 +166,8 @@
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
                     Think Python
                 </a>
             </li>
@@ -203,8 +199,8 @@
 <li class="toctree-l1"><a class="reference internal" href="chap19.html">19. Final thoughts</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">End Matter</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="blank.html">Blank Notebooks</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Blank Notebooks</a></li>
 </ul>
 
     </div>
@@ -274,7 +270,7 @@
       
       
       
-      <li><a href="_sources/index.md" target="_blank"
+      <li><a href="_sources/blank.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -345,9 +341,7 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -358,20 +352,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Think Python</h1>
+    <h1>Blank Notebooks</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-notebooks">The notebooks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resources-for-teachers">Resources for teachers</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -381,116 +366,86 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="think-python">
-<h1>Think Python<a class="headerlink" href="#think-python" title="Link to this heading">#</a></h1>
-<p><em>Think Python</em> is an introduction to Python for people who have never programmed before – or for people who have tried and had a hard time.
-You can order print and ebook versions of the third edition from
-<a class="reference external" href="https://bookshop.org/a/98697/9781098155438">Bookshop.org</a> and
-<a class="reference external" href="https://www.amazon.com/_/dp/1098155432?smid=ATVPDKIKX0DER&amp;amp;_encoding=UTF8&amp;amp;tag=oreilly20-20&amp;amp;_encoding=UTF8&amp;amp;tag=greenteapre01-20&amp;amp;linkCode=ur2&amp;amp;linkId=e2a529f94920295d27ec8a06e757dc7c&amp;amp;camp=1789&amp;amp;creative=9325">Amazon</a>.</p>
-<a class="reference internal image-reference" href="https://raw.githubusercontent.com/AllenDowney/ThinkPython/v3/think_python_3e.jpg"><img alt="https://raw.githubusercontent.com/AllenDowney/ThinkPython/v3/think_python_3e.jpg" src="https://raw.githubusercontent.com/AllenDowney/ThinkPython/v3/think_python_3e.jpg" style="width: 250px;" /></a>
-<p><a class="reference external" href="https://greenteapress.com/wp/think-python-3rd-edition/">Here is the landing page for the book at Green Tea Press</a>.</p>
-<p>For the third edition, the biggest changes are:</p>
-<ul class="simple">
-<li><p>The book is now entirely in Jupyter notebooks, so you can read the text, run the code, and work on the exercises – all in one place. Using the links below, you can run the notebooks on Colab, so you don’t have to install anything to get started.</p></li>
-<li><p>The text is substantially revised and a few chapters have been reordered. There are more exercises now, and I think a lot of them are better.</p></li>
-<li><p>At the end of every chapter, there are suggestions for using tools like ChatGPT and Colab AI to learn more and to get help with the exercises.</p></li>
-</ul>
-<section id="the-notebooks">
-<h2>The notebooks<a class="headerlink" href="#the-notebooks" title="Link to this heading">#</a></h2>
+  <section id="blank-notebooks">
+<h1>Blank Notebooks<a class="headerlink" href="#blank-notebooks" title="Link to this heading">#</a></h1>
+<p>For each chapter, I’ve created a “blank” notebook with the original text, but most of the code removed.
+These notebooks are useful for doing follow-along exercises where learners fill in the blanks.</p>
 <p><strong>Chapter 1: Programming as a way of thinking</strong></p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap01.ipynb">Click here to run Chapter 1 on Colab</a></p></li>
+<li><p><a class="reference external" href="https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/blank/chap01.ipynb">Click here to run blank 1 on Colab</a></p></li>
 </ul>
 <p><strong>Chapter 2: Variables and Statements</strong></p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap02.ipynb">Click here to run Chapter 2 on Colab</a></p></li>
+<li><p><a class="reference external" href="https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/blank/chap02.ipynb">Click here to run blank 2 on Colab</a></p></li>
 </ul>
 <p><strong>Chapter 3: Functions</strong></p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap03.ipynb">Click here to run Chapter 3 on Colab</a></p></li>
+<li><p><a class="reference external" href="https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/blank/chap03.ipynb">Click here to run blank 3 on Colab</a></p></li>
 </ul>
 <p><strong>Chapter 4: Functions and Interfaces</strong></p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap04.ipynb">Click here to run Chapter 4 on Colab</a></p></li>
+<li><p><a class="reference external" href="https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/blank/chap04.ipynb">Click here to run blank 4 on Colab</a></p></li>
 </ul>
 <p><strong>Chapter 5: Conditionals and Recursion</strong></p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap05.ipynb">Click here to run Chapter 5 on Colab</a></p></li>
+<li><p><a class="reference external" href="https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/blank/chap05.ipynb">Click here to run blank 5 on Colab</a></p></li>
 </ul>
 <p><strong>Chapter 6: Return Values</strong></p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap06.ipynb">Click here to run Chapter 6 on Colab</a></p></li>
+<li><p><a class="reference external" href="https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/blank/chap06.ipynb">Click here to run blank 6 on Colab</a></p></li>
 </ul>
 <p><strong>Chapter 7: Iteration and Search</strong></p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap07.ipynb">Click here to run Chapter 7 on Colab</a></p></li>
+<li><p><a class="reference external" href="https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/blank/chap07.ipynb">Click here to run blank 7 on Colab</a></p></li>
 </ul>
 <p><strong>Chapter 8: Strings and Regular Expressions</strong></p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap08.ipynb">Click here to run Chapter 8 on Colab</a></p></li>
+<li><p><a class="reference external" href="https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/blank/chap08.ipynb">Click here to run blank 8 on Colab</a></p></li>
 </ul>
 <p><strong>Chapter 9: Lists</strong></p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap09.ipynb">Click here to run Chapter 9 on Colab</a></p></li>
+<li><p><a class="reference external" href="https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/blank/chap09.ipynb">Click here to run blank 9 on Colab</a></p></li>
 </ul>
 <p><strong>Chapter 10: Dictionaries</strong></p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap10.ipynb">Click here to run Chapter 10 on Colab</a></p></li>
+<li><p><a class="reference external" href="https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/blank/chap10.ipynb">Click here to run blank 10 on Colab</a></p></li>
 </ul>
 <p><strong>Chapter 11: Tuples</strong></p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap11.ipynb">Click here to run Chapter 11 on Colab</a></p></li>
+<li><p><a class="reference external" href="https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/blank/chap11.ipynb">Click here to run blank 11 on Colab</a></p></li>
 </ul>
 <p><strong>Chapter 12: Text Analysis and Generation</strong></p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap12.ipynb">Click here to run Chapter 12 on Colab</a></p></li>
+<li><p><a class="reference external" href="https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/blank/chap12.ipynb">Click here to run blank 12 on Colab</a></p></li>
 </ul>
 <p><strong>Chapter 13: Files and Databases</strong></p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap13.ipynb">Click here to run Chapter 13 on Colab</a></p></li>
+<li><p><a class="reference external" href="https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/blank/chap13.ipynb">Click here to run blank 13 on Colab</a></p></li>
 </ul>
 <p><strong>Chapter 14: Classes and Functions</strong></p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap14.ipynb">Click here to run Chapter 14 on Colab</a></p></li>
+<li><p><a class="reference external" href="https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/blank/chap14.ipynb">Click here to run blank 14 on Colab</a></p></li>
 </ul>
 <p><strong>Chapter 15: Classes and Methods</strong></p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap15.ipynb">Click here to run Chapter 15 on Colab</a></p></li>
+<li><p><a class="reference external" href="https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/blank/chap15.ipynb">Click here to run blank 15 on Colab</a></p></li>
 </ul>
 <p><strong>Chapter 16: Classes and Objects</strong></p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap16.ipynb">Click here to run Chapter 16 on Colab</a></p></li>
+<li><p><a class="reference external" href="https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/blank/chap16.ipynb">Click here to run blank 16 on Colab</a></p></li>
 </ul>
 <p><strong>Chapter 17: Inheritance</strong></p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap17.ipynb">Click here to run Chapter 17 on Colab</a></p></li>
+<li><p><a class="reference external" href="https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/blank/chap17.ipynb">Click here to run blank 17 on Colab</a></p></li>
 </ul>
 <p><strong>Chapter 18: Python Extras</strong></p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap18.ipynb">Click here to run Chapter 18 on Colab</a></p></li>
+<li><p><a class="reference external" href="https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/blank/chap18.ipynb">Click here to run blank 18 on Colab</a></p></li>
 </ul>
 <p><strong>Chapter 19: Final Thoughts</strong></p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap19.ipynb">Click here to run Chapter 19 on Colab</a></p></li>
+<li><p><a class="reference external" href="https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/blank/chap19.ipynb">Click here to run blank 19 on Colab</a></p></li>
 </ul>
-</section>
-<section id="resources-for-teachers">
-<h2>Resources for teachers<a class="headerlink" href="#resources-for-teachers" title="Link to this heading">#</a></h2>
-<p>If you are teaching with this book, here are some resources you might find useful.</p>
-<ul class="simple">
-<li><p>You can download notebooks with solutions from <a class="reference external" href="https://github.com/AllenDowney/ThinkPythonSolutions/tree/v3/soln">this GitHub repository</a>.</p></li>
-<li><p>Quizzes for each chapter, and a summative quiz for the whole book, are available on request.</p></li>
-<li><p><em>Teaching and Learning with Jupyter</em> is an online book with suggestions for using Jupyter effectively in the classroom. You can <a class="reference external" href="https://jupyter4edu.github.io/jupyter-edu-book">read the book here</a>.</p></li>
-<li><p>One of the best ways to use notebooks in the classroom is live coding, where an instructor writes code and students follow along in their own notebooks. To learn about live coding – and a lot of other great advice about teaching programming – I recommend the teacher training provided by The Carpentries, <a class="reference external" href="https://carpentries.github.io/instructor-training">which you can read here</a>.</p></li>
-<li><p>For each chapter, I’ve created a “blank” notebook with the original text, but most of the code removed. These notebooks are useful for doing follow-along exercises where learners fill in the blanks. <a class="reference external" href="https://allendowney.github.io/ThinkPython/blank.html">Links to the blank notebooks are here</a>.</p></li>
-</ul>
-</section>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -523,14 +478,14 @@ You can order print and ebook versions of the third edition from
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="right-next"
-       href="chap00.html"
-       title="next page">
+    <a class="left-prev"
+       href="chap19.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Preface</p>
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">19. </span>Final thoughts</p>
       </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -538,22 +493,6 @@ You can order print and ebook versions of the third edition from
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-notebooks">The notebooks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resources-for-teachers">Resources for teachers</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>

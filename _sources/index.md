@@ -113,3 +113,5 @@ If you are teaching with this book, here are some resources you might find usefu
 * *Teaching and Learning with Jupyter* is an online book with suggestions for using Jupyter effectively in the classroom. You can [read the book here](https://jupyter4edu.github.io/jupyter-edu-book).
 
 * One of the best ways to use notebooks in the classroom is live coding, where an instructor writes code and students follow along in their own notebooks. To learn about live coding -- and a lot of other great advice about teaching programming -- I recommend the teacher training provided by The Carpentries, [which you can read here](https://carpentries.github.io/instructor-training).
+
+* For each chapter, I've created a "blank" notebook with the original text, but most of the code removed. These notebooks are useful for doing follow-along exercises where learners fill in the blanks. [Links to the blank notebooks are here](https://allendowney.github.io/ThinkPython/blank.html).
