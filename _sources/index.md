@@ -5,8 +5,7 @@ You can order print and ebook versions of the third edition from
 [Bookshop.org](https://bookshop.org/a/98697/9781098155438) and
 [Amazon](https://www.amazon.com/_/dp/1098155432?smid=ATVPDKIKX0DER&_encoding=UTF8&tag=oreilly20-20&_encoding=UTF8&tag=greenteapre01-20&linkCode=ur2&linkId=e2a529f94920295d27ec8a06e757dc7c&camp=1789&creative=9325).
 
-<img width="200" src="https://raw.githubusercontent.com/AllenDowney/ThinkPython/v3/think_python_3e.jpg" style="float: right; margin-left: 10px;">
-<br>
+<img width="250" src="https://raw.githubusercontent.com/AllenDowney/ThinkPython/v3/think_python_3e.jpg" style="float: right; margin-left: 10px;">
 
  [Here is the landing page for the book at Green Tea Press](https://greenteapress.com/wp/think-python-3rd-edition/).
 
