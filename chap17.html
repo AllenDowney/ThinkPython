@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Inheritance &#8212; Think Python, 3rd edition</title>
+    <title>17. Inheritance &#8212; Think Python, 3rd edition</title>
   
   
   
@@ -60,8 +60,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'chap17';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Python Extras" href="chap18.html" />
-    <link rel="prev" title="Classes and Objects" href="chap16.html" />
+    <link rel="next" title="18. Python Extras" href="chap18.html" />
+    <link rel="prev" title="16. Classes and Objects" href="chap16.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -173,27 +173,31 @@
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Front Matter</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="chap00.html">Preface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap01.html">Programming as a way of thinking</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap02.html">Variables and Statements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap03.html">Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap04.html">Functions and Interfaces</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap05.html">Conditionals and Recursion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap06.html">Return Values</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap07.html">Iteration and Search</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap08.html">Strings and Regular Expressions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap09.html">Lists</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap10.html">Dictionaries</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap11.html">Tuples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap12.html">Text Analysis and Generation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap13.html">Files and Databases</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap14.html">Classes and Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap15.html">Classes and Methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap16.html">Classes and Objects</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Inheritance</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap18.html">Python Extras</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap19.html">Final thoughts</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapters</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chap01.html">1. Programming as a way of thinking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap02.html">2. Variables and Statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap03.html">3. Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap04.html">4. Functions and Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap05.html">5. Conditionals and Recursion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap06.html">6. Return Values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap07.html">7. Iteration and Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap08.html">8. Strings and Regular Expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap09.html">9. Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap10.html">10. Dictionaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap11.html">11. Tuples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap12.html">12. Text Analysis and Generation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap13.html">13. Files and Databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap14.html">14. Classes and Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap15.html">15. Classes and Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap16.html">16. Classes and Objects</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">17. Inheritance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap18.html">18. Python Extras</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap19.html">19. Final thoughts</a></li>
 </ul>
 
     </div>
@@ -357,26 +361,26 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#representing-cards">Representing cards</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#card-attributes">Card attributes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#printing-cards">Printing cards</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-cards">Comparing cards</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#decks">Decks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#printing-the-deck">Printing the deck</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-remove-shuffle-and-sort">Add, remove, shuffle and sort</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parents-and-children">Parents and children</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specialization">Specialization</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">Debugging</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">Glossary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">Ask a Virtual Assistant</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#representing-cards">17.1. Representing cards</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#card-attributes">17.2. Card attributes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#printing-cards">17.3. Printing cards</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-cards">17.4. Comparing cards</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#decks">17.5. Decks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#printing-the-deck">17.6. Printing the deck</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-remove-shuffle-and-sort">17.7. Add, remove, shuffle and sort</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parents-and-children">17.8. Parents and children</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specialization">17.9. Specialization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">17.10. Debugging</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">17.11. Glossary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">17.12. Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">17.12.1. Ask a Virtual Assistant</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">17.12.2. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">17.12.3. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">17.12.4. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">17.12.5. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">17.12.6. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">17.12.7. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">17.12.8. Exercise</a></li>
 </ul>
 </li>
 </ul>
@@ -394,13 +398,13 @@ document.write(`
 <a class="reference external" href="https://bookshop.org/a/98697/9781098155438">Bookshop.org</a> and
 <a class="reference external" href="https://www.amazon.com/_/dp/1098155432?smid=ATVPDKIKX0DER&amp;amp;_encoding=UTF8&amp;amp;tag=oreilly20-20&amp;amp;_encoding=UTF8&amp;amp;tag=greenteapre01-20&amp;amp;linkCode=ur2&amp;amp;linkId=e2a529f94920295d27ec8a06e757dc7c&amp;amp;camp=1789&amp;amp;creative=9325">Amazon</a>.</p>
 <section id="inheritance">
-<span id="chapter-inheritance"></span><h1>Inheritance<a class="headerlink" href="#inheritance" title="Link to this heading">#</a></h1>
+<span id="chapter-inheritance"></span><h1><span class="section-number">17. </span>Inheritance<a class="headerlink" href="#inheritance" title="Link to this heading">#</a></h1>
 <p>The language feature most often associated with object-oriented programming is <strong>inheritance</strong>.
 Inheritance is the ability to define a new class that is a modified version of an existing class.
 In this chapter I demonstrate inheritance using classes that represent playing cards, decks of cards, and poker hands.
 If you don’t play poker, don’t worry – I’ll tell you what you need to know.</p>
 <section id="representing-cards">
-<h2>Representing cards<a class="headerlink" href="#representing-cards" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">17.1. </span>Representing cards<a class="headerlink" href="#representing-cards" title="Link to this heading">#</a></h2>
 <p>There are 52 playing cards in a standard deck – each of them belongs to one of four suits and one of thirteen ranks.
 The suits are Spades, Hearts, Diamonds, and Clubs.
 The ranks are Ace, 2, 3, 4, 5, 6, 7, 8, 9, 10, Jack, Queen, and King.
@@ -514,7 +518,7 @@ The following table shows the codes for the face cards.</p>
 </div>
 </section>
 <section id="card-attributes">
-<h2>Card attributes<a class="headerlink" href="#card-attributes" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">17.2. </span>Card attributes<a class="headerlink" href="#card-attributes" title="Link to this heading">#</a></h2>
 <p>Here’s an <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method for the <code class="docutils literal notranslate"><span class="pre">Card</span></code> class – it takes <code class="docutils literal notranslate"><span class="pre">suit</span></code> and <code class="docutils literal notranslate"><span class="pre">rank</span></code> as parameters and assigns them to attributes with the same names.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -564,7 +568,7 @@ The following table shows the codes for the face cards.</p>
 <p>But if you use the class, it is clearer that they are class variables, not attributes.</p>
 </section>
 <section id="printing-cards">
-<h2>Printing cards<a class="headerlink" href="#printing-cards" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">17.3. </span>Printing cards<a class="headerlink" href="#printing-cards" title="Link to this heading">#</a></h2>
 <p>Here’s a <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method for <code class="docutils literal notranslate"><span class="pre">Card</span></code> objects.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -603,7 +607,7 @@ To save space, I didn’t draw the contents of <code class="docutils literal not
 <p>Every <code class="docutils literal notranslate"><span class="pre">Card</span></code> instance has its own <code class="docutils literal notranslate"><span class="pre">suit</span></code> and <code class="docutils literal notranslate"><span class="pre">rank</span></code> attributes, but there is only one <code class="docutils literal notranslate"><span class="pre">Card</span></code> class object, and only one copy of the class variables <code class="docutils literal notranslate"><span class="pre">suit_names</span></code> and <code class="docutils literal notranslate"><span class="pre">rank_names</span></code>.</p>
 </section>
 <section id="comparing-cards">
-<h2>Comparing cards<a class="headerlink" href="#comparing-cards" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">17.4. </span>Comparing cards<a class="headerlink" href="#comparing-cards" title="Link to this heading">#</a></h2>
 <p>Suppose we create a second <code class="docutils literal notranslate"><span class="pre">Card</span></code> object with the same suit and rank.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -845,7 +849,7 @@ With these two properties, we can say that <code class="docutils literal notrans
 And that means, as we’ll see soon, that they can be sorted.</p>
 </section>
 <section id="decks">
-<h2>Decks<a class="headerlink" href="#decks" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">17.5. </span>Decks<a class="headerlink" href="#decks" title="Link to this heading">#</a></h2>
 <p>Now that we have objects that represent cards, let’s define objects that represent decks.
 The following is a class definition for <code class="docutils literal notranslate"><span class="pre">Deck</span></code> with
 an <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method takes a list of <code class="docutils literal notranslate"><span class="pre">Card</span></code> objects as a parameter and assigns it to an attribute called <code class="docutils literal notranslate"><span class="pre">cards</span></code>.</p>
@@ -896,7 +900,7 @@ Each iteration creates a new <code class="docutils literal notranslate"><span cl
 <p>It contains 52 cards, as intended.</p>
 </section>
 <section id="printing-the-deck">
-<span id="section-print-deck"></span><h2>Printing the deck<a class="headerlink" href="#printing-the-deck" title="Link to this heading">#</a></h2>
+<span id="section-print-deck"></span><h2><span class="section-number">17.6. </span>Printing the deck<a class="headerlink" href="#printing-the-deck" title="Link to this heading">#</a></h2>
 <p>Here is a <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method for <code class="docutils literal notranslate"><span class="pre">Deck</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -951,7 +955,7 @@ Each iteration creates a new <code class="docutils literal notranslate"><span cl
 <p>So the cards appear on separate lines.</p>
 </section>
 <section id="add-remove-shuffle-and-sort">
-<h2>Add, remove, shuffle and sort<a class="headerlink" href="#add-remove-shuffle-and-sort" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">17.7. </span>Add, remove, shuffle and sort<a class="headerlink" href="#add-remove-shuffle-and-sort" title="Link to this heading">#</a></h2>
 <p>To deal cards, we would like a method that removes a card from the deck
 and returns it. The list method <code class="docutils literal notranslate"><span class="pre">pop</span></code> provides a convenient way to do
 that.</p>
@@ -1093,7 +1097,7 @@ that.</p>
 Passing along responsibility like this is called <strong>delegation</strong>.</p>
 </section>
 <section id="parents-and-children">
-<h2>Parents and children<a class="headerlink" href="#parents-and-children" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">17.8. </span>Parents and children<a class="headerlink" href="#parents-and-children" title="Link to this heading">#</a></h2>
 <p>Inheritance is the ability to define a new class that is a modified version of an existing class.
 As an example, let’s say we want a class to represent a “hand”, that is, the cards held by one player.</p>
 <ul class="simple">
@@ -1180,7 +1184,7 @@ So we can use this method to deal a card from <code class="docutils literal notr
 If you violate these rules, your code will collapse like a house of cards (sorry).</p>
 </section>
 <section id="specialization">
-<h2>Specialization<a class="headerlink" href="#specialization" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">17.9. </span>Specialization<a class="headerlink" href="#specialization" title="Link to this heading">#</a></h2>
 <p>Let’s make a class called <code class="docutils literal notranslate"><span class="pre">BridgeHand</span></code> that represents a hand in bridge – a widely played card game.
 We’ll inherit from <code class="docutils literal notranslate"><span class="pre">Hand</span></code> and add a new method called <code class="docutils literal notranslate"><span class="pre">high_card_point_count</span></code> that evaluates a hand using a “high card point” method, which adds up points for the high cards in the hand.</p>
 <p>Here’s a class definition that contains as a class variable a dictionary that maps from card names to their point values.</p>
@@ -1268,7 +1272,7 @@ Queen of Diamonds
 This way of using inheritance is called <strong>specialization</strong> because it defines a new class that is specialized for a particular use, like playing bridge.</p>
 </section>
 <section id="debugging">
-<h2>Debugging<a class="headerlink" href="#debugging" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">17.10. </span>Debugging<a class="headerlink" href="#debugging" title="Link to this heading">#</a></h2>
 <p>Inheritance is a useful feature.
 Some programs that would be repetitive without inheritance can be written more concisely with it.
 Also, inheritance can facilitate code reuse, since you can customize the behavior of a parent class without having to modify it.
@@ -1310,7 +1314,7 @@ If <code class="docutils literal notranslate"><span class="pre">Deck.shuffle</sp
 <p>The <code class="docutils literal notranslate"><span class="pre">shuffle</span></code> method for the <code class="docutils literal notranslate"><span class="pre">BridgeHand</span></code> object is the one in <code class="docutils literal notranslate"><span class="pre">Deck</span></code>.</p>
 </section>
 <section id="glossary">
-<h2>Glossary<a class="headerlink" href="#glossary" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">17.11. </span>Glossary<a class="headerlink" href="#glossary" title="Link to this heading">#</a></h2>
 <p><strong>inheritance:</strong>
 The ability to define a new class that is a modified version of a previously defined class.</p>
 <p><strong>encode:</strong>
@@ -1329,7 +1333,7 @@ A class that inherits from another class.</p>
 A way of using inheritance to create a new class that is a specialized version of an existing class.</p>
 </section>
 <section id="exercises">
-<h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">17.12. </span>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
 <div class="cell tag_remove-print docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This cell tells Jupyter to provide detailed debugging information</span>
@@ -1341,7 +1345,7 @@ A way of using inheritance to create a new class that is a specialized version o
 </div>
 </div>
 <section id="ask-a-virtual-assistant">
-<h3>Ask a Virtual Assistant<a class="headerlink" href="#ask-a-virtual-assistant" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">17.12.1. </span>Ask a Virtual Assistant<a class="headerlink" href="#ask-a-virtual-assistant" title="Link to this heading">#</a></h3>
 <p>When it goes well, object-oriented programming can make programs more readable, testable, and reusable.
 But it can also make programs complicated and hard to maintain.
 As a result, OOP is a topic of controversy – some people love it, and some people don’t.</p>
@@ -1356,7 +1360,7 @@ As a result, OOP is a topic of controversy – some people love it, and some peo
 <p>And as always, consider using a virtual assistant to help with the following exercises.</p>
 </section>
 <section id="exercise">
-<h3>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">17.12.2. </span>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h3>
 <p>In contract bridge, a “trick” is a round of play in which each of four players plays one card.
 To represent those cards, we’ll define a class that inherits from <code class="docutils literal notranslate"><span class="pre">Deck</span></code>.</p>
 <div class="cell docutils container">
@@ -1395,7 +1399,7 @@ King of Hearts
 In the previous example, the index of the winning card is <code class="docutils literal notranslate"><span class="pre">2</span></code>.</p>
 </section>
 <section id="id1">
-<h3>Exercise<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">17.12.3. </span>Exercise<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p>The next few exercises ask to you write functions that classify poker hands.
 If you are not familiar with poker, I’ll explain what you need to know.
 We’ll use the following class to represent poker hands.</p>
@@ -1436,19 +1440,19 @@ If you ask for code, you might want to provide the relevant class definitions as
 But regardless of how many cards there are in a hand, the only ones that count are the five that make the best hand.</p>
 </section>
 <section id="id2">
-<h3>Exercise<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">17.12.4. </span>Exercise<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <p>Write a method called <code class="docutils literal notranslate"><span class="pre">has_straight</span></code> that checks whether a hand contains a straight, which is a set of five cards with consecutive ranks.
 For example, if a hand contains ranks <code class="docutils literal notranslate"><span class="pre">5</span></code>, <code class="docutils literal notranslate"><span class="pre">6</span></code>, <code class="docutils literal notranslate"><span class="pre">7</span></code>, <code class="docutils literal notranslate"><span class="pre">8</span></code>, and <code class="docutils literal notranslate"><span class="pre">9</span></code>, it contains a straight.</p>
 <p>An Ace can come before a two or after a King, so <code class="docutils literal notranslate"><span class="pre">Ace</span></code>, <code class="docutils literal notranslate"><span class="pre">2</span></code>, <code class="docutils literal notranslate"><span class="pre">3</span></code>, <code class="docutils literal notranslate"><span class="pre">4</span></code>, <code class="docutils literal notranslate"><span class="pre">5</span></code> is a straight and so it <code class="docutils literal notranslate"><span class="pre">10</span></code>, <code class="docutils literal notranslate"><span class="pre">Jack</span></code>, <code class="docutils literal notranslate"><span class="pre">Queen</span></code>, <code class="docutils literal notranslate"><span class="pre">King</span></code>, <code class="docutils literal notranslate"><span class="pre">Ace</span></code>.
 But a straight cannot “wrap around”, so <code class="docutils literal notranslate"><span class="pre">King</span></code>, <code class="docutils literal notranslate"><span class="pre">Ace</span></code>, <code class="docutils literal notranslate"><span class="pre">2</span></code>, <code class="docutils literal notranslate"><span class="pre">3</span></code>, <code class="docutils literal notranslate"><span class="pre">4</span></code> is not a straight.</p>
 </section>
 <section id="id3">
-<h3>Exercise<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">17.12.5. </span>Exercise<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <p>A hand has a straight flush if it contains a set of five cards that are both a straight and a flush – that is, five cards of the same suit with consecutive ranks.
 Write a <code class="docutils literal notranslate"><span class="pre">PokerHand</span></code> method that checks whether a hand has a straight flush.</p>
 </section>
 <section id="id4">
-<h3>Exercise<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">17.12.6. </span>Exercise<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <p>A poker hand has a pair if it contains two or more cards with the same rank.
 Write a <code class="docutils literal notranslate"><span class="pre">PokerHand</span></code> method that checks whether a hand contains a pair.</p>
 <p>You can use the following outline to get started.</p>
@@ -1510,12 +1514,12 @@ Write a <code class="docutils literal notranslate"><span class="pre">PokerHand</
 </div>
 </section>
 <section id="id5">
-<h3>Exercise<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">17.12.7. </span>Exercise<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
 <p>A hand has a full house if it contains three cards of one rank and two cards of another rank.
 Write a <code class="docutils literal notranslate"><span class="pre">PokerHand</span></code> method that checks whether a hand has a full house.</p>
 </section>
 <section id="id6">
-<h3>Exercise<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">17.12.8. </span>Exercise<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
 <p>This exercise is a cautionary tale about a common error that can be difficult to debug.
 Consider the following class definition.</p>
 <div class="cell docutils container">
@@ -1649,7 +1653,7 @@ Then ask a virtual assistant, “What’s wrong with the following program?” a
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Classes and Objects</p>
+        <p class="prev-next-title"><span class="section-number">16. </span>Classes and Objects</p>
       </div>
     </a>
     <a class="right-next"
@@ -1657,7 +1661,7 @@ Then ask a virtual assistant, “What’s wrong with the following program?” a
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Python Extras</p>
+        <p class="prev-next-title"><span class="section-number">18. </span>Python Extras</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1677,26 +1681,26 @@ Then ask a virtual assistant, “What’s wrong with the following program?” a
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#representing-cards">Representing cards</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#card-attributes">Card attributes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#printing-cards">Printing cards</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-cards">Comparing cards</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#decks">Decks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#printing-the-deck">Printing the deck</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-remove-shuffle-and-sort">Add, remove, shuffle and sort</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parents-and-children">Parents and children</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specialization">Specialization</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">Debugging</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">Glossary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">Ask a Virtual Assistant</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#representing-cards">17.1. Representing cards</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#card-attributes">17.2. Card attributes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#printing-cards">17.3. Printing cards</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-cards">17.4. Comparing cards</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#decks">17.5. Decks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#printing-the-deck">17.6. Printing the deck</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-remove-shuffle-and-sort">17.7. Add, remove, shuffle and sort</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parents-and-children">17.8. Parents and children</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specialization">17.9. Specialization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">17.10. Debugging</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">17.11. Glossary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">17.12. Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">17.12.1. Ask a Virtual Assistant</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">17.12.2. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">17.12.3. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">17.12.4. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">17.12.5. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">17.12.6. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">17.12.7. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">17.12.8. Exercise</a></li>
 </ul>
 </li>
 </ul>

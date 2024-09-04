@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Dictionaries &#8212; Think Python, 3rd edition</title>
+    <title>10. Dictionaries &#8212; Think Python, 3rd edition</title>
   
   
   
@@ -60,8 +60,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'chap10';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Tuples" href="chap11.html" />
-    <link rel="prev" title="Lists" href="chap09.html" />
+    <link rel="next" title="11. Tuples" href="chap11.html" />
+    <link rel="prev" title="9. Lists" href="chap09.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -173,27 +173,31 @@
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Front Matter</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="chap00.html">Preface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap01.html">Programming as a way of thinking</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap02.html">Variables and Statements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap03.html">Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap04.html">Functions and Interfaces</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap05.html">Conditionals and Recursion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap06.html">Return Values</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap07.html">Iteration and Search</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap08.html">Strings and Regular Expressions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap09.html">Lists</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Dictionaries</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap11.html">Tuples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap12.html">Text Analysis and Generation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap13.html">Files and Databases</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap14.html">Classes and Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap15.html">Classes and Methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap16.html">Classes and Objects</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap17.html">Inheritance</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap18.html">Python Extras</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap19.html">Final thoughts</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapters</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chap01.html">1. Programming as a way of thinking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap02.html">2. Variables and Statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap03.html">3. Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap04.html">4. Functions and Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap05.html">5. Conditionals and Recursion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap06.html">6. Return Values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap07.html">7. Iteration and Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap08.html">8. Strings and Regular Expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap09.html">9. Lists</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">10. Dictionaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap11.html">11. Tuples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap12.html">12. Text Analysis and Generation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap13.html">13. Files and Databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap14.html">14. Classes and Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap15.html">15. Classes and Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap16.html">16. Classes and Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap17.html">17. Inheritance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap18.html">18. Python Extras</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap19.html">19. Final thoughts</a></li>
 </ul>
 
     </div>
@@ -357,23 +361,23 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-dictionary-is-a-mapping">A dictionary is a mapping</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-dictionaries">Creating dictionaries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-in-operator">The in operator</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-collection-of-counters">A collection of counters</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#looping-and-dictionaries">Looping and dictionaries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lists-and-dictionaries">Lists and dictionaries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accumulating-a-list">Accumulating a list</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#memos">Memos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">Debugging</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">Glossary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-an-assistant">Ask an assistant</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-dictionary-is-a-mapping">10.1. A dictionary is a mapping</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-dictionaries">10.2. Creating dictionaries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-in-operator">10.3. The in operator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-collection-of-counters">10.4. A collection of counters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#looping-and-dictionaries">10.5. Looping and dictionaries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lists-and-dictionaries">10.6. Lists and dictionaries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accumulating-a-list">10.7. Accumulating a list</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#memos">10.8. Memos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">10.9. Debugging</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">10.10. Glossary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">10.11. Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-an-assistant">10.11.1. Ask an assistant</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">10.11.2. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">10.11.3. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">10.11.4. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">10.11.5. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">10.11.6. Exercise</a></li>
 </ul>
 </li>
 </ul>
@@ -391,13 +395,13 @@ document.write(`
 <a class="reference external" href="https://bookshop.org/a/98697/9781098155438">Bookshop.org</a> and
 <a class="reference external" href="https://www.amazon.com/_/dp/1098155432?smid=ATVPDKIKX0DER&amp;amp;_encoding=UTF8&amp;amp;tag=oreilly20-20&amp;amp;_encoding=UTF8&amp;amp;tag=greenteapre01-20&amp;amp;linkCode=ur2&amp;amp;linkId=e2a529f94920295d27ec8a06e757dc7c&amp;amp;camp=1789&amp;amp;creative=9325">Amazon</a>.</p>
 <section id="dictionaries">
-<h1>Dictionaries<a class="headerlink" href="#dictionaries" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">10. </span>Dictionaries<a class="headerlink" href="#dictionaries" title="Link to this heading">#</a></h1>
 <p>This chapter presents a built-in type called a dictionary.
 It is one of Python’s best features – and the building block of many efficient and elegant algorithms.</p>
 <p>We’ll use dictionaries to compute the number of unique words in a book and the number of times each one appears.
 And in the exercises, we’ll use dictionaries to solve word puzzles.</p>
 <section id="a-dictionary-is-a-mapping">
-<h2>A dictionary is a mapping<a class="headerlink" href="#a-dictionary-is-a-mapping" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">10.1. </span>A dictionary is a mapping<a class="headerlink" href="#a-dictionary-is-a-mapping" title="Link to this heading">#</a></h2>
 <p>A <strong>dictionary</strong> is like a list, but more general.
 In a list, the indices have to be integers; in a dictionary they can be (almost) any type.
 For example, suppose we make a list of number words, like this.</p>
@@ -529,7 +533,7 @@ Each item is represented by a key and an arrow pointing to a value.
 The quotation marks indicate that the keys here are strings, not variable names.</p>
 </section>
 <section id="creating-dictionaries">
-<h2>Creating dictionaries<a class="headerlink" href="#creating-dictionaries" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">10.2. </span>Creating dictionaries<a class="headerlink" href="#creating-dictionaries" title="Link to this heading">#</a></h2>
 <p>In the previous section we created an empty dictionary and added items one at a time using the bracket operator.
 Instead, we could have created the dictionary all at once like this.</p>
 <div class="cell docutils container">
@@ -573,7 +577,7 @@ We can make an empty dictionary like this.</p>
 <p>It is often useful to make a copy before performing operations that modify dictionaries.</p>
 </section>
 <section id="the-in-operator">
-<span id="section-dictionary-in-operator"></span><h2>The in operator<a class="headerlink" href="#the-in-operator" title="Link to this heading">#</a></h2>
+<span id="section-dictionary-in-operator"></span><h2><span class="section-number">10.3. </span>The in operator<a class="headerlink" href="#the-in-operator" title="Link to this heading">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">in</span></code> operator works on dictionaries, too; it tells you whether something appears as a <em>key</em> in the dictionary.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -714,7 +718,7 @@ The time it takes to find a key in a dictionary is almost constant – regardles
 </div>
 </section>
 <section id="a-collection-of-counters">
-<h2>A collection of counters<a class="headerlink" href="#a-collection-of-counters" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">10.4. </span>A collection of counters<a class="headerlink" href="#a-collection-of-counters" title="Link to this heading">#</a></h2>
 <p>Suppose you are given a string and you want to count how many times each letter appears.
 A dictionary is a good tool for this job.
 We’ll start with an empty dictionary.</p>
@@ -790,7 +794,7 @@ If <code class="docutils literal notranslate"><span class="pre">letter</span></c
 <p>The items in <code class="docutils literal notranslate"><span class="pre">counter</span></code> show that the letter <code class="docutils literal notranslate"><span class="pre">'b'</span></code> appears once, <code class="docutils literal notranslate"><span class="pre">'r'</span></code> appears twice, and so on.</p>
 </section>
 <section id="looping-and-dictionaries">
-<h2>Looping and dictionaries<a class="headerlink" href="#looping-and-dictionaries" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">10.5. </span>Looping and dictionaries<a class="headerlink" href="#looping-and-dictionaries" title="Link to this heading">#</a></h2>
 <p>If you use a dictionary in a <code class="docutils literal notranslate"><span class="pre">for</span></code> statement, it traverses the keys of the dictionary.
 To demonstrate, let’s make a dictionary that counts the letters in <code class="docutils literal notranslate"><span class="pre">'banana'</span></code>.</p>
 <div class="cell docutils container">
@@ -858,7 +862,7 @@ n 2
 <p>In the next chapter, we’ll see a more concise way to do the same thing.</p>
 </section>
 <section id="lists-and-dictionaries">
-<h2>Lists and dictionaries<a class="headerlink" href="#lists-and-dictionaries" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">10.6. </span>Lists and dictionaries<a class="headerlink" href="#lists-and-dictionaries" title="Link to this heading">#</a></h2>
 <p>You can put a list in a dictionary as a value.
 For example, here’s a dictionary that maps from the number <code class="docutils literal notranslate"><span class="pre">4</span></code> to a list of four letters.</p>
 <div class="cell docutils container">
@@ -899,7 +903,7 @@ That’s why keys have to be hashable, and why mutable types like lists aren’t
 But they <em>can</em> be used as values.</p>
 </section>
 <section id="accumulating-a-list">
-<span id="section-palindrome-list"></span><h2>Accumulating a list<a class="headerlink" href="#accumulating-a-list" title="Link to this heading">#</a></h2>
+<span id="section-palindrome-list"></span><h2><span class="section-number">10.7. </span>Accumulating a list<a class="headerlink" href="#accumulating-a-list" title="Link to this heading">#</a></h2>
 <p>For many programming tasks, it is useful to loop through one list or dictionary while building another.
 As an example, we’ll loop through the words in <code class="docutils literal notranslate"><span class="pre">word_dict</span></code> and make a list of palindromes – that is, words that are spelled the same backward and forward, like “noon” and “rotator”.</p>
 <p>In the previous chapter, one of the exercises asked you to write a function that checks whether a word is a palindrome.
@@ -987,7 +991,7 @@ We can loop through <code class="docutils literal notranslate"><span class="pre"
 <p>Looping through a list like this, selecting some elements and omitting others, is called <strong>filtering</strong>.</p>
 </section>
 <section id="memos">
-<span id="section-memos"></span><h2>Memos<a class="headerlink" href="#memos" title="Link to this heading">#</a></h2>
+<span id="section-memos"></span><h2><span class="section-number">10.8. </span>Memos<a class="headerlink" href="#memos" title="Link to this heading">#</a></h2>
 <p>If you ran the <code class="docutils literal notranslate"><span class="pre">fibonacci</span></code> function from <a class="reference internal" href="chap06.html#section-fibonacci"><span class="std std-ref">Chapter 6</span></a>, maybe you noticed that the bigger the argument you provide, the longer the function takes to run.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1044,7 +1048,7 @@ Otherwise it has to compute the new value, add it to the dictionary, and return 
 In the notebook for this chapter, you’ll see where these measurements come from.</p>
 </section>
 <section id="debugging">
-<h2>Debugging<a class="headerlink" href="#debugging" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">10.9. </span>Debugging<a class="headerlink" href="#debugging" title="Link to this heading">#</a></h2>
 <p>As you work with bigger datasets it can become unwieldy to debug by printing and checking the output by hand. Here are some suggestions for debugging large datasets:</p>
 <ol class="arabic">
 <li><p>Scale down the input: If possible, reduce the size of the dataset. For example if the
@@ -1079,7 +1083,7 @@ check” because it detects results that are “insane”.</p>
 </ol>
 </section>
 <section id="glossary">
-<h2>Glossary<a class="headerlink" href="#glossary" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">10.10. </span>Glossary<a class="headerlink" href="#glossary" title="Link to this heading">#</a></h2>
 <p><strong>dictionary:</strong>
 An object that contains key-value pairs, also called items.</p>
 <p><strong>item:</strong>
@@ -1107,7 +1111,7 @@ A diagram that shows every frame created during the execution of a program, with
 A computed value stored to avoid unnecessary future computation.</p>
 </section>
 <section id="exercises">
-<h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">10.11. </span>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
 <div class="cell tag_remove-print docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This cell tells Jupyter to provide detailed debugging information</span>
@@ -1119,14 +1123,14 @@ A computed value stored to avoid unnecessary future computation.</p>
 </div>
 </div>
 <section id="ask-an-assistant">
-<h3>Ask an assistant<a class="headerlink" href="#ask-an-assistant" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">10.11.1. </span>Ask an assistant<a class="headerlink" href="#ask-an-assistant" title="Link to this heading">#</a></h3>
 <p>In this chapter, I said the keys in a dictionary have to be hashable and I gave a short explanation. If you would like more details, ask a virtual assistant, “Why do keys in Python dictionaries have to be hashable?”</p>
 <p>In <a class="reference internal" href="#section-dictionary-in-operator"><span class="std std-ref">a previous section</span></a>, we stored a list of words as keys in a dictionary so that we could use an efficient version of the <code class="docutils literal notranslate"><span class="pre">in</span></code> operator.
 We could have done the same thing using a <code class="docutils literal notranslate"><span class="pre">set</span></code>, which is another built-in data type.
 Ask a virtual assistant, “How do I make a Python set from a list of strings and check whether a string is an element of the set?”</p>
 </section>
 <section id="exercise">
-<h3>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">10.11.2. </span>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h3>
 <p>Dictionaries have a method called <code class="docutils literal notranslate"><span class="pre">get</span></code> that takes a key and a default value.
 If the key appears in the dictionary, <code class="docutils literal notranslate"><span class="pre">get</span></code> returns the corresponding value; otherwise it returns the default value.
 For example, here’s a dictionary that maps from the letters in a string to the number of times they appear.</p>
@@ -1167,13 +1171,13 @@ For example, here’s a dictionary that maps from the letters in a string to the
 You should be able to eliminate the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement.</p>
 </section>
 <section id="id1">
-<h3>Exercise<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">10.11.3. </span>Exercise<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p>What is the longest word you can think of where each letter appears only once?
 Let’s see if we can find one longer than <code class="docutils literal notranslate"><span class="pre">unpredictably</span></code>.</p>
 <p>Write a function named <code class="docutils literal notranslate"><span class="pre">has_duplicates</span></code> that takes a sequence – like a list or string – as a parameter and returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if there is any element that appears in the sequence more than once.</p>
 </section>
 <section id="id2">
-<h3>Exercise<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">10.11.4. </span>Exercise<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <p>Write function called <code class="docutils literal notranslate"><span class="pre">find_repeats</span></code> that takes a dictionary that maps from each key to a counter, like the result from <code class="docutils literal notranslate"><span class="pre">value_counts</span></code>.
 It should loop through the dictionary and return a list of keys that have counts greater than <code class="docutils literal notranslate"><span class="pre">1</span></code>.
 You can use the following outline to get started.</p>
@@ -1193,7 +1197,7 @@ You can use the following outline to get started.</p>
 </div>
 </section>
 <section id="id3">
-<h3>Exercise<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">10.11.5. </span>Exercise<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <p>Suppose you run <code class="docutils literal notranslate"><span class="pre">value_counts</span></code> with two different words and save the results in two dictionaries.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1209,7 +1213,7 @@ Write a function called <code class="docutils literal notranslate"><span class="
 Once you have a working solution, consider asking a virtual assistant for different solutions.</p>
 </section>
 <section id="id4">
-<h3>Exercise<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">10.11.6. </span>Exercise<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <p>A word is “interlocking” if we can split it into two words by taking alternating letters.
 For example, “schooled” is an interlocking word because it can be split into “shoe” and “cold”.</p>
 <p>To select alternating letters from a string, you can use a slice operator with three components that indicate where to start, where to stop, and the “step size” between the letters.</p>
@@ -1286,7 +1290,7 @@ For example, the following slice selects alternating letters, starting with the 
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Lists</p>
+        <p class="prev-next-title"><span class="section-number">9. </span>Lists</p>
       </div>
     </a>
     <a class="right-next"
@@ -1294,7 +1298,7 @@ For example, the following slice selects alternating letters, starting with the 
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Tuples</p>
+        <p class="prev-next-title"><span class="section-number">11. </span>Tuples</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1314,23 +1318,23 @@ For example, the following slice selects alternating letters, starting with the 
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-dictionary-is-a-mapping">A dictionary is a mapping</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-dictionaries">Creating dictionaries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-in-operator">The in operator</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-collection-of-counters">A collection of counters</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#looping-and-dictionaries">Looping and dictionaries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lists-and-dictionaries">Lists and dictionaries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accumulating-a-list">Accumulating a list</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#memos">Memos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">Debugging</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">Glossary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-an-assistant">Ask an assistant</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-dictionary-is-a-mapping">10.1. A dictionary is a mapping</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-dictionaries">10.2. Creating dictionaries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-in-operator">10.3. The in operator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-collection-of-counters">10.4. A collection of counters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#looping-and-dictionaries">10.5. Looping and dictionaries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lists-and-dictionaries">10.6. Lists and dictionaries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accumulating-a-list">10.7. Accumulating a list</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#memos">10.8. Memos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">10.9. Debugging</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">10.10. Glossary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">10.11. Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-an-assistant">10.11.1. Ask an assistant</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">10.11.2. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">10.11.3. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">10.11.4. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">10.11.5. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">10.11.6. Exercise</a></li>
 </ul>
 </li>
 </ul>

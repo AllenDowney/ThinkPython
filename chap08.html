@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Strings and Regular Expressions &#8212; Think Python, 3rd edition</title>
+    <title>8. Strings and Regular Expressions &#8212; Think Python, 3rd edition</title>
   
   
   
@@ -60,8 +60,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'chap08';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Lists" href="chap09.html" />
-    <link rel="prev" title="Iteration and Search" href="chap07.html" />
+    <link rel="next" title="9. Lists" href="chap09.html" />
+    <link rel="prev" title="7. Iteration and Search" href="chap07.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -173,27 +173,31 @@
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Front Matter</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="chap00.html">Preface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap01.html">Programming as a way of thinking</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap02.html">Variables and Statements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap03.html">Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap04.html">Functions and Interfaces</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap05.html">Conditionals and Recursion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap06.html">Return Values</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap07.html">Iteration and Search</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Strings and Regular Expressions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap09.html">Lists</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap10.html">Dictionaries</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap11.html">Tuples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap12.html">Text Analysis and Generation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap13.html">Files and Databases</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap14.html">Classes and Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap15.html">Classes and Methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap16.html">Classes and Objects</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap17.html">Inheritance</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap18.html">Python Extras</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap19.html">Final thoughts</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapters</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chap01.html">1. Programming as a way of thinking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap02.html">2. Variables and Statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap03.html">3. Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap04.html">4. Functions and Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap05.html">5. Conditionals and Recursion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap06.html">6. Return Values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap07.html">7. Iteration and Search</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">8. Strings and Regular Expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap09.html">9. Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap10.html">10. Dictionaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap11.html">11. Tuples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap12.html">12. Text Analysis and Generation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap13.html">13. Files and Databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap14.html">14. Classes and Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap15.html">15. Classes and Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap16.html">16. Classes and Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap17.html">17. Inheritance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap18.html">18. Python Extras</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap19.html">19. Final thoughts</a></li>
 </ul>
 
     </div>
@@ -357,23 +361,23 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-string-is-a-sequence">A string is a sequence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-slices">String slices</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strings-are-immutable">Strings are immutable</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-comparison">String comparison</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-methods">String methods</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-files">Writing files</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#find-and-replace">Find and replace</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regular-expressions">Regular expressions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-substitution">String substitution</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">Debugging</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">Glossary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">Ask a virtual assistant</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-string-is-a-sequence">8.1. A string is a sequence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-slices">8.2. String slices</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strings-are-immutable">8.3. Strings are immutable</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-comparison">8.4. String comparison</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-methods">8.5. String methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-files">8.6. Writing files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#find-and-replace">8.7. Find and replace</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regular-expressions">8.8. Regular expressions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-substitution">8.9. String substitution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">8.10. Debugging</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">8.11. Glossary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">8.12. Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">8.12.1. Ask a virtual assistant</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">8.12.2. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">8.12.3. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">8.12.4. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">8.12.5. Exercise</a></li>
 </ul>
 </li>
 </ul>
@@ -391,13 +395,13 @@ document.write(`
 <a class="reference external" href="https://bookshop.org/a/98697/9781098155438">Bookshop.org</a> and
 <a class="reference external" href="https://www.amazon.com/_/dp/1098155432?smid=ATVPDKIKX0DER&amp;amp;_encoding=UTF8&amp;amp;tag=oreilly20-20&amp;amp;_encoding=UTF8&amp;amp;tag=greenteapre01-20&amp;amp;linkCode=ur2&amp;amp;linkId=e2a529f94920295d27ec8a06e757dc7c&amp;amp;camp=1789&amp;amp;creative=9325">Amazon</a>.</p>
 <section id="strings-and-regular-expressions">
-<h1>Strings and Regular Expressions<a class="headerlink" href="#strings-and-regular-expressions" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">8. </span>Strings and Regular Expressions<a class="headerlink" href="#strings-and-regular-expressions" title="Link to this heading">#</a></h1>
 <p>Strings are not like integers, floats, and booleans. A string is a <strong>sequence</strong>, which means it contains multiple values in a particular order.
 In this chapter we’ll see how to access the values that make up a string, and we’ll use functions that process strings.</p>
 <p>We’ll also use regular expressions, which are a powerful tool for finding patterns in a string and performing operations like search and replace.</p>
 <p>As an exercise, you’ll have a chance to apply these tools to a word game called Wordle.</p>
 <section id="a-string-is-a-sequence">
-<h2>A string is a sequence<a class="headerlink" href="#a-string-is-a-sequence" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.1. </span>A string is a sequence<a class="headerlink" href="#a-string-is-a-sequence" title="Link to this heading">#</a></h2>
 <p>A string is a sequence of characters. A <strong>character</strong> can be a letter (in almost any alphabet), a digit, a punctuation mark, or white space.</p>
 <p>You can select a character from a string with the bracket operator.
 This example statement selects character number 1 from <code class="docutils literal notranslate"><span class="pre">fruit</span></code> and
@@ -536,7 +540,7 @@ To get the last letter in a string, you can use a negative index, which counts b
 <p>The index <code class="docutils literal notranslate"><span class="pre">-1</span></code> selects the last letter, <code class="docutils literal notranslate"><span class="pre">-2</span></code> selects the second to last, and so on.</p>
 </section>
 <section id="string-slices">
-<h2>String slices<a class="headerlink" href="#string-slices" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.2. </span>String slices<a class="headerlink" href="#string-slices" title="Link to this heading">#</a></h2>
 <p>A segment of a string is called a <strong>slice</strong>.
 Selecting a slice is similar to selecting a character.</p>
 <div class="cell docutils container">
@@ -605,7 +609,7 @@ This behavior is counterintuitive, but it might help to imagine the indices poin
 see.</p>
 </section>
 <section id="strings-are-immutable">
-<h2>Strings are immutable<a class="headerlink" href="#strings-are-immutable" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.3. </span>Strings are immutable<a class="headerlink" href="#strings-are-immutable" title="Link to this heading">#</a></h2>
 <p>It is tempting to use the <code class="docutils literal notranslate"><span class="pre">[]</span></code> operator on the left side of an
 assignment, with the intention of changing a character in a string, like this:</p>
 <div class="cell tag_raises-exception docutils container">
@@ -656,7 +660,7 @@ It has no effect on the original string.</p>
 </div>
 </section>
 <section id="string-comparison">
-<h2>String comparison<a class="headerlink" href="#string-comparison" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.4. </span>String comparison<a class="headerlink" href="#string-comparison" title="Link to this heading">#</a></h2>
 <p>The relational operators work on strings. To see if two strings are
 equal, we can use the <code class="docutils literal notranslate"><span class="pre">==</span></code> operator.</p>
 <div class="cell docutils container">
@@ -720,7 +724,7 @@ letters, so:</p>
 Keep that in mind if you have to defend yourself against a man armed with a Pineapple.</p>
 </section>
 <section id="string-methods">
-<h2>String methods<a class="headerlink" href="#string-methods" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.5. </span>String methods<a class="headerlink" href="#string-methods" title="Link to this heading">#</a></h2>
 <p>Strings provide methods that perform a variety of useful operations.
 A method is similar to a function – it takes arguments and returns a value – but the syntax is different.
 For example, the method <code class="docutils literal notranslate"><span class="pre">upper</span></code> takes a string and returns a new string with all uppercase letters.</p>
@@ -744,7 +748,7 @@ The empty parentheses indicate that this method takes no arguments.</p>
 <p>A method call is called an <strong>invocation</strong>; in this case, we would say that we are invoking <code class="docutils literal notranslate"><span class="pre">upper</span></code> on <code class="docutils literal notranslate"><span class="pre">word</span></code>.</p>
 </section>
 <section id="writing-files">
-<span id="section-writing-files"></span><h2>Writing files<a class="headerlink" href="#writing-files" title="Link to this heading">#</a></h2>
+<span id="section-writing-files"></span><h2><span class="section-number">8.6. </span>Writing files<a class="headerlink" href="#writing-files" title="Link to this heading">#</a></h2>
 <p>String operators and methods are useful for reading and writing text files.
 As an example, we’ll work with the text of <em>Dracula</em>, a novel by Bram Stoker that is available from Project Gutenberg (<a class="reference external" href="https://www.gutenberg.org/ebooks/345">https://www.gutenberg.org/ebooks/345</a>).</p>
 <p>I’ve downloaded the book in a plain text file called <code class="docutils literal notranslate"><span class="pre">pg345.txt</span></code>, which we can open for reading like this:</p>
@@ -880,7 +884,7 @@ Bram Stoker
 <p>The <code class="docutils literal notranslate"><span class="pre">endswidth</span></code> method checks whether a string ends with a given sequence of characters.</p>
 </section>
 <section id="find-and-replace">
-<h2>Find and replace<a class="headerlink" href="#find-and-replace" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.7. </span>Find and replace<a class="headerlink" href="#find-and-replace" title="Link to this heading">#</a></h2>
 <p>In the Icelandic translation of <em>Dracula</em> from 1901, the name of one of the characters was changed from “Jonathan” to “Thomas”.
 To make this change in the English version, we can loop through the book, use the <code class="docutils literal notranslate"><span class="pre">replace</span></code> method to replace one name with another, and write the result to a new file.</p>
 <p>We’ll start by counting the lines in the cleaned version of the file.</p>
@@ -951,7 +955,7 @@ To get the total, we can use the <code class="docutils literal notranslate"><spa
 <p>The result is a new file called <code class="docutils literal notranslate"><span class="pre">pg345_replaced.txt</span></code> that contains a version of <em>Dracula</em> where Jonathan Harker is called Thomas.</p>
 </section>
 <section id="regular-expressions">
-<h2>Regular expressions<a class="headerlink" href="#regular-expressions" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.8. </span>Regular expressions<a class="headerlink" href="#regular-expressions" title="Link to this heading">#</a></h2>
 <p>If we know exactly what sequence of characters we’re looking for, we can use the <code class="docutils literal notranslate"><span class="pre">in</span></code> operator to find it and the <code class="docutils literal notranslate"><span class="pre">replace</span></code> method to replace it.
 But there is another tool, called a <strong>regular expression</strong> that can also perform these operations – and a lot more.</p>
 <p>To demonstrate, I’ll start with a simple example and we’ll work our way up.
@@ -1160,7 +1164,7 @@ Here’s a function that loops through the book and counts the number of lines t
 </div>
 </section>
 <section id="string-substitution">
-<h2>String substitution<a class="headerlink" href="#string-substitution" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.9. </span>String substitution<a class="headerlink" href="#string-substitution" title="Link to this heading">#</a></h2>
 <p>Bram Stoker was born in Ireland, and when <em>Dracula</em> was published in 1897, he was living in England.
 So we would expect him to use the British spelling of words like “centre” and “colour”.
 To check, we can use the following pattern, which matches either “centre” or the American spelling “center”.</p>
@@ -1230,7 +1234,7 @@ We can use the <code class="docutils literal notranslate"><span class="pre">sub<
 In the result, you can see that “colour” has been replaced with “color”.</p>
 </section>
 <section id="debugging">
-<h2>Debugging<a class="headerlink" href="#debugging" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.10. </span>Debugging<a class="headerlink" href="#debugging" title="Link to this heading">#</a></h2>
 <p>When you are reading and writing files, debugging can be tricky.
 If you are working in a Jupyter notebook, you can use <strong>shell commands</strong> to help.
 For example, to display the first few lines of a file, you can use the command <code class="docutils literal notranslate"><span class="pre">!head</span></code>, like this:</p>
@@ -1274,7 +1278,7 @@ If they don’t work for you, we can write similar functions in Python.
 See the first exercise at the end of this chapter for suggestions.</p>
 </section>
 <section id="glossary">
-<h2>Glossary<a class="headerlink" href="#glossary" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.11. </span>Glossary<a class="headerlink" href="#glossary" title="Link to this heading">#</a></h2>
 <p><strong>sequence:</strong>
 An ordered collection of values where each value is identified by an integer index.</p>
 <p><strong>character:</strong>
@@ -1303,7 +1307,7 @@ A statement in a shell language, which is a language used to interact with an op
 A Python string that is preceded by the letter <code class="docutils literal notranslate"><span class="pre">r</span></code>, which indicates that backslashes that appear in the string should not be considered part of a special sequence.</p>
 </section>
 <section id="exercises">
-<h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.12. </span>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
 <div class="cell tag_remove-print docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This cell tells Jupyter to provide detailed debugging information</span>
@@ -1320,7 +1324,7 @@ A Python string that is preceded by the letter <code class="docutils literal not
 </div>
 </div>
 <section id="ask-a-virtual-assistant">
-<h3>Ask a virtual assistant<a class="headerlink" href="#ask-a-virtual-assistant" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">8.12.1. </span>Ask a virtual assistant<a class="headerlink" href="#ask-a-virtual-assistant" title="Link to this heading">#</a></h3>
 <p>In this chapter, we only scratched the surface of what regular expressions can do.
 To get an idea of what’s possible, ask a virtual assistant, “What are the most common special characters used in Python regular expressions?”</p>
 <p>You can also ask for a pattern that matches particular kinds of strings.
@@ -1335,14 +1339,14 @@ For example, try asking:</p>
 For more information, ask a virtual assistant, “What is a raw string in Python?”</p>
 </section>
 <section id="exercise">
-<h3>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">8.12.2. </span>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h3>
 <p>See if you can write a function that does the same thing as the shell command <code class="docutils literal notranslate"><span class="pre">!head</span></code>.
 It should take as arguments the name of a file to read, the number of lines to read, and the name of the file to write the lines into.
 If the third parameter is <code class="docutils literal notranslate"><span class="pre">None</span></code>, it should display the lines rather than write them to a file.</p>
 <p>Consider asking a virtual assistant for help, but if you do, tell it not to use a <code class="docutils literal notranslate"><span class="pre">with</span></code> statement or a <code class="docutils literal notranslate"><span class="pre">try</span></code> statement.</p>
 </section>
 <section id="id1">
-<h3>Exercise<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">8.12.3. </span>Exercise<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p>“Wordle” is an online word game where the objective is to guess a five-letter word in six or fewer attempts.
 Each attempt has to be recognized as a word, not including proper nouns.
 After each attempt, you get information about which of the letters you guessed appear in the target word, and which ones are in the correct position.</p>
@@ -1353,11 +1357,11 @@ Write a function called <code class="docutils literal notranslate"><span class="
 <p>You can use any of the functions from the previous chapter, like <code class="docutils literal notranslate"><span class="pre">uses_any</span></code>.</p>
 </section>
 <section id="id2">
-<h3>Exercise<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">8.12.4. </span>Exercise<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <p>Continuing the previous exercise, suppose you guess the work <code class="docutils literal notranslate"><span class="pre">TOTEM</span></code> and learn that the <code class="docutils literal notranslate"><span class="pre">E</span></code> is <em>still</em> not in the right place, but the <code class="docutils literal notranslate"><span class="pre">M</span></code> is. How many words are left?</p>
 </section>
 <section id="id3">
-<h3>Exercise<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">8.12.5. </span>Exercise<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <p><em>The Count of Monte Cristo</em> is a novel by Alexandre Dumas that is considered a classic.
 Nevertheless, in the introduction of an English translation of the book, the writer Umberto Eco confesses that he found the book to be “one of the most badly written novels of all time”.</p>
 <p>In particular, he says it is “shameless in its repetition of the same adjective,” and mentions in particular the number of times “its characters either shudder or turn pale.”</p>
@@ -1403,7 +1407,7 @@ Use a single regular expression that matches all of these words and no others.</
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Iteration and Search</p>
+        <p class="prev-next-title"><span class="section-number">7. </span>Iteration and Search</p>
       </div>
     </a>
     <a class="right-next"
@@ -1411,7 +1415,7 @@ Use a single regular expression that matches all of these words and no others.</
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Lists</p>
+        <p class="prev-next-title"><span class="section-number">9. </span>Lists</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1431,23 +1435,23 @@ Use a single regular expression that matches all of these words and no others.</
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-string-is-a-sequence">A string is a sequence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-slices">String slices</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strings-are-immutable">Strings are immutable</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-comparison">String comparison</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-methods">String methods</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-files">Writing files</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#find-and-replace">Find and replace</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regular-expressions">Regular expressions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-substitution">String substitution</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">Debugging</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">Glossary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">Ask a virtual assistant</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-string-is-a-sequence">8.1. A string is a sequence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-slices">8.2. String slices</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strings-are-immutable">8.3. Strings are immutable</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-comparison">8.4. String comparison</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-methods">8.5. String methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-files">8.6. Writing files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#find-and-replace">8.7. Find and replace</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regular-expressions">8.8. Regular expressions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-substitution">8.9. String substitution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">8.10. Debugging</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">8.11. Glossary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">8.12. Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">8.12.1. Ask a virtual assistant</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">8.12.2. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">8.12.3. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">8.12.4. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">8.12.5. Exercise</a></li>
 </ul>
 </li>
 </ul>

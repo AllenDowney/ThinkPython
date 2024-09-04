@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Tuples &#8212; Think Python, 3rd edition</title>
+    <title>11. Tuples &#8212; Think Python, 3rd edition</title>
   
   
   
@@ -60,8 +60,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'chap11';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Text Analysis and Generation" href="chap12.html" />
-    <link rel="prev" title="Dictionaries" href="chap10.html" />
+    <link rel="next" title="12. Text Analysis and Generation" href="chap12.html" />
+    <link rel="prev" title="10. Dictionaries" href="chap10.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -173,27 +173,31 @@
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Front Matter</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="chap00.html">Preface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap01.html">Programming as a way of thinking</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap02.html">Variables and Statements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap03.html">Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap04.html">Functions and Interfaces</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap05.html">Conditionals and Recursion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap06.html">Return Values</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap07.html">Iteration and Search</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap08.html">Strings and Regular Expressions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap09.html">Lists</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap10.html">Dictionaries</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Tuples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap12.html">Text Analysis and Generation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap13.html">Files and Databases</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap14.html">Classes and Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap15.html">Classes and Methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap16.html">Classes and Objects</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap17.html">Inheritance</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap18.html">Python Extras</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap19.html">Final thoughts</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapters</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chap01.html">1. Programming as a way of thinking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap02.html">2. Variables and Statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap03.html">3. Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap04.html">4. Functions and Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap05.html">5. Conditionals and Recursion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap06.html">6. Return Values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap07.html">7. Iteration and Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap08.html">8. Strings and Regular Expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap09.html">9. Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap10.html">10. Dictionaries</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">11. Tuples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap12.html">12. Text Analysis and Generation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap13.html">13. Files and Databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap14.html">14. Classes and Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap15.html">15. Classes and Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap16.html">16. Classes and Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap17.html">17. Inheritance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap18.html">18. Python Extras</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap19.html">19. Final thoughts</a></li>
 </ul>
 
     </div>
@@ -357,24 +361,24 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tuples-are-like-lists">Tuples are like lists</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#but-tuples-are-immutable">But tuples are immutable</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tuple-assignment">Tuple assignment</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tuples-as-return-values">Tuples as return values</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#argument-packing">Argument packing</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zip">Zip</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-and-sorting">Comparing and Sorting</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inverting-a-dictionary">Inverting a dictionary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">Debugging</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">Glossary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">Ask a virtual assistant</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#section-exercise-11">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tuples-are-like-lists">11.1. Tuples are like lists</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#but-tuples-are-immutable">11.2. But tuples are immutable</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tuple-assignment">11.3. Tuple assignment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tuples-as-return-values">11.4. Tuples as return values</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#argument-packing">11.5. Argument packing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zip">11.6. Zip</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-and-sorting">11.7. Comparing and Sorting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inverting-a-dictionary">11.8. Inverting a dictionary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">11.9. Debugging</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">11.10. Glossary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">11.11. Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">11.11.1. Ask a virtual assistant</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">11.11.2. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#section-exercise-11">11.11.3. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">11.11.4. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">11.11.5. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">11.11.6. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">11.11.7. Exercise</a></li>
 </ul>
 </li>
 </ul>
@@ -392,7 +396,7 @@ document.write(`
 <a class="reference external" href="https://bookshop.org/a/98697/9781098155438">Bookshop.org</a> and
 <a class="reference external" href="https://www.amazon.com/_/dp/1098155432?smid=ATVPDKIKX0DER&amp;amp;_encoding=UTF8&amp;amp;tag=oreilly20-20&amp;amp;_encoding=UTF8&amp;amp;tag=greenteapre01-20&amp;amp;linkCode=ur2&amp;amp;linkId=e2a529f94920295d27ec8a06e757dc7c&amp;amp;camp=1789&amp;amp;creative=9325">Amazon</a>.</p>
 <section id="tuples">
-<span id="chapter-tuples"></span><h1>Tuples<a class="headerlink" href="#tuples" title="Link to this heading">#</a></h1>
+<span id="chapter-tuples"></span><h1><span class="section-number">11. </span>Tuples<a class="headerlink" href="#tuples" title="Link to this heading">#</a></h1>
 <p>This chapter introduces one more built-in type, the tuple, and then shows how lists, dictionaries, and tuples work together.
 It also presents tuple assignment and a useful feature for functions with variable-length argument lists: the packing and unpacking operators.</p>
 <p>In the exercises, we’ll use tuples, along with lists and dictionaries, to solve more word puzzles and implement efficient algorithms.</p>
@@ -400,7 +404,7 @@ It also presents tuple assignment and a useful feature for functions with variab
 Some people say “tuh-ple”, which rhymes with “supple”.
 But in the context of programming, most people say “too-ple”, which rhymes with “quadruple”.</p>
 <section id="tuples-are-like-lists">
-<h2>Tuples are like lists<a class="headerlink" href="#tuples-are-like-lists" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.1. </span>Tuples are like lists<a class="headerlink" href="#tuples-are-like-lists" title="Link to this heading">#</a></h2>
 <p>A tuple is a sequence of values. The values can be any type, and they are indexed by integers, so tuples are a lot like lists.
 The important difference is that tuples are immutable.</p>
 <p>To create a tuple, you can write a comma-separated list of values.</p>
@@ -585,7 +589,7 @@ For example, the bracket operator indexes an element.</p>
 <p>Based on the examples so far, it might seem like tuples are the same as lists.</p>
 </section>
 <section id="but-tuples-are-immutable">
-<h2>But tuples are immutable<a class="headerlink" href="#but-tuples-are-immutable" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.2. </span>But tuples are immutable<a class="headerlink" href="#but-tuples-are-immutable" title="Link to this heading">#</a></h2>
 <p>If you try to modify a tuple with the bracket operator, you get a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code>.</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
@@ -669,7 +673,7 @@ For example, the following dictionary contains two tuples as keys that map to in
 </div>
 </section>
 <section id="tuple-assignment">
-<h2>Tuple assignment<a class="headerlink" href="#tuple-assignment" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.3. </span>Tuple assignment<a class="headerlink" href="#tuple-assignment" title="Link to this heading">#</a></h2>
 <p>You can put a tuple of variables on the left side of an assignment, and a tuple of values on the right.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -787,7 +791,7 @@ two -&gt; 2
 <p>Each time through the loop, a key and the corresponding value are assigned directly to <code class="docutils literal notranslate"><span class="pre">key</span></code> and <code class="docutils literal notranslate"><span class="pre">value</span></code>.</p>
 </section>
 <section id="tuples-as-return-values">
-<h2>Tuples as return values<a class="headerlink" href="#tuples-as-return-values" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.4. </span>Tuples as return values<a class="headerlink" href="#tuples-as-return-values" title="Link to this heading">#</a></h2>
 <p>Strictly speaking, a function can only return one value, but if the
 value is a tuple, the effect is the same as returning multiple values.
 For example, if you want to divide two integers and compute the quotient
@@ -872,7 +876,7 @@ of two values, the quotient and remainder.</p>
 </div>
 </section>
 <section id="argument-packing">
-<span id="section-argument-pack"></span><h2>Argument packing<a class="headerlink" href="#argument-packing" title="Link to this heading">#</a></h2>
+<span id="section-argument-pack"></span><h2><span class="section-number">11.5. </span>Argument packing<a class="headerlink" href="#argument-packing" title="Link to this heading">#</a></h2>
 <p>Functions can take a variable number of arguments.
 A parameter name that begins with the <code class="docutils literal notranslate"><span class="pre">*</span></code> operator <strong>packs</strong> arguments into a tuple.
 For example, the following function takes any number of arguments and computes their arithmetic mean – that is, their sum divided by the number of arguments.</p>
@@ -972,7 +976,7 @@ Finally it unpacks the list so the elements are passed to <code class="docutils 
 <p>This kind of “trimmed” mean is used in some sports with subjective judging – like diving and gymnastics – to reduce the effect of a judge whose score deviates from the others.</p>
 </section>
 <section id="zip">
-<h2>Zip<a class="headerlink" href="#zip" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.6. </span>Zip<a class="headerlink" href="#zip" title="Link to this heading">#</a></h2>
 <p>Tuples are useful for looping through the elements of two sequences and performing operations on corresponding elements.
 For example, suppose two teams play a series of seven games, and we record their scores in two lists, one for each team.</p>
 <div class="cell docutils container">
@@ -1120,7 +1124,7 @@ For example, here’s how we can make a dictionary that maps from each letter to
 </div>
 </section>
 <section id="comparing-and-sorting">
-<h2>Comparing and Sorting<a class="headerlink" href="#comparing-and-sorting" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.7. </span>Comparing and Sorting<a class="headerlink" href="#comparing-and-sorting" title="Link to this heading">#</a></h2>
 <p>The relational operators work with tuples and other sequences.
 For example, if you use the <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> operator with tuples, it starts by comparing the first element from each sequence.
 If they are equal, it goes on to the next pair of elements, and so on, until it finds a pair that differ.</p>
@@ -1266,7 +1270,7 @@ We can use <code class="docutils literal notranslate"><span class="pre">max</spa
 <p>To find the letter with the lowest count, we could use <code class="docutils literal notranslate"><span class="pre">min</span></code> the same way.</p>
 </section>
 <section id="inverting-a-dictionary">
-<h2>Inverting a dictionary<a class="headerlink" href="#inverting-a-dictionary" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.8. </span>Inverting a dictionary<a class="headerlink" href="#inverting-a-dictionary" title="Link to this heading">#</a></h2>
 <p>Suppose you want to invert a dictionary so you can look up a value and get the corresponding key.
 For example, if you have a word counter that maps from each word to the number of times it appears, you could make a dictionary that maps from integers to the words that appear that number of times.</p>
 <p>But there’s a problem – the keys in a dictionary have to be unique, but the values don’t. For example, in a word counter, there could be many words with the same count.</p>
@@ -1322,7 +1326,7 @@ Otherwise it is appended to the existing list.</p>
 We will see more!</p>
 </section>
 <section id="debugging">
-<span id="section-debugging-11"></span><h2>Debugging<a class="headerlink" href="#debugging" title="Link to this heading">#</a></h2>
+<span id="section-debugging-11"></span><h2><span class="section-number">11.9. </span>Debugging<a class="headerlink" href="#debugging" title="Link to this heading">#</a></h2>
 <p>Lists, dictionaries and tuples are <strong>data structures</strong>.
 In this chapter we are starting to see compound data structures, like lists of tuples, or dictionaries that contain tuples as keys and lists as values.
 Compound data structures are useful, but they are prone to errors caused when a data structure has the wrong type, size, or structure.
@@ -1415,7 +1419,7 @@ them by type.</p>
 <code class="docutils literal notranslate"><span class="pre">structshape</span></code> can help.</p>
 </section>
 <section id="glossary">
-<h2>Glossary<a class="headerlink" href="#glossary" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.10. </span>Glossary<a class="headerlink" href="#glossary" title="Link to this heading">#</a></h2>
 <p><strong>pack:</strong>
 Collect multiple arguments into a tuple.</p>
 <p><strong>unpack:</strong>
@@ -1430,7 +1434,7 @@ A value, or function that computes a value, used to sort the elements of a colle
 A collection of values, organized to perform certain operations efficiently.</p>
 </section>
 <section id="exercises">
-<h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.11. </span>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
 <div class="cell tag_remove-print docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This cell tells Jupyter to provide detailed debugging information</span>
@@ -1447,7 +1451,7 @@ A collection of values, organized to perform certain operations efficiently.</p>
 </div>
 </div>
 <section id="ask-a-virtual-assistant">
-<h3>Ask a virtual assistant<a class="headerlink" href="#ask-a-virtual-assistant" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">11.11.1. </span>Ask a virtual assistant<a class="headerlink" href="#ask-a-virtual-assistant" title="Link to this heading">#</a></h3>
 <p>The exercises in this chapter might be more difficult than exercises in previous chapters, so I encourage you to get help from a virtual assistant.
 When you pose more difficult questions, you might find that the answers are not correct on the first attempt, so this is a chance to practice crafting good prompts and following up with good refinements.</p>
 <p>One strategy you might consider is to break a big problems into pieces that can be solved with simple functions.
@@ -1457,7 +1461,7 @@ Then, once they are working, ask for a solution to the original problem.</p>
 You might find these suggestions useful when you work on the problems, but they are also good prompts to pass along to a virtual assistant.</p>
 </section>
 <section id="exercise">
-<h3>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">11.11.2. </span>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h3>
 <p>In this chapter I said that tuples can be used as keys in dictionaries because they are hashable, and they are hashable because they are immutable.
 But that is not always true.</p>
 <p>If a tuple contains a mutable value, like a list or a dictionary, the tuple is no longer hashable because it contains elements that are not hashable. As an example, here’s a tuple that contains two lists of integers.</p>
@@ -1501,7 +1505,7 @@ But that is not always true.</p>
 <p>For more on this topic, ask a virtual assistant, “Are Python tuples always hashable?”</p>
 </section>
 <section id="section-exercise-11">
-<span id="id1"></span><h3>Exercise<a class="headerlink" href="#section-exercise-11" title="Link to this heading">#</a></h3>
+<span id="id1"></span><h3><span class="section-number">11.11.3. </span>Exercise<a class="headerlink" href="#section-exercise-11" title="Link to this heading">#</a></h3>
 <p>In this chapter we made a dictionary that maps from each letter to its index in the alphabet.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1549,12 +1553,12 @@ Loop through the letters of the word, shift each one, and append the result to a
 Then use <code class="docutils literal notranslate"><span class="pre">join</span></code> to concatenate the letters into a string.</p>
 </section>
 <section id="id2">
-<h3>Exercise<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">11.11.4. </span>Exercise<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <p>Write a function called <code class="docutils literal notranslate"><span class="pre">most_frequent_letters</span></code> that takes a string and prints the letters in decreasing order of frequency.</p>
 <p>To get the items in decreasing order, you can use <code class="docutils literal notranslate"><span class="pre">reversed</span></code> along with <code class="docutils literal notranslate"><span class="pre">sorted</span></code> or you can pass <code class="docutils literal notranslate"><span class="pre">reverse=True</span></code> as a keyword parameter to <code class="docutils literal notranslate"><span class="pre">sorted</span></code>.</p>
 </section>
 <section id="id3">
-<h3>Exercise<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">11.11.5. </span>Exercise<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <p>In a previous exercise, we tested whether two strings are anagrams by sorting the letters in both words and checking whether the sorted letters are the same.
 Now let’s make the problem a little more challenging.</p>
 <p>We’ll write a program that takes a list of words and prints all the sets of words that are anagrams.
@@ -1568,12 +1572,12 @@ Here is an example of what the output might look like:</p>
 <p>Hint: For each word in the word list, sort the letters and join them back into a string. Make a dictionary that maps from this sorted string to a list of words that are anagrams of it.</p>
 </section>
 <section id="id4">
-<h3>Exercise<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">11.11.6. </span>Exercise<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <p>Write a function called <code class="docutils literal notranslate"><span class="pre">word_distance</span></code> that takes two words with the same length and returns the number of places where the two words differ.</p>
 <p>Hint: Use <code class="docutils literal notranslate"><span class="pre">zip</span></code> to loop through the corresponding letters of the words.</p>
 </section>
 <section id="id5">
-<h3>Exercise<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">11.11.7. </span>Exercise<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
 <p>“Metathesis” is the transposition of letters in a word.
 Two words form a “metathesis pair” if you can transform one into the other by swapping two letters, like <code class="docutils literal notranslate"><span class="pre">converse</span></code> and <code class="docutils literal notranslate"><span class="pre">conserve</span></code>.
 Write a program that finds all of the metathesis pairs in the word list.</p>
@@ -1619,7 +1623,7 @@ Write a program that finds all of the metathesis pairs in the word list.</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Dictionaries</p>
+        <p class="prev-next-title"><span class="section-number">10. </span>Dictionaries</p>
       </div>
     </a>
     <a class="right-next"
@@ -1627,7 +1631,7 @@ Write a program that finds all of the metathesis pairs in the word list.</p>
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Text Analysis and Generation</p>
+        <p class="prev-next-title"><span class="section-number">12. </span>Text Analysis and Generation</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1647,24 +1651,24 @@ Write a program that finds all of the metathesis pairs in the word list.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tuples-are-like-lists">Tuples are like lists</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#but-tuples-are-immutable">But tuples are immutable</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tuple-assignment">Tuple assignment</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tuples-as-return-values">Tuples as return values</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#argument-packing">Argument packing</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zip">Zip</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-and-sorting">Comparing and Sorting</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inverting-a-dictionary">Inverting a dictionary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">Debugging</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">Glossary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">Ask a virtual assistant</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#section-exercise-11">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tuples-are-like-lists">11.1. Tuples are like lists</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#but-tuples-are-immutable">11.2. But tuples are immutable</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tuple-assignment">11.3. Tuple assignment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tuples-as-return-values">11.4. Tuples as return values</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#argument-packing">11.5. Argument packing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zip">11.6. Zip</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-and-sorting">11.7. Comparing and Sorting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inverting-a-dictionary">11.8. Inverting a dictionary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">11.9. Debugging</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">11.10. Glossary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">11.11. Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">11.11.1. Ask a virtual assistant</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">11.11.2. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#section-exercise-11">11.11.3. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">11.11.4. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">11.11.5. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">11.11.6. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">11.11.7. Exercise</a></li>
 </ul>
 </li>
 </ul>

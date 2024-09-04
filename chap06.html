@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Return Values &#8212; Think Python, 3rd edition</title>
+    <title>6. Return Values &#8212; Think Python, 3rd edition</title>
   
   
   
@@ -62,8 +62,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'chap06';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Iteration and Search" href="chap07.html" />
-    <link rel="prev" title="Conditionals and Recursion" href="chap05.html" />
+    <link rel="next" title="7. Iteration and Search" href="chap07.html" />
+    <link rel="prev" title="5. Conditionals and Recursion" href="chap05.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -175,27 +175,31 @@
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Front Matter</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="chap00.html">Preface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap01.html">Programming as a way of thinking</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap02.html">Variables and Statements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap03.html">Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap04.html">Functions and Interfaces</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap05.html">Conditionals and Recursion</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Return Values</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap07.html">Iteration and Search</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap08.html">Strings and Regular Expressions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap09.html">Lists</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap10.html">Dictionaries</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap11.html">Tuples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap12.html">Text Analysis and Generation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap13.html">Files and Databases</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap14.html">Classes and Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap15.html">Classes and Methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap16.html">Classes and Objects</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap17.html">Inheritance</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap18.html">Python Extras</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap19.html">Final thoughts</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapters</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chap01.html">1. Programming as a way of thinking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap02.html">2. Variables and Statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap03.html">3. Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap04.html">4. Functions and Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap05.html">5. Conditionals and Recursion</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">6. Return Values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap07.html">7. Iteration and Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap08.html">8. Strings and Regular Expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap09.html">9. Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap10.html">10. Dictionaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap11.html">11. Tuples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap12.html">12. Text Analysis and Generation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap13.html">13. Files and Databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap14.html">14. Classes and Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap15.html">15. Classes and Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap16.html">16. Classes and Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap17.html">17. Inheritance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap18.html">18. Python Extras</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap19.html">19. Final thoughts</a></li>
 </ul>
 
     </div>
@@ -359,23 +363,23 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-functions-have-return-values">Some functions have return values</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#and-some-have-none">And some have None</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#return-values-and-conditionals">Return values and conditionals</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#incremental-development">Incremental development</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-functions">Boolean functions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursion-with-return-values">Recursion with return values</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leap-of-faith">Leap of faith</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fibonacci">Fibonacci</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-types">Checking types</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">Debugging</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">Glossary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">Ask a virtual assistant</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-functions-have-return-values">6.1. Some functions have return values</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#and-some-have-none">6.2. And some have None</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#return-values-and-conditionals">6.3. Return values and conditionals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#incremental-development">6.4. Incremental development</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-functions">6.5. Boolean functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursion-with-return-values">6.6. Recursion with return values</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leap-of-faith">6.7. Leap of faith</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fibonacci">6.8. Fibonacci</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-types">6.9. Checking types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">6.10. Debugging</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">6.11. Glossary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">6.12. Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">6.12.1. Ask a virtual assistant</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">6.12.2. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">6.12.3. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">6.12.4. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">6.12.5. Exercise</a></li>
 </ul>
 </li>
 </ul>
@@ -393,7 +397,7 @@ document.write(`
 <a class="reference external" href="https://bookshop.org/a/98697/9781098155438">Bookshop.org</a> and
 <a class="reference external" href="https://www.amazon.com/_/dp/1098155432?smid=ATVPDKIKX0DER&amp;amp;_encoding=UTF8&amp;amp;tag=oreilly20-20&amp;amp;_encoding=UTF8&amp;amp;tag=greenteapre01-20&amp;amp;linkCode=ur2&amp;amp;linkId=e2a529f94920295d27ec8a06e757dc7c&amp;amp;camp=1789&amp;amp;creative=9325">Amazon</a>.</p>
 <section id="return-values">
-<h1>Return Values<a class="headerlink" href="#return-values" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">6. </span>Return Values<a class="headerlink" href="#return-values" title="Link to this heading">#</a></h1>
 <p>In previous chapters, we’ve used built-in functions – like <code class="docutils literal notranslate"><span class="pre">abs</span></code> and <code class="docutils literal notranslate"><span class="pre">round</span></code> – and functions in the math module – like <code class="docutils literal notranslate"><span class="pre">sqrt</span></code> and <code class="docutils literal notranslate"><span class="pre">pow</span></code>.
 When you call one of these functions, it returns a value you can assign to a variable or use as part of an expression.</p>
 <p>The functions we have written so far are different.
@@ -401,7 +405,7 @@ Some use the <code class="docutils literal notranslate"><span class="pre">print<
 But they don’t return values we assign to variables or use in expressions.</p>
 <p>In this chapter, we’ll see how to write functions that return values.</p>
 <section id="some-functions-have-return-values">
-<h2>Some functions have return values<a class="headerlink" href="#some-functions-have-return-values" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.1. </span>Some functions have return values<a class="headerlink" href="#some-functions-have-return-values" title="Link to this heading">#</a></h2>
 <p>When you call a function like <code class="docutils literal notranslate"><span class="pre">math.sqrt</span></code>, the result is called a <strong>return value</strong>.
 If the function call appears at the end of a cell, Jupyter displays the return value immediately.</p>
 <div class="cell docutils container">
@@ -527,7 +531,7 @@ If the function call appears at the end of a cell, Jupyter displays the return v
 <p><code class="docutils literal notranslate"><span class="pre">area</span></code> is a local variable in a function, so we can’t access it from outside the function.</p>
 </section>
 <section id="and-some-have-none">
-<h2>And some have None<a class="headerlink" href="#and-some-have-none" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.2. </span>And some have None<a class="headerlink" href="#and-some-have-none" title="Link to this heading">#</a></h2>
 <p>If a function doesn’t have a <code class="docutils literal notranslate"><span class="pre">return</span></code> statement, it returns <code class="docutils literal notranslate"><span class="pre">None</span></code>, which is a special value like <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code>.
 For example, here’s the <code class="docutils literal notranslate"><span class="pre">repeat</span></code> function from Chapter 3.</p>
 <div class="cell docutils container">
@@ -623,7 +627,7 @@ When the function runs, it doesn’t display anything.</p>
 <p>A function like this is called a <strong>pure function</strong> because it doesn’t display anything or have any other effect – other than returning a value.</p>
 </section>
 <section id="return-values-and-conditionals">
-<h2>Return values and conditionals<a class="headerlink" href="#return-values-and-conditionals" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.3. </span>Return values and conditionals<a class="headerlink" href="#return-values-and-conditionals" title="Link to this heading">#</a></h2>
 <p>If Python did not provide <code class="docutils literal notranslate"><span class="pre">abs</span></code>, we could write it like this.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -682,7 +686,7 @@ Either way, we never get to the third <code class="docutils literal notranslate"
 In general, dead code doesn’t do any harm, but it often indicates a misunderstanding, and it might be confusing to someone trying to understand the program.</p>
 </section>
 <section id="incremental-development">
-<span id="section-incremental"></span><h2>Incremental development<a class="headerlink" href="#incremental-development" title="Link to this heading">#</a></h2>
+<span id="section-incremental"></span><h2><span class="section-number">6.4. </span>Incremental development<a class="headerlink" href="#incremental-development" title="Link to this heading">#</a></h2>
 <p>As you write larger functions, you might find yourself spending more
 time debugging.
 To deal with increasingly complex programs, you might want to try <strong>incremental development</strong>, which is a way of adding and testing only a small amount of code at a time.</p>
@@ -859,7 +863,7 @@ The key aspects of this process are:</p>
 Incremental development can save you a lot of debugging time.</p>
 </section>
 <section id="boolean-functions">
-<h2>Boolean functions<a class="headerlink" href="#boolean-functions" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.5. </span>Boolean functions<a class="headerlink" href="#boolean-functions" title="Link to this heading">#</a></h2>
 <p>Functions can return the boolean values <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code>, which is often convenient for encapsulating a complex test in a function.
 For example, <code class="docutils literal notranslate"><span class="pre">is_divisible</span></code> checks whether <code class="docutils literal notranslate"><span class="pre">x</span></code> is divisible by <code class="docutils literal notranslate"><span class="pre">y</span></code> with no remainder.</p>
 <div class="cell docutils container">
@@ -939,7 +943,7 @@ function more concisely by returning it directly.</p>
 <p>But the comparison is unnecessary.</p>
 </section>
 <section id="recursion-with-return-values">
-<h2>Recursion with return values<a class="headerlink" href="#recursion-with-return-values" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.6. </span>Recursion with return values<a class="headerlink" href="#recursion-with-return-values" title="Link to this heading">#</a></h2>
 <p>Now that we can write functions with return values, we can write recursive functions with return values, and with that capability, we have passed an important threshold – the subset of Python we have is now <strong>Turing complete</strong>, which means that we can perform any computation that can be described by an algorithm.</p>
 <p>To demonstrate recursion with return values, we’ll evaluate a few recursively defined mathematical functions.
 A recursive definition is similar to a circular definition, in the sense that the definition refers to the thing being defined. A truly circular definition is not very useful:</p>
@@ -1024,7 +1028,7 @@ In each frame, the return value is the product of <code class="docutils literal 
 <p>In the last frame, the local variable <code class="docutils literal notranslate"><span class="pre">recurse</span></code> does not exist because the branch that creates it does not run.</p>
 </section>
 <section id="leap-of-faith">
-<h2>Leap of faith<a class="headerlink" href="#leap-of-faith" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.7. </span>Leap of faith<a class="headerlink" href="#leap-of-faith" title="Link to this heading">#</a></h2>
 <p>Following the flow of execution is one way to read programs, but it can quickly become overwhelming. An alternative is what I call the “leap of faith”. When you come to a function call, instead of following the flow of execution, you <em>assume</em> that the function works correctly and returns the right result.</p>
 <p>In fact, you are already practicing this leap of faith when you use built-in functions.
 When you call <code class="docutils literal notranslate"><span class="pre">abs</span></code> or <code class="docutils literal notranslate"><span class="pre">math.sqrt</span></code>, you don’t examine the bodies of those functions – you just assume that they work.</p>
@@ -1035,7 +1039,7 @@ The recursive definition of factorial implies that you can, by multiplying by <s
 <p>Of course, it’s a bit strange to assume that the function works correctly when you haven’t finished writing it, but that’s why it’s called a leap of faith!</p>
 </section>
 <section id="fibonacci">
-<span id="section-fibonacci"></span><h2>Fibonacci<a class="headerlink" href="#fibonacci" title="Link to this heading">#</a></h2>
+<span id="section-fibonacci"></span><h2><span class="section-number">6.8. </span>Fibonacci<a class="headerlink" href="#fibonacci" title="Link to this heading">#</a></h2>
 <p>After <code class="docutils literal notranslate"><span class="pre">factorial</span></code>, the most common example of a recursive function is <code class="docutils literal notranslate"><span class="pre">fibonacci</span></code>, which has the following definition:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
@@ -1063,7 +1067,7 @@ But according to the leap of faith, if you assume that the two recursive calls w
 In <a class="reference internal" href="chap10.html#section-memos"><span class="std std-ref">Chapter 10</span></a> I’ll explain why and suggest a way to improve it.</p>
 </section>
 <section id="checking-types">
-<h2>Checking types<a class="headerlink" href="#checking-types" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.9. </span>Checking types<a class="headerlink" href="#checking-types" title="Link to this heading">#</a></h2>
 <p>What happens if we call <code class="docutils literal notranslate"><span class="pre">factorial</span></code> and give it <code class="docutils literal notranslate"><span class="pre">1.5</span></code> as an argument?</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
@@ -1160,7 +1164,7 @@ If so, it displays an error message and returns <code class="docutils literal no
 Checking the parameters of a function to make sure they have the correct types and values is called <strong>input validation</strong>.</p>
 </section>
 <section id="debugging">
-<span id="section-debugging-factorial"></span><h2>Debugging<a class="headerlink" href="#debugging" title="Link to this heading">#</a></h2>
+<span id="section-debugging-factorial"></span><h2><span class="section-number">6.10. </span>Debugging<a class="headerlink" href="#debugging" title="Link to this heading">#</a></h2>
 <p>Breaking a large program into smaller functions creates natural checkpoints for debugging.
 If a function is not working, there are three possibilities to consider:</p>
 <ul class="simple">
@@ -1220,7 +1224,7 @@ the output. Here is the result of <code class="docutils literal notranslate"><sp
 It takes some time to develop effective scaffolding, but a little bit of scaffolding can save a lot of debugging.</p>
 </section>
 <section id="glossary">
-<h2>Glossary<a class="headerlink" href="#glossary" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.11. </span>Glossary<a class="headerlink" href="#glossary" title="Link to this heading">#</a></h2>
 <p><strong>return value:</strong>
 The result of a function. If a function call is used as an expression, the return value is the value of the expression.</p>
 <p><strong>pure function:</strong>
@@ -1237,7 +1241,7 @@ A language, or subset of a language, is Turing complete if it can perform any co
 Checking the parameters of a function to make sure they have the correct types and values</p>
 </section>
 <section id="exercises">
-<h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.12. </span>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
 <div class="cell tag_remove-print docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This cell tells Jupyter to provide detailed debugging information</span>
@@ -1254,7 +1258,7 @@ Checking the parameters of a function to make sure they have the correct types a
 </div>
 </div>
 <section id="ask-a-virtual-assistant">
-<h3>Ask a virtual assistant<a class="headerlink" href="#ask-a-virtual-assistant" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.12.1. </span>Ask a virtual assistant<a class="headerlink" href="#ask-a-virtual-assistant" title="Link to this heading">#</a></h3>
 <p>In this chapter, we saw an incorrect function that can end without returning a value.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1297,19 +1301,19 @@ Checking the parameters of a function to make sure they have the correct types a
 <p>Then ask “Write a function that takes coordinates of two points and computes the distance between them.” See if the result resembles the version of <code class="docutils literal notranslate"><span class="pre">distance</span></code> we wrote in this chapter.</p>
 </section>
 <section id="exercise">
-<h3>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.12.2. </span>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h3>
 <p>Use incremental development to write a function called <code class="docutils literal notranslate"><span class="pre">hypot</span></code> that returns the length of the hypotenuse of a right triangle given the lengths of the other two legs as arguments.</p>
 <p>Note: There’s a function in the math module called <code class="docutils literal notranslate"><span class="pre">hypot</span></code> that does the same thing, but you should not use it for this exercise!</p>
 <p>Even if you can write the function correctly on the first try, start with a function that always returns <code class="docutils literal notranslate"><span class="pre">0</span></code> and practice making small changes, testing as you go.
 When you are done, the function should only return a value – it should not display anything.</p>
 </section>
 <section id="id1">
-<h3>Exercise<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.12.3. </span>Exercise<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p>Write a boolean function, <code class="docutils literal notranslate"><span class="pre">is_between(x,</span> <span class="pre">y,</span> <span class="pre">z)</span></code>, that returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if <span class="math notranslate nohighlight">\(x &lt; y &lt; z\)</span> or if
 <span class="math notranslate nohighlight">\(z &lt; y &lt; x\)</span>, and<code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise.</p>
 </section>
 <section id="id2">
-<h3>Exercise<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.12.4. </span>Exercise<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <p>The Ackermann function, <span class="math notranslate nohighlight">\(A(m, n)\)</span>, is defined:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
@@ -1323,7 +1327,7 @@ A(m-1, A(m, n-1)) &amp; \mbox{if } m &gt; 0 \mbox{ and } n &gt; 0.
 What happens if you call <code class="docutils literal notranslate"><span class="pre">ackermann(5,</span> <span class="pre">5)</span></code>?</p>
 </section>
 <section id="id3">
-<h3>Exercise<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.12.5. </span>Exercise<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <p>The greatest common divisor (GCD) of <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> is the largest number
 that divides both of them with no remainder.</p>
 <p>One way to find the GCD of two numbers is based on the observation that
@@ -1371,7 +1375,7 @@ returns their greatest common divisor.</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Conditionals and Recursion</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Conditionals and Recursion</p>
       </div>
     </a>
     <a class="right-next"
@@ -1379,7 +1383,7 @@ returns their greatest common divisor.</p>
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Iteration and Search</p>
+        <p class="prev-next-title"><span class="section-number">7. </span>Iteration and Search</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1399,23 +1403,23 @@ returns their greatest common divisor.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-functions-have-return-values">Some functions have return values</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#and-some-have-none">And some have None</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#return-values-and-conditionals">Return values and conditionals</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#incremental-development">Incremental development</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-functions">Boolean functions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursion-with-return-values">Recursion with return values</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leap-of-faith">Leap of faith</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fibonacci">Fibonacci</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-types">Checking types</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">Debugging</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">Glossary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">Ask a virtual assistant</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-functions-have-return-values">6.1. Some functions have return values</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#and-some-have-none">6.2. And some have None</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#return-values-and-conditionals">6.3. Return values and conditionals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#incremental-development">6.4. Incremental development</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-functions">6.5. Boolean functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursion-with-return-values">6.6. Recursion with return values</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leap-of-faith">6.7. Leap of faith</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fibonacci">6.8. Fibonacci</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-types">6.9. Checking types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">6.10. Debugging</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">6.11. Glossary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">6.12. Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">6.12.1. Ask a virtual assistant</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">6.12.2. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">6.12.3. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">6.12.4. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">6.12.5. Exercise</a></li>
 </ul>
 </li>
 </ul>

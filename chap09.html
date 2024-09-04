@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Lists &#8212; Think Python, 3rd edition</title>
+    <title>9. Lists &#8212; Think Python, 3rd edition</title>
   
   
   
@@ -62,8 +62,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'chap09';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Dictionaries" href="chap10.html" />
-    <link rel="prev" title="Strings and Regular Expressions" href="chap08.html" />
+    <link rel="next" title="10. Dictionaries" href="chap10.html" />
+    <link rel="prev" title="8. Strings and Regular Expressions" href="chap08.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -175,27 +175,31 @@
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Front Matter</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="chap00.html">Preface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap01.html">Programming as a way of thinking</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap02.html">Variables and Statements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap03.html">Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap04.html">Functions and Interfaces</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap05.html">Conditionals and Recursion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap06.html">Return Values</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap07.html">Iteration and Search</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap08.html">Strings and Regular Expressions</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Lists</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap10.html">Dictionaries</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap11.html">Tuples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap12.html">Text Analysis and Generation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap13.html">Files and Databases</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap14.html">Classes and Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap15.html">Classes and Methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap16.html">Classes and Objects</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap17.html">Inheritance</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap18.html">Python Extras</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap19.html">Final thoughts</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapters</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chap01.html">1. Programming as a way of thinking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap02.html">2. Variables and Statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap03.html">3. Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap04.html">4. Functions and Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap05.html">5. Conditionals and Recursion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap06.html">6. Return Values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap07.html">7. Iteration and Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap08.html">8. Strings and Regular Expressions</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">9. Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap10.html">10. Dictionaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap11.html">11. Tuples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap12.html">12. Text Analysis and Generation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap13.html">13. Files and Databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap14.html">14. Classes and Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap15.html">15. Classes and Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap16.html">16. Classes and Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap17.html">17. Inheritance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap18.html">18. Python Extras</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap19.html">19. Final thoughts</a></li>
 </ul>
 
     </div>
@@ -359,26 +363,26 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-list-is-a-sequence">A list is a sequence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lists-are-mutable">Lists are mutable</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-slices">List slices</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-operations">List operations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-methods">List methods</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lists-and-strings">Lists and strings</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#looping-through-a-list">Looping through a list</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sorting-lists">Sorting lists</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objects-and-values">Objects and values</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aliasing">Aliasing</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-arguments">List arguments</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-a-word-list">Making a word list</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">Debugging</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">Glossary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">Ask a virtual assistant</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-list-is-a-sequence">9.1. A list is a sequence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lists-are-mutable">9.2. Lists are mutable</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-slices">9.3. List slices</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-operations">9.4. List operations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-methods">9.5. List methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lists-and-strings">9.6. Lists and strings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#looping-through-a-list">9.7. Looping through a list</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sorting-lists">9.8. Sorting lists</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objects-and-values">9.9. Objects and values</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aliasing">9.10. Aliasing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-arguments">9.11. List arguments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-a-word-list">9.12. Making a word list</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">9.13. Debugging</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">9.14. Glossary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">9.15. Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">9.15.1. Ask a virtual assistant</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">9.15.2. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">9.15.3. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">9.15.4. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">9.15.5. Exercise</a></li>
 </ul>
 </li>
 </ul>
@@ -396,12 +400,12 @@ document.write(`
 <a class="reference external" href="https://bookshop.org/a/98697/9781098155438">Bookshop.org</a> and
 <a class="reference external" href="https://www.amazon.com/_/dp/1098155432?smid=ATVPDKIKX0DER&amp;amp;_encoding=UTF8&amp;amp;tag=oreilly20-20&amp;amp;_encoding=UTF8&amp;amp;tag=greenteapre01-20&amp;amp;linkCode=ur2&amp;amp;linkId=e2a529f94920295d27ec8a06e757dc7c&amp;amp;camp=1789&amp;amp;creative=9325">Amazon</a>.</p>
 <section id="lists">
-<h1>Lists<a class="headerlink" href="#lists" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">9. </span>Lists<a class="headerlink" href="#lists" title="Link to this heading">#</a></h1>
 <p>This chapter presents one of Python’s most useful built-in types, lists.
 You will also learn more about objects and what can happen when multiple variables refer to the same object.</p>
 <p>In the exercises at the end of the chapter, we’ll make a word list and use it to search for special words like palindromes and anagrams.</p>
 <section id="a-list-is-a-sequence">
-<h2>A list is a sequence<a class="headerlink" href="#a-list-is-a-sequence" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">9.1. </span>A list is a sequence<a class="headerlink" href="#a-list-is-a-sequence" title="Link to this heading">#</a></h2>
 <p>Like a string, a <strong>list</strong> is a sequence of values. In a string, the
 values are characters; in a list, they can be any type.
 The values in a list are called <strong>elements</strong>.</p>
@@ -464,7 +468,7 @@ one with empty brackets, <code class="docutils literal notranslate"><span class=
 <p>Lists are represented by boxes with the word “list” outside and the numbered elements of the list inside.</p>
 </section>
 <section id="lists-are-mutable">
-<h2>Lists are mutable<a class="headerlink" href="#lists-are-mutable" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">9.2. </span>Lists are mutable<a class="headerlink" href="#lists-are-mutable" title="Link to this heading">#</a></h2>
 <p>To read an element of a list, we can use the bracket operator.
 The index of the first element is <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
 <div class="cell docutils container">
@@ -558,7 +562,7 @@ the list.</p></li>
 </div>
 </section>
 <section id="list-slices">
-<h2>List slices<a class="headerlink" href="#list-slices" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">9.3. </span>List slices<a class="headerlink" href="#list-slices" title="Link to this heading">#</a></h2>
 <p>The slice operator works on lists the same way it works on strings.
 The following example selects the second and third elements from a list of four letters.</p>
 <div class="cell docutils container">
@@ -629,7 +633,7 @@ The following example selects the second and third elements from a list of four 
 <p>Because <code class="docutils literal notranslate"><span class="pre">list</span></code> is the name of a built-in function, you should avoid using it as a variable name.</p>
 </section>
 <section id="list-operations">
-<h2>List operations<a class="headerlink" href="#list-operations" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">9.4. </span>List operations<a class="headerlink" href="#list-operations" title="Link to this heading">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">+</span></code> operator concatenates lists.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -698,7 +702,7 @@ The following example selects the second and third elements from a list of four 
 </div>
 </section>
 <section id="list-methods">
-<h2>List methods<a class="headerlink" href="#list-methods" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">9.5. </span>List methods<a class="headerlink" href="#list-methods" title="Link to this heading">#</a></h2>
 <p>Python provides methods that operate on lists. For example, <code class="docutils literal notranslate"><span class="pre">append</span></code>
 adds a new element to the end of a list:</p>
 <div class="cell docutils container">
@@ -795,7 +799,7 @@ But we can confirm that the list has been modified.</p>
 </div>
 </section>
 <section id="lists-and-strings">
-<h2>Lists and strings<a class="headerlink" href="#lists-and-strings" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">9.6. </span>Lists and strings<a class="headerlink" href="#lists-and-strings" title="Link to this heading">#</a></h2>
 <p>A string is a sequence of characters and a list is a sequence of values,
 but a list of characters is not the same as a string.
 To convert from a string to a list of characters, you can use the <code class="docutils literal notranslate"><span class="pre">list</span></code> function.</p>
@@ -866,7 +870,7 @@ between words.
 To join strings without spaces, you can use the empty string, <code class="docutils literal notranslate"><span class="pre">''</span></code>, as a delimiter.</p>
 </section>
 <section id="looping-through-a-list">
-<h2>Looping through a list<a class="headerlink" href="#looping-through-a-list" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">9.7. </span>Looping through a list<a class="headerlink" href="#looping-through-a-list" title="Link to this heading">#</a></h2>
 <p>You can use a <code class="docutils literal notranslate"><span class="pre">for</span></code> statement to loop through the elements of a list.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -913,7 +917,7 @@ fjords
 </div>
 </section>
 <section id="sorting-lists">
-<h2>Sorting lists<a class="headerlink" href="#sorting-lists" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">9.8. </span>Sorting lists<a class="headerlink" href="#sorting-lists" title="Link to this heading">#</a></h2>
 <p>Python provides a built-in function called <code class="docutils literal notranslate"><span class="pre">sorted</span></code> that sorts the elements of a list.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -971,7 +975,7 @@ To convert the list to a string, we can use <code class="docutils literal notran
 <p>With an empty string as the delimiter, the elements of the list are joined with nothing between them.</p>
 </section>
 <section id="objects-and-values">
-<h2>Objects and values<a class="headerlink" href="#objects-and-values" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">9.9. </span>Objects and values<a class="headerlink" href="#objects-and-values" title="Link to this heading">#</a></h2>
 <p>If we run these assignment statements:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1032,7 +1036,7 @@ But when you create two lists, you get two objects.</p>
 If two objects are identical, they are also equivalent, but if they are equivalent, they are not necessarily identical.</p>
 </section>
 <section id="aliasing">
-<h2>Aliasing<a class="headerlink" href="#aliasing" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">9.10. </span>Aliasing<a class="headerlink" href="#aliasing" title="Link to this heading">#</a></h2>
 <p>If <code class="docutils literal notranslate"><span class="pre">a</span></code> refers to an object and you assign <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">=</span> <span class="pre">a</span></code>, then both variables refer to the same object.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1089,7 +1093,7 @@ In this example:</p>
 string or not.</p>
 </section>
 <section id="list-arguments">
-<h2>List arguments<a class="headerlink" href="#list-arguments" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">9.11. </span>List arguments<a class="headerlink" href="#list-arguments" title="Link to this heading">#</a></h2>
 <p>When you pass a list to a function, the function gets a reference to the
 list. If the function modifies the list, the caller sees the change. For
 example, <code class="docutils literal notranslate"><span class="pre">pop_first</span></code> uses the list method <code class="docutils literal notranslate"><span class="pre">pop</span></code> to remove the first element from a list.</p>
@@ -1141,7 +1145,7 @@ example, <code class="docutils literal notranslate"><span class="pre">pop_first<
 If the function modifies the object, those changes persist after the function is done.</p>
 </section>
 <section id="making-a-word-list">
-<span id="section-word-list"></span><h2>Making a word list<a class="headerlink" href="#making-a-word-list" title="Link to this heading">#</a></h2>
+<span id="section-word-list"></span><h2><span class="section-number">9.12. </span>Making a word list<a class="headerlink" href="#making-a-word-list" title="Link to this heading">#</a></h2>
 <p>In the previous chapter, we read the file <code class="docutils literal notranslate"><span class="pre">words.txt</span></code> and searched for words with certain properties, like using the letter <code class="docutils literal notranslate"><span class="pre">e</span></code>.
 But we read the entire file many times, which is not efficient.
 It is better to read the file once and put the words in a list.
@@ -1226,7 +1230,7 @@ For example, <code class="docutils literal notranslate"><span class="pre">'demot
 <p>And I have to say, I’m anaspeptic about it.</p>
 </section>
 <section id="debugging">
-<h2>Debugging<a class="headerlink" href="#debugging" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">9.13. </span>Debugging<a class="headerlink" href="#debugging" title="Link to this heading">#</a></h2>
 <p>Note that most list methods modify the argument and return <code class="docutils literal notranslate"><span class="pre">None</span></code>.
 This is the opposite of the string methods, which return a new string and leave the original alone.</p>
 <p>If you are used to writing string code like this:</p>
@@ -1272,7 +1276,7 @@ In this case, the value of <code class="docutils literal notranslate"><span clas
 <p>If you see an error message like this, you should look backward through the program and see if you might have called a list method incorrectly.</p>
 </section>
 <section id="glossary">
-<h2>Glossary<a class="headerlink" href="#glossary" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">9.14. </span>Glossary<a class="headerlink" href="#glossary" title="Link to this heading">#</a></h2>
 <p><strong>list:</strong>
 An object that contains a sequence of values.</p>
 <p><strong>element:</strong>
@@ -1293,7 +1297,7 @@ If there is more than one variable that refers to an object, the object is alias
 One of the named values associated with an object.</p>
 </section>
 <section id="exercises">
-<h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">9.15. </span>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
 <div class="cell tag_remove-print docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This cell tells Jupyter to provide detailed debugging information</span>
@@ -1305,7 +1309,7 @@ One of the named values associated with an object.</p>
 </div>
 </div>
 <section id="ask-a-virtual-assistant">
-<h3>Ask a virtual assistant<a class="headerlink" href="#ask-a-virtual-assistant" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">9.15.1. </span>Ask a virtual assistant<a class="headerlink" href="#ask-a-virtual-assistant" title="Link to this heading">#</a></h3>
 <p>In this chapter, I used the words “contrafibularities” and “anaspeptic”, but they are not actually English words.
 They were used in the British television show <em>Black Adder</em>, Season 2, Episode 2, “Ink and Incapability”.</p>
 <p>However, when I asked ChatGPT 3.5 (August 3, 2023 version) where those words came from, it initially claimed they are from Monty Python, and later claimed they are from the Tom Stoppard play <em>Rosencrantz and Guildenstern Are Dead</em>.</p>
@@ -1320,7 +1324,7 @@ After that, the responses you get should use only basic features.
 If you still see features we you haven’t learned, you can follow up with “Can you write that using only basic Python features?”</p>
 </section>
 <section id="exercise">
-<h3>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">9.15.2. </span>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h3>
 <p>Two words are anagrams if you can rearrange the letters from one to spell the other.
 For example, <code class="docutils literal notranslate"><span class="pre">tops</span></code> is an anagram of <code class="docutils literal notranslate"><span class="pre">stop</span></code>.</p>
 <p>One way to check whether two words are anagrams is to sort the letters in both words.
@@ -1329,7 +1333,7 @@ If the lists of sorted letters are the same, the words are anagrams.</p>
 <p>Using your function and the word list, find all the anagrams of <code class="docutils literal notranslate"><span class="pre">takes</span></code>.</p>
 </section>
 <section id="id1">
-<h3>Exercise<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">9.15.3. </span>Exercise<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p>Python provides a built-in function called <code class="docutils literal notranslate"><span class="pre">reversed</span></code> that takes as an argument a sequence of elements – like a list or string – and returns a <code class="docutils literal notranslate"><span class="pre">reversed</span></code> object that contains the elements in reverse order.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1392,14 +1396,14 @@ Write a function called <code class="docutils literal notranslate"><span class="
 </div>
 </section>
 <section id="id2">
-<h3>Exercise<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">9.15.4. </span>Exercise<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <p>Write a function called <code class="docutils literal notranslate"><span class="pre">reverse_sentence</span></code> that takes as an argument a string that contains any number of words separated by spaces.
 It should return a new string that contains the same words in reverse order.
 For example, if the argument is “Reverse this sentence”, the result should be “Sentence this reverse”.</p>
 <p>Hint: You can use the <code class="docutils literal notranslate"><span class="pre">capitalize</span></code> methods to capitalize the first word and convert the other words to lowercase.</p>
 </section>
 <section id="id3">
-<h3>Exercise<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">9.15.5. </span>Exercise<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <p>Write a function called <code class="docutils literal notranslate"><span class="pre">total_length</span></code> that takes a list of strings and returns the total length of the strings.
 The total length of the words in <code class="docutils literal notranslate"><span class="pre">word_list</span></code> should be <span class="math notranslate nohighlight">\(902{,}728\)</span>.</p>
 </section>
@@ -1442,7 +1446,7 @@ The total length of the words in <code class="docutils literal notranslate"><spa
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Strings and Regular Expressions</p>
+        <p class="prev-next-title"><span class="section-number">8. </span>Strings and Regular Expressions</p>
       </div>
     </a>
     <a class="right-next"
@@ -1450,7 +1454,7 @@ The total length of the words in <code class="docutils literal notranslate"><spa
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Dictionaries</p>
+        <p class="prev-next-title"><span class="section-number">10. </span>Dictionaries</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1470,26 +1474,26 @@ The total length of the words in <code class="docutils literal notranslate"><spa
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-list-is-a-sequence">A list is a sequence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lists-are-mutable">Lists are mutable</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-slices">List slices</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-operations">List operations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-methods">List methods</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lists-and-strings">Lists and strings</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#looping-through-a-list">Looping through a list</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sorting-lists">Sorting lists</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objects-and-values">Objects and values</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aliasing">Aliasing</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-arguments">List arguments</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-a-word-list">Making a word list</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">Debugging</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">Glossary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">Ask a virtual assistant</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-list-is-a-sequence">9.1. A list is a sequence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lists-are-mutable">9.2. Lists are mutable</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-slices">9.3. List slices</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-operations">9.4. List operations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-methods">9.5. List methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lists-and-strings">9.6. Lists and strings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#looping-through-a-list">9.7. Looping through a list</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sorting-lists">9.8. Sorting lists</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objects-and-values">9.9. Objects and values</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aliasing">9.10. Aliasing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-arguments">9.11. List arguments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-a-word-list">9.12. Making a word list</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">9.13. Debugging</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">9.14. Glossary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">9.15. Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">9.15.1. Ask a virtual assistant</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">9.15.2. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">9.15.3. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">9.15.4. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">9.15.5. Exercise</a></li>
 </ul>
 </li>
 </ul>

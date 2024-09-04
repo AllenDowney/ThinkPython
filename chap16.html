@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Classes and Objects &#8212; Think Python, 3rd edition</title>
+    <title>16. Classes and Objects &#8212; Think Python, 3rd edition</title>
   
   
   
@@ -60,8 +60,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'chap16';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Inheritance" href="chap17.html" />
-    <link rel="prev" title="Classes and Methods" href="chap15.html" />
+    <link rel="next" title="17. Inheritance" href="chap17.html" />
+    <link rel="prev" title="15. Classes and Methods" href="chap15.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -173,27 +173,31 @@
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Front Matter</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="chap00.html">Preface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap01.html">Programming as a way of thinking</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap02.html">Variables and Statements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap03.html">Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap04.html">Functions and Interfaces</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap05.html">Conditionals and Recursion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap06.html">Return Values</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap07.html">Iteration and Search</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap08.html">Strings and Regular Expressions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap09.html">Lists</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap10.html">Dictionaries</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap11.html">Tuples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap12.html">Text Analysis and Generation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap13.html">Files and Databases</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap14.html">Classes and Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap15.html">Classes and Methods</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Classes and Objects</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap17.html">Inheritance</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap18.html">Python Extras</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap19.html">Final thoughts</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapters</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chap01.html">1. Programming as a way of thinking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap02.html">2. Variables and Statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap03.html">3. Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap04.html">4. Functions and Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap05.html">5. Conditionals and Recursion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap06.html">6. Return Values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap07.html">7. Iteration and Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap08.html">8. Strings and Regular Expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap09.html">9. Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap10.html">10. Dictionaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap11.html">11. Tuples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap12.html">12. Text Analysis and Generation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap13.html">13. Files and Databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap14.html">14. Classes and Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap15.html">15. Classes and Methods</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">16. Classes and Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap17.html">17. Inheritance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap18.html">18. Python Extras</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap19.html">19. Final thoughts</a></li>
 </ul>
 
     </div>
@@ -357,22 +361,22 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-point">Creating a Point</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-line">Creating a Line</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equivalence-and-identity">Equivalence and identity</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-rectangle">Creating a Rectangle</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#changing-rectangles">Changing rectangles</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deep-copy">Deep copy</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polymorphism">Polymorphism</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">Debugging</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">Glossary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">Ask a virtual assistant</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-point">16.1. Creating a Point</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-line">16.2. Creating a Line</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equivalence-and-identity">16.3. Equivalence and identity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-rectangle">16.4. Creating a Rectangle</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#changing-rectangles">16.5. Changing rectangles</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deep-copy">16.6. Deep copy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polymorphism">16.7. Polymorphism</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">16.8. Debugging</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">16.9. Glossary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">16.10. Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">16.10.1. Ask a virtual assistant</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">16.10.2. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">16.10.3. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">16.10.4. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">16.10.5. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">16.10.6. Exercise</a></li>
 </ul>
 </li>
 </ul>
@@ -390,14 +394,14 @@ document.write(`
 <a class="reference external" href="https://bookshop.org/a/98697/9781098155438">Bookshop.org</a> and
 <a class="reference external" href="https://www.amazon.com/_/dp/1098155432?smid=ATVPDKIKX0DER&amp;amp;_encoding=UTF8&amp;amp;tag=oreilly20-20&amp;amp;_encoding=UTF8&amp;amp;tag=greenteapre01-20&amp;amp;linkCode=ur2&amp;amp;linkId=e2a529f94920295d27ec8a06e757dc7c&amp;amp;camp=1789&amp;amp;creative=9325">Amazon</a>.</p>
 <section id="classes-and-objects">
-<h1>Classes and Objects<a class="headerlink" href="#classes-and-objects" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">16. </span>Classes and Objects<a class="headerlink" href="#classes-and-objects" title="Link to this heading">#</a></h1>
 <p>At this point we have defined classes and created objects that represent the time of day and the day of the year.
 And we’ve defined methods that create, modify, and perform computations with these objects.</p>
 <p>In this chapter we’ll continue our tour of object-oriented programming (OOP) by defining classes that represent geometric objects, including points, lines, rectangles, and circles.
 We’ll write methods that create and modify these objects, and we’ll use the <code class="docutils literal notranslate"><span class="pre">jupyturtle</span></code> module to draw them.</p>
 <p>I’ll use these classes to demonstrate OOP topics including object identity and equivalence, shallow and deep copying, and polymorphism.</p>
 <section id="creating-a-point">
-<span id="section-create-point"></span><h2>Creating a Point<a class="headerlink" href="#creating-a-point" title="Link to this heading">#</a></h2>
+<span id="section-create-point"></span><h2><span class="section-number">16.1. </span>Creating a Point<a class="headerlink" href="#creating-a-point" title="Link to this heading">#</a></h2>
 <p>In computer graphics a location on the screen is often represented using a pair of coordinates in an <code class="docutils literal notranslate"><span class="pre">x</span></code>-<code class="docutils literal notranslate"><span class="pre">y</span></code> plane.
 By convention, the point <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">0)</span></code> usually represents the upper-left corner of the screen, and  <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y)</span></code> represents the point <code class="docutils literal notranslate"><span class="pre">x</span></code> units to the right and <code class="docutils literal notranslate"><span class="pre">y</span></code> units down from the origin.
 Compared to the Cartesian coordinate system you might have seen in a math class, the <code class="docutils literal notranslate"><span class="pre">y</span></code> axis is upside-down.</p>
@@ -508,7 +512,7 @@ If we don’t want to modify an existing <code class="docutils literal notransla
 <p>In the next section, we’ll use these points to define and draw a line.</p>
 </section>
 <section id="creating-a-line">
-<h2>Creating a Line<a class="headerlink" href="#creating-a-line" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">16.2. </span>Creating a Line<a class="headerlink" href="#creating-a-line" title="Link to this heading">#</a></h2>
 <p>Now let’s define a class that represents the line segment between two points.
 As usual, we’ll start with an <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method and a <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method.</p>
 <div class="cell docutils container">
@@ -621,7 +625,7 @@ To draw lines, we’ll use two new functions from the <code class="docutils lite
 But first let’s talk about object equivalence and identity.</p>
 </section>
 <section id="equivalence-and-identity">
-<h2>Equivalence and identity<a class="headerlink" href="#equivalence-and-identity" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">16.3. </span>Equivalence and identity<a class="headerlink" href="#equivalence-and-identity" title="Link to this heading">#</a></h2>
 <p>Suppose we create two points with the same coordinates.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -687,7 +691,7 @@ But for programmer-defined types, you can override the <code class="docutils lit
 And you can define what equivalent means.</p>
 </section>
 <section id="creating-a-rectangle">
-<h2>Creating a Rectangle<a class="headerlink" href="#creating-a-rectangle" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">16.4. </span>Creating a Rectangle<a class="headerlink" href="#creating-a-rectangle" title="Link to this heading">#</a></h2>
 <p>Now let’s define a class that represents and draws rectangles.
 To keep things simple, we’ll assume that the rectangles are either vertical or horizontal, not at an angle.
 What attributes do you think we should use to specify the location and size of a rectangle?</p>
@@ -815,7 +819,7 @@ Now we can instantiate a <code class="docutils literal notranslate"><span class=
 <p>The figure includes two lines to represent the axes.</p>
 </section>
 <section id="changing-rectangles">
-<h2>Changing rectangles<a class="headerlink" href="#changing-rectangles" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">16.5. </span>Changing rectangles<a class="headerlink" href="#changing-rectangles" title="Link to this heading">#</a></h2>
 <p>Now let’s consider two methods that modify rectangles, <code class="docutils literal notranslate"><span class="pre">grow</span></code> and <code class="docutils literal notranslate"><span class="pre">translate</span></code>.
 We’ll see that <code class="docutils literal notranslate"><span class="pre">grow</span></code> works as expected, but <code class="docutils literal notranslate"><span class="pre">translate</span></code> has a subtle bug.
 See if you can figure it out before I explain.</p>
@@ -962,7 +966,7 @@ It takes two numbers, <code class="docutils literal notranslate"><span class="pr
 The next section explains what went wrong.</p>
 </section>
 <section id="deep-copy">
-<h2>Deep copy<a class="headerlink" href="#deep-copy" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">16.6. </span>Deep copy<a class="headerlink" href="#deep-copy" title="Link to this heading">#</a></h2>
 <p>When we use <code class="docutils literal notranslate"><span class="pre">copy</span></code> to duplicate <code class="docutils literal notranslate"><span class="pre">box1</span></code>, it copies the <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code> object but not the <code class="docutils literal notranslate"><span class="pre">Point</span></code> object it contains.
 So <code class="docutils literal notranslate"><span class="pre">box1</span></code> and <code class="docutils literal notranslate"><span class="pre">box2</span></code> are different objects, as intended.</p>
 <div class="cell docutils container">
@@ -1094,7 +1098,7 @@ To demonstrate, we’ll move <code class="docutils literal notranslate"><span cl
 </div>
 </section>
 <section id="polymorphism">
-<h2>Polymorphism<a class="headerlink" href="#polymorphism" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">16.7. </span>Polymorphism<a class="headerlink" href="#polymorphism" title="Link to this heading">#</a></h2>
 <p>In the previous example, we invoked the <code class="docutils literal notranslate"><span class="pre">draw</span></code> method on two <code class="docutils literal notranslate"><span class="pre">Line</span></code> objects and two <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code> objects.
 We can do the same thing more concisely by making a list of objects.</p>
 <div class="cell docutils container">
@@ -1156,7 +1160,7 @@ In object-oriented programming, polymorphism is the ability of different types t
 Then you can use polymorphism to draw lines, rectangles, and circles.</p>
 </section>
 <section id="debugging">
-<h2>Debugging<a class="headerlink" href="#debugging" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">16.8. </span>Debugging<a class="headerlink" href="#debugging" title="Link to this heading">#</a></h2>
 <p>In this chapter, we ran into a subtle bug that happened because we created a <code class="docutils literal notranslate"><span class="pre">Point</span></code> that was shared by two <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code> objects, and then we modified the <code class="docutils literal notranslate"><span class="pre">Point</span></code>.
 In general, there are two ways to avoid problems like this: you can avoid sharing objects or you can avoid modifying them.</p>
 <p>To avoid sharing objects, you can use deep copy, as we did in this chapter.</p>
@@ -1178,7 +1182,7 @@ They are beyond the scope of this book, but if you are curious, ask a virtual as
 Programs that avoid shared objects and modifiers are often easier to develop, test, and debug – and the best kind of debugging is the kind you don’t have to do.</p>
 </section>
 <section id="glossary">
-<h2>Glossary<a class="headerlink" href="#glossary" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">16.9. </span>Glossary<a class="headerlink" href="#glossary" title="Link to this heading">#</a></h2>
 <p><strong>identical:</strong>
 Being the same object (which implies equivalence).</p>
 <p><strong>equivalent:</strong>
@@ -1191,7 +1195,7 @@ A copy operation that also copies nested objects.</p>
 The ability of a method or operator to work with multiple types of objects.</p>
 </section>
 <section id="exercises">
-<h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">16.10. </span>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
 <div class="cell tag_remove-print docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This cell tells Jupyter to provide detailed debugging information</span>
@@ -1203,24 +1207,24 @@ The ability of a method or operator to work with multiple types of objects.</p>
 </div>
 </div>
 <section id="ask-a-virtual-assistant">
-<h3>Ask a virtual assistant<a class="headerlink" href="#ask-a-virtual-assistant" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">16.10.1. </span>Ask a virtual assistant<a class="headerlink" href="#ask-a-virtual-assistant" title="Link to this heading">#</a></h3>
 <p>For all of the following exercises, consider asking a virtual assistant for help.
 If you do, you’ll want include as part of the prompt the class definitions for <code class="docutils literal notranslate"><span class="pre">Point</span></code>, <code class="docutils literal notranslate"><span class="pre">Line</span></code>, and <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code> – otherwise the VA will make a guess about their attributes and functions, and the code it generates won’t work.</p>
 </section>
 <section id="exercise">
-<h3>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">16.10.2. </span>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h3>
 <p>Write an <code class="docutils literal notranslate"><span class="pre">__eq__</span></code> method for the <code class="docutils literal notranslate"><span class="pre">Line</span></code> class that returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if the <code class="docutils literal notranslate"><span class="pre">Line</span></code> objects refer to <code class="docutils literal notranslate"><span class="pre">Point</span></code> objects that are equivalent, in either order.</p>
 </section>
 <section id="id1">
-<h3>Exercise<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">16.10.3. </span>Exercise<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p>Write a <code class="docutils literal notranslate"><span class="pre">Line</span></code> method called <code class="docutils literal notranslate"><span class="pre">midpoint</span></code> that computes the midpoint of a line segment and returns the result as a <code class="docutils literal notranslate"><span class="pre">Point</span></code> object.</p>
 </section>
 <section id="id2">
-<h3>Exercise<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">16.10.4. </span>Exercise<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <p>Write a <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code> method called <code class="docutils literal notranslate"><span class="pre">midpoint</span></code> that find the point in the center of a rectangle and returns the result as a <code class="docutils literal notranslate"><span class="pre">Point</span></code> object.</p>
 </section>
 <section id="id3">
-<h3>Exercise<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">16.10.5. </span>Exercise<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <p>Write a <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code> method called <code class="docutils literal notranslate"><span class="pre">make_cross</span></code> that:</p>
 <ol class="arabic simple">
 <li><p>Uses <code class="docutils literal notranslate"><span class="pre">make_lines</span></code> to get a list of <code class="docutils literal notranslate"><span class="pre">Line</span></code> objects that represent the four sides of the rectangle.</p></li>
@@ -1229,7 +1233,7 @@ If you do, you’ll want include as part of the prompt the class definitions for
 </ol>
 </section>
 <section id="id4">
-<h3>Exercise<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">16.10.6. </span>Exercise<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <p>Write a definition for a class named <code class="docutils literal notranslate"><span class="pre">Circle</span></code> with attributes <code class="docutils literal notranslate"><span class="pre">center</span></code> and <code class="docutils literal notranslate"><span class="pre">radius</span></code>, where <code class="docutils literal notranslate"><span class="pre">center</span></code> is a Point object and <code class="docutils literal notranslate"><span class="pre">radius</span></code> is a number.
 Include special methods <code class="docutils literal notranslate"><span class="pre">__init__</span></code> and a <code class="docutils literal notranslate"><span class="pre">__str__</span></code>, and a method called <code class="docutils literal notranslate"><span class="pre">draw</span></code> that uses <code class="docutils literal notranslate"><span class="pre">jupyturtle</span></code> functions to draw the circle.</p>
 </section>
@@ -1272,7 +1276,7 @@ Include special methods <code class="docutils literal notranslate"><span class="
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Classes and Methods</p>
+        <p class="prev-next-title"><span class="section-number">15. </span>Classes and Methods</p>
       </div>
     </a>
     <a class="right-next"
@@ -1280,7 +1284,7 @@ Include special methods <code class="docutils literal notranslate"><span class="
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Inheritance</p>
+        <p class="prev-next-title"><span class="section-number">17. </span>Inheritance</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1300,22 +1304,22 @@ Include special methods <code class="docutils literal notranslate"><span class="
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-point">Creating a Point</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-line">Creating a Line</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equivalence-and-identity">Equivalence and identity</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-rectangle">Creating a Rectangle</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#changing-rectangles">Changing rectangles</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deep-copy">Deep copy</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polymorphism">Polymorphism</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">Debugging</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">Glossary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">Ask a virtual assistant</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-point">16.1. Creating a Point</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-line">16.2. Creating a Line</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equivalence-and-identity">16.3. Equivalence and identity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-rectangle">16.4. Creating a Rectangle</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#changing-rectangles">16.5. Changing rectangles</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deep-copy">16.6. Deep copy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polymorphism">16.7. Polymorphism</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">16.8. Debugging</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">16.9. Glossary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">16.10. Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">16.10.1. Ask a virtual assistant</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">16.10.2. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">16.10.3. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">16.10.4. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">16.10.5. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">16.10.6. Exercise</a></li>
 </ul>
 </li>
 </ul>

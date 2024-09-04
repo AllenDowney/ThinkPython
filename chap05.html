@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Conditionals and Recursion &#8212; Think Python, 3rd edition</title>
+    <title>5. Conditionals and Recursion &#8212; Think Python, 3rd edition</title>
   
   
   
@@ -60,8 +60,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'chap05';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Return Values" href="chap06.html" />
-    <link rel="prev" title="Functions and Interfaces" href="chap04.html" />
+    <link rel="next" title="6. Return Values" href="chap06.html" />
+    <link rel="prev" title="4. Functions and Interfaces" href="chap04.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -173,27 +173,31 @@
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Front Matter</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="chap00.html">Preface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap01.html">Programming as a way of thinking</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap02.html">Variables and Statements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap03.html">Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap04.html">Functions and Interfaces</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Conditionals and Recursion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap06.html">Return Values</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap07.html">Iteration and Search</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap08.html">Strings and Regular Expressions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap09.html">Lists</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap10.html">Dictionaries</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap11.html">Tuples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap12.html">Text Analysis and Generation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap13.html">Files and Databases</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap14.html">Classes and Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap15.html">Classes and Methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap16.html">Classes and Objects</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap17.html">Inheritance</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap18.html">Python Extras</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap19.html">Final thoughts</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapters</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chap01.html">1. Programming as a way of thinking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap02.html">2. Variables and Statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap03.html">3. Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap04.html">4. Functions and Interfaces</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">5. Conditionals and Recursion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap06.html">6. Return Values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap07.html">7. Iteration and Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap08.html">8. Strings and Regular Expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap09.html">9. Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap10.html">10. Dictionaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap11.html">11. Tuples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap12.html">12. Text Analysis and Generation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap13.html">13. Files and Databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap14.html">14. Classes and Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap15.html">15. Classes and Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap16.html">16. Classes and Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap17.html">17. Inheritance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap18.html">18. Python Extras</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap19.html">19. Final thoughts</a></li>
 </ul>
 
     </div>
@@ -357,27 +361,27 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integer-division-and-modulus">Integer division and modulus</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-expressions">Boolean Expressions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logical-operators">Logical operators</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-statements">if statements</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-else-clause">The <code class="docutils literal notranslate"><span class="pre">else</span></code> clause</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chained-conditionals">Chained conditionals</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nested-conditionals">Nested Conditionals</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursion">Recursion</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stack-diagrams-for-recursive-functions">Stack diagrams for recursive functions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#infinite-recursion">Infinite recursion</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#keyboard-input">Keyboard input</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">Debugging</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">Glossary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">Ask a virtual assistant</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integer-division-and-modulus">5.1. Integer division and modulus</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-expressions">5.2. Boolean Expressions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logical-operators">5.3. Logical operators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-statements">5.4. if statements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-else-clause">5.5. The <code class="docutils literal notranslate"><span class="pre">else</span></code> clause</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chained-conditionals">5.6. Chained conditionals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nested-conditionals">5.7. Nested Conditionals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursion">5.8. Recursion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stack-diagrams-for-recursive-functions">5.9. Stack diagrams for recursive functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#infinite-recursion">5.10. Infinite recursion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#keyboard-input">5.11. Keyboard input</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">5.12. Debugging</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">5.13. Glossary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">5.14. Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">5.14.1. Ask a virtual assistant</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">5.14.2. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">5.14.3. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">5.14.4. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">5.14.5. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">5.14.6. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">5.14.7. Exercise</a></li>
 </ul>
 </li>
 </ul>
@@ -395,12 +399,12 @@ document.write(`
 <a class="reference external" href="https://bookshop.org/a/98697/9781098155438">Bookshop.org</a> and
 <a class="reference external" href="https://www.amazon.com/_/dp/1098155432?smid=ATVPDKIKX0DER&amp;amp;_encoding=UTF8&amp;amp;tag=oreilly20-20&amp;amp;_encoding=UTF8&amp;amp;tag=greenteapre01-20&amp;amp;linkCode=ur2&amp;amp;linkId=e2a529f94920295d27ec8a06e757dc7c&amp;amp;camp=1789&amp;amp;creative=9325">Amazon</a>.</p>
 <section id="conditionals-and-recursion">
-<h1>Conditionals and Recursion<a class="headerlink" href="#conditionals-and-recursion" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">5. </span>Conditionals and Recursion<a class="headerlink" href="#conditionals-and-recursion" title="Link to this heading">#</a></h1>
 <p>The main topic of this chapter is the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement, which executes different code depending on the state of the program.
 And with the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement we’ll be able to explore one of the most powerful ideas in computing, <strong>recursion</strong>.</p>
 <p>But we’ll start with three new features: the modulus operator, boolean expressions, and logical operators.</p>
 <section id="integer-division-and-modulus">
-<h2>Integer division and modulus<a class="headerlink" href="#integer-division-and-modulus" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">5.1. </span>Integer division and modulus<a class="headerlink" href="#integer-division-and-modulus" title="Link to this heading">#</a></h2>
 <p>Recall that the integer division operator, <code class="docutils literal notranslate"><span class="pre">//</span></code>, divides two numbers and rounds
 down to an integer.
 For example, suppose the run time of a movie is 105 minutes.
@@ -513,7 +517,7 @@ For example, if an event starts at 11 AM and lasts three hours, we can use the m
 <p>The event would end at 2 PM.</p>
 </section>
 <section id="boolean-expressions">
-<h2>Boolean Expressions<a class="headerlink" href="#boolean-expressions" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">5.2. </span>Boolean Expressions<a class="headerlink" href="#boolean-expressions" title="Link to this heading">#</a></h2>
 <p>A <strong>boolean expression</strong> is an expression that is either true or false.
 For example, the following expressions use the equals operator, <code class="docutils literal notranslate"><span class="pre">==</span></code>, which compares two values and produces <code class="docutils literal notranslate"><span class="pre">True</span></code> if they are equal and <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise:</p>
 <div class="cell docutils container">
@@ -651,7 +655,7 @@ they are not strings:</p>
 </div>
 </section>
 <section id="logical-operators">
-<h2>Logical operators<a class="headerlink" href="#logical-operators" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">5.3. </span>Logical operators<a class="headerlink" href="#logical-operators" title="Link to this heading">#</a></h2>
 <p>To combine boolean values into expressions, we can use <strong>logical operators</strong>.
 The most common are <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"> <span class="pre">or</span></code>, and <code class="docutils literal notranslate"><span class="pre">not</span></code>.
 The meaning of these operators is similar to their meaning in English.
@@ -712,7 +716,7 @@ Any nonzero number is interpreted as <code class="docutils literal notranslate">
 You might want to avoid it.</p>
 </section>
 <section id="if-statements">
-<h2>if statements<a class="headerlink" href="#if-statements" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">5.4. </span>if statements<a class="headerlink" href="#if-statements" title="Link to this heading">#</a></h2>
 <p>In order to write useful programs, we almost always need the ability to
 check conditions and change the behavior of the program accordingly.
 <strong>Conditional statements</strong> give us this ability. The simplest form is
@@ -749,7 +753,7 @@ In that case, you can use the <code class="docutils literal notranslate"><span c
 <p>The word <code class="docutils literal notranslate"><span class="pre">TODO</span></code> in a comment is a conventional reminder that there’s something you need to do later.</p>
 </section>
 <section id="the-else-clause">
-<h2>The <code class="docutils literal notranslate"><span class="pre">else</span></code> clause<a class="headerlink" href="#the-else-clause" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">5.5. </span>The <code class="docutils literal notranslate"><span class="pre">else</span></code> clause<a class="headerlink" href="#the-else-clause" title="Link to this heading">#</a></h2>
 <p>An <code class="docutils literal notranslate"><span class="pre">if</span></code> statement can have a second part, called an <code class="docutils literal notranslate"><span class="pre">else</span></code> clause.
 The syntax looks like this:</p>
 <div class="cell docutils container">
@@ -775,7 +779,7 @@ is false, and the program displays <code class="docutils literal notranslate"><s
 The alternatives are called <strong>branches</strong>.</p>
 </section>
 <section id="chained-conditionals">
-<h2>Chained conditionals<a class="headerlink" href="#chained-conditionals" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">5.6. </span>Chained conditionals<a class="headerlink" href="#chained-conditionals" title="Link to this heading">#</a></h2>
 <p>Sometimes there are more than two possibilities and we need more than two branches.
 One way to express a computation like that is a <strong>chained conditional</strong>, which includes an <code class="docutils literal notranslate"><span class="pre">elif</span></code> clause.</p>
 <div class="cell docutils container">
@@ -805,7 +809,7 @@ If one of them is true, the corresponding branch runs and the <code class="docut
 Even if more than one condition is true, only the first true branch runs.</p>
 </section>
 <section id="nested-conditionals">
-<h2>Nested Conditionals<a class="headerlink" href="#nested-conditionals" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">5.7. </span>Nested Conditionals<a class="headerlink" href="#nested-conditionals" title="Link to this heading">#</a></h2>
 <p>One conditional can also be nested within another.
 We could have written the example in the previous section like this:</p>
 <div class="cell docutils container">
@@ -877,7 +881,7 @@ Here’s an example with a nested conditional.</p>
 </div>
 </section>
 <section id="recursion">
-<h2>Recursion<a class="headerlink" href="#recursion" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">5.8. </span>Recursion<a class="headerlink" href="#recursion" title="Link to this heading">#</a></h2>
 <p>It is legal for a function to call itself.
 It may not be obvious why that is a good thing, but it turns out to be one of the most magical things a program can do.
 Here’s an example.</p>
@@ -963,7 +967,7 @@ loop. But we will see examples later that are hard to write with a <code class="
 loop and easy to write with recursion, so it is good to start early.</p>
 </section>
 <section id="stack-diagrams-for-recursive-functions">
-<h2>Stack diagrams for recursive functions<a class="headerlink" href="#stack-diagrams-for-recursive-functions" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">5.9. </span>Stack diagrams for recursive functions<a class="headerlink" href="#stack-diagrams-for-recursive-functions" title="Link to this heading">#</a></h2>
 <p>Here’s a stack diagram that shows the frames created when we called <code class="docutils literal notranslate"><span class="pre">countdown</span></code> with <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">3</span></code>.</p>
 <div class="cell tag_remove-input docutils container">
 </div>
@@ -977,7 +981,7 @@ The bottom of the stack, where <code class="docutils literal notranslate"><span 
 It does not make a recursive call, so there are no more frames.</p>
 </section>
 <section id="infinite-recursion">
-<h2>Infinite recursion<a class="headerlink" href="#infinite-recursion" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">5.10. </span>Infinite recursion<a class="headerlink" href="#infinite-recursion" title="Link to this heading">#</a></h2>
 <p>If a recursion never reaches a base case, it goes on making recursive
 calls forever, and the program never terminates. This is known as
 <strong>infinite recursion</strong>, and it is generally not a good idea.
@@ -1028,7 +1032,7 @@ If a program exceeds the limit, it causes a runtime error.</p>
 <p>If you encounter an infinite recursion by accident, review your function to confirm that there is a base case that does not make a recursive call. And if there is a base case, check whether you are guaranteed to reach it.</p>
 </section>
 <section id="keyboard-input">
-<h2>Keyboard input<a class="headerlink" href="#keyboard-input" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">5.11. </span>Keyboard input<a class="headerlink" href="#keyboard-input" title="Link to this heading">#</a></h2>
 <p>The programs we have written so far accept no input from the user. They
 just do the same thing every time.</p>
 <p>Python provides a built-in function called <code class="docutils literal notranslate"><span class="pre">input</span></code> that stops the
@@ -1097,7 +1101,7 @@ What do you mean: an African or European swallow?
 <p>We will see how to handle this kind of error later.</p>
 </section>
 <section id="debugging">
-<h2>Debugging<a class="headerlink" href="#debugging" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">5.12. </span>Debugging<a class="headerlink" href="#debugging" title="Link to this heading">#</a></h2>
 <p>When a syntax or runtime error occurs, the error message contains a lot
 of information, but it can be overwhelming. The most useful parts are
 usually:</p>
@@ -1158,7 +1162,7 @@ When we call <code class="docutils literal notranslate"><span class="pre">math.l
 <p>In general, you should take the time to read error messages carefully, but don’t assume that everything they say is correct.</p>
 </section>
 <section id="glossary">
-<h2>Glossary<a class="headerlink" href="#glossary" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">5.13. </span>Glossary<a class="headerlink" href="#glossary" title="Link to this heading">#</a></h2>
 <p><strong>recursion:</strong>
 The process of calling the function that is currently executing.</p>
 <p><strong>modulus operator:</strong>
@@ -1192,7 +1196,7 @@ Eventually, an infinite recursion causes a runtime error.</p>
 A character that creates a line break between two parts of a string.</p>
 </section>
 <section id="exercises">
-<h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">5.14. </span>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
 <div class="cell tag_remove-print docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This cell tells Jupyter to provide detailed debugging information</span>
@@ -1209,7 +1213,7 @@ A character that creates a line break between two parts of a string.</p>
 </div>
 </div>
 <section id="ask-a-virtual-assistant">
-<h3>Ask a virtual assistant<a class="headerlink" href="#ask-a-virtual-assistant" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">5.14.1. </span>Ask a virtual assistant<a class="headerlink" href="#ask-a-virtual-assistant" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Ask a virtual assistant, “What are some uses of the modulus operator?”</p></li>
 <li><p>Python provides operators to compute the logical operations <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code>, and <code class="docutils literal notranslate"><span class="pre">not</span></code>, but it doesn’t have an operator that computes the exclusive <code class="docutils literal notranslate"><span class="pre">or</span></code> operation, usually written <code class="docutils literal notranslate"><span class="pre">xor</span></code>. Ask an assistant “What is the logical xor operation and how do I compute it in Python?”</p></li>
@@ -1297,7 +1301,7 @@ Blastoff!
 Paste the solution it provides back here and test it.</p>
 </section>
 <section id="exercise">
-<h3>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">5.14.2. </span>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">time</span></code> module provides a function, also called <code class="docutils literal notranslate"><span class="pre">time</span></code>, that returns
 returns the number of seconds since the “Unix epoch”, which is January 1, 1970, 00:00:00 UTC (Coordinated Universal Time).</p>
 <div class="cell docutils container">
@@ -1319,7 +1323,7 @@ returns the number of seconds since the “Unix epoch”, which is January 1, 19
 <p>You can read more about the <code class="docutils literal notranslate"><span class="pre">time</span></code> module at <a class="reference external" href="https://docs.python.org/3/library/time.html">https://docs.python.org/3/library/time.html</a>.</p>
 </section>
 <section id="id1">
-<h3>Exercise<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">5.14.3. </span>Exercise<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p>If you are given three sticks, you may or may not be able to arrange
 them in a triangle. For example, if one of the sticks is 12 inches long
 and the other two are one inch long, you will not be able to get the
@@ -1337,7 +1341,7 @@ whether you can or cannot form a triangle from sticks with the given
 lengths. Hint: Use a chained conditional.</p>
 </section>
 <section id="id2">
-<h3>Exercise<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">5.14.4. </span>Exercise<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <p>What is the output of the following program? Draw a stack diagram that
 shows the state of the program when it prints the result.</p>
 <div class="cell docutils container">
@@ -1360,7 +1364,7 @@ shows the state of the program when it prints the result.</p>
 </div>
 </section>
 <section id="id3">
-<h3>Exercise<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">5.14.5. </span>Exercise<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <p>The following exercises use the <code class="docutils literal notranslate"><span class="pre">jupyturtle</span></code> module, described in Chapter 4.</p>
 <p>Read the following function and see if you can figure out what it does.
 Then run it and see if you got it right.
@@ -1388,7 +1392,7 @@ If you are not sure you understand how it works, try asking a virtual assistant.
 </div>
 </section>
 <section id="id4">
-<h3>Exercise<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">5.14.6. </span>Exercise<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <p>Ask a virtual assistant “What is the Koch curve?”</p>
 <p>To draw a Koch curve with length <code class="docutils literal notranslate"><span class="pre">x</span></code>, all you
 have to do is</p>
@@ -1553,7 +1557,7 @@ have to do is</p>
 </div>
 </section>
 <section id="id5">
-<h3>Exercise<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">5.14.7. </span>Exercise<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
 <p>Virtual assistants know about the functions in the <code class="docutils literal notranslate"><span class="pre">jupyturtle</span></code> module, but there are many versions of these functions, with different names, so a VA might not know which one you are talking about.</p>
 <p>To solve this problem, you can provide additional information before you ask a question.
 For example, you could start a prompt with “Here’s a program that uses the <code class="docutils literal notranslate"><span class="pre">jupyturtle</span></code> module,” and then paste in one of the examples from this chapter.
@@ -1888,7 +1892,7 @@ If the first attempt doesn’t work, you can tell the VA what happened and ask f
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Functions and Interfaces</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Functions and Interfaces</p>
       </div>
     </a>
     <a class="right-next"
@@ -1896,7 +1900,7 @@ If the first attempt doesn’t work, you can tell the VA what happened and ask f
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Return Values</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>Return Values</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1916,27 +1920,27 @@ If the first attempt doesn’t work, you can tell the VA what happened and ask f
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integer-division-and-modulus">Integer division and modulus</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-expressions">Boolean Expressions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logical-operators">Logical operators</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-statements">if statements</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-else-clause">The <code class="docutils literal notranslate"><span class="pre">else</span></code> clause</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chained-conditionals">Chained conditionals</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nested-conditionals">Nested Conditionals</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursion">Recursion</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stack-diagrams-for-recursive-functions">Stack diagrams for recursive functions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#infinite-recursion">Infinite recursion</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#keyboard-input">Keyboard input</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">Debugging</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">Glossary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">Ask a virtual assistant</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integer-division-and-modulus">5.1. Integer division and modulus</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-expressions">5.2. Boolean Expressions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logical-operators">5.3. Logical operators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-statements">5.4. if statements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-else-clause">5.5. The <code class="docutils literal notranslate"><span class="pre">else</span></code> clause</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chained-conditionals">5.6. Chained conditionals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nested-conditionals">5.7. Nested Conditionals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursion">5.8. Recursion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stack-diagrams-for-recursive-functions">5.9. Stack diagrams for recursive functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#infinite-recursion">5.10. Infinite recursion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#keyboard-input">5.11. Keyboard input</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">5.12. Debugging</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">5.13. Glossary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">5.14. Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">5.14.1. Ask a virtual assistant</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">5.14.2. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">5.14.3. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">5.14.4. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">5.14.5. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">5.14.6. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">5.14.7. Exercise</a></li>
 </ul>
 </li>
 </ul>

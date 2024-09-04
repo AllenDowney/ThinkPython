@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Iteration and Search &#8212; Think Python, 3rd edition</title>
+    <title>7. Iteration and Search &#8212; Think Python, 3rd edition</title>
   
   
   
@@ -60,8 +60,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'chap07';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Strings and Regular Expressions" href="chap08.html" />
-    <link rel="prev" title="Return Values" href="chap06.html" />
+    <link rel="next" title="8. Strings and Regular Expressions" href="chap08.html" />
+    <link rel="prev" title="6. Return Values" href="chap06.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -173,27 +173,31 @@
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Front Matter</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="chap00.html">Preface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap01.html">Programming as a way of thinking</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap02.html">Variables and Statements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap03.html">Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap04.html">Functions and Interfaces</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap05.html">Conditionals and Recursion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap06.html">Return Values</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Iteration and Search</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap08.html">Strings and Regular Expressions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap09.html">Lists</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap10.html">Dictionaries</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap11.html">Tuples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap12.html">Text Analysis and Generation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap13.html">Files and Databases</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap14.html">Classes and Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap15.html">Classes and Methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap16.html">Classes and Objects</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap17.html">Inheritance</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap18.html">Python Extras</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap19.html">Final thoughts</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapters</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chap01.html">1. Programming as a way of thinking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap02.html">2. Variables and Statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap03.html">3. Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap04.html">4. Functions and Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap05.html">5. Conditionals and Recursion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap06.html">6. Return Values</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">7. Iteration and Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap08.html">8. Strings and Regular Expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap09.html">9. Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap10.html">10. Dictionaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap11.html">11. Tuples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap12.html">12. Text Analysis and Generation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap13.html">13. Files and Databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap14.html">14. Classes and Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap15.html">15. Classes and Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap16.html">16. Classes and Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap17.html">17. Inheritance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap18.html">18. Python Extras</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap19.html">19. Final thoughts</a></li>
 </ul>
 
     </div>
@@ -357,23 +361,23 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loops-and-strings">Loops and strings</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-the-word-list">Reading the word list</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-variables">Updating variables</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#looping-and-counting">Looping and counting</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-in-operator">The in operator</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#search">Search</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#doctest">Doctest</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">Glossary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">Ask a virtual assistant</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loops-and-strings">7.1. Loops and strings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-the-word-list">7.2. Reading the word list</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-variables">7.3. Updating variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#looping-and-counting">7.4. Looping and counting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-in-operator">7.5. The in operator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#search">7.6. Search</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#doctest">7.7. Doctest</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">7.8. Glossary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">7.9. Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">7.9.1. Ask a virtual assistant</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">7.9.2. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">7.9.3. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">7.9.4. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">7.9.5. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">7.9.6. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">7.9.7. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">7.9.8. Exercise</a></li>
 </ul>
 </li>
 </ul>
@@ -391,14 +395,14 @@ document.write(`
 <a class="reference external" href="https://bookshop.org/a/98697/9781098155438">Bookshop.org</a> and
 <a class="reference external" href="https://www.amazon.com/_/dp/1098155432?smid=ATVPDKIKX0DER&amp;amp;_encoding=UTF8&amp;amp;tag=oreilly20-20&amp;amp;_encoding=UTF8&amp;amp;tag=greenteapre01-20&amp;amp;linkCode=ur2&amp;amp;linkId=e2a529f94920295d27ec8a06e757dc7c&amp;amp;camp=1789&amp;amp;creative=9325">Amazon</a>.</p>
 <section id="iteration-and-search">
-<span id="chapter-search"></span><h1>Iteration and Search<a class="headerlink" href="#iteration-and-search" title="Link to this heading">#</a></h1>
+<span id="chapter-search"></span><h1><span class="section-number">7. </span>Iteration and Search<a class="headerlink" href="#iteration-and-search" title="Link to this heading">#</a></h1>
 <p>In 1939 Ernest Vincent Wright published a 50,000 word novel called <em>Gadsby</em> that does not contain the letter “e”. Since “e” is the most common letter in English, writing even a few words without using it is difficult.
 To get a sense of how difficult, in this chapter we’ll compute the fraction of English words have at least one “e”.</p>
 <p>For that, we’ll use <code class="docutils literal notranslate"><span class="pre">for</span></code> statements to loop through the letters in a string and the words in a file, and we’ll update variables in a loop to count the number of words that contain an “e”.
 We’ll use the <code class="docutils literal notranslate"><span class="pre">in</span></code> operator to check whether a letter appears in a word, and you’ll learn a programming pattern called a “linear search”.</p>
 <p>As an exercise, you’ll use these tools to solve a word puzzle called “Spelling Bee”.</p>
 <section id="loops-and-strings">
-<h2>Loops and strings<a class="headerlink" href="#loops-and-strings" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.1. </span>Loops and strings<a class="headerlink" href="#loops-and-strings" title="Link to this heading">#</a></h2>
 <p>In Chapter 3 we saw a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop that uses the <code class="docutils literal notranslate"><span class="pre">range</span></code> function to display a sequence of numbers.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -502,7 +506,7 @@ The variable defined in a <code class="docutils literal notranslate"><span class
 </div>
 </section>
 <section id="reading-the-word-list">
-<h2>Reading the word list<a class="headerlink" href="#reading-the-word-list" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.2. </span>Reading the word list<a class="headerlink" href="#reading-the-word-list" title="Link to this heading">#</a></h2>
 <p>To see how many words contain an “e”, we’ll need a word list.
 The one we’ll use is a list of about 114,000 official crosswords; that is, words that are considered valid in crossword puzzles and other word games.</p>
 <p>The word list is in a file called <code class="docutils literal notranslate"><span class="pre">words.txt</span></code>, which is downloaded in the notebook for this chapter.
@@ -576,7 +580,7 @@ This program reads <code class="docutils literal notranslate"><span class="pre">
 For that, we will need the ability to update variables.</p>
 </section>
 <section id="updating-variables">
-<h2>Updating variables<a class="headerlink" href="#updating-variables" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.3. </span>Updating variables<a class="headerlink" href="#updating-variables" title="Link to this heading">#</a></h2>
 <p>As you may have discovered, it is legal to make more than one assignment
 to the same variable.
 A new assignment makes an existing variable refer to a new value (and stop referring to the old value).</p>
@@ -659,7 +663,7 @@ with a simple assignment:</p>
 <p>Increasing the value of a variable is called an <strong>increment</strong>; decreasing the value is called a <strong>decrement</strong>.</p>
 </section>
 <section id="looping-and-counting">
-<h2>Looping and counting<a class="headerlink" href="#looping-and-counting" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.4. </span>Looping and counting<a class="headerlink" href="#looping-and-counting" title="Link to this heading">#</a></h2>
 <p>The following program counts the number of words in the word list.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -732,7 +736,7 @@ So when the loop exits, <code class="docutils literal notranslate"><span class="
 <p>So you can understand why it’s difficult to craft a book without using any such words.</p>
 </section>
 <section id="the-in-operator">
-<h2>The in operator<a class="headerlink" href="#the-in-operator" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.5. </span>The in operator<a class="headerlink" href="#the-in-operator" title="Link to this heading">#</a></h2>
 <p>The version of <code class="docutils literal notranslate"><span class="pre">has_e</span></code> we wrote in this chapter is more complicated than it needs to be.
 Python provides an operator, <code class="docutils literal notranslate"><span class="pre">in</span></code>,  that checks whether a character appears in a string.</p>
 <div class="cell docutils container">
@@ -831,7 +835,7 @@ Here’s an example.</p>
 </div>
 </section>
 <section id="search">
-<h2>Search<a class="headerlink" href="#search" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.6. </span>Search<a class="headerlink" href="#search" title="Link to this heading">#</a></h2>
 <p>Based on this simpler version of <code class="docutils literal notranslate"><span class="pre">has_e</span></code>, let’s write a more general function called <code class="docutils literal notranslate"><span class="pre">uses_any</span></code> that takes a second parameter that is a string of letters.
 If returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if the word uses any of the letters and <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise.</p>
 <div class="cell docutils container">
@@ -892,7 +896,7 @@ If it gets all the way through the loop without finding any, it returns <code cl
 In the exercises at the end of this chapter, you’ll write more functions that use this pattern.</p>
 </section>
 <section id="doctest">
-<h2>Doctest<a class="headerlink" href="#doctest" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.7. </span>Doctest<a class="headerlink" href="#doctest" title="Link to this heading">#</a></h2>
 <p>In <a class="reference internal" href="chap04.html#section-docstring"><span class="std std-ref">Chapter 4</span></a> we used a docstring to document a function – that is, to explain what it does.
 It is also possible to use a docstring to <em>test</em> a function.
 Here’s a version of <code class="docutils literal notranslate"><span class="pre">uses_any</span></code> with a docstring that includes tests.</p>
@@ -988,7 +992,7 @@ Got:
 <p>If you are not sure why this test failed, you’ll have a chance to debug it as an exercise.</p>
 </section>
 <section id="glossary">
-<h2>Glossary<a class="headerlink" href="#glossary" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.8. </span>Glossary<a class="headerlink" href="#glossary" title="Link to this heading">#</a></h2>
 <p><strong>loop variable:</strong>
 A variable defined in the header of a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop.</p>
 <p><strong>file object:</strong>
@@ -1013,7 +1017,7 @@ If a test runs and the result is as expected, the test passes.</p>
 If a test runs and the result is not as expected, the test fails.</p>
 </section>
 <section id="exercises">
-<h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.9. </span>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
 <div class="cell tag_remove-print docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This cell tells Jupyter to provide detailed debugging information</span>
@@ -1025,7 +1029,7 @@ If a test runs and the result is not as expected, the test fails.</p>
 </div>
 </div>
 <section id="ask-a-virtual-assistant">
-<h3>Ask a virtual assistant<a class="headerlink" href="#ask-a-virtual-assistant" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.9.1. </span>Ask a virtual assistant<a class="headerlink" href="#ask-a-virtual-assistant" title="Link to this heading">#</a></h3>
 <p>In <code class="docutils literal notranslate"><span class="pre">uses_any</span></code>, you might have noticed that the first <code class="docutils literal notranslate"><span class="pre">return</span></code> statement is inside the loop and the second is outside.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1054,7 +1058,7 @@ If a test runs and the result is not as expected, the test fails.</p>
 <p>Ask a virtual assistant what’s wrong with this version.</p>
 </section>
 <section id="exercise">
-<h3>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.9.2. </span>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h3>
 <p>Write a function named <code class="docutils literal notranslate"><span class="pre">uses_none</span></code> that takes a word and a string of forbidden letters, and returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if the word does not use any of the forbidden letters.</p>
 <p>Here’s an outline of the function that includes two doctests.
 Fill in the function so it passes these tests, and add at least one more doctest.</p>
@@ -1075,7 +1079,7 @@ Fill in the function so it passes these tests, and add at least one more doctest
 </div>
 </section>
 <section id="id1">
-<h3>Exercise<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.9.3. </span>Exercise<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p>Write a function called <code class="docutils literal notranslate"><span class="pre">uses_only</span></code> that takes a word and a string of letters, and that returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if the word contains only letters in the string.</p>
 <p>Here’s an outline of the function that includes two doctests.
 Fill in the function so it passes these tests, and add at least one more doctest.</p>
@@ -1096,7 +1100,7 @@ Fill in the function so it passes these tests, and add at least one more doctest
 </div>
 </section>
 <section id="id2">
-<h3>Exercise<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.9.4. </span>Exercise<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <p>Write a function called <code class="docutils literal notranslate"><span class="pre">uses_all</span></code> that takes a word and a string of letters, and that returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if the word contains all of the letters in the string at least once.</p>
 <p>Here’s an outline of the function that includes two doctests.
 Fill in the function so it passes these tests, and add at least one more doctest.</p>
@@ -1117,7 +1121,7 @@ Fill in the function so it passes these tests, and add at least one more doctest
 </div>
 </section>
 <section id="id3">
-<h3>Exercise<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.9.5. </span>Exercise<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <p><em>The New York Times</em> publishes a daily puzzle called “Spelling Bee” that challenges readers to spell as many words as possible using only seven letters, where one of the letters is required.
 The words must have at least four letters.</p>
 <p>For example, on the day I wrote this, the letters were <code class="docutils literal notranslate"><span class="pre">ACDLORT</span></code>, with <code class="docutils literal notranslate"><span class="pre">R</span></code> as the required letter.
@@ -1177,7 +1181,7 @@ You can assume that the word is acceptable.</p>
 </div>
 </section>
 <section id="id4">
-<h3>Exercise<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.9.6. </span>Exercise<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <p>You might have noticed that the functions you wrote in the previous exercises had a lot in common.
 In fact, they are so similar you can often use one function to write another.</p>
 <p>For example, if a word uses none of a set forbidden letters, that means it doesn’t use any. So we can write a version of <code class="docutils literal notranslate"><span class="pre">uses_none</span></code> like this.</p>
@@ -1202,12 +1206,12 @@ In fact, they are so similar you can often use one function to write another.</p
 If you have a working version of <code class="docutils literal notranslate"><span class="pre">uses_only</span></code>, see if you can write a version of <code class="docutils literal notranslate"><span class="pre">uses_all</span></code> that calls <code class="docutils literal notranslate"><span class="pre">uses_only</span></code>.</p>
 </section>
 <section id="id5">
-<h3>Exercise<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.9.7. </span>Exercise<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
 <p>If you got stuck on the previous question, try asking a virtual assistant, “Given a function, <code class="docutils literal notranslate"><span class="pre">uses_only</span></code>, which takes two strings and checks that the first uses only the letters in the second, use it to write <code class="docutils literal notranslate"><span class="pre">uses_all</span></code>, which takes two strings and checks whether the first uses all the letters in the second, allowing repeats.”</p>
 <p>Use <code class="docutils literal notranslate"><span class="pre">run_doctests</span></code> to check the answer.</p>
 </section>
 <section id="id6">
-<h3>Exercise<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.9.8. </span>Exercise<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
 <p>Now let’s see if we can write <code class="docutils literal notranslate"><span class="pre">uses_all</span></code> based on <code class="docutils literal notranslate"><span class="pre">uses_any</span></code>.</p>
 <p>Ask a virtual assistant, “Given a function, <code class="docutils literal notranslate"><span class="pre">uses_any</span></code>, which takes two strings and checks whether the first uses any of the letters in the second, can you use it to write <code class="docutils literal notranslate"><span class="pre">uses_all</span></code>, which takes two strings and checks whether the first uses all the letters in the second, allowing repeats.”</p>
 <p>If it says it can, be sure to test the result!</p>
@@ -1251,7 +1255,7 @@ If you have a working version of <code class="docutils literal notranslate"><spa
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Return Values</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>Return Values</p>
       </div>
     </a>
     <a class="right-next"
@@ -1259,7 +1263,7 @@ If you have a working version of <code class="docutils literal notranslate"><spa
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Strings and Regular Expressions</p>
+        <p class="prev-next-title"><span class="section-number">8. </span>Strings and Regular Expressions</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1279,23 +1283,23 @@ If you have a working version of <code class="docutils literal notranslate"><spa
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loops-and-strings">Loops and strings</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-the-word-list">Reading the word list</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-variables">Updating variables</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#looping-and-counting">Looping and counting</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-in-operator">The in operator</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#search">Search</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#doctest">Doctest</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">Glossary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">Ask a virtual assistant</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loops-and-strings">7.1. Loops and strings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-the-word-list">7.2. Reading the word list</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-variables">7.3. Updating variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#looping-and-counting">7.4. Looping and counting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-in-operator">7.5. The in operator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#search">7.6. Search</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#doctest">7.7. Doctest</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">7.8. Glossary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">7.9. Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">7.9.1. Ask a virtual assistant</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">7.9.2. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">7.9.3. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">7.9.4. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">7.9.5. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">7.9.6. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">7.9.7. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">7.9.8. Exercise</a></li>
 </ul>
 </li>
 </ul>

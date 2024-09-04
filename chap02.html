@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Variables and Statements &#8212; Think Python, 3rd edition</title>
+    <title>2. Variables and Statements &#8212; Think Python, 3rd edition</title>
   
   
   
@@ -62,8 +62,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'chap02';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Functions" href="chap03.html" />
-    <link rel="prev" title="Programming as a way of thinking" href="chap01.html" />
+    <link rel="next" title="3. Functions" href="chap03.html" />
+    <link rel="prev" title="1. Programming as a way of thinking" href="chap01.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -175,27 +175,31 @@
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Front Matter</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="chap00.html">Preface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap01.html">Programming as a way of thinking</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Variables and Statements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap03.html">Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap04.html">Functions and Interfaces</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap05.html">Conditionals and Recursion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap06.html">Return Values</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap07.html">Iteration and Search</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap08.html">Strings and Regular Expressions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap09.html">Lists</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap10.html">Dictionaries</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap11.html">Tuples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap12.html">Text Analysis and Generation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap13.html">Files and Databases</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap14.html">Classes and Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap15.html">Classes and Methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap16.html">Classes and Objects</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap17.html">Inheritance</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap18.html">Python Extras</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap19.html">Final thoughts</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapters</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chap01.html">1. Programming as a way of thinking</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">2. Variables and Statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap03.html">3. Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap04.html">4. Functions and Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap05.html">5. Conditionals and Recursion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap06.html">6. Return Values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap07.html">7. Iteration and Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap08.html">8. Strings and Regular Expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap09.html">9. Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap10.html">10. Dictionaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap11.html">11. Tuples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap12.html">12. Text Analysis and Generation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap13.html">13. Files and Databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap14.html">14. Classes and Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap15.html">15. Classes and Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap16.html">16. Classes and Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap17.html">17. Inheritance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap18.html">18. Python Extras</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap19.html">19. Final thoughts</a></li>
 </ul>
 
     </div>
@@ -359,20 +363,20 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables">Variables</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#state-diagrams">State diagrams</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-names">Variable names</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-import-statement">The import statement</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#expressions-and-statements">Expressions and statements</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-print-function">The print function</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arguments">Arguments</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comments">Comments</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">Debugging</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">Glossary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">Ask a virtual assistant</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables">2.1. Variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#state-diagrams">2.2. State diagrams</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-names">2.3. Variable names</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-import-statement">2.4. The import statement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#expressions-and-statements">2.5. Expressions and statements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-print-function">2.6. The print function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arguments">2.7. Arguments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comments">2.8. Comments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">2.9. Debugging</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">2.10. Glossary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">2.11. Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">2.11.1. Ask a virtual assistant</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">2.11.2. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2.11.3. Exercise</a></li>
 </ul>
 </li>
 </ul>
@@ -390,12 +394,12 @@ document.write(`
 <a class="reference external" href="https://bookshop.org/a/98697/9781098155438">Bookshop.org</a> and
 <a class="reference external" href="https://www.amazon.com/_/dp/1098155432?smid=ATVPDKIKX0DER&amp;amp;_encoding=UTF8&amp;amp;tag=oreilly20-20&amp;amp;_encoding=UTF8&amp;amp;tag=greenteapre01-20&amp;amp;linkCode=ur2&amp;amp;linkId=e2a529f94920295d27ec8a06e757dc7c&amp;amp;camp=1789&amp;amp;creative=9325">Amazon</a>.</p>
 <section id="variables-and-statements">
-<h1>Variables and Statements<a class="headerlink" href="#variables-and-statements" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">2. </span>Variables and Statements<a class="headerlink" href="#variables-and-statements" title="Link to this heading">#</a></h1>
 <p>In the previous chapter, we used operators to write expressions that perform arithmetic computations.</p>
 <p>In this chapter, you’ll learn about variables and statements, the <code class="docutils literal notranslate"><span class="pre">import</span></code> statement, and the <code class="docutils literal notranslate"><span class="pre">print</span></code> function.
 And I’ll introduce more of the vocabulary we use to talk about programs, including “argument” and “module”.</p>
 <section id="variables">
-<h2>Variables<a class="headerlink" href="#variables" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.1. </span>Variables<a class="headerlink" href="#variables" title="Link to this heading">#</a></h2>
 <p>A <strong>variable</strong> is a name that refers to a value.
 To create a variable, we can write a <strong>assignment statement</strong> like this.</p>
 <div class="cell docutils container">
@@ -491,7 +495,7 @@ So we can display the value of <code class="docutils literal notranslate"><span 
 </div>
 </section>
 <section id="state-diagrams">
-<h2>State diagrams<a class="headerlink" href="#state-diagrams" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.2. </span>State diagrams<a class="headerlink" href="#state-diagrams" title="Link to this heading">#</a></h2>
 <p>A common way to represent variables on paper is to write the name with
 an arrow pointing to its value.</p>
 <div class="cell tag_remove-input docutils container">
@@ -503,7 +507,7 @@ an arrow pointing to its value.</p>
 We’ll use state diagrams throughout the book to represent a model of how Python stores variables and their values.</p>
 </section>
 <section id="variable-names">
-<h2>Variable names<a class="headerlink" href="#variable-names" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.3. </span>Variable names<a class="headerlink" href="#variable-names" title="Link to this heading">#</a></h2>
 <p>Variable names can be as long as you like. They can contain both letters and numbers, but they can’t begin with a number.
 It is legal to use uppercase letters, but it is conventional to use only lower case for
 variable names.</p>
@@ -574,7 +578,7 @@ keywords are displayed in a different color; if you try to use one as a
 variable name, you’ll know.</p>
 </section>
 <section id="the-import-statement">
-<h2>The import statement<a class="headerlink" href="#the-import-statement" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.4. </span>The import statement<a class="headerlink" href="#the-import-statement" title="Link to this heading">#</a></h2>
 <p>In order to use some Python features, you have to <strong>import</strong> them.
 For example, the following statement imports the <code class="docutils literal notranslate"><span class="pre">math</span></code> module.</p>
 <div class="cell docutils container">
@@ -631,7 +635,7 @@ For example, <code class="docutils literal notranslate"><span class="pre">sqrt</
 Either one is fine, but the operator is used more often than the function.</p>
 </section>
 <section id="expressions-and-statements">
-<h2>Expressions and statements<a class="headerlink" href="#expressions-and-statements" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.5. </span>Expressions and statements<a class="headerlink" href="#expressions-and-statements" title="Link to this heading">#</a></h2>
 <p>So far, we’ve seen a few kinds of expressions.
 An expression can be a single value, like an integer, floating-point number, or string.
 It can also be a collection of values and operators.
@@ -671,7 +675,7 @@ For example, an assignment statement creates a variable and gives it a value, bu
 Running a statement is called <strong>execution</strong>.</p>
 </section>
 <section id="the-print-function">
-<h2>The print function<a class="headerlink" href="#the-print-function" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.6. </span>The print function<a class="headerlink" href="#the-print-function" title="Link to this heading">#</a></h2>
 <p>When you evaluate an expression, the result is displayed.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -745,7 +749,7 @@ Running a statement is called <strong>execution</strong>.</p>
 <p>Notice that the <code class="docutils literal notranslate"><span class="pre">print</span></code> function puts a space between the values.</p>
 </section>
 <section id="arguments">
-<h2>Arguments<a class="headerlink" href="#arguments" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.7. </span>Arguments<a class="headerlink" href="#arguments" title="Link to this heading">#</a></h2>
 <p>When you call a function, the expression in parenthesis is called an <strong>argument</strong>.
 Normally I would explain why, but in this case the technical meaning of a term has almost nothing to do with the common meaning of the word, so I won’t even try.</p>
 <p>Some of the functions we’ve seen so far take only one argument, like <code class="docutils literal notranslate"><span class="pre">int</span></code>.</p>
@@ -857,7 +861,7 @@ For example, <code class="docutils literal notranslate"><span class="pre">int</s
 <p>This kind of checking can be annoying when you are getting started, but it helps you detect and correct errors.</p>
 </section>
 <section id="comments">
-<h2>Comments<a class="headerlink" href="#comments" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.8. </span>Comments<a class="headerlink" href="#comments" title="Link to this heading">#</a></h2>
 <p>As programs get bigger and more complicated, they get more difficult to read.
 Formal languages are dense, and it is often difficult to look at a piece of code and figure out what it is doing and why.</p>
 <p>For this reason, it is a good idea to add notes to your programs to explain in natural language what the program is doing.
@@ -903,7 +907,7 @@ It is reasonable to assume that the reader can figure out <em>what</em> the code
 make complex expressions hard to read, so there is a tradeoff.</p>
 </section>
 <section id="debugging">
-<h2>Debugging<a class="headerlink" href="#debugging" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.9. </span>Debugging<a class="headerlink" href="#debugging" title="Link to this heading">#</a></h2>
 <p>Three kinds of errors can occur in a program: syntax errors, runtime errors, and semantic errors.
 It is useful to distinguish between them in order to track them down more quickly.</p>
 <ul class="simple">
@@ -959,7 +963,7 @@ But the result is not the average of <code class="docutils literal notranslate">
 This is a semantic error because the program runs but it doesn’t do what’s intended.</p>
 </section>
 <section id="glossary">
-<h2>Glossary<a class="headerlink" href="#glossary" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.10. </span>Glossary<a class="headerlink" href="#glossary" title="Link to this heading">#</a></h2>
 <p><strong>variable:</strong>
 A name that refers to a value.</p>
 <p><strong>assignment statement:</strong>
@@ -992,7 +996,7 @@ An error that is detected while the program is running.</p>
 An error that causes a program to do the wrong thing, but not to display an error message.</p>
 </section>
 <section id="exercises">
-<h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.11. </span>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
 <div class="cell tag_remove-print docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This cell tells Jupyter to provide detailed debugging information</span>
@@ -1004,7 +1008,7 @@ An error that causes a program to do the wrong thing, but not to display an erro
 </div>
 </div>
 <section id="ask-a-virtual-assistant">
-<h3>Ask a virtual assistant<a class="headerlink" href="#ask-a-virtual-assistant" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">2.11.1. </span>Ask a virtual assistant<a class="headerlink" href="#ask-a-virtual-assistant" title="Link to this heading">#</a></h3>
 <p>Again, I encourage you to use a virtual assistant to learn more about any of the topics in this chapter.</p>
 <p>If you are curious about any of keywords I listed, you could ask “Why is class a keyword?” or “Why can’t variable names be keywords?”</p>
 <p>You might have noticed that <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>, and <code class="docutils literal notranslate"><span class="pre">str</span></code> are not Python keywords.
@@ -1015,7 +1019,7 @@ If you are curious about any of them, ask for more information.</p>
 <p>In this chapter we imported the <code class="docutils literal notranslate"><span class="pre">math</span></code> module and used some of the variable and functions it provides. Ask an assistant, “What variables and functions are in the math module?” and “Other than math, what modules are considered core Python?”</p>
 </section>
 <section id="exercise">
-<h3>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">2.11.2. </span>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h3>
 <p>Repeating my advice from the previous chapter, whenever you learn a new feature, you should make errors on purpose to see what goes wrong.</p>
 <ul class="simple">
 <li><p>We’ve seen that <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">17</span></code> is legal. What about <code class="docutils literal notranslate"><span class="pre">17</span> <span class="pre">=</span> <span class="pre">n</span></code>?</p></li>
@@ -1027,7 +1031,7 @@ happens if you put a semi-colon at the end of a Python statement?</p></li>
 </ul>
 </section>
 <section id="id1">
-<h3>Exercise<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">2.11.3. </span>Exercise<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p>Practice using the Python interpreter as a calculator:</p>
 <p><strong>Part 1.</strong>  The volume of a sphere with radius <span class="math notranslate nohighlight">\(r\)</span> is <span class="math notranslate nohighlight">\(\frac{4}{3} \pi r^3\)</span>.
 What is the volume of a sphere with radius 5? Start with a variable named <code class="docutils literal notranslate"><span class="pre">radius</span></code> and then assign the result to a variable named <code class="docutils literal notranslate"><span class="pre">volume</span></code>. Display the result. Add comments to indicate that <code class="docutils literal notranslate"><span class="pre">radius</span></code> is in centimeters and <code class="docutils literal notranslate"><span class="pre">volume</span></code> in cubic centimeters.</p>
@@ -1083,7 +1087,7 @@ See if you can find out which is correct.</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Programming as a way of thinking</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>Programming as a way of thinking</p>
       </div>
     </a>
     <a class="right-next"
@@ -1091,7 +1095,7 @@ See if you can find out which is correct.</p>
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Functions</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Functions</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1111,20 +1115,20 @@ See if you can find out which is correct.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables">Variables</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#state-diagrams">State diagrams</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-names">Variable names</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-import-statement">The import statement</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#expressions-and-statements">Expressions and statements</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-print-function">The print function</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arguments">Arguments</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comments">Comments</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">Debugging</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">Glossary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">Ask a virtual assistant</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables">2.1. Variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#state-diagrams">2.2. State diagrams</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-names">2.3. Variable names</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-import-statement">2.4. The import statement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#expressions-and-statements">2.5. Expressions and statements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-print-function">2.6. The print function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arguments">2.7. Arguments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comments">2.8. Comments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">2.9. Debugging</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">2.10. Glossary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">2.11. Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">2.11.1. Ask a virtual assistant</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">2.11.2. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2.11.3. Exercise</a></li>
 </ul>
 </li>
 </ul>

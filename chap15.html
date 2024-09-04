@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Classes and Methods &#8212; Think Python, 3rd edition</title>
+    <title>15. Classes and Methods &#8212; Think Python, 3rd edition</title>
   
   
   
@@ -60,8 +60,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'chap15';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Classes and Objects" href="chap16.html" />
-    <link rel="prev" title="Classes and Functions" href="chap14.html" />
+    <link rel="next" title="16. Classes and Objects" href="chap16.html" />
+    <link rel="prev" title="14. Classes and Functions" href="chap14.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -173,27 +173,31 @@
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Front Matter</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="chap00.html">Preface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap01.html">Programming as a way of thinking</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap02.html">Variables and Statements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap03.html">Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap04.html">Functions and Interfaces</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap05.html">Conditionals and Recursion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap06.html">Return Values</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap07.html">Iteration and Search</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap08.html">Strings and Regular Expressions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap09.html">Lists</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap10.html">Dictionaries</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap11.html">Tuples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap12.html">Text Analysis and Generation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap13.html">Files and Databases</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap14.html">Classes and Functions</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Classes and Methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap16.html">Classes and Objects</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap17.html">Inheritance</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap18.html">Python Extras</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap19.html">Final thoughts</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapters</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chap01.html">1. Programming as a way of thinking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap02.html">2. Variables and Statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap03.html">3. Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap04.html">4. Functions and Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap05.html">5. Conditionals and Recursion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap06.html">6. Return Values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap07.html">7. Iteration and Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap08.html">8. Strings and Regular Expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap09.html">9. Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap10.html">10. Dictionaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap11.html">11. Tuples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap12.html">12. Text Analysis and Generation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap13.html">13. Files and Databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap14.html">14. Classes and Functions</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">15. Classes and Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap16.html">16. Classes and Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap17.html">17. Inheritance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap18.html">18. Python Extras</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap19.html">19. Final thoughts</a></li>
 </ul>
 
     </div>
@@ -357,18 +361,18 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-methods">Defining methods</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#another-method">Another method</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#static-methods">Static methods</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-time-objects">Comparing Time objects</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-str-method">The <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-init-method">The <strong>init</strong> method</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operator-overloading">Operator overloading</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">Debugging</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">Glossary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">Ask a virtual assistant</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-methods">15.1. Defining methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#another-method">15.2. Another method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#static-methods">15.3. Static methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-time-objects">15.4. Comparing Time objects</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-str-method">15.5. The <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-init-method">15.6. The <strong>init</strong> method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operator-overloading">15.7. Operator overloading</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">15.8. Debugging</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">15.9. Glossary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">15.10. Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">15.10.1. Ask a virtual assistant</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">15.10.2. Exercise</a></li>
 </ul>
 </li>
 </ul>
@@ -386,7 +390,7 @@ document.write(`
 <a class="reference external" href="https://bookshop.org/a/98697/9781098155438">Bookshop.org</a> and
 <a class="reference external" href="https://www.amazon.com/_/dp/1098155432?smid=ATVPDKIKX0DER&amp;amp;_encoding=UTF8&amp;amp;tag=oreilly20-20&amp;amp;_encoding=UTF8&amp;amp;tag=greenteapre01-20&amp;amp;linkCode=ur2&amp;amp;linkId=e2a529f94920295d27ec8a06e757dc7c&amp;amp;camp=1789&amp;amp;creative=9325">Amazon</a>.</p>
 <section id="classes-and-methods">
-<h1>Classes and Methods<a class="headerlink" href="#classes-and-methods" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">15. </span>Classes and Methods<a class="headerlink" href="#classes-and-methods" title="Link to this heading">#</a></h1>
 <p>Python is an <strong>object-oriented language</strong> – that is, it provides features that support object-oriented programming, which has these defining characteristics:</p>
 <ul class="simple">
 <li><p>Most of the computation is expressed in terms of operations on objects.</p></li>
@@ -397,7 +401,7 @@ document.write(`
 But there was no explicit connection between the definition of the <code class="docutils literal notranslate"><span class="pre">Time</span></code> class and the function definitions that follow.
 We can make the connection explicit by rewriting a function as a <strong>method</strong>, which is defined inside a class definition.</p>
 <section id="defining-methods">
-<h2>Defining methods<a class="headerlink" href="#defining-methods" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.1. </span>Defining methods<a class="headerlink" href="#defining-methods" title="Link to this heading">#</a></h2>
 <p>In the previous chapter we defined a class named <code class="docutils literal notranslate"><span class="pre">Time</span></code> and wrote a function named <code class="docutils literal notranslate"><span class="pre">print_time</span></code> that displays a time of day.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -483,7 +487,7 @@ The second (and more idiomatic) way is to use method syntax:</p>
 The receiver is assigned to the first parameter, so inside the method, <code class="docutils literal notranslate"><span class="pre">self</span></code> refers to the same object as <code class="docutils literal notranslate"><span class="pre">start</span></code>.</p>
 </section>
 <section id="another-method">
-<h2>Another method<a class="headerlink" href="#another-method" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.2. </span>Another method<a class="headerlink" href="#another-method" title="Link to this heading">#</a></h2>
 <p>Here’s the <code class="docutils literal notranslate"><span class="pre">time_to_int</span></code> function from the previous chapter.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -530,7 +534,7 @@ Here’s how we invoke it.</p>
 <p>It is common to say that we “call” a function and “invoke” a method, but they mean the same thing.</p>
 </section>
 <section id="static-methods">
-<h2>Static methods<a class="headerlink" href="#static-methods" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.3. </span>Static methods<a class="headerlink" href="#static-methods" title="Link to this heading">#</a></h2>
 <p>As another example, let’s consider the <code class="docutils literal notranslate"><span class="pre">int_to_time</span></code> function.
 Here’s the version from the previous chapter.</p>
 <div class="cell docutils container">
@@ -625,7 +629,7 @@ To invoke it, we need a <code class="docutils literal notranslate"><span class="
 </div>
 </section>
 <section id="comparing-time-objects">
-<h2>Comparing Time objects<a class="headerlink" href="#comparing-time-objects" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.4. </span>Comparing Time objects<a class="headerlink" href="#comparing-time-objects" title="Link to this heading">#</a></h2>
 <p>As one more example, let’s write <code class="docutils literal notranslate"><span class="pre">is_after</span></code> as a method.
 Here’s the <code class="docutils literal notranslate"><span class="pre">is_after</span></code> function, which is a solution to an exercise in the previous chapter.</p>
 <div class="cell docutils container">
@@ -666,7 +670,7 @@ other as an argument.</p>
 “<code class="docutils literal notranslate"><span class="pre">end</span></code> is after <code class="docutils literal notranslate"><span class="pre">start</span></code>?”</p>
 </section>
 <section id="the-str-method">
-<h2>The <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method<a class="headerlink" href="#the-str-method" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.5. </span>The <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method<a class="headerlink" href="#the-str-method" title="Link to this heading">#</a></h2>
 <p>When you write a method, you can choose almost any name you want.
 However, some names have special meanings.
 For example, if an object has a method named <code class="docutils literal notranslate"><span class="pre">__str__</span></code>, Python uses that method to convert the object to a string.
@@ -727,7 +731,7 @@ If you use the built-in function <code class="docutils literal notranslate"><spa
 You can identify them because their names begin and end with two underscores.</p>
 </section>
 <section id="the-init-method">
-<h2>The <strong>init</strong> method<a class="headerlink" href="#the-init-method" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.6. </span>The <strong>init</strong> method<a class="headerlink" href="#the-init-method" title="Link to this heading">#</a></h2>
 <p>The most special of the special methods is <code class="docutils literal notranslate"><span class="pre">__init__</span></code>, so-called because it initializes the attributes of a new object.
 An <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method for the <code class="docutils literal notranslate"><span class="pre">Time</span></code> class might look like this:</p>
 <div class="cell docutils container">
@@ -805,7 +809,7 @@ values.</p>
 <p>When I write a new class, I almost always start by writing <code class="docutils literal notranslate"><span class="pre">__init__</span></code>, which makes it easier to create objects, and <code class="docutils literal notranslate"><span class="pre">__str__</span></code>, which is useful for debugging.</p>
 </section>
 <section id="operator-overloading">
-<h2>Operator overloading<a class="headerlink" href="#operator-overloading" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.7. </span>Operator overloading<a class="headerlink" href="#operator-overloading" title="Link to this heading">#</a></h2>
 <p>By defining other special methods, you can specify the behavior of
 operators on programmer-defined types. For example, if you define a
 method named <code class="docutils literal notranslate"><span class="pre">__add__</span></code> for the <code class="docutils literal notranslate"><span class="pre">Time</span></code> class, you can use the <code class="docutils literal notranslate"><span class="pre">+</span></code>
@@ -847,7 +851,7 @@ operator on Time objects.</p>
 For every operator, like <code class="docutils literal notranslate"><span class="pre">+</span></code>, there is a corresponding special method, like <code class="docutils literal notranslate"><span class="pre">__add__</span></code>.</p>
 </section>
 <section id="debugging">
-<h2>Debugging<a class="headerlink" href="#debugging" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.8. </span>Debugging<a class="headerlink" href="#debugging" title="Link to this heading">#</a></h2>
 <p>A <code class="docutils literal notranslate"><span class="pre">Time</span></code> object is valid if the values of <code class="docutils literal notranslate"><span class="pre">minute</span></code> and <code class="docutils literal notranslate"><span class="pre">second</span></code> are between <code class="docutils literal notranslate"><span class="pre">0</span></code> and <code class="docutils literal notranslate"><span class="pre">60</span></code> – including <code class="docutils literal notranslate"><span class="pre">0</span></code> but not <code class="docutils literal notranslate"><span class="pre">60</span></code> – and if <code class="docutils literal notranslate"><span class="pre">hour</span></code> is positive.
 Also, <code class="docutils literal notranslate"><span class="pre">hour</span></code> and <code class="docutils literal notranslate"><span class="pre">minute</span></code> should be integer values, but we might allow <code class="docutils literal notranslate"><span class="pre">second</span></code> to have a fraction part.
 Requirements like these are called <strong>invariants</strong> because they should always be true.
@@ -915,7 +919,7 @@ Here’s an example.</p>
 <p><code class="docutils literal notranslate"><span class="pre">assert</span></code> statements are useful because they distinguish code that deals with normal conditions from code that checks for errors.</p>
 </section>
 <section id="glossary">
-<h2>Glossary<a class="headerlink" href="#glossary" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.9. </span>Glossary<a class="headerlink" href="#glossary" title="Link to this heading">#</a></h2>
 <p><strong>object-oriented language:</strong>
 A language that provides features to support object-oriented programming, notably user-defined types and inheritance.</p>
 <p><strong>method:</strong>
@@ -934,7 +938,7 @@ The process of using special methods to change the way operators with with user-
 A condition that should always be true during the execution of a program.</p>
 </section>
 <section id="exercises">
-<h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.10. </span>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
 <div class="cell tag_remove-print docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This cell tells Jupyter to provide detailed debugging information</span>
@@ -946,7 +950,7 @@ A condition that should always be true during the execution of a program.</p>
 </div>
 </div>
 <section id="ask-a-virtual-assistant">
-<h3>Ask a virtual assistant<a class="headerlink" href="#ask-a-virtual-assistant" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">15.10.1. </span>Ask a virtual assistant<a class="headerlink" href="#ask-a-virtual-assistant" title="Link to this heading">#</a></h3>
 <p>For more information about static methods, ask a virtual assistant:</p>
 <ul class="simple">
 <li><p>“What’s the difference between an instance method and a static method?”</p></li>
@@ -967,7 +971,7 @@ As an example, paste the following function into a VA and ask it, “Rewrite thi
 </div>
 </section>
 <section id="exercise">
-<h3>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">15.10.2. </span>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h3>
 <p>In the previous chapter, a series of exercises asked you to write a <code class="docutils literal notranslate"><span class="pre">Date</span></code> class and several functions that work with <code class="docutils literal notranslate"><span class="pre">Date</span></code> objects.
 Now let’s practice rewriting those functions as methods.</p>
 <ol class="arabic simple">
@@ -1017,7 +1021,7 @@ Now let’s practice rewriting those functions as methods.</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Classes and Functions</p>
+        <p class="prev-next-title"><span class="section-number">14. </span>Classes and Functions</p>
       </div>
     </a>
     <a class="right-next"
@@ -1025,7 +1029,7 @@ Now let’s practice rewriting those functions as methods.</p>
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Classes and Objects</p>
+        <p class="prev-next-title"><span class="section-number">16. </span>Classes and Objects</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1045,18 +1049,18 @@ Now let’s practice rewriting those functions as methods.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-methods">Defining methods</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#another-method">Another method</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#static-methods">Static methods</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-time-objects">Comparing Time objects</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-str-method">The <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-init-method">The <strong>init</strong> method</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operator-overloading">Operator overloading</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">Debugging</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">Glossary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">Ask a virtual assistant</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-methods">15.1. Defining methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#another-method">15.2. Another method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#static-methods">15.3. Static methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-time-objects">15.4. Comparing Time objects</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-str-method">15.5. The <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-init-method">15.6. The <strong>init</strong> method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operator-overloading">15.7. Operator overloading</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">15.8. Debugging</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">15.9. Glossary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">15.10. Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">15.10.1. Ask a virtual assistant</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">15.10.2. Exercise</a></li>
 </ul>
 </li>
 </ul>

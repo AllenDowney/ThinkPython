@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Files and Databases &#8212; Think Python, 3rd edition</title>
+    <title>13. Files and Databases &#8212; Think Python, 3rd edition</title>
   
   
   
@@ -60,8 +60,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'chap13';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Classes and Functions" href="chap14.html" />
-    <link rel="prev" title="Text Analysis and Generation" href="chap12.html" />
+    <link rel="next" title="14. Classes and Functions" href="chap14.html" />
+    <link rel="prev" title="12. Text Analysis and Generation" href="chap12.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -173,27 +173,31 @@
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Front Matter</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="chap00.html">Preface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap01.html">Programming as a way of thinking</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap02.html">Variables and Statements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap03.html">Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap04.html">Functions and Interfaces</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap05.html">Conditionals and Recursion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap06.html">Return Values</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap07.html">Iteration and Search</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap08.html">Strings and Regular Expressions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap09.html">Lists</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap10.html">Dictionaries</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap11.html">Tuples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap12.html">Text Analysis and Generation</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Files and Databases</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap14.html">Classes and Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap15.html">Classes and Methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap16.html">Classes and Objects</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap17.html">Inheritance</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap18.html">Python Extras</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap19.html">Final thoughts</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapters</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chap01.html">1. Programming as a way of thinking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap02.html">2. Variables and Statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap03.html">3. Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap04.html">4. Functions and Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap05.html">5. Conditionals and Recursion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap06.html">6. Return Values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap07.html">7. Iteration and Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap08.html">8. Strings and Regular Expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap09.html">9. Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap10.html">10. Dictionaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap11.html">11. Tuples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap12.html">12. Text Analysis and Generation</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">13. Files and Databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap14.html">14. Classes and Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap15.html">15. Classes and Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap16.html">16. Classes and Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap17.html">17. Inheritance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap18.html">18. Python Extras</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap19.html">19. Final thoughts</a></li>
 </ul>
 
     </div>
@@ -357,20 +361,20 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filenames-and-paths">Filenames and paths</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#f-strings">f-strings</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#yaml">YAML</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shelve">Shelve</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#storing-data-structures">Storing data structures</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-for-equivalent-files">Checking for equivalent files</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#walking-directories">Walking directories</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">Debugging</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">Glossary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">Ask a virtual assistant</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filenames-and-paths">13.1. Filenames and paths</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#f-strings">13.2. f-strings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#yaml">13.3. YAML</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shelve">13.4. Shelve</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#storing-data-structures">13.5. Storing data structures</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-for-equivalent-files">13.6. Checking for equivalent files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#walking-directories">13.7. Walking directories</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">13.8. Debugging</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">13.9. Glossary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">13.10. Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">13.10.1. Ask a virtual assistant</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">13.10.2. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">13.10.3. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">13.10.4. Exercise</a></li>
 </ul>
 </li>
 </ul>
@@ -388,7 +392,7 @@ document.write(`
 <a class="reference external" href="https://bookshop.org/a/98697/9781098155438">Bookshop.org</a> and
 <a class="reference external" href="https://www.amazon.com/_/dp/1098155432?smid=ATVPDKIKX0DER&amp;amp;_encoding=UTF8&amp;amp;tag=oreilly20-20&amp;amp;_encoding=UTF8&amp;amp;tag=greenteapre01-20&amp;amp;linkCode=ur2&amp;amp;linkId=e2a529f94920295d27ec8a06e757dc7c&amp;amp;camp=1789&amp;amp;creative=9325">Amazon</a>.</p>
 <section id="files-and-databases">
-<h1>Files and Databases<a class="headerlink" href="#files-and-databases" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">13. </span>Files and Databases<a class="headerlink" href="#files-and-databases" title="Link to this heading">#</a></h1>
 <p>Most of the programs we have seen so far are <strong>ephemeral</strong> in the sense that they run for a short time and produce output, but when they end, their data disappears.
 Each time you run an ephemeral program, it starts with a clean slate.</p>
 <p>Other programs are <strong>persistent</strong>: they run for a long time (or all the time); they keep at least some of their data in long-term storage; and if they shut down and restart, they pick up where they left off.</p>
@@ -398,7 +402,7 @@ Databases are specialized files that can be read and written more efficiently th
 <p>In this chapter, we’ll write programs that read and write text files and databases, and as an exercise you’ll write a program that searches a collection of photos for duplicates.
 But before you can work with a file, you have to find it, so we’ll start with file names, paths, and directories.</p>
 <section id="filenames-and-paths">
-<h2>Filenames and paths<a class="headerlink" href="#filenames-and-paths" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">13.1. </span>Filenames and paths<a class="headerlink" href="#filenames-and-paths" title="Link to this heading">#</a></h2>
 <p>Files are organized into <strong>directories</strong>, also called “folders”.
 Every running program has a <strong>current working directory</strong>, which is the default directory for most operations.
 For example, when you open a file, Python looks for it in the current working directory.</p>
@@ -536,7 +540,7 @@ So, if you you run these examples on Windows, you will see backward slashes in t
 <p>Later in this chapter we’ll use these functions to search a set of directories and find all of the image files.</p>
 </section>
 <section id="f-strings">
-<h2>f-strings<a class="headerlink" href="#f-strings" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">13.2. </span>f-strings<a class="headerlink" href="#f-strings" title="Link to this heading">#</a></h2>
 <p>One way for programs to store data is to write it to a text file.
 For example, suppose you are a camel spotter, and you want to record the number of camels you have seen during a period of observation.
 And suppose that in one and a half years, you have spotted <code class="docutils literal notranslate"><span class="pre">23</span></code> camels.
@@ -665,7 +669,7 @@ Camels spotted: 23
 </div>
 </section>
 <section id="yaml">
-<h2>YAML<a class="headerlink" href="#yaml" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">13.3. </span>YAML<a class="headerlink" href="#yaml" title="Link to this heading">#</a></h2>
 <p>One of the reasons programs read and write files is to store <strong>configuration data</strong>, which is information that specifies what the program should do and how.</p>
 <p>For example, in a program that searches for duplicate photos, we might have a dictionary called <code class="docutils literal notranslate"><span class="pre">config</span></code> that contains the name of the directory to search, the name of another directory where it should store the results, and a list of file extensions it should use to identify image files.</p>
 <p>Here’s what it might look like:</p>
@@ -748,7 +752,7 @@ Converting the string back to an object is called <strong>deserialization</stron
 If you serialize and then deserialize an object, the result should be equivalent to the original.</p>
 </section>
 <section id="shelve">
-<h2>Shelve<a class="headerlink" href="#shelve" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">13.4. </span>Shelve<a class="headerlink" href="#shelve" title="Link to this heading">#</a></h2>
 <p>So far we’ve been reading and writing text files – now let’s consider databases.
 A <strong>database</strong> is a file that is organized for storing data.
 Some databases are organized like a table with rows and columns of information.
@@ -925,7 +929,7 @@ For example, we can use the bracket operator to add an item, which is a mapping 
 The suffix <code class="docutils literal notranslate"><span class="pre">dir</span></code> stands for “directory”, but it has nothing to do with the directories we’ve been working with that contain files.</p>
 </section>
 <section id="storing-data-structures">
-<span id="section-storing-data-structure"></span><h2>Storing data structures<a class="headerlink" href="#storing-data-structures" title="Link to this heading">#</a></h2>
+<span id="section-storing-data-structure"></span><h2><span class="section-number">13.5. </span>Storing data structures<a class="headerlink" href="#storing-data-structures" title="Link to this heading">#</a></h2>
 <p>In the previous example, the keys and values in the shelf are strings.
 But we can also use a shelf to contain data structures like lists and dictionaries.</p>
 <p>As an example, let’s revisit the anagram example from an exercise in <a class="reference internal" href="chap11.html#section-exercise-11"><span class="std std-ref">Chapter 11</span></a>.
@@ -1044,7 +1048,7 @@ If we want to update the shelf, we have to read the old value, update it, and th
 <p>As an exercise, you can finish this example by reading the word list and storing all of the anagrams in a shelf.</p>
 </section>
 <section id="checking-for-equivalent-files">
-<span id="section-md5-digest"></span><h2>Checking for equivalent files<a class="headerlink" href="#checking-for-equivalent-files" title="Link to this heading">#</a></h2>
+<span id="section-md5-digest"></span><h2><span class="section-number">13.6. </span>Checking for equivalent files<a class="headerlink" href="#checking-for-equivalent-files" title="Link to this heading">#</a></h2>
 <p>Now let’s get back to the goal of this chapter: searching for different files that contain the same data.
 One way to check is to read the contents of both files and compare.</p>
 <p>If the files contain images, we have to open them with mode <code class="docutils literal notranslate"><span class="pre">'rb'</span></code>, where <code class="docutils literal notranslate"><span class="pre">'r'</span></code> means we want to read the contents and <code class="docutils literal notranslate"><span class="pre">'b'</span></code> indicates <strong>binary mode</strong>.
@@ -1169,7 +1173,7 @@ We’ll start by using <code class="docutils literal notranslate"><span class="p
 The last step is to search a directory and find all of the images files.</p>
 </section>
 <section id="walking-directories">
-<span id="section-walking-directories"></span><h2>Walking directories<a class="headerlink" href="#walking-directories" title="Link to this heading">#</a></h2>
+<span id="section-walking-directories"></span><h2><span class="section-number">13.7. </span>Walking directories<a class="headerlink" href="#walking-directories" title="Link to this heading">#</a></h2>
 <p>The following function takes as an argument the directory we want to search.
 It uses <code class="docutils literal notranslate"><span class="pre">listdir</span></code> to loop through the contents of the directory.
 When it finds a file, it prints its complete path.
@@ -1248,7 +1252,7 @@ photos/feb-2023/photo1.jpg
 <p>The parameter is called <code class="docutils literal notranslate"><span class="pre">visit_func</span></code> because it suggests that as we “walk” around the directory, we “visit” each file.</p>
 </section>
 <section id="debugging">
-<h2>Debugging<a class="headerlink" href="#debugging" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">13.8. </span>Debugging<a class="headerlink" href="#debugging" title="Link to this heading">#</a></h2>
 <p>When you are reading and writing files, you might run into problems with
 whitespace. These errors can be hard to debug because spaces, tabs and
 newlines are normally invisible:</p>
@@ -1290,7 +1294,7 @@ In macOS and UNIX, file names can contain lowercase and uppercase letters, digit
 But many Windows applications ignore the difference between lowercase and uppercase letters, and several symbols that are allowed in macOS and UNIX are not allowed in Windows.</p>
 </section>
 <section id="glossary">
-<h2>Glossary<a class="headerlink" href="#glossary" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">13.9. </span>Glossary<a class="headerlink" href="#glossary" title="Link to this heading">#</a></h2>
 <p><strong>ephemeral:</strong>
 An ephemeral program typically runs for a short time and, when it ends, its data are lost.</p>
 <p><strong>persistent:</strong>
@@ -1325,7 +1329,7 @@ A function that takes and object and computes an integer, which is sometimes cal
 The result of a hash function, especially when it is used to check whether two objects are the same.</p>
 </section>
 <section id="exercises">
-<h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">13.10. </span>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
 <div class="cell tag_remove-print docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This cell tells Jupyter to provide detailed debugging information</span>
@@ -1337,7 +1341,7 @@ The result of a hash function, especially when it is used to check whether two o
 </div>
 </div>
 <section id="ask-a-virtual-assistant">
-<h3>Ask a virtual assistant<a class="headerlink" href="#ask-a-virtual-assistant" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">13.10.1. </span>Ask a virtual assistant<a class="headerlink" href="#ask-a-virtual-assistant" title="Link to this heading">#</a></h3>
 <p>There are several topics that came up in this chapter that I did not explain in detail.
 Here are some questions you can ask a virtual assistant to get more information.</p>
 <ul class="simple">
@@ -1355,20 +1359,20 @@ Here are some questions you can ask a virtual assistant to get more information.
 <p>As always, if you get stuck on any of the following exercises, consider asking a VA for help.  Along with your question, you might want to paste in the relevant functions from this chapter.</p>
 </section>
 <section id="exercise">
-<h3>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">13.10.2. </span>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h3>
 <p>Write a function called <code class="docutils literal notranslate"><span class="pre">replace_all</span></code> that takes as arguments a pattern string, a replacement string, and two filenames.
 It should read the first file and write the contents into the second file (creating it if necessary).
 If the pattern string appears anywhere in the contents, it should be replaced with the replacement string.</p>
 <p>To test your function, read the file <code class="docutils literal notranslate"><span class="pre">photos/notes.txt</span></code>, replace <code class="docutils literal notranslate"><span class="pre">'photos'</span></code> with <code class="docutils literal notranslate"><span class="pre">'images'</span></code>, and write the result to the file <code class="docutils literal notranslate"><span class="pre">photos/new_notes.txt</span></code>.</p>
 </section>
 <section id="id1">
-<h3>Exercise<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">13.10.3. </span>Exercise<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p>In <a class="reference internal" href="#section-storing-data-structure"><span class="std std-ref">a previous section</span></a>, we used the <code class="docutils literal notranslate"><span class="pre">shelve</span></code> module to make a key-value store that maps from a sorted string of letters to a list of anagrams.
 To finish the example, write a function called <code class="docutils literal notranslate"><span class="pre">add_word</span></code> that takes as arguments a string and a shelf object.</p>
 <p>It should sort the letters of the word to make a key, then check whether the key is already in the shelf. If not, it should make a list that contains the new word and add it to the shelf. If so, it should append the new word to the existing value.</p>
 </section>
 <section id="id2">
-<h3>Exercise<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">13.10.4. </span>Exercise<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <p>In a large collection of files, there may be more than one copy of the same file, stored in different directories or with different file names.
 The goal of this exercise is to search for duplicates.
 As an example, we’ll work with image files in the <code class="docutils literal notranslate"><span class="pre">photos</span></code> directory.</p>
@@ -1445,7 +1449,7 @@ Use <code class="docutils literal notranslate"><span class="pre">same_contents</
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Text Analysis and Generation</p>
+        <p class="prev-next-title"><span class="section-number">12. </span>Text Analysis and Generation</p>
       </div>
     </a>
     <a class="right-next"
@@ -1453,7 +1457,7 @@ Use <code class="docutils literal notranslate"><span class="pre">same_contents</
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Classes and Functions</p>
+        <p class="prev-next-title"><span class="section-number">14. </span>Classes and Functions</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1473,20 +1477,20 @@ Use <code class="docutils literal notranslate"><span class="pre">same_contents</
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filenames-and-paths">Filenames and paths</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#f-strings">f-strings</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#yaml">YAML</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shelve">Shelve</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#storing-data-structures">Storing data structures</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-for-equivalent-files">Checking for equivalent files</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#walking-directories">Walking directories</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">Debugging</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">Glossary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">Ask a virtual assistant</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filenames-and-paths">13.1. Filenames and paths</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#f-strings">13.2. f-strings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#yaml">13.3. YAML</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shelve">13.4. Shelve</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#storing-data-structures">13.5. Storing data structures</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-for-equivalent-files">13.6. Checking for equivalent files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#walking-directories">13.7. Walking directories</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">13.8. Debugging</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">13.9. Glossary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">13.10. Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">13.10.1. Ask a virtual assistant</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">13.10.2. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">13.10.3. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">13.10.4. Exercise</a></li>
 </ul>
 </li>
 </ul>

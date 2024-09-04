@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Text Analysis and Generation &#8212; Think Python, 3rd edition</title>
+    <title>12. Text Analysis and Generation &#8212; Think Python, 3rd edition</title>
   
   
   
@@ -60,8 +60,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'chap12';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Files and Databases" href="chap13.html" />
-    <link rel="prev" title="Tuples" href="chap11.html" />
+    <link rel="next" title="13. Files and Databases" href="chap13.html" />
+    <link rel="prev" title="11. Tuples" href="chap11.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -173,27 +173,31 @@
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Front Matter</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="chap00.html">Preface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap01.html">Programming as a way of thinking</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap02.html">Variables and Statements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap03.html">Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap04.html">Functions and Interfaces</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap05.html">Conditionals and Recursion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap06.html">Return Values</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap07.html">Iteration and Search</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap08.html">Strings and Regular Expressions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap09.html">Lists</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap10.html">Dictionaries</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap11.html">Tuples</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Text Analysis and Generation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap13.html">Files and Databases</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap14.html">Classes and Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap15.html">Classes and Methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap16.html">Classes and Objects</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap17.html">Inheritance</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap18.html">Python Extras</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap19.html">Final thoughts</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapters</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chap01.html">1. Programming as a way of thinking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap02.html">2. Variables and Statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap03.html">3. Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap04.html">4. Functions and Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap05.html">5. Conditionals and Recursion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap06.html">6. Return Values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap07.html">7. Iteration and Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap08.html">8. Strings and Regular Expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap09.html">9. Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap10.html">10. Dictionaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap11.html">11. Tuples</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">12. Text Analysis and Generation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap13.html">13. Files and Databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap14.html">14. Classes and Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap15.html">15. Classes and Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap16.html">16. Classes and Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap17.html">17. Inheritance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap18.html">18. Python Extras</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap19.html">19. Final thoughts</a></li>
 </ul>
 
     </div>
@@ -357,22 +361,22 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unique-words">Unique words</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#punctuation">Punctuation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#word-frequencies">Word frequencies</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-parameters">Optional parameters</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionary-subtraction">Dictionary subtraction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#random-numbers">Random numbers</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bigrams">Bigrams</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#markov-analysis">Markov analysis</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-text">Generating text</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">Debugging</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">Glossary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">Ask a virtual assistant</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unique-words">12.1. Unique words</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#punctuation">12.2. Punctuation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#word-frequencies">12.3. Word frequencies</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-parameters">12.4. Optional parameters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionary-subtraction">12.5. Dictionary subtraction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#random-numbers">12.6. Random numbers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bigrams">12.7. Bigrams</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#markov-analysis">12.8. Markov analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-text">12.9. Generating text</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">12.10. Debugging</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">12.11. Glossary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">12.12. Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">12.12.1. Ask a virtual assistant</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">12.12.2. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">12.12.3. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">12.12.4. Exercise</a></li>
 </ul>
 </li>
 </ul>
@@ -390,7 +394,7 @@ document.write(`
 <a class="reference external" href="https://bookshop.org/a/98697/9781098155438">Bookshop.org</a> and
 <a class="reference external" href="https://www.amazon.com/_/dp/1098155432?smid=ATVPDKIKX0DER&amp;amp;_encoding=UTF8&amp;amp;tag=oreilly20-20&amp;amp;_encoding=UTF8&amp;amp;tag=greenteapre01-20&amp;amp;linkCode=ur2&amp;amp;linkId=e2a529f94920295d27ec8a06e757dc7c&amp;amp;camp=1789&amp;amp;creative=9325">Amazon</a>.</p>
 <section id="text-analysis-and-generation">
-<h1>Text Analysis and Generation<a class="headerlink" href="#text-analysis-and-generation" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">12. </span>Text Analysis and Generation<a class="headerlink" href="#text-analysis-and-generation" title="Link to this heading">#</a></h1>
 <p>At this point we have covered Python’s core data structures – lists, dictionaries, and tuples – and and some algorithms that use them.
 In this chapter, we’ll use them to explore text analysis and Markov generation:</p>
 <ul class="simple">
@@ -402,7 +406,7 @@ In this chapter, we’ll use them to explore text analysis and Markov generation
 Then we’ll look at pairs of words, and make a list of the words that can follow each word.
 We’ll make a simple version of a Markov generator, and as an exercise, you’ll have a chance to make a more general version.</p>
 <section id="unique-words">
-<h2>Unique words<a class="headerlink" href="#unique-words" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">12.1. </span>Unique words<a class="headerlink" href="#unique-words" title="Link to this heading">#</a></h2>
 <p>As a first step toward text analysis, let’s read a book – <em>The Strange Case Of Dr. Jekyll And Mr. Hyde</em> by Robert Louis Stevenson – and count the number of unique words.
 Instructions for downloading the book are in the notebook for this chapter.</p>
 <div class="cell docutils container">
@@ -459,7 +463,7 @@ And other words include punctuation like periods, exclamation points, and quotat
 <p>So, before we move on, let’s deal with dashes and other punctuation.</p>
 </section>
 <section id="punctuation">
-<h2>Punctuation<a class="headerlink" href="#punctuation" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">12.2. </span>Punctuation<a class="headerlink" href="#punctuation" title="Link to this heading">#</a></h2>
 <p>To identify the words in the text, we need to deal with two issues:</p>
 <ul class="simple">
 <li><p>When a dash appears in a line, we should replace it with a space – then when we use <code class="docutils literal notranslate"><span class="pre">split</span></code>, the words will be separated.</p></li>
@@ -623,7 +627,7 @@ And we can confirm that the list of longest words has been cleaned up.</p>
 <p>Now let’s see how many times each word is used.</p>
 </section>
 <section id="word-frequencies">
-<h2>Word frequencies<a class="headerlink" href="#word-frequencies" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">12.3. </span>Word frequencies<a class="headerlink" href="#word-frequencies" title="Link to this heading">#</a></h2>
 <p>The following loop computes the frequency of each unique word.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -684,7 +688,7 @@ First we’ll define a function that selects the second element.</p>
 And we’ll use it to demonstrate a new feature – optional parameters.</p>
 </section>
 <section id="optional-parameters">
-<h2>Optional parameters<a class="headerlink" href="#optional-parameters" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">12.4. </span>Optional parameters<a class="headerlink" href="#optional-parameters" title="Link to this heading">#</a></h2>
 <p>We’ve used built-in functions that take optional parameters.
 For example, <code class="docutils literal notranslate"><span class="pre">round</span></code> takes an optional parameters called <code class="docutils literal notranslate"><span class="pre">ndigits</span></code> that indicates how many decimal places to keep.</p>
 <div class="cell docutils container">
@@ -749,7 +753,7 @@ For example, the following function takes two parameters, <code class="docutils 
 <p>If a function has both required and optional parameters, all of the required parameters have to come first, followed by the optional ones.</p>
 </section>
 <section id="dictionary-subtraction">
-<span id="section-dictionary-subtraction"></span><h2>Dictionary subtraction<a class="headerlink" href="#dictionary-subtraction" title="Link to this heading">#</a></h2>
+<span id="section-dictionary-subtraction"></span><h2><span class="section-number">12.5. </span>Dictionary subtraction<a class="headerlink" href="#dictionary-subtraction" title="Link to this heading">#</a></h2>
 <p>Suppose we want to spell-check a book – that is, find a list of words that might be misspelled.
 One way to do that is to find words in the book that don’t appear in a list of valid words.
 In previous chapters, we’ve used a list of words that are considered valid in word games like Scrabble.
@@ -841,7 +845,7 @@ We can do that by looping through the items and making a list of words with freq
 But <code class="docutils literal notranslate"><span class="pre">'reindue'</span></code> appears to be a misspelling of <code class="docutils literal notranslate"><span class="pre">'reinduce'</span></code>, so at least we found one legitimate error.</p>
 </section>
 <section id="random-numbers">
-<h2>Random numbers<a class="headerlink" href="#random-numbers" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">12.6. </span>Random numbers<a class="headerlink" href="#random-numbers" title="Link to this heading">#</a></h2>
 <p>As a step toward Markov text generation, next we’ll choose a random sequence of words from <code class="docutils literal notranslate"><span class="pre">word_counter</span></code>.
 But first let’s talk about randomness.</p>
 <p>Given the same inputs, most computer programs are <strong>deterministic</strong>, which means they generate the same outputs every time.
@@ -985,7 +989,7 @@ For example, in a real sentence you expect an article like “the” to be follo
 So the next step is to look at these relationships between words.</p>
 </section>
 <section id="bigrams">
-<h2>Bigrams<a class="headerlink" href="#bigrams" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">12.7. </span>Bigrams<a class="headerlink" href="#bigrams" title="Link to this heading">#</a></h2>
 <p>Instead of looking at one word at a time, now we’ll look at sequences of two words, which are called <strong>bigrams</strong>.
 A sequence of three words is called a <strong>trigram</strong>, and a sequence with some unspecified number of words is called an <strong>n-gram</strong>.</p>
 <p>Let’s write a program that finds all of the bigrams in the book and the number of times each one appears.
@@ -1105,7 +1109,7 @@ We can also use the results to generate random text, like this.</p>
 <p>This way of generating text is better than choosing random words, but still doesn’t make a lot of sense.</p>
 </section>
 <section id="markov-analysis">
-<h2>Markov analysis<a class="headerlink" href="#markov-analysis" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">12.8. </span>Markov analysis<a class="headerlink" href="#markov-analysis" title="Link to this heading">#</a></h2>
 <p>We can do better with Markov chain text analysis, which computes, for each word in a text, the list of words that come next.
 As an example, we’ll analyze these lyrics from the Monty Python song <em>Eric, the Half a Bee</em>:</p>
 <div class="cell docutils container">
@@ -1274,7 +1278,7 @@ Most of the other words appear only once, so they are followed by only a single 
 <p>In this list of successors, notice that the word <code class="docutils literal notranslate"><span class="pre">'to'</span></code> appears three times – the other successors only appear once.</p>
 </section>
 <section id="generating-text">
-<h2>Generating text<a class="headerlink" href="#generating-text" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">12.9. </span>Generating text<a class="headerlink" href="#generating-text" title="Link to this heading">#</a></h2>
 <p>We can use the results from the previous section to generate new text with the same relationships between consecutive words as in the original.
 Here’s how it works:</p>
 <ul class="simple">
@@ -1335,7 +1339,7 @@ For example, we can make a dictionary that maps from each bigram – or trigram 
 As an exercise, you’ll have a chance to implement this analysis and see what the results look like.</p>
 </section>
 <section id="debugging">
-<span id="section-debugging-12"></span><h2>Debugging<a class="headerlink" href="#debugging" title="Link to this heading">#</a></h2>
+<span id="section-debugging-12"></span><h2><span class="section-number">12.10. </span>Debugging<a class="headerlink" href="#debugging" title="Link to this heading">#</a></h2>
 <p>At this point we are writing more substantial programs, and you might find that you are spending more time debugging.
 If you are stuck on a difficult bug, here are a few things to try:</p>
 <ul class="simple">
@@ -1374,7 +1378,7 @@ stripping it down. Then you can copy the pieces back one at a time.</p>
 If you get stuck on one of these activities, try the others.</p>
 </section>
 <section id="glossary">
-<h2>Glossary<a class="headerlink" href="#glossary" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">12.11. </span>Glossary<a class="headerlink" href="#glossary" title="Link to this heading">#</a></h2>
 <p><strong>default value:</strong>
 The value assigned to a parameter if no argument is provided.</p>
 <p><strong>override:</strong>
@@ -1393,7 +1397,7 @@ A sequence of an unspecified number of elements.</p>
 A way of debugging by explaining a problem aloud to an inanimate object.</p>
 </section>
 <section id="exercises">
-<h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">12.12. </span>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
 <div class="cell tag_remove-print docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This cell tells Jupyter to provide detailed debugging information</span>
@@ -1405,7 +1409,7 @@ A way of debugging by explaining a problem aloud to an inanimate object.</p>
 </div>
 </div>
 <section id="ask-a-virtual-assistant">
-<h3>Ask a virtual assistant<a class="headerlink" href="#ask-a-virtual-assistant" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">12.12.1. </span>Ask a virtual assistant<a class="headerlink" href="#ask-a-virtual-assistant" title="Link to this heading">#</a></h3>
 <p>In <code class="docutils literal notranslate"><span class="pre">add_bigram</span></code>, the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement creates a new list or appends an element to an existing list, depending on whether the key is already in the dictionary.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1428,13 +1432,13 @@ One of the things you might learn is that virtual assistants use algorithms that
 Ask a VA, “What are the differences between large language models like GPT and Markov chain text analysis?”</p>
 </section>
 <section id="exercise">
-<h3>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">12.12.2. </span>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h3>
 <p>Write a function that counts the number of times each trigram (sequence of three words) appears.
 If you test your function with the text of <em>Dr. Jekyll and Mr. Hyde</em>, you should find that the most common trigram is “said the lawyer”.</p>
 <p>Hint: Write a function called <code class="docutils literal notranslate"><span class="pre">count_trigram</span></code> that is similar to <code class="docutils literal notranslate"><span class="pre">count_bigram</span></code>. Then write a function called <code class="docutils literal notranslate"><span class="pre">process_word_trigram</span></code> that is similar to <code class="docutils literal notranslate"><span class="pre">process_word_bigram</span></code>.</p>
 </section>
 <section id="id1">
-<h3>Exercise<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">12.12.3. </span>Exercise<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p>Now let’s implement Markov chain text analysis with a mapping from each bigram to a list of possible successors.</p>
 <p>Starting with <code class="docutils literal notranslate"><span class="pre">add_bigram</span></code>, write a function called <code class="docutils literal notranslate"><span class="pre">add_trigram</span></code> that takes a list of three words and either adds or updates an item in <code class="docutils literal notranslate"><span class="pre">successor_map</span></code>, using the first two words as the key and the third word as a possible successor.</p>
 <p>Here’s a version of <code class="docutils literal notranslate"><span class="pre">process_word_trigram</span></code> that calls <code class="docutils literal notranslate"><span class="pre">add_trigram</span></code>.</p>
@@ -1467,7 +1471,7 @@ If you test your function with the text of <em>Dr. Jekyll and Mr. Hyde</em>, you
 <p>In the next exercise, you’ll use the results to generate new random text.</p>
 </section>
 <section id="id2">
-<h3>Exercise<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">12.12.4. </span>Exercise<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <p>For this exercise, we’ll assume that <code class="docutils literal notranslate"><span class="pre">successor_map</span></code> is a dictionary that maps from each bigram to the list of words that follow it.</p>
 <p>To generate random text, we’ll start by choosing a random key from <code class="docutils literal notranslate"><span class="pre">successor_map</span></code>.</p>
 <div class="cell docutils container">
@@ -1533,7 +1537,7 @@ If you test your function with the text of <em>Dr. Jekyll and Mr. Hyde</em>, you
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Tuples</p>
+        <p class="prev-next-title"><span class="section-number">11. </span>Tuples</p>
       </div>
     </a>
     <a class="right-next"
@@ -1541,7 +1545,7 @@ If you test your function with the text of <em>Dr. Jekyll and Mr. Hyde</em>, you
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Files and Databases</p>
+        <p class="prev-next-title"><span class="section-number">13. </span>Files and Databases</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1561,22 +1565,22 @@ If you test your function with the text of <em>Dr. Jekyll and Mr. Hyde</em>, you
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unique-words">Unique words</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#punctuation">Punctuation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#word-frequencies">Word frequencies</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-parameters">Optional parameters</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionary-subtraction">Dictionary subtraction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#random-numbers">Random numbers</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bigrams">Bigrams</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#markov-analysis">Markov analysis</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-text">Generating text</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">Debugging</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">Glossary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">Ask a virtual assistant</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unique-words">12.1. Unique words</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#punctuation">12.2. Punctuation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#word-frequencies">12.3. Word frequencies</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-parameters">12.4. Optional parameters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionary-subtraction">12.5. Dictionary subtraction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#random-numbers">12.6. Random numbers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bigrams">12.7. Bigrams</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#markov-analysis">12.8. Markov analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-text">12.9. Generating text</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">12.10. Debugging</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">12.11. Glossary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">12.12. Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">12.12.1. Ask a virtual assistant</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">12.12.2. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">12.12.3. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">12.12.4. Exercise</a></li>
 </ul>
 </li>
 </ul>

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Classes and Functions &#8212; Think Python, 3rd edition</title>
+    <title>14. Classes and Functions &#8212; Think Python, 3rd edition</title>
   
   
   
@@ -60,8 +60,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'chap14';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Classes and Methods" href="chap15.html" />
-    <link rel="prev" title="Files and Databases" href="chap13.html" />
+    <link rel="next" title="15. Classes and Methods" href="chap15.html" />
+    <link rel="prev" title="13. Files and Databases" href="chap13.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -173,27 +173,31 @@
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Front Matter</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="chap00.html">Preface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap01.html">Programming as a way of thinking</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap02.html">Variables and Statements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap03.html">Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap04.html">Functions and Interfaces</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap05.html">Conditionals and Recursion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap06.html">Return Values</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap07.html">Iteration and Search</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap08.html">Strings and Regular Expressions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap09.html">Lists</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap10.html">Dictionaries</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap11.html">Tuples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap12.html">Text Analysis and Generation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap13.html">Files and Databases</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Classes and Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap15.html">Classes and Methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap16.html">Classes and Objects</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap17.html">Inheritance</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap18.html">Python Extras</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap19.html">Final thoughts</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapters</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chap01.html">1. Programming as a way of thinking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap02.html">2. Variables and Statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap03.html">3. Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap04.html">4. Functions and Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap05.html">5. Conditionals and Recursion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap06.html">6. Return Values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap07.html">7. Iteration and Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap08.html">8. Strings and Regular Expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap09.html">9. Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap10.html">10. Dictionaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap11.html">11. Tuples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap12.html">12. Text Analysis and Generation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap13.html">13. Files and Databases</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">14. Classes and Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap15.html">15. Classes and Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap16.html">16. Classes and Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap17.html">17. Inheritance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap18.html">18. Python Extras</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap19.html">19. Final thoughts</a></li>
 </ul>
 
     </div>
@@ -357,24 +361,24 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programmer-defined-types">Programmer-defined types</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#attributes">Attributes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objects-as-return-values">Objects as return values</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objects-are-mutable">Objects are mutable</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#copying">Copying</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pure-functions">Pure functions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prototype-and-patch">Prototype and patch</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#design-first-development">Design-first development</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">Debugging</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">Glossary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">Ask a virtual assistant</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programmer-defined-types">14.1. Programmer-defined types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#attributes">14.2. Attributes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objects-as-return-values">14.3. Objects as return values</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objects-are-mutable">14.4. Objects are mutable</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#copying">14.5. Copying</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pure-functions">14.6. Pure functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prototype-and-patch">14.7. Prototype and patch</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#design-first-development">14.8. Design-first development</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">14.9. Debugging</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">14.10. Glossary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">14.11. Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">14.11.1. Ask a virtual assistant</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercises</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">14.12. Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">14.12.1. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">14.12.2. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">14.12.3. Exercise</a></li>
 </ul>
 </li>
 </ul>
@@ -392,14 +396,14 @@ document.write(`
 <a class="reference external" href="https://bookshop.org/a/98697/9781098155438">Bookshop.org</a> and
 <a class="reference external" href="https://www.amazon.com/_/dp/1098155432?smid=ATVPDKIKX0DER&amp;amp;_encoding=UTF8&amp;amp;tag=oreilly20-20&amp;amp;_encoding=UTF8&amp;amp;tag=greenteapre01-20&amp;amp;linkCode=ur2&amp;amp;linkId=e2a529f94920295d27ec8a06e757dc7c&amp;amp;camp=1789&amp;amp;creative=9325">Amazon</a>.</p>
 <section id="classes-and-functions">
-<h1>Classes and Functions<a class="headerlink" href="#classes-and-functions" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">14. </span>Classes and Functions<a class="headerlink" href="#classes-and-functions" title="Link to this heading">#</a></h1>
 <p>At this point you know how to use functions to organize code and how to use built-in types to organize data.
 The next step is <strong>object-oriented programming</strong>, which uses programmer-defined types to organize both code and data.</p>
 <p>Object-oriented programming is a big topic, so we will proceed gradually.
 In this chapter, we’ll start with code that is not idiomatic – that is, it is not the kind of code experienced programmers write – but it is a good place to start.
 In the next two chapters, we will use additional features to write more idiomatic code.</p>
 <section id="programmer-defined-types">
-<h2>Programmer-defined types<a class="headerlink" href="#programmer-defined-types" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">14.1. </span>Programmer-defined types<a class="headerlink" href="#programmer-defined-types" title="Link to this heading">#</a></h2>
 <p>We have used many of Python’s built-in types – now we will define a new type.
 As a first example, we’ll create a type called <code class="docutils literal notranslate"><span class="pre">Time</span></code> that represents a time of day.
 A programmer-defined type is also called a <strong>class</strong>.
@@ -453,7 +457,7 @@ To create a <code class="docutils literal notranslate"><span class="pre">Time</s
 <p>Creating a new object is called <strong>instantiation</strong>, and the object is an <strong>instance</strong> of the class.</p>
 </section>
 <section id="attributes">
-<h2>Attributes<a class="headerlink" href="#attributes" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">14.2. </span>Attributes<a class="headerlink" href="#attributes" title="Link to this heading">#</a></h2>
 <p>An object can contain variables, which are called <strong>attributes</strong> and pronounced with the emphasis on the first syllable, like “AT-trib-ute”, rather than the second syllable, like “a-TRIB-ute”.
 We can create attributes using dot notation.</p>
 <div class="cell docutils container">
@@ -558,7 +562,7 @@ For example, the following function takes a <code class="docutils literal notran
 </div>
 </section>
 <section id="objects-as-return-values">
-<h2>Objects as return values<a class="headerlink" href="#objects-as-return-values" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">14.3. </span>Objects as return values<a class="headerlink" href="#objects-as-return-values" title="Link to this heading">#</a></h2>
 <p>Functions can return objects. For example, <code class="docutils literal notranslate"><span class="pre">make_time</span></code> takes parameters called <code class="docutils literal notranslate"><span class="pre">hour</span></code>, <code class="docutils literal notranslate"><span class="pre">minute</span></code>, and <code class="docutils literal notranslate"><span class="pre">second</span></code>, stores them as attributes in a <code class="docutils literal notranslate"><span class="pre">Time</span></code> object, and returns the new object.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -589,7 +593,7 @@ Here’s how we use <code class="docutils literal notranslate"><span class="pre"
 </div>
 </section>
 <section id="objects-are-mutable">
-<h2>Objects are mutable<a class="headerlink" href="#objects-are-mutable" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">14.4. </span>Objects are mutable<a class="headerlink" href="#objects-are-mutable" title="Link to this heading">#</a></h2>
 <p>Suppose you are going to a screening of a movie, like <em>Monty Python and the Holy Grail</em>, which starts at <code class="docutils literal notranslate"><span class="pre">9:20</span> <span class="pre">PM</span></code> and runs for <code class="docutils literal notranslate"><span class="pre">92</span></code> minutes, which is one hour <code class="docutils literal notranslate"><span class="pre">32</span></code> minutes.
 What time will the movie end?</p>
 <p>First, we’ll create a <code class="docutils literal notranslate"><span class="pre">Time</span></code> object that represents the start time.</p>
@@ -660,7 +664,7 @@ It would be better to leave <code class="docutils literal notranslate"><span cla
 We can do that by copying <code class="docutils literal notranslate"><span class="pre">start</span></code> and modifying the copy.</p>
 </section>
 <section id="copying">
-<h2>Copying<a class="headerlink" href="#copying" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">14.5. </span>Copying<a class="headerlink" href="#copying" title="Link to this heading">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">copy</span></code> module provides a function called <code class="docutils literal notranslate"><span class="pre">copy</span></code> that can duplicate any object.
 We can import it like this.</p>
 <div class="cell docutils container">
@@ -731,7 +735,7 @@ We can import it like this.</p>
 But for programmer-defined classes, the default behavior of the <code class="docutils literal notranslate"><span class="pre">==</span></code> operator is the same as the <code class="docutils literal notranslate"><span class="pre">is</span></code> operator – it checks identity, not equivalence.</p>
 </section>
 <section id="pure-functions">
-<h2>Pure functions<a class="headerlink" href="#pure-functions" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">14.6. </span>Pure functions<a class="headerlink" href="#pure-functions" title="Link to this heading">#</a></h2>
 <p>We can use <code class="docutils literal notranslate"><span class="pre">copy</span></code> to write pure functions that don’t modify their parameters.
 For example, here’s a function that takes a <code class="docutils literal notranslate"><span class="pre">Time</span></code> object and a duration in hours, minutes and seconds.
 It makes a copy of the original object, uses <code class="docutils literal notranslate"><span class="pre">increment_time</span></code> to modify the copy, and returns it.</p>
@@ -782,7 +786,7 @@ But modifiers are sometimes convenient and can be more efficient.</p>
 This approach might be called a <strong>functional programming style</strong>.</p>
 </section>
 <section id="prototype-and-patch">
-<h2>Prototype and patch<a class="headerlink" href="#prototype-and-patch" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">14.7. </span>Prototype and patch<a class="headerlink" href="#prototype-and-patch" title="Link to this heading">#</a></h2>
 <p>In the previous example, <code class="docutils literal notranslate"><span class="pre">increment_time</span></code> and <code class="docutils literal notranslate"><span class="pre">add_time</span></code> seem to work, but if we try another example, we’ll see that they are not quite correct.</p>
 <p>Suppose you arrive at the theater and discover that the movie starts at <code class="docutils literal notranslate"><span class="pre">9:40</span></code>, not <code class="docutils literal notranslate"><span class="pre">9:20</span></code>.
 Here’s what happens when we compute the updated end time.</p>
@@ -936,7 +940,7 @@ But incremental corrections can generate code that is unnecessarily complicated 
 found all the errors.</p>
 </section>
 <section id="design-first-development">
-<h2>Design-first development<a class="headerlink" href="#design-first-development" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">14.8. </span>Design-first development<a class="headerlink" href="#design-first-development" title="Link to this heading">#</a></h2>
 <p>An alternative plan is <strong>design-first development</strong>, which involves more planning before prototyping. In a design-first process, sometimes a high-level insight into the problem makes the programming much easier.</p>
 <p>In this case, the insight is that we can think of a <code class="docutils literal notranslate"><span class="pre">Time</span></code> object as a three-digit number in base 60 – also known as sexagesimal.
 The <code class="docutils literal notranslate"><span class="pre">second</span></code> attribute is the “ones column”, the <code class="docutils literal notranslate"><span class="pre">minute</span></code> attribute is the “sixties column”,
@@ -1037,7 +1041,7 @@ Using the conversion functions is easier and more likely to be correct.</p>
 <p>Ironically, sometimes making a problem harder – or more general – makes it easier, because there are fewer special cases and fewer opportunities for error.</p>
 </section>
 <section id="debugging">
-<span id="section-debugging-14"></span><h2>Debugging<a class="headerlink" href="#debugging" title="Link to this heading">#</a></h2>
+<span id="section-debugging-14"></span><h2><span class="section-number">14.9. </span>Debugging<a class="headerlink" href="#debugging" title="Link to this heading">#</a></h2>
 <p>Python provides several built-in functions that are useful for testing and debugging programs that work with objects.
 For example, if you are not sure what type an object is, you can ask.</p>
 <div class="cell docutils container">
@@ -1110,7 +1114,7 @@ can use the built-in function <code class="docutils literal notranslate"><span c
 </div>
 </section>
 <section id="glossary">
-<h2>Glossary<a class="headerlink" href="#glossary" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">14.10. </span>Glossary<a class="headerlink" href="#glossary" title="Link to this heading">#</a></h2>
 <p><strong>object-oriented programming:</strong>
 A style of programming that uses objects to organize code and data.</p>
 <p><strong>class:</strong>
@@ -1137,7 +1141,7 @@ A way of developing programs by starting with a rough draft and gradually adding
 A way of developing programs with more careful planning that prototype and patch.</p>
 </section>
 <section id="exercises">
-<h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">14.11. </span>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
 <div class="cell tag_remove-print docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This cell tells Jupyter to provide detailed debugging information</span>
@@ -1154,7 +1158,7 @@ A way of developing programs with more careful planning that prototype and patch
 </div>
 </div>
 <section id="ask-a-virtual-assistant">
-<h3>Ask a virtual assistant<a class="headerlink" href="#ask-a-virtual-assistant" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">14.11.1. </span>Ask a virtual assistant<a class="headerlink" href="#ask-a-virtual-assistant" title="Link to this heading">#</a></h3>
 <p>There is a lot of new vocabulary in this chapter.
 A conversation with a virtual assistant can help solidify your understanding.
 Consider asking:</p>
@@ -1174,13 +1178,13 @@ In the meantime, see if you can solve the following exercises using only the fea
 </section>
 </section>
 <section id="id1">
-<h2>Exercises<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">14.12. </span>Exercises<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <section id="exercise">
-<h3>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">14.12.1. </span>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h3>
 <p>Write a function called <code class="docutils literal notranslate"><span class="pre">subtract_time</span></code> that takes two <code class="docutils literal notranslate"><span class="pre">Time</span></code> objects and returns the interval between them in seconds – assuming that they are two times during the same day.</p>
 </section>
 <section id="id2">
-<h3>Exercise<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">14.12.2. </span>Exercise<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <p>Write a function called <code class="docutils literal notranslate"><span class="pre">is_after</span></code> that takes two <code class="docutils literal notranslate"><span class="pre">Time</span></code> objects and returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if the first time is later in the day than the second, and <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1201,7 +1205,7 @@ In the meantime, see if you can solve the following exercises using only the fea
 </div>
 </section>
 <section id="id3">
-<h3>Exercise<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">14.12.3. </span>Exercise<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <p>Here’s a definition for a <code class="docutils literal notranslate"><span class="pre">Date</span></code> class that represents a date – that is, a year, month, and day of the month.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1257,7 +1261,7 @@ In the meantime, see if you can solve the following exercises using only the fea
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Files and Databases</p>
+        <p class="prev-next-title"><span class="section-number">13. </span>Files and Databases</p>
       </div>
     </a>
     <a class="right-next"
@@ -1265,7 +1269,7 @@ In the meantime, see if you can solve the following exercises using only the fea
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Classes and Methods</p>
+        <p class="prev-next-title"><span class="section-number">15. </span>Classes and Methods</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1285,24 +1289,24 @@ In the meantime, see if you can solve the following exercises using only the fea
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programmer-defined-types">Programmer-defined types</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#attributes">Attributes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objects-as-return-values">Objects as return values</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objects-are-mutable">Objects are mutable</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#copying">Copying</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pure-functions">Pure functions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prototype-and-patch">Prototype and patch</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#design-first-development">Design-first development</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">Debugging</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">Glossary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">Ask a virtual assistant</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programmer-defined-types">14.1. Programmer-defined types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#attributes">14.2. Attributes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objects-as-return-values">14.3. Objects as return values</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objects-are-mutable">14.4. Objects are mutable</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#copying">14.5. Copying</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pure-functions">14.6. Pure functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prototype-and-patch">14.7. Prototype and patch</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#design-first-development">14.8. Design-first development</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">14.9. Debugging</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">14.10. Glossary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">14.11. Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">14.11.1. Ask a virtual assistant</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercises</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">14.12. Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">14.12.1. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">14.12.2. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">14.12.3. Exercise</a></li>
 </ul>
 </li>
 </ul>
