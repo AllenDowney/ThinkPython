@@ -1,5 +1,7 @@
 # Think Python, 3rd edition
 
+<img width="250" src="https://raw.githubusercontent.com/AllenDowney/ThinkPython/v3/think_python_3e.jpg" style="float: right; margin-left: 10px;">
+
 *Think Python* is an introduction to Python for people who have never programmed before -- or for people who have tried and had a hard time.
 
 [Here is the landing page for the book at Green Tea Press](https://greenteapress.com/wp/think-python-3rd-edition/).
@@ -20,83 +22,83 @@ For the third edition, the biggest changes are:
 
 ## The notebooks
 
-### Chapter 1: Programming as a way of thinking
+**Chapter 1: Programming as a way of thinking**
 
 * [Click here to run Chapter 1 on Colab](https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap01.ipynb)
 
 
-### Chapter 2: Variables and Statements
+**Chapter 2: Variables and Statements**
 
 * [Click here to run Chapter 2 on Colab](https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap02.ipynb)
 
 
-### Chapter 3: Functions
+**Chapter 3: Functions**
 
 * [Click here to run Chapter 3 on Colab](https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap03.ipynb)
 
 
-### Chapter 4: Functions and Interfaces
+**Chapter 4: Functions and Interfaces**
 
 * [Click here to run Chapter 4 on Colab](https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap04.ipynb)
 
 
-### Chapter 5: Conditionals and Recursion
+**Chapter 5: Conditionals and Recursion**
 
 * [Click here to run Chapter 5 on Colab](https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap05.ipynb)
 
-### Chapter 6: Return Values
+**Chapter 6: Return Values**
 
 * [Click here to run Chapter 6 on Colab](https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap06.ipynb)
 
-### Chapter 7: Iteration and Search
+**Chapter 7: Iteration and Search**
 
 * [Click here to run Chapter 7 on Colab](https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap07.ipynb)
 
-### Chapter 8: Strings and Regular Expressions
+**Chapter 8: Strings and Regular Expressions**
 
 * [Click here to run Chapter 8 on Colab](https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap08.ipynb)
 
-### Chapter 9: Lists
+**Chapter 9: Lists**
 
 * [Click here to run Chapter 9 on Colab](https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap09.ipynb)
 
-### Chapter 10: Dictionaries
+**Chapter 10: Dictionaries**
 
 * [Click here to run Chapter 10 on Colab](https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap10.ipynb)
 
-### Chapter 11: Tuples
+**Chapter 11: Tuples**
 
 * [Click here to run Chapter 11 on Colab](https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap11.ipynb)
 
-### Chapter 12: Text Analysis and Generation
+**Chapter 12: Text Analysis and Generation**
 
 * [Click here to run Chapter 12 on Colab](https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap12.ipynb)
 
-### Chapter 13: Files and Databases
+**Chapter 13: Files and Databases**
 
 * [Click here to run Chapter 13 on Colab](https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap13.ipynb)
 
-### Chapter 14: Classes and Functions
+**Chapter 14: Classes and Functions**
 
 * [Click here to run Chapter 14 on Colab](https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap14.ipynb)
 
-### Chapter 15: Classes and Methods
+**Chapter 15: Classes and Methods**
 
 * [Click here to run Chapter 15 on Colab](https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap15.ipynb)
 
-### Chapter 16: Classes and Objects
+**Chapter 16: Classes and Objects**
 
 * [Click here to run Chapter 16 on Colab](https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap16.ipynb)
 
-### Chapter 17: Inheritance
+**Chapter 17: Inheritance**
 
 * [Click here to run Chapter 17 on Colab](https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap17.ipynb)
 
-### Chapter 18: Python Extras
+**Chapter 18: Python Extras**
 
 * [Click here to run Chapter 18 on Colab](https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap18.ipynb)
 
-### Chapter 19: Final Thoughts
+**Chapter 19: Final Thoughts**
 
 * [Click here to run Chapter 19 on Colab](https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap19.ipynb)
 
