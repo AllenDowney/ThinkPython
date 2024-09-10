@@ -690,8 +690,8 @@ Now when we use the <code class="docutils literal notranslate"><span class="pre"
 </div>
 </div>
 </div>
-<p>It’s not possible to override the <code class="docutils literal notranslate"><span class="pre">is</span></code> operator – it always checks whether the objects are <strong>identical</strong>.
-But for programmer-defined types, you can override the <code class="docutils literal notranslate"><span class="pre">==</span></code> operator so it checks whether the objects are <strong>equivalent</strong>.
+<p>It’s not possible to override the <code class="docutils literal notranslate"><span class="pre">is</span></code> operator – it always checks whether the objects are identical.
+But for programmer-defined types, you can override the <code class="docutils literal notranslate"><span class="pre">==</span></code> operator so it checks whether the objects are equivalent.
 And you can define what equivalent means.</p>
 </section>
 <section id="creating-a-rectangle">
@@ -1168,7 +1168,7 @@ Then you can use polymorphism to draw lines, rectangles, and circles.</p>
 <p>In this chapter, we ran into a subtle bug that happened because we created a <code class="docutils literal notranslate"><span class="pre">Point</span></code> that was shared by two <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code> objects, and then we modified the <code class="docutils literal notranslate"><span class="pre">Point</span></code>.
 In general, there are two ways to avoid problems like this: you can avoid sharing objects or you can avoid modifying them.</p>
 <p>To avoid sharing objects, you can use deep copy, as we did in this chapter.</p>
-<p>To avoid modifying objects, consider replacing modifiers like <code class="docutils literal notranslate"><span class="pre">translate</span></code> with pure functions like <code class="docutils literal notranslate"><span class="pre">translated</span></code>.
+<p>To avoid modifying objects, consider replacing impure functions like <code class="docutils literal notranslate"><span class="pre">translate</span></code> with pure functions like <code class="docutils literal notranslate"><span class="pre">translated</span></code>.
 For example, here’s a version of <code class="docutils literal notranslate"><span class="pre">translated</span></code> that creates a new <code class="docutils literal notranslate"><span class="pre">Point</span></code> and never modifies its attributes.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1183,14 +1183,10 @@ For example, here’s a version of <code class="docutils literal notranslate"><s
 <p>Python provides features that make it easier to avoid modifying objects.
 They are beyond the scope of this book, but if you are curious, ask a virtual assistant, “How do I make a Python object immutable?”</p>
 <p>Creating a new object takes more time than modifying an existing one, but the difference seldom matters in practice.
-Programs that avoid shared objects and modifiers are often easier to develop, test, and debug – and the best kind of debugging is the kind you don’t have to do.</p>
+Programs that avoid shared objects and impure functions are often easier to develop, test, and debug – and the best kind of debugging is the kind you don’t have to do.</p>
 </section>
 <section id="glossary">
 <h2><span class="section-number">16.9. </span>Glossary<a class="headerlink" href="#glossary" title="Link to this heading">#</a></h2>
-<p><strong>identical:</strong>
-Being the same object (which implies equivalence).</p>
-<p><strong>equivalent:</strong>
-Having the same value.</p>
 <p><strong>shallow copy:</strong>
 A copy operation that does not copy nested objects.</p>
 <p><strong>deep copy:</strong>

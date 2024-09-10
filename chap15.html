@@ -436,7 +436,7 @@ This change is not necessary, but it is conventional for the first parameter of 
 </div>
 </div>
 </div>
-<p>To call this function, you have to pass a <code class="docutils literal notranslate"><span class="pre">Time</span></code> object as an argument.
+<p>To call this method, you have to pass a <code class="docutils literal notranslate"><span class="pre">Time</span></code> object as an argument.
 Here’s the function we’ll use to make a <code class="docutils literal notranslate"><span class="pre">Time</span></code> object.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -577,7 +577,7 @@ To invoke it, we use <code class="docutils literal notranslate"><span class="pre
 </div>
 </div>
 </div>
-<p>The result is a new object that represents <code class="docutils literal notranslate"><span class="pre">9:40</span></code>.</p>
+<p>The result is a new object that represents 9:40.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start</span><span class="o">.</span><span class="n">print_time</span><span class="p">()</span>
@@ -925,7 +925,7 @@ Here’s an example.</p>
 <section id="glossary">
 <h2><span class="section-number">15.9. </span>Glossary<a class="headerlink" href="#glossary" title="Link to this heading">#</a></h2>
 <p><strong>object-oriented language:</strong>
-A language that provides features to support object-oriented programming, notably user-defined types and inheritance.</p>
+A language that provides features to support object-oriented programming, notably user-defined types.</p>
 <p><strong>method:</strong>
 A function that is defined inside a class definition and is invoked on instances of that class.</p>
 <p><strong>receiver:</strong>
@@ -981,7 +981,7 @@ Now let’s practice rewriting those functions as methods.</p>
 <ol class="arabic simple">
 <li><p>Write a definition for a <code class="docutils literal notranslate"><span class="pre">Date</span></code> class that represents a date – that is, a year, month, and day of the month.</p></li>
 <li><p>Write an <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method that takes <code class="docutils literal notranslate"><span class="pre">year</span></code>, <code class="docutils literal notranslate"><span class="pre">month</span></code>, and <code class="docutils literal notranslate"><span class="pre">day</span></code> as parameters and assigns the parameters to attributes. Create an object that represents June 22, 1933.</p></li>
-<li><p>Write <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method that uses a format string to format the attributes and returns the result. If you test it with the <code class="docutils literal notranslate"><span class="pre">Date</span></code> you created, the result should be <code class="docutils literal notranslate"><span class="pre">1933-06-22</span></code>.</p></li>
+<li><p>Write <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method that uses an f-string to format the attributes and returns the result. If you test it with the <code class="docutils literal notranslate"><span class="pre">Date</span></code> you created, the result should be <code class="docutils literal notranslate"><span class="pre">1933-06-22</span></code>.</p></li>
 <li><p>Write a method called <code class="docutils literal notranslate"><span class="pre">is_after</span></code> that takes two <code class="docutils literal notranslate"><span class="pre">Date</span></code> objects and returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if the first comes after the second. Create a second object that represents September 17, 1933, and check whether it comes after the first object.</p></li>
 </ol>
 <p>Hint: You might find it useful write a method called <code class="docutils literal notranslate"><span class="pre">to_tuple</span></code> that returns a tuple that contains the attributes of a <code class="docutils literal notranslate"><span class="pre">Date</span></code> object in year-month-day order.</p>

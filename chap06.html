@@ -405,7 +405,7 @@ document.write(`
 <p>In previous chapters, we’ve used built-in functions – like <code class="docutils literal notranslate"><span class="pre">abs</span></code> and <code class="docutils literal notranslate"><span class="pre">round</span></code> – and functions in the math module – like <code class="docutils literal notranslate"><span class="pre">sqrt</span></code> and <code class="docutils literal notranslate"><span class="pre">pow</span></code>.
 When you call one of these functions, it returns a value you can assign to a variable or use as part of an expression.</p>
 <p>The functions we have written so far are different.
-Some use the <code class="docutils literal notranslate"><span class="pre">print</span></code> function to display values, and some use <code class="docutils literal notranslate"><span class="pre">Turtle</span></code> functions to draw figures.
+Some use the <code class="docutils literal notranslate"><span class="pre">print</span></code> function to display values, and some use turtle functions to draw figures.
 But they don’t return values we assign to variables or use in expressions.</p>
 <p>In this chapter, we’ll see how to write functions that return values.</p>
 <section id="some-functions-have-return-values">
@@ -961,7 +961,7 @@ On the other hand, if you looked up the definition of the factorial function, de
 0! &amp;= 1 \\
 n! &amp;= n~(n-1)!
 \end{aligned}\end{split}\]</div>
-<p>This definition says that the factorial of 0 is 1, and the factorial of any other value, <span class="math notranslate nohighlight">\(n\)</span>, is <span class="math notranslate nohighlight">\(n\)</span> multiplied by the factorial of <span class="math notranslate nohighlight">\(n-1\)</span>.</p>
+<p>This definition says that the factorial of <span class="math notranslate nohighlight">\(0\)</span> is <span class="math notranslate nohighlight">\(1\)</span>, and the factorial of any other value, <span class="math notranslate nohighlight">\(n\)</span>, is <span class="math notranslate nohighlight">\(n\)</span> multiplied by the factorial of <span class="math notranslate nohighlight">\(n-1\)</span>.</p>
 <p>If you can write a recursive definition of something, you can write a Python program to evaluate it.
 Following an incremental development process, we’ll start with a function that take <code class="docutils literal notranslate"><span class="pre">n</span></code> as a parameter and always returns <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
 <div class="cell docutils container">
@@ -972,7 +972,7 @@ Following an incremental development process, we’ll start with a function that
 </div>
 </div>
 </div>
-<p>Now let’s add the first part of the definition – if the argument happens to be 0, all we have to do is return 1:</p>
+<p>Now let’s add the first part of the definition – if the argument happens to be <code class="docutils literal notranslate"><span class="pre">0</span></code>, all we have to do is return <code class="docutils literal notranslate"><span class="pre">1</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
@@ -985,7 +985,7 @@ Following an incremental development process, we’ll start with a function that
 </div>
 </div>
 <p>Now let’s fill in the second part – if <code class="docutils literal notranslate"><span class="pre">n</span></code> is not <code class="docutils literal notranslate"><span class="pre">0</span></code>, we have to make a recursive
-call to find the factorial of <span class="math notranslate nohighlight">\(n-1\)</span> and then multiply the result by <span class="math notranslate nohighlight">\(n\)</span>:</p>
+call to find the factorial of <code class="docutils literal notranslate"><span class="pre">n-1</span></code> and then multiply the result by <code class="docutils literal notranslate"><span class="pre">n</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
@@ -1066,7 +1066,7 @@ The recursive definition of factorial implies that you can, by multiplying by <s
 </div>
 </div>
 <p>If you try to follow the flow of execution here, even for small values of <span class="math notranslate nohighlight">\(n\)</span>, your head explodes.
-But according to the leap of faith, if you assume that the two recursive calls work correctly, you can be confident that the last return statement is correct.</p>
+But according to the leap of faith, if you assume that the two recursive calls work correctly, you can be confident that the last <code class="docutils literal notranslate"><span class="pre">return</span></code> statement is correct.</p>
 <p>As an aside, this way of computing Fibonacci numbers is very inefficient.
 In <a class="reference internal" href="chap10.html#section-memos"><span class="std std-ref">Chapter 10</span></a> I’ll explain why and suggest a way to improve it.</p>
 </section>
@@ -1201,7 +1201,7 @@ For example, here is a version of <code class="docutils literal notranslate"><sp
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">space</span></code> is a string of space characters that controls the indentation of
-the output. Here is the result of <code class="docutils literal notranslate"><span class="pre">factorial(4)</span></code> :</p>
+the output. Here is the result of <code class="docutils literal notranslate"><span class="pre">factorial(3)</span></code> :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">factorial</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>

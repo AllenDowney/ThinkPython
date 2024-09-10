@@ -480,7 +480,7 @@ The following table shows the codes for the face cards.</p>
 </div>
 </div>
 </div>
-<p>The first element of <code class="docutils literal notranslate"><span class="pre">rank_names</span></code> is <code class="docutils literal notranslate"><span class="pre">None</span></code> because there is no card with rank zero. By including <code class="docutils literal notranslate"><span class="pre">None</span></code> as a place-keeper, we get a list with the nice property that the index 2 maps to the string <code class="docutils literal notranslate"><span class="pre">'2'</span></code>, and so on.</p>
+<p>The first element of <code class="docutils literal notranslate"><span class="pre">rank_names</span></code> is <code class="docutils literal notranslate"><span class="pre">None</span></code> because there is no card with rank zero. By including <code class="docutils literal notranslate"><span class="pre">None</span></code> as a place-keeper, we get a list with the nice property that the index <code class="docutils literal notranslate"><span class="pre">2</span></code> maps to the string <code class="docutils literal notranslate"><span class="pre">'2'</span></code>, and so on.</p>
 <p>Class variables are associated with the class, rather than an instance of the class, so we can access them like this.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -640,7 +640,7 @@ To save space, I didn’t draw the contents of <code class="docutils literal not
 </div>
 </div>
 <p>They don’t, so it returns <code class="docutils literal notranslate"><span class="pre">False</span></code>.
-We can change this behavior by defining a special method called <code class="docutils literal notranslate"><span class="pre">__eq__</span></code>.</p>
+We can change this behavior by defining the special method <code class="docutils literal notranslate"><span class="pre">__eq__</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">add_method_to</span> Card
@@ -760,7 +760,7 @@ If two cards have the same suit, the one with the higher rank wins.</p>
 </div>
 <p>Tuple comparison compares the first elements from each tuple, which represent the suits.
 If they are the same, it compares the second elements, which represent the ranks.</p>
-<p>Now if we use the <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> operator, it invokes the <code class="docutils literal notranslate"><span class="pre">__lt__</span></code> operator.</p>
+<p>Now if we use the <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> operator, it invokes the <code class="docutils literal notranslate"><span class="pre">__lt__</span></code> method.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">six</span> <span class="o">&lt;</span> <span class="n">queen</span>
@@ -1289,8 +1289,7 @@ If <code class="docutils literal notranslate"><span class="pre">Deck.shuffle</sp
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">find_defining_class</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">method_name</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Find the class where the given method is defined.&quot;&quot;&quot;</span>
     <span class="k">for</span> <span class="n">typ</span> <span class="ow">in</span> <span class="nb">type</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span><span class="o">.</span><span class="n">mro</span><span class="p">():</span>
         <span class="k">if</span> <span class="n">method_name</span> <span class="ow">in</span> <span class="nb">vars</span><span class="p">(</span><span class="n">typ</span><span class="p">):</span>
             <span class="k">return</span> <span class="n">typ</span>
@@ -1344,6 +1343,11 @@ A way of using inheritance to create a new class that is a specialized version o
 <span class="c1"># when a runtime error occurs. Run it before working on the exercises.</span>
 
 <span class="o">%</span><span class="k">xmode</span> Verbose
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Exception reporting mode: Verbose
 </pre></div>
 </div>
 </div>
@@ -1459,7 +1463,6 @@ Write a <code class="docutils literal notranslate"><span class="pre">PokerHand</
 <h3><span class="section-number">17.12.6. </span>Exercise<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <p>A poker hand has a pair if it contains two or more cards with the same rank.
 Write a <code class="docutils literal notranslate"><span class="pre">PokerHand</span></code> method that checks whether a hand contains a pair.</p>
-<p>You can use the following outline to get started.</p>
 <p>To test your method, here’s a hand that has a pair.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1563,7 +1566,7 @@ Consider the following class definition.</p>
 <p><code class="docutils literal notranslate"><span class="pre">__str__</span></code> returns a string representation of the object that includes the name and the contents of the pouch.</p>
 <p><code class="docutils literal notranslate"><span class="pre">put_in_pouch</span></code> takes any object and appends it to <code class="docutils literal notranslate"><span class="pre">contents</span></code>.</p>
 <p>Now let’s see how this class works.
-We’ll create two <code class="docutils literal notranslate"><span class="pre">Kangaroo</span></code> objects with the names Kanga and Roo.</p>
+We’ll create two <code class="docutils literal notranslate"><span class="pre">Kangaroo</span></code> objects with the names <code class="docutils literal notranslate"><span class="pre">'Kanga'</span></code> and <code class="docutils literal notranslate"><span class="pre">'Roo'</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kanga</span> <span class="o">=</span> <span class="n">Kangaroo</span><span class="p">(</span><span class="s1">&#39;Kanga&#39;</span><span class="p">)</span>
@@ -1593,7 +1596,7 @@ We’ll create two <code class="docutils literal notranslate"><span class="pre">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Kanga has pouch contents:
     &#39;wallet&#39;
     &#39;car keys&#39;
-    &lt;__main__.Kangaroo object at 0x7f6e2ea11900&gt;
+    &lt;__main__.Kangaroo object at 0x7f44f9b4e500&gt;
 </pre></div>
 </div>
 </div>
@@ -1609,7 +1612,7 @@ We’ll create two <code class="docutils literal notranslate"><span class="pre">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Roo has pouch contents:
     &#39;wallet&#39;
     &#39;car keys&#39;
-    &lt;__main__.Kangaroo object at 0x7f6e2ea11900&gt;
+    &lt;__main__.Kangaroo object at 0x7f44f9b4e500&gt;
 </pre></div>
 </div>
 </div>

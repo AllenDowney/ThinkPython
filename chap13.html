@@ -454,7 +454,14 @@ Here’s an example that lists the contents of a directory named <code class="do
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;notes.txt&#39;, &#39;mar-2023&#39;, &#39;jan-2023&#39;, &#39;feb-2023&#39;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;digests.dat&#39;,
+ &#39;digests.dir&#39;,
+ &#39;notes.txt&#39;,
+ &#39;new_notes.txt&#39;,
+ &#39;mar-2023&#39;,
+ &#39;digests.bak&#39;,
+ &#39;jan-2023&#39;,
+ &#39;feb-2023&#39;]
 </pre></div>
 </div>
 </div>
@@ -810,7 +817,7 @@ The argument <code class="docutils literal notranslate"><span class="pre">c</spa
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;shelve.DbfilenameShelf at 0x7fdf082603d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;shelve.DbfilenameShelf at 0x7fcc902cc430&gt;
 </pre></div>
 </div>
 </div>
@@ -841,7 +848,7 @@ For example, we can use the bracket operator to add an item, which is a mapping 
 </div>
 </div>
 </div>
-<p>If you make another assignment to an existing key, <code class="docutils literal notranslate"><span class="pre">dbm</span></code> replaces the old value.</p>
+<p>If you make another assignment to an existing key, <code class="docutils literal notranslate"><span class="pre">shelve</span></code> replaces the old value.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Close up view of a cat nose&#39;</span>
@@ -855,7 +862,7 @@ For example, we can use the bracket operator to add an item, which is a mapping 
 </div>
 </div>
 </div>
-<p>Some dictionary methods, like <code class="docutils literal notranslate"><span class="pre">keys</span></code>, <code class="docutils literal notranslate"><span class="pre">values</span></code> and <code class="docutils literal notranslate"><span class="pre">items</span></code>, also work with database objects.</p>
+<p>Some dictionary methods, like <code class="docutils literal notranslate"><span class="pre">keys</span></code>, <code class="docutils literal notranslate"><span class="pre">values</span></code> and <code class="docutils literal notranslate"><span class="pre">items</span></code>, also work with shelf objects.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
@@ -1124,7 +1131,7 @@ We’ll start by using <code class="docutils literal notranslate"><span class="p
 </div>
 </div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">HASH</span></code> object provides an <code class="docutils literal notranslate"><span class="pre">update</span></code> function that takes the contents of the file as an argument.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">HASH</span></code> object provides an <code class="docutils literal notranslate"><span class="pre">update</span></code> method that takes the contents of the file as an argument.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">md5_hash</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">data1</span><span class="p">)</span>
@@ -1204,9 +1211,13 @@ When it finds a directory, it calls itself recursively to search the subdirector
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>photos/notes.txt
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>photos/digests.dat
+photos/digests.dir
+photos/notes.txt
+photos/new_notes.txt
 photos/mar-2023/photo2.jpg
 photos/mar-2023/photo1.jpg
+photos/digests.bak
 photos/jan-2023/photo3.jpg
 photos/jan-2023/photo2.jpg
 photos/jan-2023/photo1.jpg
@@ -1217,49 +1228,13 @@ photos/feb-2023/photo1.jpg
 </div>
 </div>
 <p>The order of the results depends on details of the operating system.</p>
-<p>Here is a more general version of <code class="docutils literal notranslate"><span class="pre">walk</span></code> that takes as a second parameter a function object.
-Instead of printing the path of the files it discovers, it calls this function and passes the path as a parameter.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">walk</span><span class="p">(</span><span class="n">dirname</span><span class="p">,</span> <span class="n">visit_func</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">dirname</span><span class="p">):</span>
-        <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dirname</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
-
-        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
-            <span class="n">visit_func</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">walk</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">visit_func</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Here’s an example where we pass <code class="docutils literal notranslate"><span class="pre">print</span></code> as an argument, so when <code class="docutils literal notranslate"><span class="pre">walk</span></code> calls <code class="docutils literal notranslate"><span class="pre">visit_func</span></code>, it prints the paths of the files it discovers.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">walk</span><span class="p">(</span><span class="s1">&#39;photos&#39;</span><span class="p">,</span> <span class="nb">print</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>photos/notes.txt
-photos/mar-2023/photo2.jpg
-photos/mar-2023/photo1.jpg
-photos/jan-2023/photo3.jpg
-photos/jan-2023/photo2.jpg
-photos/jan-2023/photo1.jpg
-photos/feb-2023/photo2.jpg
-photos/feb-2023/photo1.jpg
-</pre></div>
-</div>
-</div>
-</div>
-<p>The parameter is called <code class="docutils literal notranslate"><span class="pre">visit_func</span></code> because it suggests that as we “walk” around the directory, we “visit” each file.</p>
 </section>
 <section id="debugging">
 <h2><span class="section-number">13.8. </span>Debugging<a class="headerlink" href="#debugging" title="Link to this heading">#</a></h2>
-<p>When you are reading and writing files, you might run into problems with
-whitespace. These errors can be hard to debug because spaces, tabs and
-newlines are normally invisible:</p>
+<p>When you are reading and writing files, you might run into problems with whitespace.
+These errors can be hard to debug because whitespace characters are normally invisible.
+For example, here’s a string that contains spaces, a tab represented by the sequence <code class="docutils literal notranslate"><span class="pre">\t</span></code>, and a newline represented by the sequence <code class="docutils literal notranslate"><span class="pre">\n</span></code>.
+When we print it, we don’t see the whitespace characters.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;1 2</span><span class="se">\t</span><span class="s1"> 3</span><span class="se">\n</span><span class="s1"> 4&#39;</span>
@@ -1274,9 +1249,8 @@ newlines are normally invisible:</p>
 </div>
 </div>
 </div>
-<p>The built-in function <code class="docutils literal notranslate"><span class="pre">repr</span></code> can help. It takes any object as an
-argument and returns a string representation of the object. For strings,
-it represents whitespace characters with backslash sequences:</p>
+<p>The built-in function <code class="docutils literal notranslate"><span class="pre">repr</span></code> can help. It takes any object as an argument and returns a string representation of the object.
+For strings, it represents whitespace characters with backslash sequences.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
@@ -1326,7 +1300,7 @@ A file whose contents are organized to perform certain operations efficiently.</
 <p><strong>key-value stores:</strong>
 A database whose contents are organized like a dictionary with keys that correspond to values.</p>
 <p><strong>binary mode:</strong>
-A way of writing a file so the contents are interpreted as sequence of bytes rather than a sequence of characters.</p>
+A way of opening a file so the contents are interpreted as sequence of bytes rather than a sequence of characters.</p>
 <p><strong>hash function:</strong>
 A function that takes and object and computes an integer, which is sometimes called a digest.</p>
 <p><strong>digest:</strong>
@@ -1340,6 +1314,11 @@ The result of a hash function, especially when it is used to check whether two o
 <span class="c1"># when a runtime error occurs. Run it before working on the exercises.</span>
 
 <span class="o">%</span><span class="k">xmode</span> Verbose
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Exception reporting mode: Verbose
 </pre></div>
 </div>
 </div>
@@ -1396,13 +1375,13 @@ As an example, we’ll work with image files in the <code class="docutils litera
 <li><p>Write a function called <code class="docutils literal notranslate"><span class="pre">add_path</span></code> that takes as arguments a path and a shelf. It should use <code class="docutils literal notranslate"><span class="pre">md5_digest</span></code> to compute a digest of the file contents. Then it should update the shelf, either creating a new item that maps from the digest to a list containing the path, or appending the path to the list if it exists.</p></li>
 </ol>
 <ol class="arabic simple" start="3">
-<li><p>Write a function called <code class="docutils literal notranslate"><span class="pre">process_path</span></code> that takes a path, uses <code class="docutils literal notranslate"><span class="pre">is_image</span></code> to check whether it’s an image file, and uses <code class="docutils literal notranslate"><span class="pre">add_path</span></code> to add it to the shelf.</p></li>
+<li><p>Write a version of <code class="docutils literal notranslate"><span class="pre">walk</span></code> called <code class="docutils literal notranslate"><span class="pre">walk_images</span></code> that takes a directory and walks through the files in the directory and its subdirectories. For each file, it should use <code class="docutils literal notranslate"><span class="pre">is_image</span></code> to check whether it’s an image file and <code class="docutils literal notranslate"><span class="pre">add_path</span></code> to add it to the shelf.</p></li>
 </ol>
 <p>When everything is working, you can use the following program to create the shelf, search the <code class="docutils literal notranslate"><span class="pre">photos</span></code> directory and add paths to the shelf, and then check whether there are multiple files with the same digest.</p>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">shelve</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;photos/digests&#39;</span><span class="p">,</span> <span class="s1">&#39;n&#39;</span><span class="p">)</span>
-<span class="n">walk</span><span class="p">(</span><span class="s1">&#39;photos&#39;</span><span class="p">,</span> <span class="n">process_path</span><span class="p">)</span>
+<span class="n">walk_images</span><span class="p">(</span><span class="s1">&#39;photos&#39;</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">digest</span><span class="p">,</span> <span class="n">paths</span> <span class="ow">in</span> <span class="n">db</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">paths</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>

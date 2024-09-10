@@ -539,7 +539,7 @@ In the following example, the format specifiers indicate that <code class="docut
 </div>
 </div>
 </div>
-<p>We’ll use this f-string to write a function that displays the value of time objects.
+<p>We’ll use this f-string to write a function that displays the value of a <code class="docutils literal notranslate"><span class="pre">Time</span></code>object.
 You can pass an object as an argument in the usual way.
 For example, the following function takes a <code class="docutils literal notranslate"><span class="pre">Time</span></code> object as an argument.</p>
 <div class="cell docutils container">
@@ -782,11 +782,10 @@ And we can confirm that <code class="docutils literal notranslate"><span class="
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">add_time</span></code> is a <strong>pure function</strong> because it does not modify any of the objects passed to it as arguments and its only effect is to return a value.</p>
-<p>Anything that can be done with modifiers can also be done with pure functions.
+<p>Anything that can be done with impure functions can also be done with pure functions.
 In fact, some programming languages only allow pure functions.
-Programs that use pure functions might be less error-prone than programs that use modifiers.
-But modifiers are sometimes convenient and can be more efficient.</p>
-<p>In general, I suggest you write pure functions whenever it is reasonable and resort to modifiers only if there is a compelling advantage.
+Programs that use pure functions might be less error-prone, but impure functions are sometimes convenient and can be more efficient.</p>
+<p>In general, I suggest you write pure functions whenever it is reasonable and resort to impure functions only if there is a compelling advantage.
 This approach might be called a <strong>functional programming style</strong>.</p>
 </section>
 <section id="prototype-and-patch">
@@ -810,7 +809,7 @@ Here’s what happens when we compute the updated end time.</p>
 </div>
 <p>The result is not a valid time.
 The problem is that <code class="docutils literal notranslate"><span class="pre">increment_time</span></code> does not deal with cases where the number of seconds or minutes adds up to more than <code class="docutils literal notranslate"><span class="pre">60</span></code>.</p>
-<p>Here’s an improved version that checks whether <code class="docutils literal notranslate"><span class="pre">second</span></code> exceeds <code class="docutils literal notranslate"><span class="pre">60</span></code> – if so, it increments <code class="docutils literal notranslate"><span class="pre">minute</span></code> – then checks whether <code class="docutils literal notranslate"><span class="pre">minute</span></code> exceeds <code class="docutils literal notranslate"><span class="pre">60</span></code> – if so, it increments <code class="docutils literal notranslate"><span class="pre">hour</span></code>.</p>
+<p>Here’s an improved version that checks whether <code class="docutils literal notranslate"><span class="pre">second</span></code> exceeds or equals <code class="docutils literal notranslate"><span class="pre">60</span></code> – if so, it increments <code class="docutils literal notranslate"><span class="pre">minute</span></code> – then checks whether <code class="docutils literal notranslate"><span class="pre">minute</span></code> exceeds or equals <code class="docutils literal notranslate"><span class="pre">60</span></code> – if so, it increments <code class="docutils literal notranslate"><span class="pre">hour</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">increment_time</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">hours</span><span class="p">,</span> <span class="n">minutes</span><span class="p">,</span> <span class="n">seconds</span><span class="p">):</span>
@@ -862,7 +861,7 @@ We might call <code class="docutils literal notranslate"><span class="pre">add_t
 </div>
 <p>The result is not a valid time.
 So let’s try a different approach, using the <code class="docutils literal notranslate"><span class="pre">divmod</span></code> function.
-We’ll make a copy of <code class="docutils literal notranslate"><span class="pre">start</span></code> and modify it by incrementing the <code class="docutils literal notranslate"><span class="pre">minutes</span></code> field.</p>
+We’ll make a copy of <code class="docutils literal notranslate"><span class="pre">start</span></code> and modify it by incrementing the <code class="docutils literal notranslate"><span class="pre">minute</span></code> attribute.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">end</span> <span class="o">=</span> <span class="n">copy</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>
@@ -1170,7 +1169,7 @@ Consider asking:</p>
 <li><p>“What is the difference between a class and a type?”</p></li>
 <li><p>“What is the difference between an object and an instance?”</p></li>
 <li><p>“What is the difference between a variable and an attribute?”</p></li>
-<li><p>“What are the pros and cons of pure functions compared to modifiers?”</p></li>
+<li><p>“What are the pros and cons of pure functions compared to impure functions?”</p></li>
 </ul>
 <p>Because we are just getting started with object oriented programming, the code in this chapter is not idiomatic – it is not the kind of code experienced programmers write.
 If you ask a virtual assistant for help with the exercises, you will probably see features we have not covered yet.

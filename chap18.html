@@ -560,7 +560,7 @@ If <code class="docutils literal notranslate"><span class="pre">word_counter</sp
 </div>
 </div>
 <p>The result is a set that contains the words in the document that don’t appear in the word list.</p>
-<p>The comparison operators work with sets.
+<p>The relational operators work with sets.
 For example, <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code> checks whether one set is a subset of another, including the possibility that they are equal.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -604,7 +604,7 @@ With sets, we can rewrite it like this.</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">Counter</span></code> is like a set, except that if an element appears more than once, the <code class="docutils literal notranslate"><span class="pre">Counter</span></code> keeps track of how many times it appears.
 If you are familiar with the mathematical idea of a “multiset”, a <code class="docutils literal notranslate"><span class="pre">Counter</span></code> is a
 natural way to represent a multiset.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">Counter</span></code> class is defined in a standard module called <code class="docutils literal notranslate"><span class="pre">collections</span></code>, so you have to import it.
+<p>The <code class="docutils literal notranslate"><span class="pre">Counter</span></code> class is defined in a module called <code class="docutils literal notranslate"><span class="pre">collections</span></code>, so you have to import it.
 Then you can use the class object as a function and pass as an argument a string, list, or any other kind of sequence.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1207,7 +1207,7 @@ In that case, you can define a new class that inherits from the named tuple.</p>
 </div>
 </div>
 </div>
-<p>You can call this function with any number of positional arguments.</p>
+<p>You can call this function with any number of arguments.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mean</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
@@ -1499,7 +1499,7 @@ Here are some question to ask an AI.</p>
 <li><p>“What are some uses of packing and unpacking keyword arguments?”</p></li>
 <li><p>“How does <code class="docutils literal notranslate"><span class="pre">unittest</span></code> do test discovery?”</p></li>
 </ul>
-<p>“Along with <code class="docutils literal notranslate"><span class="pre">assertequal</span></code>, what are the most commonly used methods in <code class="docutils literal notranslate"><span class="pre">unittest.TestCase</span></code>?”</p>
+<p>“Along with <code class="docutils literal notranslate"><span class="pre">assertEqual</span></code>, what are the most commonly used methods in <code class="docutils literal notranslate"><span class="pre">unittest.TestCase</span></code>?”</p>
 <p>“What are the pros and cons of <code class="docutils literal notranslate"><span class="pre">doctest</span></code> and <code class="docutils literal notranslate"><span class="pre">unittest</span></code>?”</p>
 <p>For the following exercises, consider asking an AI for help, but as always, remember to test the results.</p>
 </section>

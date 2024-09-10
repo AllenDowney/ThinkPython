@@ -619,7 +619,7 @@ A new assignment makes an existing variable refer to a new value (and stop refer
 <p>The following figure shows what these assignments looks like in a state diagram.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="_images/c4b46ebffbfd50b3ea5d02c61978e1defa09c7b6e61d0a88e7a1950aafb10841.png" src="_images/c4b46ebffbfd50b3ea5d02c61978e1defa09c7b6e61d0a88e7a1950aafb10841.png" />
+<img alt="_images/5f2c6acf2632453c84d4a58782db35679dedcd804dd1683fca0560ccb15d92ea.png" src="_images/5f2c6acf2632453c84d4a58782db35679dedcd804dd1683fca0560ccb15d92ea.png" />
 </div>
 </div>
 <p>The dotted arrow indicates that <code class="docutils literal notranslate"><span class="pre">x</span></code> no longer refers to <code class="docutils literal notranslate"><span class="pre">5</span></code>.
@@ -664,7 +664,23 @@ with a simple assignment:</p>
 </div>
 </div>
 </div>
-<p>Increasing the value of a variable is called an <strong>increment</strong>; decreasing the value is called a <strong>decrement</strong>.</p>
+<p>Increasing the value of a variable is called an <strong>increment</strong>; decreasing the value is called a <strong>decrement</strong>.
+Because these operations are so common, Python provides <strong>augmented assignment operators</strong> that update a variable more concisely.
+For example, the <code class="docutils literal notranslate"><span class="pre">+=</span></code> operator increments a variable by the given amount.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">+=</span> <span class="mi">2</span>
+<span class="n">y</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+<p>There are augmented assignment operators for the other arithmetic operators, including <code class="docutils literal notranslate"><span class="pre">-=</span></code> and <code class="docutils literal notranslate"><span class="pre">*=</span></code>.</p>
 </section>
 <section id="looping-and-counting">
 <h2><span class="section-number">7.4. </span>Looping and counting<a class="headerlink" href="#looping-and-counting" title="Link to this heading">#</a></h2>
@@ -675,7 +691,7 @@ with a simple assignment:</p>
 
 <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;words.txt&#39;</span><span class="p">):</span>
     <span class="n">word</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-    <span class="n">total</span> <span class="o">=</span> <span class="n">total</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="n">total</span> <span class="o">+=</span> <span class="mi">1</span>
 </pre></div>
 </div>
 </div>
@@ -706,7 +722,7 @@ So when the loop exits, <code class="docutils literal notranslate"><span class="
     <span class="n">word</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
     <span class="n">total</span> <span class="o">=</span> <span class="n">total</span> <span class="o">+</span> <span class="mi">1</span>
     <span class="k">if</span> <span class="n">has_e</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>
-        <span class="n">count</span> <span class="o">=</span> <span class="n">count</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
 </pre></div>
 </div>
 </div>
@@ -1163,7 +1179,7 @@ Fill in the function and then check that all tests pass.</p>
 <li><p>Longer words earn 1 point per letter.</p></li>
 <li><p>Each puzzle includes at least one “pangram” which uses every letter. These are worth 7 extra points!</p></li>
 </ul>
-<p>Write a function called <code class="docutils literal notranslate"><span class="pre">score_word</span></code> that takes a word and a string of available lessons and returns its score.
+<p>Write a function called <code class="docutils literal notranslate"><span class="pre">score_word</span></code> that takes a word and a string of available letters and returns its score.
 You can assume that the word is acceptable.</p>
 <p>Again, here’s an outline of the function with doctests.</p>
 <div class="cell docutils container">
