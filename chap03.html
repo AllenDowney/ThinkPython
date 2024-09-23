@@ -755,7 +755,7 @@ Like state diagrams, stack diagrams show the value of each variable, but they al
 <p>Each function is represented by a <strong>frame</strong>.
 A frame is a box with the name of a function on the outside and the parameters and local variables of the function on the inside.</p>
 <p>Here’s the stack diagram for the previous example.</p>
-<div class="cell tag_remove-input docutils container">
+<div class="cell tag_remove-input tag_keep docutils container">
 <div class="cell_output docutils container">
 <img alt="_images/4203fc81cc8d5aa986a00dafa5e0a563fbc55ef01723367c46fda7d7b1dee11c.png" src="_images/4203fc81cc8d5aa986a00dafa5e0a563fbc55ef01723367c46fda7d7b1dee11c.png" />
 </div>
@@ -780,7 +780,7 @@ To see an example, I’ll define a version of <code class="docutils literal notr
 </div>
 </div>
 <p>Now here’s what happens when we run <code class="docutils literal notranslate"><span class="pre">cat_twice</span></code>.</p>
-<div class="cell tag_remove-print docutils container">
+<div class="cell tag_remove-print tag_keep docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This cell tells Jupyter to provide detailed debugging information</span>
 <span class="c1"># when a runtime error occurs, including a traceback.</span>
@@ -889,7 +889,7 @@ A list of the functions that are executing, printed when an exception occurs.</p
 </section>
 <section id="exercises">
 <h2><span class="section-number">3.11. </span>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
-<div class="cell tag_remove-print docutils container">
+<div class="cell tag_remove-print tag_keep docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This cell tells Jupyter to provide detailed debugging information</span>
 <span class="c1"># when a runtime error occurs. Run it before working on the exercises.</span>
@@ -932,7 +932,7 @@ If you are curious about the history of this great debate, ask a virtual assista
 <p>Write a function named <code class="docutils literal notranslate"><span class="pre">print_right</span></code> that takes a string named <code class="docutils literal notranslate"><span class="pre">text</span></code> as a parameter and prints the string with enough leading spaces that the last letter of the string is in the 40th column of the display.</p>
 <p>Hint: Use the <code class="docutils literal notranslate"><span class="pre">len</span></code> function, the string concatenation operator (<code class="docutils literal notranslate"><span class="pre">+</span></code>) and the string repetition operator (<code class="docutils literal notranslate"><span class="pre">*</span></code>).</p>
 <p>Here’s an example that shows how it should work.</p>
-<div class="cell docutils container">
+<div class="cell tag_keep docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">print_right</span><span class="p">(</span><span class="s2">&quot;Monty&quot;</span><span class="p">)</span>
 <span class="n">print_right</span><span class="p">(</span><span class="s2">&quot;Python&#39;s&quot;</span><span class="p">)</span>
@@ -952,7 +952,7 @@ If you are curious about the history of this great debate, ask a virtual assista
 <section id="id1">
 <h3><span class="section-number">3.11.3. </span>Exercise<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p>Write a function called <code class="docutils literal notranslate"><span class="pre">triangle</span></code> that takes a string and an integer and draws a pyramid with the given height, made up using copies of the string. Here’s an example of a pyramid with <code class="docutils literal notranslate"><span class="pre">5</span></code> levels, using the string <code class="docutils literal notranslate"><span class="pre">'L'</span></code>.</p>
-<div class="cell docutils container">
+<div class="cell tag_keep docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">triangle</span><span class="p">(</span><span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 </pre></div>
@@ -972,7 +972,7 @@ LLLLL
 <section id="id2">
 <h3><span class="section-number">3.11.4. </span>Exercise<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <p>Write a function called <code class="docutils literal notranslate"><span class="pre">rectangle</span></code> that takes a string and two integers and draws a rectangle with the given width and height, made up using copies of the string. Here’s an example of a rectangle with width <code class="docutils literal notranslate"><span class="pre">5</span></code> and height <code class="docutils literal notranslate"><span class="pre">4</span></code>, made up of the string <code class="docutils literal notranslate"><span class="pre">'H'</span></code>.</p>
-<div class="cell docutils container">
+<div class="cell tag_keep docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rectangle</span><span class="p">(</span><span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 </pre></div>
@@ -1001,7 +1001,7 @@ Take one down, pass it around<br />
 <p>Write a function called <code class="docutils literal notranslate"><span class="pre">bottle_verse</span></code> that takes a number as a parameter and displays the verse that starts with the given number of bottles.</p>
 <p>Hint: Consider starting with a function that can print the first, second, or last line of the verse, and then use it to write <code class="docutils literal notranslate"><span class="pre">bottle_verse</span></code>.</p>
 <p>Use this function call to display the first verse.</p>
-<div class="cell docutils container">
+<div class="cell tag_keep docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bottle_verse</span><span class="p">(</span><span class="mi">99</span><span class="p">)</span>
 </pre></div>
@@ -1018,7 +1018,7 @@ Take one down, pass it around
 </div>
 <p>If you want to print the whole song, you can use this <code class="docutils literal notranslate"><span class="pre">for</span></code> loop, which counts down from <code class="docutils literal notranslate"><span class="pre">99</span></code> to <code class="docutils literal notranslate"><span class="pre">1</span></code>.
 You don’t have to completely understand this example—we’ll learn more about <code class="docutils literal notranslate"><span class="pre">for</span></code> loops and the <code class="docutils literal notranslate"><span class="pre">range</span></code> function later.</p>
-<div class="cell tag_remove-output docutils container">
+<div class="cell tag_remove-output tag_keep docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">99</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
     <span class="n">bottle_verse</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
@@ -1027,6 +1027,10 @@ You don’t have to completely understand this example—we’ll learn more abou
 </div>
 </div>
 </div>
+<p><a class="reference external" href="https://allendowney.github.io/ThinkPython/index.html">Think Python: 3rd Edition</a></p>
+<p>Copyright 2024 <a class="reference external" href="https://allendowney.com">Allen B. Downey</a></p>
+<p>Code license: <a class="reference external" href="https://mit-license.org/">MIT License</a></p>
+<p>Text license: <a class="reference external" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International</a></p>
 </section>
 </section>
 </section>
