@@ -464,8 +464,8 @@ This vocabulary is important – you will need it to understand the rest of the 
 </div>
 <p>Notice that the result of the division is <code class="docutils literal notranslate"><span class="pre">42.0</span></code> rather than <code class="docutils literal notranslate"><span class="pre">42</span></code>. That’s because there are two types of numbers in Python:</p>
 <ul class="simple">
-<li><p><strong>integers</strong>, which represent whole numbers, and</p></li>
-<li><p><strong>floating-point numbers</strong>, which represent numbers with a decimal point.</p></li>
+<li><p><strong>integers</strong>, which represent numbers with no fractional or decimal part, and</p></li>
+<li><p><strong>floating-point numbers</strong>, which represent integers and numbers with a decimal point.</p></li>
 </ul>
 <p>If you add, subtract, or multiply two integers, the result is an integer.
 But if you divide two integers, the result is a floating-point number.
@@ -579,7 +579,7 @@ For example, the expression <code class="docutils literal notranslate"><span cla
 <section id="arithmetic-functions">
 <h2><span class="section-number">1.3. </span>Arithmetic functions<a class="headerlink" href="#arithmetic-functions" title="Link to this heading">#</a></h2>
 <p>In addition to the arithmetic operators, Python provides a few <strong>functions</strong> that work with numbers.
-For example, the <code class="docutils literal notranslate"><span class="pre">round</span></code> function takes a floating-point number and rounds it off to the nearest whole number.</p>
+For example, the <code class="docutils literal notranslate"><span class="pre">round</span></code> function takes a floating-point number and rounds it off to the nearest integer.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">round</span><span class="p">(</span><span class="mf">42.4</span><span class="p">)</span>
@@ -752,7 +752,7 @@ To write a string, we can put a sequence of letters inside straight quotation ma
 </div>
 </div>
 <p>The other arithmetic operators don’t work with strings.</p>
-<p>Python provides a function called <code class="docutils literal notranslate"><span class="pre">len</span></code> that computes the length of a string.`</p>
+<p>Python provides a function called <code class="docutils literal notranslate"><span class="pre">len</span></code> that computes the length of a string.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="s1">&#39;Spam&#39;</span><span class="p">)</span>
@@ -999,9 +999,9 @@ a big difference in a formal language.</p>
 <p><strong>arithmetic operator:</strong>
 A symbol, like <code class="docutils literal notranslate"><span class="pre">+</span></code> and <code class="docutils literal notranslate"><span class="pre">*</span></code>, that denotes an arithmetic operation like addition or multiplication.</p>
 <p><strong>integer:</strong>
-A type that represents whole numbers.</p>
+A type that represents numbers with no fractional or decimal part.</p>
 <p><strong>floating-point:</strong>
-A type that represents numbers with fractional parts.</p>
+A type that represents integers and numbers with decimal parts.</p>
 <p><strong>integer division:</strong>
 An operator, <code class="docutils literal notranslate"><span class="pre">//</span></code>, that divides two numbers and rounds down to an integer.</p>
 <p><strong>expression:</strong>
@@ -1064,7 +1064,7 @@ The process of finding and correcting errors.</p>
 <ul class="simple">
 <li><p>Earlier I mentioned bitwise operators but I didn’t explain why the value of <code class="docutils literal notranslate"><span class="pre">7</span> <span class="pre">^</span> <span class="pre">2</span></code> is 5. Try asking “What are the bitwise operators in Python?” or “What is the value of <code class="docutils literal notranslate"><span class="pre">7</span> <span class="pre">XOR</span> <span class="pre">2</span></code>?”</p></li>
 <li><p>I also mentioned the order of operations. For more details, ask “What is the order of operations in Python?”</p></li>
-<li><p>The <code class="docutils literal notranslate"><span class="pre">round</span></code> function, which we used to round a floating-point number to the nearest whole number, can take a second argument. Try asking “What are the arguments of the round function?” or “How do I round pi off to three decimal places?”</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">round</span></code> function, which we used to round a floating-point number to the nearest integer, can take a second argument. Try asking “What are the arguments of the round function?” or “How do I round pi off to three decimal places?”</p></li>
 <li><p>There’s one more arithmetic operator I didn’t mention; try asking “What is the modulus operator in Python?”</p></li>
 </ul>
 <p>Most virtual assistants know about Python, so they answer questions like this pretty reliably.
