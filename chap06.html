@@ -1024,7 +1024,7 @@ process.</p>
 <p>The following figure shows the stack diagram for this sequence of function calls.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="_images/f3935334fcd59aa65b4e7a8ad44af2bc442ddaadef59db22add59927b85d1ab2.png" src="_images/f3935334fcd59aa65b4e7a8ad44af2bc442ddaadef59db22add59927b85d1ab2.png" />
+<img alt="_images/726efd741b2b10a7e5f8789b876a18d14f2818ebbdfc92ab4c41430c6422fcfc.png" src="_images/726efd741b2b10a7e5f8789b876a18d14f2818ebbdfc92ab4c41430c6422fcfc.png" />
 </div>
 </div>
 <p>The return values are shown being passed back up the stack.
@@ -1085,8 +1085,7 @@ In <a class="reference internal" href="chap10.html#section-memos"><span class="s
 </div>
 </div>
 </div>
-<p>It looks like an infinite recursion. How can that be? The function has a
-base case – when <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">==</span> <span class="pre">0</span></code>.
+<p>It looks like an infinite recursion. How can that be? The function has base cases when <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">==</span> <span class="pre">1</span></code> or <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">==</span> <span class="pre">0</span></code>.
 But if <code class="docutils literal notranslate"><span class="pre">n</span></code> is not an integer, we can <em>miss</em> the base case and recurse forever.</p>
 <p>In this example, the initial value of <code class="docutils literal notranslate"><span class="pre">n</span></code> is <code class="docutils literal notranslate"><span class="pre">1.5</span></code>.
 In the first recursive call, the value of <code class="docutils literal notranslate"><span class="pre">n</span></code> is <code class="docutils literal notranslate"><span class="pre">0.5</span></code>.
