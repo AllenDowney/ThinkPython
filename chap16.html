@@ -1214,14 +1214,248 @@ If you do, you’ll want include as part of the prompt the class definitions for
 <section id="exercise">
 <h3><span class="section-number">16.10.2. </span>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h3>
 <p>Write an <code class="docutils literal notranslate"><span class="pre">__eq__</span></code> method for the <code class="docutils literal notranslate"><span class="pre">Line</span></code> class that returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if the <code class="docutils literal notranslate"><span class="pre">Line</span></code> objects refer to <code class="docutils literal notranslate"><span class="pre">Point</span></code> objects that are equivalent, in either order.</p>
+<p>You can use the following outline to get started.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">add_method_to</span> Line
+
+def __eq__(self, other):
+    return None
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can use these examples to test your code.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start1</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">start2</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">end</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This example should be <code class="docutils literal notranslate"><span class="pre">True</span></code> because the <code class="docutils literal notranslate"><span class="pre">Line</span></code> objects refer to <code class="docutils literal notranslate"><span class="pre">Point</span></code> objects that are equivalent, in the same order.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">line_a</span> <span class="o">=</span> <span class="n">Line</span><span class="p">(</span><span class="n">start1</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
+<span class="n">line_b</span> <span class="o">=</span> <span class="n">Line</span><span class="p">(</span><span class="n">start2</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
+<span class="n">line_a</span> <span class="o">==</span> <span class="n">line_b</span>    <span class="c1"># should be True</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">line_c</span> <span class="o">=</span> <span class="n">Line</span><span class="p">(</span><span class="n">end</span><span class="p">,</span> <span class="n">start1</span><span class="p">)</span>
+<span class="n">line_a</span> <span class="o">==</span> <span class="n">line_c</span>     <span class="c1"># should be True</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>Equivalence should always be transitive – that is, if <code class="docutils literal notranslate"><span class="pre">line_a</span></code> and <code class="docutils literal notranslate"><span class="pre">line_b</span></code> are equivalent, and <code class="docutils literal notranslate"><span class="pre">line_a</span></code> and <code class="docutils literal notranslate"><span class="pre">line_c</span></code> are equivalent, then <code class="docutils literal notranslate"><span class="pre">line_b</span></code> and <code class="docutils literal notranslate"><span class="pre">line_c</span></code> should also be equivalent.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">line_b</span> <span class="o">==</span> <span class="n">line_c</span>     <span class="c1"># should be True</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>This example should be <code class="docutils literal notranslate"><span class="pre">False</span></code> because the <code class="docutils literal notranslate"><span class="pre">Line</span></code> objects refer to <code class="docutils literal notranslate"><span class="pre">Point</span></code> objects that are not equivalent.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">line_d</span> <span class="o">=</span> <span class="n">Line</span><span class="p">(</span><span class="n">start1</span><span class="p">,</span> <span class="n">start2</span><span class="p">)</span>
+<span class="n">line_a</span> <span class="o">==</span> <span class="n">line_d</span>    <span class="c1"># should be False</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="id1">
 <h3><span class="section-number">16.10.3. </span>Exercise<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p>Write a <code class="docutils literal notranslate"><span class="pre">Line</span></code> method called <code class="docutils literal notranslate"><span class="pre">midpoint</span></code> that computes the midpoint of a line segment and returns the result as a <code class="docutils literal notranslate"><span class="pre">Point</span></code> object.</p>
+<p>You can use the following outline to get started.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">add_method_to</span> Line
+
+    def midpoint(self):
+        return Point(0, 0)
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can use the following examples to test your code and draw the result.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">end1</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">end2</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">150</span><span class="p">)</span>
+<span class="n">line1</span> <span class="o">=</span> <span class="n">Line</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end1</span><span class="p">)</span>
+<span class="n">line2</span> <span class="o">=</span> <span class="n">Line</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mid1</span> <span class="o">=</span> <span class="n">line1</span><span class="o">.</span><span class="n">midpoint</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mid1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Point(150.0, 0.0)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mid2</span> <span class="o">=</span> <span class="n">line2</span><span class="o">.</span><span class="n">midpoint</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mid2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Point(0.0, 75.0)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">line3</span> <span class="o">=</span> <span class="n">Line</span><span class="p">(</span><span class="n">mid1</span><span class="p">,</span> <span class="n">mid2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">make_turtle</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">shape</span> <span class="ow">in</span> <span class="p">[</span><span class="n">line1</span><span class="p">,</span> <span class="n">line2</span><span class="p">,</span> <span class="n">line3</span><span class="p">]:</span>
+    <span class="n">shape</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><svg width="300" height="150">
+    <rect width="100%" height="100%" fill="#F3F3F7" />
+
+<line x1="0" y1="0" x2="300" y2="0"
+    stroke="#663399" stroke-width="2" />
+<line x1="0" y1="0" x2="0" y2="150"
+    stroke="#663399" stroke-width="2" />
+<line x1="150.0" y1="0.0" x2="0.0" y2="75.0"
+    stroke="#663399" stroke-width="2" />
+
+<g transform="rotate(-90.0,0.0,75.0) translate(0.0, 75.0)">
+    <circle stroke="#63A375" stroke-width="2" fill="transparent" r="5.5" cx="0" cy="0"/>
+    <polygon points="0,12 2,9 -2,9" style="fill:#63A375;stroke:#63A375;stroke-width:2"/>
+</g>
+
+</svg></div></div>
+</div>
 </section>
 <section id="id2">
 <h3><span class="section-number">16.10.4. </span>Exercise<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <p>Write a <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code> method called <code class="docutils literal notranslate"><span class="pre">midpoint</span></code> that find the point in the center of a rectangle and returns the result as a <code class="docutils literal notranslate"><span class="pre">Point</span></code> object.</p>
+<p>You can use the following outline to get started.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">add_method_to</span> Rectangle
+
+    def midpoint(self):
+        return Point(0, 0)
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can use the following example to test your code.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">corner</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">rectangle</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="n">corner</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mid</span> <span class="o">=</span> <span class="n">rectangle</span><span class="o">.</span><span class="n">midpoint</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mid</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Point(80.0, 60.0)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">diagonal</span> <span class="o">=</span> <span class="n">Line</span><span class="p">(</span><span class="n">corner</span><span class="p">,</span> <span class="n">mid</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">make_turtle</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">shape</span> <span class="ow">in</span> <span class="p">[</span><span class="n">line1</span><span class="p">,</span> <span class="n">line2</span><span class="p">,</span> <span class="n">rectangle</span><span class="p">,</span> <span class="n">diagonal</span><span class="p">]:</span>
+    <span class="n">shape</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><svg width="300" height="150">
+    <rect width="100%" height="100%" fill="#F3F3F7" />
+
+<line x1="0" y1="0" x2="300" y2="0"
+    stroke="#663399" stroke-width="2" />
+<line x1="0" y1="0" x2="0" y2="150"
+    stroke="#663399" stroke-width="2" />
+<line x1="30" y1="20" x2="130" y2="20"
+    stroke="#663399" stroke-width="2" />
+<line x1="130" y1="20" x2="130" y2="100"
+    stroke="#663399" stroke-width="2" />
+<line x1="130" y1="100" x2="30" y2="100"
+    stroke="#663399" stroke-width="2" />
+<line x1="30" y1="100" x2="30" y2="20"
+    stroke="#663399" stroke-width="2" />
+<line x1="30" y1="20" x2="80.0" y2="60.0"
+    stroke="#663399" stroke-width="2" />
+
+<g transform="rotate(-90.0,80.0,60.0) translate(80.0, 60.0)">
+    <circle stroke="#63A375" stroke-width="2" fill="transparent" r="5.5" cx="0" cy="0"/>
+    <polygon points="0,12 2,9 -2,9" style="fill:#63A375;stroke:#63A375;stroke-width:2"/>
+</g>
+
+</svg></div></div>
+</div>
 </section>
 <section id="id3">
 <h3><span class="section-number">16.10.5. </span>Exercise<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
@@ -1231,11 +1465,208 @@ If you do, you’ll want include as part of the prompt the class definitions for
 <li><p>Computes the midpoints of the four lines.</p></li>
 <li><p>Makes and returns a list of two <code class="docutils literal notranslate"><span class="pre">Line</span></code> objects that represent lines connecting opposite midpoints, forming a cross through the middle of the rectangle.</p></li>
 </ol>
+<p>You can use this outline to get started.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">add_method_to</span> Rectangle
+
+    def make_diagonals(self):
+        return []
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can use the following example to test your code.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">corner</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">rectangle</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="n">corner</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lines</span> <span class="o">=</span> <span class="n">rectangle</span><span class="o">.</span><span class="n">make_cross</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">make_turtle</span><span class="p">()</span>
+
+<span class="n">rectangle</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+    <span class="n">line</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><svg width="300" height="150">
+    <rect width="100%" height="100%" fill="#F3F3F7" />
+
+<line x1="30" y1="20" x2="130" y2="20"
+    stroke="#663399" stroke-width="2" />
+<line x1="130" y1="20" x2="130" y2="100"
+    stroke="#663399" stroke-width="2" />
+<line x1="130" y1="100" x2="30" y2="100"
+    stroke="#663399" stroke-width="2" />
+<line x1="30" y1="100" x2="30" y2="20"
+    stroke="#663399" stroke-width="2" />
+<line x1="80.0" y1="20.0" x2="80.0" y2="100.0"
+    stroke="#663399" stroke-width="2" />
+<line x1="130.0" y1="60.0" x2="30.0" y2="60.0"
+    stroke="#663399" stroke-width="2" />
+
+<g transform="rotate(-90.0,30.0,60.0) translate(30.0, 60.0)">
+    <circle stroke="#63A375" stroke-width="2" fill="transparent" r="5.5" cx="0" cy="0"/>
+    <polygon points="0,12 2,9 -2,9" style="fill:#63A375;stroke:#63A375;stroke-width:2"/>
+</g>
+
+</svg></div></div>
+</div>
 </section>
 <section id="id4">
 <h3><span class="section-number">16.10.6. </span>Exercise<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <p>Write a definition for a class named <code class="docutils literal notranslate"><span class="pre">Circle</span></code> with attributes <code class="docutils literal notranslate"><span class="pre">center</span></code> and <code class="docutils literal notranslate"><span class="pre">radius</span></code>, where <code class="docutils literal notranslate"><span class="pre">center</span></code> is a Point object and <code class="docutils literal notranslate"><span class="pre">radius</span></code> is a number.
 Include special methods <code class="docutils literal notranslate"><span class="pre">__init__</span></code> and a <code class="docutils literal notranslate"><span class="pre">__str__</span></code>, and a method called <code class="docutils literal notranslate"><span class="pre">draw</span></code> that uses <code class="docutils literal notranslate"><span class="pre">jupyturtle</span></code> functions to draw the circle.</p>
+<p>You can use the following function, which is a version of the <code class="docutils literal notranslate"><span class="pre">circle</span></code> function we wrote in Chapter 4.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">jupyturtle</span> <span class="kn">import</span> <span class="n">make_turtle</span><span class="p">,</span> <span class="n">forward</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span>
+<span class="kn">import</span> <span class="nn">math</span>
+    
+<span class="k">def</span> <span class="nf">draw_circle</span><span class="p">(</span><span class="n">radius</span><span class="p">):</span>
+    <span class="n">circumference</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">radius</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="mi">30</span>
+    <span class="n">length</span> <span class="o">=</span> <span class="n">circumference</span> <span class="o">/</span> <span class="n">n</span>
+    <span class="n">angle</span> <span class="o">=</span> <span class="mi">360</span> <span class="o">/</span> <span class="n">n</span>
+    <span class="n">left</span><span class="p">(</span><span class="n">angle</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">forward</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
+        <span class="n">left</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can use the following example to test your code.
+We’ll start with a square <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code> with width and height <code class="docutils literal notranslate"><span class="pre">100</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">corner</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">rectangle</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">corner</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The following code should create a <code class="docutils literal notranslate"><span class="pre">Circle</span></code> that fits inside the square.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">center</span> <span class="o">=</span> <span class="n">rectangle</span><span class="o">.</span><span class="n">midpoint</span><span class="p">()</span>
+<span class="n">radius</span> <span class="o">=</span> <span class="n">rectangle</span><span class="o">.</span><span class="n">height</span> <span class="o">/</span> <span class="mi">2</span>
+
+<span class="n">circle</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">(</span><span class="n">center</span><span class="p">,</span> <span class="n">radius</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">circle</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Circle(Point(70.0, 70.0), 50.0)
+</pre></div>
+</div>
+</div>
+</div>
+<p>If everything worked correctly, the following code should draw the circle inside the square (touching on all four sides).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">make_turtle</span><span class="p">(</span><span class="n">delay</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
+
+<span class="n">rectangle</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="n">circle</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><svg width="300" height="150">
+    <rect width="100%" height="100%" fill="#F3F3F7" />
+
+<line x1="20" y1="20" x2="120" y2="20"
+    stroke="#663399" stroke-width="2" />
+<line x1="120" y1="20" x2="120" y2="120"
+    stroke="#663399" stroke-width="2" />
+<line x1="120" y1="120" x2="20" y2="120"
+    stroke="#663399" stroke-width="2" />
+<line x1="20" y1="120" x2="20" y2="20"
+    stroke="#663399" stroke-width="2" />
+<line x1="120.0" y1="70.0" x2="118.9" y2="59.6"
+    stroke="#663399" stroke-width="2" />
+<line x1="118.9" y1="59.6" x2="115.7" y2="49.6"
+    stroke="#663399" stroke-width="2" />
+<line x1="115.7" y1="49.6" x2="110.4" y2="40.6"
+    stroke="#663399" stroke-width="2" />
+<line x1="110.4" y1="40.6" x2="103.4" y2="32.8"
+    stroke="#663399" stroke-width="2" />
+<line x1="103.4" y1="32.8" x2="95.0" y2="26.6"
+    stroke="#663399" stroke-width="2" />
+<line x1="95.0" y1="26.6" x2="85.4" y2="22.4"
+    stroke="#663399" stroke-width="2" />
+<line x1="85.4" y1="22.4" x2="75.1" y2="20.2"
+    stroke="#663399" stroke-width="2" />
+<line x1="75.1" y1="20.2" x2="64.7" y2="20.2"
+    stroke="#663399" stroke-width="2" />
+<line x1="64.7" y1="20.2" x2="54.4" y2="22.4"
+    stroke="#663399" stroke-width="2" />
+<line x1="54.4" y1="22.4" x2="44.9" y2="26.6"
+    stroke="#663399" stroke-width="2" />
+<line x1="44.9" y1="26.6" x2="36.4" y2="32.8"
+    stroke="#663399" stroke-width="2" />
+<line x1="36.4" y1="32.8" x2="29.4" y2="40.6"
+    stroke="#663399" stroke-width="2" />
+<line x1="29.4" y1="40.6" x2="24.1" y2="49.6"
+    stroke="#663399" stroke-width="2" />
+<line x1="24.1" y1="49.6" x2="20.9" y2="59.6"
+    stroke="#663399" stroke-width="2" />
+<line x1="20.9" y1="59.6" x2="19.8" y2="70.0"
+    stroke="#663399" stroke-width="2" />
+<line x1="19.8" y1="70.0" x2="20.9" y2="80.4"
+    stroke="#663399" stroke-width="2" />
+<line x1="20.9" y1="80.4" x2="24.1" y2="90.4"
+    stroke="#663399" stroke-width="2" />
+<line x1="24.1" y1="90.4" x2="29.4" y2="99.4"
+    stroke="#663399" stroke-width="2" />
+<line x1="29.4" y1="99.4" x2="36.4" y2="107.2"
+    stroke="#663399" stroke-width="2" />
+<line x1="36.4" y1="107.2" x2="44.9" y2="113.4"
+    stroke="#663399" stroke-width="2" />
+<line x1="44.9" y1="113.4" x2="54.4" y2="117.6"
+    stroke="#663399" stroke-width="2" />
+<line x1="54.4" y1="117.6" x2="64.7" y2="119.8"
+    stroke="#663399" stroke-width="2" />
+<line x1="64.7" y1="119.8" x2="75.1" y2="119.8"
+    stroke="#663399" stroke-width="2" />
+<line x1="75.1" y1="119.8" x2="85.4" y2="117.6"
+    stroke="#663399" stroke-width="2" />
+<line x1="85.4" y1="117.6" x2="95.0" y2="113.4"
+    stroke="#663399" stroke-width="2" />
+<line x1="95.0" y1="113.4" x2="103.4" y2="107.2"
+    stroke="#663399" stroke-width="2" />
+<line x1="103.4" y1="107.2" x2="110.4" y2="99.4"
+    stroke="#663399" stroke-width="2" />
+<line x1="110.4" y1="99.4" x2="115.7" y2="90.4"
+    stroke="#663399" stroke-width="2" />
+<line x1="115.7" y1="90.4" x2="118.9" y2="80.4"
+    stroke="#663399" stroke-width="2" />
+<line x1="118.9" y1="80.4" x2="120.0" y2="70.0"
+    stroke="#663399" stroke-width="2" />
+
+<g transform="rotate(264.0,120.0,70.0) translate(120.0, 70.0)">
+    <circle stroke="#63A375" stroke-width="2" fill="transparent" r="5.5" cx="0" cy="0"/>
+    <polygon points="0,12 2,9 -2,9" style="fill:#63A375;stroke:#63A375;stroke-width:2"/>
+</g>
+
+</svg></div></div>
+</div>
 <p><a class="reference external" href="https://allendowney.github.io/ThinkPython/index.html">Think Python: 3rd Edition</a></p>
 <p>Copyright 2024 <a class="reference external" href="https://allendowney.com">Allen B. Downey</a></p>
 <p>Code license: <a class="reference external" href="https://mit-license.org/">MIT License</a></p>

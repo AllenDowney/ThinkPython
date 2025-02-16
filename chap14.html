@@ -377,12 +377,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">14.10. Glossary</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">14.11. Exercises</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">14.11.1. Ask a virtual assistant</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">14.12. Exercises</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">14.12.1. Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">14.12.2. Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">14.12.3. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">14.11.2. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">14.11.3. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">14.11.4. Exercise</a></li>
 </ul>
 </li>
 </ul>
@@ -581,7 +578,7 @@ For example, the following function takes a <code class="docutils literal notran
 </div>
 </div>
 <p>It might be surprising that the parameters have the same names as the attributes, but that’s a common way to write a function like this.
-Here’s how we use <code class="docutils literal notranslate"><span class="pre">make_time</span></code> to create a <code class="docutils literal notranslate"><span class="pre">Time</span></code> object.`</p>
+Here’s how we use <code class="docutils literal notranslate"><span class="pre">make_time</span></code> to create a <code class="docutils literal notranslate"><span class="pre">Time</span></code> object.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">time</span> <span class="o">=</span> <span class="n">make_time</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">59</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
@@ -962,7 +959,7 @@ When we wrote <code class="docutils literal notranslate"><span class="pre">incre
 </div>
 </div>
 <p>The result is the number of seconds since the beginning of the day.
-For example, <code class="docutils literal notranslate"><span class="pre">01:01:01</span></code> is <code class="docutils literal notranslate"><span class="pre">1</span></code> hour, <code class="docutils literal notranslate"><span class="pre">1</span></code> minute and <code class="docutils literal notranslate"><span class="pre">1</span></code> second from the beginning of the day, with is the sum of <code class="docutils literal notranslate"><span class="pre">3600</span></code> seconds, <code class="docutils literal notranslate"><span class="pre">60</span></code> seconds, and <code class="docutils literal notranslate"><span class="pre">1</span></code> second.</p>
+For example, <code class="docutils literal notranslate"><span class="pre">01:01:01</span></code> is <code class="docutils literal notranslate"><span class="pre">1</span></code> hour, <code class="docutils literal notranslate"><span class="pre">1</span></code> minute and <code class="docutils literal notranslate"><span class="pre">1</span></code> second from the beginning of the day, which is the sum of <code class="docutils literal notranslate"><span class="pre">3600</span></code> seconds, <code class="docutils literal notranslate"><span class="pre">60</span></code> seconds, and <code class="docutils literal notranslate"><span class="pre">1</span></code> second.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">time</span> <span class="o">=</span> <span class="n">make_time</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
@@ -1179,15 +1176,12 @@ But if not, be patient – we will get there soon.
 In the meantime, see if you can solve the following exercises using only the features we have covered so far.</p>
 <p>Also, in this chapter we saw one example of a format specifier. For more information, ask “What format specifiers can be used in a Python f-string?”</p>
 </section>
-</section>
-<section id="id1">
-<h2><span class="section-number">14.12. </span>Exercises<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <section id="exercise">
-<h3><span class="section-number">14.12.1. </span>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">14.11.2. </span>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h3>
 <p>Write a function called <code class="docutils literal notranslate"><span class="pre">subtract_time</span></code> that takes two <code class="docutils literal notranslate"><span class="pre">Time</span></code> objects and returns the interval between them in seconds – assuming that they are two times during the same day.</p>
 </section>
-<section id="id2">
-<h3><span class="section-number">14.12.2. </span>Exercise<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<section id="id1">
+<h3><span class="section-number">14.11.3. </span>Exercise<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p>Write a function called <code class="docutils literal notranslate"><span class="pre">is_after</span></code> that takes two <code class="docutils literal notranslate"><span class="pre">Time</span></code> objects and returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if the first time is later in the day than the second, and <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1207,8 +1201,8 @@ In the meantime, see if you can solve the following exercises using only the fea
 </div>
 </div>
 </section>
-<section id="id3">
-<h3><span class="section-number">14.12.3. </span>Exercise<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<section id="id2">
+<h3><span class="section-number">14.11.4. </span>Exercise<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <p>Here’s a definition for a <code class="docutils literal notranslate"><span class="pre">Date</span></code> class that represents a date – that is, a year, month, and day of the month.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1308,12 +1302,9 @@ In the meantime, see if you can solve the following exercises using only the fea
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">14.10. Glossary</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">14.11. Exercises</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-a-virtual-assistant">14.11.1. Ask a virtual assistant</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">14.12. Exercises</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">14.12.1. Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">14.12.2. Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">14.12.3. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">14.11.2. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">14.11.3. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">14.11.4. Exercise</a></li>
 </ul>
 </li>
 </ul>
