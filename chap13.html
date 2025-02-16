@@ -1351,8 +1351,12 @@ If the pattern string appears anywhere in the contents, it should be replaced wi
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">replace_all</span><span class="p">(</span><span class="n">old</span><span class="p">,</span> <span class="n">new</span><span class="p">,</span> <span class="n">source_path</span><span class="p">,</span> <span class="n">dest_path</span><span class="p">):</span>
     <span class="c1"># read the contents of the source file</span>
+    <span class="n">reader</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">source_path</span><span class="p">)</span>
+
     <span class="c1"># replace the old string with the new</span>
+    
     <span class="c1"># write the result into the destination file</span>
+    
 </pre></div>
 </div>
 </div>
