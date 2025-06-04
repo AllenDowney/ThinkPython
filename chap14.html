@@ -913,7 +913,7 @@ We can do the same thing with <code class="docutils literal notranslate"><span c
     
     <span class="n">carry</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">second</span> <span class="o">=</span> <span class="nb">divmod</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">second</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
     <span class="n">carry</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">minute</span> <span class="o">=</span> <span class="nb">divmod</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">minute</span> <span class="o">+</span> <span class="n">carry</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
-    <span class="n">carry</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">hour</span> <span class="o">=</span> <span class="nb">divmod</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">hour</span> <span class="o">+</span> <span class="n">carry</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="n">carry</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">hour</span> <span class="o">=</span> <span class="nb">divmod</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">hour</span> <span class="o">+</span> <span class="n">carry</span><span class="p">,</span> <span class="mi">24</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
