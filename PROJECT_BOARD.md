@@ -4,15 +4,17 @@ Numbered tasks for tracking work. Each task has a permanent number; add new task
 
 ### Current focus (2026-09-19)
 
-- **Task 1:** Chapter 18 `Counter` example produces nonsense output ([#78](https://github.com/AllenDowney/ThinkPython/issues/78)) — source fixed; **stored output still stale**, needs re-execution.
-- **Task 2:** Chapter 17 `has_pair` exercise gives the wrong outline ([#76](https://github.com/AllenDowney/ThinkPython/issues/76)) — **fixed**; awaiting rebuild.
-- **Task 3:** Student notebooks ship with every output stripped ([#79](https://github.com/AllenDowney/ThinkPython/issues/79)) — **fixed for Chapter 3**; book-wide policy still open.
+- **Task 1:** Chapter 18 `Counter` example produces nonsense output ([#78](https://github.com/AllenDowney/ThinkPython/issues/78)) — **resolved and published**; issue not yet answered.
+- **Task 2:** Chapter 17 `has_pair` exercise gives the wrong outline ([#76](https://github.com/AllenDowney/ThinkPython/issues/76)) — **resolved and published**; issue not yet answered.
+- **Task 3:** Student notebooks ship with every output stripped ([#79](https://github.com/AllenDowney/ThinkPython/issues/79)) — **resolved for Chapter 3 and published**; book-wide audit still open.
 - **Task 4:** Project Gutenberg downloads make CI fail intermittently — not started.
 - **Task 5:** Five chapters are never tested; CI is on deprecated actions and one Python version — not started.
 - **Task 6:** Add `dataclass` coverage to Chapter 18? ([#77](https://github.com/AllenDowney/ThinkPython/issues/77)) — editorial decision needed.
 - **Task 7:** Reply to the third-party interactive edition of Chapter 3 ([#74](https://github.com/AllenDowney/ThinkPython/issues/74)) — not started.
-- **Task 8:** Repo hygiene and release tooling — not started.
+- **Task 8:** Repo hygiene and release tooling — **partly done**: `.gitignore`, nbdime, and the untracked build tooling are handled; script consolidation and stale artifacts remain.
 - **Task 9:** Jupyter Book 2.0 migration — **deferred** (Jan 2026 decision).
+
+**All four issue replies are still outstanding** — #76, #78 and #79 are fixed and live but their reporters have not been told, and #74 has been open since April.
 
 ### How this repo fits together
 
@@ -47,7 +49,7 @@ The `.md` stays on disk, untracked, as a recovery copy: an open Jupyter session 
 
 ## Task 1: Chapter 18 `Counter` example produces nonsense output
 
-**Status:** Source fixed 2026-09-19 (uncommitted); **stored output is still stale** — see "Remaining" below
+**Status:** Resolved 2026-09-19 (`5295441`); published. Reply on #78 still owed.
 
 **Reported by:** [@alchemistcai in #78](https://github.com/AllenDowney/ThinkPython/issues/78), 2026-08-16
 
@@ -63,29 +65,30 @@ The surrounding prose says the `+` operator "contains the keys from both and the
 
 **Cause:** an extra cell added to test an example and never removed. It has been deleted (25 lines out of `soln/chap18.ipynb`); `counter` is now `Counter('banana')` at the point of the `+` demonstration.
 
-### Remaining
+### Resolved
 
-The notebook has not been re-executed, so the *source* is fixed but the *stored output* is still the wrong one. Cell 47 reads:
+The notebook has since been re-executed, so source and stored output now agree. Cell 47 reads:
 
 ```python
 counter2 = Counter('bans')
 counter + counter2
 ```
 
-and still carries `Counter({1: 3, 2: 2, 3: 1, 'b': 1, 'a': 1, 'n': 1, 's': 1})` — the result from the deleted cell's state. Re-execution should give `Counter({'a': 4, 'n': 3, 'b': 2, 's': 1})`. Until then the published HTML and the `soln/` copy still show the bug the reader reported.
+and now shows `Counter({'a': 4, 'n': 3, 'b': 2, 's': 1})`, the summed counts the prose describes, in place of the old `Counter({1: 3, 2: 2, 3: 1, 'b': 1, 'a': 1, 'n': 1, 's': 1})`. Verified live in the published `chap18.html`.
 
 ### Scope
 
 - [x] Remove the stray test cell that rebound `counter`
-- [ ] Re-execute `soln/chap18.ipynb` so the stored output shows the summed counts
+- [x] Re-execute `soln/chap18.ipynb` so the stored output shows the summed counts
 - [ ] Check the subtraction / union / intersection follow-ons in the same section for the same stale-binding problem
-- [ ] Rebuild `chapters/`, `blank/`, `jb/`; reply on #78 and close
+- [x] Rebuild `chapters/`, `blank/`, `jb/`
+- [ ] Reply on #78 and close
 
 ---
 
 ## Task 2: Chapter 17 `has_pair` exercise gives the wrong outline
 
-**Status:** Fixed 2026-09-19 (uncommitted); awaiting rebuild
+**Status:** Resolved 2026-09-19 (`5295441`); published. Reply on #76 still owed.
 
 **Reported by:** [@alchemistcai in #76](https://github.com/AllenDowney/ThinkPython/issues/76), 2026-06-23
 
@@ -126,13 +129,14 @@ The "largest first" requirement is load-bearing and was previously undocumented:
 - [x] Fix the scaffolding cell in `soln/chap17.ipynb`
 - [x] Document `check_sets` so the solution is readable on its own
 - [ ] Sweep the rest of Chapter 17's `%%add_method_to` exercises for the same stub/test mismatch (`has_full_house` uses the same pattern)
-- [ ] Rebuild; reply on #76 and close
+- [x] Rebuild and publish
+- [ ] Reply on #76 and close
 
 ---
 
 ## Task 3: Student notebooks ship with every output stripped
 
-**Status:** Fixed for Chapter 3 on 2026-09-19 (uncommitted); book-wide policy still open
+**Status:** Resolved for Chapter 3 on 2026-09-19 (`5295441`); published. Book-wide audit and the reply on #79 still open.
 
 **Reported by:** [@goekce in #79](https://github.com/AllenDowney/ThinkPython/issues/79), 2026-09-18
 
@@ -192,7 +196,8 @@ Verified by running `chapters/prep_notebooks.py` over the result: the reader now
 - [x] Re-execute `soln/chap03.ipynb` so the stored output matches the corrected `triangle`
 - [ ] Wider audit for other exercises whose prose promises a result the reader cannot see
 - [ ] Decide the fate of the 18 orphaned `keep` tags: finish the idea, or drop the tag and the `blank/` branch that reads it
-- [ ] Rebuild `chapters/`, regenerate `ThinkPythonNotebooks.zip`; reply on #79
+- [x] Rebuild `chapters/`, regenerate `ThinkPythonNotebooks.zip`, publish the site
+- [ ] Reply on #79 and close
 
 ### Out of scope (for first pass)
 
