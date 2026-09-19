@@ -621,22 +621,6 @@ Then you can use the class object as a function and pass as an argument a string
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
-
-<span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="n">counter</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
-<span class="n">counter</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Counter({1: 3, 2: 2, 3: 1})
-</pre></div>
-</div>
-</div>
-</div>
 <p>A <code class="docutils literal notranslate"><span class="pre">Counter</span></code> object is like a dictionary that maps from each key to the number of times it appears.
 As in dictionaries, the keys have to be hashable.</p>
 <p>Unlike dictionaries, <code class="docutils literal notranslate"><span class="pre">Counter</span></code> objects don’t raise an exception if you access an
@@ -673,7 +657,7 @@ Instead, they return <code class="docutils literal notranslate"><span class="pre
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(1, 3), (2, 2), (3, 1)]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;a&#39;, 3), (&#39;n&#39;, 2), (&#39;b&#39;, 1)]
 </pre></div>
 </div>
 </div>
@@ -689,7 +673,7 @@ For example, the <code class="docutils literal notranslate"><span class="pre">+<
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Counter({1: 3, 2: 2, 3: 1, &#39;b&#39;: 1, &#39;a&#39;: 1, &#39;n&#39;: 1, &#39;s&#39;: 1})
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Counter({&#39;a&#39;: 4, &#39;n&#39;: 3, &#39;b&#39;: 2, &#39;s&#39;: 1})
 </pre></div>
 </div>
 </div>
@@ -1446,7 +1430,7 @@ In this case <code class="docutils literal notranslate"><span class="pre">OK</sp
 FAIL: test_add_broken (__main__.TestExample)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File &quot;/tmp/ipykernel_1109857/3833266738.py&quot;, line 3, in test_add_broken
+  File &quot;/tmp/ipykernel_189017/3833266738.py&quot;, line 3, in test_add_broken
     self.assertEqual(result, 100)
 AssertionError: 4 != 100
 
@@ -1483,6 +1467,11 @@ A process used to find and run tests.</p>
 <span class="c1"># when a runtime error occurs. Run it before working on the exercises.</span>
 
 <span class="o">%</span><span class="k">xmode</span> Verbose
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Exception reporting mode: Verbose
 </pre></div>
 </div>
 </div>
