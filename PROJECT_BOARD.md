@@ -4,17 +4,17 @@ Numbered tasks for tracking work. Each task has a permanent number; add new task
 
 ### Current focus (2026-09-19)
 
-- **Task 1:** Chapter 18 `Counter` example produces nonsense output ([#78](https://github.com/AllenDowney/ThinkPython/issues/78)) — **resolved and published**; issue not yet answered.
-- **Task 2:** Chapter 17 `has_pair` exercise gives the wrong outline ([#76](https://github.com/AllenDowney/ThinkPython/issues/76)) — **resolved and published**; issue not yet answered.
-- **Task 3:** Student notebooks ship with every output stripped ([#79](https://github.com/AllenDowney/ThinkPython/issues/79)) — **resolved for Chapter 3 and published**; book-wide audit still open.
+- **Task 1:** Chapter 18 `Counter` example produces nonsense output ([#78](https://github.com/AllenDowney/ThinkPython/issues/78)) — **done**; published, answered, closed.
+- **Task 2:** Chapter 17 `has_pair` exercise gives the wrong outline ([#76](https://github.com/AllenDowney/ThinkPython/issues/76)) — **done**; published, answered, closed.
+- **Task 3:** Student notebooks ship with every output stripped ([#79](https://github.com/AllenDowney/ThinkPython/issues/79)) — **done for Chapter 3**; published, answered, closed. Book-wide audit still open.
 - **Task 4:** Project Gutenberg downloads make CI fail intermittently — not started.
 - **Task 5:** Five chapters are never tested; CI is on deprecated actions and one Python version — not started.
 - **Task 6:** Add `dataclass` coverage to Chapter 18? ([#77](https://github.com/AllenDowney/ThinkPython/issues/77)) — editorial decision needed.
-- **Task 7:** Reply to the third-party interactive edition of Chapter 3 ([#74](https://github.com/AllenDowney/ThinkPython/issues/74)) — not started.
+- **Task 7:** Reply to the third-party interactive edition of Chapter 3 ([#74](https://github.com/AllenDowney/ThinkPython/issues/74)) — **done**; answered and closed by Allen.
 - **Task 8:** Repo hygiene and release tooling — **partly done**: `.gitignore`, nbdime, and the untracked build tooling are handled; script consolidation and stale artifacts remain.
 - **Task 9:** Jupyter Book 2.0 migration — **deferred** (Jan 2026 decision).
 
-**All four issue replies are still outstanding** — #76, #78 and #79 are fixed and live but their reporters have not been told, and #74 has been open since April.
+**[#77](https://github.com/AllenDowney/ThinkPython/issues/77) is the only issue still open** — the `dataclass` question in Task 6, which needs an editorial call rather than a fix.
 
 ### How this repo fits together
 
@@ -49,7 +49,7 @@ The `.md` stays on disk, untracked, as a recovery copy: an open Jupyter session 
 
 ## Task 1: Chapter 18 `Counter` example produces nonsense output
 
-**Status:** Resolved 2026-09-19 (`5295441`); published. Reply on #78 still owed.
+**Status:** Done 2026-09-19 (`5295441`) — published, [answered](https://github.com/AllenDowney/ThinkPython/issues/78#issuecomment-5743157707) and closed.
 
 **Reported by:** [@alchemistcai in #78](https://github.com/AllenDowney/ThinkPython/issues/78), 2026-08-16
 
@@ -82,13 +82,13 @@ and now shows `Counter({'a': 4, 'n': 3, 'b': 2, 's': 1})`, the summed counts the
 - [x] Re-execute `soln/chap18.ipynb` so the stored output shows the summed counts
 - [ ] Check the subtraction / union / intersection follow-ons in the same section for the same stale-binding problem
 - [x] Rebuild `chapters/`, `blank/`, `jb/`
-- [ ] Reply on #78 and close
+- [x] Reply on #78 and close
 
 ---
 
 ## Task 2: Chapter 17 `has_pair` exercise gives the wrong outline
 
-**Status:** Resolved 2026-09-19 (`5295441`); published. Reply on #76 still owed.
+**Status:** Done 2026-09-19 (`5295441`) — published, [answered](https://github.com/AllenDowney/ThinkPython/issues/76#issuecomment-5743159353) and closed.
 
 **Reported by:** [@alchemistcai in #76](https://github.com/AllenDowney/ThinkPython/issues/76), 2026-06-23
 
@@ -130,13 +130,13 @@ The "largest first" requirement is load-bearing and was previously undocumented:
 - [x] Document `check_sets` so the solution is readable on its own
 - [ ] Sweep the rest of Chapter 17's `%%add_method_to` exercises for the same stub/test mismatch (`has_full_house` uses the same pattern)
 - [x] Rebuild and publish
-- [ ] Reply on #76 and close
+- [x] Reply on #76 and close
 
 ---
 
 ## Task 3: Student notebooks ship with every output stripped
 
-**Status:** Resolved for Chapter 3 on 2026-09-19 (`5295441`); published. Book-wide audit and the reply on #79 still open.
+**Status:** Done for Chapter 3 on 2026-09-19 (`5295441`) — published, [answered](https://github.com/AllenDowney/ThinkPython/issues/79#issuecomment-5743154298) and closed. Book-wide audit still open.
 
 **Reported by:** [@goekce in #79](https://github.com/AllenDowney/ThinkPython/issues/79), 2026-09-18
 
@@ -197,7 +197,7 @@ Verified by running `chapters/prep_notebooks.py` over the result: the reader now
 - [ ] Wider audit for other exercises whose prose promises a result the reader cannot see
 - [ ] Decide the fate of the 18 orphaned `keep` tags: finish the idea, or drop the tag and the `blank/` branch that reads it
 - [x] Rebuild `chapters/`, regenerate `ThinkPythonNotebooks.zip`, publish the site
-- [ ] Reply on #79 and close
+- [x] Reply on #79 and close
 
 ### Out of scope (for first pass)
 
@@ -293,7 +293,7 @@ The counter-argument is scope. Chapter 18 is the "Python extras" chapter near th
 
 ## Task 7: Reply to the third-party interactive edition of Chapter 3
 
-**Status:** Not started
+**Status:** Done 2026-09-19 — Allen replied and closed the issue.
 
 **Context:** [@ling-k in #74](https://github.com/AllenDowney/ThinkPython/issues/74) (2026-04-22) built an interactive edition of Chapter 3 — live Python execution in the exercise blocks plus a chapter-grounded AI tutor — at `xlearnhub.com`, under CC BY-NC 3.0, with more chapters in progress. They made no ask and offered to take it down or change anything.
 
@@ -301,9 +301,9 @@ Open since April with no reply. Two things worth separating: whether the attribu
 
 ### Scope
 
-- [ ] Look at the demo and check the attribution and license notice
-- [ ] Decide whether to acknowledge, link, or simply thank and close
-- [ ] Reply on #74
+- [x] Look at the demo and check the attribution and license notice
+- [x] Decide whether to acknowledge, link, or simply thank and close
+- [x] Reply on #74
 
 ---
 
