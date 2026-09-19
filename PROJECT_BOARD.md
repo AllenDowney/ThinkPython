@@ -8,11 +8,12 @@ Numbered tasks for tracking work. Each task has a permanent number; add new task
 - **Task 2:** Chapter 17 `has_pair` exercise gives the wrong outline ([#76](https://github.com/AllenDowney/ThinkPython/issues/76)) — **done**; published, answered, closed.
 - **Task 3:** Student notebooks ship with every output stripped ([#79](https://github.com/AllenDowney/ThinkPython/issues/79)) — **done for Chapter 3**; published, answered, closed. Book-wide audit still open.
 - **Task 4:** Project Gutenberg downloads make CI fail intermittently — not started.
-- **Task 5:** Five chapters are never tested; CI is on deprecated actions and one Python version — not started.
+- **Task 5:** Five chapters are never tested; CI is on deprecated actions and one Python version — **done** (`34bc313`), except the outputs check.
 - **Task 6:** Add `dataclass` coverage to Chapter 18? ([#77](https://github.com/AllenDowney/ThinkPython/issues/77)) — editorial decision needed.
 - **Task 7:** Reply to the third-party interactive edition of Chapter 3 ([#74](https://github.com/AllenDowney/ThinkPython/issues/74)) — **done**; answered and closed by Allen.
 - **Task 8:** Repo hygiene and release tooling — **partly done**: `.gitignore`, nbdime, and the untracked build tooling are handled; script consolidation and stale artifacts remain.
 - **Task 9:** Jupyter Book 2.0 migration — **deferred** (Jan 2026 decision).
+- **Task 10:** Windows readers cannot run chapters 8, 11 and 12 — not started; confirmed.
 
 **[#77](https://github.com/AllenDowney/ThinkPython/issues/77) is the only issue still open** — the `dataclass` question in Task 6, which needs an editorial call rather than a fix.
 
@@ -239,7 +240,7 @@ FAILED chap08.ipynb::chap08.ipynb
 
 ## Task 5: Five chapters are never tested; CI is on deprecated actions
 
-**Status:** Not started
+**Status:** Done 2026-09-19 (`34bc313`) — green on both legs. The outputs check is the one item left open.
 
 **Context:** `ThinkPythonSolutions/Makefile` runs the test suite as two globs:
 
@@ -262,13 +263,31 @@ The Windows exclusion for chapter 12 is also obsolete: the matrix is `[ubuntu-la
 - No `fail-fast: false`, so one leg's failure hides the others
 - No pip caching; each run reinstalls the full Jupyter stack (~2.5 min)
 
+### What the excluded chapters actually cost
+
+Measured before changing anything, on Python 3.10:
+
+| Chapter | Time | Result | Why it was excluded |
+|---------|------|--------|---------------------|
+| `chap00` | 3s | pass | nothing — outside the glob |
+| `chap10` | 5s | pass | nothing — outside the glob |
+| `chap19` | 2s | pass | nothing — outside the glob |
+| `chap12` | 4s | pass | "fails on windows (unicode!)" — real, but Windows is not in the matrix |
+| `chap04` | 58s | pass | "takes too long" |
+
+Four of the five cost under five seconds between them. Chapter 4 is genuinely the slow one, but the full 20-chapter suite still runs in **2m37s** — so the exclusions were buying almost nothing.
+
+Chapter 4 is slow because `jupyturtle` sleeps `TURTLE_DELAY` (0.2s) after every visual command, and chapter 4 draws a lot. Eleven of its `make_turtle()` calls use the default delay; four already pass `delay=0`. Dropping the delay everywhere would cut the suite by a third, but it would also remove the animation that makes the turtle chapter work as teaching, so it was left alone.
+
+**Resolution:** a plain `chap*.ipynb` glob, so a new chapter cannot be missed, plus `--durations=5` to keep slow chapters visible. CI moved to `checkout`/`setup-python` v7, Python 3.12, `fail-fast: false` and pip caching. Both legs pass.
+
 ### Scope
 
-- [ ] Replace the globs with an explicit chapter list, so an omission is visible
-- [ ] Get 00, 10, and 19 into the suite (or record why not, next to the list)
-- [ ] Re-test chapter 12 and drop the stale Windows comment
-- [ ] Decide on chapter 04 — a slow marker and a separate job, or accept the runtime
-- [ ] Bump `checkout` and `setup-python` to current majors; add Python 3.12/3.13 to the matrix; add `fail-fast: false` and pip caching
+- [x] Replace the globs — used `chap*.ipynb`, which is stronger than a list: nothing can be omitted
+- [x] Get 00, 10, and 19 into the suite
+- [x] Re-test chapter 12 and drop the stale Windows comment
+- [x] Decide on chapter 04 — measured at 58s and included
+- [x] Bump `checkout` and `setup-python` to v7; Python 3.12; `fail-fast: false`; pip caching
 - [ ] Add an outputs check: a `soln/` notebook committed with `execution_count: null` throughout should fail the build (`--nbmake` executes notebooks, so stored outputs are invisible to it — this is the check that catches a chapter committed unexecuted)
 
 ---
@@ -378,3 +397,36 @@ The current `jb/` build uses `_config.yml` + `_toc.yml` with thirteen MyST exten
 - [ ] Re-validate `config_mapping.md` against the then-current 2.0 release
 - [ ] Build `jb2/` side by side, leaving `jb/` untouched until the output matches
 - [ ] Confirm the unknowns: execution settings, CC footer, MyST extension parity, MathJax config
+
+---
+
+## Task 10: Windows readers cannot run the Project Gutenberg chapters
+
+**Status:** Not started; confirmed 2026-09-19
+
+**Context:** Surfaced while doing Task 5, from the old Makefile comment "testing notebook 12 fails on windows (unicode!)". The comment was right about the symptom and wrong about the scope.
+
+The book teaches file reading in its simplest form — `open(filename)`, with no `encoding` argument. **No `open()` call anywhere in the book passes one.** In text mode Python then uses the locale's preferred encoding, which on a default Windows install is cp1252. The Project Gutenberg texts are UTF-8, and they contain bytes that cp1252 does not define:
+
+```text
+pg43.txt     UnicodeDecodeError -- byte 0x9d at offset 2295
+pg345.txt    UnicodeDecodeError -- byte 0x9d at offset 1883
+pg1184.txt   UnicodeDecodeError -- byte 0x9d at offset 6927
+```
+
+`words.txt` is unaffected — it is ASCII, so it decodes without error under either.
+
+**Who this hits:** chapters 8, 11 and 12 — not just 12, as the comment implied. This is not a CI artifact. A reader on Windows who downloads the notebooks and runs chapter 8 gets a traceback on the first `open()`, in the chapter that introduces reading files.
+
+**Why it is still open:** the fix is an editorial call, not a technical one.
+
+- Adding `encoding='utf-8'` to the affected `open()` calls fixes readers and CI together, but introduces a parameter the chapter has not taught yet, in the exact example meant to show how simple reading a file is.
+- Setting `PYTHONUTF8=1` in CI would turn the Windows leg green while leaving readers exactly as broken. That is worse than not testing Windows, which is why the matrix still excludes it.
+- The problem self-resolves on Python 3.15, where UTF-8 mode becomes the default (PEP 686). That is a real argument for waiting, and no argument at all for readers on today's Python.
+
+### Scope
+
+- [ ] Decide whether the book teaches `encoding='utf-8'` when reading downloaded text, and if so where it is introduced
+- [ ] Apply it to chapters 8, 11 and 12
+- [ ] Add `windows-latest` back to the CI matrix once the chapters pass without `PYTHONUTF8`
+- [ ] Check whether any reader has already reported this
