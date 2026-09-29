@@ -153,11 +153,21 @@ regenerated afterwards.
   on Colab" sentence is gone, the Jupyter-intro link stays. The cell keeps its
   `remove-cell` tag, so it remains notebook-only orientation.
 
-Two pre-existing issues surfaced and were left alone, as both are editorial:
+Two pre-existing issues surfaced:
 
-- The Amazon URL carries **duplicate `tag` and `_encoding` parameters**
-  (`tag=oreilly20-20` *and* `tag=greenteapre01-20`). Affiliate attribution is therefore
-  ambiguous, which matters more now that the header says "(affiliate links)".
+- **The Amazon link carried the wrong affiliate tag — fixed.** The URL had duplicate
+  `tag` and `_encoding` parameters, `tag=oreilly20-20` followed by
+  `tag=greenteapre01-20`. Duplicated query parameters resolve inconsistently and the
+  first occurrence commonly wins, so some or all attribution was going to O'Reilly's
+  associate account rather than Green Tea Press. The URL had been copied unchanged into
+  all 20 chapters, `README.md` and `jb/index.md`, so it was on every page of the
+  published site. Now a single `tag=greenteapre01-20`.
+
+  `linkCode`, `linkId`, `camp` and `creative` were left as they were: they come from
+  the original generated link and are analytics identifiers, not attribution.
+
+  No other Green Tea Press book is affected — the rest use a single correct tag.
+
 - `bookshop.org` returns 403 to a scripted request. Most likely bot filtering rather
   than a dead link, but it was not confirmed in a browser.
 
