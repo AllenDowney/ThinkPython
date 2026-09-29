@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -52,7 +52,7 @@
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
@@ -397,9 +397,13 @@ document.write(`
                   
   <p>You can order print and ebook versions of <em>Think Python 3e</em> from
 <a class="reference external" href="https://bookshop.org/a/98697/9781098155438">Bookshop.org</a> and
-<a class="reference external" href="https://www.amazon.com/_/dp/1098155432?smid=ATVPDKIKX0DER&amp;amp;_encoding=UTF8&amp;amp;tag=oreilly20-20&amp;amp;_encoding=UTF8&amp;amp;tag=greenteapre01-20&amp;amp;linkCode=ur2&amp;amp;linkId=e2a529f94920295d27ec8a06e757dc7c&amp;amp;camp=1789&amp;amp;creative=9325">Amazon</a>.</p>
+<a class="reference external" href="https://www.amazon.com/_/dp/1098155432?smid=ATVPDKIKX0DER&amp;amp;_encoding=UTF8&amp;amp;tag=greenteapre01-20&amp;amp;linkCode=ur2&amp;amp;linkId=e2a529f94920295d27ec8a06e757dc7c&amp;amp;camp=1789&amp;amp;creative=9325">Amazon</a> (affiliate links).</p>
+<p>If you are enjoying the free, online version, please consider
+<a class="reference external" href="https://buymeacoffee.com/allendowney">buying me a coffee</a>.</p>
+<p>And you might like this new book-in-progress by Allen Downey, <a class="reference external" href="https://leanpub.com/ywcn"><em>You Would Choose Now: Measuring America’s Progress Toward Fairness and Tolerance</em></a>.</p>
 <section id="dictionaries">
 <h1><span class="section-number">10. </span>Dictionaries<a class="headerlink" href="#dictionaries" title="Link to this heading">#</a></h1>
+<p><a class="reference external" href="https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap10.ipynb">Run this notebook on Colab</a></p>
 <p>This chapter presents a built-in type called a dictionary.
 It is one of Python’s best features – and the building block of many efficient and elegant algorithms.</p>
 <p>We’ll use dictionaries to compute the number of unique words in a book and the number of times each one appears.
@@ -1049,15 +1053,11 @@ the first <code class="docutils literal notranslate"><span class="pre">n</span><
 <p>If there is an error, you can reduce <code class="docutils literal notranslate"><span class="pre">n</span></code> to the smallest value where the error occurs.
 As you find and correct errors, you can increase <code class="docutils literal notranslate"><span class="pre">n</span></code> gradually.</p>
 </li>
-</ol>
-<ol class="arabic" start="2">
 <li><p>Check summaries and types: Instead of printing and checking the entire dataset, consider
 printing summaries of the data – for example, the number of items in
 a dictionary or the total of a list of numbers.</p>
 <p>A common cause of runtime errors is a value that is not the right type. For debugging this kind of error, it is often enough to print the type of a value.</p>
 </li>
-</ol>
-<ol class="arabic" start="3">
 <li><p>Write self-checks: Sometimes you can write code to check for errors automatically. For
 example, if you are computing the average of a list of numbers, you
 could check that the result is not greater than the largest element
@@ -1065,8 +1065,6 @@ in the list or less than the smallest. This is called a “sanity
 check” because it detects results that are “insane”.</p>
 <p>Another kind of check compares the results of two different computations to see if they are consistent. This is called a “consistency check”.</p>
 </li>
-</ol>
-<ol class="arabic" start="4">
 <li><p>Format the output: Formatting debugging output can make it easier to spot an error. We saw an example in <a class="reference internal" href="chap06.html#section-debugging-factorial"><span class="std std-ref">Chapter 6</span></a>. Another tool you might find useful is the <code class="docutils literal notranslate"><span class="pre">pprint</span></code> module, which provides a <code class="docutils literal notranslate"><span class="pre">pprint</span></code> function that displays built-in types in a more human-readable format (<code class="docutils literal notranslate"><span class="pre">pprint</span></code> stands for “pretty print”).</p>
 <p>Again, time you spend building scaffolding can reduce the time you spend debugging.</p>
 </li>
