@@ -14,6 +14,7 @@ Numbered tasks for tracking work. Each task has a permanent number; add new task
 - **Task 8:** Repo hygiene and release tooling — **partly done**: `.gitignore`, nbdime, and the untracked build tooling are handled; script consolidation and stale artifacts remain.
 - **Task 9:** Jupyter Book 2.0 migration — **deferred** (Jan 2026 decision).
 - **Task 10:** Windows readers cannot run chapters 8, 11 and 12 — not started; confirmed.
+- **Task 11:** No Colab link on any chapter page ([plan](planning/colab_buttons.md)) — planned, not started.
 
 **[#77](https://github.com/AllenDowney/ThinkPython/issues/77) is the only issue still open** — the `dataclass` question in Task 6, which needs an editorial call rather than a fix.
 
@@ -430,3 +431,53 @@ pg1184.txt   UnicodeDecodeError -- byte 0x9d at offset 6927
 - [ ] Apply it to chapters 8, 11 and 12
 - [ ] Add `windows-latest` back to the CI matrix once the chapters pass without `PYTHONUTF8`
 - [ ] Check whether any reader has already reported this
+
+---
+
+## Task 11: No Colab link on any chapter page
+
+**Status:** Planned 2026-09-29, not started — **full plan in [`planning/colab_buttons.md`](planning/colab_buttons.md)**
+
+**Context:** Reading a chapter on the published site, there is no way to open it as a
+runnable notebook. The expectation is a Colab link at the top of every chapter; today
+no chapter page has one.
+
+Two distinct causes:
+
+- **`chap01` has a link that never renders.** It sits in a `# Welcome` cell tagged
+  `remove-cell`, which Jupyter Book drops from the HTML. The link itself is correct —
+  it points at `chapters/chap01.ipynb`, the student notebook.
+- **Chapters 2–19 have no link at all**, in `soln/`, `chapters/` or `jb/`. For 18 of
+  the 20 chapters there is nothing to un-hide.
+
+`chap00` mentions Colab in its *Getting started* prose and does render, but that is
+orientation text, not a per-chapter launch link.
+
+**Approach:** an explicit untagged markdown cell per chapter, placed under the "You can
+order" header and targeting `chapters/chapNN.ipynb`. Jupyter Book's native
+`launch_buttons` would do this with one config line and no per-chapter edits; it was
+considered and rejected in favour of control over wording and placement. The plan
+records how it would have been configured, in case that trade-off is revisited.
+
+### Scope
+
+- [ ] Agree the wording, which has to read correctly both on the website and inside a
+      downloaded notebook — the current `chap01` text does not
+- [ ] Add the cell to chapters 2–19
+- [ ] Reconcile `chap01`'s existing `Welcome` cell, and check `chap00` does not end up
+      saying the same thing twice
+- [ ] **Subtask:** revise the "You can order" header in the same pass, since the new
+      cell lands directly beneath it (see the plan for the *Think Stats* version and the
+      open questions about affiliate disclosure and the coffee link)
+- [ ] Complete build across all four targets — **including `blank/`, which
+      `update.py` omits** — then spot-check a rendered page before accepting the publish
+
+**No re-execution needed:** these are markdown-only edits, so stored outputs stay valid.
+
+### Related
+
+The plan also carries a review of the build process, prompted by this task. The
+headline: `ThinkPythonSolutions/update.py` does not build `blank/`, never pushes
+`soln/`, treats failed steps as success, and publishes the website as a side effect.
+Both of the first two match problems found in the working tree on 2026-09-19. Folding
+that into Task 8, or fixing `update.py` outright, is the natural follow-up.
