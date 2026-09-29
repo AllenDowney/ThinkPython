@@ -54,13 +54,28 @@ and placement and puts the link in the flow of the page rather than in theme chr
 Recorded here because it remains the cheaper option if the per-chapter cells become a
 maintenance burden.
 
-### Shape of the new cell
+### Shape of the new cell — decided 2026-09-29
+
+Wording, matching the pattern already used in *Think Bayes 2e*
+(`examples/hospital_birth_rate.ipynb`):
+
+```markdown
+[Run this notebook on Colab](https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chapNN.ipynb)
+```
 
 - Untagged, so it appears in the HTML **and** in the downloadable notebooks.
-- Placed immediately after the "You can order" header, as the second cell.
+- **Placed immediately after the chapter's H1**, not before it — so a page reads
+  header, title, link, content. This also matches Think Bayes 2e.
 - Targets `chapters/chapNN.ipynb` — the student notebook, not the solution.
-- Wording must work in both contexts. The current chap01 text does not: on the website
-  "if you are not already running this notebook on Colab" is addressed to nobody.
+- Deliberately omits any "if you are not already running this on Colab" framing, which
+  is what made the original chap01 wording unusable on the web.
+- The Jupyter-intro link stays out of this cell; it is useful, but belongs in chap00
+  and chap01 rather than all twenty.
+
+Known trade-off: in a downloaded notebook the link now sits *after* the setup cell that
+downloads `thinkpython.py`, so a reader who wants Colab may already have run it
+locally. Accepted, because the website is the problem being solved and a notebook
+reader already has the file.
 
 ### Per-chapter handling
 
@@ -90,10 +105,19 @@ revise it at the same time. For reference, *Think Stats* uses a more developed v
 Open questions: whether to disclose the affiliate links, whether to add the coffee
 link, and whether the wording should differ between the website and the notebooks.
 
-`soln/jntools.py` provides `add-header` and `add-footer` commands that prepend the
-cells of a template notebook to a list of notebooks. Worth checking before hand-editing
-20 files — though note it prepends, so it cannot replace an existing header in place,
-and `header.ipynb` is currently untracked.
+**Editing `soln/header.ipynb` alone changes nothing.** It is a template, and its text
+has already been copied into every chapter as cell 0 — verified byte-identical in
+20/20 chapters on 2026-09-29. The new wording has to be propagated after it is written.
+
+`soln/jntools.py` provides `add-header` and `add-footer`, but they *prepend*
+(`notebook.cells = header.cells + notebook.cells`), so running `add-header` would leave
+each chapter with two order headers. It is the wrong tool for a replacement.
+
+Because cell 0 is identical everywhere, propagation is a safe scripted substitution
+rather than twenty hand edits: replace cell 0 where it matches the old text exactly,
+and fail loudly on any chapter where it does not. The same script can insert the Colab
+cell after the H1, since only `chapNN` varies. `header.ipynb` is untracked, and should
+be committed alongside the change so the template and the chapters cannot drift.
 
 ## Workflow
 
