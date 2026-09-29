@@ -2,7 +2,7 @@
 
 **Created:** 2026-09-29
 **Board:** Task 11 in `PROJECT_BOARD.md`
-**Status:** Planned, not started
+**Status:** Propagated to `soln/` 2026-09-29; not yet built or published
 
 ## Goal
 
@@ -135,6 +135,31 @@ Jupyter tab on a chapter before editing it.
 
 Adding a markdown cell changes no code, so **no chapter needs re-executing** for this
 task. If the header revision is the only other change, the stored outputs stay valid.
+
+## What was done (2026-09-29)
+
+Applied to all 20 chapters in `soln/` by a scripted cell-level edit, which left cell
+counts unchanged and all 789 output-bearing cells untouched. `.md` recovery copies were
+regenerated afterwards.
+
+- **Header** replaced in all 20, only where cell 0 matched the previous text exactly.
+  The new text adds the affiliate disclosure and the coffee link.
+- **Colab link** added to 18 chapters, placed *inside* the title cell directly beneath
+  the `# Heading`. The title cells carry 47-182 words of chapter introduction, so a
+  separate cell after them would have buried the link below the opening prose.
+- **`chap00` and `chap19` excluded.** Both have exactly one code cell and it is empty,
+  so "Run this notebook on Colab" would point at nothing to run.
+- **`chap01`'s Welcome cell trimmed**: the redundant "click here to run this notebook
+  on Colab" sentence is gone, the Jupyter-intro link stays. The cell keeps its
+  `remove-cell` tag, so it remains notebook-only orientation.
+
+Two pre-existing issues surfaced and were left alone, as both are editorial:
+
+- The Amazon URL carries **duplicate `tag` and `_encoding` parameters**
+  (`tag=oreilly20-20` *and* `tag=greenteapre01-20`). Affiliate attribution is therefore
+  ambiguous, which matters more now that the header says "(affiliate links)".
+- `bookshop.org` returns 403 to a scripted request. Most likely bot filtering rather
+  than a dead link, but it was not confirmed in a browser.
 
 ## Then: a complete build
 
