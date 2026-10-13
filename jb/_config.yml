@@ -26,6 +26,7 @@ html:
         Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License
       </a>.
     </div>
+    <script>new Image().src="https://greenteapress.com/gh.gif?u="+encodeURIComponent(location.href)+"&r="+encodeURIComponent(document.referrer)</script>
 
 parse:
   # myst_extended_syntax: true  # instead enable individual features below
