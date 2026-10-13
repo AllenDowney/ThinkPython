@@ -491,4 +491,4 @@ that into Task 8, or fixing `update.py` outright, is the natural follow-up.
 - Every published page loads `https://greenteapress.com/gh.gif?u=PAGE&r=REFERRER`. No cookies, no third party; counted from the greenteapress.com access logs by `~/GreenTeaPress/scripts/log_report.py` ("GitHub Pages" section of the weekly report). Details and rollout: GreenTeaPress `PROJECT_BOARD.md`, Task 15.
 - Added with `~/GreenTeaPress/scripts/add_counter.py ThinkPython --push`, without a rebuild: the snippet was inserted before `</body>` in the 24 published pages (gh-pages `1196ec7`) and appended to `html: extra_footer` in `jb/_config.yml` (`d1d52a7`), so the next rebuild keeps it.
 - Keep the snippet when editing `extra_footer`; if the build moves to Jupyter Book 2 / MyST, put it in the new template.
-- **Local copy:** pull before the next rebuild (`d1d52a7` changes `jb/_config.yml`).
+- Local copy pulled 2026-10-13.
