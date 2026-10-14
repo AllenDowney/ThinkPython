@@ -426,10 +426,12 @@ Instructions for downloading the book are in the notebook for this chapter.</p>
 </div>
 <p>We’ll use a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to read lines from the file and <code class="docutils literal notranslate"><span class="pre">split</span></code> to divide the lines into words.
 Then, to keep track of unique words, we’ll store each word as a key in a dictionary.</p>
+<p>The keyword argument <code class="docutils literal notranslate"><span class="pre">encoding='utf-8'</span></code> is not in the printed book.
+It is only needed on Windows.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unique_words</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">):</span>
     <span class="n">seq</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
     <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">seq</span><span class="p">:</span>
         <span class="n">unique_words</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
@@ -537,7 +539,7 @@ The following loop stores the unique punctuation marks in a dictionary.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">punc_marks</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
         <span class="n">category</span> <span class="o">=</span> <span class="n">unicodedata</span><span class="o">.</span><span class="n">category</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">category</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;P&#39;</span><span class="p">):</span>
@@ -599,7 +601,7 @@ The following loop stores the unique punctuation marks in a dictionary.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unique_words2</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">split_line</span><span class="p">(</span><span class="n">line</span><span class="p">):</span>
         <span class="n">word</span> <span class="o">=</span> <span class="n">clean_word</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
         <span class="n">unique_words2</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
@@ -640,7 +642,7 @@ And we can confirm that the list of longest words has been cleaned up.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">word_counter</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">split_line</span><span class="p">(</span><span class="n">line</span><span class="p">):</span>
         <span class="n">word</span> <span class="o">=</span> <span class="n">clean_word</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">word</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">word_counter</span><span class="p">:</span>
@@ -1061,7 +1063,7 @@ Then it uses <code class="docutils literal notranslate"><span class="pre">pop</s
 <p>The following program loops through the words in the book and processes them one at a time.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">split_line</span><span class="p">(</span><span class="n">line</span><span class="p">):</span>
         <span class="n">word</span> <span class="o">=</span> <span class="n">clean_word</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
         <span class="n">process_word</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
@@ -1262,7 +1264,7 @@ Most of the other words appear only once, so they are followed by only a single 
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">successor_map</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="n">window</span> <span class="o">=</span> <span class="p">[]</span>
 
-<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">split_line</span><span class="p">(</span><span class="n">line</span><span class="p">):</span>
         <span class="n">word</span> <span class="o">=</span> <span class="n">clean_word</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
         <span class="n">process_word_bigram</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
@@ -1473,7 +1475,7 @@ If you test your function with the text of <em>Dr. Jekyll and Mr. Hyde</em>, you
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">successor_map</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="n">window</span> <span class="o">=</span> <span class="p">[]</span>
 
-<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">split_line</span><span class="p">(</span><span class="n">line</span><span class="p">):</span>
         <span class="n">word</span> <span class="o">=</span> <span class="n">clean_word</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
         <span class="n">process_word_trigram</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>

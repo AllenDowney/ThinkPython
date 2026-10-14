@@ -760,9 +760,11 @@ The empty parentheses indicate that this method takes no arguments.</p>
 <p>String operators and methods are useful for reading and writing text files.
 As an example, we’ll work with the text of <em>Dracula</em>, a novel by Bram Stoker that is available from Project Gutenberg (<a class="reference external" href="https://www.gutenberg.org/ebooks/345">https://www.gutenberg.org/ebooks/345</a>).</p>
 <p>I’ve downloaded the book in a plain text file called <code class="docutils literal notranslate"><span class="pre">pg345.txt</span></code>, which we can open for reading like this:</p>
+<p>The keyword argument <code class="docutils literal notranslate"><span class="pre">encoding='utf-8'</span></code> is not in the printed book.
+It is only needed on Windows.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reader</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;pg345.txt&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reader</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;pg345.txt&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -800,8 +802,8 @@ In order to loop through the book again, we have to open it again for reading.
 And, to write a new file, we can open it for writing.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reader</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;pg345.txt&#39;</span><span class="p">)</span>
-<span class="n">writer</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;pg345_cleaned.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reader</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;pg345.txt&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+<span class="n">writer</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;pg345_cleaned.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -872,7 +874,7 @@ To indicate that we’re done, we can close both files by invoking the <code cla
 <p>To check whether this process was successful, we can read the first few lines from the new file we just created.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;pg345_cleaned.txt&#39;</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;pg345_cleaned.txt&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">):</span>
     <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">line</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
@@ -899,7 +901,7 @@ To make this change in the English version, we can loop through the book, use th
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;pg345_cleaned.txt&#39;</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;pg345_cleaned.txt&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">):</span>
     <span class="n">total</span> <span class="o">+=</span> <span class="mi">1</span>
     
 <span class="n">total</span>
@@ -916,7 +918,7 @@ To make this change in the English version, we can loop through the book, use th
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;pg345_cleaned.txt&#39;</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;pg345_cleaned.txt&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">):</span>
     <span class="k">if</span> <span class="s1">&#39;Jonathan&#39;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
         <span class="n">total</span> <span class="o">+=</span> <span class="mi">1</span>
 
@@ -935,7 +937,7 @@ To get the total, we can use the <code class="docutils literal notranslate"><spa
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;pg345_cleaned.txt&#39;</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;pg345_cleaned.txt&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">):</span>
     <span class="n">total</span> <span class="o">+=</span> <span class="n">line</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;Jonathan&#39;</span><span class="p">)</span>
 
 <span class="n">total</span>
@@ -951,9 +953,9 @@ To get the total, we can use the <code class="docutils literal notranslate"><spa
 <p>Now we can replace <code class="docutils literal notranslate"><span class="pre">'Jonathan'</span></code> with <code class="docutils literal notranslate"><span class="pre">'Thomas'</span></code> like this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">writer</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;pg345_replaced.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">writer</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;pg345_replaced.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
 
-<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;pg345_cleaned.txt&#39;</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;pg345_cleaned.txt&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">):</span>
     <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;Jonathan&#39;</span><span class="p">,</span> <span class="s1">&#39;Thomas&#39;</span><span class="p">)</span>
     <span class="n">writer</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
 </pre></div>
@@ -1073,7 +1075,7 @@ Among other information, it has a variable named <code class="docutils literal n
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">find_first</span><span class="p">(</span><span class="n">pattern</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;pg345_cleaned.txt&#39;</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;pg345_cleaned.txt&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">):</span>
         <span class="n">result</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">line</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">result</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">result</span>
@@ -1120,7 +1122,7 @@ Here’s a function that loops through the book and counts the number of lines t
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count_matches</span><span class="p">(</span><span class="n">pattern</span><span class="p">):</span>
     <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;pg345_cleaned.txt&#39;</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;pg345_cleaned.txt&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">):</span>
         <span class="n">result</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">line</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">result</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
