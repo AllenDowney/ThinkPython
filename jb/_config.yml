@@ -47,7 +47,14 @@ parse:
     - tasklist
 
 sphinx:
+  # Merge html_theme_options below into the ones JB sets (repository button, search text)
+  # instead of replacing them.
+  recursive_update: true
   config:
+    # End-of-chapter support note (_templates/support-ask.html, _static/support-ask.css).
+    templates_path: [_templates]
+    html_theme_options:
+      article_footer_items: [support-ask.html]
     mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
     mathjax_config:
       tex2jax:

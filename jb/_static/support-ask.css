@@ -1,0 +1,9 @@
+/* End-of-chapter support note (_templates/support-ask.html). */
+.support-ask {
+  margin: 2.5rem 0 1rem;
+  padding: 0.9rem 1.1rem;
+  border-left: 4px solid var(--pst-color-primary);
+  background: var(--pst-color-surface);
+  border-radius: 0.25rem;
+}
+.support-ask p { margin: 0; }

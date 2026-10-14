@@ -1,0 +1,12 @@
+{#- End-of-chapter support note (GreenTeaPress plans/revenue.md, Task 19). Shown after the
+    last section of each chapter page; not in the notebooks or the print edition.
+    BOOK is the code the support page and the access-log report use. -#}
+{%- set BOOK = "tp3" %}
+{%- set TITLE = "Think Python" %}
+{%- if pagename.startswith("chap") and pagename != "chap00" %}
+<aside class="support-ask">
+  <p><em>{{ TITLE }}</em> is free to read online, for everyone. If this chapter helped you,
+  please consider <a href="https://greenteapress.com/support/?book={{ BOOK }}">supporting free,
+  open educational materials</a> from Green Tea Press.</p>
+</aside>
+{%- endif %}
