@@ -7,13 +7,13 @@ Numbered tasks for tracking work. Each task has a permanent number; add new task
 - **Task 1:** Chapter 18 `Counter` example produces nonsense output ([#78](https://github.com/AllenDowney/ThinkPython/issues/78)) — **done**; published, answered, closed.
 - **Task 2:** Chapter 17 `has_pair` exercise gives the wrong outline ([#76](https://github.com/AllenDowney/ThinkPython/issues/76)) — **done**; published, answered, closed.
 - **Task 3:** Student notebooks ship with every output stripped ([#79](https://github.com/AllenDowney/ThinkPython/issues/79)) — **done for Chapter 3**; published, answered, closed. Book-wide audit still open.
-- **Task 4:** Project Gutenberg downloads make CI fail intermittently — not started.
+- **Task 4:** Project Gutenberg downloads make CI fail intermittently — **done**; the texts are hosted in this repo.
 - **Task 5:** Five chapters are never tested; CI is on deprecated actions and one Python version — **done** (`34bc313`), except the outputs check.
 - **Task 6:** Add `dataclass` coverage to Chapter 18? ([#77](https://github.com/AllenDowney/ThinkPython/issues/77)) — editorial decision needed.
 - **Task 7:** Reply to the third-party interactive edition of Chapter 3 ([#74](https://github.com/AllenDowney/ThinkPython/issues/74)) — **done**; answered and closed by Allen.
 - **Task 8:** Repo hygiene and release tooling — **partly done**: `.gitignore`, nbdime, and the untracked build tooling are handled; script consolidation and stale artifacts remain.
 - **Task 9:** Jupyter Book 2.0 migration — **deferred** (Jan 2026 decision).
-- **Task 10:** Windows readers cannot run chapters 8, 11 and 12 — not started; confirmed.
+- **Task 10:** Windows readers cannot run chapters 8, 11 and 12 — **done**; `encoding='utf-8'` added, with a `remove-print` note.
 - **Task 11:** No Colab link on any chapter page ([plan](planning/colab_buttons.md)) — planned, not started.
 
 **[#77](https://github.com/AllenDowney/ThinkPython/issues/77) is the only issue still open** — the `dataclass` question in Task 6, which needs an editorial call rather than a fix.
@@ -213,7 +213,27 @@ Verified by running `chapters/prep_notebooks.py` over the result: the reader now
 
 ## Task 4: Project Gutenberg downloads make CI fail intermittently
 
-**Status:** Not started
+**Status:** Done 2026-10-14 — the three texts are now hosted in the ThinkPython repo.
+
+**Resolution:** `pg345.txt`, `pg1184.txt` and `pg43.txt` are committed at the top level
+of ThinkPython, alongside `words.txt` and `photos.zip`, and chapters 8, 11 and 12
+download them from there. Gutenberg blocks datacenter IPs by design, so fetching from
+them on every CI run and every reader was the problem, not bad luck.
+
+A second reason emerged while doing it: **all three files had drifted.** Each differs
+from what Gutenberg serves today — `pg43` has been retitled, "ebook" recapitalised,
+trailing whitespace stripped, and is 46 lines shorter. Readers downloading today were
+already getting different text from the one the stored outputs were computed against,
+so chapter 12's word counts could not reproduce. The hosted copies are the ones the
+book was built from.
+
+chapter 8's `!wget` was also replaced with the `download()` helper the rest of the book
+uses; `wget` is not present on stock Windows or macOS.
+
+Verified end to end: with the local copies removed, chapters 8, 11 and 12 fetch from
+the new URLs and pass.
+
+**Superseded scope**
 
 **Context:** The scheduled monthly test run for `ThinkPythonSolutions` failed on 2026-07-01 ([run 28486298964](https://github.com/AllenDowney/ThinkPythonSolutions/actions/runs/28486298964)) with:
 
@@ -403,7 +423,23 @@ The current `jb/` build uses `_config.yml` + `_toc.yml` with thirteen MyST exten
 
 ## Task 10: Windows readers cannot run the Project Gutenberg chapters
 
-**Status:** Not started; confirmed 2026-09-19
+**Status:** Done 2026-10-14 — `encoding='utf-8'` added to every read and write of a
+Gutenberg-derived file in chapters 8, 11 and 12.
+
+**Resolution:** The decision was to teach the argument rather than hide the problem.
+Each affected chapter now carries a short note before the first instance, explaining
+that the argument is not in the printed book and is needed on Windows. The notes are
+tagged to match the visibility of the code they explain: `remove-print` in chapters 8
+and 12, and `remove-cell` in chapter 11, whose whole Dracula section is notebook-only.
+
+The writers were included, not just the readers: writing non-ASCII to a cp1252 default
+fails the same way. `words.txt` was deliberately left alone — it is ASCII, so it reads
+correctly under either encoding, and it is the file the simple teaching examples use.
+
+Still open: adding `windows-latest` back to the CI matrix to confirm this from the
+outside rather than by reasoning about cp1252.
+
+**Original analysis**
 
 **Context:** Surfaced while doing Task 5, from the old Makefile comment "testing notebook 12 fails on windows (unicode!)". The comment was right about the symptom and wrong about the scope.
 
