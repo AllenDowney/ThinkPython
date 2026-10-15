@@ -1,0 +1,25 @@
+{#- EthicalAds above "Contents" in the right sidebar (GreenTeaPress PROJECT_BOARD Task 21).
+    Off while EA_PUBLISHER is "". EthicalAds runs no advertiser code and hosts all ad
+    assets itself; no cookies or local storage. Desktop only: below 1200px the theme folds
+    this sidebar into a menu, so the client isn't loaded there. Only on pages that have a
+    table of contents, as page-toc.html does. If the book gets a sponsor (sponsor.html),
+    turn this off: one placement per page. -#}
+{%- set EA_PUBLISHER = "" %}   {#- publisher ID from the EthicalAds dashboard #}
+{%- if EA_PUBLISHER and generate_toc_html() | length >= 1 %}
+<div id="ea-slot" class="ea-slot"></div>
+<script>
+(function () {
+  if (!window.matchMedia("(min-width: 1200px)").matches) return;
+  var ad = document.createElement("div");
+  ad.setAttribute("data-ea-publisher", "{{ EA_PUBLISHER }}");
+  ad.setAttribute("data-ea-type", "image");
+  ad.className = "flat";
+  ad.id = "think-python-sidebar";
+  document.getElementById("ea-slot").appendChild(ad);
+  var s = document.createElement("script");
+  s.async = true;
+  s.src = "https://media.ethicalads.io/media/client/ethicalads.min.js";
+  document.head.appendChild(s);
+})();
+</script>
+{%- endif %}
