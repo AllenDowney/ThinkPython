@@ -55,6 +55,8 @@ sphinx:
     templates_path: [_templates]
     html_theme_options:
       article_footer_items: [support-ask.html]
+      # Book sponsor above "Contents" (_templates/sponsor.html, _static/sponsor.css); off until set.
+      secondary_sidebar_items: [sponsor.html, page-toc.html]
     mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
     mathjax_config:
       tex2jax:

@@ -1,0 +1,16 @@
+{#- Book sponsor above "Contents" in the right sidebar (GreenTeaPress plans/sponsorship.md, Task 20).
+    Off while SPONSOR is "". Static: the logo is a file in _static, the link is a plain
+    redirect through greenteapress.com (counted in the access logs); no scripts, pixels
+    or cookies. Only on pages that have a table of contents, as page-toc.html does. -#}
+{%- set SPONSOR = "" %}         {#- redirect name: greenteapress.com/sponsor/go/SPONSOR #}
+{%- set SPONSOR_NAME = "" %}    {#- alt text for the logo #}
+{%- set SPONSOR_LOGO = "" %}    {#- file in jb/_static, about 400x120 #}
+{%- set SPONSOR_LINE = "" %}    {#- one line about the sponsor #}
+{%- set BOOK = "tp3" %}
+{%- if SPONSOR and generate_toc_html() | length >= 1 %}
+<a class="sponsor" href="https://greenteapress.com/sponsor/go/{{ SPONSOR }}?book={{ BOOK }}">
+  <span class="sponsor-label">This free edition is supported by</span>
+  <img src="{{ pathto('_static/' ~ SPONSOR_LOGO, 1) }}" alt="{{ SPONSOR_NAME }}">
+  <span class="sponsor-line">{{ SPONSOR_LINE }}</span>
+</a>
+{%- endif %}
