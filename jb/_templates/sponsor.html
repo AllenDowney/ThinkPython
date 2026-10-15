@@ -9,7 +9,7 @@
 {%- set BOOK = "tp3" %}
 {%- if SPONSOR and generate_toc_html() | length >= 1 %}
 <a class="sponsor" href="https://greenteapress.com/sponsor/go/{{ SPONSOR }}?book={{ BOOK }}">
-  <span class="sponsor-label">This free edition is supported by</span>
+  <span class="sponsor-label">Sponsor of the free online edition</span>
   <img src="{{ pathto('_static/' ~ SPONSOR_LOGO, 1) }}" alt="{{ SPONSOR_NAME }}">
   <span class="sponsor-line">{{ SPONSOR_LINE }}</span>
 </a>
