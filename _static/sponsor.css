@@ -1,0 +1,26 @@
+/* Book sponsor in the right sidebar (_templates/sponsor.html). */
+
+/* The theme lays out sidebar items in a row; stack the sponsor above "Contents". */
+.bd-sidebar-secondary .sidebar-secondary-items { flex-direction: column; }
+
+/* The theme collapses this sidebar to one line while margin content is on
+   screen; keep that line for "Contents". */
+.bd-sidebar-secondary.hide:not(:hover) .sidebar-secondary-item:has(> .sponsor) { display: none; }
+
+.sponsor {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  max-width: 220px;
+  margin-top: 1rem;
+  padding: 0.75rem;
+  border: 1px solid var(--pst-color-border);
+  border-radius: 0.5rem;
+  color: var(--pst-color-text-base);
+  text-decoration: none;
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+.sponsor:hover { border-color: var(--pst-color-primary); color: var(--pst-color-text-base); }
+.sponsor-label { color: var(--pst-color-text-muted); font-size: 0.7rem; }
+.sponsor img { display: block; max-width: 100%; height: auto; }

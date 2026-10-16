@@ -1,0 +1,11 @@
+/* EthicalAds in the right sidebar (_templates/ethicalads.html). */
+
+/* The theme lays out sidebar items in a row; stack the ad above "Contents". */
+.bd-sidebar-secondary .sidebar-secondary-items { flex-direction: column; }
+.sidebar-secondary-item:has(> .ea-slot:empty) { display: none; }
+
+/* The theme collapses this sidebar to one line while margin content is on
+   screen; keep that line for "Contents". */
+.bd-sidebar-secondary.hide:not(:hover) .sidebar-secondary-item:has(> .ea-slot) { display: none; }
+
+.ea-slot { padding-top: 1rem; min-height: 0; }
