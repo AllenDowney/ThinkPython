@@ -4,7 +4,7 @@
     this sidebar into a menu, so the client isn't loaded there. Only on pages that have a
     table of contents, as page-toc.html does. If the book gets a sponsor (sponsor.html),
     turn this off: one placement per page. -#}
-{%- set EA_PUBLISHER = "" %}   {#- publisher ID from the EthicalAds dashboard #}
+{%- set EA_PUBLISHER = "greenteapresscom" %}   {#- publisher ID from the EthicalAds dashboard #}
 {%- if EA_PUBLISHER and generate_toc_html() | length >= 1 %}
 <div id="ea-slot" class="ea-slot"></div>
 <script>
@@ -14,6 +14,7 @@
   ad.setAttribute("data-ea-publisher", "{{ EA_PUBLISHER }}");
   ad.setAttribute("data-ea-type", "image");
   ad.className = "flat";
+  ad.setAttribute("data-ea-dark-selector", "html[data-theme='dark']");  // follow the theme's toggle
   ad.id = "think-python-sidebar";
   document.getElementById("ea-slot").appendChild(ad);
   var s = document.createElement("script");
