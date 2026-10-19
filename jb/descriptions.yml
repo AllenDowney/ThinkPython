@@ -1,0 +1,84 @@
+# Page descriptions for search results and link previews (GreenTeaPress plans/seo.md).
+# prep_notebooks.py writes each one into its notebook's metadata as
+# myst.html_meta.description and og:description. index.md and blank.md carry
+# theirs in front matter. About 120-155 characters, in the words a reader would search for.
+
+chap00: >-
+  Preface to Think Python, 3rd edition: who the book is for, its goals, what's new,
+  how to run the notebooks, and resources for teachers.
+
+chap01: >-
+  Start programming in Python: arithmetic operators, expressions, strings, and values
+  and types, and how programming is a new way of thinking.
+
+chap02: >-
+  Python variables and statements: assignment, state diagrams, variable names, the
+  import statement, the print function, arguments, and comments.
+
+chap03: >-
+  How to define and call your own Python functions, with parameters, for loops, local
+  variables, stack diagrams, and reading tracebacks.
+
+chap04: >-
+  Design Python functions that work together by drawing polygons and circles with
+  jupyturtle: encapsulation, generalization, refactoring, and docstrings.
+
+chap05: >-
+  Python if statements and recursion: integer division, modulus, boolean expressions,
+  logical operators, chained and nested conditionals, and input.
+
+chap06: >-
+  Python functions that return values: incremental development, boolean functions,
+  recursion with return values, the leap of faith, and Fibonacci.
+
+chap07: >-
+  Python for loops and search: loop through strings and a word list, count and update
+  variables, use the in operator, linear search, and doctest.
+
+chap08: >-
+  Python strings and regular expressions: indexing, slices, string methods, comparison,
+  writing files, find and replace, and a Wordle exercise.
+
+chap09: >-
+  Python lists: slices, operations, methods, sorting, objects and values, aliasing, and
+  list arguments, with exercises on palindromes and anagrams.
+
+chap10: >-
+  Python dictionaries: create them, loop through them, count word frequencies, accumulate
+  lists, and use memos to make algorithms faster.
+
+chap11: >-
+  Python tuples: tuple assignment, returning multiple values, argument packing and
+  unpacking, zip, sorting, and inverting a dictionary.
+
+chap12: >-
+  Text analysis and generation in Python: count word frequencies, find bigrams, and build
+  a Markov text generator, a simple relative of large language models.
+
+chap13: >-
+  Python files and databases: file names and paths, f-strings, YAML, shelve, walking
+  directories, and finding duplicate files in a photo collection.
+
+chap14: >-
+  Start object-oriented programming in Python: programmer-defined classes, attributes,
+  copying objects, pure functions, and prototype-and-patch development.
+
+chap15: >-
+  Python classes and methods: define methods, static methods, the __str__ and __init__
+  methods, and operator overloading, using a Time class.
+
+chap16: >-
+  Object-oriented programming in Python with points, lines, and rectangles: equivalence
+  and identity, shallow and deep copy, and polymorphism.
+
+chap17: >-
+  Inheritance in Python: classes for playing cards, decks, and poker hands, with parent
+  and child classes and specialization.
+
+chap18: >-
+  Python extras: sets, Counter, defaultdict, conditional expressions, list
+  comprehensions, any and all, named tuples, and keyword arguments.
+
+chap19: >-
+  What to learn after Think Python: books on data science and modeling, AI assistants,
+  development environments, Python user groups, and other languages.

@@ -528,3 +528,22 @@ that into Task 8, or fixing `update.py` outright, is the natural follow-up.
 - Added with `~/GreenTeaPress/scripts/add_counter.py ThinkPython --push`, without a rebuild: the snippet was inserted before `</body>` in the 24 published pages (gh-pages `1196ec7`) and appended to `html: extra_footer` in `jb/_config.yml` (`d1d52a7`), so the next rebuild keeps it.
 - Keep the snippet when editing `extra_footer`; if the build moves to Jupyter Book 2 / MyST, put it in the new template.
 - Local copy pulled 2026-10-13.
+
+---
+
+## Task 13: Search engine optimization for the book site
+
+**Status:** In progress (2026-10-19)
+
+**Context:** Help people searching for the book's topics find `https://allendowney.github.io/ThinkPython/`, using ordinary good practice only. The steps were worked out on *Probably Overthinking It* (2026-10-18), and the shared guide is `~/GreenTeaPress/plans/seo.md` ("Checklist for a Jupyter Book 1 site"). Rollout is tracked in GreenTeaPress Task 22. Audit 2026-10-18: no meta descriptions, no sitemap; the landing-page title repeats ("Think Python — Think Python").
+
+Done 2026-10-19, without the jupytext `split_at_heading` step (not about SEO):
+- [x] `sphinx-sitemap` + `sphinxext-opengraph` (pip-installed in the `ThinkPython` conda env), base URL, cover image in `jb/_config.yml`; `extra_footer` page-view counter kept
+- [x] Descriptions (Allen reviewed): `jb/descriptions.yml` for the notebooks, which `jb/prep_notebooks.py` writes into each copied notebook's metadata, so `soln/` is untouched; front matter in `index.md` and `blank.md`. **New chapter → add its line to `descriptions.yml`.**
+- [x] Landing H1 "Think Python, 3rd edition" (tab was "Think Python — Think Python")
+- [x] Test build: 22 pages, each with one description, one og:description, canonical; sitemap = the TOC
+- [ ] Publish (jb step of `update.py` only; `soln/` unchanged); `Sitemap:` line in `~/AllenDowney.github.io/robots.txt`; Allen submits it in Search Console
+- [x] GitHub repo website field and topics (GreenTeaPress `scripts/repo_about.sh`); "Read the book online" link added near the top of the README
+- [ ] Compare at ~6 weeks and ~3 months: `python3 ~/GreenTeaPress/scripts/search_console.py --report --path /ThinkPython/` and the counter's google.com referrers
+
+---

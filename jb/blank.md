@@ -1,3 +1,10 @@
+---
+myst:
+  html_meta:
+    description: "Blank versions of the Think Python notebooks, with most of the code removed, for follow-along exercises where learners fill in the blanks."
+og:description: "Blank versions of the Think Python notebooks, with most of the code removed, for follow-along exercises where learners fill in the blanks."
+---
+
 # Blank Notebooks
 
 For each chapter, I've created a "blank" notebook with the original text, but most of the code removed.

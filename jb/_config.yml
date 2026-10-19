@@ -12,6 +12,7 @@ execute:
 repository:
   url: https://github.com/AllenDowney/ThinkPython/tree/v3
 html:
+  baseurl: https://allendowney.github.io/ThinkPython/
   use_repository_button: true
 
   extra_footer: |
@@ -50,7 +51,20 @@ sphinx:
   # Merge html_theme_options below into the ones JB sets (repository button, search text)
   # instead of replacing them.
   recursive_update: true
+  # Sitemap and link previews (GreenTeaPress plans/seo.md); page descriptions are in
+  # descriptions.yml (notebooks) and the front matter of index.md and blank.md
+  extra_extensions:
+    - sphinx_sitemap
+    - sphinxext.opengraph
   config:
+    html_baseurl: https://allendowney.github.io/ThinkPython/
+    sitemap_url_scheme: "{link}"
+    sitemap_excludes: [genindex.html, search.html]
+    ogp_site_url: https://allendowney.github.io/ThinkPython/
+    ogp_site_name: Think Python, 3rd edition
+    ogp_image: https://raw.githubusercontent.com/AllenDowney/ThinkPython/v3/think_python_3e.jpg
+    ogp_image_alt: Cover of Think Python, 3rd edition, by Allen B. Downey
+    ogp_enable_meta_description: false
     # End-of-chapter support note (_templates/support-ask.html, _static/support-ask.css).
     templates_path: [_templates]
     html_theme_options:

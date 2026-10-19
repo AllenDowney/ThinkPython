@@ -1,5 +1,10 @@
 import nbformat as nbf
+import yaml
 from glob import glob
+
+# Page descriptions for search results and link previews
+with open('descriptions.yml') as f:
+    DESCRIPTIONS = yaml.safe_load(f)
 
 
 def process_cell(cell):
@@ -32,6 +37,14 @@ def process_notebook(path):
 
     for cell in ntbk.cells:
         process_cell(cell)
+
+    # myst-nb passes notebook metadata through as front matter:
+    # html_meta becomes <meta name="description">; og:description overrides
+    # the link-preview text, which would otherwise be the ordering paragraph
+    desc = DESCRIPTIONS.get(path.removesuffix('.ipynb'))
+    if desc:
+        ntbk.metadata['myst'] = {'html_meta': {'description': desc}}
+        ntbk.metadata['og:description'] = desc
 
     nbf.write(ntbk, path)
 
