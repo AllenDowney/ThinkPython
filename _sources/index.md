@@ -1,4 +1,11 @@
-# Think Python
+---
+myst:
+  html_meta:
+    description: "Think Python, 3rd edition, free online: an introduction to Python for beginners, as Jupyter notebooks you can run on Colab with nothing to install."
+og:description: "Think Python, 3rd edition, free online: an introduction to Python for beginners, as Jupyter notebooks you can run on Colab with nothing to install."
+---
+
+# Think Python, 3rd edition
 
 *Think Python* is an introduction to Python for people who have never programmed before -- or for people who have tried and had a hard time.
 You can order print and ebook versions of the third edition from
