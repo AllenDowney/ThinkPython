@@ -547,3 +547,17 @@ Done 2026-10-19, without the jupytext `split_at_heading` step (not about SEO):
 - [ ] Compare at ~6 weeks and ~3 months: `python3 ~/GreenTeaPress/scripts/search_console.py --report --path /ThinkPython/` and the counter's google.com referrers
 
 ---
+
+## Task 14: First edition (Python 2): source, releases
+
+**Status:** 2.0.18 released 2026-10-30. The 1st edition lives on the `master` branch of this repo (the original 2012 repo: `book/` LaTeX source, `code/` Python 2 examples); `v3` is the 3rd edition and the default branch. **Planned (Allen, 2026-10-30): rename `master` → `v1`** (`gh api -X POST repos/AllenDowney/ThinkPython/branches/master/rename -f new_name=v1`; GitHub redirects old web links; then here: `git branch -m master v1 && git fetch origin && git branch -u origin/v1 v1 && git remote set-head origin -a`).
+
+Releases:
+- **v2.0.17** (tag at `8c7d812`, 2015-10-26): the version on greenteapress.com from 2016 to 2026. The 2016-02-22 PDF also had "build-in" → "built-in" (never committed) and not `f026fb2` (2017, the anydbm example). No PDF attached
+- **v2.0.18** (`e1a357c`, 2026-10-30; GreenTeaPress Task 23): a note on the half-title page pointing to the 3rd edition (Allen's wording: "There is a newer edition of this book. … Python 2 reached its end of life in 2020 … *Think Python*, 3rd edition … https://allendowney.github.io/ThinkPython/"); copyright-page source link → `greenteapress.com/wp/think-python/`; license link https; running heads as published (the fix from ThinkPython2 2.4.1); the typo fix and `f026fb2`. 252 pages (2.0.17's build had no index; the typewriter font is now cm-super Type 1, not bitmaps). Release `v2.0.18` with `thinkpython.pdf`, identical to `greenteapress.com/thinkpython/thinkpython.pdf` (GreenTeaPress deploy `2bf16ba`). It shows as "Latest" because it's the repo's only release, even though it was created with `--latest=false`
+
+How to release a new version: as in ThinkPython2's board (Task 2, "How to release a new version"), with these differences: work on the 1st-edition branch in a separate worktree (`git worktree add DIR master`), since this checkout is on `v3`; the PDF is `thinkpython.pdf` in `~/GreenTeaPress/greenteapress/thinkpython/`; create the release with `--latest=false`. `greenteapress/thinkpython/tex/` and `thinkpython.tex.zip` on greenteapress.com are the 2.0.17 snapshot, not the source.
+
+The book's 82 printed `thinkpython.com/code/…` links go to the **2nd edition's** Python 3 code (ThinkPython2), not the Python 2 code in `code/` here. Left as is; the half-title note says the edition is out of date.
+
+---
