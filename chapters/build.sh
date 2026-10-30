@@ -11,7 +11,7 @@ cp ../ThinkPythonSolutions/soln/words.txt .
 cp ../ThinkPythonSolutions/soln/photos.zip .
 
 # remove the solutions
-python prep_notebooks.py
+python ../prep_notebooks.py chapters
 
 # pip install pytest nbmake
 

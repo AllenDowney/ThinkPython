@@ -94,6 +94,16 @@ editing it.
 **The two repos push separately.** A fix in `soln/` and the rebuild of
 `chapters/` are two commits in two repositories.
 
+**Prepping is destructive, not idempotent.** `prep_notebooks.py` at the top
+level serves both `chapters/` and `blank/` (`python ../prep_notebooks.py
+chapters|blank`); `jb/prep_notebooks.py` stays separate because it does a
+different job. The prep clears every tag, so a second run no longer sees `keep`
+and empties the cells the reader needs — 2, 4 and 10 cells of code in chapters
+1 to 3. `build.sh` always copies fresh from `soln/` first, so the release path
+is safe; the trap is running the script by hand. It now refuses when every
+notebook in the directory is untagged. Note `chap00` and `chap19` carry no tags
+even in `soln/`, so the check requires *all* of them to be bare.
+
 ## Tests
 
 ```bash
@@ -110,8 +120,6 @@ Chapter 4 is a third of the runtime on its own: `jupyturtle` sleeps
 
 ## Known rough edges
 
-- **Three near-identical `prep_notebooks.py`** live in `chapters/`, `blank/` and
-  `jb/`, differing by a few lines. A fix to one does not reach the others.
 - **The Gutenberg chapters read with an explicit encoding, on purpose.**
   Chapters 8, 11 and 12 pass `encoding='utf-8'` to every `open()` of a
   Gutenberg-derived file, including the writers. Without it, Windows uses its

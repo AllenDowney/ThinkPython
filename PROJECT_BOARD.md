@@ -11,7 +11,7 @@ Numbered tasks for tracking work. Each task has a permanent number; add new task
 - **Task 5:** Five chapters are never tested; CI is on deprecated actions and one Python version — **done**; the outputs check landed 2026-10-14 as `check_outputs.py`.
 - **Task 6:** Add `dataclass` coverage to Chapter 18? ([#77](https://github.com/AllenDowney/ThinkPython/issues/77)) — editorial decision needed.
 - **Task 7:** Reply to the third-party interactive edition of Chapter 3 ([#74](https://github.com/AllenDowney/ThinkPython/issues/74)) — **done**; answered and closed by Allen.
-- **Task 8:** Repo hygiene and release tooling — **partly done**: `.gitignore`, nbdime, and the untracked build tooling are handled; script consolidation and stale artifacts remain.
+- **Task 8:** Repo hygiene and release tooling — **done** 2026-10-30.
 - **Task 9:** Jupyter Book 2.0 migration — **deferred** (Jan 2026 decision).
 - **Task 10:** Windows readers cannot run chapters 8, 11 and 12 — **done**; `encoding='utf-8'` added, with a `remove-print` note.
 - **Task 11:** No Colab link on any chapter page ([plan](planning/colab_buttons.md)) — **done**; 18 links, published.
@@ -353,7 +353,7 @@ Open since April with no reply. Two things worth separating: whether the attribu
 
 ## Task 8: Repo hygiene and release tooling
 
-**Status:** Not started
+**Status:** Done 2026-10-30
 
 **Context:** `git status` on `v3` reports 58 untracked paths, which makes it useless as a signal — a real change is invisible in the noise. The causes are separable:
 
@@ -380,14 +380,14 @@ The diff driver is set in git config, so every notebook diff needs `--no-ext-dif
 
 ### Scope
 
-- [ ] Write a real `.gitignore` in both repos: generated notebooks, copied support files, downloaded corpora, `__pycache__/`, `.ipynb_checkpoints/`
-- [ ] Install `nbdime` or remove the git diff driver that depends on it
-- [ ] Track every build and prep script, or move them somewhere that is tracked
-- [ ] Consolidate the three `prep_notebooks.py` variants into one parameterized script (this is also the cleanest fix for Task 3)
-- [ ] Delete `ThinkPython3Notebooks.zip`, `ThinkPythonSolutionsNotebooks.zip`, `Turtle.py`, and `du`; decide whether the solutions zip should be regenerated or dropped
-- [ ] Commit `planning/` or move it out of the working tree
-- [ ] Write `CLAUDE.md` covering the hazards above
-- [ ] Document the release ritual end to end: fix in `soln/` → rebuild `chapters/`, `blank/`, `jb/` → commit in both repos → publish
+- [x] Write a real `.gitignore` in both repos: generated notebooks, copied support files, downloaded corpora, `__pycache__/`, `.ipynb_checkpoints/`
+- [x] Install `nbdime` or remove the git diff driver that depends on it
+- [x] Track every build and prep script, or move them somewhere that is tracked
+- [x] Consolidate the `prep_notebooks.py` variants — `chapters/` and `blank/` now share the top-level `prep_notebooks.py` (`chapters|blank`); verified byte-identical output on all 20 chapters in both modes. `jb/`'s stays separate: it keeps tags and outputs, adds MyST anchors and writes the page descriptions, and shares no logic with the other two.
+- [x] Deleted `ThinkPython3Notebooks.zip`, `ThinkPythonSolutionsNotebooks.zip`, `Turtle.py` and `du`. The "solutions" zip never held solutions — it contained the same `chapters/*.ipynb` as the student zip, from July 2024 — so it was dropped rather than regenerated. `Turtle.py`'s only reference was a comment inside itself.
+- [x] Commit `planning/` or move it out of the working tree
+- [x] Write `CLAUDE.md` covering the hazards above
+- [x] Document the release ritual end to end — `update.py` does it in one command, and CLAUDE.md describes it
 
 ### Out of scope (for first pass)
 
@@ -548,7 +548,7 @@ Done 2026-10-19, without the jupytext `split_at_heading` step (not about SEO):
 - [x] Test build: 22 pages, each with one description, one og:description, canonical; sitemap = the TOC
 - [x] Publish (jb step of `update.py` only; `soln/` unchanged) — verified live 2026-10-30: `sitemap.xml` returns 200, chapter pages carry `description` and `og:description`
 - [x] `Sitemap:` line in `~/AllenDowney.github.io/robots.txt` (line 11)
-- [ ] Allen submits the sitemap in Search Console
+- [x] Allen submits the sitemap in Search Console (2026-10-30)
 - [x] GitHub repo website field and topics (GreenTeaPress `scripts/repo_about.sh`); "Read the book online" link added near the top of the README
 - [ ] Compare at ~6 weeks and ~3 months: `python3 ~/GreenTeaPress/scripts/search_console.py --report --path /ThinkPython/` and the counter's google.com referrers
 
