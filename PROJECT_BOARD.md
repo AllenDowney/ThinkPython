@@ -2,19 +2,23 @@
 
 Numbered tasks for tracking work. Each task has a permanent number; add new tasks at the end. Update status as work progresses.
 
-### Current focus (2026-09-19)
+### Current focus (2026-10-30)
 
 - **Task 1:** Chapter 18 `Counter` example produces nonsense output ([#78](https://github.com/AllenDowney/ThinkPython/issues/78)) — **done**; published, answered, closed.
 - **Task 2:** Chapter 17 `has_pair` exercise gives the wrong outline ([#76](https://github.com/AllenDowney/ThinkPython/issues/76)) — **done**; published, answered, closed.
 - **Task 3:** Student notebooks ship with every output stripped ([#79](https://github.com/AllenDowney/ThinkPython/issues/79)) — **done for Chapter 3**; published, answered, closed. Book-wide audit still open.
 - **Task 4:** Project Gutenberg downloads make CI fail intermittently — **done**; the texts are hosted in this repo.
-- **Task 5:** Five chapters are never tested; CI is on deprecated actions and one Python version — **done** (`34bc313`), except the outputs check.
+- **Task 5:** Five chapters are never tested; CI is on deprecated actions and one Python version — **done**; the outputs check landed 2026-10-14 as `check_outputs.py`.
 - **Task 6:** Add `dataclass` coverage to Chapter 18? ([#77](https://github.com/AllenDowney/ThinkPython/issues/77)) — editorial decision needed.
 - **Task 7:** Reply to the third-party interactive edition of Chapter 3 ([#74](https://github.com/AllenDowney/ThinkPython/issues/74)) — **done**; answered and closed by Allen.
 - **Task 8:** Repo hygiene and release tooling — **partly done**: `.gitignore`, nbdime, and the untracked build tooling are handled; script consolidation and stale artifacts remain.
 - **Task 9:** Jupyter Book 2.0 migration — **deferred** (Jan 2026 decision).
 - **Task 10:** Windows readers cannot run chapters 8, 11 and 12 — **done**; `encoding='utf-8'` added, with a `remove-print` note.
-- **Task 11:** No Colab link on any chapter page ([plan](planning/colab_buttons.md)) — planned, not started.
+- **Task 11:** No Colab link on any chapter page ([plan](planning/colab_buttons.md)) — **done**; 18 links, published.
+- **Task 12:** Page-view counter on the HTML book — **live**.
+- **Task 13:** Search engine optimization — **done bar two follow-ups**: Allen's Search Console submission, and the 6-week / 3-month comparisons (due ~2026-12-01 and ~2027-01-19).
+- **Task 14:** First edition (Python 2): source, releases — **done**; 2.0.18 released 2026-10-30.
+- **Task 15:** Rename the first-edition branch `master` → `v1` — **done** 2026-10-30.
 
 **[#77](https://github.com/AllenDowney/ThinkPython/issues/77) is the only issue still open** — the `dataclass` question in Task 6, which needs an editorial call rather than a fix.
 
@@ -261,7 +265,7 @@ FAILED chap08.ipynb::chap08.ipynb
 
 ## Task 5: Five chapters are never tested; CI is on deprecated actions
 
-**Status:** Done 2026-09-19 (`34bc313`) — green on both legs. The outputs check is the one item left open.
+**Status:** Done. CI modernization 2026-09-19 (`34bc313`); the outputs check landed 2026-10-14 as `check_outputs.py`, wired into `make tests`. Windows rejoined the matrix 2026-10-14 and is green.
 
 **Context:** `ThinkPythonSolutions/Makefile` runs the test suite as two globs:
 
@@ -309,7 +313,7 @@ Chapter 4 is slow because `jupyturtle` sleeps `TURTLE_DELAY` (0.2s) after every 
 - [x] Re-test chapter 12 and drop the stale Windows comment
 - [x] Decide on chapter 04 — measured at 58s and included
 - [x] Bump `checkout` and `setup-python` to v7; Python 3.12; `fail-fast: false`; pip caching
-- [ ] Add an outputs check: a `soln/` notebook committed with `execution_count: null` throughout should fail the build (`--nbmake` executes notebooks, so stored outputs are invisible to it — this is the check that catches a chapter committed unexecuted)
+- [x] Add an outputs check: a `soln/` notebook committed with `execution_count: null` throughout should fail the build (`--nbmake` executes notebooks, so stored outputs are invisible to it — this is the check that catches a chapter committed unexecuted)
 
 ---
 
@@ -472,7 +476,7 @@ pg1184.txt   UnicodeDecodeError -- byte 0x9d at offset 6927
 
 ## Task 11: No Colab link on any chapter page
 
-**Status:** Planned 2026-09-29, not started — **full plan in [`planning/colab_buttons.md`](planning/colab_buttons.md)**
+**Status:** Done 2026-09-29, published — **full plan in [`planning/colab_buttons.md`](planning/colab_buttons.md)**. Links were later split into their own cells tagged `remove-print` (2026-10-14) so they stay off the printed page.
 
 **Context:** Reading a chapter on the published site, there is no way to open it as a
 runnable notebook. The expectation is a Colab link at the top of every chapter; today
@@ -542,7 +546,9 @@ Done 2026-10-19, without the jupytext `split_at_heading` step (not about SEO):
 - [x] Descriptions (Allen reviewed): `jb/descriptions.yml` for the notebooks, which `jb/prep_notebooks.py` writes into each copied notebook's metadata, so `soln/` is untouched; front matter in `index.md` and `blank.md`. **New chapter → add its line to `descriptions.yml`.**
 - [x] Landing H1 "Think Python, 3rd edition" (tab was "Think Python — Think Python")
 - [x] Test build: 22 pages, each with one description, one og:description, canonical; sitemap = the TOC
-- [ ] Publish (jb step of `update.py` only; `soln/` unchanged); `Sitemap:` line in `~/AllenDowney.github.io/robots.txt`; Allen submits it in Search Console
+- [x] Publish (jb step of `update.py` only; `soln/` unchanged) — verified live 2026-10-30: `sitemap.xml` returns 200, chapter pages carry `description` and `og:description`
+- [x] `Sitemap:` line in `~/AllenDowney.github.io/robots.txt` (line 11)
+- [ ] Allen submits the sitemap in Search Console
 - [x] GitHub repo website field and topics (GreenTeaPress `scripts/repo_about.sh`); "Read the book online" link added near the top of the README
 - [ ] Compare at ~6 weeks and ~3 months: `python3 ~/GreenTeaPress/scripts/search_console.py --report --path /ThinkPython/` and the counter's google.com referrers
 
@@ -550,13 +556,13 @@ Done 2026-10-19, without the jupytext `split_at_heading` step (not about SEO):
 
 ## Task 14: First edition (Python 2): source, releases
 
-**Status:** 2.0.18 released 2026-10-30. The 1st edition lives on the `master` branch of this repo (the original 2012 repo: `book/` LaTeX source, `code/` Python 2 examples); `v3` is the 3rd edition and the default branch. Renaming `master` → `v1`: Task 15.
+**Status:** 2.0.18 released 2026-10-30. The 1st edition lives on the `v1` branch of this repo (renamed from `master`, Task 15) (the original 2012 repo: `book/` LaTeX source, `code/` Python 2 examples); `v3` is the 3rd edition and the default branch. Renaming `master` → `v1`: Task 15.
 
 Releases:
 - **v2.0.17** (tag at `8c7d812`, 2015-10-26): the version on greenteapress.com from 2016 to 2026. The 2016-02-22 PDF also had "build-in" → "built-in" (never committed) and not `f026fb2` (2017, the anydbm example). No PDF attached
 - **v2.0.18** (`e1a357c`, 2026-10-30; GreenTeaPress Task 23): a note on the half-title page pointing to the 3rd edition (Allen's wording: "There is a newer edition of this book. … Python 2 reached its end of life in 2020 … *Think Python*, 3rd edition … https://allendowney.github.io/ThinkPython/"); copyright-page source link → `greenteapress.com/wp/think-python/`; license link https; running heads as published (the fix from ThinkPython2 2.4.1); the typo fix and `f026fb2`. 252 pages (2.0.17's build had no index; the typewriter font is now cm-super Type 1, not bitmaps). Release `v2.0.18` with `thinkpython.pdf`, identical to `greenteapress.com/thinkpython/thinkpython.pdf` (GreenTeaPress deploy `2bf16ba`). It shows as "Latest" because it's the repo's only release, even though it was created with `--latest=false`
 
-How to release a new version: as in ThinkPython2's board (Task 2, "How to release a new version"), with these differences: work on the 1st-edition branch in a separate worktree (`git worktree add DIR master`), since this checkout is on `v3`; the PDF is `thinkpython.pdf` in `~/GreenTeaPress/greenteapress/thinkpython/`; create the release with `--latest=false`. `greenteapress/thinkpython/tex/` and `thinkpython.tex.zip` on greenteapress.com are the 2.0.17 snapshot, not the source.
+How to release a new version: as in ThinkPython2's board (Task 2, "How to release a new version"), with these differences: work on the 1st-edition branch in a separate worktree (`git worktree add DIR v1`), since this checkout is on `v3`; the PDF is `thinkpython.pdf` in `~/GreenTeaPress/greenteapress/thinkpython/`; create the release with `--latest=false`. `greenteapress/thinkpython/tex/` and `thinkpython.tex.zip` on greenteapress.com are the 2.0.17 snapshot, not the source.
 
 The book's 82 printed `thinkpython.com/code/…` links go to the **2nd edition's** Python 3 code (ThinkPython2), not the Python 2 code in `code/` here. Left as is; the half-title note says the edition is out of date.
 
@@ -564,13 +570,13 @@ The book's 82 printed `thinkpython.com/code/…` links go to the **2nd edition's
 
 ## Task 15: Rename the first-edition branch `master` → `v1`
 
-**Status:** To do (Allen decided 2026-10-30). `master` holds the 1st edition (Task 14) but reads as the main branch; `v1` matches `v3`. Checked 2026-10-30: no open PRs target `master` (the one open PR targets `v3`); none of the greenteapress.com or allendowney.com files link to `ThinkPython/…/master`; the book's printed links go through thinkpython.com, not GitHub. GitHub redirects web links to the old branch name; 1,095 forks are unaffected; existing clones get a notice to rename their branch.
+**Status:** Done 2026-10-30. `master` holds the 1st edition (Task 14) but reads as the main branch; `v1` matches `v3`. Checked 2026-10-30: no open PRs target `master` (the one open PR targets `v3`); none of the greenteapress.com or allendowney.com files link to `ThinkPython/…/master`; the book's printed links go through thinkpython.com, not GitHub. GitHub redirects web links to the old branch name; 1,095 forks are unaffected; existing clones get a notice to rename their branch.
 
-- [ ] Rename on GitHub (or Settings → Branches → rename):
+- [x] Rename on GitHub:
   `gh api -X POST repos/AllenDowney/ThinkPython/branches/master/rename -f new_name=v1`
-- [ ] Update this clone:
+- [x] Update this clone:
   `git branch -m master v1 && git fetch origin && git branch -u origin/v1 v1 && git remote set-head origin -a`
-- [ ] Check: `gh api repos/AllenDowney/ThinkPython/branches --jq '.[].name'` lists `v1` (not `master`); `curl -sI https://github.com/AllenDowney/ThinkPython/tree/master/code` redirects to `/tree/v1/code`; the default branch is still `v3`
-- [ ] Update the names in Task 14 (worktree command) and GreenTeaPress Task 23 (`master` → `v1`)
+- [x] Checked: branches are `gh-pages v1 v3`; `/tree/master/code` returns 302 to `/tree/v1/code`; default branch still `v3`; release `v2.0.18` and its `thinkpython.pdf` asset intact
+- [x] Updated the names in Task 14 (worktree command) and GreenTeaPress Task 23
 
 ---

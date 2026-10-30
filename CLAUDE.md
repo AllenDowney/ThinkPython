@@ -110,16 +110,25 @@ Chapter 4 is a third of the runtime on its own: `jupyturtle` sleeps
 
 ## Known rough edges
 
-- **Windows readers cannot run chapters 8, 11 and 12.** The book teaches
-  `open(filename)` with no `encoding`, so under a cp1252 locale the Gutenberg
-  texts raise `UnicodeDecodeError` on byte `0x9d`. Windows is kept out of the CI
-  matrix for this reason — `PYTHONUTF8=1` would turn CI green while leaving
-  readers broken.
-- **Project Gutenberg downloads make CI flaky.** Chapters 8, 11 and 12 fetch
-  from `gutenberg.org` at run time; the scheduled build failed on this in July
-  2026. Gutenberg blocks datacenter IPs.
 - **Three near-identical `prep_notebooks.py`** live in `chapters/`, `blank/` and
   `jb/`, differing by a few lines. A fix to one does not reach the others.
+- **The Gutenberg chapters read with an explicit encoding, on purpose.**
+  Chapters 8, 11 and 12 pass `encoding='utf-8'` to every `open()` of a
+  Gutenberg-derived file, including the writers. Without it, Windows uses its
+  cp1252 locale default and raises `UnicodeDecodeError` on byte `0x9d`. Each
+  chapter carries a short note tagged `remove-print` saying the argument is not
+  in the printed book. Do not "simplify" these back, and do not paper over a red
+  Windows CI leg with `PYTHONUTF8=1` — readers do not have that set either.
+  `words.txt` is deliberately left plain: it is ASCII, and it is what the simple
+  teaching examples use.
+- **The Project Gutenberg texts are served from this repo, not gutenberg.org.**
+  `pg345.txt`, `pg1184.txt` and `pg43.txt` are tracked at the top level and the
+  chapters download them from `github.com/AllenDowney/ThinkPython/raw/v3/`.
+  Gutenberg blocks datacenter IPs, which broke CI in July 2026, and all three
+  files had drifted from the copies the stored outputs were computed against.
+  Do not point these back at gutenberg.org.
+- **The first edition is on the `v1` branch** (renamed from `master`,
+  2026-10-30). `v3` is this book and the default branch.
 
 See `PROJECT_BOARD.md` for the numbered task list and `planning/` for longer
 design notes.
