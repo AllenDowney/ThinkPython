@@ -550,7 +550,7 @@ Done 2026-10-19, without the jupytext `split_at_heading` step (not about SEO):
 
 ## Task 14: First edition (Python 2): source, releases
 
-**Status:** 2.0.18 released 2026-10-30. The 1st edition lives on the `master` branch of this repo (the original 2012 repo: `book/` LaTeX source, `code/` Python 2 examples); `v3` is the 3rd edition and the default branch. **Planned (Allen, 2026-10-30): rename `master` → `v1`** (`gh api -X POST repos/AllenDowney/ThinkPython/branches/master/rename -f new_name=v1`; GitHub redirects old web links; then here: `git branch -m master v1 && git fetch origin && git branch -u origin/v1 v1 && git remote set-head origin -a`).
+**Status:** 2.0.18 released 2026-10-30. The 1st edition lives on the `master` branch of this repo (the original 2012 repo: `book/` LaTeX source, `code/` Python 2 examples); `v3` is the 3rd edition and the default branch. Renaming `master` → `v1`: Task 15.
 
 Releases:
 - **v2.0.17** (tag at `8c7d812`, 2015-10-26): the version on greenteapress.com from 2016 to 2026. The 2016-02-22 PDF also had "build-in" → "built-in" (never committed) and not `f026fb2` (2017, the anydbm example). No PDF attached
@@ -559,5 +559,18 @@ Releases:
 How to release a new version: as in ThinkPython2's board (Task 2, "How to release a new version"), with these differences: work on the 1st-edition branch in a separate worktree (`git worktree add DIR master`), since this checkout is on `v3`; the PDF is `thinkpython.pdf` in `~/GreenTeaPress/greenteapress/thinkpython/`; create the release with `--latest=false`. `greenteapress/thinkpython/tex/` and `thinkpython.tex.zip` on greenteapress.com are the 2.0.17 snapshot, not the source.
 
 The book's 82 printed `thinkpython.com/code/…` links go to the **2nd edition's** Python 3 code (ThinkPython2), not the Python 2 code in `code/` here. Left as is; the half-title note says the edition is out of date.
+
+---
+
+## Task 15: Rename the first-edition branch `master` → `v1`
+
+**Status:** To do (Allen decided 2026-10-30). `master` holds the 1st edition (Task 14) but reads as the main branch; `v1` matches `v3`. Checked 2026-10-30: no open PRs target `master` (the one open PR targets `v3`); none of the greenteapress.com or allendowney.com files link to `ThinkPython/…/master`; the book's printed links go through thinkpython.com, not GitHub. GitHub redirects web links to the old branch name; 1,095 forks are unaffected; existing clones get a notice to rename their branch.
+
+- [ ] Rename on GitHub (or Settings → Branches → rename):
+  `gh api -X POST repos/AllenDowney/ThinkPython/branches/master/rename -f new_name=v1`
+- [ ] Update this clone:
+  `git branch -m master v1 && git fetch origin && git branch -u origin/v1 v1 && git remote set-head origin -a`
+- [ ] Check: `gh api repos/AllenDowney/ThinkPython/branches --jq '.[].name'` lists `v1` (not `master`); `curl -sI https://github.com/AllenDowney/ThinkPython/tree/master/code` redirects to `/tree/v1/code`; the default branch is still `v3`
+- [ ] Update the names in Task 14 (worktree command) and GreenTeaPress Task 23 (`master` → `v1`)
 
 ---
