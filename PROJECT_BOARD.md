@@ -6,7 +6,7 @@ Numbered tasks for tracking work. Each task has a permanent number; add new task
 
 - **Task 1:** Chapter 18 `Counter` example produces nonsense output ([#78](https://github.com/AllenDowney/ThinkPython/issues/78)) — **done**; published, answered, closed.
 - **Task 2:** Chapter 17 `has_pair` exercise gives the wrong outline ([#76](https://github.com/AllenDowney/ThinkPython/issues/76)) — **done**; published, answered, closed.
-- **Task 3:** Student notebooks ship with every output stripped ([#79](https://github.com/AllenDowney/ThinkPython/issues/79)) — **done for Chapter 3**; published, answered, closed. Book-wide audit still open.
+- **Task 3:** Student notebooks ship with every output stripped ([#79](https://github.com/AllenDowney/ThinkPython/issues/79)) — **done**; book-wide audit found nothing beyond Chapter 3 (2026-11-06), and `keep` now tagged in Chapters 4–18.
 - **Task 4:** Project Gutenberg downloads make CI fail intermittently — **done**; the texts are hosted in this repo.
 - **Task 5:** Five chapters are never tested; CI is on deprecated actions and one Python version — **done**; the outputs check landed 2026-10-14 as `check_outputs.py`.
 - **Task 6:** Add `dataclass` coverage to Chapter 18? ([#77](https://github.com/AllenDowney/ThinkPython/issues/77)) — **declined** 2026-11-06; answered and closed.
@@ -143,7 +143,7 @@ The "largest first" requirement is load-bearing and was previously undocumented:
 
 ## Task 3: Student notebooks ship with every output stripped
 
-**Status:** Done for Chapter 3 on 2026-09-19 (`5295441`) — published, [answered](https://github.com/AllenDowney/ThinkPython/issues/79#issuecomment-5743154298) and closed. Book-wide audit still open.
+**Status:** Done. Chapter 3 fixed 2026-09-19 (`5295441`) — published, [answered](https://github.com/AllenDowney/ThinkPython/issues/79#issuecomment-5743154298) and closed. Audit and `keep` tagging finished 2026-11-06.
 
 **Reported by:** [@goekce in #79](https://github.com/AllenDowney/ThinkPython/issues/79), 2026-09-18
 
@@ -166,6 +166,11 @@ Result: **0 of 1370 code cells across `chapters/chap*.ipynb` have any stored out
 This is a policy question, not just a bug: blank notebooks are the point, and pre-filling outputs would spoil exercises. But worked examples the prose refers to are not exercises, and today there is no way to mark one.
 
 ### The `keep` tag: what it actually does
+
+**Update 2026-11-06:** much of what follows is out of date. Task 8 merged the prep scripts into `prep_notebooks.py`, whose `blank` mode does honor `keep`, and CLAUDE.md now warns that losing the tags empties the cells readers need. The real gap was coverage: Chapters 4–19 had no `keep` tags, so their `blank/` notebooks had **no code at all**, not even the cell that downloads `thinkpython.py`, `diagram.py` and `jupyturtle.py`, and a follow-along reader's first import failed. 63 cells in Chapters 4–18 are now tagged `keep`, matching Chapters 1–3: the download cell, the `thinkpython`/`autoreload` cell, the `%xmode` cell and the diagram-drawing cells. (Chapter 19 has no code.)
+
+The original 2026-09-19 notes:
+
 
 Investigated 2026-09-19, because the tag's presence suggested a mechanism that might already solve this. It does not.
 
@@ -201,8 +206,8 @@ Verified by running `chapters/prep_notebooks.py` over the result: the reader now
 - [x] Apply it to the three Chapter 3 exercises, including the one named in #79
 - [x] Establish what `keep` does and whether it was usable here (it is not)
 - [x] Re-execute `soln/chap03.ipynb` so the stored output matches the corrected `triangle`
-- [ ] Wider audit for other exercises whose prose promises a result the reader cannot see
-- [ ] Decide the fate of the 18 orphaned `keep` tags: finish the idea, or drop the tag and the `blank/` branch that reads it
+- [x] Wider audit for other exercises whose prose promises a result the reader cannot see — 2026-11-06: scanned all chapters for prose that promises an output just before a solution cell without showing it; the only hit (Chapter 11) states the result inline. Nothing to fix beyond Chapter 3
+- [x] Decide the fate of the `keep` tags — finished the idea: 63 cells tagged in Chapters 4–18 (2026-11-06)
 - [x] Rebuild `chapters/`, regenerate `ThinkPythonNotebooks.zip`, publish the site
 - [x] Reply on #79 and close
 
