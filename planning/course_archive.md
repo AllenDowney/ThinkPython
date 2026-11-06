@@ -2,7 +2,7 @@
 
 **Created:** 2026-11-06
 **Board:** Task 18 in `PROJECT_BOARD.md` (feeds Task 17, teaching materials)
-**Status:** Steps 1 to 3 done 2026-11-06: 418 questions cataloged, 314 distinct (`ThinkPythonTeaching` `9875d79`). Next: step 4, mining, a few chapters at a time
+**Status:** Steps 1 to 3 done 2026-11-06: 418 questions cataloged, 314 distinct (`ThinkPythonTeaching` `9875d79`). Mining under way: Chapters 9–11 done 2026-11-06
 
 ## Goal
 
@@ -186,6 +186,42 @@ What the agents found along the way:
   commit (`9875d79`) and force-pushed on 2026-11-06, so neither survives in any
   reachable commit. GitHub may keep the orphaned commits until its own cleanup;
   GitHub Support can purge them on request.
+
+## Mining (step 4)
+
+One subagent per chapter, against `bank/MINING_BRIEF.md`: each usable question is
+updated to Python 3 and the 3rd edition, solved, **verified by a check script that
+must pass** (`bank/check/chapNN_check.py`), given instructor notes, and sent to one of
+`exam` (private bank), `activity` (in class), `quiz` (proposed for the public quiz)
+or `drop`. Output per chapter: `bank/chapNN.md` for Allen's review.
+
+**Allen's rules** (2026-11-06, recorded in the brief):
+
+- Any tool the book has already introduced is fair game, in questions and solutions,
+  and gets full credit. A question that needs something not yet taught moves to that
+  later chapter, or gives it explicitly. The book's code never uses `while`,
+  `continue`, `del` or `raise`; `random` first appears in Chapter 12, tuples in 11.
+- State behaviour a grader would otherwise guess (duplicates, edge cases) in the
+  question.
+- When two items rest on the same idea, keep the better one.
+
+**Chapters 9–11 (2026-11-06):** 71 catalog questions became 14 (Ch 9), 19 kept plus
+7 dropped (Ch 10) and 14 (Ch 11) items, plus one moved to a new `bank/chap12.md`.
+Decisions Allen made along the way:
+
+- Ch 9: `only_reduplicated` uses the whole-word-doubled rule (`bonbon`, `tutu`);
+  `t == sorted(t)` is full credit for `is_sorted`; `list_intersection` states its
+  duplicates rule. The 2004 answer key for a debugging question gave the wrong
+  reason; the item now uses the real Chapter 9 bug (emptying the caller's list).
+- Ch 10: the strict `invert` (needs `raise`) and `count_duplicates` (too close to
+  the book's exercises) dropped; memoized binomial moved to Ch 11 (tuple keys); the
+  d20 dice moved to Ch 12 (`random`).
+- Ch 11: both sorting questions allow `key=`; `gforce-pairs` dropped as overlapping
+  `max-distance-pair`.
+- **Public quiz:** of three proposals, two were accepted and added to
+  `soln/quizzes.ipynb` (Ch 9: why aliasing is safe with strings; Ch 10: keys are like
+  indices, values like elements). The Ch 11 `tuple_replace` question stays private as
+  an activity.
 
 **Still to look for:** the 2021 Takeout archives of the classic Google Sites, which
 weren't on this disk or the external drive (only a 2026 Blogger Takeout was). Allen
