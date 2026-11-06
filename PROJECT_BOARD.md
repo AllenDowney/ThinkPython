@@ -620,6 +620,8 @@ The book's 82 printed `thinkpython.com/code/…` links go to the **2nd edition's
 
 **Candidates**, grouped in the plan: syllabus templates, a pacing guide with chapter dependencies, learning objectives, slides, instructor notes, in-class activities, graded assignments with private solutions and autograders, a private exam question bank, projects, AI guidance, and an LMS course shell.
 
+**Distribution and access** (what's free, what's private, how instructors get it) are planned on the private board in `ThinkPythonTeaching` (its Tasks 1–4), not here.
+
 ### Scope
 
 - [ ] List what teachers have actually asked for (past emails), and add a feedback link to the website
