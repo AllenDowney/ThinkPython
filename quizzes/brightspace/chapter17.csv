@@ -52,3 +52,20 @@ Option,100,delegation,HTML,Delegation is when one method passes responsibility t
 Option,0,inheritance,HTML,Inheritance is the ability to define a new class that is a modified version of a previously defined class.,HTML
 Option,0,specialization,HTML,Specialization is a way of using inheritance to create a new class that is a specialized version of an existing class.,HTML
 
+NewQuestion,MC
+ID,TP3-chapter17-q05
+Title,"Think Python, Chapter 17: Inheritance, question 5"
+QuestionText,"<p>The <code>Hand</code> class in this chapter inherits from <code>Deck</code> and defines its own <code>__init__</code>:</p>
+<pre><code>class Hand(Deck):
+    def __init__(self, label=''):
+        self.label = label
+        self.cards = []
+</code></pre>
+<p>When we create a <code>Hand</code> with <code>Hand('player 1')</code>, which <code>__init__</code> methods run?</p>",HTML
+Points,1
+Difficulty,1
+Option,0,"Only <code>Deck.__init__</code> runs, because <code>Hand</code> inherits it.",HTML,"<code>Hand</code> would inherit <code>Deck.__init__</code> only if it didn't define its own; because it does, its version overrides the one in <code>Deck</code>.",HTML
+Option,0,"<code>Deck.__init__</code> runs first, then <code>Hand.__init__</code>.",HTML,"Python doesn't run the parent's <code>__init__</code> automatically -- if the child class defines <code>__init__</code>, only the child's version runs.",HTML
+Option,100,"Only <code>Hand.__init__</code>, which overrides <code>Deck.__init__</code>, so it has to create all the attributes a <code>Hand</code> needs.",HTML,"<code>Hand.__init__</code> overrides <code>Deck.__init__</code>, so <code>Deck.__init__</code> doesn't run -- that's why <code>Hand.__init__</code> creates the <code>cards</code> attribute itself.",HTML
+Option,0,"Neither -- it's an error, because <code>Deck.__init__</code> requires a <code>cards</code> argument.",HTML,"<code>Deck.__init__</code> is never called, so its parameters don't matter -- <code>Hand('player 1')</code> works and the <code>Hand</code> gets the label <code>'player 1'</code>.",HTML
+

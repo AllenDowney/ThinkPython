@@ -100,4 +100,38 @@ date.day = 11
       <feedback format="html"><text><![CDATA[This function modifies an attribute of the <code>Date</code> object it gets as a parameter, so it is an impure function -- and it returns a reference to the same <code>Date</code> object.]]></text></feedback>
     </answer>
   </question>
+  <question type="multichoice">
+    <name><text>TP3-chapter14-q04</text></name>
+    <questiontext format="html"><text><![CDATA[<p>Suppose <code>today</code> refers to a <code>Date</code> object, and we run this code:</p>
+<pre><code>def set_date(date, val):
+    date.date = val
+
+set_date(today, 27)
+</code></pre>
+<p>Which of these is true afterward?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-chapter14-q04</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[It caused an error, because <code>date</code> is already the name of a parameter.]]></text>
+      <feedback format="html"><text><![CDATA[A parameter and an attribute can have the same name without conflict: the parameter is a variable in the function's frame and the attribute belongs to the object.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>today</code> now refers to the integer <code>27</code>.]]></text>
+      <feedback format="html"><text><![CDATA[The function never assigns a new value to <code>today</code> or to <code>date</code>; it assigns to an attribute of the object they both refer to.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[The parameter <code>date</code> was changed to <code>27</code>, but <code>today</code> is unchanged.]]></text>
+      <feedback format="html"><text><![CDATA[<code>date.date = val</code> does not change the parameter <code>date</code> -- it still refers to the <code>Date</code> object -- and because <code>date</code> and <code>today</code> refer to the same object, the change is visible through <code>today</code>.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[The <code>Date</code> object that <code>today</code> refers to has an attribute called <code>date</code> whose value is <code>27</code>.]]></text>
+      <feedback format="html"><text><![CDATA[Inside the function, <code>date</code> refers to the same object as <code>today</code>, so <code>date.date = val</code> creates an attribute of that object. Functions like <code>make_time</code> in this chapter use the same names for parameters and attributes on purpose.]]></text></feedback>
+    </answer>
+  </question>
 </quiz>

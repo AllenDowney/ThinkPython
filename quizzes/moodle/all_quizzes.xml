@@ -1643,6 +1643,40 @@ date.day = 11
       <feedback format="html"><text><![CDATA[This function modifies an attribute of the <code>Date</code> object it gets as a parameter, so it is an impure function -- and it returns a reference to the same <code>Date</code> object.]]></text></feedback>
     </answer>
   </question>
+  <question type="multichoice">
+    <name><text>TP3-chapter14-q04</text></name>
+    <questiontext format="html"><text><![CDATA[<p>Suppose <code>today</code> refers to a <code>Date</code> object, and we run this code:</p>
+<pre><code>def set_date(date, val):
+    date.date = val
+
+set_date(today, 27)
+</code></pre>
+<p>Which of these is true afterward?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-chapter14-q04</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[It caused an error, because <code>date</code> is already the name of a parameter.]]></text>
+      <feedback format="html"><text><![CDATA[A parameter and an attribute can have the same name without conflict: the parameter is a variable in the function's frame and the attribute belongs to the object.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>today</code> now refers to the integer <code>27</code>.]]></text>
+      <feedback format="html"><text><![CDATA[The function never assigns a new value to <code>today</code> or to <code>date</code>; it assigns to an attribute of the object they both refer to.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[The parameter <code>date</code> was changed to <code>27</code>, but <code>today</code> is unchanged.]]></text>
+      <feedback format="html"><text><![CDATA[<code>date.date = val</code> does not change the parameter <code>date</code> -- it still refers to the <code>Date</code> object -- and because <code>date</code> and <code>today</code> refer to the same object, the change is visible through <code>today</code>.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[The <code>Date</code> object that <code>today</code> refers to has an attribute called <code>date</code> whose value is <code>27</code>.]]></text>
+      <feedback format="html"><text><![CDATA[Inside the function, <code>date</code> refers to the same object as <code>today</code>, so <code>date.date = val</code> creates an attribute of that object. Functions like <code>make_time</code> in this chapter use the same names for parameters and attributes on purpose.]]></text></feedback>
+    </answer>
+  </question>
   <question type="category">
     <category><text>$course$/top/Think Python/Think Python, Chapter 15: Classes and Methods</text></category>
     <info format="html"><text><![CDATA[Formative quiz for Chapter 15. From <em>Think Python</em>, 3rd edition, by Allen B. Downey (https://allendowney.github.io/ThinkPython/), CC BY-NC-SA 4.0.]]></text></info>
@@ -1962,6 +1996,40 @@ What happens when we invoke <code>int_to_time</code> like this?</p>
     <answer fraction="100" format="html">
       <text><![CDATA[delegation]]></text>
       <feedback format="html"><text><![CDATA[Delegation is when one method passes responsibility to another method to do most or all of the work.]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>TP3-chapter17-q05</text></name>
+    <questiontext format="html"><text><![CDATA[<p>The <code>Hand</code> class in this chapter inherits from <code>Deck</code> and defines its own <code>__init__</code>:</p>
+<pre><code>class Hand(Deck):
+    def __init__(self, label=''):
+        self.label = label
+        self.cards = []
+</code></pre>
+<p>When we create a <code>Hand</code> with <code>Hand('player 1')</code>, which <code>__init__</code> methods run?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-chapter17-q05</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>Deck.__init__</code> runs first, then <code>Hand.__init__</code>.]]></text>
+      <feedback format="html"><text><![CDATA[Python doesn't run the parent's <code>__init__</code> automatically -- if the child class defines <code>__init__</code>, only the child's version runs.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Only <code>Deck.__init__</code> runs, because <code>Hand</code> inherits it.]]></text>
+      <feedback format="html"><text><![CDATA[<code>Hand</code> would inherit <code>Deck.__init__</code> only if it didn't define its own; because it does, its version overrides the one in <code>Deck</code>.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Neither -- it's an error, because <code>Deck.__init__</code> requires a <code>cards</code> argument.]]></text>
+      <feedback format="html"><text><![CDATA[<code>Deck.__init__</code> is never called, so its parameters don't matter -- <code>Hand('player 1')</code> works and the <code>Hand</code> gets the label <code>'player 1'</code>.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Only <code>Hand.__init__</code>, which overrides <code>Deck.__init__</code>, so it has to create all the attributes a <code>Hand</code> needs.]]></text>
+      <feedback format="html"><text><![CDATA[<code>Hand.__init__</code> overrides <code>Deck.__init__</code>, so <code>Deck.__init__</code> doesn't run -- that's why <code>Hand.__init__</code> creates the <code>cards</code> attribute itself.]]></text></feedback>
     </answer>
   </question>
   <question type="category">

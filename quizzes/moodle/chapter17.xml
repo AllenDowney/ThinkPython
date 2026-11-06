@@ -126,4 +126,38 @@
       <feedback format="html"><text><![CDATA[Delegation is when one method passes responsibility to another method to do most or all of the work.]]></text></feedback>
     </answer>
   </question>
+  <question type="multichoice">
+    <name><text>TP3-chapter17-q05</text></name>
+    <questiontext format="html"><text><![CDATA[<p>The <code>Hand</code> class in this chapter inherits from <code>Deck</code> and defines its own <code>__init__</code>:</p>
+<pre><code>class Hand(Deck):
+    def __init__(self, label=''):
+        self.label = label
+        self.cards = []
+</code></pre>
+<p>When we create a <code>Hand</code> with <code>Hand('player 1')</code>, which <code>__init__</code> methods run?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-chapter17-q05</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>Deck.__init__</code> runs first, then <code>Hand.__init__</code>.]]></text>
+      <feedback format="html"><text><![CDATA[Python doesn't run the parent's <code>__init__</code> automatically -- if the child class defines <code>__init__</code>, only the child's version runs.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Only <code>Deck.__init__</code> runs, because <code>Hand</code> inherits it.]]></text>
+      <feedback format="html"><text><![CDATA[<code>Hand</code> would inherit <code>Deck.__init__</code> only if it didn't define its own; because it does, its version overrides the one in <code>Deck</code>.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Neither -- it's an error, because <code>Deck.__init__</code> requires a <code>cards</code> argument.]]></text>
+      <feedback format="html"><text><![CDATA[<code>Deck.__init__</code> is never called, so its parameters don't matter -- <code>Hand('player 1')</code> works and the <code>Hand</code> gets the label <code>'player 1'</code>.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Only <code>Hand.__init__</code>, which overrides <code>Deck.__init__</code>, so it has to create all the attributes a <code>Hand</code> needs.]]></text>
+      <feedback format="html"><text><![CDATA[<code>Hand.__init__</code> overrides <code>Deck.__init__</code>, so <code>Deck.__init__</code> doesn't run -- that's why <code>Hand.__init__</code> creates the <code>cards</code> attribute itself.]]></text></feedback>
+    </answer>
+  </question>
 </quiz>
