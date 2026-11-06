@@ -2,7 +2,7 @@
 
 **Created:** 2026-11-06
 **Board:** Task 16 in `PROJECT_BOARD.md`
-**Status:** Steps 1 and 2 done; QTI 1.2 exporter written and tested on Canvas 2026-11-06. Next: Moodle XML and Brightspace CSV exporters, then publishing
+**Status:** All three exporters written 2026-11-06; QTI 1.2 tested on Canvas, Moodle XML and Brightspace CSV checked but untested. Next: publish to `quizzes/` (step 6)
 
 ## Goal
 
@@ -86,8 +86,9 @@ silently.
 1. **Review the questions** for typos and errors (in progress; findings below). Fix
    them in `soln/quizzes.ipynb` through jupytext, the same as a chapter.
 2. **Decide the open questions** below.
-3. **Exporters:** `quizzes/export_qti12.py`, `quizzes/export_moodle.py` and
-   `quizzes/export_brightspace.py` reading the parsed JSON. Each choice gets its own rationale as feedback. Code blocks become
+3. **Exporters** (done): `soln/quizzes/export_text2qti.py` for QTI 1.2 and
+   `soln/quizzes/export_lms.py` for Moodle XML and Brightspace CSV, both reading the
+   parsed JSON. Each choice gets its own rationale as feedback. Code blocks become
    `<pre><code>`, inline code becomes `<code>`. One package per quiz, plus one with
    everything.
 4. **Validate:** `xmllint --noout` on every generated file, in `make tests`.
@@ -129,6 +130,26 @@ Two things the exporter has to do that the source doesn't:
 
 Smart quotes: `text2qti` curls the quotes and apostrophes in prose (`can’t`), but not
 inside code.
+
+## Moodle XML and Brightspace CSV (2026-11-06)
+
+`soln/quizzes/export_lms.py` writes both into `soln/quizzes/build/` (ignored): one
+file per quiz plus `all_quizzes`, 20 of each. Markdown becomes HTML with
+python-markdown's `fenced_code`, so code keeps its indentation and `*` survives;
+both had been lost in the hand-made CSV (`return length  width`, `def has_a(wor**d)`).
+
+- **Moodle XML:** one question-bank category per quiz, under `Think Python/`.
+  `shuffleanswers` is on; each answer carries its rationale as feedback. Passes
+  `xmllint`; 83 questions, each with 4 answers and exactly one at 100%.
+- **Brightspace CSV:** follows Brightspace's own sample
+  (`s.brightspace.com/apps/import-quiz-questions/1.39.1/sample/Sample_Question_Import_UTF8.csv`):
+  `QuestionText,<html>,HTML` and `Option,<weight>,<html>,HTML,<feedback>,HTML`. The
+  CSV has no shuffle setting, so the exporter shuffles the choices itself, seeded by
+  question ID so builds are stable; the correct answers land at a/b/c/d 22/14/18/29
+  times. Written as UTF-8 with a BOM.
+
+Neither has been imported into a real Moodle or Brightspace. The README for the
+downloads should say so and ask instructors to report problems.
 
 ## Decisions (2026-11-06)
 
