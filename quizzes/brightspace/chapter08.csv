@@ -31,3 +31,14 @@ Option,0,<code>'abcd'</code>,HTML,The pattern <code>c$</code> requires the lette
 Option,0,<code>'ab?c$'</code>,HTML,"The question mark, <code>?</code>, and dollar sign, <code>$</code>, are special characters that change the behavior of the pattern -- they should not appear in the string.",HTML
 Option,0,<code>'abbc'</code>,HTML,"The pattern <code>b?</code> means that <code>b</code> is optional, but it cannot be repeated.",HTML
 
+NewQuestion,MC
+ID,TP3-chapter08-q04
+Title,"Think Python, Chapter 8: Strings and Regular Expressions, question 4"
+QuestionText,"<p>If <code>s = 'apple'</code>, which slice is <code>'ppl'</code>?</p>",HTML
+Points,1
+Difficulty,1
+Option,0,<code>s[1:3]</code>,HTML,"The slice <code>s[1:3]</code> stops before index 3, so it is <code>'pp'</code>. The second index is not included.",HTML
+Option,100,<code>s[1:4]</code>,HTML,"The slice starts at index 1 (the first <code>'p'</code>) and goes up to, but not including, index 4 (the <code>'e'</code>).",HTML
+Option,0,<code>s[2:5]</code>,HTML,"Indices start at <code>0</code>, so <code>s[2:5]</code> starts at the second <code>'p'</code> and is <code>'ple'</code>.",HTML
+Option,0,<code>s[2:4]</code>,HTML,"Indices start at <code>0</code>, so index 2 is the second <code>'p'</code>, and <code>s[2:4]</code> is <code>'pl'</code>.",HTML
+

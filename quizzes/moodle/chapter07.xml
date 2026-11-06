@@ -102,4 +102,32 @@
       <feedback format="html"><text><![CDATA[It returns <code>True</code> if it gets to the end of <code>word</code> and exits the loop having found none of the letters in <code>letters</code>.]]></text></feedback>
     </answer>
   </question>
+  <question type="multichoice">
+    <name><text>TP3-chapter07-q04</text></name>
+    <questiontext format="html"><text><![CDATA[<p>A loop that stops as soon as it finds what it is looking for, like the one in <code>uses_any</code>, is an example of a pattern called</p>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-chapter07-q04</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[a counter]]></text>
+      <feedback format="html"><text><![CDATA[A counter is a variable used to count something, like <code>total</code> in the loop that counts the words in <code>words.txt</code>; that loop goes all the way through the file.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[an update]]></text>
+      <feedback format="html"><text><![CDATA[An update is an assignment that gives a new value to a variable that already exists, like <code>x = x + 1</code>.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[a doctest]]></text>
+      <feedback format="html"><text><![CDATA[A doctest is a test in a docstring; it checks a function, but it isn't a kind of loop.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[a linear search]]></text>
+      <feedback format="html"><text><![CDATA[A linear search goes through a sequence of elements and stops when it finds what it is looking for.]]></text></feedback>
+    </answer>
+  </question>
 </quiz>

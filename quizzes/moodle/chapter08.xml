@@ -88,4 +88,32 @@
       <feedback format="html"><text><![CDATA[It's OK to have extra letters at the beginning, and the <code>b</code> is not required.]]></text></feedback>
     </answer>
   </question>
+  <question type="multichoice">
+    <name><text>TP3-chapter08-q04</text></name>
+    <questiontext format="html"><text><![CDATA[<p>If <code>s = 'apple'</code>, which slice is <code>'ppl'</code>?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-chapter08-q04</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>s[1:3]</code>]]></text>
+      <feedback format="html"><text><![CDATA[The slice <code>s[1:3]</code> stops before index 3, so it is <code>'pp'</code>. The second index is not included.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>s[2:4]</code>]]></text>
+      <feedback format="html"><text><![CDATA[Indices start at <code>0</code>, so index 2 is the second <code>'p'</code>, and <code>s[2:4]</code> is <code>'pl'</code>.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>s[2:5]</code>]]></text>
+      <feedback format="html"><text><![CDATA[Indices start at <code>0</code>, so <code>s[2:5]</code> starts at the second <code>'p'</code> and is <code>'ple'</code>.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<code>s[1:4]</code>]]></text>
+      <feedback format="html"><text><![CDATA[The slice starts at index 1 (the first <code>'p'</code>) and goes up to, but not including, index 4 (the <code>'e'</code>).]]></text></feedback>
+    </answer>
+  </question>
 </quiz>
