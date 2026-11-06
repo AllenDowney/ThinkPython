@@ -9,7 +9,7 @@ Numbered tasks for tracking work. Each task has a permanent number; add new task
 - **Task 3:** Student notebooks ship with every output stripped ([#79](https://github.com/AllenDowney/ThinkPython/issues/79)) — **done for Chapter 3**; published, answered, closed. Book-wide audit still open.
 - **Task 4:** Project Gutenberg downloads make CI fail intermittently — **done**; the texts are hosted in this repo.
 - **Task 5:** Five chapters are never tested; CI is on deprecated actions and one Python version — **done**; the outputs check landed 2026-10-14 as `check_outputs.py`.
-- **Task 6:** Add `dataclass` coverage to Chapter 18? ([#77](https://github.com/AllenDowney/ThinkPython/issues/77)) — editorial decision needed.
+- **Task 6:** Add `dataclass` coverage to Chapter 18? ([#77](https://github.com/AllenDowney/ThinkPython/issues/77)) — **declined** 2026-11-06; answered and closed.
 - **Task 7:** Reply to the third-party interactive edition of Chapter 3 ([#74](https://github.com/AllenDowney/ThinkPython/issues/74)) — **done**; answered and closed by Allen.
 - **Task 8:** Repo hygiene and release tooling — **done** 2026-10-30.
 - **Task 9:** Jupyter Book 2.0 migration — **deferred** (Jan 2026 decision).
@@ -19,8 +19,9 @@ Numbered tasks for tracking work. Each task has a permanent number; add new task
 - **Task 13:** Search engine optimization — **done bar two follow-ups**: Allen's Search Console submission, and the 6-week / 3-month comparisons (due ~2026-12-01 and ~2027-01-19).
 - **Task 14:** First edition (Python 2): source, releases — **done**; 2.0.18 released 2026-10-30.
 - **Task 15:** Rename the first-edition branch `master` → `v1` — **done** 2026-10-30.
+- **Task 16:** Quizzes that LMSs can import ([plan](planning/lms_quizzes.md)) — **in progress**; questions reviewed and fixed, next the exporters.
 
-**[#77](https://github.com/AllenDowney/ThinkPython/issues/77) is the only issue still open** — the `dataclass` question in Task 6, which needs an editorial call rather than a fix.
+**No issues or PRs are open** (2026-11-06), in this repo, ThinkPythonSolutions or ThinkPython2.
 
 ### How this repo fits together
 
@@ -319,7 +320,7 @@ Chapter 4 is slow because `jupyturtle` sleeps `TURTLE_DELAY` (0.2s) after every 
 
 ## Task 6: Add `dataclass` coverage to Chapter 18?
 
-**Status:** Editorial decision needed
+**Status:** Declined 2026-11-06; [answered and closed](https://github.com/AllenDowney/ThinkPython/issues/77). A section was drafted and dropped: `@dataclass` needs type hints, so one example would mean introducing both decorators and type hints, and the alternative, `make_dataclass`, works without them but is not idiomatic.
 
 **Requested by:** [@alchemistcai in #77](https://github.com/AllenDowney/ThinkPython/issues/77), 2026-06-30
 
@@ -329,9 +330,9 @@ The counter-argument is scope. Chapter 18 is the "Python extras" chapter near th
 
 ### Scope
 
-- [ ] Decide: full section, a short aside next to `namedtuple`, an exercise, or decline
-- [ ] If adding: draft, execute, and keep the chapter's length in check
-- [ ] Reply on #77 either way
+- [x] Decide: full section, a short aside next to `namedtuple`, an exercise, or decline — declined
+- [x] ~~If adding: draft, execute, and keep the chapter's length in check~~
+- [x] Reply on #77 either way
 
 ---
 
@@ -580,3 +581,22 @@ The book's 82 printed `thinkpython.com/code/…` links go to the **2nd edition's
 - [x] Updated the names in Task 14 (worktree command) and GreenTeaPress Task 23
 
 ---
+
+---
+
+## Task 16: Quizzes that LMSs can import
+
+**Status:** In progress, started 2026-11-06 — **full plan in [`planning/lms_quizzes.md`](planning/lms_quizzes.md)**.
+
+**Context:** Each chapter has a formative quiz, and there is one summative quiz, 83 multiple-choice questions in all, each with a rationale for every choice. The source is `ThinkPythonSolutions/soln/quizzes.ipynb`, in O'Reilly's Markdown quiz format, which works with O'Reilly's tooling and stays as it is. Instructors want them in their LMS. Two QTI exports were made by hand (2025 and 2026) and neither imports: both are QTI 2.1, which Canvas and Brightspace support less well than 1.2, and the 2026 per-chapter zips are not even well-formed XML (an undeclared `xsi` namespace in every item).
+
+**Approach:** generate the LMS files from the source rather than by hand: QTI 1.2 for Canvas and Brightspace, Moodle XML for Moodle, and Brightspace's CSV; Blackboard and Common Cartridge to be tested. They are published in `quizzes/` in this repo. Validate them in `make tests`. Each choice keeps its rationale as feedback.
+
+### Scope
+
+- [x] Review the questions for typos and errors — 6 wrong or ambiguous answers, 13 typos and smaller issues fixed, and the `"chaptertitle"` placeholders replaced with real titles (2026-11-06)
+- [x] Settle the open questions in the plan — downloads in `quizzes/` here; generate the Brightspace CSV too; test on Canvas only
+- [ ] Write the QTI 1.2, Moodle XML and Brightspace CSV exporters from `parse_quizzes.py`'s JSON
+- [ ] Validate the generated XML in `make tests`
+- [ ] Test imports into Canvas
+- [ ] Publish, and retire the broken zips and the hand-made Brightspace CSV
