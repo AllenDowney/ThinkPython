@@ -647,5 +647,5 @@ The book's 82 printed `thinkpython.com/code/…` links go to the **2nd edition's
 - [x] Gather the sources into `ThinkPythonTeaching/archive/` — 1,863 files from 8 terms (2004–2013), student folders, projects, repos and records skipped and logged only as counts (2026-11-06, `a12e8c1`)
 - [x] Convert to text (`text/`, 1,590 files) and catalog by file (`catalog/files.csv`) — 2026-11-06
 - [x] Catalog by question: 418 questions, 314 distinct, `catalog/REPORT.md` by chapter (2026-11-06)
-- [ ] Decide whether to purge the student files that reached the private repo's early history
+- [x] Purge the student files that reached the private repo's early history — history squashed to one commit and force-pushed (2026-11-06)
 - [ ] Mine a few chapters at a time; Allen reviews each batch

@@ -2,7 +2,7 @@
 
 **Created:** 2026-11-06
 **Board:** Task 18 in `PROJECT_BOARD.md` (feeds Task 17, teaching materials)
-**Status:** Steps 1 to 3 done 2026-11-06: 418 questions cataloged, 314 distinct (`ThinkPythonTeaching` `04eaf5e`). Next: step 4, mining, a few chapters at a time
+**Status:** Steps 1 to 3 done 2026-11-06: 418 questions cataloged, 314 distinct (`ThinkPythonTeaching` `9875d79`). Next: step 4, mining, a few chapters at a time
 
 ## Goal
 
@@ -182,8 +182,10 @@ What the agents found along the way:
   hyphenated first name (`svn/<first-name>.<last>/`, 13 files) slipped past the
   `first.last` pattern, and the 2008 and 2011 `notes22.txt` held a demo schedule
   listing student teams by surname. The pattern now allows hyphens and the gather
-  step redacts that schedule. **Both are still in the private repo's history**
-  (`a12e8c1`, `045c9e4`); purging them means rewriting history and force-pushing.
+  step redacts that schedule. The private repo's history was squashed to a single
+  commit (`9875d79`) and force-pushed on 2026-11-06, so neither survives in any
+  reachable commit. GitHub may keep the orphaned commits until its own cleanup;
+  GitHub Support can purge them on request.
 
 **Still to look for:** the 2021 Takeout archives of the classic Google Sites, which
 weren't on this disk or the external drive (only a 2026 Blogger Takeout was). Allen
