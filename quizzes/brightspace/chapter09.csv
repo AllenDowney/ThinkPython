@@ -43,3 +43,14 @@ Option,0,They are not equivalent and not identical.,HTML,"<code>a</code> and <co
 Option,0,They are equivalent and identical.,HTML,"<code>a</code> and <code>b</code> refer to different lists, so they are not identical.",HTML
 Option,0,They are identical but not equivalent.,HTML,"<code>a</code> and <code>b</code> refer to lists with the same value, so they are equivalent, but they refer to different lists, so they are not identical.",HTML
 
+NewQuestion,MC
+ID,TP3-chapter09-q04
+Title,"Think Python, Chapter 9: Lists, question 4"
+QuestionText,"<p>Having more than one name for the same object can lead to subtle bugs, but it is relatively safe with strings. Why?</p>",HTML
+Points,1
+Difficulty,1
+Option,0,"Assigning a string to another variable makes a copy, so the two variables never refer to the same string.",HTML,"Assignment doesn't copy: after <code>b = a</code>, <code>a</code> and <code>b</code> refer to the same string, and <code>b is a</code> is <code>True</code>.",HTML
+Option,100,"Strings are immutable, so nothing can change the string through one name and surprise the other.",HTML,"Strings are immutable, so a string that has two names can't be changed through either one.",HTML
+Option,0,Two strings with the same letters are never identical.,HTML,"In the chapter's example, <code>a = 'banana'</code> and <code>b = 'banana'</code> create only one string, so <code>a is b</code> is <code>True</code>.",HTML
+Option,0,The <code>is</code> operator doesn't work with strings.,HTML,"The <code>is</code> operator works with any objects, including strings.",HTML
+

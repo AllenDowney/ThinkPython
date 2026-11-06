@@ -942,6 +942,34 @@ b = [1, 2, 3]
       <feedback format="html"><text><![CDATA[<code>a</code> and <code>b</code> refer to lists with the same value, so they are equivalent, but they refer to different lists, so they are not identical.]]></text></feedback>
     </answer>
   </question>
+  <question type="multichoice">
+    <name><text>TP3-chapter09-q04</text></name>
+    <questiontext format="html"><text><![CDATA[<p>Having more than one name for the same object can lead to subtle bugs, but it is relatively safe with strings. Why?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-chapter09-q04</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Assigning a string to another variable makes a copy, so the two variables never refer to the same string.]]></text>
+      <feedback format="html"><text><![CDATA[Assignment doesn't copy: after <code>b = a</code>, <code>a</code> and <code>b</code> refer to the same string, and <code>b is a</code> is <code>True</code>.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Two strings with the same letters are never identical.]]></text>
+      <feedback format="html"><text><![CDATA[In the chapter's example, <code>a = 'banana'</code> and <code>b = 'banana'</code> create only one string, so <code>a is b</code> is <code>True</code>.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[The <code>is</code> operator doesn't work with strings.]]></text>
+      <feedback format="html"><text><![CDATA[The <code>is</code> operator works with any objects, including strings.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Strings are immutable, so nothing can change the string through one name and surprise the other.]]></text>
+      <feedback format="html"><text><![CDATA[Strings are immutable, so a string that has two names can't be changed through either one.]]></text></feedback>
+    </answer>
+  </question>
   <question type="category">
     <category><text>$course$/top/Think Python/Think Python, Chapter 10: Dictionaries</text></category>
     <info format="html"><text><![CDATA[Formative quiz for Chapter 10. From <em>Think Python</em>, 3rd edition, by Allen B. Downey (https://allendowney.github.io/ThinkPython/), CC BY-NC-SA 4.0.]]></text></info>
@@ -1037,6 +1065,35 @@ d2 = {d1: 3}
     <answer fraction="100" format="html">
       <text><![CDATA[They cause a <code>TypeError</code> because a dictionary cannot appear as a key in a dictionary.]]></text>
       <feedback format="html"><text><![CDATA[Dictionaries are mutable, so they are not hashable, so they cannot appear as a key in a dictionary.]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>TP3-chapter10-q04</text></name>
+    <questiontext format="html"><text><![CDATA[<p>A dictionary is like a list, but more general. Which words complete this sentence?</p>
+<p>"The <strong><em>_</em></strong><em> of a dictionary are like the indices of a list, and the <strong><em>_</em></strong></em> of a dictionary are like the elements of a list."</p>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-chapter10-q04</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[items; keys]]></text>
+      <feedback format="html"><text><![CDATA[An item is a key-value pair, so it's not like an index. The keys play the role of the indices.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[values; keys]]></text>
+      <feedback format="html"><text><![CDATA[This is backwards: we use a key to look up a value, the way we use an index to look up an element.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[keys; items]]></text>
+      <feedback format="html"><text><![CDATA[The keys are like indices, but an item is a whole key-value pair, not the thing you look up.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[keys; values]]></text>
+      <feedback format="html"><text><![CDATA[We use a key to look up its value, just as we use an index to look up an element. Indices have to be integers, but keys can be (almost) any type.]]></text></feedback>
     </answer>
   </question>
   <question type="category">

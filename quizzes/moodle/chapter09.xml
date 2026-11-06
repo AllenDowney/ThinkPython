@@ -100,4 +100,32 @@ b = [1, 2, 3]
       <feedback format="html"><text><![CDATA[<code>a</code> and <code>b</code> refer to lists with the same value, so they are equivalent, but they refer to different lists, so they are not identical.]]></text></feedback>
     </answer>
   </question>
+  <question type="multichoice">
+    <name><text>TP3-chapter09-q04</text></name>
+    <questiontext format="html"><text><![CDATA[<p>Having more than one name for the same object can lead to subtle bugs, but it is relatively safe with strings. Why?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-chapter09-q04</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Assigning a string to another variable makes a copy, so the two variables never refer to the same string.]]></text>
+      <feedback format="html"><text><![CDATA[Assignment doesn't copy: after <code>b = a</code>, <code>a</code> and <code>b</code> refer to the same string, and <code>b is a</code> is <code>True</code>.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Two strings with the same letters are never identical.]]></text>
+      <feedback format="html"><text><![CDATA[In the chapter's example, <code>a = 'banana'</code> and <code>b = 'banana'</code> create only one string, so <code>a is b</code> is <code>True</code>.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[The <code>is</code> operator doesn't work with strings.]]></text>
+      <feedback format="html"><text><![CDATA[The <code>is</code> operator works with any objects, including strings.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Strings are immutable, so nothing can change the string through one name and surprise the other.]]></text>
+      <feedback format="html"><text><![CDATA[Strings are immutable, so a string that has two names can't be changed through either one.]]></text></feedback>
+    </answer>
+  </question>
 </quiz>

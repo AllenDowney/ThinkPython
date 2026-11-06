@@ -40,3 +40,15 @@ Option,100,They cause a <code>TypeError</code> because a dictionary cannot appea
 Option,0,They cause a <code>ValueError</code> because <code>3</code> cannot appear as a value in a dictionary.,HTML,"Dictionaries are mutable, so they are not hashable, so they cannot appear as a key in a dictionary, but that's not a <code>ValueError</code>.",HTML
 Option,0,They add <code>d1</code> as a key in <code>d2</code>.,HTML,"Dictionaries are mutable, so they are not hashable, so they cannot appear as a key in a dictionary.",HTML
 
+NewQuestion,MC
+ID,TP3-chapter10-q04
+Title,"Think Python, Chapter 10: Dictionaries, question 4"
+QuestionText,"<p>A dictionary is like a list, but more general. Which words complete this sentence?</p>
+<p>""The <strong><em>_</em></strong><em> of a dictionary are like the indices of a list, and the <strong><em>_</em></strong></em> of a dictionary are like the elements of a list.""</p>",HTML
+Points,1
+Difficulty,1
+Option,0,items; keys,HTML,"An item is a key-value pair, so it's not like an index. The keys play the role of the indices.",HTML
+Option,0,keys; items,HTML,"The keys are like indices, but an item is a whole key-value pair, not the thing you look up.",HTML
+Option,100,keys; values,HTML,"We use a key to look up its value, just as we use an index to look up an element. Indices have to be integers, but keys can be (almost) any type.",HTML
+Option,0,values; keys,HTML,"This is backwards: we use a key to look up a value, the way we use an index to look up an element.",HTML
+
