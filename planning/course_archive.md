@@ -2,7 +2,7 @@
 
 **Created:** 2026-11-06
 **Board:** Task 18 in `PROJECT_BOARD.md` (feeds Task 17, teaching materials)
-**Status:** Step 1 (gather) done 2026-11-06: 1,863 files from 8 terms in `ThinkPythonTeaching/archive/` (`a12e8c1`). Next: step 2, convert to text
+**Status:** Steps 1 (gather), 2 (convert) and the file-level part of 3 (catalog) done 2026-11-06. Next: the question-level catalog
 
 ## Goal
 
@@ -125,6 +125,25 @@ Rules that came out of looking at the data:
 - Also skipped: 1,415 duplicates across sources, images, build files, backups and
   version-control folders. Fall 2011 on the drive was entirely student repos; that
   term's material comes from the Google Site.
+
+## Converted and cataloged (2026-11-06)
+
+`tools/to_text.py` mirrors `archive/` into `text/` (1,590 files): LaTeX and HTML
+through `pandoc`, PDFs through `pdftotext` only when no LaTeX or HTML version exists,
+`.doc` through LibreOffice. The quizzes use two custom macros that `pandoc` can't
+render: `\blank{…}` (a fill-in line, which would silently vanish) and `\ls{…}`
+(line spacing, which left junk), so the LaTeX is pre-processed first. 7 PDFs have no
+text layer (scanned handouts and a book chapter); 6 failed LaTeX files are LaTeX-to-HTML
+scratch files.
+
+`tools/catalog_files.py` writes `catalog/files.csv`: about 170 distinct quizzes, exams
+and warmups (typically 11 quizzes, 3 or 4 exams and 10 warmups per term), 247
+homework files and 59 labs. Only 2 or 3 assessments per term have a solution file.
+Question counts in the CSV are lower bounds.
+
+**Still to look for:** the 2021 Takeout archives of the classic Google Sites, which
+weren't on this disk or the external drive (only a 2026 Blogger Takeout was). Allen
+is searching Drive; a new Takeout of the converted sites is the fallback.
 
 ## Steps
 
