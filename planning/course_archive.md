@@ -2,7 +2,7 @@
 
 **Created:** 2026-11-06
 **Board:** Task 18 in `PROJECT_BOARD.md` (feeds Task 17, teaching materials)
-**Status:** Steps 1 to 3 done 2026-11-06: 418 questions cataloged, 314 distinct (`ThinkPythonTeaching` `9875d79`). Mining under way: Chapters 9–11 done 2026-11-06
+**Status:** Steps 1 to 3 done 2026-11-06: 418 questions cataloged, 314 distinct (`ThinkPythonTeaching` `9875d79`). Mining under way: Chapters 2–6 and 9–11 done 2026-11-06
 
 ## Goal
 
@@ -222,6 +222,24 @@ Decisions Allen made along the way:
   `soln/quizzes.ipynb` (Ch 9: why aliasing is safe with strings; Ch 10: keys are like
   indices, values like elements). The Ch 11 `tuple_replace` question stays private as
   an activity.
+
+**Chapters 2–6 (2026-11-06):** 68 catalog questions, mined the same way (five agents
+in parallel; items needing a later chapter were written to `bank/moved/` and then
+placed). Decisions:
+
+- A question may introduce one small library function itself (the Ch 5 coin flip
+  keeps `random.random`); a language feature not yet taught moves the item (Ch 6
+  `is_alphabetical` → Ch 8 for string comparison). Recorded in the brief.
+- Ch 3's review of Chapter 1–2 vocabulary split into `chap01.md` and `chap02.md` by
+  where each term is introduced.
+- Ch 4: the lost `pentatri` figure is reconstructed (pentagon with a triangle on each
+  side), confirmed by Allen; `circle_star` accepts the exact and the visually
+  corrected turn.
+- Ch 5: Sierpinski stays dropped (it's in the book). `check_fermat` is not a 3e
+  exercise, so it's an exam item.
+- Four questions added to the public quiz: Ch 3 tracebacks, Ch 4 whose bug a
+  precondition violation is, Ch 5 a base case never reached, Ch 6 printing vs.
+  returning (`None`). The public quizzes now have 89 questions.
 
 **Still to look for:** the 2021 Takeout archives of the classic Google Sites, which
 weren't on this disk or the external drive (only a 2026 Blogger Takeout was). Allen
