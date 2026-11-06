@@ -19,7 +19,8 @@ Numbered tasks for tracking work. Each task has a permanent number; add new task
 - **Task 13:** Search engine optimization — **done bar two follow-ups**: Allen's Search Console submission, and the 6-week / 3-month comparisons (due ~2026-12-01 and ~2027-01-19).
 - **Task 14:** First edition (Python 2): source, releases — **done**; 2.0.18 released 2026-10-30.
 - **Task 15:** Rename the first-edition branch `master` → `v1` — **done** 2026-10-30.
-- **Task 16:** Quizzes that LMSs can import ([plan](planning/lms_quizzes.md)) — **in progress**; questions fixed, **published** to [`quizzes/`](quizzes/) 2026-11-06; website page goes live with the next site publish; Moodle and Brightspace untested.
+- **Task 16:** Quizzes that LMSs can import ([plan](planning/lms_quizzes.md)) — **in progress**; questions fixed, **published** to [`quizzes/`](quizzes/) 2026-11-06; [website page](https://allendowney.github.io/ThinkPython/quizzes.html) live; Moodle and Brightspace untested.
+- **Task 17:** Teaching materials for instructors ([plan](planning/teaching_materials.md)) — **planning**; first step, list what teachers have asked for.
 
 **No issues or PRs are open** (2026-11-06), in this repo, ThinkPythonSolutions or ThinkPython2.
 
@@ -607,3 +608,22 @@ The book's 82 printed `thinkpython.com/code/…` links go to the **2nd edition's
 - [x] Canvas API access to a sandbox course; the old QTI 2.1 zips shown to fail silently
 - [x] Publish: `quizzes/` built by `update.py`, linked from the README and `jb/quizzes.md`; broken zips, hand-made CSV and `convert_quizzes_to_qti.py` removed (2026-11-06)
 - [ ] Ask instructors on Moodle and Brightspace to try the files
+
+---
+
+## Task 17: Teaching materials for instructors
+
+**Status:** Planning, started 2026-11-06 — **full plan in [`planning/teaching_materials.md`](planning/teaching_materials.md)**.
+
+**Context:** Teachers often ask whether there is additional material for the book, presumably slides and quizzes. The quizzes now exist (Task 16). Today's materials support **learning** (solution, student and blank notebooks, 81 exercises, the quizzes), but nothing supports **planning** a course or **assessing** students privately: the exercise solutions and the quiz answers are all public.
+
+**Candidates**, grouped in the plan: syllabus templates, a pacing guide with chapter dependencies, learning objectives, slides, instructor notes, in-class activities, graded assignments with private solutions and autograders, a private exam question bank, projects, AI guidance, and an LMS course shell.
+
+### Scope
+
+- [ ] List what teachers have actually asked for (past emails), and add a feedback link to the website
+- [ ] Learning objectives, pacing guide and syllabus templates, on a "For Instructors" page that absorbs the Quizzes page
+- [ ] Decide public vs. private for assessment material, and how instructors get access (our own private repo, or O'Reilly's instructor resources)
+- [ ] Pilot slides for one chapter, generated vs. separate decks
+- [ ] Pilot one graded assignment with a private solution and an autograder
+- [ ] Scale up what works
