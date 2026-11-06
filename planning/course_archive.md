@@ -2,7 +2,7 @@
 
 **Created:** 2026-11-06
 **Board:** Task 18 in `PROJECT_BOARD.md` (feeds Task 17, teaching materials)
-**Status:** Steps 1 (gather), 2 (convert) and the file-level part of 3 (catalog) done 2026-11-06. Next: the question-level catalog
+**Status:** Steps 1 to 3 done 2026-11-06: 418 questions cataloged, 314 distinct (`ThinkPythonTeaching` `04eaf5e`). Next: step 4, mining, a few chapters at a time
 
 ## Goal
 
@@ -140,6 +140,50 @@ scratch files.
 and warmups (typically 11 quizzes, 3 or 4 exams and 10 warmups per term), 247
 homework files and 59 labs. Only 2 or 3 assessments per term have a solution file.
 Question counts in the CSV are lower bounds.
+
+## Question catalog (2026-11-06)
+
+Eight subagents, one per term, cataloged every quiz, exam and warmup question
+against a fixed brief (`catalog/questions/BRIEF.md`): verbatim text, type, topics,
+3rd-edition chapter, Python 2 and Swampy issues, solution where one exists, and a
+reusability rating. `tools/merge_catalog.py` merges them into `catalog/questions.json`,
+groups repeats across terms, and writes `catalog/REPORT.md`, one entry per distinct
+question by chapter.
+
+| | |
+|---|---|
+| Questions | 418 from 8 terms; 314 distinct |
+| Reusable | yes 132, adapt 125, no 57 |
+| Types | write-code 135, fill-in 67, diagram 36, explain 22, short-answer 19, other 14, debug 12, code-tracing 9 |
+| Richest chapters | 17 Inheritance (47), 10 Dictionaries (37), 15 Classes and Methods (21), 9 Lists (18), 14 Classes and Functions (18) |
+| Thin | 1, 7, 12, 13 and 18 have 5 or fewer each; 51 match no chapter (Pyro, threads, OpenGL, Subversion), 41 of them `no` |
+
+What the agents found along the way:
+
+- **Solutions are rare.** Spring 2011's Exam 2 solutions were in the Google Site
+  crawl; a few exams and quizzes have `_soln` files. The same `exam01_soln.txt`
+  (Spring 2004) and `quiz03_soln.txt` (a `square_list` email listing common wrong
+  answers, good material for instructor notes) were copied into later terms' folders.
+  Where an agent worked out an answer itself, it says so in `notes` — **those need
+  Allen's review before being treated as solutions.**
+- **Carried-over exams.** Several terms hold an older term's exam beside their own
+  (`exam2`/`exam02`); these are cataloged as `exam02b` etc. or under their real term.
+- **Errors in the originals:** `random.choose` (2004 fall exam 2), `__mult__` for
+  `__mul__` (2008 exam 3), `d.get(word, 0)` for `d.get(c, 0)` (2013 exam 2), a
+  syntax error in the 2004 `check_fermat` solution, among others — all in `notes`.
+- **Lost dependencies:** Swampy, Pyro, `Poker.py`, `Sync.py`, `Shape.py`, NSFG
+  handouts, missing figures (`exam3_trie.ps`, `pentatri.eps`). Some code survives in
+  `archive/*/drive/code/` (`Sym.py`, `Subject.py`, `Observer.py`).
+- **Conversion fixes.** Cataloging found four conversion bugs, all fixed in
+  `to_text.py`: the exams' argument-less `\blank` (their fill-in lines vanished),
+  `\noindent` swallowing the next group (`{\tt t}`), `{\tt *}` vanishing, and
+  curly quotes inside code.
+- **Student data that got through, now removed.** A student's folder with a
+  hyphenated first name (`svn/<first-name>.<last>/`, 13 files) slipped past the
+  `first.last` pattern, and the 2008 and 2011 `notes22.txt` held a demo schedule
+  listing student teams by surname. The pattern now allows hyphens and the gather
+  step redacts that schedule. **Both are still in the private repo's history**
+  (`a12e8c1`, `045c9e4`); purging them means rewriting history and force-pushing.
 
 **Still to look for:** the 2021 Takeout archives of the classic Google Sites, which
 weren't on this disk or the external drive (only a 2026 Blogger Takeout was). Allen
