@@ -2,7 +2,7 @@
 
 **Created:** 2026-11-06
 **Board:** Task 18 in `PROJECT_BOARD.md` (feeds Task 17, teaching materials)
-**Status:** Planning; sources surveyed, nothing copied yet
+**Status:** Planning; sources surveyed, private repository created (`ThinkPythonTeaching`), nothing copied yet
 
 ## Goal
 
@@ -20,7 +20,8 @@ private exam bank, in-class activities and assignments.
 | Subversion checkouts | `~/svn/sd11s`, `~/svn/sd13fa` (and `~/svn.old/sd11s`, an older copy of `sd11s`) | Spring 2011, Fall 2013 | 449 | 126 | LaTeX quizzes and exams, `*_soln.txt` solutions, `code/*_code.py` | No |
 | Google Sites (downloaded) | `~/Downloads/DataScience/sites.google.com/site/softwaredesign11spr`, `softwaredesign11f`, `sd13fa` | Spring 2011, Fall 2011, Fall 2013 | 292 | 32 | HTML pages, attached PDFs and `.py` (filenames carry `?attredirects=0`) | **Yes**: `sites.google.com/site/sd13fa` still loads |
 | `~/SoftwareDesign` | git repo | Fall 2013 | 53 | 3 | chapter code, `swampy`, `pdb` | Unknown |
-| Canvas (Olin) | — | — | — | — | — | **Not found**: no Software Design or Think Python quizzes in any course the API token can see |
+| **External drive** (the largest source) | `/media/downey/My Passport/rocky/sd04spr`, `sd04fall`, `sd06spr`, `sd07spr`, `sd08spr`, `sd11s`, `sd11f` (`sd` is a symlink to `sd08spr`) | Spring 2004 to Fall 2011 | about 11,600 | about 1,030 | LaTeX, PDF, HTML, Python, Subversion working copies | No, but **contains student records** (below) |
+| Canvas (Olin) | — | — | — | — | — | **None**: what Allen remembered as Canvas is the external drive |
 | `~/svn/sd11f` | — | Fall 2011 | 0 | — | empty checkout | — |
 
 Not included: `~/ss12`, which has many quizzes and exams but is Software Systems
@@ -70,6 +71,19 @@ Complexity, Data Science, Graphics and Probability.
   to term.
 - **Solutions are patchy.** Some exams have `_soln.txt` files; many quizzes don't.
 
+### Student records: keep them out
+
+The original course folders, especially on the external drive, hold more than course
+material: class lists (`classlist.txt`, `classl.cgi*`), grade spreadsheets
+(`*grades*`, `*.xls`, `*.ods`, `exam1.scores`), address books and email lists, student
+photos (`sd06spr/photos`, `sd07spr/photos`), and per-student work (`svn/<student>/`,
+most of `sd11f`, which is `repos/` plus `sd11f_repos.zip`). None of it goes into the
+archive, private or not. Gathering works from an **allowlist** of instructor-written
+material (quizzes, exams, solutions, homework and project handouts, lecture notes,
+example code) and logs what it skipped, for Allen to check.
+
+Not included either: `rocky/sdsc` (San Diego Supercomputer Center tarballs).
+
 ## Where the archive lives
 
 The archive holds exam and quiz answers, so it shouldn't go in this repository or
@@ -81,16 +95,22 @@ ThinkPythonSolutions, which are both public. Options:
 2. **A local folder**, gitignored, e.g. `~/ThinkPython/teaching_archive/`. Simplest,
    but not backed up or shareable.
 
-Recommendation: option 1, since Task 17's private exam bank and assignments need a
-private home anyway.
+**Decided 2026-11-06: option 1.** Created
+[`AllenDowney/ThinkPythonTeaching`](https://github.com/AllenDowney/ThinkPythonTeaching)
+(private), cloned at `~/ThinkPython/ThinkPythonTeaching` and gitignored by this repo.
+Its README says it must stay private and must never hold student data. It will also
+hold Task 17's private exam bank and assignments.
 
 ## Steps
 
 1. **Gather.** Copy each source into `archive/<term>/<source>/` (for example,
    `archive/2013fa/svn/`), unchanged, with a `SOURCES.md` recording the original path
    or URL of each folder. Skip build products (`.aux`, `.log`, `.ps`, `.dvi`, `~`
-   backups) and strip the `?attredirects=0` suffixes. Merge `svn.old/sd11s` into
-   `svn/sd11s` after diffing them. Find out where the Canvas material is.
+   backups) and strip the `?attredirects=0` suffixes. Use the allowlist above, and log what was
+   skipped. Where a term exists in more than one place (the external drive,
+   `~/AllenDowneyCom`, `~/svn`, the Google Sites crawl), take the drive's copy as the
+   base and add only files the others have that it lacks. Merge `svn.old/sd11s` into
+   `svn/sd11s` after diffing them.
 2. **Convert to text.** LaTeX to Markdown with `pandoc`; PDFs to text with
    `pdftotext`, only where no LaTeX source exists; HTML to Markdown. Keep the
    originals.
@@ -112,12 +132,9 @@ best done a few chapters at a time.
 
 ## Open questions
 
-- **Canvas:** which course had the Software Design quizzes? Nothing on canvas.olin.edu
-  that the token can see, and the classes page lists no Software Design course on
-  Canvas. Perhaps canvas.instructure.com (Free for Teacher), which needs its own token.
-- **Other terms:** the classes page has nothing for Software Design in 2005 or 2009
-  to 2010. Did those terms run, and are they anywhere?
+- **Other terms:** with the drive, the archive covers Spring and Fall 2004, Spring
+  2006 to 2008, Spring and Fall 2011, and Fall 2013. Nothing yet for 2005, 2009, 2010
+  or 2012. Did those terms run, and are they anywhere?
 - **Google Drive:** are the 2021 Takeout archives of the classic sites there?
-- **The archive:** a private repository, or a local folder?
 - **Old public pages:** the 2004 to 2008 course pages and the 2013 Google Site are
   still public, quiz answers included in places. Leave them up?
