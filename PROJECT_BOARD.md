@@ -21,7 +21,7 @@ Numbered tasks for tracking work. Each task has a permanent number; add new task
 - **Task 15:** Rename the first-edition branch `master` → `v1` — **done** 2026-10-30.
 - **Task 16:** Quizzes that LMSs can import ([plan](planning/lms_quizzes.md)) — **in progress**; questions fixed, **published** to [`quizzes/`](quizzes/) 2026-11-06; [website page](https://allendowney.github.io/ThinkPython/quizzes.html) live; Moodle and Brightspace untested.
 - **Task 17:** Teaching materials for instructors ([plan](planning/teaching_materials.md)) — **planning**; first step, list what teachers have asked for.
-- **Task 18:** Archive and mine the old Software Design materials ([plan](planning/course_archive.md)) — **planning**; sources surveyed (most on an external drive), 418 questions cataloged; Chapters 2–6, 9–11 and 14–17 mined into a verified private bank, 8 questions added to the public quizzes; feeds Task 17.
+- **Task 18:** Archive and mine the old Software Design materials ([plan](planning/course_archive.md)) — **planning**; sources surveyed (most on an external drive), 418 questions cataloged; every chapter mined into a verified private bank (`ThinkPythonTeaching/bank/`), 10 questions added to the public quizzes; feeds Task 17.
 
 **No issues or PRs are open** (2026-11-06), in this repo, ThinkPythonSolutions or ThinkPython2.
 
@@ -651,4 +651,6 @@ The book's 82 printed `thinkpython.com/code/…` links go to the **2nd edition's
 - [x] Mine Chapters 9–11 (2026-11-06): `bank/chap09.md`–`chap11.md` with passing check scripts; 2 public quiz additions
 - [x] Mine Chapters 2–6 (2026-11-06); 4 more public quiz additions
 - [x] Mine Chapters 14–17 (2026-11-06); 2 more public quiz additions
-- [ ] Mine the remaining chapters (7, 8, 12, 13, 18); Allen reviews
+- [x] Mine the remaining chapters (7, 8, 12, 13, 18) — 2026-11-06; 2 more public quiz additions
+- [ ] Allen: check the MLA rules paraphrased in `ch18-sort-entries` against the handbook
+- [ ] Turn the reviewed bank into the material teachers get (Task 17)

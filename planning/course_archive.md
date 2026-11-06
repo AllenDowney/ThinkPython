@@ -2,7 +2,7 @@
 
 **Created:** 2026-11-06
 **Board:** Task 18 in `PROJECT_BOARD.md` (feeds Task 17, teaching materials)
-**Status:** Steps 1 to 3 done 2026-11-06: 418 questions cataloged, 314 distinct (`ThinkPythonTeaching` `9875d79`). Mining under way: Chapters 2–6, 9–11 and 14–17 done 2026-11-06
+**Status:** Steps 1 to 3 done 2026-11-06: 418 questions cataloged, 314 distinct (`ThinkPythonTeaching` `9875d79`). Mining done for every chapter 2026-11-06 (`bank/chap01.md`–`chap18.md`); next: turn the bank into material teachers get
 
 ## Goal
 
@@ -257,6 +257,22 @@ own classes. Decisions, now rules in the brief:
 - Two more public quiz questions: Ch 14 a parameter and an attribute with the same
   name; Ch 17 which `__init__` runs when `Hand` overrides `Deck`'s. The public
   quizzes now have 91 questions.
+
+**Chapters 7, 8, 12, 13, 18 (2026-11-06):** the last 27 questions. Decisions:
+
+- Ch 8: `has_repeated_prefix` dropped (Ch 9's whole-word rule is enough); the `in`
+  fill-in dropped (its point, "an operator, not a keyword", is false in Python 3).
+- Ch 18's `*`-operator fill-in moved to Ch 11, which teaches `*args`.
+- Ch 13's student dictionary stays in Ch 14 with objects.
+- Ch 18's bibliography sort states MLA rules paraphrased from the lost handout
+  section 4.5; **Allen to check the paraphrase** against the real section.
+- Two more public quiz questions: Ch 7 the name of the linear search pattern; Ch 8
+  slicing, with a neutral example string (`'apple'`) instead of Allen's name.
+
+A slip on the way: an earlier `git mv -k` silently skipped untracked move files, so
+a later placement step re-appended Chapter 3–6 items into Chapters 6, 8 and 9. Caught
+from the placement output and repaired (no item duplicated; `chap06.md` and
+`chap09.md` restored from git first).
 
 **Still to look for:** the 2021 Takeout archives of the classic Google Sites, which
 weren't on this disk or the external drive (only a 2026 Blogger Takeout was). Allen
