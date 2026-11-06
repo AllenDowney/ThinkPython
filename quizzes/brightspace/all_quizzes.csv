@@ -125,6 +125,17 @@ Option,0,"Instead of <code>def</code>, the first word should be <code>define</co
 Option,100,There are no errors in this function.,HTML,There is nothing wrong with this function.,HTML
 
 NewQuestion,MC
+ID,TP3-chapter03-q04
+Title,"Think Python, Chapter 3: Functions, question 4"
+QuestionText,"<p>When a runtime error occurs inside a function, Python displays a traceback. What does the traceback show?</p>",HTML
+Points,1
+Difficulty,1
+Option,0,"Nothing, because tracebacks are only displayed for syntax errors.",HTML,A syntax error is reported before the program runs; a traceback is displayed when a runtime error occurs.,HTML
+Option,0,"Every function defined in the program, in the order they were defined.",HTML,"The traceback includes only the functions that were running when the error occurred, not every function that was defined.",HTML
+Option,100,"The function that was running, the function that called it, and so on, in the same order as the frames in a stack diagram.",HTML,"The traceback lists the functions that were running, with the one where the error occurred at the bottom, like the frames in a stack diagram.",HTML
+Option,0,Only the line where the error occurred.,HTML,"The traceback shows a line from each function on the stack, not just the line where the error occurred.",HTML
+
+NewQuestion,MC
 ID,TP3-chapter04-q01
 Title,"Think Python, Chapter 4: Functions and Interfaces, question 1"
 QuestionText,"<p>What is wrong with this function, if anything?</p>
@@ -171,6 +182,17 @@ Option,100,"They have the same interface, but different implementations.",HTML,"
 Option,0,They have the same interface <em>and</em> the same implementation.,HTML,"They take the same parameter and have the same effect, so they have the same interface -- but they accomplish the effect in different ways, so they have different implementations.",HTML
 Option,0,They have neither the same interface nor the same implementation.,HTML,"They take the same parameter and have the same effect, so they have the same interface -- but they accomplish the effect in different ways, so they have different implementations.",HTML
 Option,0,"They have the same implementation, but different interfaces.",HTML,"They take the same parameter and have the same effect, so they have the same interface -- but they accomplish the effect in different ways, so they have different implementations.",HTML
+
+NewQuestion,MC
+ID,TP3-chapter04-q04
+Title,"Think Python, Chapter 4: Functions and Interfaces, question 4"
+QuestionText,"<p>The docstring of <code>polyline</code> says that <code>n</code> must be an integer. If someone calls <code>polyline(2.5, 30, 60)</code>, it fails with a <code>TypeError</code>. Where is the bug?</p>",HTML
+Points,1
+Difficulty,1
+Option,100,"In the caller, because it violated a precondition of <code>polyline</code>.",HTML,"Preconditions are the responsibility of the caller. If the caller violates a precondition and the function doesn't work correctly, the bug is in the caller, not the function.",HTML
+Option,0,"In <code>range</code>, because it should accept a float.",HTML,"<code>range</code> requires integers -- that's one of its preconditions, and <code>polyline</code> passed along a float it should never have received.",HTML
+Option,0,"In <code>polyline</code>, because a function should work with any arguments.",HTML,A function only promises to work if its preconditions are satisfied; checking for every possible bad argument is not its job.,HTML
+Option,0,"There is no bug, because Python raised an error.",HTML,"An error message is a symptom of a bug, not a sign that there isn't one.",HTML
 
 NewQuestion,MC
 ID,TP3-chapter05-q01
@@ -228,6 +250,24 @@ Option,0,bitwise,HTML,"<code>or</code> is a logical operator, along with <code>a
 Option,100,logical,HTML,"<code>or</code> is a logical operator, along with <code>and</code> and <code>not</code>.",HTML
 
 NewQuestion,MC
+ID,TP3-chapter05-q05
+Title,"Think Python, Chapter 5: Conditionals and Recursion, question 5"
+QuestionText,"<p>Here is the function from one of the exercises in this chapter.</p>
+<pre><code>def recurse(n, s):
+    if n == 0:
+        print(s)
+    else:
+        recurse(n-1, n+s)
+</code></pre>
+<p>What happens if you call it like this: <code>recurse(-1, 0)</code>?</p>",HTML
+Points,1
+Difficulty,1
+Option,0,"It does nothing, because <code>n</code> is not positive.",HTML,"The condition is <code>n == 0</code>, not <code>n &lt;= 0</code>, so a negative <code>n</code> doesn't stop the recursion; it goes to the <code>else</code> branch and makes a recursive call.",HTML
+Option,0,It prints <code>-1</code>.,HTML,"It only prints when <code>n</code> is <code>0</code>, and <code>n</code> goes -1, -2, -3, and so on, so it never gets there.",HTML
+Option,0,It prints <code>0</code>.,HTML,"It would print <code>0</code> only if it reached the base case, but starting from <code>-1</code>, subtracting 1 never makes <code>n</code> equal to <code>0</code>.",HTML
+Option,100,It prints nothing and causes a <code>RecursionError</code>.,HTML,"Because <code>n</code> never equals <code>0</code>, the base case never runs; the recursion goes on until Python reaches its limit on the number of frames and raises a <code>RecursionError</code>.",HTML
+
+NewQuestion,MC
 ID,TP3-chapter06-q01
 Title,"Think Python, Chapter 6: Return Values, question 1"
 QuestionText,"<p>What is the return value if we call this function with the value <code>3</code>?</p>
@@ -268,6 +308,23 @@ Option,0,There is a runtime error.,HTML,The function is correct as long as the v
 Option,100,<code>True</code>,HTML,"The absolute difference between <code>1.5</code> and <code>1.6</code> is <code>0.1</code>, which is less than <code>0.2</code>.",HTML
 Option,0,There is a syntax error.,HTML,The syntax of the function is correct.,HTML
 Option,0,<code>False</code>,HTML,"The absolute difference between <code>1.5</code> and <code>1.6</code> is <code>0.1</code>, which is less than <code>0.2</code>.",HTML
+
+NewQuestion,MC
+ID,TP3-chapter06-q04
+Title,"Think Python, Chapter 6: Return Values, question 4"
+QuestionText,"<p>What is the return value if we call this function with the arguments <code>5</code> and <code>3</code>?</p>
+<pre><code>def is_bigger(num1, num2):
+    if num1 &gt; num2:
+        print(True)
+    else:
+        print(False)
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,0,It causes an error.,HTML,This function works. It displays <code>True</code> and then ends without a <code>return</code> statement.,HTML
+Option,0,<code>True</code>,HTML,"The function displays <code>True</code>, but it doesn't return it, because it has no <code>return</code> statement.",HTML
+Option,100,<code>None</code>,HTML,"A function with no <code>return</code> statement returns <code>None</code>, even if it displays something.",HTML
+Option,0,<code>False</code>,HTML,"Because <code>5 &gt; 3</code> is <code>True</code>, the first branch runs, and it displays <code>True</code>; but the function has no <code>return</code> statement.",HTML
 
 NewQuestion,MC
 ID,TP3-chapter07-q01

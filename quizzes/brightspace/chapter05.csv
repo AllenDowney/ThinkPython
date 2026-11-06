@@ -53,3 +53,21 @@ Option,0,relational,HTML,"<code>or</code> is a logical operator, along with <cod
 Option,0,bitwise,HTML,"<code>or</code> is a logical operator, along with <code>and</code> and <code>not</code>.",HTML
 Option,100,logical,HTML,"<code>or</code> is a logical operator, along with <code>and</code> and <code>not</code>.",HTML
 
+NewQuestion,MC
+ID,TP3-chapter05-q05
+Title,"Think Python, Chapter 5: Conditionals and Recursion, question 5"
+QuestionText,"<p>Here is the function from one of the exercises in this chapter.</p>
+<pre><code>def recurse(n, s):
+    if n == 0:
+        print(s)
+    else:
+        recurse(n-1, n+s)
+</code></pre>
+<p>What happens if you call it like this: <code>recurse(-1, 0)</code>?</p>",HTML
+Points,1
+Difficulty,1
+Option,0,"It does nothing, because <code>n</code> is not positive.",HTML,"The condition is <code>n == 0</code>, not <code>n &lt;= 0</code>, so a negative <code>n</code> doesn't stop the recursion; it goes to the <code>else</code> branch and makes a recursive call.",HTML
+Option,0,It prints <code>-1</code>.,HTML,"It only prints when <code>n</code> is <code>0</code>, and <code>n</code> goes -1, -2, -3, and so on, so it never gets there.",HTML
+Option,0,It prints <code>0</code>.,HTML,"It would print <code>0</code> only if it reached the base case, but starting from <code>-1</code>, subtracting 1 never makes <code>n</code> equal to <code>0</code>.",HTML
+Option,100,It prints nothing and causes a <code>RecursionError</code>.,HTML,"Because <code>n</code> never equals <code>0</code>, the base case never runs; the recursion goes on until Python reaches its limit on the number of frames and raises a <code>RecursionError</code>.",HTML
+

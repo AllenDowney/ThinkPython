@@ -325,6 +325,34 @@
       <feedback format="html"><text><![CDATA[There is nothing wrong with this function.]]></text></feedback>
     </answer>
   </question>
+  <question type="multichoice">
+    <name><text>TP3-chapter03-q04</text></name>
+    <questiontext format="html"><text><![CDATA[<p>When a runtime error occurs inside a function, Python displays a traceback. What does the traceback show?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-chapter03-q04</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Only the line where the error occurred.]]></text>
+      <feedback format="html"><text><![CDATA[The traceback shows a line from each function on the stack, not just the line where the error occurred.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Every function defined in the program, in the order they were defined.]]></text>
+      <feedback format="html"><text><![CDATA[The traceback includes only the functions that were running when the error occurred, not every function that was defined.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Nothing, because tracebacks are only displayed for syntax errors.]]></text>
+      <feedback format="html"><text><![CDATA[A syntax error is reported before the program runs; a traceback is displayed when a runtime error occurs.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[The function that was running, the function that called it, and so on, in the same order as the frames in a stack diagram.]]></text>
+      <feedback format="html"><text><![CDATA[The traceback lists the functions that were running, with the one where the error occurred at the bottom, like the frames in a stack diagram.]]></text></feedback>
+    </answer>
+  </question>
   <question type="category">
     <category><text>$course$/top/Think Python/Think Python, Chapter 4: Functions and Interfaces</text></category>
     <info format="html"><text><![CDATA[Formative quiz for Chapter 4. From <em>Think Python</em>, 3rd edition, by Allen B. Downey (https://allendowney.github.io/ThinkPython/), CC BY-NC-SA 4.0.]]></text></info>
@@ -426,6 +454,34 @@ def circle(radius):
     <answer fraction="100" format="html">
       <text><![CDATA[They have the same interface, but different implementations.]]></text>
       <feedback format="html"><text><![CDATA[They take the same parameter and have the same effect, so they have the same interface -- but they accomplish the effect in different ways, so they have different implementations.]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>TP3-chapter04-q04</text></name>
+    <questiontext format="html"><text><![CDATA[<p>The docstring of <code>polyline</code> says that <code>n</code> must be an integer. If someone calls <code>polyline(2.5, 30, 60)</code>, it fails with a <code>TypeError</code>. Where is the bug?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-chapter04-q04</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[In <code>polyline</code>, because a function should work with any arguments.]]></text>
+      <feedback format="html"><text><![CDATA[A function only promises to work if its preconditions are satisfied; checking for every possible bad argument is not its job.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[In <code>range</code>, because it should accept a float.]]></text>
+      <feedback format="html"><text><![CDATA[<code>range</code> requires integers -- that's one of its preconditions, and <code>polyline</code> passed along a float it should never have received.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[There is no bug, because Python raised an error.]]></text>
+      <feedback format="html"><text><![CDATA[An error message is a symptom of a bug, not a sign that there isn't one.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[In the caller, because it violated a precondition of <code>polyline</code>.]]></text>
+      <feedback format="html"><text><![CDATA[Preconditions are the responsibility of the caller. If the caller violates a precondition and the function doesn't work correctly, the bug is in the caller, not the function.]]></text></feedback>
     </answer>
   </question>
   <question type="category">
@@ -555,6 +611,41 @@ print(x &lt;= 5)
       <feedback format="html"><text><![CDATA[<code>or</code> is a logical operator, along with <code>and</code> and <code>not</code>.]]></text></feedback>
     </answer>
   </question>
+  <question type="multichoice">
+    <name><text>TP3-chapter05-q05</text></name>
+    <questiontext format="html"><text><![CDATA[<p>Here is the function from one of the exercises in this chapter.</p>
+<pre><code>def recurse(n, s):
+    if n == 0:
+        print(s)
+    else:
+        recurse(n-1, n+s)
+</code></pre>
+<p>What happens if you call it like this: <code>recurse(-1, 0)</code>?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-chapter05-q05</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[It prints <code>-1</code>.]]></text>
+      <feedback format="html"><text><![CDATA[It only prints when <code>n</code> is <code>0</code>, and <code>n</code> goes -1, -2, -3, and so on, so it never gets there.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[It prints <code>0</code>.]]></text>
+      <feedback format="html"><text><![CDATA[It would print <code>0</code> only if it reached the base case, but starting from <code>-1</code>, subtracting 1 never makes <code>n</code> equal to <code>0</code>.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[It does nothing, because <code>n</code> is not positive.]]></text>
+      <feedback format="html"><text><![CDATA[The condition is <code>n == 0</code>, not <code>n &lt;= 0</code>, so a negative <code>n</code> doesn't stop the recursion; it goes to the <code>else</code> branch and makes a recursive call.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[It prints nothing and causes a <code>RecursionError</code>.]]></text>
+      <feedback format="html"><text><![CDATA[Because <code>n</code> never equals <code>0</code>, the base case never runs; the recursion goes on until Python reaches its limit on the number of frames and raises a <code>RecursionError</code>.]]></text></feedback>
+    </answer>
+  </question>
   <question type="category">
     <category><text>$course$/top/Think Python/Think Python, Chapter 6: Return Values</text></category>
     <info format="html"><text><![CDATA[Formative quiz for Chapter 6. From <em>Think Python</em>, 3rd edition, by Allen B. Downey (https://allendowney.github.io/ThinkPython/), CC BY-NC-SA 4.0.]]></text></info>
@@ -650,6 +741,40 @@ print(x &lt;= 5)
     <answer fraction="100" format="html">
       <text><![CDATA[<code>True</code>]]></text>
       <feedback format="html"><text><![CDATA[The absolute difference between <code>1.5</code> and <code>1.6</code> is <code>0.1</code>, which is less than <code>0.2</code>.]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>TP3-chapter06-q04</text></name>
+    <questiontext format="html"><text><![CDATA[<p>What is the return value if we call this function with the arguments <code>5</code> and <code>3</code>?</p>
+<pre><code>def is_bigger(num1, num2):
+    if num1 &gt; num2:
+        print(True)
+    else:
+        print(False)
+</code></pre>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-chapter06-q04</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>True</code>]]></text>
+      <feedback format="html"><text><![CDATA[The function displays <code>True</code>, but it doesn't return it, because it has no <code>return</code> statement.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>False</code>]]></text>
+      <feedback format="html"><text><![CDATA[Because <code>5 &gt; 3</code> is <code>True</code>, the first branch runs, and it displays <code>True</code>; but the function has no <code>return</code> statement.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[It causes an error.]]></text>
+      <feedback format="html"><text><![CDATA[This function works. It displays <code>True</code> and then ends without a <code>return</code> statement.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<code>None</code>]]></text>
+      <feedback format="html"><text><![CDATA[A function with no <code>return</code> statement returns <code>None</code>, even if it displays something.]]></text></feedback>
     </answer>
   </question>
   <question type="category">

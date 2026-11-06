@@ -46,3 +46,14 @@ Option,0,They have the same interface <em>and</em> the same implementation.,HTML
 Option,0,They have neither the same interface nor the same implementation.,HTML,"They take the same parameter and have the same effect, so they have the same interface -- but they accomplish the effect in different ways, so they have different implementations.",HTML
 Option,0,"They have the same implementation, but different interfaces.",HTML,"They take the same parameter and have the same effect, so they have the same interface -- but they accomplish the effect in different ways, so they have different implementations.",HTML
 
+NewQuestion,MC
+ID,TP3-chapter04-q04
+Title,"Think Python, Chapter 4: Functions and Interfaces, question 4"
+QuestionText,"<p>The docstring of <code>polyline</code> says that <code>n</code> must be an integer. If someone calls <code>polyline(2.5, 30, 60)</code>, it fails with a <code>TypeError</code>. Where is the bug?</p>",HTML
+Points,1
+Difficulty,1
+Option,100,"In the caller, because it violated a precondition of <code>polyline</code>.",HTML,"Preconditions are the responsibility of the caller. If the caller violates a precondition and the function doesn't work correctly, the bug is in the caller, not the function.",HTML
+Option,0,"In <code>range</code>, because it should accept a float.",HTML,"<code>range</code> requires integers -- that's one of its preconditions, and <code>polyline</code> passed along a float it should never have received.",HTML
+Option,0,"In <code>polyline</code>, because a function should work with any arguments.",HTML,A function only promises to work if its preconditions are satisfied; checking for every possible bad argument is not its job.,HTML
+Option,0,"There is no bug, because Python raised an error.",HTML,"An error message is a symptom of a bug, not a sign that there isn't one.",HTML
+

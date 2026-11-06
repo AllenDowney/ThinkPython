@@ -93,4 +93,32 @@
       <feedback format="html"><text><![CDATA[There is nothing wrong with this function.]]></text></feedback>
     </answer>
   </question>
+  <question type="multichoice">
+    <name><text>TP3-chapter03-q04</text></name>
+    <questiontext format="html"><text><![CDATA[<p>When a runtime error occurs inside a function, Python displays a traceback. What does the traceback show?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-chapter03-q04</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Only the line where the error occurred.]]></text>
+      <feedback format="html"><text><![CDATA[The traceback shows a line from each function on the stack, not just the line where the error occurred.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Every function defined in the program, in the order they were defined.]]></text>
+      <feedback format="html"><text><![CDATA[The traceback includes only the functions that were running when the error occurred, not every function that was defined.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Nothing, because tracebacks are only displayed for syntax errors.]]></text>
+      <feedback format="html"><text><![CDATA[A syntax error is reported before the program runs; a traceback is displayed when a runtime error occurs.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[The function that was running, the function that called it, and so on, in the same order as the frames in a stack diagram.]]></text>
+      <feedback format="html"><text><![CDATA[The traceback lists the functions that were running, with the one where the error occurred at the bottom, like the frames in a stack diagram.]]></text></feedback>
+    </answer>
+  </question>
 </quiz>

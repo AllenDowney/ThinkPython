@@ -36,3 +36,14 @@ Option,0,You can't have more than one parameter in parentheses.,HTML,"You can ha
 Option,0,"Instead of <code>def</code>, the first word should be <code>define</code>.",HTML,"<code>def</code> is the right keyword to define a new function, although some other languages use <code>define</code>.",HTML
 Option,100,There are no errors in this function.,HTML,There is nothing wrong with this function.,HTML
 
+NewQuestion,MC
+ID,TP3-chapter03-q04
+Title,"Think Python, Chapter 3: Functions, question 4"
+QuestionText,"<p>When a runtime error occurs inside a function, Python displays a traceback. What does the traceback show?</p>",HTML
+Points,1
+Difficulty,1
+Option,0,"Nothing, because tracebacks are only displayed for syntax errors.",HTML,A syntax error is reported before the program runs; a traceback is displayed when a runtime error occurs.,HTML
+Option,0,"Every function defined in the program, in the order they were defined.",HTML,"The traceback includes only the functions that were running when the error occurred, not every function that was defined.",HTML
+Option,100,"The function that was running, the function that called it, and so on, in the same order as the frames in a stack diagram.",HTML,"The traceback lists the functions that were running, with the one where the error occurred at the bottom, like the frames in a stack diagram.",HTML
+Option,0,Only the line where the error occurred.,HTML,"The traceback shows a line from each function on the stack, not just the line where the error occurred.",HTML
+

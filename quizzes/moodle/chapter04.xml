@@ -103,4 +103,32 @@ def circle(radius):
       <feedback format="html"><text><![CDATA[They take the same parameter and have the same effect, so they have the same interface -- but they accomplish the effect in different ways, so they have different implementations.]]></text></feedback>
     </answer>
   </question>
+  <question type="multichoice">
+    <name><text>TP3-chapter04-q04</text></name>
+    <questiontext format="html"><text><![CDATA[<p>The docstring of <code>polyline</code> says that <code>n</code> must be an integer. If someone calls <code>polyline(2.5, 30, 60)</code>, it fails with a <code>TypeError</code>. Where is the bug?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-chapter04-q04</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[In <code>polyline</code>, because a function should work with any arguments.]]></text>
+      <feedback format="html"><text><![CDATA[A function only promises to work if its preconditions are satisfied; checking for every possible bad argument is not its job.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[In <code>range</code>, because it should accept a float.]]></text>
+      <feedback format="html"><text><![CDATA[<code>range</code> requires integers -- that's one of its preconditions, and <code>polyline</code> passed along a float it should never have received.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[There is no bug, because Python raised an error.]]></text>
+      <feedback format="html"><text><![CDATA[An error message is a symptom of a bug, not a sign that there isn't one.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[In the caller, because it violated a precondition of <code>polyline</code>.]]></text>
+      <feedback format="html"><text><![CDATA[Preconditions are the responsibility of the caller. If the caller violates a precondition and the function doesn't work correctly, the bug is in the caller, not the function.]]></text></feedback>
+    </answer>
+  </question>
 </quiz>

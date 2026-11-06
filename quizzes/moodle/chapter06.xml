@@ -97,4 +97,38 @@
       <feedback format="html"><text><![CDATA[The absolute difference between <code>1.5</code> and <code>1.6</code> is <code>0.1</code>, which is less than <code>0.2</code>.]]></text></feedback>
     </answer>
   </question>
+  <question type="multichoice">
+    <name><text>TP3-chapter06-q04</text></name>
+    <questiontext format="html"><text><![CDATA[<p>What is the return value if we call this function with the arguments <code>5</code> and <code>3</code>?</p>
+<pre><code>def is_bigger(num1, num2):
+    if num1 &gt; num2:
+        print(True)
+    else:
+        print(False)
+</code></pre>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-chapter06-q04</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>True</code>]]></text>
+      <feedback format="html"><text><![CDATA[The function displays <code>True</code>, but it doesn't return it, because it has no <code>return</code> statement.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>False</code>]]></text>
+      <feedback format="html"><text><![CDATA[Because <code>5 &gt; 3</code> is <code>True</code>, the first branch runs, and it displays <code>True</code>; but the function has no <code>return</code> statement.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[It causes an error.]]></text>
+      <feedback format="html"><text><![CDATA[This function works. It displays <code>True</code> and then ends without a <code>return</code> statement.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<code>None</code>]]></text>
+      <feedback format="html"><text><![CDATA[A function with no <code>return</code> statement returns <code>None</code>, even if it displays something.]]></text></feedback>
+    </answer>
+  </question>
 </quiz>
