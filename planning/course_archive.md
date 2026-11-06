@@ -2,7 +2,7 @@
 
 **Created:** 2026-11-06
 **Board:** Task 18 in `PROJECT_BOARD.md` (feeds Task 17, teaching materials)
-**Status:** Steps 1 to 3 done 2026-11-06: 418 questions cataloged, 314 distinct (`ThinkPythonTeaching` `9875d79`). Mining under way: Chapters 2–6 and 9–11 done 2026-11-06
+**Status:** Steps 1 to 3 done 2026-11-06: 418 questions cataloged, 314 distinct (`ThinkPythonTeaching` `9875d79`). Mining under way: Chapters 2–6, 9–11 and 14–17 done 2026-11-06
 
 ## Goal
 
@@ -240,6 +240,23 @@ placed). Decisions:
 - Four questions added to the public quiz: Ch 3 tracebacks, Ch 4 whose bug a
   precondition violation is, Ch 5 a base case never reached, Ch 6 printing vs.
   returning (`None`). The public quizzes now have 89 questions.
+
+**Chapters 14–17 (2026-11-06):** 80 catalog questions; Chapter 17 (35) was mostly
+Swampy, Pyro, threads and lost handouts, and kept only ideas that work on the book's
+own classes. Decisions, now rules in the brief:
+
+- The book never uses exceptions (`try`/`except`, `raise`), `while`, `continue`,
+  `del`, `lambda` or `__call__`: a function that would raise returns `None` (Ch 14
+  `add_vector`; Ch 15 time intervals).
+- No explicit parent `__init__` calls (`Hand.__init__(self, …)`): a child's `__init__`
+  sets every attribute itself, as the book's `Hand` does (Ch 17 BlackJack, Rummy,
+  Go Fish, and the kangaroo question moved in from Ch 16).
+- No class diagrams (the Ch 17 class-diagram activity dropped).
+- Ch 15 `adjacency-bugs`: the mutable-default bug (not explained until Ch 17)
+  swapped for a method defined without `self`.
+- Two more public quiz questions: Ch 14 a parameter and an attribute with the same
+  name; Ch 17 which `__init__` runs when `Hand` overrides `Deck`'s. The public
+  quizzes now have 91 questions.
 
 **Still to look for:** the 2021 Takeout archives of the classic Google Sites, which
 weren't on this disk or the external drive (only a 2026 Blogger Takeout was). Allen
