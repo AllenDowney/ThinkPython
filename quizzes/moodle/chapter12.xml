@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+  <question type="category">
+    <category><text>$course$/top/Think Python/Think Python, Chapter 12: Text Analysis and Generation</text></category>
+    <info format="html"><text><![CDATA[Formative quiz for Chapter 12. From <em>Think Python</em>, 3rd edition, by Allen B. Downey (https://allendowney.github.io/ThinkPython/), CC BY-NC-SA 4.0.]]></text></info>
+  </question>
+  <question type="multichoice">
+    <name><text>TP3-chapter12-q01</text></name>
+    <questiontext format="html"><text><![CDATA[<p>Assuming that <code>t</code> is a list of strings, what does the following line of code do?</p>
+<pre><code>sorted(t, key=len)
+</code></pre>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-chapter12-q01</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Modifies <code>t</code> and sorts the elements in alphabetical order.]]></text>
+      <feedback format="html"><text><![CDATA[<code>sorted</code> makes a new list -- it doesn't modify <code>t</code> -- and <code>key=len</code> sorts the elements from shortest to longest.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Makes a new list that contains the elements in alphabetical order.]]></text>
+      <feedback format="html"><text><![CDATA[With <code>key=len</code>, <code>sorted</code> sorts the elements from shortest to longest.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Modifies <code>t</code> and sorts the elements from shortest to longest.]]></text>
+      <feedback format="html"><text><![CDATA[<code>sorted</code> makes a new list -- it doesn't modify <code>t</code>.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Makes a new list that contains the elements in order from shortest to longest.]]></text>
+      <feedback format="html"><text><![CDATA[<code>sorted</code> makes a new list, and <code>key=len</code> sorts the elements from shortest to longest.]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>TP3-chapter12-q02</text></name>
+    <questiontext format="html"><text><![CDATA[<p>What is the effect of running this program?</p>
+<pre><code>word_counter = {}
+for line in open(filename):
+    for word in split_line(line):
+        word_counter[word] += 1
+</code></pre>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-chapter12-q02</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[It makes a dictionary that maps from each word to the number of times it appears.]]></text>
+      <feedback format="html"><text><![CDATA[Because <code>word_counter</code> is initially empty, the program causes a <code>KeyError</code> when it tries to increment a value in <code>word_counter</code>.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[It has a syntax error because the indentation is not correct.]]></text>
+      <feedback format="html"><text><![CDATA[The indentation is correct, but the program causes a <code>KeyError</code> when it tries to increment a value in <code>word_counter</code>.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[It has a semantic error because all the keys in <code>word_counter</code> map to the value <code>1</code>.]]></text>
+      <feedback format="html"><text><![CDATA[Because <code>word_counter</code> is initially empty, the program causes a <code>KeyError</code> when it tries to increment a value in <code>word_counter</code>.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[It causes a <code>KeyError</code> when it tries to increment a value in <code>word_counter</code>.]]></text>
+      <feedback format="html"><text><![CDATA[Because <code>word_counter</code> is initially empty, the program causes a <code>KeyError</code> when it tries to increment a value in <code>word_counter</code>.]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>TP3-chapter12-q03</text></name>
+    <questiontext format="html"><text><![CDATA[<p>If we run the following lines of code, what is the probability that the result is <code>'a'</code>?</p>
+<pre><code>letters = ['a', 'b', 'c']
+weights = [1, 2, 3]
+random.choices(letters, weights=weights)
+</code></pre>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-chapter12-q03</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[1/3]]></text>
+      <feedback format="html"><text><![CDATA[The weight associated with <code>'a'</code> is <code>1</code> and the total of the weights is <code>6</code>.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[1/4]]></text>
+      <feedback format="html"><text><![CDATA[The weight associated with <code>'a'</code> is <code>1</code> and the total of the weights is <code>6</code>.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[1/5]]></text>
+      <feedback format="html"><text><![CDATA[The weight associated with <code>'a'</code> is <code>1</code> and the total of the weights is <code>6</code>.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[1/6]]></text>
+      <feedback format="html"><text><![CDATA[The weight associated with <code>'a'</code> is <code>1</code> and the total of the weights is <code>6</code>, so the probability of choosing <code>'a'</code> is <code>1/6</code>.]]></text></feedback>
+    </answer>
+  </question>
+</quiz>

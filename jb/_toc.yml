@@ -29,3 +29,4 @@ parts:
 - caption: End Matter
   chapters:
   - file: blank
+  - file: quizzes

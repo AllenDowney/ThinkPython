@@ -12,6 +12,10 @@ You can order print and electronic versions of *Think Python 3e* from
 
 The home page for the book is at [Green Tea Press](http://thinkpython.com).
 
+## Quizzes for instructors
+
+A multiple-choice quiz for each chapter, and a summative quiz for the whole book, ready to import into Canvas, Moodle or Brightspace: see [`quizzes/`](quizzes/).
+
 ## Translations
 
 - Brazilian Portuguese: [*Pense em Python*](https://github.com/alexander-stack1/ThinkPython), an educational translation by alexander-stack1.

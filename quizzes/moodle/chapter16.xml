@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+  <question type="category">
+    <category><text>$course$/top/Think Python/Think Python, Chapter 16: Classes and Objects</text></category>
+    <info format="html"><text><![CDATA[Formative quiz for Chapter 16. From <em>Think Python</em>, 3rd edition, by Allen B. Downey (https://allendowney.github.io/ThinkPython/), CC BY-NC-SA 4.0.]]></text></info>
+  </question>
+  <question type="multichoice">
+    <name><text>TP3-chapter16-q01</text></name>
+    <questiontext format="html"><text><![CDATA[<p>Which of these is the term for a function or method that works with more than one type of object?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-chapter16-q01</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[pure]]></text>
+      <feedback format="html"><text><![CDATA[A pure function or method does not modify the parameters or have other effects.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[equivalent]]></text>
+      <feedback format="html"><text><![CDATA[If two values are considered equal, they are equivalent.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[static]]></text>
+      <feedback format="html"><text><![CDATA[A static method is associated with a class, rather than an object.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[polymorphic]]></text>
+      <feedback format="html"><text><![CDATA[A function that works with more than one type is polymorphic.]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>TP3-chapter16-q02</text></name>
+    <questiontext format="html"><text><![CDATA[<p>What is wrong with this class definition?</p>
+<pre><code>class Point:
+    &quot;&quot;&quot;Represents a point in 2-D space.&quot;&quot;&quot;
+
+    def __init__(self, x, y):
+        x = self.x
+        y = self.y
+</code></pre>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-chapter16-q02</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>__init__</code> is not a legal name for a method because it does not start with a letter.]]></text>
+      <feedback format="html"><text><![CDATA[The names of special methods like <code>__init__</code> begin and end with two underscore characters.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[The triple-quoted string has to be inside a method definition.]]></text>
+      <feedback format="html"><text><![CDATA[A triple-quoted string inside a class definition is a docstring that provides information about the class.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[The first parameter of the method should be called <code>point</code>, not <code>self</code>.]]></text>
+      <feedback format="html"><text><![CDATA[The first parameter of a method is conventionally named <code>self</code>.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[The assignment statements should be the other way around, as in <code>self.x = x</code> and <code>self.y = y</code>.]]></text>
+      <feedback format="html"><text><![CDATA[The assignment statements should be the other way around, as in <code>self.x = x</code> and <code>self.y = y</code>.]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>TP3-chapter16-q03</text></name>
+    <questiontext format="html"><text><![CDATA[<p>Suppose we define a <code>Line</code> class so that each <code>Line</code> object has two attributes that refer to <code>Point</code> objects.</p>
+<pre><code>class Line:
+    def __init__(self, p1, p2):
+        self.p1 = p1
+        self.p2 = p2
+</code></pre>
+<p>If we import the <code>copy</code> function from the <code>copy</code> module and use it to make a copy of a <code>Line</code> object, which of these statements is true?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-chapter16-q03</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[The result is a deep copy that copies the <code>Line</code> object and the <code>Point</code> objects it contains.]]></text>
+      <feedback format="html"><text><![CDATA[The <code>copy</code> function copies the <code>Line</code> object but not the <code>Point</code> objects it contains.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[The result is a deep copy that copies the <code>Line</code> object but not the <code>Point</code> objects it contains.]]></text>
+      <feedback format="html"><text><![CDATA[The <code>copy</code> function makes a shallow copy.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[The result is a shallow copy that copies the <code>Line</code> object and the <code>Point</code> objects it contains.]]></text>
+      <feedback format="html"><text><![CDATA[The <code>copy</code> function copies the <code>Line</code> object but not the <code>Point</code> objects it contains.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[The result is a shallow copy that copies the <code>Line</code> object but not the <code>Point</code> objects it contains.]]></text>
+      <feedback format="html"><text><![CDATA[The <code>copy</code> function makes a shallow copy, which copies the <code>Line</code> object but not the <code>Point</code> objects it contains.]]></text></feedback>
+    </answer>
+  </question>
+</quiz>

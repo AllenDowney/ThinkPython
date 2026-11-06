@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+  <question type="category">
+    <category><text>$course$/top/Think Python/Think Python, Chapter 1: Programming as a way of thinking</text></category>
+    <info format="html"><text><![CDATA[Formative quiz for Chapter 1. From <em>Think Python</em>, 3rd edition, by Allen B. Downey (https://allendowney.github.io/ThinkPython/), CC BY-NC-SA 4.0.]]></text></info>
+  </question>
+  <question type="multichoice">
+    <name><text>TP3-chapter01-q01</text></name>
+    <questiontext format="html"><text><![CDATA[<p>Which of these types is used to represent a number with a fraction part?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-chapter01-q01</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>int</code>]]></text>
+      <feedback format="html"><text><![CDATA[<code>int</code> values can only be integers.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>real</code>]]></text>
+      <feedback format="html"><text><![CDATA[Python does not have a type called <code>real</code>.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>str</code>]]></text>
+      <feedback format="html"><text><![CDATA[<code>str</code> values contain a sequence of characters.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<code>float</code>]]></text>
+      <feedback format="html"><text><![CDATA[<code>float</code> values represent floating-point numbers, which can have a fraction part.]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>TP3-chapter01-q02</text></name>
+    <questiontext format="html"><text><![CDATA[<p>Which of these is a legal expression?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-chapter01-q02</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>'1' / '2'</code>]]></text>
+      <feedback format="html"><text><![CDATA[The division operator does not work with strings.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>'1' * '2'</code>]]></text>
+      <feedback format="html"><text><![CDATA[With the multiplication operator, the first value can be a string, but the second cannot.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>'1' / 2</code>]]></text>
+      <feedback format="html"><text><![CDATA[The division operator does not work with strings.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<code>'1' * 2</code>]]></text>
+      <feedback format="html"><text><![CDATA[When the first operand is a string, the multiplication operator repeats the string, so the result is <code>'11'</code>.]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>TP3-chapter01-q03</text></name>
+    <questiontext format="html"><text><![CDATA[<p>Which of these is the general word for any value used in a mathematical operation like addition or multiplication?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-chapter01-q03</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[term]]></text>
+      <feedback format="html"><text><![CDATA[A "term" is a value used in addition, but it is not the general word for any value used in an operation.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[factor]]></text>
+      <feedback format="html"><text><![CDATA[A "factor" is a value used in multiplication, but it is not the general word for any value used in an operation.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[divisor]]></text>
+      <feedback format="html"><text><![CDATA[A "divisor" is one of the values used in division, but it is not the general word for any value used in an operation.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[operand]]></text>
+      <feedback format="html"><text><![CDATA[An "operand" is a value used in an operation.]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>TP3-chapter01-q04</text></name>
+    <questiontext format="html"><text><![CDATA[<p>On the internet, people sometimes argue about the value of an ambiguous mathematical expression like 8 ÷ 2(2+2). How do we write this expression in Python?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-chapter01-q04</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>8 ÷ 2 (2 + 2)</code>]]></text>
+      <feedback format="html"><text><![CDATA[The operator for division is <code>/</code>, not <code>÷</code>. Also, there is no implicit multiplication in Python -- you have to use the <code>*</code> operator.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>8 / 2 (2 + 2)</code>]]></text>
+      <feedback format="html"><text><![CDATA[There is no implicit multiplication in Python -- you have to use the <code>*</code> operator.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>8 ÷ 2 * (2 + 2)</code>]]></text>
+      <feedback format="html"><text><![CDATA[The operator for division is <code>/</code>, not <code>÷</code>.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<code>8 / 2 * (2 + 2)</code>]]></text>
+      <feedback format="html"><text><![CDATA[An alternative is to put <code>8 / 2</code> in parentheses so the order of operations is clear.]]></text></feedback>
+    </answer>
+  </question>
+</quiz>

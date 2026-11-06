@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+  <question type="category">
+    <category><text>$course$/top/Think Python/Think Python, Chapter 15: Classes and Methods</text></category>
+    <info format="html"><text><![CDATA[Formative quiz for Chapter 15. From <em>Think Python</em>, 3rd edition, by Allen B. Downey (https://allendowney.github.io/ThinkPython/), CC BY-NC-SA 4.0.]]></text></info>
+  </question>
+  <question type="multichoice">
+    <name><text>TP3-chapter15-q01</text></name>
+    <questiontext format="html"><text><![CDATA[<p>Suppose <code>time</code> is a <code>Time</code> object, and <code>increment</code> is an instance method defined in the <code>Time</code> class.
+What happens when we invoke <code>increment</code> like this?</p>
+<pre><code>time.increment(42)
+</code></pre>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-chapter15-q01</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>42</code> is assigned to the first parameter of the method, and <code>time</code> is assigned to the second.]]></text>
+      <feedback format="html"><text><![CDATA[<code>time</code> is assigned to the first parameter of the method.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[This is an error because <code>increment</code> requires one argument and two are provided.]]></text>
+      <feedback format="html"><text><![CDATA[This method requires two arguments -- <code>time</code> is the first and <code>42</code> is the second.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[This is an error because <code>increment</code> requires two arguments and only one is provided.]]></text>
+      <feedback format="html"><text><![CDATA[Only one argument appears in parentheses, but <code>time</code> is passed to <code>increment</code> as the first argument.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<code>time</code> is assigned to the first parameter of the method and <code>42</code> is assigned to the second.]]></text>
+      <feedback format="html"><text><![CDATA[<code>time</code> is assigned to the first parameter of the method, which is conventionally called <code>self</code>, and <code>42</code> is assigned to the second.]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>TP3-chapter15-q02</text></name>
+    <questiontext format="html"><text><![CDATA[<p>Suppose <code>int_to_time</code> is a static method defined in the <code>Time</code> class.
+What happens when we invoke <code>int_to_time</code> like this?</p>
+<pre><code>start = Time.int_to_time(34800)
+</code></pre>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-chapter15-q02</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[This is an error because <code>int_to_time</code> requires one argument and two are provided.]]></text>
+      <feedback format="html"><text><![CDATA[There is only one argument here, <code>34800</code>.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[The <code>Time</code> class object is assigned to the first parameter of the method and <code>34800</code> is assigned to the second.]]></text>
+      <feedback format="html"><text><![CDATA[Because <code>Time</code> is a class, it is not passed as an argument.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>34800</code> is assigned to the first parameter of the method and the <code>Time</code> class object is assigned to the second.]]></text>
+      <feedback format="html"><text><![CDATA[Because <code>Time</code> is a class, it is not passed as an argument.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<code>34800</code> is assigned to the first parameter of <code>int_to_time</code>.]]></text>
+      <feedback format="html"><text><![CDATA[<code>34800</code> is assigned to the first parameter of <code>int_to_time</code>. Because <code>Time</code> is a class, it is not passed as an argument.]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>TP3-chapter15-q03</text></name>
+    <questiontext format="html"><text><![CDATA[<p>Which of the following statements is NOT correct?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-chapter15-q03</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[When we instantiate an object, its <code>__init__</code> method is invoked.]]></text>
+      <feedback format="html"><text><![CDATA[This statement is correct.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[When we use the <code>+</code> operator with an object, its <code>__add__</code> method is invoked.]]></text>
+      <feedback format="html"><text><![CDATA[This statement is correct.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[When we print an object, its <code>__str__</code> method is invoked.]]></text>
+      <feedback format="html"><text><![CDATA[This statement is correct.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[When we define a new class, its <code>__init__</code> method is invoked.]]></text>
+      <feedback format="html"><text><![CDATA[Defining a new class does not invoke its <code>__init__</code> method.]]></text></feedback>
+    </answer>
+  </question>
+</quiz>

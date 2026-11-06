@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+  <question type="category">
+    <category><text>$course$/top/Think Python/Think Python, Chapter 2: Variables and Statements</text></category>
+    <info format="html"><text><![CDATA[Formative quiz for Chapter 2. From <em>Think Python</em>, 3rd edition, by Allen B. Downey (https://allendowney.github.io/ThinkPython/), CC BY-NC-SA 4.0.]]></text></info>
+  </question>
+  <question type="multichoice">
+    <name><text>TP3-chapter02-q01</text></name>
+    <questiontext format="html"><text><![CDATA[<p>Which of these is a legal variable name?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-chapter02-q01</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>2pi</code>]]></text>
+      <feedback format="html"><text><![CDATA[<code>2pi</code> is not a legal variable name because it starts with a number.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>question?</code>]]></text>
+      <feedback format="html"><text><![CDATA[<code>question?</code> is not a legal variable name because only letters, numbers, and the underscore character, <code>_</code>, are allowed.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>import</code>]]></text>
+      <feedback format="html"><text><![CDATA[<code>import</code> is not a legal variable name because it is one of Python's keywords.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<code>is_even</code>]]></text>
+      <feedback format="html"><text><![CDATA[<code>is_even</code> is a legal variable name because letters, numbers, and the underscore character, <code>_</code>, are allowed.]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>TP3-chapter02-q02</text></name>
+    <questiontext format="html"><text><![CDATA[<p>Which of these is NOT a correct way to raise <code>2</code> to the third power?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-chapter02-q02</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>2 * 2 * 2</code>]]></text>
+      <feedback format="html"><text><![CDATA[Multiplication is a correct way to raise <code>2</code> to the third power.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>2 ** 3</code>]]></text>
+      <feedback format="html"><text><![CDATA[The exponentiation operator, <code>**</code>, is a correct way to raise <code>2</code> to the third power.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>math.pow(2, 3)</code>]]></text>
+      <feedback format="html"><text><![CDATA[The <code>pow</code> function in the <code>math</code> module is a correct way to raise <code>2</code> to the third power.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<code>2 ^ 3</code>]]></text>
+      <feedback format="html"><text><![CDATA[In some languages, the <code>^</code> operator is used for exponentiation, but in Python it means something else.]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>TP3-chapter02-q03</text></name>
+    <questiontext format="html"><text><![CDATA[<p>When you call a function, what are the values that appear in parentheses?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-chapter02-q03</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[assignments]]></text>
+      <feedback format="html"><text><![CDATA[An assignment is a statement that assigns a value to a variable.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[comments]]></text>
+      <feedback format="html"><text><![CDATA[A comment is text you add to a program to explain how it works.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[exceptions]]></text>
+      <feedback format="html"><text><![CDATA[An exception is an error detected while a program is running.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[arguments]]></text>
+      <feedback format="html"><text><![CDATA[The values you pass to a function are called arguments.]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>TP3-chapter02-q04</text></name>
+    <questiontext format="html"><text><![CDATA[<p>If a program runs without producing an error message, but it does not do the right thing, what kind of error is that?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-chapter02-q04</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[syntax error]]></text>
+      <feedback format="html"><text><![CDATA[A syntax error produces an error message.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[runtime error]]></text>
+      <feedback format="html"><text><![CDATA[A runtime error produces an error message.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[exception]]></text>
+      <feedback format="html"><text><![CDATA[An exception produces an error message.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[semantic error]]></text>
+      <feedback format="html"><text><![CDATA[A semantic error is when a program runs, but does the wrong thing.]]></text></feedback>
+    </answer>
+  </question>
+</quiz>

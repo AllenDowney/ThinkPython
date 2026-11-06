@@ -1,0 +1,55 @@
+﻿NewQuestion,MC
+ID,TP3-chapter05-q01
+Title,"Think Python, Chapter 5: Conditionals and Recursion, question 1"
+QuestionText,"<p>What is the result of these assignment statements?</p>
+<pre><code>a = 25 // 10
+b = 25 % 10
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,0,<code>a</code> is <code>2</code> and <code>b</code> is <code>250</code>,HTML,"The <code>%</code> operator computes the remainder after division, so <code>25 % 10</code> is <code>5</code>.",HTML
+Option,0,<code>a</code> is <code>2.5</code> and <code>b</code> is <code>5</code>,HTML,"The <code>//</code> operator does integer division, so <code>25 // 10</code> is <code>2</code>.",HTML
+Option,0,<code>a</code> is <code>2.5</code> and <code>b</code> is <code>250</code>,HTML,"The <code>//</code> operator does integer division, so <code>25 // 10</code> is <code>2</code>, and the <code>%</code> operator computes the remainder after division, so <code>25 % 10</code> is <code>5</code>.",HTML
+Option,100,<code>a</code> is <code>2</code> and <code>b</code> is <code>5</code>,HTML,The <code>//</code> operator does integer division and the <code>%</code> operator computes the remainder after division.,HTML
+
+NewQuestion,MC
+ID,TP3-chapter05-q02
+Title,"Think Python, Chapter 5: Conditionals and Recursion, question 2"
+QuestionText,"<p>What is the result of these statements?</p>
+<pre><code>x = 5
+print(x &gt; 5)
+print(x &lt;= 5)
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,0,They print the values <code>False</code> and <code>False</code>,HTML,"If <code>x</code> is <code>5</code>, <code>x &lt;= 5</code> is the same as <code>5 &lt;= 5</code>, which is <code>True</code>.",HTML
+Option,0,They print the values <code>True</code> and <code>False</code>,HTML,"If <code>x</code> is <code>5</code>, <code>x &gt; 5</code> is the same as <code>5 &gt; 5</code>, which is <code>False</code>; also, <code>x &lt;= 5</code> is the same as <code>5 &lt;= 5</code>, which is <code>True</code>.",HTML
+Option,100,They print the values <code>False</code> and <code>True</code>,HTML,"If <code>x</code> is <code>5</code>, <code>x &gt; 5</code> is <code>False</code> and <code>x &lt;= 5</code> is <code>True</code>.",HTML
+Option,0,They print the values <code>True</code> and <code>True</code>,HTML,"If <code>x</code> is <code>5</code>, <code>x &gt; 5</code> is the same as <code>5 &gt; 5</code>, which is <code>False</code>.",HTML
+
+NewQuestion,MC
+ID,TP3-chapter05-q03
+Title,"Think Python, Chapter 5: Conditionals and Recursion, question 3"
+QuestionText,"<p>What is the result of calling this function?</p>
+<pre><code>def hello():
+    print('hello')
+    hello()
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,0,It prints <code>hello</code> once.,HTML,"After it prints <code>hello</code> once, it calls itself, which prints <code>hello</code> many times and then causes a <code>RecursionError</code>.",HTML
+Option,0,It causes an error the first time <code>hello</code> tries to call itself.,HTML,"After printing <code>hello</code> many times, it causes a <code>RecursionError</code>.",HTML
+Option,0,It prints <code>hello</code> forever.,HTML,"After printing <code>hello</code> many times, it causes a <code>RecursionError</code>.",HTML
+Option,100,It prints <code>hello</code> many times and then causes an error.,HTML,"After printing <code>hello</code> many times, it causes a <code>RecursionError</code>.",HTML
+
+NewQuestion,MC
+ID,TP3-chapter05-q04
+Title,"Think Python, Chapter 5: Conditionals and Recursion, question 4"
+QuestionText,<p>What kind of operator is <code>or</code>?</p>,HTML
+Points,1
+Difficulty,1
+Option,0,arithmetic,HTML,"<code>or</code> is a logical operator, along with <code>and</code> and <code>not</code>.",HTML
+Option,0,relational,HTML,"<code>or</code> is a logical operator, along with <code>and</code> and <code>not</code>.",HTML
+Option,0,bitwise,HTML,"<code>or</code> is a logical operator, along with <code>and</code> and <code>not</code>.",HTML
+Option,100,logical,HTML,"<code>or</code> is a logical operator, along with <code>and</code> and <code>not</code>.",HTML
+

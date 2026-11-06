@@ -1,0 +1,33 @@
+﻿NewQuestion,MC
+ID,TP3-chapter08-q01
+Title,"Think Python, Chapter 8: Strings and Regular Expressions, question 1"
+QuestionText,<p>What is the result of this comparison: <code>'Orange' &lt; 'apple'</code>?</p>,HTML
+Points,1
+Difficulty,1
+Option,100,<code>True</code>,HTML,"When we compare characters, the uppercase <code>'O'</code> comes before the lowercase <code>'a'</code>.",HTML
+Option,0,<code>False</code>,HTML,"When we compare characters, the uppercase <code>'O'</code> comes before the lowercase <code>'a'</code>.",HTML
+Option,0,"Runtime error, because you can't compare apples and oranges.",HTML,It's legal to compare any two strings.,HTML
+Option,0,Syntax error,HTML,The syntax is correct.,HTML
+
+NewQuestion,MC
+ID,TP3-chapter08-q02
+Title,"Think Python, Chapter 8: Strings and Regular Expressions, question 2"
+QuestionText,<p>Which of these is the correct way to invoke the <code>lower</code> method on a string called <code>s</code>?</p>,HTML
+Points,1
+Difficulty,1
+Option,100,<code>s.lower()</code>,HTML,This is the correct syntax for invoking a method on an object.,HTML
+Option,0,<code>lower(s)</code>,HTML,The <code>lower</code> method can only be invoked on a string using dot notation.,HTML
+Option,0,<code>string.lower(s)</code>,HTML,The <code>lower</code> method can only be invoked on a string using dot notation.,HTML
+Option,0,<code>s.lower(string)</code>,HTML,The <code>lower</code> method doesn't take an argument in parentheses.,HTML
+
+NewQuestion,MC
+ID,TP3-chapter08-q03
+Title,"Think Python, Chapter 8: Strings and Regular Expressions, question 3"
+QuestionText,"<p>If we use the <code>search</code> function in the <code>re</code> module, which of the following strings matches this pattern: <code>r'ab?c$'</code>?</p>",HTML
+Points,1
+Difficulty,1
+Option,100,<code>'zac'</code>,HTML,"It's OK to have extra letters at the beginning, and the <code>b</code> is not required.",HTML
+Option,0,<code>'abcd'</code>,HTML,The pattern <code>c$</code> requires the letter <code>c</code> at the end of the string.,HTML
+Option,0,<code>'ab?c$'</code>,HTML,"The question mark, <code>?</code>, and dollar sign, <code>$</code>, are special characters that change the behavior of the pattern -- they should not appear in the string.",HTML
+Option,0,<code>'abbc'</code>,HTML,"The pattern <code>b?</code> means that <code>b</code> is optional, but it cannot be repeated.",HTML
+

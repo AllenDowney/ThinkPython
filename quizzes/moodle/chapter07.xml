@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+  <question type="category">
+    <category><text>$course$/top/Think Python/Think Python, Chapter 7: Iteration and Search</text></category>
+    <info format="html"><text><![CDATA[Formative quiz for Chapter 7. From <em>Think Python</em>, 3rd edition, by Allen B. Downey (https://allendowney.github.io/ThinkPython/), CC BY-NC-SA 4.0.]]></text></info>
+  </question>
+  <question type="multichoice">
+    <name><text>TP3-chapter07-q01</text></name>
+    <questiontext format="html"><text><![CDATA[<p>This function is supposed to return <code>True</code> if <code>word</code> contains <code>'A'</code> or <code>'a'</code>, and <code>False</code> otherwise. But it doesn't work -- what's wrong?</p>
+<pre><code>def has_a(word):
+    for letter in word.lower():
+        if letter == 'a':
+            return True
+        else:
+            return False
+        return False
+</code></pre>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-chapter07-q01</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[The first line of the for statement has a syntax error.]]></text>
+      <feedback format="html"><text><![CDATA[The syntax of the function is correct.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[It only checks for lowercase <code>'a'</code>, not uppercase <code>'A'</code>.]]></text>
+      <feedback format="html"><text><![CDATA[It uses <code>lower</code> to convert <code>word</code> to lowercase, so if uppercase <code>'A'</code> is in the string, it would be found.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[It causes a runtime error if <code>word</code> is an empty string.]]></text>
+      <feedback format="html"><text><![CDATA[If <code>word</code> is an empty string, the body of the loop never runs and the function returns <code>False</code>, which is correct.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[It only checks the first letter of <code>word</code>.]]></text>
+      <feedback format="html"><text><![CDATA[Both branches of the conditional have <code>return</code> statements, so this function ends after checking the first letter.]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>TP3-chapter07-q02</text></name>
+    <questiontext format="html"><text><![CDATA[<p>Which of these is a legal way to increment <code>x</code>, assuming it has already been assigned a value?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-chapter07-q02</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>x++</code>]]></text>
+      <feedback format="html"><text><![CDATA[Some programming languages use the <code>++</code> operator to increment a variable, but not Python.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>x + 1 = x</code>]]></text>
+      <feedback format="html"><text><![CDATA[The left side of an assignment can't be an expression like <code>x + 1</code>.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>x = +1</code>]]></text>
+      <feedback format="html"><text><![CDATA[The value <code>+1</code> is the same as <code>1</code>, so this statement assigns the value <code>1</code> to <code>x</code>.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<code>x = x + 1</code>]]></text>
+      <feedback format="html"><text><![CDATA[This is a legal way to update the value of <code>x</code>.]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>TP3-chapter07-q03</text></name>
+    <questiontext format="html"><text><![CDATA[<p>What does this function do?</p>
+<pre><code>def check(word, letters):
+    for letter in word.lower():
+        if letter in letters.lower():
+            return False
+    return True
+</code></pre>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-chapter07-q03</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Returns <code>True</code> if any of the letters in <code>letters</code> appear in <code>word</code>.]]></text>
+      <feedback format="html"><text><![CDATA[It only returns <code>True</code> if it gets to the end of <code>word</code> and exits the loop having found none of the letters in <code>letters</code>.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Returns <code>True</code> if all of the letters in <code>letters</code> appear in <code>word</code>.]]></text>
+      <feedback format="html"><text><![CDATA[It returns <code>False</code> as soon as it finds a letter in <code>word</code> that is also in <code>letters</code>, so it only returns <code>True</code> if none of them appear.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Returns <code>True</code> if the first letter of <code>word</code> does not appear in <code>letters</code>.]]></text>
+      <feedback format="html"><text><![CDATA[The loop doesn't stop after the first letter -- it only returns early if it finds a letter that is in <code>letters</code>, so it checks every letter in <code>word</code>.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Returns <code>True</code> if none of the letters in <code>letters</code> appear in <code>word</code>.]]></text>
+      <feedback format="html"><text><![CDATA[It returns <code>True</code> if it gets to the end of <code>word</code> and exits the loop having found none of the letters in <code>letters</code>.]]></text></feedback>
+    </answer>
+  </question>
+</quiz>

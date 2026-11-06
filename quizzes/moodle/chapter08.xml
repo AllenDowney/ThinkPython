@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+  <question type="category">
+    <category><text>$course$/top/Think Python/Think Python, Chapter 8: Strings and Regular Expressions</text></category>
+    <info format="html"><text><![CDATA[Formative quiz for Chapter 8. From <em>Think Python</em>, 3rd edition, by Allen B. Downey (https://allendowney.github.io/ThinkPython/), CC BY-NC-SA 4.0.]]></text></info>
+  </question>
+  <question type="multichoice">
+    <name><text>TP3-chapter08-q01</text></name>
+    <questiontext format="html"><text><![CDATA[<p>What is the result of this comparison: <code>'Orange' &lt; 'apple'</code>?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-chapter08-q01</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>False</code>]]></text>
+      <feedback format="html"><text><![CDATA[When we compare characters, the uppercase <code>'O'</code> comes before the lowercase <code>'a'</code>.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Syntax error]]></text>
+      <feedback format="html"><text><![CDATA[The syntax is correct.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Runtime error, because you can't compare apples and oranges.]]></text>
+      <feedback format="html"><text><![CDATA[It's legal to compare any two strings.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<code>True</code>]]></text>
+      <feedback format="html"><text><![CDATA[When we compare characters, the uppercase <code>'O'</code> comes before the lowercase <code>'a'</code>.]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>TP3-chapter08-q02</text></name>
+    <questiontext format="html"><text><![CDATA[<p>Which of these is the correct way to invoke the <code>lower</code> method on a string called <code>s</code>?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-chapter08-q02</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>lower(s)</code>]]></text>
+      <feedback format="html"><text><![CDATA[The <code>lower</code> method can only be invoked on a string using dot notation.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>string.lower(s)</code>]]></text>
+      <feedback format="html"><text><![CDATA[The <code>lower</code> method can only be invoked on a string using dot notation.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>s.lower(string)</code>]]></text>
+      <feedback format="html"><text><![CDATA[The <code>lower</code> method doesn't take an argument in parentheses.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<code>s.lower()</code>]]></text>
+      <feedback format="html"><text><![CDATA[This is the correct syntax for invoking a method on an object.]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>TP3-chapter08-q03</text></name>
+    <questiontext format="html"><text><![CDATA[<p>If we use the <code>search</code> function in the <code>re</code> module, which of the following strings matches this pattern: <code>r'ab?c$'</code>?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-chapter08-q03</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>'ab?c$'</code>]]></text>
+      <feedback format="html"><text><![CDATA[The question mark, <code>?</code>, and dollar sign, <code>$</code>, are special characters that change the behavior of the pattern -- they should not appear in the string.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>'abcd'</code>]]></text>
+      <feedback format="html"><text><![CDATA[The pattern <code>c$</code> requires the letter <code>c</code> at the end of the string.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>'abbc'</code>]]></text>
+      <feedback format="html"><text><![CDATA[The pattern <code>b?</code> means that <code>b</code> is optional, but it cannot be repeated.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<code>'zac'</code>]]></text>
+      <feedback format="html"><text><![CDATA[It's OK to have extra letters at the beginning, and the <code>b</code> is not required.]]></text></feedback>
+    </answer>
+  </question>
+</quiz>

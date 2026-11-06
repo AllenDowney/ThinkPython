@@ -1,0 +1,92 @@
+﻿NewQuestion,MC
+ID,TP3-chapter18-q01
+Title,"Think Python, Chapter 18: Python Extras, question 1"
+QuestionText,"<p>What is the result of this operation?</p>
+<pre><code>set('abba') &lt;= set('abc')
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,100,<code>True</code> because the elements of <code>'abba'</code> are a subset of the elements of <code>'abc'</code>.,HTML,"With <code>set</code> objects, the <code>&lt;=</code> operator checks whether one set is a subset of another -- including the possibility that they are equal.",HTML
+Option,0,<code>False</code> because <code>'abba'</code> is longer than <code>'abc'</code>.,HTML,"With <code>set</code> objects, the <code>&lt;=</code> operator checks whether one set is a subset of another -- it does not compare the length of the strings.",HTML
+Option,0,"A runtime error because <code>'abba'</code> contains duplicate elements, so it is not a <code>set</code>.",HTML,"When the set is created, the duplicate elements of the string are removed.",HTML
+Option,0,"A runtime error because a string is immutable, so it cannot be transformed into a <code>set</code>.",HTML,The <code>set</code> function creates a new set -- it does not modify the string.,HTML
+
+NewQuestion,MC
+ID,TP3-chapter18-q02
+Title,"Think Python, Chapter 18: Python Extras, question 2"
+QuestionText,"<p>What is the value of <code>counter</code> after these statements run?</p>
+<pre><code>from collections import Counter
+
+t = (1, 1, 1, 2, 2, 3)
+counter = Counter(t)
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,0,"<code>{1: 3, 2: 2, 3: 1}</code>",HTML,"The result is a <code>Counter</code> object, not a dictionary.",HTML
+Option,0,"<code>Counter(1, 1, 1, 2, 2, 3)</code>",HTML,"The result is a <code>Counter</code> object that contains items like a dictionary, not a tuple.",HTML
+Option,100,"<code>Counter({1: 3, 2: 2, 3: 1})</code>",HTML,The result is a <code>Counter</code> object that contains the elements of the tuple and the number of times each one appears.,HTML
+Option,0,"<code>(1, 1, 1, 2, 2, 3)</code>",HTML,"The result is a <code>Counter</code> object, not a tuple.",HTML
+
+NewQuestion,MC
+ID,TP3-chapter18-q03
+Title,"Think Python, Chapter 18: Python Extras, question 3"
+QuestionText,"<p>Which comment about this class definition is correct?</p>
+<pre><code>class Game:
+    &quot;&quot;&quot;Represents a game with a dictionary that maps from teams to scores.&quot;&quot;&quot;
+
+    def __init__(self, scores={}):
+        self.scores = scores
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,0,All <code>Game</code> objects refer to different dictionaries.,HTML,The default value of <code>scores</code> is a dictionary that is created when the function is defined. All <code>Game</code> objects created with the default value get a reference to it.,HTML
+Option,0,All <code>Game</code> objects refer to the same dictionary.,HTML,"All <code>Game</code> objects created with the default value get a reference to it, but a <code>Game</code> object that overrides <code>scores</code> will refer to a different dictionary.",HTML
+Option,100,All <code>Game</code> objects created with the default value of <code>scores</code> refer to the same dictionary.,HTML,"All <code>Game</code> objects created with the default value get a reference to the same dictionary -- so if any of them modify it, they all see the change.",HTML
+Option,0,All <code>Game</code> objects created with the default value of <code>scores</code> refer to an empty dictionary.,HTML,"The initial value of <code>scores</code> is an empty dictionary, but items might be added to it later.",HTML
+
+NewQuestion,MC
+ID,TP3-chapter18-q04
+Title,"Think Python, Chapter 18: Python Extras, question 4"
+QuestionText,"<p>What is the value of this expression?</p>
+<pre><code>all(number &lt; 10 for number in [2, 4, 6, 8])
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,0,"<code>[2, 4, 6, 8]</code>, which contains all numbers in the list less than <code>10</code>.",HTML,"The <code>all</code> function returns <code>True</code> if all elements of a sequence are <code>True</code>, and <code>False</code> otherwise.",HTML
+Option,100,<code>True</code> because all numbers in the list are less than <code>10</code>.,HTML,"The values produced by the generator expression are all <code>True</code>, so the result from the <code>all</code> function is <code>True</code>.",HTML
+Option,0,An error because the list comprehension has to be in square brackets.,HTML,"The expression in parentheses is correct -- it is a generator expression, not a list comprehension.",HTML
+Option,0,<code>False</code> because there are not any numbers in the list that are not less than <code>10</code>.,HTML,The values produced by the generator expression are all <code>True</code>.,HTML
+
+NewQuestion,MC
+ID,TP3-chapter18-q05
+Title,"Think Python, Chapter 18: Python Extras, question 5"
+QuestionText,"<p>What is the value of <code>d[key]</code> after these statements run, or is there an error?</p>
+<pre><code>from collections import defaultdict
+
+d = defaultdict(list)
+key = ('into', 'the')
+d[key].append('woods')
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,0,An error because we have to add the key to the <code>defaultdict</code> before we can look it up.,HTML,"When you look up a key that is not already in this <code>defaultdict</code>, the key is added with a new empty list as the value.",HTML
+Option,0,An error because a tuple cannot be used as a key in a <code>defaultdict</code>.,HTML,"A tuple can appear as a key in a <code>defaultdict</code>, same as in a dictionary.",HTML
+Option,100,<code>['woods']</code>,HTML,"When the key is added to the <code>defaultdict</code>, the corresponding value is an empty list. After the <code>append</code> method is invoked, the list contains a single element, the string <code>'woods'</code>.",HTML
+Option,0,<code>'woods'</code>,HTML,"When the key is added to the <code>defaultdict</code>, the corresponding value is an empty list. Then the <code>append</code> method adds an element to the list.",HTML
+
+NewQuestion,MC
+ID,TP3-chapter18-q06
+Title,"Think Python, Chapter 18: Python Extras, question 6"
+QuestionText,"<p>What value is printed when this function runs?</p>
+<pre><code>def pack_and_print(**kwargs):
+    print(kwargs)
+
+pack_and_print(a=1, b=2)
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,100,"<code>{'a': 1, 'b': 2}</code>",HTML,"The pack operator, <code>**</code>, packs the keyword arguments into a dictionary that maps from keyword names to values.",HTML
+Option,0,This is an error because the exponentiation operator <code>**</code> can't appear in a list of parameters.,HTML,"In a parameter list, <code>**</code> is the pack operator, not the exponentiation operator.",HTML
+Option,0,"<code>{'a', 'b'}, [1, 2]</code>",HTML,"The pack operator, <code>**</code>, packs the keyword arguments into a dictionary, not a set and a list.",HTML
+Option,0,"<code>[(a, 1), (b, 2)]</code>",HTML,"The pack operator, <code>**</code>, packs the keyword arguments into a dictionary, not a list of tuples.",HTML
+

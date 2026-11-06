@@ -1,0 +1,46 @@
+﻿NewQuestion,MC
+ID,TP3-chapter16-q01
+Title,"Think Python, Chapter 16: Classes and Objects, question 1"
+QuestionText,<p>Which of these is the term for a function or method that works with more than one type of object?</p>,HTML
+Points,1
+Difficulty,1
+Option,0,pure,HTML,A pure function or method does not modify the parameters or have other effects.,HTML
+Option,100,polymorphic,HTML,A function that works with more than one type is polymorphic.,HTML
+Option,0,static,HTML,"A static method is associated with a class, rather than an object.",HTML
+Option,0,equivalent,HTML,"If two values are considered equal, they are equivalent.",HTML
+
+NewQuestion,MC
+ID,TP3-chapter16-q02
+Title,"Think Python, Chapter 16: Classes and Objects, question 2"
+QuestionText,"<p>What is wrong with this class definition?</p>
+<pre><code>class Point:
+    &quot;&quot;&quot;Represents a point in 2-D space.&quot;&quot;&quot;
+
+    def __init__(self, x, y):
+        x = self.x
+        y = self.y
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,0,The triple-quoted string has to be inside a method definition.,HTML,A triple-quoted string inside a class definition is a docstring that provides information about the class.,HTML
+Option,0,<code>__init__</code> is not a legal name for a method because it does not start with a letter.,HTML,The names of special methods like <code>__init__</code> begin and end with two underscore characters.,HTML
+Option,0,"The first parameter of the method should be called <code>point</code>, not <code>self</code>.",HTML,The first parameter of a method is conventionally named <code>self</code>.,HTML
+Option,100,"The assignment statements should be the other way around, as in <code>self.x = x</code> and <code>self.y = y</code>.",HTML,"The assignment statements should be the other way around, as in <code>self.x = x</code> and <code>self.y = y</code>.",HTML
+
+NewQuestion,MC
+ID,TP3-chapter16-q03
+Title,"Think Python, Chapter 16: Classes and Objects, question 3"
+QuestionText,"<p>Suppose we define a <code>Line</code> class so that each <code>Line</code> object has two attributes that refer to <code>Point</code> objects.</p>
+<pre><code>class Line:
+    def __init__(self, p1, p2):
+        self.p1 = p1
+        self.p2 = p2
+</code></pre>
+<p>If we import the <code>copy</code> function from the <code>copy</code> module and use it to make a copy of a <code>Line</code> object, which of these statements is true?</p>",HTML
+Points,1
+Difficulty,1
+Option,0,The result is a deep copy that copies the <code>Line</code> object and the <code>Point</code> objects it contains.,HTML,The <code>copy</code> function copies the <code>Line</code> object but not the <code>Point</code> objects it contains.,HTML
+Option,0,The result is a deep copy that copies the <code>Line</code> object but not the <code>Point</code> objects it contains.,HTML,The <code>copy</code> function makes a shallow copy.,HTML
+Option,100,The result is a shallow copy that copies the <code>Line</code> object but not the <code>Point</code> objects it contains.,HTML,"The <code>copy</code> function makes a shallow copy, which copies the <code>Line</code> object but not the <code>Point</code> objects it contains.",HTML
+Option,0,The result is a shallow copy that copies the <code>Line</code> object and the <code>Point</code> objects it contains.,HTML,The <code>copy</code> function copies the <code>Line</code> object but not the <code>Point</code> objects it contains.,HTML
+

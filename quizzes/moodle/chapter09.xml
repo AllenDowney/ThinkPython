@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+  <question type="category">
+    <category><text>$course$/top/Think Python/Think Python, Chapter 9: Lists</text></category>
+    <info format="html"><text><![CDATA[Formative quiz for Chapter 9. From <em>Think Python</em>, 3rd edition, by Allen B. Downey (https://allendowney.github.io/ThinkPython/), CC BY-NC-SA 4.0.]]></text></info>
+  </question>
+  <question type="multichoice">
+    <name><text>TP3-chapter09-q01</text></name>
+    <questiontext format="html"><text><![CDATA[<p>What is the value of <code>t</code> after running these statements?</p>
+<pre><code>t = [1, 2, 3]
+t.pop(1)
+t.append(2)
+t.remove(3)
+</code></pre>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-chapter09-q01</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>[2, 2]</code>]]></text>
+      <feedback format="html"><text><![CDATA[<code>t.pop(1)</code> removes the second element, which is <code>2</code>.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>[1, 3]</code>]]></text>
+      <feedback format="html"><text><![CDATA[After <code>t.pop(1)</code> removes the second element, <code>t.append(2)</code> adds <code>2</code> to the end of the list, and <code>t.remove(3)</code> removes <code>3</code>.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>[1, 2, 3]</code>]]></text>
+      <feedback format="html"><text><![CDATA[<code>t.pop(1)</code> removes the second element, which is <code>2</code>. <code>t.append(2)</code> adds <code>2</code> to the end of the list, and <code>t.remove(3)</code> removes <code>3</code>.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<code>[1, 2]</code>]]></text>
+      <feedback format="html"><text><![CDATA[<code>t.pop(1)</code> removes the second element, which is <code>2</code>. <code>t.append(2)</code> adds <code>2</code> to the end of the list, and <code>t.remove(3)</code> removes <code>3</code>.]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>TP3-chapter09-q02</text></name>
+    <questiontext format="html"><text><![CDATA[<p>What is the value of <code>b</code> after running these statements?</p>
+<pre><code>a = [1, 2, 3]
+b = a
+a.remove(2)
+</code></pre>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-chapter09-q02</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>[1, 2]</code>]]></text>
+      <feedback format="html"><text><![CDATA[<code>a.remove(2)</code> removes the value <code>2</code> from the list.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>[1, 2, 3]</code>]]></text>
+      <feedback format="html"><text><![CDATA[<code>a</code> and <code>b</code> refer to the same object, so when we modify <code>a</code>, the value of <code>b</code> also changes.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Runtime error]]></text>
+      <feedback format="html"><text><![CDATA[These statements run without causing an error.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<code>[1, 3]</code>]]></text>
+      <feedback format="html"><text><![CDATA[<code>a</code> and <code>b</code> refer to the same object, so when we modify <code>a</code>, the value of <code>b</code> also changes.]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>TP3-chapter09-q03</text></name>
+    <questiontext format="html"><text><![CDATA[<p>What can we say about two lists created like this:</p>
+<pre><code>a = [1, 2, 3]
+b = [1, 2, 3]
+</code></pre>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-chapter09-q03</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[They are equivalent and identical.]]></text>
+      <feedback format="html"><text><![CDATA[<code>a</code> and <code>b</code> refer to different lists, so they are not identical.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[They are identical but not equivalent.]]></text>
+      <feedback format="html"><text><![CDATA[<code>a</code> and <code>b</code> refer to lists with the same value, so they are equivalent, but they refer to different lists, so they are not identical.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[They are not equivalent and not identical.]]></text>
+      <feedback format="html"><text><![CDATA[<code>a</code> and <code>b</code> refer to lists with the same value, so they are equivalent, but they refer to different lists, so they are not identical.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[They are equivalent but not identical.]]></text>
+      <feedback format="html"><text><![CDATA[<code>a</code> and <code>b</code> refer to lists with the same value, so they are equivalent, but they refer to different lists, so they are not identical.]]></text></feedback>
+    </answer>
+  </question>
+</quiz>

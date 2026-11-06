@@ -1,0 +1,1185 @@
+﻿NewQuestion,MC
+ID,TP3-chapter01-q01
+Title,"Think Python, Chapter 1: Programming as a way of thinking, question 1"
+QuestionText,<p>Which of these types is used to represent a number with a fraction part?</p>,HTML
+Points,1
+Difficulty,1
+Option,0,<code>int</code>,HTML,<code>int</code> values can only be integers.,HTML
+Option,100,<code>float</code>,HTML,"<code>float</code> values represent floating-point numbers, which can have a fraction part.",HTML
+Option,0,<code>str</code>,HTML,<code>str</code> values contain a sequence of characters.,HTML
+Option,0,<code>real</code>,HTML,Python does not have a type called <code>real</code>.,HTML
+
+NewQuestion,MC
+ID,TP3-chapter01-q02
+Title,"Think Python, Chapter 1: Programming as a way of thinking, question 2"
+QuestionText,<p>Which of these is a legal expression?</p>,HTML
+Points,1
+Difficulty,1
+Option,0,<code>'1' / '2'</code>,HTML,The division operator does not work with strings.,HTML
+Option,0,<code>'1' / 2</code>,HTML,The division operator does not work with strings.,HTML
+Option,0,<code>'1' * '2'</code>,HTML,"With the multiplication operator, the first value can be a string, but the second cannot.",HTML
+Option,100,<code>'1' * 2</code>,HTML,"When the first operand is a string, the multiplication operator repeats the string, so the result is <code>'11'</code>.",HTML
+
+NewQuestion,MC
+ID,TP3-chapter01-q03
+Title,"Think Python, Chapter 1: Programming as a way of thinking, question 3"
+QuestionText,<p>Which of these is the general word for any value used in a mathematical operation like addition or multiplication?</p>,HTML
+Points,1
+Difficulty,1
+Option,100,operand,HTML,"An ""operand"" is a value used in an operation.",HTML
+Option,0,divisor,HTML,"A ""divisor"" is one of the values used in division, but it is not the general word for any value used in an operation.",HTML
+Option,0,factor,HTML,"A ""factor"" is a value used in multiplication, but it is not the general word for any value used in an operation.",HTML
+Option,0,term,HTML,"A ""term"" is a value used in addition, but it is not the general word for any value used in an operation.",HTML
+
+NewQuestion,MC
+ID,TP3-chapter01-q04
+Title,"Think Python, Chapter 1: Programming as a way of thinking, question 4"
+QuestionText,"<p>On the internet, people sometimes argue about the value of an ambiguous mathematical expression like 8 ÷ 2(2+2). How do we write this expression in Python?</p>",HTML
+Points,1
+Difficulty,1
+Option,100,<code>8 / 2 * (2 + 2)</code>,HTML,An alternative is to put <code>8 / 2</code> in parentheses so the order of operations is clear.,HTML
+Option,0,<code>8 / 2 (2 + 2)</code>,HTML,There is no implicit multiplication in Python -- you have to use the <code>*</code> operator.,HTML
+Option,0,<code>8 ÷ 2 * (2 + 2)</code>,HTML,"The operator for division is <code>/</code>, not <code>÷</code>.",HTML
+Option,0,<code>8 ÷ 2 (2 + 2)</code>,HTML,"The operator for division is <code>/</code>, not <code>÷</code>. Also, there is no implicit multiplication in Python -- you have to use the <code>*</code> operator.",HTML
+
+NewQuestion,MC
+ID,TP3-chapter02-q01
+Title,"Think Python, Chapter 2: Variables and Statements, question 1"
+QuestionText,<p>Which of these is a legal variable name?</p>,HTML
+Points,1
+Difficulty,1
+Option,0,<code>question?</code>,HTML,"<code>question?</code> is not a legal variable name because only letters, numbers, and the underscore character, <code>_</code>, are allowed.",HTML
+Option,0,<code>2pi</code>,HTML,<code>2pi</code> is not a legal variable name because it starts with a number.,HTML
+Option,0,<code>import</code>,HTML,<code>import</code> is not a legal variable name because it is one of Python's keywords.,HTML
+Option,100,<code>is_even</code>,HTML,"<code>is_even</code> is a legal variable name because letters, numbers, and the underscore character, <code>_</code>, are allowed.",HTML
+
+NewQuestion,MC
+ID,TP3-chapter02-q02
+Title,"Think Python, Chapter 2: Variables and Statements, question 2"
+QuestionText,<p>Which of these is NOT a correct way to raise <code>2</code> to the third power?</p>,HTML
+Points,1
+Difficulty,1
+Option,0,<code>2 ** 3</code>,HTML,"The exponentiation operator, <code>**</code>, is a correct way to raise <code>2</code> to the third power.",HTML
+Option,0,"<code>math.pow(2, 3)</code>",HTML,The <code>pow</code> function in the <code>math</code> module is a correct way to raise <code>2</code> to the third power.,HTML
+Option,100,<code>2 ^ 3</code>,HTML,"In some languages, the <code>^</code> operator is used for exponentiation, but in Python it means something else.",HTML
+Option,0,<code>2 * 2 * 2</code>,HTML,Multiplication is a correct way to raise <code>2</code> to the third power.,HTML
+
+NewQuestion,MC
+ID,TP3-chapter02-q03
+Title,"Think Python, Chapter 2: Variables and Statements, question 3"
+QuestionText,"<p>When you call a function, what are the values that appear in parentheses?</p>",HTML
+Points,1
+Difficulty,1
+Option,0,comments,HTML,A comment is text you add to a program to explain how it works.,HTML
+Option,0,assignments,HTML,An assignment is a statement that assigns a value to a variable.,HTML
+Option,0,exceptions,HTML,An exception is an error detected while a program is running.,HTML
+Option,100,arguments,HTML,The values you pass to a function are called arguments.,HTML
+
+NewQuestion,MC
+ID,TP3-chapter02-q04
+Title,"Think Python, Chapter 2: Variables and Statements, question 4"
+QuestionText,"<p>If a program runs without producing an error message, but it does not do the right thing, what kind of error is that?</p>",HTML
+Points,1
+Difficulty,1
+Option,0,exception,HTML,An exception produces an error message.,HTML
+Option,0,syntax error,HTML,A syntax error produces an error message.,HTML
+Option,100,semantic error,HTML,"A semantic error is when a program runs, but does the wrong thing.",HTML
+Option,0,runtime error,HTML,A runtime error produces an error message.,HTML
+
+NewQuestion,MC
+ID,TP3-chapter03-q01
+Title,"Think Python, Chapter 3: Functions, question 1"
+QuestionText,"<p>When you define a function, what are the variables that appear in parentheses?</p>",HTML
+Points,1
+Difficulty,1
+Option,0,local variables,HTML,A local variable is a variable that gets assigned a value inside a function.,HTML
+Option,0,function objects,HTML,A function object is the result of defining a new function.,HTML
+Option,0,arguments,HTML,An argument is a value you provide when you call a function.,HTML
+Option,100,parameters,HTML,A parameter is a variable that gets a value when the function is called.,HTML
+
+NewQuestion,MC
+ID,TP3-chapter03-q02
+Title,"Think Python, Chapter 3: Functions, question 2"
+QuestionText,<p>Which kind of statement can be used to run a line of code more than once?</p>,HTML
+Points,1
+Difficulty,1
+Option,0,import statement,HTML,An import statement makes it possible to use functions in a module.,HTML
+Option,100,<code>for</code> statement,HTML,"A <code>for</code> statement can run a line of code, or multiple lines, more than once.",HTML
+Option,0,assignment statement,HTML,An assignment statement assigns a value to a variable.,HTML
+Option,0,print statement,HTML,A print statement displays the value of an expression.,HTML
+
+NewQuestion,MC
+ID,TP3-chapter03-q03
+Title,"Think Python, Chapter 3: Functions, question 3"
+QuestionText,"<p>What is wrong with this function, if anything?</p>
+<pre><code>def bottle_line(n, suffix):
+    print(n)
+    print('bottles of beer')
+    print(suffix)
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,0,Only the first statement of the body should be indented.,HTML,All of the statements in the body of the function should be indented.,HTML
+Option,0,You can't have more than one parameter in parentheses.,HTML,"You can have any number of parameters in parentheses, including none.",HTML
+Option,0,"Instead of <code>def</code>, the first word should be <code>define</code>.",HTML,"<code>def</code> is the right keyword to define a new function, although some other languages use <code>define</code>.",HTML
+Option,100,There are no errors in this function.,HTML,There is nothing wrong with this function.,HTML
+
+NewQuestion,MC
+ID,TP3-chapter04-q01
+Title,"Think Python, Chapter 4: Functions and Interfaces, question 1"
+QuestionText,"<p>What is wrong with this function, if anything?</p>
+<pre><code>def square(length):
+    for i in range(4):
+        forward(50)
+        left(90)
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,100,"It always draws the same size square, regardless of <code>length</code>.",HTML,The size is always <code>50</code> -- the value of <code>length</code> is never used.,HTML
+Option,0,It does not bring the Turtle back to where it started.,HTML,"The <code>Turtle</code> ends where it started, facing in the same direction.",HTML
+Option,0,There are no errors in this function.,HTML,There is an error!,HTML
+Option,0,The indentation of the statements in the <code>for</code> loop is incorrect.,HTML,The indentation in this function is correct.,HTML
+
+NewQuestion,MC
+ID,TP3-chapter04-q02
+Title,"Think Python, Chapter 4: Functions and Interfaces, question 2"
+QuestionText,<p>What is it called when you put working statements into a new function definition?</p>,HTML
+Points,1
+Difficulty,1
+Option,0,indentation,HTML,"You might have to indent the statements when you put them in a function definition, but that's not what the whole process is called.",HTML
+Option,100,encapsulation,HTML,Encapsulation is the process of transforming a sequence of statements into a function definition.,HTML
+Option,0,debugging,HTML,"If the statements are working, they don't have to be debugged.",HTML
+Option,0,generalization,HTML,Generalization is when you add a parameter to a function to make it more general.,HTML
+
+NewQuestion,MC
+ID,TP3-chapter04-q03
+Title,"Think Python, Chapter 4: Functions and Interfaces, question 3"
+QuestionText,"<p>Here are two versions of the <code>circle</code> function.</p>
+<pre><code>def circle(radius):
+    circumference = 2 * math.pi * radius
+    n = 30
+    length = circumference / n
+    polygon(n, length)
+
+def circle(radius):
+    arc(radius, 360)
+</code></pre>
+<p>What can we say about these functions?</p>",HTML
+Points,1
+Difficulty,1
+Option,100,"They have the same interface, but different implementations.",HTML,"They take the same parameter and have the same effect, so they have the same interface -- but they accomplish the effect in different ways, so they have different implementations.",HTML
+Option,0,They have the same interface <em>and</em> the same implementation.,HTML,"They take the same parameter and have the same effect, so they have the same interface -- but they accomplish the effect in different ways, so they have different implementations.",HTML
+Option,0,They have neither the same interface nor the same implementation.,HTML,"They take the same parameter and have the same effect, so they have the same interface -- but they accomplish the effect in different ways, so they have different implementations.",HTML
+Option,0,"They have the same implementation, but different interfaces.",HTML,"They take the same parameter and have the same effect, so they have the same interface -- but they accomplish the effect in different ways, so they have different implementations.",HTML
+
+NewQuestion,MC
+ID,TP3-chapter05-q01
+Title,"Think Python, Chapter 5: Conditionals and Recursion, question 1"
+QuestionText,"<p>What is the result of these assignment statements?</p>
+<pre><code>a = 25 // 10
+b = 25 % 10
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,0,<code>a</code> is <code>2</code> and <code>b</code> is <code>250</code>,HTML,"The <code>%</code> operator computes the remainder after division, so <code>25 % 10</code> is <code>5</code>.",HTML
+Option,0,<code>a</code> is <code>2.5</code> and <code>b</code> is <code>5</code>,HTML,"The <code>//</code> operator does integer division, so <code>25 // 10</code> is <code>2</code>.",HTML
+Option,0,<code>a</code> is <code>2.5</code> and <code>b</code> is <code>250</code>,HTML,"The <code>//</code> operator does integer division, so <code>25 // 10</code> is <code>2</code>, and the <code>%</code> operator computes the remainder after division, so <code>25 % 10</code> is <code>5</code>.",HTML
+Option,100,<code>a</code> is <code>2</code> and <code>b</code> is <code>5</code>,HTML,The <code>//</code> operator does integer division and the <code>%</code> operator computes the remainder after division.,HTML
+
+NewQuestion,MC
+ID,TP3-chapter05-q02
+Title,"Think Python, Chapter 5: Conditionals and Recursion, question 2"
+QuestionText,"<p>What is the result of these statements?</p>
+<pre><code>x = 5
+print(x &gt; 5)
+print(x &lt;= 5)
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,0,They print the values <code>False</code> and <code>False</code>,HTML,"If <code>x</code> is <code>5</code>, <code>x &lt;= 5</code> is the same as <code>5 &lt;= 5</code>, which is <code>True</code>.",HTML
+Option,0,They print the values <code>True</code> and <code>False</code>,HTML,"If <code>x</code> is <code>5</code>, <code>x &gt; 5</code> is the same as <code>5 &gt; 5</code>, which is <code>False</code>; also, <code>x &lt;= 5</code> is the same as <code>5 &lt;= 5</code>, which is <code>True</code>.",HTML
+Option,100,They print the values <code>False</code> and <code>True</code>,HTML,"If <code>x</code> is <code>5</code>, <code>x &gt; 5</code> is <code>False</code> and <code>x &lt;= 5</code> is <code>True</code>.",HTML
+Option,0,They print the values <code>True</code> and <code>True</code>,HTML,"If <code>x</code> is <code>5</code>, <code>x &gt; 5</code> is the same as <code>5 &gt; 5</code>, which is <code>False</code>.",HTML
+
+NewQuestion,MC
+ID,TP3-chapter05-q03
+Title,"Think Python, Chapter 5: Conditionals and Recursion, question 3"
+QuestionText,"<p>What is the result of calling this function?</p>
+<pre><code>def hello():
+    print('hello')
+    hello()
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,0,It prints <code>hello</code> once.,HTML,"After it prints <code>hello</code> once, it calls itself, which prints <code>hello</code> many times and then causes a <code>RecursionError</code>.",HTML
+Option,0,It causes an error the first time <code>hello</code> tries to call itself.,HTML,"After printing <code>hello</code> many times, it causes a <code>RecursionError</code>.",HTML
+Option,0,It prints <code>hello</code> forever.,HTML,"After printing <code>hello</code> many times, it causes a <code>RecursionError</code>.",HTML
+Option,100,It prints <code>hello</code> many times and then causes an error.,HTML,"After printing <code>hello</code> many times, it causes a <code>RecursionError</code>.",HTML
+
+NewQuestion,MC
+ID,TP3-chapter05-q04
+Title,"Think Python, Chapter 5: Conditionals and Recursion, question 4"
+QuestionText,<p>What kind of operator is <code>or</code>?</p>,HTML
+Points,1
+Difficulty,1
+Option,0,arithmetic,HTML,"<code>or</code> is a logical operator, along with <code>and</code> and <code>not</code>.",HTML
+Option,0,relational,HTML,"<code>or</code> is a logical operator, along with <code>and</code> and <code>not</code>.",HTML
+Option,0,bitwise,HTML,"<code>or</code> is a logical operator, along with <code>and</code> and <code>not</code>.",HTML
+Option,100,logical,HTML,"<code>or</code> is a logical operator, along with <code>and</code> and <code>not</code>.",HTML
+
+NewQuestion,MC
+ID,TP3-chapter06-q01
+Title,"Think Python, Chapter 6: Return Values, question 1"
+QuestionText,"<p>What is the return value if we call this function with the value <code>3</code>?</p>
+<pre><code>def collatz(x):
+    if x % 2 == 0:
+        return x // 2
+    else:
+        return x * 3 + 1
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,0,<code>1</code>,HTML,"Because <code>3 % 2</code> is <code>1</code>, the second branch of the conditional runs.",HTML
+Option,0,It causes an error.,HTML,"This function works. Because <code>3 % 2</code> is <code>1</code>, the second branch of the conditional runs, and the result is <code>3 * 3 + 1</code>, which is <code>10</code>.",HTML
+Option,0,<code>1.5</code>,HTML,"Because <code>3 % 2</code> is <code>1</code>, the second branch of the conditional runs. Also, because <code>//</code> does integer division, <code>3 // 2</code> is <code>1</code>.",HTML
+Option,100,<code>10</code>,HTML,"Because <code>3 % 2</code> is <code>1</code>, the second branch of the conditional runs, and the result is <code>3 * 3 + 1</code>, which is <code>10</code>.",HTML
+
+NewQuestion,MC
+ID,TP3-chapter06-q02
+Title,"Think Python, Chapter 6: Return Values, question 2"
+QuestionText,<p>What do we call a function that does not print anything or have any effect other than a return value?</p>,HTML
+Points,1
+Difficulty,1
+Option,0,incremental,HTML,Incremental development is a way of writing programs by making small changes and testing.,HTML
+Option,0,dead code,HTML,"Dead code is code that can never run, often because it appears after a <code>return</code> statement.",HTML
+Option,0,recursive,HTML,"A recursive function calls itself, but it might print something or have some other effect.",HTML
+Option,100,pure function,HTML,A pure function does not print anything or have any effect other than a return value.,HTML
+
+NewQuestion,MC
+ID,TP3-chapter06-q03
+Title,"Think Python, Chapter 6: Return Values, question 3"
+QuestionText,"<p>What is the result of calling this function with the values <code>x=1.5</code> and <code>y=1.6</code>?</p>
+<pre><code>def is_close(x, y):
+    return abs(x - y) &lt; 0.2
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,0,There is a runtime error.,HTML,The function is correct as long as the values of <code>x</code> and <code>y</code> are numbers.,HTML
+Option,100,<code>True</code>,HTML,"The absolute difference between <code>1.5</code> and <code>1.6</code> is <code>0.1</code>, which is less than <code>0.2</code>.",HTML
+Option,0,There is a syntax error.,HTML,The syntax of the function is correct.,HTML
+Option,0,<code>False</code>,HTML,"The absolute difference between <code>1.5</code> and <code>1.6</code> is <code>0.1</code>, which is less than <code>0.2</code>.",HTML
+
+NewQuestion,MC
+ID,TP3-chapter07-q01
+Title,"Think Python, Chapter 7: Iteration and Search, question 1"
+QuestionText,"<p>This function is supposed to return <code>True</code> if <code>word</code> contains <code>'A'</code> or <code>'a'</code>, and <code>False</code> otherwise. But it doesn't work -- what's wrong?</p>
+<pre><code>def has_a(word):
+    for letter in word.lower():
+        if letter == 'a':
+            return True
+        else:
+            return False
+        return False
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,0,"It only checks for lowercase <code>'a'</code>, not uppercase <code>'A'</code>.",HTML,"It uses <code>lower</code> to convert <code>word</code> to lowercase, so if uppercase <code>'A'</code> is in the string, it would be found.",HTML
+Option,0,It causes a runtime error if <code>word</code> is an empty string.,HTML,"If <code>word</code> is an empty string, the body of the loop never runs and the function returns <code>False</code>, which is correct.",HTML
+Option,100,It only checks the first letter of <code>word</code>.,HTML,"Both branches of the conditional have <code>return</code> statements, so this function ends after checking the first letter.",HTML
+Option,0,The first line of the for statement has a syntax error.,HTML,The syntax of the function is correct.,HTML
+
+NewQuestion,MC
+ID,TP3-chapter07-q02
+Title,"Think Python, Chapter 7: Iteration and Search, question 2"
+QuestionText,"<p>Which of these is a legal way to increment <code>x</code>, assuming it has already been assigned a value?</p>",HTML
+Points,1
+Difficulty,1
+Option,0,<code>x++</code>,HTML,"Some programming languages use the <code>++</code> operator to increment a variable, but not Python.",HTML
+Option,100,<code>x = x + 1</code>,HTML,This is a legal way to update the value of <code>x</code>.,HTML
+Option,0,<code>x + 1 = x</code>,HTML,The left side of an assignment can't be an expression like <code>x + 1</code>.,HTML
+Option,0,<code>x = +1</code>,HTML,"The value <code>+1</code> is the same as <code>1</code>, so this statement assigns the value <code>1</code> to <code>x</code>.",HTML
+
+NewQuestion,MC
+ID,TP3-chapter07-q03
+Title,"Think Python, Chapter 7: Iteration and Search, question 3"
+QuestionText,"<p>What does this function do?</p>
+<pre><code>def check(word, letters):
+    for letter in word.lower():
+        if letter in letters.lower():
+            return False
+    return True
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,0,Returns <code>True</code> if all of the letters in <code>letters</code> appear in <code>word</code>.,HTML,"It returns <code>False</code> as soon as it finds a letter in <code>word</code> that is also in <code>letters</code>, so it only returns <code>True</code> if none of them appear.",HTML
+Option,100,Returns <code>True</code> if none of the letters in <code>letters</code> appear in <code>word</code>.,HTML,It returns <code>True</code> if it gets to the end of <code>word</code> and exits the loop having found none of the letters in <code>letters</code>.,HTML
+Option,0,Returns <code>True</code> if any of the letters in <code>letters</code> appear in <code>word</code>.,HTML,It only returns <code>True</code> if it gets to the end of <code>word</code> and exits the loop having found none of the letters in <code>letters</code>.,HTML
+Option,0,Returns <code>True</code> if the first letter of <code>word</code> does not appear in <code>letters</code>.,HTML,"The loop doesn't stop after the first letter -- it only returns early if it finds a letter that is in <code>letters</code>, so it checks every letter in <code>word</code>.",HTML
+
+NewQuestion,MC
+ID,TP3-chapter08-q01
+Title,"Think Python, Chapter 8: Strings and Regular Expressions, question 1"
+QuestionText,<p>What is the result of this comparison: <code>'Orange' &lt; 'apple'</code>?</p>,HTML
+Points,1
+Difficulty,1
+Option,100,<code>True</code>,HTML,"When we compare characters, the uppercase <code>'O'</code> comes before the lowercase <code>'a'</code>.",HTML
+Option,0,<code>False</code>,HTML,"When we compare characters, the uppercase <code>'O'</code> comes before the lowercase <code>'a'</code>.",HTML
+Option,0,"Runtime error, because you can't compare apples and oranges.",HTML,It's legal to compare any two strings.,HTML
+Option,0,Syntax error,HTML,The syntax is correct.,HTML
+
+NewQuestion,MC
+ID,TP3-chapter08-q02
+Title,"Think Python, Chapter 8: Strings and Regular Expressions, question 2"
+QuestionText,<p>Which of these is the correct way to invoke the <code>lower</code> method on a string called <code>s</code>?</p>,HTML
+Points,1
+Difficulty,1
+Option,100,<code>s.lower()</code>,HTML,This is the correct syntax for invoking a method on an object.,HTML
+Option,0,<code>lower(s)</code>,HTML,The <code>lower</code> method can only be invoked on a string using dot notation.,HTML
+Option,0,<code>string.lower(s)</code>,HTML,The <code>lower</code> method can only be invoked on a string using dot notation.,HTML
+Option,0,<code>s.lower(string)</code>,HTML,The <code>lower</code> method doesn't take an argument in parentheses.,HTML
+
+NewQuestion,MC
+ID,TP3-chapter08-q03
+Title,"Think Python, Chapter 8: Strings and Regular Expressions, question 3"
+QuestionText,"<p>If we use the <code>search</code> function in the <code>re</code> module, which of the following strings matches this pattern: <code>r'ab?c$'</code>?</p>",HTML
+Points,1
+Difficulty,1
+Option,100,<code>'zac'</code>,HTML,"It's OK to have extra letters at the beginning, and the <code>b</code> is not required.",HTML
+Option,0,<code>'abcd'</code>,HTML,The pattern <code>c$</code> requires the letter <code>c</code> at the end of the string.,HTML
+Option,0,<code>'ab?c$'</code>,HTML,"The question mark, <code>?</code>, and dollar sign, <code>$</code>, are special characters that change the behavior of the pattern -- they should not appear in the string.",HTML
+Option,0,<code>'abbc'</code>,HTML,"The pattern <code>b?</code> means that <code>b</code> is optional, but it cannot be repeated.",HTML
+
+NewQuestion,MC
+ID,TP3-chapter09-q01
+Title,"Think Python, Chapter 9: Lists, question 1"
+QuestionText,"<p>What is the value of <code>t</code> after running these statements?</p>
+<pre><code>t = [1, 2, 3]
+t.pop(1)
+t.append(2)
+t.remove(3)
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,0,"<code>[1, 2, 3]</code>",HTML,"<code>t.pop(1)</code> removes the second element, which is <code>2</code>. <code>t.append(2)</code> adds <code>2</code> to the end of the list, and <code>t.remove(3)</code> removes <code>3</code>.",HTML
+Option,0,"<code>[1, 3]</code>",HTML,"After <code>t.pop(1)</code> removes the second element, <code>t.append(2)</code> adds <code>2</code> to the end of the list, and <code>t.remove(3)</code> removes <code>3</code>.",HTML
+Option,100,"<code>[1, 2]</code>",HTML,"<code>t.pop(1)</code> removes the second element, which is <code>2</code>. <code>t.append(2)</code> adds <code>2</code> to the end of the list, and <code>t.remove(3)</code> removes <code>3</code>.",HTML
+Option,0,"<code>[2, 2]</code>",HTML,"<code>t.pop(1)</code> removes the second element, which is <code>2</code>.",HTML
+
+NewQuestion,MC
+ID,TP3-chapter09-q02
+Title,"Think Python, Chapter 9: Lists, question 2"
+QuestionText,"<p>What is the value of <code>b</code> after running these statements?</p>
+<pre><code>a = [1, 2, 3]
+b = a
+a.remove(2)
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,0,"<code>[1, 2]</code>",HTML,<code>a.remove(2)</code> removes the value <code>2</code> from the list.,HTML
+Option,0,"<code>[1, 2, 3]</code>",HTML,"<code>a</code> and <code>b</code> refer to the same object, so when we modify <code>a</code>, the value of <code>b</code> also changes.",HTML
+Option,0,Runtime error,HTML,These statements run without causing an error.,HTML
+Option,100,"<code>[1, 3]</code>",HTML,"<code>a</code> and <code>b</code> refer to the same object, so when we modify <code>a</code>, the value of <code>b</code> also changes.",HTML
+
+NewQuestion,MC
+ID,TP3-chapter09-q03
+Title,"Think Python, Chapter 9: Lists, question 3"
+QuestionText,"<p>What can we say about two lists created like this:</p>
+<pre><code>a = [1, 2, 3]
+b = [1, 2, 3]
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,100,They are equivalent but not identical.,HTML,"<code>a</code> and <code>b</code> refer to lists with the same value, so they are equivalent, but they refer to different lists, so they are not identical.",HTML
+Option,0,They are not equivalent and not identical.,HTML,"<code>a</code> and <code>b</code> refer to lists with the same value, so they are equivalent, but they refer to different lists, so they are not identical.",HTML
+Option,0,They are equivalent and identical.,HTML,"<code>a</code> and <code>b</code> refer to different lists, so they are not identical.",HTML
+Option,0,They are identical but not equivalent.,HTML,"<code>a</code> and <code>b</code> refer to lists with the same value, so they are equivalent, but they refer to different lists, so they are not identical.",HTML
+
+NewQuestion,MC
+ID,TP3-chapter10-q01
+Title,"Think Python, Chapter 10: Dictionaries, question 1"
+QuestionText,"<p>What is the value of the dictionary <code>d</code> after these statements run?</p>
+<pre><code>d = {'a': 1, 'b': 2}
+d['a'] = 3
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,100,"<code>{'a': 3, 'b': 2}</code>",HTML,The second assignment statement updates the value associated with the key <code>'a'</code>.,HTML
+Option,0,"<code>{'a': 1, 'b': 2}</code>",HTML,The second assignment statement changes the value associated with the key <code>'a'</code>.,HTML
+Option,0,"<code>{'a': 1, 'b': 2, 'a': 3}</code>",HTML,Each key can only appear once in a dictionary.,HTML
+Option,0,These statements cause a runtime error,HTML,This code runs without causing an error.,HTML
+
+NewQuestion,MC
+ID,TP3-chapter10-q02
+Title,"Think Python, Chapter 10: Dictionaries, question 2"
+QuestionText,"<p>What is the value of the dictionary <code>d</code> after running these statements?</p>
+<pre><code>d = {'a': 1, 'b': 2}
+d['c'] += 1
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,0,"<code>{'a': 1, 'b': 2, 'c': 3}</code>",HTML,The <code>+=</code> operator looks up the key to get the old value before adding <code>1</code>.,HTML
+Option,0,"<code>{'a': 1, 'b': 2, 'c': 1}</code>",HTML,The <code>+=</code> operator looks up the key to get the old value before adding <code>1</code>.,HTML
+Option,100,These statements cause a runtime error.,HTML,"Because <code>c</code> does not appear as a key in the dictionary, the second statement causes a <code>KeyError</code>.",HTML
+Option,0,"<code>{'a': 1, 'b': 2}</code>",HTML,The <code>+=</code> operator looks up the key to get the old value before adding <code>1</code>.,HTML
+
+NewQuestion,MC
+ID,TP3-chapter10-q03
+Title,"Think Python, Chapter 10: Dictionaries, question 3"
+QuestionText,"<p>What happens when the following statements run?</p>
+<pre><code>d1 = {'a': 1, 'b': 2}
+d2 = {d1: 3}
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,0,They cause a <code>KeyError</code> because <code>d1</code> is not in <code>d2</code>.,HTML,"Dictionaries are mutable, so they are not hashable, so they cannot appear as a key in a dictionary, but that's not a <code>KeyError</code>.",HTML
+Option,100,They cause a <code>TypeError</code> because a dictionary cannot appear as a key in a dictionary.,HTML,"Dictionaries are mutable, so they are not hashable, so they cannot appear as a key in a dictionary.",HTML
+Option,0,They cause a <code>ValueError</code> because <code>3</code> cannot appear as a value in a dictionary.,HTML,"Dictionaries are mutable, so they are not hashable, so they cannot appear as a key in a dictionary, but that's not a <code>ValueError</code>.",HTML
+Option,0,They add <code>d1</code> as a key in <code>d2</code>.,HTML,"Dictionaries are mutable, so they are not hashable, so they cannot appear as a key in a dictionary.",HTML
+
+NewQuestion,MC
+ID,TP3-chapter11-q01
+Title,"Think Python, Chapter 11: Tuples, question 1"
+QuestionText,<p>Which one of these expressions is NOT a tuple?</p>,HTML
+Points,1
+Difficulty,1
+Option,0,"<code>'abc',</code>",HTML,"Because of the comma at the end, the value of this expression is a tuple with one element, <code>'abc'</code>.",HTML
+Option,0,<code>tuple('abc')</code>,HTML,"The value of this expression is a tuple with the elements <code>'a'</code>, <code>'b'</code>, and <code>'c'</code>.",HTML
+Option,0,"<code>('abc',)</code>",HTML,"Because of the comma, the value of this expression is a tuple with one element, <code>'abc'</code>. The parentheses are not required.",HTML
+Option,100,<code>('abc')</code>,HTML,"The parentheses alone do not make a tuple, so the value of this expression is just the string <code>'abc'</code>.",HTML
+
+NewQuestion,MC
+ID,TP3-chapter11-q02
+Title,"Think Python, Chapter 11: Tuples, question 2"
+QuestionText,"<p>What is the result of these statements?</p>
+<pre><code>t = tuple('abc')
+s = [1, 2, 3]
+d = {t: s}
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,0,A <code>TypeError</code> because a list can't appear as a value in a dictionary.,HTML,"Any type can appear as a value in a dictionary, including lists.",HTML
+Option,100,A dictionary with one item that maps from a tuple to a list.,HTML,These statements create a dictionary with one item that maps from a tuple to a list.,HTML
+Option,0,A <code>TypeError</code> because a tuple can't appear as a key in a dictionary.,HTML,"A tuple is immutable, so it can appear as a key in a dictionary -- as long as its elements are also immutable.",HTML
+Option,0,A syntax error because there should be a comma before the closing brace on the third line.,HTML,"The syntax is correct -- if there is a single item in a dictionary, a comma is legal but not required.",HTML
+
+NewQuestion,MC
+ID,TP3-chapter11-q03
+Title,"Think Python, Chapter 11: Tuples, question 3"
+QuestionText,"<p>What does this function do?</p>
+<pre><code>def printall(*args):
+    for value in reversed(args):
+        print(value)
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,100,It takes any number of arguments and prints them in reversed order.,HTML,"It takes any number of arguments and ""packs"" them into a tuple, then loops through the tuple in reverse order and prints the elements.",HTML
+Option,0,It has a syntax error because the <code>*</code> operator is not legal before a parameter.,HTML,"When the <code>*</code> operator appears before a parameter, it ""packs"" any number of arguments into a tuple.",HTML
+Option,0,"It causes a <code>TypeError</code> because <code>args</code> is a tuple, which is immutable and cannot be reversed.",HTML,"It's true that <code>args</code> is a tuple, which is immutable, but <code>reversed</code> does not modify the tuple, it makes a new object that loops through the tuple in reverse order.",HTML
+Option,0,It takes a single list or tuple and prints the values in reversed order.,HTML,"This function can take any number of arguments, not just a single argument.",HTML
+
+NewQuestion,MC
+ID,TP3-chapter11-q04
+Title,"Think Python, Chapter 11: Tuples, question 4"
+QuestionText,"<p>What is the value of this expression?</p>
+<pre><code>('a', 3) &lt; ('b', 1)
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,100,<code>True</code> because <code>'a'</code> is less than <code>'b'</code>.,HTML,"When tuples are compared, the first elements are compared first.",HTML
+Option,0,<code>False</code> because <code>3</code> is greater than <code>1</code>.,HTML,"When tuples are compared, the first elements are compared first. The other elements are only compared if the first elements are the same.",HTML
+Option,0,A <code>TypeError</code> because the <code>&lt;</code> operator doesn't work with tuples.,HTML,"The <code>&lt;</code> operator compares the first elements of each tuple, and then compares other elements in the event of a tie.",HTML
+Option,0,"These values can't be compared because <code>'a'</code> is less than <code>'b'</code>, but <code>3</code> is greater than <code>1</code>.",HTML,"When tuples are compared, the first elements are compared first. The other elements are only compared if the first elements are the same.",HTML
+
+NewQuestion,MC
+ID,TP3-chapter12-q01
+Title,"Think Python, Chapter 12: Text Analysis and Generation, question 1"
+QuestionText,"<p>Assuming that <code>t</code> is a list of strings, what does the following line of code do?</p>
+<pre><code>sorted(t, key=len)
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,0,Modifies <code>t</code> and sorts the elements in alphabetical order.,HTML,<code>sorted</code> makes a new list -- it doesn't modify <code>t</code> -- and <code>key=len</code> sorts the elements from shortest to longest.,HTML
+Option,0,Makes a new list that contains the elements in alphabetical order.,HTML,"With <code>key=len</code>, <code>sorted</code> sorts the elements from shortest to longest.",HTML
+Option,0,Modifies <code>t</code> and sorts the elements from shortest to longest.,HTML,<code>sorted</code> makes a new list -- it doesn't modify <code>t</code>.,HTML
+Option,100,Makes a new list that contains the elements in order from shortest to longest.,HTML,"<code>sorted</code> makes a new list, and <code>key=len</code> sorts the elements from shortest to longest.",HTML
+
+NewQuestion,MC
+ID,TP3-chapter12-q02
+Title,"Think Python, Chapter 12: Text Analysis and Generation, question 2"
+QuestionText,"<p>What is the effect of running this program?</p>
+<pre><code>word_counter = {}
+for line in open(filename):
+    for word in split_line(line):
+        word_counter[word] += 1
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,0,It has a semantic error because all the keys in <code>word_counter</code> map to the value <code>1</code>.,HTML,"Because <code>word_counter</code> is initially empty, the program causes a <code>KeyError</code> when it tries to increment a value in <code>word_counter</code>.",HTML
+Option,0,It has a syntax error because the indentation is not correct.,HTML,"The indentation is correct, but the program causes a <code>KeyError</code> when it tries to increment a value in <code>word_counter</code>.",HTML
+Option,0,It makes a dictionary that maps from each word to the number of times it appears.,HTML,"Because <code>word_counter</code> is initially empty, the program causes a <code>KeyError</code> when it tries to increment a value in <code>word_counter</code>.",HTML
+Option,100,It causes a <code>KeyError</code> when it tries to increment a value in <code>word_counter</code>.,HTML,"Because <code>word_counter</code> is initially empty, the program causes a <code>KeyError</code> when it tries to increment a value in <code>word_counter</code>.",HTML
+
+NewQuestion,MC
+ID,TP3-chapter12-q03
+Title,"Think Python, Chapter 12: Text Analysis and Generation, question 3"
+QuestionText,"<p>If we run the following lines of code, what is the probability that the result is <code>'a'</code>?</p>
+<pre><code>letters = ['a', 'b', 'c']
+weights = [1, 2, 3]
+random.choices(letters, weights=weights)
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,0,1/3,HTML,The weight associated with <code>'a'</code> is <code>1</code> and the total of the weights is <code>6</code>.,HTML
+Option,0,1/5,HTML,The weight associated with <code>'a'</code> is <code>1</code> and the total of the weights is <code>6</code>.,HTML
+Option,100,1/6,HTML,"The weight associated with <code>'a'</code> is <code>1</code> and the total of the weights is <code>6</code>, so the probability of choosing <code>'a'</code> is <code>1/6</code>.",HTML
+Option,0,1/4,HTML,The weight associated with <code>'a'</code> is <code>1</code> and the total of the weights is <code>6</code>.,HTML
+
+NewQuestion,MC
+ID,TP3-chapter13-q01
+Title,"Think Python, Chapter 13: Files and Databases, question 1"
+QuestionText,"<p>If the current working directory is <code>/home/dinsdale/photos</code> and you open a file using the relative path <code>mar-2023/photo1.jpg</code>, which of these expressions computes the absolute path of the file that gets opened?</p>",HTML
+Points,1
+Difficulty,1
+Option,0,<code>'/home/dinsdale/photos' + 'mar-2023/photo1.jpg'</code>,HTML,This way of using the string concatenation does not put a slash between the directories in the path.,HTML
+Option,100,"<code>os.path.join('/home/dinsdale/photos', 'mar-2023/photo1.jpg')</code>",HTML,"The <code>os.path.join</code> function joins the two paths with either a forward or backward slash, depending on which operating system is running.",HTML
+Option,0,<code>'mar-2023/photo1.jpg' + '/home/dinsdale/photos'</code>,HTML,"The order of the working directory and the relative path is reversed. Also, this way of using the string concatenation does not put a slash between the directories in the path.",HTML
+Option,0,"<code>''.join(['/home/dinsdale/photos', 'mar-2023/photo1.jpg'])</code>",HTML,This way of using the string <code>join</code> method does not put a slash between the directories in the path.,HTML
+
+NewQuestion,MC
+ID,TP3-chapter13-q02
+Title,"Think Python, Chapter 13: Files and Databases, question 2"
+QuestionText,"<p>After these statements run, what is the value of <code>s</code>?</p>
+<pre><code>x = 1
+t = 1,
+s = f'x is an int, {x}. t is a tuple, {t}'
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,0,This is an error because <code>{x}</code> and <code>{t}</code> are not valid dictionaries.,HTML,<code>{x}</code> and <code>{t}</code> are not dictionaries -- the curly braces indicate that they are expressions that get replaced with string representations of their values.,HTML
+Option,0,This is an error because a tuple can't be used as a value in an f-string.,HTML,Any valid expression can be used in an f-string.,HTML
+Option,0,"<code>'x is an int, {x}. t is a tuple, {t}'</code>",HTML,"Inside the f-string, the expressions in curly braces are replaced with string representations of their values.",HTML
+Option,100,"<code>'x is an int, 1. t is a tuple, (1,)'</code>",HTML,"Inside the f-string, the expressions in curly braces are replaced with string representations of their values.",HTML
+
+NewQuestion,MC
+ID,TP3-chapter13-q03
+Title,"Think Python, Chapter 13: Files and Databases, question 3"
+QuestionText,"<p>After these statements run, what is the value of <code>db[key]</code>?</p>
+<pre><code>db = shelve.open('anagram_map', 'n')
+key = 'opst'
+db[key] = []
+db[key].append('stop')
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,0,<code>['stop']</code>,HTML,"The <code>append</code> method does not work as intended here because it modifies only the list in memory, not the one in the database.",HTML
+Option,0,"<code>[], 'stop'</code>",HTML,"The <code>append</code> method does not work as intended here because it modifies only the list in memory, not the one in the database.",HTML
+Option,0,<code>'stop'</code>,HTML,"The <code>append</code> method does not work as intended here because it modifies only the list in memory, not the one in the database.",HTML
+Option,100,<code>[]</code>,HTML,"The <code>append</code> method does not work as intended here because it modifies only the list in memory, not the one in the database.",HTML
+
+NewQuestion,MC
+ID,TP3-chapter14-q01
+Title,"Think Python, Chapter 14: Classes and Functions, question 1"
+QuestionText,"<p>To create an instance of a programmer-defined type, what is the correct order for these steps?</p>",HTML
+Points,1
+Difficulty,1
+Option,100,"Define a class, instantiate an object, assign values to attributes.",HTML,"You have to define a class, instantiate an object, and assign values to attributes, in that order.",HTML
+Option,0,"Instantiate an object, define a class, assign values to attributes.",HTML,You can't instantiate an object before you define its class.,HTML
+Option,0,"Assign values to attributes, define a class, instantiate an object.",HTML,You can't assign attributes before you instantiate an object.,HTML
+Option,0,"Define a class, assign values to attributes, instantiate an object.",HTML,You can't assign attributes before you instantiate an object.,HTML
+
+NewQuestion,MC
+ID,TP3-chapter14-q02
+Title,"Think Python, Chapter 14: Classes and Functions, question 2"
+QuestionText,"<p>These statements are intended to define a <code>Date</code> class and create a <code>Date</code> object. What is wrong with them?</p>
+<pre><code>def Date:
+    &quot;&quot;&quot;Represents a day of the year.&quot;&quot;&quot;
+
+date = Date()
+date.year = 2024
+date.month = 'January'
+date.day = 11
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,100,"A class definition has to start with <code>class</code>, not <code>def</code>.",HTML,A class definition has to start with <code>class</code>. A function definition starts with <code>def</code>.,HTML
+Option,0,All of the attributes have to have the same type.,HTML,"The attributes of an object can be any type, and they don't have to be the same.",HTML
+Option,0,You can't have a class named <code>Date</code> and a variable named <code>date</code>.,HTML,"It is legal -- and common -- for a class name and a variable to be the same word, but the class name starts with an uppercase letter.",HTML
+Option,0,The syntax is not correct for adding attributes to the object.,HTML,Dot notation is used to set the value of an attribute and to read the value.,HTML
+
+NewQuestion,MC
+ID,TP3-chapter14-q03
+Title,"Think Python, Chapter 14: Classes and Functions, question 3"
+QuestionText,"<p>Which of these is a correct description of this function? You can assume that <code>date</code> is a <code>Date</code> object that has a <code>day</code> attribute.</p>
+<pre><code>def increment_day(date):
+    date.day += 1
+    return date
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,0,It is a pure function that returns <code>None</code>.,HTML,"This function modifies an attribute of the <code>Date</code> object it gets as a parameter, so it is an impure function. And it returns a reference to the same object, not <code>None</code>.",HTML
+Option,0,It is a pure function that returns a <code>Date</code> object.,HTML,"This function modifies an attribute of the <code>Date</code> object it gets as a parameter, so it is an impure function.",HTML
+Option,100,It is an impure function that returns a <code>Date</code> object.,HTML,"This function modifies an attribute of the <code>Date</code> object it gets as a parameter, so it is an impure function -- and it returns a reference to the same <code>Date</code> object.",HTML
+Option,0,It is an impure function that returns <code>None</code>.,HTML,"This function returns a reference to a <code>Date</code> object, not <code>None</code>.",HTML
+
+NewQuestion,MC
+ID,TP3-chapter15-q01
+Title,"Think Python, Chapter 15: Classes and Methods, question 1"
+QuestionText,"<p>Suppose <code>time</code> is a <code>Time</code> object, and <code>increment</code> is an instance method defined in the <code>Time</code> class.
+What happens when we invoke <code>increment</code> like this?</p>
+<pre><code>time.increment(42)
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,0,This is an error because <code>increment</code> requires one argument and two are provided.,HTML,This method requires two arguments -- <code>time</code> is the first and <code>42</code> is the second.,HTML
+Option,0,"<code>42</code> is assigned to the first parameter of the method, and <code>time</code> is assigned to the second.",HTML,<code>time</code> is assigned to the first parameter of the method.,HTML
+Option,100,<code>time</code> is assigned to the first parameter of the method and <code>42</code> is assigned to the second.,HTML,"<code>time</code> is assigned to the first parameter of the method, which is conventionally called <code>self</code>, and <code>42</code> is assigned to the second.",HTML
+Option,0,This is an error because <code>increment</code> requires two arguments and only one is provided.,HTML,"Only one argument appears in parentheses, but <code>time</code> is passed to <code>increment</code> as the first argument.",HTML
+
+NewQuestion,MC
+ID,TP3-chapter15-q02
+Title,"Think Python, Chapter 15: Classes and Methods, question 2"
+QuestionText,"<p>Suppose <code>int_to_time</code> is a static method defined in the <code>Time</code> class.
+What happens when we invoke <code>int_to_time</code> like this?</p>
+<pre><code>start = Time.int_to_time(34800)
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,0,The <code>Time</code> class object is assigned to the first parameter of the method and <code>34800</code> is assigned to the second.,HTML,"Because <code>Time</code> is a class, it is not passed as an argument.",HTML
+Option,100,<code>34800</code> is assigned to the first parameter of <code>int_to_time</code>.,HTML,"<code>34800</code> is assigned to the first parameter of <code>int_to_time</code>. Because <code>Time</code> is a class, it is not passed as an argument.",HTML
+Option,0,This is an error because <code>int_to_time</code> requires one argument and two are provided.,HTML,"There is only one argument here, <code>34800</code>.",HTML
+Option,0,<code>34800</code> is assigned to the first parameter of the method and the <code>Time</code> class object is assigned to the second.,HTML,"Because <code>Time</code> is a class, it is not passed as an argument.",HTML
+
+NewQuestion,MC
+ID,TP3-chapter15-q03
+Title,"Think Python, Chapter 15: Classes and Methods, question 3"
+QuestionText,<p>Which of the following statements is NOT correct?</p>,HTML
+Points,1
+Difficulty,1
+Option,0,"When we use the <code>+</code> operator with an object, its <code>__add__</code> method is invoked.",HTML,This statement is correct.,HTML
+Option,100,"When we define a new class, its <code>__init__</code> method is invoked.",HTML,Defining a new class does not invoke its <code>__init__</code> method.,HTML
+Option,0,"When we print an object, its <code>__str__</code> method is invoked.",HTML,This statement is correct.,HTML
+Option,0,"When we instantiate an object, its <code>__init__</code> method is invoked.",HTML,This statement is correct.,HTML
+
+NewQuestion,MC
+ID,TP3-chapter16-q01
+Title,"Think Python, Chapter 16: Classes and Objects, question 1"
+QuestionText,<p>Which of these is the term for a function or method that works with more than one type of object?</p>,HTML
+Points,1
+Difficulty,1
+Option,0,pure,HTML,A pure function or method does not modify the parameters or have other effects.,HTML
+Option,100,polymorphic,HTML,A function that works with more than one type is polymorphic.,HTML
+Option,0,static,HTML,"A static method is associated with a class, rather than an object.",HTML
+Option,0,equivalent,HTML,"If two values are considered equal, they are equivalent.",HTML
+
+NewQuestion,MC
+ID,TP3-chapter16-q02
+Title,"Think Python, Chapter 16: Classes and Objects, question 2"
+QuestionText,"<p>What is wrong with this class definition?</p>
+<pre><code>class Point:
+    &quot;&quot;&quot;Represents a point in 2-D space.&quot;&quot;&quot;
+
+    def __init__(self, x, y):
+        x = self.x
+        y = self.y
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,0,The triple-quoted string has to be inside a method definition.,HTML,A triple-quoted string inside a class definition is a docstring that provides information about the class.,HTML
+Option,0,<code>__init__</code> is not a legal name for a method because it does not start with a letter.,HTML,The names of special methods like <code>__init__</code> begin and end with two underscore characters.,HTML
+Option,0,"The first parameter of the method should be called <code>point</code>, not <code>self</code>.",HTML,The first parameter of a method is conventionally named <code>self</code>.,HTML
+Option,100,"The assignment statements should be the other way around, as in <code>self.x = x</code> and <code>self.y = y</code>.",HTML,"The assignment statements should be the other way around, as in <code>self.x = x</code> and <code>self.y = y</code>.",HTML
+
+NewQuestion,MC
+ID,TP3-chapter16-q03
+Title,"Think Python, Chapter 16: Classes and Objects, question 3"
+QuestionText,"<p>Suppose we define a <code>Line</code> class so that each <code>Line</code> object has two attributes that refer to <code>Point</code> objects.</p>
+<pre><code>class Line:
+    def __init__(self, p1, p2):
+        self.p1 = p1
+        self.p2 = p2
+</code></pre>
+<p>If we import the <code>copy</code> function from the <code>copy</code> module and use it to make a copy of a <code>Line</code> object, which of these statements is true?</p>",HTML
+Points,1
+Difficulty,1
+Option,0,The result is a deep copy that copies the <code>Line</code> object and the <code>Point</code> objects it contains.,HTML,The <code>copy</code> function copies the <code>Line</code> object but not the <code>Point</code> objects it contains.,HTML
+Option,0,The result is a deep copy that copies the <code>Line</code> object but not the <code>Point</code> objects it contains.,HTML,The <code>copy</code> function makes a shallow copy.,HTML
+Option,100,The result is a shallow copy that copies the <code>Line</code> object but not the <code>Point</code> objects it contains.,HTML,"The <code>copy</code> function makes a shallow copy, which copies the <code>Line</code> object but not the <code>Point</code> objects it contains.",HTML
+Option,0,The result is a shallow copy that copies the <code>Line</code> object and the <code>Point</code> objects it contains.,HTML,The <code>copy</code> function copies the <code>Line</code> object but not the <code>Point</code> objects it contains.,HTML
+
+NewQuestion,MC
+ID,TP3-chapter17-q01
+Title,"Think Python, Chapter 17: Inheritance, question 1"
+QuestionText,<p>Which of the following is NOT a correct statement about class variables?</p>,HTML
+Points,1
+Difficulty,1
+Option,0,They can have any type.,HTML,It is true that class variables can have any type.,HTML
+Option,0,They can be accessed using a class object.,HTML,It is true that class variables can be accessed using a class object.,HTML
+Option,0,"They are defined inside a class definition, but not inside a method definition.",HTML,"It is true that class variables are defined inside a class definition, but not inside a method definition.",HTML
+Option,100,They are immutable.,HTML,"This statement is false -- that is, class variables are mutable.",HTML
+
+NewQuestion,MC
+ID,TP3-chapter17-q02
+Title,"Think Python, Chapter 17: Inheritance, question 2"
+QuestionText,"<p>Suppose we define a <code>Card</code> class like this:</p>
+<pre><code>class Card:
+
+    def __init__(self, suit, rank):
+        self.suit = suit
+        self.rank = rank
+</code></pre>
+<p>If this class does not provide an <code>__eq__</code> method, what happens if we compare two cards using the <code>==</code> operator?</p>",HTML
+Points,1
+Difficulty,1
+Option,0,"By default, all of the attributes are compared as if they were in a tuple.",HTML,"If a class provides no <code>__eq__</code>, the <code>==</code> operator checks whether objects are identical.",HTML
+Option,0,That's an error.,HTML,"It is not an error -- if a class provides no <code>__eq__</code>, the <code>==</code> operator has a default behavior.",HTML
+Option,0,"By default, only the first attribute is compared.",HTML,"If a class provides no <code>__eq__</code>, the <code>==</code> operator checks whether objects are identical.",HTML
+Option,100,"By default, the objects are equal only if they are identical.",HTML,"If a class provides no <code>__eq__</code>, the <code>==</code> operator checks whether objects are identical.",HTML
+
+NewQuestion,MC
+ID,TP3-chapter17-q03
+Title,"Think Python, Chapter 17: Inheritance, question 3"
+QuestionText,"<p>Which of the following statements is true when one class inherits from another, like this:</p>
+<pre><code>class Hand(Deck):
+    &quot;&quot;&quot;Represents a hand of playing cards.&quot;&quot;&quot;
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,100,Every method defined in the <code>Deck</code> class can also be invoked on a <code>Hand</code> object.,HTML,"If <code>Hand</code> inherits from <code>Deck</code>, every method defined in the <code>Deck</code> class should work with a <code>Hand</code> object.",HTML
+Option,0,<code>Hand</code> is a parent class and <code>Deck</code> is a child class.,HTML,"In this example, <code>Hand</code> inherits from <code>Deck</code>, so <code>Hand</code> is the child class and <code>Deck</code> is the parent.",HTML
+Option,0,Every function that works with <code>Hand</code> should also work with <code>Deck</code>.,HTML,"If <code>Hand</code> inherits from <code>Deck</code>, it could have additional methods that don't work with <code>Deck</code>.",HTML
+Option,0,"Every <code>Hand</code> object has the same attributes as every <code>Deck</code> object, no more or less.",HTML,"If <code>Hand</code> inherits from <code>Deck</code>, a <code>Hand</code> object should have all of the attributes of a <code>Deck</code> object, but it can have more.",HTML
+
+NewQuestion,MC
+ID,TP3-chapter17-q04
+Title,"Think Python, Chapter 17: Inheritance, question 4"
+QuestionText,<p>What do we call it when one method invokes another to do most or all of the work?</p>,HTML
+Points,1
+Difficulty,1
+Option,0,generalization,HTML,Generalization is when we add a parameter to a function to make its capabilities more general.,HTML
+Option,100,delegation,HTML,Delegation is when one method passes responsibility to another method to do most or all of the work.,HTML
+Option,0,inheritance,HTML,Inheritance is the ability to define a new class that is a modified version of a previously defined class.,HTML
+Option,0,specialization,HTML,Specialization is a way of using inheritance to create a new class that is a specialized version of an existing class.,HTML
+
+NewQuestion,MC
+ID,TP3-chapter18-q01
+Title,"Think Python, Chapter 18: Python Extras, question 1"
+QuestionText,"<p>What is the result of this operation?</p>
+<pre><code>set('abba') &lt;= set('abc')
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,100,<code>True</code> because the elements of <code>'abba'</code> are a subset of the elements of <code>'abc'</code>.,HTML,"With <code>set</code> objects, the <code>&lt;=</code> operator checks whether one set is a subset of another -- including the possibility that they are equal.",HTML
+Option,0,<code>False</code> because <code>'abba'</code> is longer than <code>'abc'</code>.,HTML,"With <code>set</code> objects, the <code>&lt;=</code> operator checks whether one set is a subset of another -- it does not compare the length of the strings.",HTML
+Option,0,"A runtime error because <code>'abba'</code> contains duplicate elements, so it is not a <code>set</code>.",HTML,"When the set is created, the duplicate elements of the string are removed.",HTML
+Option,0,"A runtime error because a string is immutable, so it cannot be transformed into a <code>set</code>.",HTML,The <code>set</code> function creates a new set -- it does not modify the string.,HTML
+
+NewQuestion,MC
+ID,TP3-chapter18-q02
+Title,"Think Python, Chapter 18: Python Extras, question 2"
+QuestionText,"<p>What is the value of <code>counter</code> after these statements run?</p>
+<pre><code>from collections import Counter
+
+t = (1, 1, 1, 2, 2, 3)
+counter = Counter(t)
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,0,"<code>{1: 3, 2: 2, 3: 1}</code>",HTML,"The result is a <code>Counter</code> object, not a dictionary.",HTML
+Option,0,"<code>Counter(1, 1, 1, 2, 2, 3)</code>",HTML,"The result is a <code>Counter</code> object that contains items like a dictionary, not a tuple.",HTML
+Option,100,"<code>Counter({1: 3, 2: 2, 3: 1})</code>",HTML,The result is a <code>Counter</code> object that contains the elements of the tuple and the number of times each one appears.,HTML
+Option,0,"<code>(1, 1, 1, 2, 2, 3)</code>",HTML,"The result is a <code>Counter</code> object, not a tuple.",HTML
+
+NewQuestion,MC
+ID,TP3-chapter18-q03
+Title,"Think Python, Chapter 18: Python Extras, question 3"
+QuestionText,"<p>Which comment about this class definition is correct?</p>
+<pre><code>class Game:
+    &quot;&quot;&quot;Represents a game with a dictionary that maps from teams to scores.&quot;&quot;&quot;
+
+    def __init__(self, scores={}):
+        self.scores = scores
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,0,All <code>Game</code> objects refer to different dictionaries.,HTML,The default value of <code>scores</code> is a dictionary that is created when the function is defined. All <code>Game</code> objects created with the default value get a reference to it.,HTML
+Option,0,All <code>Game</code> objects refer to the same dictionary.,HTML,"All <code>Game</code> objects created with the default value get a reference to it, but a <code>Game</code> object that overrides <code>scores</code> will refer to a different dictionary.",HTML
+Option,100,All <code>Game</code> objects created with the default value of <code>scores</code> refer to the same dictionary.,HTML,"All <code>Game</code> objects created with the default value get a reference to the same dictionary -- so if any of them modify it, they all see the change.",HTML
+Option,0,All <code>Game</code> objects created with the default value of <code>scores</code> refer to an empty dictionary.,HTML,"The initial value of <code>scores</code> is an empty dictionary, but items might be added to it later.",HTML
+
+NewQuestion,MC
+ID,TP3-chapter18-q04
+Title,"Think Python, Chapter 18: Python Extras, question 4"
+QuestionText,"<p>What is the value of this expression?</p>
+<pre><code>all(number &lt; 10 for number in [2, 4, 6, 8])
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,0,"<code>[2, 4, 6, 8]</code>, which contains all numbers in the list less than <code>10</code>.",HTML,"The <code>all</code> function returns <code>True</code> if all elements of a sequence are <code>True</code>, and <code>False</code> otherwise.",HTML
+Option,100,<code>True</code> because all numbers in the list are less than <code>10</code>.,HTML,"The values produced by the generator expression are all <code>True</code>, so the result from the <code>all</code> function is <code>True</code>.",HTML
+Option,0,An error because the list comprehension has to be in square brackets.,HTML,"The expression in parentheses is correct -- it is a generator expression, not a list comprehension.",HTML
+Option,0,<code>False</code> because there are not any numbers in the list that are not less than <code>10</code>.,HTML,The values produced by the generator expression are all <code>True</code>.,HTML
+
+NewQuestion,MC
+ID,TP3-chapter18-q05
+Title,"Think Python, Chapter 18: Python Extras, question 5"
+QuestionText,"<p>What is the value of <code>d[key]</code> after these statements run, or is there an error?</p>
+<pre><code>from collections import defaultdict
+
+d = defaultdict(list)
+key = ('into', 'the')
+d[key].append('woods')
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,0,An error because we have to add the key to the <code>defaultdict</code> before we can look it up.,HTML,"When you look up a key that is not already in this <code>defaultdict</code>, the key is added with a new empty list as the value.",HTML
+Option,0,An error because a tuple cannot be used as a key in a <code>defaultdict</code>.,HTML,"A tuple can appear as a key in a <code>defaultdict</code>, same as in a dictionary.",HTML
+Option,100,<code>['woods']</code>,HTML,"When the key is added to the <code>defaultdict</code>, the corresponding value is an empty list. After the <code>append</code> method is invoked, the list contains a single element, the string <code>'woods'</code>.",HTML
+Option,0,<code>'woods'</code>,HTML,"When the key is added to the <code>defaultdict</code>, the corresponding value is an empty list. Then the <code>append</code> method adds an element to the list.",HTML
+
+NewQuestion,MC
+ID,TP3-chapter18-q06
+Title,"Think Python, Chapter 18: Python Extras, question 6"
+QuestionText,"<p>What value is printed when this function runs?</p>
+<pre><code>def pack_and_print(**kwargs):
+    print(kwargs)
+
+pack_and_print(a=1, b=2)
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,100,"<code>{'a': 1, 'b': 2}</code>",HTML,"The pack operator, <code>**</code>, packs the keyword arguments into a dictionary that maps from keyword names to values.",HTML
+Option,0,This is an error because the exponentiation operator <code>**</code> can't appear in a list of parameters.,HTML,"In a parameter list, <code>**</code> is the pack operator, not the exponentiation operator.",HTML
+Option,0,"<code>{'a', 'b'}, [1, 2]</code>",HTML,"The pack operator, <code>**</code>, packs the keyword arguments into a dictionary, not a set and a list.",HTML
+Option,0,"<code>[(a, 1), (b, 2)]</code>",HTML,"The pack operator, <code>**</code>, packs the keyword arguments into a dictionary, not a list of tuples.",HTML
+
+NewQuestion,MC
+ID,TP3-summative-q01
+Title,"Think Python: summative quiz, question 1"
+QuestionText,"<p>What is the output of this program?</p>
+<pre><code>s = '3'
+str(s) * int(s)
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,0,The integer <code>333</code>,HTML,"When we multiply a string by an integer, the result is a string. See Chapter 1, ""Programming as a way of thinking"".",HTML
+Option,0,The integer <code>9</code>,HTML,"<code>str(s)</code> is the string <code>'3'</code>, and <code>int(s)</code> is the integer <code>3</code>. See Chapter 1, ""Programming as a way of thinking"".",HTML
+Option,0,The string <code>'9'</code>,HTML,"Multiplying a string by the integer <code>3</code> repeats the string three times. See Chapter 1, ""Programming as a way of thinking"".",HTML
+Option,100,The string <code>'333'</code>,HTML,"Multiplying a string by the integer <code>3</code> repeats the string three times. See Chapter 1, ""Programming as a way of thinking"".",HTML
+
+NewQuestion,MC
+ID,TP3-summative-q02
+Title,"Think Python: summative quiz, question 2"
+QuestionText,"<p>For this function to work without causing an error, what are the preconditions for <code>n</code>?</p>
+<pre><code>def countdown(n):
+    if n == 0:
+        print('Blastoff!')
+    else:
+        print(n)
+        countdown(n-1)
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,0,<code>n</code> must be negative.,HTML,"If <code>n</code> is negative, it recurses until the stack reaches its limit and causes a <code>RecursionError</code>. See Chapter 5, ""Conditionals and Recursion"".",HTML
+Option,0,<code>n</code> must be a <code>float</code>.,HTML,"<code>n</code> can be a <code>float</code> with no fraction part, but it can also be an <code>int</code>. See Chapter 5, ""Conditionals and Recursion"".",HTML
+Option,0,"<code>n</code> must be strictly positive, not <code>0</code>.",HTML,"If <code>n</code> is <code>0</code>, the function prints <code>'Blastoff!'</code> and returns without making a recursive call. See Chapter 5, ""Conditionals and Recursion"".",HTML
+Option,100,<code>n</code> must be a positive integer or <code>0</code>.,HTML,"<code>n</code> must be non-negative -- that is, positive or <code>0</code>. See Chapter 5, ""Conditionals and Recursion"".",HTML
+
+NewQuestion,MC
+ID,TP3-summative-q03
+Title,"Think Python: summative quiz, question 3"
+QuestionText,"<p>What is wrong with the following program?</p>
+<pre><code>def compare(x, y):
+    if x &lt; y:
+        return -1
+    else:
+        return 1
+    return 0
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,0,It has a syntax error because it has more than one return statement.,HTML,"The syntax of the program is correct, but there is a semantic error because the last line can never run. See Chapter 6, ""Return Values"".",HTML
+Option,0,It has a runtime error because the return value cannot be negative.,HTML,"Any value is a legal return value -- but there is a semantic error because the last line can never run. See Chapter 6, ""Return Values"".",HTML
+Option,0,It has a syntax error because the last line is not indented.,HTML,"The syntax of the program is correct, but there is an error. See Chapter 6, ""Return Values"".",HTML
+Option,100,It has a semantic error because the last line is dead code.,HTML,"There is a <code>return</code> statement in both branches of the <code>if</code> statement, so the last line can never run -- it is dead code. See Chapter 6, ""Return Values"".",HTML
+
+NewQuestion,MC
+ID,TP3-summative-q04
+Title,"Think Python: summative quiz, question 4"
+QuestionText,"<p>What is the output of this program, or is there an error?</p>
+<pre><code>def rectangle_area(length, width):
+    return length * width
+
+area = rectangle_area(3, 5)
+print(length)
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,0,<code>5</code> because the second argument gets assigned to <code>length</code>.,HTML,"The first argument gets assigned to <code>length</code>, but the parameter only exists inside the function. See Chapter 6, ""Return Values"".",HTML
+Option,0,<code>3</code> because the first argument gets assigned to <code>length</code>.,HTML,"<code>3</code> does get assigned to <code>length</code>, but the parameter only exists inside the function. See Chapter 6, ""Return Values"".",HTML
+Option,100,Runtime error because the parameter <code>length</code> does not exist outside the function.,HTML,"Parameters and local variables only exist inside the functions where they are defined. See Chapter 6, ""Return Values"".",HTML
+Option,0,Syntax error because there are two variables in the return statement.,HTML,"The variables are part of an arithmetic expression, which can be used in a return statement. See Chapter 6, ""Return Values"".",HTML
+
+NewQuestion,MC
+ID,TP3-summative-q05
+Title,"Think Python: summative quiz, question 5"
+QuestionText,"<p>What is wrong with the following program?</p>
+<pre><code>s = int('123')
+for digit in s:
+    print(digit)
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,0,There is nothing wrong -- the program is correct.,HTML,"The program generates a <code>TypeError</code>. See Chapter 7, ""Iteration and Search"".",HTML
+Option,0,<code>digit</code> is not a legal name for a loop variable.,HTML,"Any legal variable name can be used as a loop variable. See Chapter 7, ""Iteration and Search"".",HTML
+Option,0,"<code>int</code> is a type, not a function.",HTML,"<code>int</code> is a type, but it can be used as a function to convert other types to integers. See Chapter 7, ""Iteration and Search"".",HTML
+Option,100,"<code>s</code> is not a sequence, so we can't loop through its elements.",HTML,"<code>s</code> is an integer, which is not a sequence, so it can't be looped over. See Chapter 7, ""Iteration and Search"".",HTML
+
+NewQuestion,MC
+ID,TP3-summative-q06
+Title,"Think Python: summative quiz, question 6"
+QuestionText,"<p>If <code>s</code> is a string, which of these is a correct way to convert it to lowercase?</p>",HTML
+Points,1
+Difficulty,1
+Option,0,<code>s = lower(s)</code>,HTML,"<code>lower</code> is a method, so it has to be invoked on a string, as in <code>s.lower()</code>. See Chapter 7, ""Iteration and Search"".",HTML
+Option,0,<code>s.lower()</code>,HTML,"<code>s.lower()</code> creates a new string, but if the string is not assigned to a variable, there is no way to access it. See Chapter 7, ""Iteration and Search"".",HTML
+Option,0,<code>lower(s)</code>,HTML,"<code>lower</code> is a method, so it has to be invoked on a string, as in <code>s.lower()</code>; and it creates a new string, which should be assigned to a variable. See Chapter 7, ""Iteration and Search"".",HTML
+Option,100,<code>s = s.lower()</code>,HTML,"<code>s.lower()</code> creates a new string -- if we assign it back to <code>s</code>, the new string replaces the old one. See Chapter 7, ""Iteration and Search"".",HTML
+
+NewQuestion,MC
+ID,TP3-summative-q07
+Title,"Think Python: summative quiz, question 7"
+QuestionText,"<p>The following function takes two strings as parameters and returns a string.
+Which of the following docstrings is a correct description of what this function does?</p>
+<pre><code>def compute(word1, word2):
+    t = []
+    for letter in word1:
+        if letter in word2:
+            t.append(letter)
+    return ''.join(t)
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,0,Returns the letters that appear in <code>word1</code> but not <code>word2</code>.,HTML,"In order to get to the <code>append</code> method, <code>letter</code> has to appear in both words. See Chapter 7, ""Iteration and Search"".",HTML
+Option,0,Returns the letters that appear in either <code>word1</code> or <code>word2</code> or both.,HTML,"In order to get to the <code>append</code> method, <code>letter</code> has to appear in both words. See Chapter 7, ""Iteration and Search"".",HTML
+Option,100,Returns the letters that appear in both <code>word1</code> and <code>word2</code>.,HTML,"This function returns a string that contains the letters that appear in both <code>word1</code> and <code>word2</code>. See Chapter 7, ""Iteration and Search"".",HTML
+Option,0,Returns the letters that appear in either <code>word1</code> or <code>word2</code> but not both.,HTML,"In order to get to the <code>append</code> method, <code>letter</code> has to appear in both words. See Chapter 7, ""Iteration and Search"".",HTML
+
+NewQuestion,MC
+ID,TP3-summative-q08
+Title,"Think Python: summative quiz, question 8"
+QuestionText,"<p>This function is intended to convert the first letter of a word to lowercase and the rest of the letters to uppercase.</p>
+<pre><code>def lower_upper(word):
+    first = word[0]
+    rest = word[1:]
+    word = first.lower() + rest.upper()
+</code></pre>
+<p>What is the value of <code>word</code> if we call this function like this -- or is there an error?</p>
+<pre><code>word = lower_upper('Python')
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,0,The result is a syntax error because a <code>:</code> character cannot appear inside the bracket operator.,HTML,"A colon inside a bracket operator indicates a slice -- in this case, it selects all characters from the second to the end. See Chapter 8, ""Strings and Regular Expressions"".",HTML
+Option,0,The program is correct -- the value of <code>word</code> is <code>'pYTHON'</code>.,HTML,"The function has no return statement, so it returns <code>None</code>. Assigning a new value to the parameter <code>word</code> has no effect outside the function. See Chapter 9, ""Lists"".",HTML
+Option,0,The result is a runtime error because <code>0</code> is not a valid index.,HTML,"<code>0</code> is a valid index -- it selects the first character in the string. See Chapter 8, ""Strings and Regular Expressions"".",HTML
+Option,100,The program contains a semantic error -- the value of <code>word</code> is <code>None</code>.,HTML,"The function has no return statement, so it returns <code>None</code>. Assigning a new value to the parameter <code>word</code> has no effect outside the function. See Chapter 9, ""Lists"".",HTML
+
+NewQuestion,MC
+ID,TP3-summative-q09
+Title,"Think Python: summative quiz, question 9"
+QuestionText,"<p>If we use the <code>search</code> function in the <code>re</code> module, which of the following strings matches this pattern: <code>r'^a(bc|de)f$'</code>?</p>",HTML
+Points,1
+Difficulty,1
+Option,0,<code>'abc'</code>,HTML,"The pattern <code>f$</code> requires the letter <code>f</code> at the end of the string. See Chapter 8, ""Strings and Regular Expressions"".",HTML
+Option,0,<code>'zadef'</code>,HTML,"The pattern <code>^a</code> requires the letter <code>a</code> at the beginning of the string. See Chapter 8, ""Strings and Regular Expressions"".",HTML
+Option,100,<code>'adef'</code>,HTML,"This string has <code>'a'</code> at the beginning, <code>'f'</code> at the end, and <code>'de'</code> in the middle. See Chapter 8, ""Strings and Regular Expressions"".",HTML
+Option,0,<code>'abcdef'</code>,HTML,"The pattern <code>'(bc|de)'</code> requires either <code>'bc'</code> or <code>'de'</code> but not both. See Chapter 8, ""Strings and Regular Expressions"".",HTML
+
+NewQuestion,MC
+ID,TP3-summative-q10
+Title,"Think Python: summative quiz, question 10"
+QuestionText,"<p>What is the result of this program?</p>
+<pre><code>t = [1, 2, 3, 4]
+t[1:-1]
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,100,"<code>[2, 3]</code>",HTML,"The slice index <code>1:-1</code> selects elements from the second to the second-to-last, including both. See Chapter 9, ""Lists"".",HTML
+Option,0,An <code>IndexError</code> because <code>-1</code> is not a legal index.,HTML,"Negative indices count backward from the end of the sequence, so the slice index <code>1:-1</code> selects elements from the second to the second-to-last, including both. See Chapter 9, ""Lists"".",HTML
+Option,0,"<code>[2, 3, 4]</code>",HTML,"The slice index <code>1:-1</code> excludes the last element of the list. See Chapter 9, ""Lists"".",HTML
+Option,0,"<code>[1, 2, 3]</code>",HTML,"The slice index <code>1:-1</code> excludes the first element of the list. See Chapter 9, ""Lists"".",HTML
+
+NewQuestion,MC
+ID,TP3-summative-q11
+Title,"Think Python: summative quiz, question 11"
+QuestionText,"<p>After these statements run, what are the values of <code>a</code> and <code>b</code>, or is there an error?</p>
+<pre><code>a, b = 1, 2
+a, b = b, a
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,100,<code>a</code> is <code>2</code> and <code>b</code> is <code>1</code>.,HTML,"After the first assignment <code>a</code> is <code>1</code> and <code>b</code> is <code>2</code>, and then the second assignment swaps the values. See Chapter 11, ""Tuples"".",HTML
+Option,0,<code>a</code> is <code>1</code> and <code>b</code> is <code>2</code>.,HTML,"After the first assignment <code>a</code> is <code>1</code> and <code>b</code> is <code>2</code>, but the second assignment swaps the values. See Chapter 11, ""Tuples"".",HTML
+Option,0,There is a runtime error because the values on the right are tuples.,HTML,"The values on the right are tuples, but these are legal assignment statements. See Chapter 11, ""Tuples"".",HTML
+Option,0,There is a syntax error because the assignment statement has more than one variable.,HTML,"An assignment statement can have a tuple of variables on the left. See Chapter 11, ""Tuples"".",HTML
+
+NewQuestion,MC
+ID,TP3-summative-q12
+Title,"Think Python: summative quiz, question 12"
+QuestionText,<p>Why can't a list appear as a key in a dictionary?</p>,HTML
+Points,1
+Difficulty,1
+Option,100,"Lists are mutable, which makes them unhashable.",HTML,"If an object is mutable, it isn't hashable, which means it can't be used as a key in a dictionary. See Chapter 10, ""Dictionaries"" and Chapter 11, ""Tuples"".",HTML
+Option,0,Lists can contain any number of elements.,HTML,"Lists can contain any number of elements, but that's not the reason a list can't appear as a key in a dictionary. See Chapter 10, ""Dictionaries"" and Chapter 11, ""Tuples"".",HTML
+Option,0,The elements in a list might not be totally ordered.,HTML,"If the elements of a list are not totally ordered, they are not sortable, but that's not the reason a list can't appear as a key in a dictionary. See Chapter 10, ""Dictionaries"" and Chapter 11, ""Tuples"".",HTML
+Option,0,The elements in a list can be different types.,HTML,"The elements in a list can be different types, but that's not the reason a list can't appear as a key in a dictionary. See Chapter 10, ""Dictionaries"" and Chapter 11, ""Tuples"".",HTML
+
+NewQuestion,MC
+ID,TP3-summative-q13
+Title,"Think Python: summative quiz, question 13"
+QuestionText,<p>What is the primary difference between a list and a tuple?</p>,HTML
+Points,1
+Difficulty,1
+Option,0,A tuple can contain any type; a list can only contain hashable types.,HTML,"Both lists and tuples can contain any type. Keys in dictionaries must be hashable. See Chapter 11, ""Tuples"".",HTML
+Option,0,A list can contain any type; a tuple can only contain hashable types.,HTML,"Both lists and tuples can contain any type. Keys in dictionaries must be hashable. See Chapter 11, ""Tuples"".",HTML
+Option,0,A tuple is mutable; a list is immutable.,HTML,"It's the other way around: a list is mutable; a tuple is immutable. See Chapter 11, ""Tuples"".",HTML
+Option,100,A list is mutable; a tuple is immutable.,HTML,"A tuple is immutable. See Chapter 11, ""Tuples"".",HTML
+
+NewQuestion,MC
+ID,TP3-summative-q14
+Title,"Think Python: summative quiz, question 14"
+QuestionText,"<p>Which of these is a correct way to reverse the elements of a list in place -- that is, by modifying an existing list without creating a new list?</p>",HTML
+Points,1
+Difficulty,1
+Option,0,<code>t = reversed(t)</code>,HTML,"<code>reversed</code> does not modify <code>t</code> -- it returns an iterator that loops through the elements in reverse order, so this statement replaces the list with the iterator. See Chapter 11, ""Tuples"".",HTML
+Option,0,<code>reversed(t)</code>,HTML,"<code>reversed(t)</code> does not modify <code>t</code> -- it returns an iterator, and if the iterator is not assigned to a variable, there is no way to use it. See Chapter 11, ""Tuples"".",HTML
+Option,0,<code>t = t.reverse()</code>,HTML,"The return value from <code>t.reverse()</code> is <code>None</code>, so this statement sets <code>t</code> to <code>None</code>. See Chapter 11, ""Tuples"".",HTML
+Option,100,<code>t.reverse()</code>,HTML,"<code>t.reverse()</code> reverses the elements of <code>t</code> without creating a new list. See Chapter 11, ""Tuples"".",HTML
+
+NewQuestion,MC
+ID,TP3-summative-q15
+Title,"Think Python: summative quiz, question 15"
+QuestionText,"<p>What is the result of this program?</p>
+<pre><code>s = ['bbb', 'aa', 'c']
+sorted(s, key=len, reverse=True)
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,0,"<code>['c', 'bbb', 'aa']</code>",HTML,"<code>key=len</code> sorts by length, rather than alphabetical order. See Chapter 12, ""Text Analysis and Generation"".",HTML
+Option,0,"<code>['aa', 'bbb', 'c']</code>",HTML,"<code>key=len</code> sorts by length, rather than alphabetical order, and <code>reverse=True</code> sorts in descending order. See Chapter 12, ""Text Analysis and Generation"".",HTML
+Option,0,"<code>['c', 'aa', 'bbb']</code>",HTML,"<code>reverse=True</code> sorts in descending order. See Chapter 12, ""Text Analysis and Generation"".",HTML
+Option,100,"<code>['bbb', 'aa', 'c']</code>",HTML,"<code>key=len</code> sorts by length, rather than alphabetical order, and <code>reverse=True</code> sorts in descending order, so the result is <code>['bbb', 'aa', 'c']</code>. See Chapter 12, ""Text Analysis and Generation"".",HTML
+
+NewQuestion,MC
+ID,TP3-summative-q16
+Title,"Think Python: summative quiz, question 16"
+QuestionText,"<p>What does the following function do?</p>
+<pre><code>def compute(d1, d2):
+    res = {}
+    for key in d1:
+        res[key] = d1[key]
+    for key in d2:
+        res[key] = d2[key]
+    return res
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,0,Adds the keys from <code>d1</code> to <code>d2</code>.,HTML,"This function makes and returns a new dictionary. See Chapter 12, ""Text Analysis and Generation"".",HTML
+Option,0,Makes a new dictionary with all keys that are in both <code>d1</code> and <code>d2</code>.,HTML,"The new dictionary has all keys from either dictionary. See Chapter 12, ""Text Analysis and Generation"".",HTML
+Option,100,Makes a new dictionary with all keys that are in either <code>d1</code> or <code>d2</code>.,HTML,"The new dictionary has all keys from either dictionary. If the same key appears in both, it gets the value from <code>d2</code>. See Chapter 12, ""Text Analysis and Generation"".",HTML
+Option,0,Adds the keys from <code>d2</code> to <code>d1</code>.,HTML,"This function makes and returns a new dictionary. See Chapter 12, ""Text Analysis and Generation"".",HTML
+
+NewQuestion,MC
+ID,TP3-summative-q17
+Title,"Think Python: summative quiz, question 17"
+QuestionText,"<p>Suppose we run the following program to get the current working directory:</p>
+<pre><code>import os
+
+os.getcwd()
+</code></pre>
+<p>And the result is <code>/home/dinsdale/photos</code>.
+Now suppose we run the following program to check for the existence of a file:</p>
+<pre><code>os.path.exists('apr-2023/photo1.jpg')
+</code></pre>
+<p>What is the absolute path of the file that gets checked?</p>",HTML
+Points,1
+Difficulty,1
+Option,100,<code>'/home/dinsdale/photos/apr-2023/photo1.jpg'</code>,HTML,"Because <code>'apr-2023/photo1.jpg'</code> is a relative path, it gets joined to the current working directory. See Chapter 13, ""Files and Databases"".",HTML
+Option,0,<code>'photo1.jpg'</code>,HTML,"Because <code>'apr-2023/photo1.jpg'</code> is a relative path, it gets joined to the current working directory. See Chapter 13, ""Files and Databases"".",HTML
+Option,0,<code>'/home/dinsdale/photo1.jpg'</code>,HTML,"Because <code>'apr-2023/photo1.jpg'</code> is a relative path, it gets joined to the current working directory. See Chapter 13, ""Files and Databases"".",HTML
+Option,0,<code>'apr-2023/photo1.jpg'</code>,HTML,"Because <code>'apr-2023/photo1.jpg'</code> is a relative path, it gets joined to the current working directory. See Chapter 13, ""Files and Databases"".",HTML
+
+NewQuestion,MC
+ID,TP3-summative-q18
+Title,"Think Python: summative quiz, question 18"
+QuestionText,"<p>What is the result of this program?</p>
+<pre><code>class Day:
+    def __init__(self, day):
+        self.day = day
+
+    def __str__(date):
+        return f'Today is {date.day}'
+
+print(Day('Wednesday'))
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,100,<code>Today is Wednesday</code>,HTML,"In a format string, the expression in curly braces gets replaced by its value. See Chapter 15, ""Classes and Methods"".",HTML
+Option,0,<code>f'Today is Wednesday'</code>,HTML,"The <code>f</code> before the string indicates that it is a format string. See Chapter 15, ""Classes and Methods"".",HTML
+Option,0,<code>Today is {date.day}</code>,HTML,"The <code>f</code> before the string indicates that it is a format string, and the expression in curly braces gets replaced by its value. See Chapter 15, ""Classes and Methods"".",HTML
+Option,0,<code>Today is {Wednesday}</code>,HTML,"The curly braces don't appear in the return value. See Chapter 15, ""Classes and Methods"".",HTML
+
+NewQuestion,MC
+ID,TP3-summative-q19
+Title,"Think Python: summative quiz, question 19"
+QuestionText,"<p>Assuming that the <code>Animal</code> class exists, what is the output of this program?</p>
+<pre><code>class Cat(Animal):
+    &quot;&quot;&quot;Represents a cat.&quot;&quot;&quot;
+
+cat = Cat()
+isinstance(cat, Animal)
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,0,<code>False</code> because an instance of a child class is not an instance of the parent class.,HTML,"Every instance of a child class is also an instance of the parent class. See Chapter 17, ""Inheritance"".",HTML
+Option,0,<code>True</code> because every instance of a parent class is also an instance of the child class.,HTML,"An instance of a parent class is not an instance of the child class. See Chapter 17, ""Inheritance"".",HTML
+Option,0,<code>False</code> because an instance of a parent class is not an instance of the child class.,HTML,"It's true that an instance of a parent class is not an instance of the child class, but that's not what's being checked here. See Chapter 17, ""Inheritance"".",HTML
+Option,100,<code>True</code> because every instance of a child class is also an instance of the parent class.,HTML,"In this example, <code>Cat</code> is a child class of <code>Animal</code>, so every <code>Cat</code> object is also an instance of <code>Animal</code>. See Chapter 17, ""Inheritance"".",HTML
+
+NewQuestion,MC
+ID,TP3-summative-q20
+Title,"Think Python: summative quiz, question 20"
+QuestionText,"<p>What is the result of this program?</p>
+<pre><code>from collections import namedtuple
+
+Point = namedtuple('Point', ['x', 'y'])
+p = Point(3, 4)
+p[1]
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,0,<code>3</code> because <code>p</code> is a <code>namedtuple</code> and the element with index <code>1</code> is <code>3</code>.,HTML,"In a named tuple -- as in a tuple -- the index of the first element is <code>0</code>. See Chapter 18, ""Python Extras"".",HTML
+Option,0,<code>AttributeError</code> because the attributes of <code>p</code> are <code>x</code> and <code>y</code>.,HTML,"The attributes of <code>p</code> are <code>x</code> and <code>y</code>, but because <code>p</code> is a <code>namedtuple</code>, we can use the bracket operator to access the elements by index. See Chapter 18, ""Python Extras"".",HTML
+Option,100,<code>4</code> because <code>p</code> is a <code>namedtuple</code> and the element with index <code>1</code> is <code>4</code>.,HTML,"In a named tuple -- as in a tuple -- the index of the second element is <code>1</code>. See Chapter 18, ""Python Extras"".",HTML
+Option,0,<code>IndexError</code> because the attributes of <code>p</code> are <code>x</code> and <code>y</code>.,HTML,"The attributes of <code>p</code> are <code>x</code> and <code>y</code>, but because <code>p</code> is a <code>namedtuple</code>, we can use the bracket operator to access the elements by index. See Chapter 18, ""Python Extras"".",HTML
+
+NewQuestion,MC
+ID,TP3-summative-q21
+Title,"Think Python: summative quiz, question 21"
+QuestionText,"<p>We can call the built-in function <code>round</code> like this:</p>
+<pre><code>import math
+
+round(math.pi, ndigits=3)
+</code></pre>
+<p>The result is the value of <code>math.pi</code> rounded off to three decimal places.
+Now suppose we have the positional argument in a tuple and the keyword argument in a dictionary, like this:</p>
+<pre><code>args = (math.pi,)
+kwargs = {&quot;ndigits&quot;: 3}
+</code></pre>
+<p>Which of these is a correct way to call <code>round</code> and get the same result?</p>",HTML
+Points,1
+Difficulty,1
+Option,100,"<code>round(*args, **kwargs)</code>",HTML,"The <code>*</code> operator unpacks the elements of <code>args</code> and the <code>**</code> operator unpacks the items in <code>kwargs</code>. See Chapter 18, ""Python Extras"".",HTML
+Option,0,"<code>round(**args, **kwargs)</code>",HTML,"To pass the elements of <code>args</code> as positional arguments, we have to unpack them with the <code>*</code> operator. See Chapter 18, ""Python Extras"".",HTML
+Option,0,"<code>round(args, kwargs)</code>",HTML,"In order to pass the elements of <code>args</code> as positional arguments, we have to unpack them with the <code>*</code> operator. Similarly, to pass the items in <code>kwargs</code> as keyword arguments, we have to unpack them with the <code>**</code> operator. See Chapter 18, ""Python Extras"".",HTML
+Option,0,"<code>round(*args, *kwargs)</code>",HTML,"To pass the items in <code>kwargs</code> as keyword arguments, we have to unpack them with the <code>**</code> operator. See Chapter 18, ""Python Extras"".",HTML
+

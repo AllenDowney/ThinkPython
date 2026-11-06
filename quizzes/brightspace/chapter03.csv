@@ -1,0 +1,38 @@
+﻿NewQuestion,MC
+ID,TP3-chapter03-q01
+Title,"Think Python, Chapter 3: Functions, question 1"
+QuestionText,"<p>When you define a function, what are the variables that appear in parentheses?</p>",HTML
+Points,1
+Difficulty,1
+Option,0,local variables,HTML,A local variable is a variable that gets assigned a value inside a function.,HTML
+Option,0,function objects,HTML,A function object is the result of defining a new function.,HTML
+Option,0,arguments,HTML,An argument is a value you provide when you call a function.,HTML
+Option,100,parameters,HTML,A parameter is a variable that gets a value when the function is called.,HTML
+
+NewQuestion,MC
+ID,TP3-chapter03-q02
+Title,"Think Python, Chapter 3: Functions, question 2"
+QuestionText,<p>Which kind of statement can be used to run a line of code more than once?</p>,HTML
+Points,1
+Difficulty,1
+Option,0,import statement,HTML,An import statement makes it possible to use functions in a module.,HTML
+Option,100,<code>for</code> statement,HTML,"A <code>for</code> statement can run a line of code, or multiple lines, more than once.",HTML
+Option,0,assignment statement,HTML,An assignment statement assigns a value to a variable.,HTML
+Option,0,print statement,HTML,A print statement displays the value of an expression.,HTML
+
+NewQuestion,MC
+ID,TP3-chapter03-q03
+Title,"Think Python, Chapter 3: Functions, question 3"
+QuestionText,"<p>What is wrong with this function, if anything?</p>
+<pre><code>def bottle_line(n, suffix):
+    print(n)
+    print('bottles of beer')
+    print(suffix)
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,0,Only the first statement of the body should be indented.,HTML,All of the statements in the body of the function should be indented.,HTML
+Option,0,You can't have more than one parameter in parentheses.,HTML,"You can have any number of parameters in parentheses, including none.",HTML
+Option,0,"Instead of <code>def</code>, the first word should be <code>define</code>.",HTML,"<code>def</code> is the right keyword to define a new function, although some other languages use <code>define</code>.",HTML
+Option,100,There are no errors in this function.,HTML,There is nothing wrong with this function.,HTML
+

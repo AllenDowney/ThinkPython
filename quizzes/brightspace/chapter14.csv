@@ -1,0 +1,45 @@
+﻿NewQuestion,MC
+ID,TP3-chapter14-q01
+Title,"Think Python, Chapter 14: Classes and Functions, question 1"
+QuestionText,"<p>To create an instance of a programmer-defined type, what is the correct order for these steps?</p>",HTML
+Points,1
+Difficulty,1
+Option,100,"Define a class, instantiate an object, assign values to attributes.",HTML,"You have to define a class, instantiate an object, and assign values to attributes, in that order.",HTML
+Option,0,"Instantiate an object, define a class, assign values to attributes.",HTML,You can't instantiate an object before you define its class.,HTML
+Option,0,"Assign values to attributes, define a class, instantiate an object.",HTML,You can't assign attributes before you instantiate an object.,HTML
+Option,0,"Define a class, assign values to attributes, instantiate an object.",HTML,You can't assign attributes before you instantiate an object.,HTML
+
+NewQuestion,MC
+ID,TP3-chapter14-q02
+Title,"Think Python, Chapter 14: Classes and Functions, question 2"
+QuestionText,"<p>These statements are intended to define a <code>Date</code> class and create a <code>Date</code> object. What is wrong with them?</p>
+<pre><code>def Date:
+    &quot;&quot;&quot;Represents a day of the year.&quot;&quot;&quot;
+
+date = Date()
+date.year = 2024
+date.month = 'January'
+date.day = 11
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,100,"A class definition has to start with <code>class</code>, not <code>def</code>.",HTML,A class definition has to start with <code>class</code>. A function definition starts with <code>def</code>.,HTML
+Option,0,All of the attributes have to have the same type.,HTML,"The attributes of an object can be any type, and they don't have to be the same.",HTML
+Option,0,You can't have a class named <code>Date</code> and a variable named <code>date</code>.,HTML,"It is legal -- and common -- for a class name and a variable to be the same word, but the class name starts with an uppercase letter.",HTML
+Option,0,The syntax is not correct for adding attributes to the object.,HTML,Dot notation is used to set the value of an attribute and to read the value.,HTML
+
+NewQuestion,MC
+ID,TP3-chapter14-q03
+Title,"Think Python, Chapter 14: Classes and Functions, question 3"
+QuestionText,"<p>Which of these is a correct description of this function? You can assume that <code>date</code> is a <code>Date</code> object that has a <code>day</code> attribute.</p>
+<pre><code>def increment_day(date):
+    date.day += 1
+    return date
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,0,It is a pure function that returns <code>None</code>.,HTML,"This function modifies an attribute of the <code>Date</code> object it gets as a parameter, so it is an impure function. And it returns a reference to the same object, not <code>None</code>.",HTML
+Option,0,It is a pure function that returns a <code>Date</code> object.,HTML,"This function modifies an attribute of the <code>Date</code> object it gets as a parameter, so it is an impure function.",HTML
+Option,100,It is an impure function that returns a <code>Date</code> object.,HTML,"This function modifies an attribute of the <code>Date</code> object it gets as a parameter, so it is an impure function -- and it returns a reference to the same <code>Date</code> object.",HTML
+Option,0,It is an impure function that returns <code>None</code>.,HTML,"This function returns a reference to a <code>Date</code> object, not <code>None</code>.",HTML
+

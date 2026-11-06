@@ -1,0 +1,44 @@
+﻿NewQuestion,MC
+ID,TP3-chapter01-q01
+Title,"Think Python, Chapter 1: Programming as a way of thinking, question 1"
+QuestionText,<p>Which of these types is used to represent a number with a fraction part?</p>,HTML
+Points,1
+Difficulty,1
+Option,0,<code>int</code>,HTML,<code>int</code> values can only be integers.,HTML
+Option,100,<code>float</code>,HTML,"<code>float</code> values represent floating-point numbers, which can have a fraction part.",HTML
+Option,0,<code>str</code>,HTML,<code>str</code> values contain a sequence of characters.,HTML
+Option,0,<code>real</code>,HTML,Python does not have a type called <code>real</code>.,HTML
+
+NewQuestion,MC
+ID,TP3-chapter01-q02
+Title,"Think Python, Chapter 1: Programming as a way of thinking, question 2"
+QuestionText,<p>Which of these is a legal expression?</p>,HTML
+Points,1
+Difficulty,1
+Option,0,<code>'1' / '2'</code>,HTML,The division operator does not work with strings.,HTML
+Option,0,<code>'1' / 2</code>,HTML,The division operator does not work with strings.,HTML
+Option,0,<code>'1' * '2'</code>,HTML,"With the multiplication operator, the first value can be a string, but the second cannot.",HTML
+Option,100,<code>'1' * 2</code>,HTML,"When the first operand is a string, the multiplication operator repeats the string, so the result is <code>'11'</code>.",HTML
+
+NewQuestion,MC
+ID,TP3-chapter01-q03
+Title,"Think Python, Chapter 1: Programming as a way of thinking, question 3"
+QuestionText,<p>Which of these is the general word for any value used in a mathematical operation like addition or multiplication?</p>,HTML
+Points,1
+Difficulty,1
+Option,100,operand,HTML,"An ""operand"" is a value used in an operation.",HTML
+Option,0,divisor,HTML,"A ""divisor"" is one of the values used in division, but it is not the general word for any value used in an operation.",HTML
+Option,0,factor,HTML,"A ""factor"" is a value used in multiplication, but it is not the general word for any value used in an operation.",HTML
+Option,0,term,HTML,"A ""term"" is a value used in addition, but it is not the general word for any value used in an operation.",HTML
+
+NewQuestion,MC
+ID,TP3-chapter01-q04
+Title,"Think Python, Chapter 1: Programming as a way of thinking, question 4"
+QuestionText,"<p>On the internet, people sometimes argue about the value of an ambiguous mathematical expression like 8 ÷ 2(2+2). How do we write this expression in Python?</p>",HTML
+Points,1
+Difficulty,1
+Option,100,<code>8 / 2 * (2 + 2)</code>,HTML,An alternative is to put <code>8 / 2</code> in parentheses so the order of operations is clear.,HTML
+Option,0,<code>8 / 2 (2 + 2)</code>,HTML,There is no implicit multiplication in Python -- you have to use the <code>*</code> operator.,HTML
+Option,0,<code>8 ÷ 2 * (2 + 2)</code>,HTML,"The operator for division is <code>/</code>, not <code>÷</code>.",HTML
+Option,0,<code>8 ÷ 2 (2 + 2)</code>,HTML,"The operator for division is <code>/</code>, not <code>÷</code>. Also, there is no implicit multiplication in Python -- you have to use the <code>*</code> operator.",HTML
+

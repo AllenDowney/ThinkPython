@@ -1,0 +1,39 @@
+﻿NewQuestion,MC
+ID,TP3-chapter15-q01
+Title,"Think Python, Chapter 15: Classes and Methods, question 1"
+QuestionText,"<p>Suppose <code>time</code> is a <code>Time</code> object, and <code>increment</code> is an instance method defined in the <code>Time</code> class.
+What happens when we invoke <code>increment</code> like this?</p>
+<pre><code>time.increment(42)
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,0,This is an error because <code>increment</code> requires one argument and two are provided.,HTML,This method requires two arguments -- <code>time</code> is the first and <code>42</code> is the second.,HTML
+Option,0,"<code>42</code> is assigned to the first parameter of the method, and <code>time</code> is assigned to the second.",HTML,<code>time</code> is assigned to the first parameter of the method.,HTML
+Option,100,<code>time</code> is assigned to the first parameter of the method and <code>42</code> is assigned to the second.,HTML,"<code>time</code> is assigned to the first parameter of the method, which is conventionally called <code>self</code>, and <code>42</code> is assigned to the second.",HTML
+Option,0,This is an error because <code>increment</code> requires two arguments and only one is provided.,HTML,"Only one argument appears in parentheses, but <code>time</code> is passed to <code>increment</code> as the first argument.",HTML
+
+NewQuestion,MC
+ID,TP3-chapter15-q02
+Title,"Think Python, Chapter 15: Classes and Methods, question 2"
+QuestionText,"<p>Suppose <code>int_to_time</code> is a static method defined in the <code>Time</code> class.
+What happens when we invoke <code>int_to_time</code> like this?</p>
+<pre><code>start = Time.int_to_time(34800)
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,0,The <code>Time</code> class object is assigned to the first parameter of the method and <code>34800</code> is assigned to the second.,HTML,"Because <code>Time</code> is a class, it is not passed as an argument.",HTML
+Option,100,<code>34800</code> is assigned to the first parameter of <code>int_to_time</code>.,HTML,"<code>34800</code> is assigned to the first parameter of <code>int_to_time</code>. Because <code>Time</code> is a class, it is not passed as an argument.",HTML
+Option,0,This is an error because <code>int_to_time</code> requires one argument and two are provided.,HTML,"There is only one argument here, <code>34800</code>.",HTML
+Option,0,<code>34800</code> is assigned to the first parameter of the method and the <code>Time</code> class object is assigned to the second.,HTML,"Because <code>Time</code> is a class, it is not passed as an argument.",HTML
+
+NewQuestion,MC
+ID,TP3-chapter15-q03
+Title,"Think Python, Chapter 15: Classes and Methods, question 3"
+QuestionText,<p>Which of the following statements is NOT correct?</p>,HTML
+Points,1
+Difficulty,1
+Option,0,"When we use the <code>+</code> operator with an object, its <code>__add__</code> method is invoked.",HTML,This statement is correct.,HTML
+Option,100,"When we define a new class, its <code>__init__</code> method is invoked.",HTML,Defining a new class does not invoke its <code>__init__</code> method.,HTML
+Option,0,"When we print an object, its <code>__str__</code> method is invoked.",HTML,This statement is correct.,HTML
+Option,0,"When we instantiate an object, its <code>__init__</code> method is invoked.",HTML,This statement is correct.,HTML
+

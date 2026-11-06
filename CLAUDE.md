@@ -13,18 +13,19 @@ Two repositories, one book.
 
 Edit `soln/`. Everything else is generated.
 
-## The four build targets
+## The five build targets
 
 | Target | Built by | What its prep step does |
 |---|---|---|
 | `chapters/` + zip | `chapters/build.sh` | solutions → `# Solution goes here`; **clears all tags and all outputs** |
 | `blank/` | `blank/build.sh` | clears every code cell except those tagged `keep`; clears all tags and outputs |
+| `quizzes/` | `quizzes/build.sh` | exports `soln/quizzes.ipynb` (parsed by `update.py`) as Canvas QTI 1.2, Moodle XML and Brightspace CSV |
 | `jb/` → GitHub Pages | `jb/build.sh` | blanks solutions, strips `%%expect`, adds MyST anchors; **leaves tags and outputs alone** |
 | top level | `build.sh` | copies support files from `soln/`, renders the SVG figures |
 
 To build and publish everything, run `python update.py` in `ThinkPythonSolutions`.
-It tests, commits and pushes `soln/`, builds all four targets, and asks before
-publishing the website. Do not run the four scripts by hand unless you have a
+It tests, commits and pushes `soln/`, builds all five targets, and asks before
+publishing the website. Do not run the five scripts by hand unless you have a
 reason — it is easy to forget `blank/`.
 
 ## Cell tags

@@ -1,0 +1,44 @@
+﻿NewQuestion,MC
+ID,TP3-chapter02-q01
+Title,"Think Python, Chapter 2: Variables and Statements, question 1"
+QuestionText,<p>Which of these is a legal variable name?</p>,HTML
+Points,1
+Difficulty,1
+Option,0,<code>question?</code>,HTML,"<code>question?</code> is not a legal variable name because only letters, numbers, and the underscore character, <code>_</code>, are allowed.",HTML
+Option,0,<code>2pi</code>,HTML,<code>2pi</code> is not a legal variable name because it starts with a number.,HTML
+Option,0,<code>import</code>,HTML,<code>import</code> is not a legal variable name because it is one of Python's keywords.,HTML
+Option,100,<code>is_even</code>,HTML,"<code>is_even</code> is a legal variable name because letters, numbers, and the underscore character, <code>_</code>, are allowed.",HTML
+
+NewQuestion,MC
+ID,TP3-chapter02-q02
+Title,"Think Python, Chapter 2: Variables and Statements, question 2"
+QuestionText,<p>Which of these is NOT a correct way to raise <code>2</code> to the third power?</p>,HTML
+Points,1
+Difficulty,1
+Option,0,<code>2 ** 3</code>,HTML,"The exponentiation operator, <code>**</code>, is a correct way to raise <code>2</code> to the third power.",HTML
+Option,0,"<code>math.pow(2, 3)</code>",HTML,The <code>pow</code> function in the <code>math</code> module is a correct way to raise <code>2</code> to the third power.,HTML
+Option,100,<code>2 ^ 3</code>,HTML,"In some languages, the <code>^</code> operator is used for exponentiation, but in Python it means something else.",HTML
+Option,0,<code>2 * 2 * 2</code>,HTML,Multiplication is a correct way to raise <code>2</code> to the third power.,HTML
+
+NewQuestion,MC
+ID,TP3-chapter02-q03
+Title,"Think Python, Chapter 2: Variables and Statements, question 3"
+QuestionText,"<p>When you call a function, what are the values that appear in parentheses?</p>",HTML
+Points,1
+Difficulty,1
+Option,0,comments,HTML,A comment is text you add to a program to explain how it works.,HTML
+Option,0,assignments,HTML,An assignment is a statement that assigns a value to a variable.,HTML
+Option,0,exceptions,HTML,An exception is an error detected while a program is running.,HTML
+Option,100,arguments,HTML,The values you pass to a function are called arguments.,HTML
+
+NewQuestion,MC
+ID,TP3-chapter02-q04
+Title,"Think Python, Chapter 2: Variables and Statements, question 4"
+QuestionText,"<p>If a program runs without producing an error message, but it does not do the right thing, what kind of error is that?</p>",HTML
+Points,1
+Difficulty,1
+Option,0,exception,HTML,An exception produces an error message.,HTML
+Option,0,syntax error,HTML,A syntax error produces an error message.,HTML
+Option,100,semantic error,HTML,"A semantic error is when a program runs, but does the wrong thing.",HTML
+Option,0,runtime error,HTML,A runtime error produces an error message.,HTML
+

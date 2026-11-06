@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+  <question type="category">
+    <category><text>$course$/top/Think Python/Think Python, Chapter 4: Functions and Interfaces</text></category>
+    <info format="html"><text><![CDATA[Formative quiz for Chapter 4. From <em>Think Python</em>, 3rd edition, by Allen B. Downey (https://allendowney.github.io/ThinkPython/), CC BY-NC-SA 4.0.]]></text></info>
+  </question>
+  <question type="multichoice">
+    <name><text>TP3-chapter04-q01</text></name>
+    <questiontext format="html"><text><![CDATA[<p>What is wrong with this function, if anything?</p>
+<pre><code>def square(length):
+    for i in range(4):
+        forward(50)
+        left(90)
+</code></pre>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-chapter04-q01</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[The indentation of the statements in the <code>for</code> loop is incorrect.]]></text>
+      <feedback format="html"><text><![CDATA[The indentation in this function is correct.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[It does not bring the Turtle back to where it started.]]></text>
+      <feedback format="html"><text><![CDATA[The <code>Turtle</code> ends where it started, facing in the same direction.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[There are no errors in this function.]]></text>
+      <feedback format="html"><text><![CDATA[There is an error!]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[It always draws the same size square, regardless of <code>length</code>.]]></text>
+      <feedback format="html"><text><![CDATA[The size is always <code>50</code> -- the value of <code>length</code> is never used.]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>TP3-chapter04-q02</text></name>
+    <questiontext format="html"><text><![CDATA[<p>What is it called when you put working statements into a new function definition?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-chapter04-q02</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[generalization]]></text>
+      <feedback format="html"><text><![CDATA[Generalization is when you add a parameter to a function to make it more general.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[indentation]]></text>
+      <feedback format="html"><text><![CDATA[You might have to indent the statements when you put them in a function definition, but that's not what the whole process is called.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[debugging]]></text>
+      <feedback format="html"><text><![CDATA[If the statements are working, they don't have to be debugged.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[encapsulation]]></text>
+      <feedback format="html"><text><![CDATA[Encapsulation is the process of transforming a sequence of statements into a function definition.]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>TP3-chapter04-q03</text></name>
+    <questiontext format="html"><text><![CDATA[<p>Here are two versions of the <code>circle</code> function.</p>
+<pre><code>def circle(radius):
+    circumference = 2 * math.pi * radius
+    n = 30
+    length = circumference / n
+    polygon(n, length)
+
+def circle(radius):
+    arc(radius, 360)
+</code></pre>
+<p>What can we say about these functions?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-chapter04-q03</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[They have the same implementation, but different interfaces.]]></text>
+      <feedback format="html"><text><![CDATA[They take the same parameter and have the same effect, so they have the same interface -- but they accomplish the effect in different ways, so they have different implementations.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[They have the same interface <em>and</em> the same implementation.]]></text>
+      <feedback format="html"><text><![CDATA[They take the same parameter and have the same effect, so they have the same interface -- but they accomplish the effect in different ways, so they have different implementations.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[They have neither the same interface nor the same implementation.]]></text>
+      <feedback format="html"><text><![CDATA[They take the same parameter and have the same effect, so they have the same interface -- but they accomplish the effect in different ways, so they have different implementations.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[They have the same interface, but different implementations.]]></text>
+      <feedback format="html"><text><![CDATA[They take the same parameter and have the same effect, so they have the same interface -- but they accomplish the effect in different ways, so they have different implementations.]]></text></feedback>
+    </answer>
+  </question>
+</quiz>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+  <question type="category">
+    <category><text>$course$/top/Think Python/Think Python, Chapter 17: Inheritance</text></category>
+    <info format="html"><text><![CDATA[Formative quiz for Chapter 17. From <em>Think Python</em>, 3rd edition, by Allen B. Downey (https://allendowney.github.io/ThinkPython/), CC BY-NC-SA 4.0.]]></text></info>
+  </question>
+  <question type="multichoice">
+    <name><text>TP3-chapter17-q01</text></name>
+    <questiontext format="html"><text><![CDATA[<p>Which of the following is NOT a correct statement about class variables?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-chapter17-q01</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[They are defined inside a class definition, but not inside a method definition.]]></text>
+      <feedback format="html"><text><![CDATA[It is true that class variables are defined inside a class definition, but not inside a method definition.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[They can be accessed using a class object.]]></text>
+      <feedback format="html"><text><![CDATA[It is true that class variables can be accessed using a class object.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[They can have any type.]]></text>
+      <feedback format="html"><text><![CDATA[It is true that class variables can have any type.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[They are immutable.]]></text>
+      <feedback format="html"><text><![CDATA[This statement is false -- that is, class variables are mutable.]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>TP3-chapter17-q02</text></name>
+    <questiontext format="html"><text><![CDATA[<p>Suppose we define a <code>Card</code> class like this:</p>
+<pre><code>class Card:
+
+    def __init__(self, suit, rank):
+        self.suit = suit
+        self.rank = rank
+</code></pre>
+<p>If this class does not provide an <code>__eq__</code> method, what happens if we compare two cards using the <code>==</code> operator?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-chapter17-q02</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[That's an error.]]></text>
+      <feedback format="html"><text><![CDATA[It is not an error -- if a class provides no <code>__eq__</code>, the <code>==</code> operator has a default behavior.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[By default, only the first attribute is compared.]]></text>
+      <feedback format="html"><text><![CDATA[If a class provides no <code>__eq__</code>, the <code>==</code> operator checks whether objects are identical.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[By default, all of the attributes are compared as if they were in a tuple.]]></text>
+      <feedback format="html"><text><![CDATA[If a class provides no <code>__eq__</code>, the <code>==</code> operator checks whether objects are identical.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[By default, the objects are equal only if they are identical.]]></text>
+      <feedback format="html"><text><![CDATA[If a class provides no <code>__eq__</code>, the <code>==</code> operator checks whether objects are identical.]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>TP3-chapter17-q03</text></name>
+    <questiontext format="html"><text><![CDATA[<p>Which of the following statements is true when one class inherits from another, like this:</p>
+<pre><code>class Hand(Deck):
+    &quot;&quot;&quot;Represents a hand of playing cards.&quot;&quot;&quot;
+</code></pre>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-chapter17-q03</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>Hand</code> is a parent class and <code>Deck</code> is a child class.]]></text>
+      <feedback format="html"><text><![CDATA[In this example, <code>Hand</code> inherits from <code>Deck</code>, so <code>Hand</code> is the child class and <code>Deck</code> is the parent.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Every function that works with <code>Hand</code> should also work with <code>Deck</code>.]]></text>
+      <feedback format="html"><text><![CDATA[If <code>Hand</code> inherits from <code>Deck</code>, it could have additional methods that don't work with <code>Deck</code>.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Every <code>Hand</code> object has the same attributes as every <code>Deck</code> object, no more or less.]]></text>
+      <feedback format="html"><text><![CDATA[If <code>Hand</code> inherits from <code>Deck</code>, a <code>Hand</code> object should have all of the attributes of a <code>Deck</code> object, but it can have more.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Every method defined in the <code>Deck</code> class can also be invoked on a <code>Hand</code> object.]]></text>
+      <feedback format="html"><text><![CDATA[If <code>Hand</code> inherits from <code>Deck</code>, every method defined in the <code>Deck</code> class should work with a <code>Hand</code> object.]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>TP3-chapter17-q04</text></name>
+    <questiontext format="html"><text><![CDATA[<p>What do we call it when one method invokes another to do most or all of the work?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-chapter17-q04</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[inheritance]]></text>
+      <feedback format="html"><text><![CDATA[Inheritance is the ability to define a new class that is a modified version of a previously defined class.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[generalization]]></text>
+      <feedback format="html"><text><![CDATA[Generalization is when we add a parameter to a function to make its capabilities more general.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[specialization]]></text>
+      <feedback format="html"><text><![CDATA[Specialization is a way of using inheritance to create a new class that is a specialized version of an existing class.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[delegation]]></text>
+      <feedback format="html"><text><![CDATA[Delegation is when one method passes responsibility to another method to do most or all of the work.]]></text></feedback>
+    </answer>
+  </question>
+</quiz>

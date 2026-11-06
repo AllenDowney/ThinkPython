@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+  <question type="category">
+    <category><text>$course$/top/Think Python/Think Python, Chapter 6: Return Values</text></category>
+    <info format="html"><text><![CDATA[Formative quiz for Chapter 6. From <em>Think Python</em>, 3rd edition, by Allen B. Downey (https://allendowney.github.io/ThinkPython/), CC BY-NC-SA 4.0.]]></text></info>
+  </question>
+  <question type="multichoice">
+    <name><text>TP3-chapter06-q01</text></name>
+    <questiontext format="html"><text><![CDATA[<p>What is the return value if we call this function with the value <code>3</code>?</p>
+<pre><code>def collatz(x):
+    if x % 2 == 0:
+        return x // 2
+    else:
+        return x * 3 + 1
+</code></pre>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-chapter06-q01</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>1</code>]]></text>
+      <feedback format="html"><text><![CDATA[Because <code>3 % 2</code> is <code>1</code>, the second branch of the conditional runs.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>1.5</code>]]></text>
+      <feedback format="html"><text><![CDATA[Because <code>3 % 2</code> is <code>1</code>, the second branch of the conditional runs. Also, because <code>//</code> does integer division, <code>3 // 2</code> is <code>1</code>.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[It causes an error.]]></text>
+      <feedback format="html"><text><![CDATA[This function works. Because <code>3 % 2</code> is <code>1</code>, the second branch of the conditional runs, and the result is <code>3 * 3 + 1</code>, which is <code>10</code>.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<code>10</code>]]></text>
+      <feedback format="html"><text><![CDATA[Because <code>3 % 2</code> is <code>1</code>, the second branch of the conditional runs, and the result is <code>3 * 3 + 1</code>, which is <code>10</code>.]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>TP3-chapter06-q02</text></name>
+    <questiontext format="html"><text><![CDATA[<p>What do we call a function that does not print anything or have any effect other than a return value?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-chapter06-q02</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[recursive]]></text>
+      <feedback format="html"><text><![CDATA[A recursive function calls itself, but it might print something or have some other effect.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[dead code]]></text>
+      <feedback format="html"><text><![CDATA[Dead code is code that can never run, often because it appears after a <code>return</code> statement.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[incremental]]></text>
+      <feedback format="html"><text><![CDATA[Incremental development is a way of writing programs by making small changes and testing.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[pure function]]></text>
+      <feedback format="html"><text><![CDATA[A pure function does not print anything or have any effect other than a return value.]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>TP3-chapter06-q03</text></name>
+    <questiontext format="html"><text><![CDATA[<p>What is the result of calling this function with the values <code>x=1.5</code> and <code>y=1.6</code>?</p>
+<pre><code>def is_close(x, y):
+    return abs(x - y) &lt; 0.2
+</code></pre>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-chapter06-q03</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[There is a syntax error.]]></text>
+      <feedback format="html"><text><![CDATA[The syntax of the function is correct.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[There is a runtime error.]]></text>
+      <feedback format="html"><text><![CDATA[The function is correct as long as the values of <code>x</code> and <code>y</code> are numbers.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>False</code>]]></text>
+      <feedback format="html"><text><![CDATA[The absolute difference between <code>1.5</code> and <code>1.6</code> is <code>0.1</code>, which is less than <code>0.2</code>.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<code>True</code>]]></text>
+      <feedback format="html"><text><![CDATA[The absolute difference between <code>1.5</code> and <code>1.6</code> is <code>0.1</code>, which is less than <code>0.2</code>.]]></text></feedback>
+    </answer>
+  </question>
+</quiz>

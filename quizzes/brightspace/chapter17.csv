@@ -1,0 +1,54 @@
+﻿NewQuestion,MC
+ID,TP3-chapter17-q01
+Title,"Think Python, Chapter 17: Inheritance, question 1"
+QuestionText,<p>Which of the following is NOT a correct statement about class variables?</p>,HTML
+Points,1
+Difficulty,1
+Option,0,They can have any type.,HTML,It is true that class variables can have any type.,HTML
+Option,0,They can be accessed using a class object.,HTML,It is true that class variables can be accessed using a class object.,HTML
+Option,0,"They are defined inside a class definition, but not inside a method definition.",HTML,"It is true that class variables are defined inside a class definition, but not inside a method definition.",HTML
+Option,100,They are immutable.,HTML,"This statement is false -- that is, class variables are mutable.",HTML
+
+NewQuestion,MC
+ID,TP3-chapter17-q02
+Title,"Think Python, Chapter 17: Inheritance, question 2"
+QuestionText,"<p>Suppose we define a <code>Card</code> class like this:</p>
+<pre><code>class Card:
+
+    def __init__(self, suit, rank):
+        self.suit = suit
+        self.rank = rank
+</code></pre>
+<p>If this class does not provide an <code>__eq__</code> method, what happens if we compare two cards using the <code>==</code> operator?</p>",HTML
+Points,1
+Difficulty,1
+Option,0,"By default, all of the attributes are compared as if they were in a tuple.",HTML,"If a class provides no <code>__eq__</code>, the <code>==</code> operator checks whether objects are identical.",HTML
+Option,0,That's an error.,HTML,"It is not an error -- if a class provides no <code>__eq__</code>, the <code>==</code> operator has a default behavior.",HTML
+Option,0,"By default, only the first attribute is compared.",HTML,"If a class provides no <code>__eq__</code>, the <code>==</code> operator checks whether objects are identical.",HTML
+Option,100,"By default, the objects are equal only if they are identical.",HTML,"If a class provides no <code>__eq__</code>, the <code>==</code> operator checks whether objects are identical.",HTML
+
+NewQuestion,MC
+ID,TP3-chapter17-q03
+Title,"Think Python, Chapter 17: Inheritance, question 3"
+QuestionText,"<p>Which of the following statements is true when one class inherits from another, like this:</p>
+<pre><code>class Hand(Deck):
+    &quot;&quot;&quot;Represents a hand of playing cards.&quot;&quot;&quot;
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,100,Every method defined in the <code>Deck</code> class can also be invoked on a <code>Hand</code> object.,HTML,"If <code>Hand</code> inherits from <code>Deck</code>, every method defined in the <code>Deck</code> class should work with a <code>Hand</code> object.",HTML
+Option,0,<code>Hand</code> is a parent class and <code>Deck</code> is a child class.,HTML,"In this example, <code>Hand</code> inherits from <code>Deck</code>, so <code>Hand</code> is the child class and <code>Deck</code> is the parent.",HTML
+Option,0,Every function that works with <code>Hand</code> should also work with <code>Deck</code>.,HTML,"If <code>Hand</code> inherits from <code>Deck</code>, it could have additional methods that don't work with <code>Deck</code>.",HTML
+Option,0,"Every <code>Hand</code> object has the same attributes as every <code>Deck</code> object, no more or less.",HTML,"If <code>Hand</code> inherits from <code>Deck</code>, a <code>Hand</code> object should have all of the attributes of a <code>Deck</code> object, but it can have more.",HTML
+
+NewQuestion,MC
+ID,TP3-chapter17-q04
+Title,"Think Python, Chapter 17: Inheritance, question 4"
+QuestionText,<p>What do we call it when one method invokes another to do most or all of the work?</p>,HTML
+Points,1
+Difficulty,1
+Option,0,generalization,HTML,Generalization is when we add a parameter to a function to make its capabilities more general.,HTML
+Option,100,delegation,HTML,Delegation is when one method passes responsibility to another method to do most or all of the work.,HTML
+Option,0,inheritance,HTML,Inheritance is the ability to define a new class that is a modified version of a previously defined class.,HTML
+Option,0,specialization,HTML,Specialization is a way of using inheritance to create a new class that is a specialized version of an existing class.,HTML
+

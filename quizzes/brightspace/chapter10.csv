@@ -1,0 +1,42 @@
+﻿NewQuestion,MC
+ID,TP3-chapter10-q01
+Title,"Think Python, Chapter 10: Dictionaries, question 1"
+QuestionText,"<p>What is the value of the dictionary <code>d</code> after these statements run?</p>
+<pre><code>d = {'a': 1, 'b': 2}
+d['a'] = 3
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,100,"<code>{'a': 3, 'b': 2}</code>",HTML,The second assignment statement updates the value associated with the key <code>'a'</code>.,HTML
+Option,0,"<code>{'a': 1, 'b': 2}</code>",HTML,The second assignment statement changes the value associated with the key <code>'a'</code>.,HTML
+Option,0,"<code>{'a': 1, 'b': 2, 'a': 3}</code>",HTML,Each key can only appear once in a dictionary.,HTML
+Option,0,These statements cause a runtime error,HTML,This code runs without causing an error.,HTML
+
+NewQuestion,MC
+ID,TP3-chapter10-q02
+Title,"Think Python, Chapter 10: Dictionaries, question 2"
+QuestionText,"<p>What is the value of the dictionary <code>d</code> after running these statements?</p>
+<pre><code>d = {'a': 1, 'b': 2}
+d['c'] += 1
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,0,"<code>{'a': 1, 'b': 2, 'c': 3}</code>",HTML,The <code>+=</code> operator looks up the key to get the old value before adding <code>1</code>.,HTML
+Option,0,"<code>{'a': 1, 'b': 2, 'c': 1}</code>",HTML,The <code>+=</code> operator looks up the key to get the old value before adding <code>1</code>.,HTML
+Option,100,These statements cause a runtime error.,HTML,"Because <code>c</code> does not appear as a key in the dictionary, the second statement causes a <code>KeyError</code>.",HTML
+Option,0,"<code>{'a': 1, 'b': 2}</code>",HTML,The <code>+=</code> operator looks up the key to get the old value before adding <code>1</code>.,HTML
+
+NewQuestion,MC
+ID,TP3-chapter10-q03
+Title,"Think Python, Chapter 10: Dictionaries, question 3"
+QuestionText,"<p>What happens when the following statements run?</p>
+<pre><code>d1 = {'a': 1, 'b': 2}
+d2 = {d1: 3}
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,0,They cause a <code>KeyError</code> because <code>d1</code> is not in <code>d2</code>.,HTML,"Dictionaries are mutable, so they are not hashable, so they cannot appear as a key in a dictionary, but that's not a <code>KeyError</code>.",HTML
+Option,100,They cause a <code>TypeError</code> because a dictionary cannot appear as a key in a dictionary.,HTML,"Dictionaries are mutable, so they are not hashable, so they cannot appear as a key in a dictionary.",HTML
+Option,0,They cause a <code>ValueError</code> because <code>3</code> cannot appear as a value in a dictionary.,HTML,"Dictionaries are mutable, so they are not hashable, so they cannot appear as a key in a dictionary, but that's not a <code>ValueError</code>.",HTML
+Option,0,They add <code>d1</code> as a key in <code>d2</code>.,HTML,"Dictionaries are mutable, so they are not hashable, so they cannot appear as a key in a dictionary.",HTML
+

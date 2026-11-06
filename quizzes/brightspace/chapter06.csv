@@ -1,0 +1,42 @@
+﻿NewQuestion,MC
+ID,TP3-chapter06-q01
+Title,"Think Python, Chapter 6: Return Values, question 1"
+QuestionText,"<p>What is the return value if we call this function with the value <code>3</code>?</p>
+<pre><code>def collatz(x):
+    if x % 2 == 0:
+        return x // 2
+    else:
+        return x * 3 + 1
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,0,<code>1</code>,HTML,"Because <code>3 % 2</code> is <code>1</code>, the second branch of the conditional runs.",HTML
+Option,0,It causes an error.,HTML,"This function works. Because <code>3 % 2</code> is <code>1</code>, the second branch of the conditional runs, and the result is <code>3 * 3 + 1</code>, which is <code>10</code>.",HTML
+Option,0,<code>1.5</code>,HTML,"Because <code>3 % 2</code> is <code>1</code>, the second branch of the conditional runs. Also, because <code>//</code> does integer division, <code>3 // 2</code> is <code>1</code>.",HTML
+Option,100,<code>10</code>,HTML,"Because <code>3 % 2</code> is <code>1</code>, the second branch of the conditional runs, and the result is <code>3 * 3 + 1</code>, which is <code>10</code>.",HTML
+
+NewQuestion,MC
+ID,TP3-chapter06-q02
+Title,"Think Python, Chapter 6: Return Values, question 2"
+QuestionText,<p>What do we call a function that does not print anything or have any effect other than a return value?</p>,HTML
+Points,1
+Difficulty,1
+Option,0,incremental,HTML,Incremental development is a way of writing programs by making small changes and testing.,HTML
+Option,0,dead code,HTML,"Dead code is code that can never run, often because it appears after a <code>return</code> statement.",HTML
+Option,0,recursive,HTML,"A recursive function calls itself, but it might print something or have some other effect.",HTML
+Option,100,pure function,HTML,A pure function does not print anything or have any effect other than a return value.,HTML
+
+NewQuestion,MC
+ID,TP3-chapter06-q03
+Title,"Think Python, Chapter 6: Return Values, question 3"
+QuestionText,"<p>What is the result of calling this function with the values <code>x=1.5</code> and <code>y=1.6</code>?</p>
+<pre><code>def is_close(x, y):
+    return abs(x - y) &lt; 0.2
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,0,There is a runtime error.,HTML,The function is correct as long as the values of <code>x</code> and <code>y</code> are numbers.,HTML
+Option,100,<code>True</code>,HTML,"The absolute difference between <code>1.5</code> and <code>1.6</code> is <code>0.1</code>, which is less than <code>0.2</code>.",HTML
+Option,0,There is a syntax error.,HTML,The syntax of the function is correct.,HTML
+Option,0,<code>False</code>,HTML,"The absolute difference between <code>1.5</code> and <code>1.6</code> is <code>0.1</code>, which is less than <code>0.2</code>.",HTML
+

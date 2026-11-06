@@ -1,0 +1,42 @@
+﻿NewQuestion,MC
+ID,TP3-chapter13-q01
+Title,"Think Python, Chapter 13: Files and Databases, question 1"
+QuestionText,"<p>If the current working directory is <code>/home/dinsdale/photos</code> and you open a file using the relative path <code>mar-2023/photo1.jpg</code>, which of these expressions computes the absolute path of the file that gets opened?</p>",HTML
+Points,1
+Difficulty,1
+Option,0,<code>'/home/dinsdale/photos' + 'mar-2023/photo1.jpg'</code>,HTML,This way of using the string concatenation does not put a slash between the directories in the path.,HTML
+Option,100,"<code>os.path.join('/home/dinsdale/photos', 'mar-2023/photo1.jpg')</code>",HTML,"The <code>os.path.join</code> function joins the two paths with either a forward or backward slash, depending on which operating system is running.",HTML
+Option,0,<code>'mar-2023/photo1.jpg' + '/home/dinsdale/photos'</code>,HTML,"The order of the working directory and the relative path is reversed. Also, this way of using the string concatenation does not put a slash between the directories in the path.",HTML
+Option,0,"<code>''.join(['/home/dinsdale/photos', 'mar-2023/photo1.jpg'])</code>",HTML,This way of using the string <code>join</code> method does not put a slash between the directories in the path.,HTML
+
+NewQuestion,MC
+ID,TP3-chapter13-q02
+Title,"Think Python, Chapter 13: Files and Databases, question 2"
+QuestionText,"<p>After these statements run, what is the value of <code>s</code>?</p>
+<pre><code>x = 1
+t = 1,
+s = f'x is an int, {x}. t is a tuple, {t}'
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,0,This is an error because <code>{x}</code> and <code>{t}</code> are not valid dictionaries.,HTML,<code>{x}</code> and <code>{t}</code> are not dictionaries -- the curly braces indicate that they are expressions that get replaced with string representations of their values.,HTML
+Option,0,This is an error because a tuple can't be used as a value in an f-string.,HTML,Any valid expression can be used in an f-string.,HTML
+Option,0,"<code>'x is an int, {x}. t is a tuple, {t}'</code>",HTML,"Inside the f-string, the expressions in curly braces are replaced with string representations of their values.",HTML
+Option,100,"<code>'x is an int, 1. t is a tuple, (1,)'</code>",HTML,"Inside the f-string, the expressions in curly braces are replaced with string representations of their values.",HTML
+
+NewQuestion,MC
+ID,TP3-chapter13-q03
+Title,"Think Python, Chapter 13: Files and Databases, question 3"
+QuestionText,"<p>After these statements run, what is the value of <code>db[key]</code>?</p>
+<pre><code>db = shelve.open('anagram_map', 'n')
+key = 'opst'
+db[key] = []
+db[key].append('stop')
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,0,<code>['stop']</code>,HTML,"The <code>append</code> method does not work as intended here because it modifies only the list in memory, not the one in the database.",HTML
+Option,0,"<code>[], 'stop'</code>",HTML,"The <code>append</code> method does not work as intended here because it modifies only the list in memory, not the one in the database.",HTML
+Option,0,<code>'stop'</code>,HTML,"The <code>append</code> method does not work as intended here because it modifies only the list in memory, not the one in the database.",HTML
+Option,100,<code>[]</code>,HTML,"The <code>append</code> method does not work as intended here because it modifies only the list in memory, not the one in the database.",HTML
+

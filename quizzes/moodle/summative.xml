@@ -1,0 +1,695 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+  <question type="category">
+    <category><text>$course$/top/Think Python/Think Python: summative quiz</text></category>
+    <info format="html"><text><![CDATA[Summative quiz covering Chapters 1-18. From <em>Think Python</em>, 3rd edition, by Allen B. Downey (https://allendowney.github.io/ThinkPython/), CC BY-NC-SA 4.0.]]></text></info>
+  </question>
+  <question type="multichoice">
+    <name><text>TP3-summative-q01</text></name>
+    <questiontext format="html"><text><![CDATA[<p>What is the output of this program?</p>
+<pre><code>s = '3'
+str(s) * int(s)
+</code></pre>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-summative-q01</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[The integer <code>9</code>]]></text>
+      <feedback format="html"><text><![CDATA[<code>str(s)</code> is the string <code>'3'</code>, and <code>int(s)</code> is the integer <code>3</code>. See Chapter 1, "Programming as a way of thinking".]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[The string <code>'9'</code>]]></text>
+      <feedback format="html"><text><![CDATA[Multiplying a string by the integer <code>3</code> repeats the string three times. See Chapter 1, "Programming as a way of thinking".]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[The integer <code>333</code>]]></text>
+      <feedback format="html"><text><![CDATA[When we multiply a string by an integer, the result is a string. See Chapter 1, "Programming as a way of thinking".]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[The string <code>'333'</code>]]></text>
+      <feedback format="html"><text><![CDATA[Multiplying a string by the integer <code>3</code> repeats the string three times. See Chapter 1, "Programming as a way of thinking".]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>TP3-summative-q02</text></name>
+    <questiontext format="html"><text><![CDATA[<p>For this function to work without causing an error, what are the preconditions for <code>n</code>?</p>
+<pre><code>def countdown(n):
+    if n == 0:
+        print('Blastoff!')
+    else:
+        print(n)
+        countdown(n-1)
+</code></pre>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-summative-q02</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>n</code> must be a <code>float</code>.]]></text>
+      <feedback format="html"><text><![CDATA[<code>n</code> can be a <code>float</code> with no fraction part, but it can also be an <code>int</code>. See Chapter 5, "Conditionals and Recursion".]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>n</code> must be negative.]]></text>
+      <feedback format="html"><text><![CDATA[If <code>n</code> is negative, it recurses until the stack reaches its limit and causes a <code>RecursionError</code>. See Chapter 5, "Conditionals and Recursion".]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>n</code> must be strictly positive, not <code>0</code>.]]></text>
+      <feedback format="html"><text><![CDATA[If <code>n</code> is <code>0</code>, the function prints <code>'Blastoff!'</code> and returns without making a recursive call. See Chapter 5, "Conditionals and Recursion".]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<code>n</code> must be a positive integer or <code>0</code>.]]></text>
+      <feedback format="html"><text><![CDATA[<code>n</code> must be non-negative -- that is, positive or <code>0</code>. See Chapter 5, "Conditionals and Recursion".]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>TP3-summative-q03</text></name>
+    <questiontext format="html"><text><![CDATA[<p>What is wrong with the following program?</p>
+<pre><code>def compare(x, y):
+    if x &lt; y:
+        return -1
+    else:
+        return 1
+    return 0
+</code></pre>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-summative-q03</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[It has a syntax error because the last line is not indented.]]></text>
+      <feedback format="html"><text><![CDATA[The syntax of the program is correct, but there is an error. See Chapter 6, "Return Values".]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[It has a runtime error because the return value cannot be negative.]]></text>
+      <feedback format="html"><text><![CDATA[Any value is a legal return value -- but there is a semantic error because the last line can never run. See Chapter 6, "Return Values".]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[It has a syntax error because it has more than one return statement.]]></text>
+      <feedback format="html"><text><![CDATA[The syntax of the program is correct, but there is a semantic error because the last line can never run. See Chapter 6, "Return Values".]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[It has a semantic error because the last line is dead code.]]></text>
+      <feedback format="html"><text><![CDATA[There is a <code>return</code> statement in both branches of the <code>if</code> statement, so the last line can never run -- it is dead code. See Chapter 6, "Return Values".]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>TP3-summative-q04</text></name>
+    <questiontext format="html"><text><![CDATA[<p>What is the output of this program, or is there an error?</p>
+<pre><code>def rectangle_area(length, width):
+    return length * width
+
+area = rectangle_area(3, 5)
+print(length)
+</code></pre>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-summative-q04</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>3</code> because the first argument gets assigned to <code>length</code>.]]></text>
+      <feedback format="html"><text><![CDATA[<code>3</code> does get assigned to <code>length</code>, but the parameter only exists inside the function. See Chapter 6, "Return Values".]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>5</code> because the second argument gets assigned to <code>length</code>.]]></text>
+      <feedback format="html"><text><![CDATA[The first argument gets assigned to <code>length</code>, but the parameter only exists inside the function. See Chapter 6, "Return Values".]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Syntax error because there are two variables in the return statement.]]></text>
+      <feedback format="html"><text><![CDATA[The variables are part of an arithmetic expression, which can be used in a return statement. See Chapter 6, "Return Values".]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Runtime error because the parameter <code>length</code> does not exist outside the function.]]></text>
+      <feedback format="html"><text><![CDATA[Parameters and local variables only exist inside the functions where they are defined. See Chapter 6, "Return Values".]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>TP3-summative-q05</text></name>
+    <questiontext format="html"><text><![CDATA[<p>What is wrong with the following program?</p>
+<pre><code>s = int('123')
+for digit in s:
+    print(digit)
+</code></pre>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-summative-q05</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[There is nothing wrong -- the program is correct.]]></text>
+      <feedback format="html"><text><![CDATA[The program generates a <code>TypeError</code>. See Chapter 7, "Iteration and Search".]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>digit</code> is not a legal name for a loop variable.]]></text>
+      <feedback format="html"><text><![CDATA[Any legal variable name can be used as a loop variable. See Chapter 7, "Iteration and Search".]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>int</code> is a type, not a function.]]></text>
+      <feedback format="html"><text><![CDATA[<code>int</code> is a type, but it can be used as a function to convert other types to integers. See Chapter 7, "Iteration and Search".]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<code>s</code> is not a sequence, so we can't loop through its elements.]]></text>
+      <feedback format="html"><text><![CDATA[<code>s</code> is an integer, which is not a sequence, so it can't be looped over. See Chapter 7, "Iteration and Search".]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>TP3-summative-q06</text></name>
+    <questiontext format="html"><text><![CDATA[<p>If <code>s</code> is a string, which of these is a correct way to convert it to lowercase?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-summative-q06</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>lower(s)</code>]]></text>
+      <feedback format="html"><text><![CDATA[<code>lower</code> is a method, so it has to be invoked on a string, as in <code>s.lower()</code>; and it creates a new string, which should be assigned to a variable. See Chapter 7, "Iteration and Search".]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>s = lower(s)</code>]]></text>
+      <feedback format="html"><text><![CDATA[<code>lower</code> is a method, so it has to be invoked on a string, as in <code>s.lower()</code>. See Chapter 7, "Iteration and Search".]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>s.lower()</code>]]></text>
+      <feedback format="html"><text><![CDATA[<code>s.lower()</code> creates a new string, but if the string is not assigned to a variable, there is no way to access it. See Chapter 7, "Iteration and Search".]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<code>s = s.lower()</code>]]></text>
+      <feedback format="html"><text><![CDATA[<code>s.lower()</code> creates a new string -- if we assign it back to <code>s</code>, the new string replaces the old one. See Chapter 7, "Iteration and Search".]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>TP3-summative-q07</text></name>
+    <questiontext format="html"><text><![CDATA[<p>The following function takes two strings as parameters and returns a string.
+Which of the following docstrings is a correct description of what this function does?</p>
+<pre><code>def compute(word1, word2):
+    t = []
+    for letter in word1:
+        if letter in word2:
+            t.append(letter)
+    return ''.join(t)
+</code></pre>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-summative-q07</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Returns the letters that appear in either <code>word1</code> or <code>word2</code> or both.]]></text>
+      <feedback format="html"><text><![CDATA[In order to get to the <code>append</code> method, <code>letter</code> has to appear in both words. See Chapter 7, "Iteration and Search".]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Returns the letters that appear in either <code>word1</code> or <code>word2</code> but not both.]]></text>
+      <feedback format="html"><text><![CDATA[In order to get to the <code>append</code> method, <code>letter</code> has to appear in both words. See Chapter 7, "Iteration and Search".]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Returns the letters that appear in <code>word1</code> but not <code>word2</code>.]]></text>
+      <feedback format="html"><text><![CDATA[In order to get to the <code>append</code> method, <code>letter</code> has to appear in both words. See Chapter 7, "Iteration and Search".]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Returns the letters that appear in both <code>word1</code> and <code>word2</code>.]]></text>
+      <feedback format="html"><text><![CDATA[This function returns a string that contains the letters that appear in both <code>word1</code> and <code>word2</code>. See Chapter 7, "Iteration and Search".]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>TP3-summative-q08</text></name>
+    <questiontext format="html"><text><![CDATA[<p>This function is intended to convert the first letter of a word to lowercase and the rest of the letters to uppercase.</p>
+<pre><code>def lower_upper(word):
+    first = word[0]
+    rest = word[1:]
+    word = first.lower() + rest.upper()
+</code></pre>
+<p>What is the value of <code>word</code> if we call this function like this -- or is there an error?</p>
+<pre><code>word = lower_upper('Python')
+</code></pre>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-summative-q08</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[The result is a syntax error because a <code>:</code> character cannot appear inside the bracket operator.]]></text>
+      <feedback format="html"><text><![CDATA[A colon inside a bracket operator indicates a slice -- in this case, it selects all characters from the second to the end. See Chapter 8, "Strings and Regular Expressions".]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[The result is a runtime error because <code>0</code> is not a valid index.]]></text>
+      <feedback format="html"><text><![CDATA[<code>0</code> is a valid index -- it selects the first character in the string. See Chapter 8, "Strings and Regular Expressions".]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[The program is correct -- the value of <code>word</code> is <code>'pYTHON'</code>.]]></text>
+      <feedback format="html"><text><![CDATA[The function has no return statement, so it returns <code>None</code>. Assigning a new value to the parameter <code>word</code> has no effect outside the function. See Chapter 9, "Lists".]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[The program contains a semantic error -- the value of <code>word</code> is <code>None</code>.]]></text>
+      <feedback format="html"><text><![CDATA[The function has no return statement, so it returns <code>None</code>. Assigning a new value to the parameter <code>word</code> has no effect outside the function. See Chapter 9, "Lists".]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>TP3-summative-q09</text></name>
+    <questiontext format="html"><text><![CDATA[<p>If we use the <code>search</code> function in the <code>re</code> module, which of the following strings matches this pattern: <code>r'^a(bc|de)f$'</code>?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-summative-q09</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>'abcdef'</code>]]></text>
+      <feedback format="html"><text><![CDATA[The pattern <code>'(bc|de)'</code> requires either <code>'bc'</code> or <code>'de'</code> but not both. See Chapter 8, "Strings and Regular Expressions".]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>'zadef'</code>]]></text>
+      <feedback format="html"><text><![CDATA[The pattern <code>^a</code> requires the letter <code>a</code> at the beginning of the string. See Chapter 8, "Strings and Regular Expressions".]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>'abc'</code>]]></text>
+      <feedback format="html"><text><![CDATA[The pattern <code>f$</code> requires the letter <code>f</code> at the end of the string. See Chapter 8, "Strings and Regular Expressions".]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<code>'adef'</code>]]></text>
+      <feedback format="html"><text><![CDATA[This string has <code>'a'</code> at the beginning, <code>'f'</code> at the end, and <code>'de'</code> in the middle. See Chapter 8, "Strings and Regular Expressions".]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>TP3-summative-q10</text></name>
+    <questiontext format="html"><text><![CDATA[<p>What is the result of this program?</p>
+<pre><code>t = [1, 2, 3, 4]
+t[1:-1]
+</code></pre>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-summative-q10</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[An <code>IndexError</code> because <code>-1</code> is not a legal index.]]></text>
+      <feedback format="html"><text><![CDATA[Negative indices count backward from the end of the sequence, so the slice index <code>1:-1</code> selects elements from the second to the second-to-last, including both. See Chapter 9, "Lists".]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>[1, 2, 3]</code>]]></text>
+      <feedback format="html"><text><![CDATA[The slice index <code>1:-1</code> excludes the first element of the list. See Chapter 9, "Lists".]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>[2, 3, 4]</code>]]></text>
+      <feedback format="html"><text><![CDATA[The slice index <code>1:-1</code> excludes the last element of the list. See Chapter 9, "Lists".]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<code>[2, 3]</code>]]></text>
+      <feedback format="html"><text><![CDATA[The slice index <code>1:-1</code> selects elements from the second to the second-to-last, including both. See Chapter 9, "Lists".]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>TP3-summative-q11</text></name>
+    <questiontext format="html"><text><![CDATA[<p>After these statements run, what are the values of <code>a</code> and <code>b</code>, or is there an error?</p>
+<pre><code>a, b = 1, 2
+a, b = b, a
+</code></pre>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-summative-q11</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[There is a runtime error because the values on the right are tuples.]]></text>
+      <feedback format="html"><text><![CDATA[The values on the right are tuples, but these are legal assignment statements. See Chapter 11, "Tuples".]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[There is a syntax error because the assignment statement has more than one variable.]]></text>
+      <feedback format="html"><text><![CDATA[An assignment statement can have a tuple of variables on the left. See Chapter 11, "Tuples".]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>a</code> is <code>1</code> and <code>b</code> is <code>2</code>.]]></text>
+      <feedback format="html"><text><![CDATA[After the first assignment <code>a</code> is <code>1</code> and <code>b</code> is <code>2</code>, but the second assignment swaps the values. See Chapter 11, "Tuples".]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<code>a</code> is <code>2</code> and <code>b</code> is <code>1</code>.]]></text>
+      <feedback format="html"><text><![CDATA[After the first assignment <code>a</code> is <code>1</code> and <code>b</code> is <code>2</code>, and then the second assignment swaps the values. See Chapter 11, "Tuples".]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>TP3-summative-q12</text></name>
+    <questiontext format="html"><text><![CDATA[<p>Why can't a list appear as a key in a dictionary?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-summative-q12</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[The elements in a list might not be totally ordered.]]></text>
+      <feedback format="html"><text><![CDATA[If the elements of a list are not totally ordered, they are not sortable, but that's not the reason a list can't appear as a key in a dictionary. See Chapter 10, "Dictionaries" and Chapter 11, "Tuples".]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[The elements in a list can be different types.]]></text>
+      <feedback format="html"><text><![CDATA[The elements in a list can be different types, but that's not the reason a list can't appear as a key in a dictionary. See Chapter 10, "Dictionaries" and Chapter 11, "Tuples".]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Lists can contain any number of elements.]]></text>
+      <feedback format="html"><text><![CDATA[Lists can contain any number of elements, but that's not the reason a list can't appear as a key in a dictionary. See Chapter 10, "Dictionaries" and Chapter 11, "Tuples".]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Lists are mutable, which makes them unhashable.]]></text>
+      <feedback format="html"><text><![CDATA[If an object is mutable, it isn't hashable, which means it can't be used as a key in a dictionary. See Chapter 10, "Dictionaries" and Chapter 11, "Tuples".]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>TP3-summative-q13</text></name>
+    <questiontext format="html"><text><![CDATA[<p>What is the primary difference between a list and a tuple?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-summative-q13</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[A list can contain any type; a tuple can only contain hashable types.]]></text>
+      <feedback format="html"><text><![CDATA[Both lists and tuples can contain any type. Keys in dictionaries must be hashable. See Chapter 11, "Tuples".]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[A tuple can contain any type; a list can only contain hashable types.]]></text>
+      <feedback format="html"><text><![CDATA[Both lists and tuples can contain any type. Keys in dictionaries must be hashable. See Chapter 11, "Tuples".]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[A tuple is mutable; a list is immutable.]]></text>
+      <feedback format="html"><text><![CDATA[It's the other way around: a list is mutable; a tuple is immutable. See Chapter 11, "Tuples".]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[A list is mutable; a tuple is immutable.]]></text>
+      <feedback format="html"><text><![CDATA[A tuple is immutable. See Chapter 11, "Tuples".]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>TP3-summative-q14</text></name>
+    <questiontext format="html"><text><![CDATA[<p>Which of these is a correct way to reverse the elements of a list in place -- that is, by modifying an existing list without creating a new list?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-summative-q14</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>t = reversed(t)</code>]]></text>
+      <feedback format="html"><text><![CDATA[<code>reversed</code> does not modify <code>t</code> -- it returns an iterator that loops through the elements in reverse order, so this statement replaces the list with the iterator. See Chapter 11, "Tuples".]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>reversed(t)</code>]]></text>
+      <feedback format="html"><text><![CDATA[<code>reversed(t)</code> does not modify <code>t</code> -- it returns an iterator, and if the iterator is not assigned to a variable, there is no way to use it. See Chapter 11, "Tuples".]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>t = t.reverse()</code>]]></text>
+      <feedback format="html"><text><![CDATA[The return value from <code>t.reverse()</code> is <code>None</code>, so this statement sets <code>t</code> to <code>None</code>. See Chapter 11, "Tuples".]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<code>t.reverse()</code>]]></text>
+      <feedback format="html"><text><![CDATA[<code>t.reverse()</code> reverses the elements of <code>t</code> without creating a new list. See Chapter 11, "Tuples".]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>TP3-summative-q15</text></name>
+    <questiontext format="html"><text><![CDATA[<p>What is the result of this program?</p>
+<pre><code>s = ['bbb', 'aa', 'c']
+sorted(s, key=len, reverse=True)
+</code></pre>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-summative-q15</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>['aa', 'bbb', 'c']</code>]]></text>
+      <feedback format="html"><text><![CDATA[<code>key=len</code> sorts by length, rather than alphabetical order, and <code>reverse=True</code> sorts in descending order. See Chapter 12, "Text Analysis and Generation".]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>['c', 'aa', 'bbb']</code>]]></text>
+      <feedback format="html"><text><![CDATA[<code>reverse=True</code> sorts in descending order. See Chapter 12, "Text Analysis and Generation".]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>['c', 'bbb', 'aa']</code>]]></text>
+      <feedback format="html"><text><![CDATA[<code>key=len</code> sorts by length, rather than alphabetical order. See Chapter 12, "Text Analysis and Generation".]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<code>['bbb', 'aa', 'c']</code>]]></text>
+      <feedback format="html"><text><![CDATA[<code>key=len</code> sorts by length, rather than alphabetical order, and <code>reverse=True</code> sorts in descending order, so the result is <code>['bbb', 'aa', 'c']</code>. See Chapter 12, "Text Analysis and Generation".]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>TP3-summative-q16</text></name>
+    <questiontext format="html"><text><![CDATA[<p>What does the following function do?</p>
+<pre><code>def compute(d1, d2):
+    res = {}
+    for key in d1:
+        res[key] = d1[key]
+    for key in d2:
+        res[key] = d2[key]
+    return res
+</code></pre>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-summative-q16</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Adds the keys from <code>d1</code> to <code>d2</code>.]]></text>
+      <feedback format="html"><text><![CDATA[This function makes and returns a new dictionary. See Chapter 12, "Text Analysis and Generation".]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Adds the keys from <code>d2</code> to <code>d1</code>.]]></text>
+      <feedback format="html"><text><![CDATA[This function makes and returns a new dictionary. See Chapter 12, "Text Analysis and Generation".]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Makes a new dictionary with all keys that are in both <code>d1</code> and <code>d2</code>.]]></text>
+      <feedback format="html"><text><![CDATA[The new dictionary has all keys from either dictionary. See Chapter 12, "Text Analysis and Generation".]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Makes a new dictionary with all keys that are in either <code>d1</code> or <code>d2</code>.]]></text>
+      <feedback format="html"><text><![CDATA[The new dictionary has all keys from either dictionary. If the same key appears in both, it gets the value from <code>d2</code>. See Chapter 12, "Text Analysis and Generation".]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>TP3-summative-q17</text></name>
+    <questiontext format="html"><text><![CDATA[<p>Suppose we run the following program to get the current working directory:</p>
+<pre><code>import os
+
+os.getcwd()
+</code></pre>
+<p>And the result is <code>/home/dinsdale/photos</code>.
+Now suppose we run the following program to check for the existence of a file:</p>
+<pre><code>os.path.exists('apr-2023/photo1.jpg')
+</code></pre>
+<p>What is the absolute path of the file that gets checked?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-summative-q17</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>'photo1.jpg'</code>]]></text>
+      <feedback format="html"><text><![CDATA[Because <code>'apr-2023/photo1.jpg'</code> is a relative path, it gets joined to the current working directory. See Chapter 13, "Files and Databases".]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>'apr-2023/photo1.jpg'</code>]]></text>
+      <feedback format="html"><text><![CDATA[Because <code>'apr-2023/photo1.jpg'</code> is a relative path, it gets joined to the current working directory. See Chapter 13, "Files and Databases".]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>'/home/dinsdale/photo1.jpg'</code>]]></text>
+      <feedback format="html"><text><![CDATA[Because <code>'apr-2023/photo1.jpg'</code> is a relative path, it gets joined to the current working directory. See Chapter 13, "Files and Databases".]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<code>'/home/dinsdale/photos/apr-2023/photo1.jpg'</code>]]></text>
+      <feedback format="html"><text><![CDATA[Because <code>'apr-2023/photo1.jpg'</code> is a relative path, it gets joined to the current working directory. See Chapter 13, "Files and Databases".]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>TP3-summative-q18</text></name>
+    <questiontext format="html"><text><![CDATA[<p>What is the result of this program?</p>
+<pre><code>class Day:
+    def __init__(self, day):
+        self.day = day
+
+    def __str__(date):
+        return f'Today is {date.day}'
+
+print(Day('Wednesday'))
+</code></pre>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-summative-q18</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>f'Today is Wednesday'</code>]]></text>
+      <feedback format="html"><text><![CDATA[The <code>f</code> before the string indicates that it is a format string. See Chapter 15, "Classes and Methods".]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>Today is {Wednesday}</code>]]></text>
+      <feedback format="html"><text><![CDATA[The curly braces don't appear in the return value. See Chapter 15, "Classes and Methods".]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>Today is {date.day}</code>]]></text>
+      <feedback format="html"><text><![CDATA[The <code>f</code> before the string indicates that it is a format string, and the expression in curly braces gets replaced by its value. See Chapter 15, "Classes and Methods".]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<code>Today is Wednesday</code>]]></text>
+      <feedback format="html"><text><![CDATA[In a format string, the expression in curly braces gets replaced by its value. See Chapter 15, "Classes and Methods".]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>TP3-summative-q19</text></name>
+    <questiontext format="html"><text><![CDATA[<p>Assuming that the <code>Animal</code> class exists, what is the output of this program?</p>
+<pre><code>class Cat(Animal):
+    &quot;&quot;&quot;Represents a cat.&quot;&quot;&quot;
+
+cat = Cat()
+isinstance(cat, Animal)
+</code></pre>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-summative-q19</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>False</code> because an instance of a parent class is not an instance of the child class.]]></text>
+      <feedback format="html"><text><![CDATA[It's true that an instance of a parent class is not an instance of the child class, but that's not what's being checked here. See Chapter 17, "Inheritance".]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>False</code> because an instance of a child class is not an instance of the parent class.]]></text>
+      <feedback format="html"><text><![CDATA[Every instance of a child class is also an instance of the parent class. See Chapter 17, "Inheritance".]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>True</code> because every instance of a parent class is also an instance of the child class.]]></text>
+      <feedback format="html"><text><![CDATA[An instance of a parent class is not an instance of the child class. See Chapter 17, "Inheritance".]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<code>True</code> because every instance of a child class is also an instance of the parent class.]]></text>
+      <feedback format="html"><text><![CDATA[In this example, <code>Cat</code> is a child class of <code>Animal</code>, so every <code>Cat</code> object is also an instance of <code>Animal</code>. See Chapter 17, "Inheritance".]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>TP3-summative-q20</text></name>
+    <questiontext format="html"><text><![CDATA[<p>What is the result of this program?</p>
+<pre><code>from collections import namedtuple
+
+Point = namedtuple('Point', ['x', 'y'])
+p = Point(3, 4)
+p[1]
+</code></pre>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-summative-q20</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>AttributeError</code> because the attributes of <code>p</code> are <code>x</code> and <code>y</code>.]]></text>
+      <feedback format="html"><text><![CDATA[The attributes of <code>p</code> are <code>x</code> and <code>y</code>, but because <code>p</code> is a <code>namedtuple</code>, we can use the bracket operator to access the elements by index. See Chapter 18, "Python Extras".]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>IndexError</code> because the attributes of <code>p</code> are <code>x</code> and <code>y</code>.]]></text>
+      <feedback format="html"><text><![CDATA[The attributes of <code>p</code> are <code>x</code> and <code>y</code>, but because <code>p</code> is a <code>namedtuple</code>, we can use the bracket operator to access the elements by index. See Chapter 18, "Python Extras".]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>3</code> because <code>p</code> is a <code>namedtuple</code> and the element with index <code>1</code> is <code>3</code>.]]></text>
+      <feedback format="html"><text><![CDATA[In a named tuple -- as in a tuple -- the index of the first element is <code>0</code>. See Chapter 18, "Python Extras".]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<code>4</code> because <code>p</code> is a <code>namedtuple</code> and the element with index <code>1</code> is <code>4</code>.]]></text>
+      <feedback format="html"><text><![CDATA[In a named tuple -- as in a tuple -- the index of the second element is <code>1</code>. See Chapter 18, "Python Extras".]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>TP3-summative-q21</text></name>
+    <questiontext format="html"><text><![CDATA[<p>We can call the built-in function <code>round</code> like this:</p>
+<pre><code>import math
+
+round(math.pi, ndigits=3)
+</code></pre>
+<p>The result is the value of <code>math.pi</code> rounded off to three decimal places.
+Now suppose we have the positional argument in a tuple and the keyword argument in a dictionary, like this:</p>
+<pre><code>args = (math.pi,)
+kwargs = {&quot;ndigits&quot;: 3}
+</code></pre>
+<p>Which of these is a correct way to call <code>round</code> and get the same result?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-summative-q21</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>round(args, kwargs)</code>]]></text>
+      <feedback format="html"><text><![CDATA[In order to pass the elements of <code>args</code> as positional arguments, we have to unpack them with the <code>*</code> operator. Similarly, to pass the items in <code>kwargs</code> as keyword arguments, we have to unpack them with the <code>**</code> operator. See Chapter 18, "Python Extras".]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>round(*args, *kwargs)</code>]]></text>
+      <feedback format="html"><text><![CDATA[To pass the items in <code>kwargs</code> as keyword arguments, we have to unpack them with the <code>**</code> operator. See Chapter 18, "Python Extras".]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>round(**args, **kwargs)</code>]]></text>
+      <feedback format="html"><text><![CDATA[To pass the elements of <code>args</code> as positional arguments, we have to unpack them with the <code>*</code> operator. See Chapter 18, "Python Extras".]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<code>round(*args, **kwargs)</code>]]></text>
+      <feedback format="html"><text><![CDATA[The <code>*</code> operator unpacks the elements of <code>args</code> and the <code>**</code> operator unpacks the items in <code>kwargs</code>. See Chapter 18, "Python Extras".]]></text></feedback>
+    </answer>
+  </question>
+</quiz>

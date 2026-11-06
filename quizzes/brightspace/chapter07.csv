@@ -1,0 +1,47 @@
+﻿NewQuestion,MC
+ID,TP3-chapter07-q01
+Title,"Think Python, Chapter 7: Iteration and Search, question 1"
+QuestionText,"<p>This function is supposed to return <code>True</code> if <code>word</code> contains <code>'A'</code> or <code>'a'</code>, and <code>False</code> otherwise. But it doesn't work -- what's wrong?</p>
+<pre><code>def has_a(word):
+    for letter in word.lower():
+        if letter == 'a':
+            return True
+        else:
+            return False
+        return False
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,0,"It only checks for lowercase <code>'a'</code>, not uppercase <code>'A'</code>.",HTML,"It uses <code>lower</code> to convert <code>word</code> to lowercase, so if uppercase <code>'A'</code> is in the string, it would be found.",HTML
+Option,0,It causes a runtime error if <code>word</code> is an empty string.,HTML,"If <code>word</code> is an empty string, the body of the loop never runs and the function returns <code>False</code>, which is correct.",HTML
+Option,100,It only checks the first letter of <code>word</code>.,HTML,"Both branches of the conditional have <code>return</code> statements, so this function ends after checking the first letter.",HTML
+Option,0,The first line of the for statement has a syntax error.,HTML,The syntax of the function is correct.,HTML
+
+NewQuestion,MC
+ID,TP3-chapter07-q02
+Title,"Think Python, Chapter 7: Iteration and Search, question 2"
+QuestionText,"<p>Which of these is a legal way to increment <code>x</code>, assuming it has already been assigned a value?</p>",HTML
+Points,1
+Difficulty,1
+Option,0,<code>x++</code>,HTML,"Some programming languages use the <code>++</code> operator to increment a variable, but not Python.",HTML
+Option,100,<code>x = x + 1</code>,HTML,This is a legal way to update the value of <code>x</code>.,HTML
+Option,0,<code>x + 1 = x</code>,HTML,The left side of an assignment can't be an expression like <code>x + 1</code>.,HTML
+Option,0,<code>x = +1</code>,HTML,"The value <code>+1</code> is the same as <code>1</code>, so this statement assigns the value <code>1</code> to <code>x</code>.",HTML
+
+NewQuestion,MC
+ID,TP3-chapter07-q03
+Title,"Think Python, Chapter 7: Iteration and Search, question 3"
+QuestionText,"<p>What does this function do?</p>
+<pre><code>def check(word, letters):
+    for letter in word.lower():
+        if letter in letters.lower():
+            return False
+    return True
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,0,Returns <code>True</code> if all of the letters in <code>letters</code> appear in <code>word</code>.,HTML,"It returns <code>False</code> as soon as it finds a letter in <code>word</code> that is also in <code>letters</code>, so it only returns <code>True</code> if none of them appear.",HTML
+Option,100,Returns <code>True</code> if none of the letters in <code>letters</code> appear in <code>word</code>.,HTML,It returns <code>True</code> if it gets to the end of <code>word</code> and exits the loop having found none of the letters in <code>letters</code>.,HTML
+Option,0,Returns <code>True</code> if any of the letters in <code>letters</code> appear in <code>word</code>.,HTML,It only returns <code>True</code> if it gets to the end of <code>word</code> and exits the loop having found none of the letters in <code>letters</code>.,HTML
+Option,0,Returns <code>True</code> if the first letter of <code>word</code> does not appear in <code>letters</code>.,HTML,"The loop doesn't stop after the first letter -- it only returns early if it finds a letter that is in <code>letters</code>, so it checks every letter in <code>word</code>.",HTML
+

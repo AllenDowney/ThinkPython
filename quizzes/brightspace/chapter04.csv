@@ -1,0 +1,48 @@
+﻿NewQuestion,MC
+ID,TP3-chapter04-q01
+Title,"Think Python, Chapter 4: Functions and Interfaces, question 1"
+QuestionText,"<p>What is wrong with this function, if anything?</p>
+<pre><code>def square(length):
+    for i in range(4):
+        forward(50)
+        left(90)
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,100,"It always draws the same size square, regardless of <code>length</code>.",HTML,The size is always <code>50</code> -- the value of <code>length</code> is never used.,HTML
+Option,0,It does not bring the Turtle back to where it started.,HTML,"The <code>Turtle</code> ends where it started, facing in the same direction.",HTML
+Option,0,There are no errors in this function.,HTML,There is an error!,HTML
+Option,0,The indentation of the statements in the <code>for</code> loop is incorrect.,HTML,The indentation in this function is correct.,HTML
+
+NewQuestion,MC
+ID,TP3-chapter04-q02
+Title,"Think Python, Chapter 4: Functions and Interfaces, question 2"
+QuestionText,<p>What is it called when you put working statements into a new function definition?</p>,HTML
+Points,1
+Difficulty,1
+Option,0,indentation,HTML,"You might have to indent the statements when you put them in a function definition, but that's not what the whole process is called.",HTML
+Option,100,encapsulation,HTML,Encapsulation is the process of transforming a sequence of statements into a function definition.,HTML
+Option,0,debugging,HTML,"If the statements are working, they don't have to be debugged.",HTML
+Option,0,generalization,HTML,Generalization is when you add a parameter to a function to make it more general.,HTML
+
+NewQuestion,MC
+ID,TP3-chapter04-q03
+Title,"Think Python, Chapter 4: Functions and Interfaces, question 3"
+QuestionText,"<p>Here are two versions of the <code>circle</code> function.</p>
+<pre><code>def circle(radius):
+    circumference = 2 * math.pi * radius
+    n = 30
+    length = circumference / n
+    polygon(n, length)
+
+def circle(radius):
+    arc(radius, 360)
+</code></pre>
+<p>What can we say about these functions?</p>",HTML
+Points,1
+Difficulty,1
+Option,100,"They have the same interface, but different implementations.",HTML,"They take the same parameter and have the same effect, so they have the same interface -- but they accomplish the effect in different ways, so they have different implementations.",HTML
+Option,0,They have the same interface <em>and</em> the same implementation.,HTML,"They take the same parameter and have the same effect, so they have the same interface -- but they accomplish the effect in different ways, so they have different implementations.",HTML
+Option,0,They have neither the same interface nor the same implementation.,HTML,"They take the same parameter and have the same effect, so they have the same interface -- but they accomplish the effect in different ways, so they have different implementations.",HTML
+Option,0,"They have the same implementation, but different interfaces.",HTML,"They take the same parameter and have the same effect, so they have the same interface -- but they accomplish the effect in different ways, so they have different implementations.",HTML
+

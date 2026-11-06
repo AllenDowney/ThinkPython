@@ -19,7 +19,7 @@ Numbered tasks for tracking work. Each task has a permanent number; add new task
 - **Task 13:** Search engine optimization — **done bar two follow-ups**: Allen's Search Console submission, and the 6-week / 3-month comparisons (due ~2026-12-01 and ~2027-01-19).
 - **Task 14:** First edition (Python 2): source, releases — **done**; 2.0.18 released 2026-10-30.
 - **Task 15:** Rename the first-edition branch `master` → `v1` — **done** 2026-10-30.
-- **Task 16:** Quizzes that LMSs can import ([plan](planning/lms_quizzes.md)) — **in progress**; questions fixed, all three formats generated, QTI 1.2 tested on Canvas; next publish to `quizzes/`.
+- **Task 16:** Quizzes that LMSs can import ([plan](planning/lms_quizzes.md)) — **in progress**; questions fixed, **published** to [`quizzes/`](quizzes/) 2026-11-06; website page goes live with the next site publish; Moodle and Brightspace untested.
 
 **No issues or PRs are open** (2026-11-06), in this repo, ThinkPythonSolutions or ThinkPython2.
 
@@ -598,6 +598,7 @@ The book's 82 printed `thinkpython.com/code/…` links go to the **2nd edition's
 - [x] Settle the open questions in the plan — downloads in `quizzes/` here; generate the Brightspace CSV too; test on Canvas only
 - [x] QTI 1.2 exporter (`export_text2qti.py`, via `text2qti`), imported cleanly into Canvas 2026-11-06
 - [x] Moodle XML and Brightspace CSV exporter (`export_lms.py`), checked 2026-11-06 but untested on a real Moodle or Brightspace
-- [ ] Validate the generated XML in `make tests`
+- [ ] Validate the generated XML in `make tests` (checked by hand with `xmllint` so far)
 - [x] Canvas API access to a sandbox course; the old QTI 2.1 zips shown to fail silently
-- [ ] Publish, and retire the broken zips and the hand-made Brightspace CSV
+- [x] Publish: `quizzes/` built by `update.py`, linked from the README and `jb/quizzes.md`; broken zips, hand-made CSV and `convert_quizzes_to_qti.py` removed (2026-11-06)
+- [ ] Ask instructors on Moodle and Brightspace to try the files

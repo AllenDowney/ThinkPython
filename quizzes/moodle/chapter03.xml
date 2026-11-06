@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+  <question type="category">
+    <category><text>$course$/top/Think Python/Think Python, Chapter 3: Functions</text></category>
+    <info format="html"><text><![CDATA[Formative quiz for Chapter 3. From <em>Think Python</em>, 3rd edition, by Allen B. Downey (https://allendowney.github.io/ThinkPython/), CC BY-NC-SA 4.0.]]></text></info>
+  </question>
+  <question type="multichoice">
+    <name><text>TP3-chapter03-q01</text></name>
+    <questiontext format="html"><text><![CDATA[<p>When you define a function, what are the variables that appear in parentheses?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-chapter03-q01</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[arguments]]></text>
+      <feedback format="html"><text><![CDATA[An argument is a value you provide when you call a function.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[local variables]]></text>
+      <feedback format="html"><text><![CDATA[A local variable is a variable that gets assigned a value inside a function.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[function objects]]></text>
+      <feedback format="html"><text><![CDATA[A function object is the result of defining a new function.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[parameters]]></text>
+      <feedback format="html"><text><![CDATA[A parameter is a variable that gets a value when the function is called.]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>TP3-chapter03-q02</text></name>
+    <questiontext format="html"><text><![CDATA[<p>Which kind of statement can be used to run a line of code more than once?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-chapter03-q02</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[assignment statement]]></text>
+      <feedback format="html"><text><![CDATA[An assignment statement assigns a value to a variable.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[import statement]]></text>
+      <feedback format="html"><text><![CDATA[An import statement makes it possible to use functions in a module.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[print statement]]></text>
+      <feedback format="html"><text><![CDATA[A print statement displays the value of an expression.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<code>for</code> statement]]></text>
+      <feedback format="html"><text><![CDATA[A <code>for</code> statement can run a line of code, or multiple lines, more than once.]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>TP3-chapter03-q03</text></name>
+    <questiontext format="html"><text><![CDATA[<p>What is wrong with this function, if anything?</p>
+<pre><code>def bottle_line(n, suffix):
+    print(n)
+    print('bottles of beer')
+    print(suffix)
+</code></pre>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-chapter03-q03</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Instead of <code>def</code>, the first word should be <code>define</code>.]]></text>
+      <feedback format="html"><text><![CDATA[<code>def</code> is the right keyword to define a new function, although some other languages use <code>define</code>.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[You can't have more than one parameter in parentheses.]]></text>
+      <feedback format="html"><text><![CDATA[You can have any number of parameters in parentheses, including none.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Only the first statement of the body should be indented.]]></text>
+      <feedback format="html"><text><![CDATA[All of the statements in the body of the function should be indented.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[There are no errors in this function.]]></text>
+      <feedback format="html"><text><![CDATA[There is nothing wrong with this function.]]></text></feedback>
+    </answer>
+  </question>
+</quiz>

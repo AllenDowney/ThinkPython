@@ -1,0 +1,331 @@
+﻿NewQuestion,MC
+ID,TP3-summative-q01
+Title,"Think Python: summative quiz, question 1"
+QuestionText,"<p>What is the output of this program?</p>
+<pre><code>s = '3'
+str(s) * int(s)
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,0,The integer <code>333</code>,HTML,"When we multiply a string by an integer, the result is a string. See Chapter 1, ""Programming as a way of thinking"".",HTML
+Option,0,The integer <code>9</code>,HTML,"<code>str(s)</code> is the string <code>'3'</code>, and <code>int(s)</code> is the integer <code>3</code>. See Chapter 1, ""Programming as a way of thinking"".",HTML
+Option,0,The string <code>'9'</code>,HTML,"Multiplying a string by the integer <code>3</code> repeats the string three times. See Chapter 1, ""Programming as a way of thinking"".",HTML
+Option,100,The string <code>'333'</code>,HTML,"Multiplying a string by the integer <code>3</code> repeats the string three times. See Chapter 1, ""Programming as a way of thinking"".",HTML
+
+NewQuestion,MC
+ID,TP3-summative-q02
+Title,"Think Python: summative quiz, question 2"
+QuestionText,"<p>For this function to work without causing an error, what are the preconditions for <code>n</code>?</p>
+<pre><code>def countdown(n):
+    if n == 0:
+        print('Blastoff!')
+    else:
+        print(n)
+        countdown(n-1)
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,0,<code>n</code> must be negative.,HTML,"If <code>n</code> is negative, it recurses until the stack reaches its limit and causes a <code>RecursionError</code>. See Chapter 5, ""Conditionals and Recursion"".",HTML
+Option,0,<code>n</code> must be a <code>float</code>.,HTML,"<code>n</code> can be a <code>float</code> with no fraction part, but it can also be an <code>int</code>. See Chapter 5, ""Conditionals and Recursion"".",HTML
+Option,0,"<code>n</code> must be strictly positive, not <code>0</code>.",HTML,"If <code>n</code> is <code>0</code>, the function prints <code>'Blastoff!'</code> and returns without making a recursive call. See Chapter 5, ""Conditionals and Recursion"".",HTML
+Option,100,<code>n</code> must be a positive integer or <code>0</code>.,HTML,"<code>n</code> must be non-negative -- that is, positive or <code>0</code>. See Chapter 5, ""Conditionals and Recursion"".",HTML
+
+NewQuestion,MC
+ID,TP3-summative-q03
+Title,"Think Python: summative quiz, question 3"
+QuestionText,"<p>What is wrong with the following program?</p>
+<pre><code>def compare(x, y):
+    if x &lt; y:
+        return -1
+    else:
+        return 1
+    return 0
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,0,It has a syntax error because it has more than one return statement.,HTML,"The syntax of the program is correct, but there is a semantic error because the last line can never run. See Chapter 6, ""Return Values"".",HTML
+Option,0,It has a runtime error because the return value cannot be negative.,HTML,"Any value is a legal return value -- but there is a semantic error because the last line can never run. See Chapter 6, ""Return Values"".",HTML
+Option,0,It has a syntax error because the last line is not indented.,HTML,"The syntax of the program is correct, but there is an error. See Chapter 6, ""Return Values"".",HTML
+Option,100,It has a semantic error because the last line is dead code.,HTML,"There is a <code>return</code> statement in both branches of the <code>if</code> statement, so the last line can never run -- it is dead code. See Chapter 6, ""Return Values"".",HTML
+
+NewQuestion,MC
+ID,TP3-summative-q04
+Title,"Think Python: summative quiz, question 4"
+QuestionText,"<p>What is the output of this program, or is there an error?</p>
+<pre><code>def rectangle_area(length, width):
+    return length * width
+
+area = rectangle_area(3, 5)
+print(length)
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,0,<code>5</code> because the second argument gets assigned to <code>length</code>.,HTML,"The first argument gets assigned to <code>length</code>, but the parameter only exists inside the function. See Chapter 6, ""Return Values"".",HTML
+Option,0,<code>3</code> because the first argument gets assigned to <code>length</code>.,HTML,"<code>3</code> does get assigned to <code>length</code>, but the parameter only exists inside the function. See Chapter 6, ""Return Values"".",HTML
+Option,100,Runtime error because the parameter <code>length</code> does not exist outside the function.,HTML,"Parameters and local variables only exist inside the functions where they are defined. See Chapter 6, ""Return Values"".",HTML
+Option,0,Syntax error because there are two variables in the return statement.,HTML,"The variables are part of an arithmetic expression, which can be used in a return statement. See Chapter 6, ""Return Values"".",HTML
+
+NewQuestion,MC
+ID,TP3-summative-q05
+Title,"Think Python: summative quiz, question 5"
+QuestionText,"<p>What is wrong with the following program?</p>
+<pre><code>s = int('123')
+for digit in s:
+    print(digit)
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,0,There is nothing wrong -- the program is correct.,HTML,"The program generates a <code>TypeError</code>. See Chapter 7, ""Iteration and Search"".",HTML
+Option,0,<code>digit</code> is not a legal name for a loop variable.,HTML,"Any legal variable name can be used as a loop variable. See Chapter 7, ""Iteration and Search"".",HTML
+Option,0,"<code>int</code> is a type, not a function.",HTML,"<code>int</code> is a type, but it can be used as a function to convert other types to integers. See Chapter 7, ""Iteration and Search"".",HTML
+Option,100,"<code>s</code> is not a sequence, so we can't loop through its elements.",HTML,"<code>s</code> is an integer, which is not a sequence, so it can't be looped over. See Chapter 7, ""Iteration and Search"".",HTML
+
+NewQuestion,MC
+ID,TP3-summative-q06
+Title,"Think Python: summative quiz, question 6"
+QuestionText,"<p>If <code>s</code> is a string, which of these is a correct way to convert it to lowercase?</p>",HTML
+Points,1
+Difficulty,1
+Option,0,<code>s = lower(s)</code>,HTML,"<code>lower</code> is a method, so it has to be invoked on a string, as in <code>s.lower()</code>. See Chapter 7, ""Iteration and Search"".",HTML
+Option,0,<code>s.lower()</code>,HTML,"<code>s.lower()</code> creates a new string, but if the string is not assigned to a variable, there is no way to access it. See Chapter 7, ""Iteration and Search"".",HTML
+Option,0,<code>lower(s)</code>,HTML,"<code>lower</code> is a method, so it has to be invoked on a string, as in <code>s.lower()</code>; and it creates a new string, which should be assigned to a variable. See Chapter 7, ""Iteration and Search"".",HTML
+Option,100,<code>s = s.lower()</code>,HTML,"<code>s.lower()</code> creates a new string -- if we assign it back to <code>s</code>, the new string replaces the old one. See Chapter 7, ""Iteration and Search"".",HTML
+
+NewQuestion,MC
+ID,TP3-summative-q07
+Title,"Think Python: summative quiz, question 7"
+QuestionText,"<p>The following function takes two strings as parameters and returns a string.
+Which of the following docstrings is a correct description of what this function does?</p>
+<pre><code>def compute(word1, word2):
+    t = []
+    for letter in word1:
+        if letter in word2:
+            t.append(letter)
+    return ''.join(t)
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,0,Returns the letters that appear in <code>word1</code> but not <code>word2</code>.,HTML,"In order to get to the <code>append</code> method, <code>letter</code> has to appear in both words. See Chapter 7, ""Iteration and Search"".",HTML
+Option,0,Returns the letters that appear in either <code>word1</code> or <code>word2</code> or both.,HTML,"In order to get to the <code>append</code> method, <code>letter</code> has to appear in both words. See Chapter 7, ""Iteration and Search"".",HTML
+Option,100,Returns the letters that appear in both <code>word1</code> and <code>word2</code>.,HTML,"This function returns a string that contains the letters that appear in both <code>word1</code> and <code>word2</code>. See Chapter 7, ""Iteration and Search"".",HTML
+Option,0,Returns the letters that appear in either <code>word1</code> or <code>word2</code> but not both.,HTML,"In order to get to the <code>append</code> method, <code>letter</code> has to appear in both words. See Chapter 7, ""Iteration and Search"".",HTML
+
+NewQuestion,MC
+ID,TP3-summative-q08
+Title,"Think Python: summative quiz, question 8"
+QuestionText,"<p>This function is intended to convert the first letter of a word to lowercase and the rest of the letters to uppercase.</p>
+<pre><code>def lower_upper(word):
+    first = word[0]
+    rest = word[1:]
+    word = first.lower() + rest.upper()
+</code></pre>
+<p>What is the value of <code>word</code> if we call this function like this -- or is there an error?</p>
+<pre><code>word = lower_upper('Python')
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,0,The result is a syntax error because a <code>:</code> character cannot appear inside the bracket operator.,HTML,"A colon inside a bracket operator indicates a slice -- in this case, it selects all characters from the second to the end. See Chapter 8, ""Strings and Regular Expressions"".",HTML
+Option,0,The program is correct -- the value of <code>word</code> is <code>'pYTHON'</code>.,HTML,"The function has no return statement, so it returns <code>None</code>. Assigning a new value to the parameter <code>word</code> has no effect outside the function. See Chapter 9, ""Lists"".",HTML
+Option,0,The result is a runtime error because <code>0</code> is not a valid index.,HTML,"<code>0</code> is a valid index -- it selects the first character in the string. See Chapter 8, ""Strings and Regular Expressions"".",HTML
+Option,100,The program contains a semantic error -- the value of <code>word</code> is <code>None</code>.,HTML,"The function has no return statement, so it returns <code>None</code>. Assigning a new value to the parameter <code>word</code> has no effect outside the function. See Chapter 9, ""Lists"".",HTML
+
+NewQuestion,MC
+ID,TP3-summative-q09
+Title,"Think Python: summative quiz, question 9"
+QuestionText,"<p>If we use the <code>search</code> function in the <code>re</code> module, which of the following strings matches this pattern: <code>r'^a(bc|de)f$'</code>?</p>",HTML
+Points,1
+Difficulty,1
+Option,0,<code>'abc'</code>,HTML,"The pattern <code>f$</code> requires the letter <code>f</code> at the end of the string. See Chapter 8, ""Strings and Regular Expressions"".",HTML
+Option,0,<code>'zadef'</code>,HTML,"The pattern <code>^a</code> requires the letter <code>a</code> at the beginning of the string. See Chapter 8, ""Strings and Regular Expressions"".",HTML
+Option,100,<code>'adef'</code>,HTML,"This string has <code>'a'</code> at the beginning, <code>'f'</code> at the end, and <code>'de'</code> in the middle. See Chapter 8, ""Strings and Regular Expressions"".",HTML
+Option,0,<code>'abcdef'</code>,HTML,"The pattern <code>'(bc|de)'</code> requires either <code>'bc'</code> or <code>'de'</code> but not both. See Chapter 8, ""Strings and Regular Expressions"".",HTML
+
+NewQuestion,MC
+ID,TP3-summative-q10
+Title,"Think Python: summative quiz, question 10"
+QuestionText,"<p>What is the result of this program?</p>
+<pre><code>t = [1, 2, 3, 4]
+t[1:-1]
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,100,"<code>[2, 3]</code>",HTML,"The slice index <code>1:-1</code> selects elements from the second to the second-to-last, including both. See Chapter 9, ""Lists"".",HTML
+Option,0,An <code>IndexError</code> because <code>-1</code> is not a legal index.,HTML,"Negative indices count backward from the end of the sequence, so the slice index <code>1:-1</code> selects elements from the second to the second-to-last, including both. See Chapter 9, ""Lists"".",HTML
+Option,0,"<code>[2, 3, 4]</code>",HTML,"The slice index <code>1:-1</code> excludes the last element of the list. See Chapter 9, ""Lists"".",HTML
+Option,0,"<code>[1, 2, 3]</code>",HTML,"The slice index <code>1:-1</code> excludes the first element of the list. See Chapter 9, ""Lists"".",HTML
+
+NewQuestion,MC
+ID,TP3-summative-q11
+Title,"Think Python: summative quiz, question 11"
+QuestionText,"<p>After these statements run, what are the values of <code>a</code> and <code>b</code>, or is there an error?</p>
+<pre><code>a, b = 1, 2
+a, b = b, a
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,100,<code>a</code> is <code>2</code> and <code>b</code> is <code>1</code>.,HTML,"After the first assignment <code>a</code> is <code>1</code> and <code>b</code> is <code>2</code>, and then the second assignment swaps the values. See Chapter 11, ""Tuples"".",HTML
+Option,0,<code>a</code> is <code>1</code> and <code>b</code> is <code>2</code>.,HTML,"After the first assignment <code>a</code> is <code>1</code> and <code>b</code> is <code>2</code>, but the second assignment swaps the values. See Chapter 11, ""Tuples"".",HTML
+Option,0,There is a runtime error because the values on the right are tuples.,HTML,"The values on the right are tuples, but these are legal assignment statements. See Chapter 11, ""Tuples"".",HTML
+Option,0,There is a syntax error because the assignment statement has more than one variable.,HTML,"An assignment statement can have a tuple of variables on the left. See Chapter 11, ""Tuples"".",HTML
+
+NewQuestion,MC
+ID,TP3-summative-q12
+Title,"Think Python: summative quiz, question 12"
+QuestionText,<p>Why can't a list appear as a key in a dictionary?</p>,HTML
+Points,1
+Difficulty,1
+Option,100,"Lists are mutable, which makes them unhashable.",HTML,"If an object is mutable, it isn't hashable, which means it can't be used as a key in a dictionary. See Chapter 10, ""Dictionaries"" and Chapter 11, ""Tuples"".",HTML
+Option,0,Lists can contain any number of elements.,HTML,"Lists can contain any number of elements, but that's not the reason a list can't appear as a key in a dictionary. See Chapter 10, ""Dictionaries"" and Chapter 11, ""Tuples"".",HTML
+Option,0,The elements in a list might not be totally ordered.,HTML,"If the elements of a list are not totally ordered, they are not sortable, but that's not the reason a list can't appear as a key in a dictionary. See Chapter 10, ""Dictionaries"" and Chapter 11, ""Tuples"".",HTML
+Option,0,The elements in a list can be different types.,HTML,"The elements in a list can be different types, but that's not the reason a list can't appear as a key in a dictionary. See Chapter 10, ""Dictionaries"" and Chapter 11, ""Tuples"".",HTML
+
+NewQuestion,MC
+ID,TP3-summative-q13
+Title,"Think Python: summative quiz, question 13"
+QuestionText,<p>What is the primary difference between a list and a tuple?</p>,HTML
+Points,1
+Difficulty,1
+Option,0,A tuple can contain any type; a list can only contain hashable types.,HTML,"Both lists and tuples can contain any type. Keys in dictionaries must be hashable. See Chapter 11, ""Tuples"".",HTML
+Option,0,A list can contain any type; a tuple can only contain hashable types.,HTML,"Both lists and tuples can contain any type. Keys in dictionaries must be hashable. See Chapter 11, ""Tuples"".",HTML
+Option,0,A tuple is mutable; a list is immutable.,HTML,"It's the other way around: a list is mutable; a tuple is immutable. See Chapter 11, ""Tuples"".",HTML
+Option,100,A list is mutable; a tuple is immutable.,HTML,"A tuple is immutable. See Chapter 11, ""Tuples"".",HTML
+
+NewQuestion,MC
+ID,TP3-summative-q14
+Title,"Think Python: summative quiz, question 14"
+QuestionText,"<p>Which of these is a correct way to reverse the elements of a list in place -- that is, by modifying an existing list without creating a new list?</p>",HTML
+Points,1
+Difficulty,1
+Option,0,<code>t = reversed(t)</code>,HTML,"<code>reversed</code> does not modify <code>t</code> -- it returns an iterator that loops through the elements in reverse order, so this statement replaces the list with the iterator. See Chapter 11, ""Tuples"".",HTML
+Option,0,<code>reversed(t)</code>,HTML,"<code>reversed(t)</code> does not modify <code>t</code> -- it returns an iterator, and if the iterator is not assigned to a variable, there is no way to use it. See Chapter 11, ""Tuples"".",HTML
+Option,0,<code>t = t.reverse()</code>,HTML,"The return value from <code>t.reverse()</code> is <code>None</code>, so this statement sets <code>t</code> to <code>None</code>. See Chapter 11, ""Tuples"".",HTML
+Option,100,<code>t.reverse()</code>,HTML,"<code>t.reverse()</code> reverses the elements of <code>t</code> without creating a new list. See Chapter 11, ""Tuples"".",HTML
+
+NewQuestion,MC
+ID,TP3-summative-q15
+Title,"Think Python: summative quiz, question 15"
+QuestionText,"<p>What is the result of this program?</p>
+<pre><code>s = ['bbb', 'aa', 'c']
+sorted(s, key=len, reverse=True)
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,0,"<code>['c', 'bbb', 'aa']</code>",HTML,"<code>key=len</code> sorts by length, rather than alphabetical order. See Chapter 12, ""Text Analysis and Generation"".",HTML
+Option,0,"<code>['aa', 'bbb', 'c']</code>",HTML,"<code>key=len</code> sorts by length, rather than alphabetical order, and <code>reverse=True</code> sorts in descending order. See Chapter 12, ""Text Analysis and Generation"".",HTML
+Option,0,"<code>['c', 'aa', 'bbb']</code>",HTML,"<code>reverse=True</code> sorts in descending order. See Chapter 12, ""Text Analysis and Generation"".",HTML
+Option,100,"<code>['bbb', 'aa', 'c']</code>",HTML,"<code>key=len</code> sorts by length, rather than alphabetical order, and <code>reverse=True</code> sorts in descending order, so the result is <code>['bbb', 'aa', 'c']</code>. See Chapter 12, ""Text Analysis and Generation"".",HTML
+
+NewQuestion,MC
+ID,TP3-summative-q16
+Title,"Think Python: summative quiz, question 16"
+QuestionText,"<p>What does the following function do?</p>
+<pre><code>def compute(d1, d2):
+    res = {}
+    for key in d1:
+        res[key] = d1[key]
+    for key in d2:
+        res[key] = d2[key]
+    return res
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,0,Adds the keys from <code>d1</code> to <code>d2</code>.,HTML,"This function makes and returns a new dictionary. See Chapter 12, ""Text Analysis and Generation"".",HTML
+Option,0,Makes a new dictionary with all keys that are in both <code>d1</code> and <code>d2</code>.,HTML,"The new dictionary has all keys from either dictionary. See Chapter 12, ""Text Analysis and Generation"".",HTML
+Option,100,Makes a new dictionary with all keys that are in either <code>d1</code> or <code>d2</code>.,HTML,"The new dictionary has all keys from either dictionary. If the same key appears in both, it gets the value from <code>d2</code>. See Chapter 12, ""Text Analysis and Generation"".",HTML
+Option,0,Adds the keys from <code>d2</code> to <code>d1</code>.,HTML,"This function makes and returns a new dictionary. See Chapter 12, ""Text Analysis and Generation"".",HTML
+
+NewQuestion,MC
+ID,TP3-summative-q17
+Title,"Think Python: summative quiz, question 17"
+QuestionText,"<p>Suppose we run the following program to get the current working directory:</p>
+<pre><code>import os
+
+os.getcwd()
+</code></pre>
+<p>And the result is <code>/home/dinsdale/photos</code>.
+Now suppose we run the following program to check for the existence of a file:</p>
+<pre><code>os.path.exists('apr-2023/photo1.jpg')
+</code></pre>
+<p>What is the absolute path of the file that gets checked?</p>",HTML
+Points,1
+Difficulty,1
+Option,100,<code>'/home/dinsdale/photos/apr-2023/photo1.jpg'</code>,HTML,"Because <code>'apr-2023/photo1.jpg'</code> is a relative path, it gets joined to the current working directory. See Chapter 13, ""Files and Databases"".",HTML
+Option,0,<code>'photo1.jpg'</code>,HTML,"Because <code>'apr-2023/photo1.jpg'</code> is a relative path, it gets joined to the current working directory. See Chapter 13, ""Files and Databases"".",HTML
+Option,0,<code>'/home/dinsdale/photo1.jpg'</code>,HTML,"Because <code>'apr-2023/photo1.jpg'</code> is a relative path, it gets joined to the current working directory. See Chapter 13, ""Files and Databases"".",HTML
+Option,0,<code>'apr-2023/photo1.jpg'</code>,HTML,"Because <code>'apr-2023/photo1.jpg'</code> is a relative path, it gets joined to the current working directory. See Chapter 13, ""Files and Databases"".",HTML
+
+NewQuestion,MC
+ID,TP3-summative-q18
+Title,"Think Python: summative quiz, question 18"
+QuestionText,"<p>What is the result of this program?</p>
+<pre><code>class Day:
+    def __init__(self, day):
+        self.day = day
+
+    def __str__(date):
+        return f'Today is {date.day}'
+
+print(Day('Wednesday'))
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,100,<code>Today is Wednesday</code>,HTML,"In a format string, the expression in curly braces gets replaced by its value. See Chapter 15, ""Classes and Methods"".",HTML
+Option,0,<code>f'Today is Wednesday'</code>,HTML,"The <code>f</code> before the string indicates that it is a format string. See Chapter 15, ""Classes and Methods"".",HTML
+Option,0,<code>Today is {date.day}</code>,HTML,"The <code>f</code> before the string indicates that it is a format string, and the expression in curly braces gets replaced by its value. See Chapter 15, ""Classes and Methods"".",HTML
+Option,0,<code>Today is {Wednesday}</code>,HTML,"The curly braces don't appear in the return value. See Chapter 15, ""Classes and Methods"".",HTML
+
+NewQuestion,MC
+ID,TP3-summative-q19
+Title,"Think Python: summative quiz, question 19"
+QuestionText,"<p>Assuming that the <code>Animal</code> class exists, what is the output of this program?</p>
+<pre><code>class Cat(Animal):
+    &quot;&quot;&quot;Represents a cat.&quot;&quot;&quot;
+
+cat = Cat()
+isinstance(cat, Animal)
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,0,<code>False</code> because an instance of a child class is not an instance of the parent class.,HTML,"Every instance of a child class is also an instance of the parent class. See Chapter 17, ""Inheritance"".",HTML
+Option,0,<code>True</code> because every instance of a parent class is also an instance of the child class.,HTML,"An instance of a parent class is not an instance of the child class. See Chapter 17, ""Inheritance"".",HTML
+Option,0,<code>False</code> because an instance of a parent class is not an instance of the child class.,HTML,"It's true that an instance of a parent class is not an instance of the child class, but that's not what's being checked here. See Chapter 17, ""Inheritance"".",HTML
+Option,100,<code>True</code> because every instance of a child class is also an instance of the parent class.,HTML,"In this example, <code>Cat</code> is a child class of <code>Animal</code>, so every <code>Cat</code> object is also an instance of <code>Animal</code>. See Chapter 17, ""Inheritance"".",HTML
+
+NewQuestion,MC
+ID,TP3-summative-q20
+Title,"Think Python: summative quiz, question 20"
+QuestionText,"<p>What is the result of this program?</p>
+<pre><code>from collections import namedtuple
+
+Point = namedtuple('Point', ['x', 'y'])
+p = Point(3, 4)
+p[1]
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,0,<code>3</code> because <code>p</code> is a <code>namedtuple</code> and the element with index <code>1</code> is <code>3</code>.,HTML,"In a named tuple -- as in a tuple -- the index of the first element is <code>0</code>. See Chapter 18, ""Python Extras"".",HTML
+Option,0,<code>AttributeError</code> because the attributes of <code>p</code> are <code>x</code> and <code>y</code>.,HTML,"The attributes of <code>p</code> are <code>x</code> and <code>y</code>, but because <code>p</code> is a <code>namedtuple</code>, we can use the bracket operator to access the elements by index. See Chapter 18, ""Python Extras"".",HTML
+Option,100,<code>4</code> because <code>p</code> is a <code>namedtuple</code> and the element with index <code>1</code> is <code>4</code>.,HTML,"In a named tuple -- as in a tuple -- the index of the second element is <code>1</code>. See Chapter 18, ""Python Extras"".",HTML
+Option,0,<code>IndexError</code> because the attributes of <code>p</code> are <code>x</code> and <code>y</code>.,HTML,"The attributes of <code>p</code> are <code>x</code> and <code>y</code>, but because <code>p</code> is a <code>namedtuple</code>, we can use the bracket operator to access the elements by index. See Chapter 18, ""Python Extras"".",HTML
+
+NewQuestion,MC
+ID,TP3-summative-q21
+Title,"Think Python: summative quiz, question 21"
+QuestionText,"<p>We can call the built-in function <code>round</code> like this:</p>
+<pre><code>import math
+
+round(math.pi, ndigits=3)
+</code></pre>
+<p>The result is the value of <code>math.pi</code> rounded off to three decimal places.
+Now suppose we have the positional argument in a tuple and the keyword argument in a dictionary, like this:</p>
+<pre><code>args = (math.pi,)
+kwargs = {&quot;ndigits&quot;: 3}
+</code></pre>
+<p>Which of these is a correct way to call <code>round</code> and get the same result?</p>",HTML
+Points,1
+Difficulty,1
+Option,100,"<code>round(*args, **kwargs)</code>",HTML,"The <code>*</code> operator unpacks the elements of <code>args</code> and the <code>**</code> operator unpacks the items in <code>kwargs</code>. See Chapter 18, ""Python Extras"".",HTML
+Option,0,"<code>round(**args, **kwargs)</code>",HTML,"To pass the elements of <code>args</code> as positional arguments, we have to unpack them with the <code>*</code> operator. See Chapter 18, ""Python Extras"".",HTML
+Option,0,"<code>round(args, kwargs)</code>",HTML,"In order to pass the elements of <code>args</code> as positional arguments, we have to unpack them with the <code>*</code> operator. Similarly, to pass the items in <code>kwargs</code> as keyword arguments, we have to unpack them with the <code>**</code> operator. See Chapter 18, ""Python Extras"".",HTML
+Option,0,"<code>round(*args, *kwargs)</code>",HTML,"To pass the items in <code>kwargs</code> as keyword arguments, we have to unpack them with the <code>**</code> operator. See Chapter 18, ""Python Extras"".",HTML
+

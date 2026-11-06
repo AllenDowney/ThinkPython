@@ -1,0 +1,54 @@
+﻿NewQuestion,MC
+ID,TP3-chapter11-q01
+Title,"Think Python, Chapter 11: Tuples, question 1"
+QuestionText,<p>Which one of these expressions is NOT a tuple?</p>,HTML
+Points,1
+Difficulty,1
+Option,0,"<code>'abc',</code>",HTML,"Because of the comma at the end, the value of this expression is a tuple with one element, <code>'abc'</code>.",HTML
+Option,0,<code>tuple('abc')</code>,HTML,"The value of this expression is a tuple with the elements <code>'a'</code>, <code>'b'</code>, and <code>'c'</code>.",HTML
+Option,0,"<code>('abc',)</code>",HTML,"Because of the comma, the value of this expression is a tuple with one element, <code>'abc'</code>. The parentheses are not required.",HTML
+Option,100,<code>('abc')</code>,HTML,"The parentheses alone do not make a tuple, so the value of this expression is just the string <code>'abc'</code>.",HTML
+
+NewQuestion,MC
+ID,TP3-chapter11-q02
+Title,"Think Python, Chapter 11: Tuples, question 2"
+QuestionText,"<p>What is the result of these statements?</p>
+<pre><code>t = tuple('abc')
+s = [1, 2, 3]
+d = {t: s}
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,0,A <code>TypeError</code> because a list can't appear as a value in a dictionary.,HTML,"Any type can appear as a value in a dictionary, including lists.",HTML
+Option,100,A dictionary with one item that maps from a tuple to a list.,HTML,These statements create a dictionary with one item that maps from a tuple to a list.,HTML
+Option,0,A <code>TypeError</code> because a tuple can't appear as a key in a dictionary.,HTML,"A tuple is immutable, so it can appear as a key in a dictionary -- as long as its elements are also immutable.",HTML
+Option,0,A syntax error because there should be a comma before the closing brace on the third line.,HTML,"The syntax is correct -- if there is a single item in a dictionary, a comma is legal but not required.",HTML
+
+NewQuestion,MC
+ID,TP3-chapter11-q03
+Title,"Think Python, Chapter 11: Tuples, question 3"
+QuestionText,"<p>What does this function do?</p>
+<pre><code>def printall(*args):
+    for value in reversed(args):
+        print(value)
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,100,It takes any number of arguments and prints them in reversed order.,HTML,"It takes any number of arguments and ""packs"" them into a tuple, then loops through the tuple in reverse order and prints the elements.",HTML
+Option,0,It has a syntax error because the <code>*</code> operator is not legal before a parameter.,HTML,"When the <code>*</code> operator appears before a parameter, it ""packs"" any number of arguments into a tuple.",HTML
+Option,0,"It causes a <code>TypeError</code> because <code>args</code> is a tuple, which is immutable and cannot be reversed.",HTML,"It's true that <code>args</code> is a tuple, which is immutable, but <code>reversed</code> does not modify the tuple, it makes a new object that loops through the tuple in reverse order.",HTML
+Option,0,It takes a single list or tuple and prints the values in reversed order.,HTML,"This function can take any number of arguments, not just a single argument.",HTML
+
+NewQuestion,MC
+ID,TP3-chapter11-q04
+Title,"Think Python, Chapter 11: Tuples, question 4"
+QuestionText,"<p>What is the value of this expression?</p>
+<pre><code>('a', 3) &lt; ('b', 1)
+</code></pre>",HTML
+Points,1
+Difficulty,1
+Option,100,<code>True</code> because <code>'a'</code> is less than <code>'b'</code>.,HTML,"When tuples are compared, the first elements are compared first.",HTML
+Option,0,<code>False</code> because <code>3</code> is greater than <code>1</code>.,HTML,"When tuples are compared, the first elements are compared first. The other elements are only compared if the first elements are the same.",HTML
+Option,0,A <code>TypeError</code> because the <code>&lt;</code> operator doesn't work with tuples.,HTML,"The <code>&lt;</code> operator compares the first elements of each tuple, and then compares other elements in the event of a tie.",HTML
+Option,0,"These values can't be compared because <code>'a'</code> is less than <code>'b'</code>, but <code>3</code> is greater than <code>1</code>.",HTML,"When tuples are compared, the first elements are compared first. The other elements are only compared if the first elements are the same.",HTML
+

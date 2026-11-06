@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+  <question type="category">
+    <category><text>$course$/top/Think Python/Think Python, Chapter 14: Classes and Functions</text></category>
+    <info format="html"><text><![CDATA[Formative quiz for Chapter 14. From <em>Think Python</em>, 3rd edition, by Allen B. Downey (https://allendowney.github.io/ThinkPython/), CC BY-NC-SA 4.0.]]></text></info>
+  </question>
+  <question type="multichoice">
+    <name><text>TP3-chapter14-q01</text></name>
+    <questiontext format="html"><text><![CDATA[<p>To create an instance of a programmer-defined type, what is the correct order for these steps?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-chapter14-q01</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Assign values to attributes, define a class, instantiate an object.]]></text>
+      <feedback format="html"><text><![CDATA[You can't assign attributes before you instantiate an object.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Instantiate an object, define a class, assign values to attributes.]]></text>
+      <feedback format="html"><text><![CDATA[You can't instantiate an object before you define its class.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Define a class, assign values to attributes, instantiate an object.]]></text>
+      <feedback format="html"><text><![CDATA[You can't assign attributes before you instantiate an object.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Define a class, instantiate an object, assign values to attributes.]]></text>
+      <feedback format="html"><text><![CDATA[You have to define a class, instantiate an object, and assign values to attributes, in that order.]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>TP3-chapter14-q02</text></name>
+    <questiontext format="html"><text><![CDATA[<p>These statements are intended to define a <code>Date</code> class and create a <code>Date</code> object. What is wrong with them?</p>
+<pre><code>def Date:
+    &quot;&quot;&quot;Represents a day of the year.&quot;&quot;&quot;
+
+date = Date()
+date.year = 2024
+date.month = 'January'
+date.day = 11
+</code></pre>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-chapter14-q02</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[You can't have a class named <code>Date</code> and a variable named <code>date</code>.]]></text>
+      <feedback format="html"><text><![CDATA[It is legal -- and common -- for a class name and a variable to be the same word, but the class name starts with an uppercase letter.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[All of the attributes have to have the same type.]]></text>
+      <feedback format="html"><text><![CDATA[The attributes of an object can be any type, and they don't have to be the same.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[The syntax is not correct for adding attributes to the object.]]></text>
+      <feedback format="html"><text><![CDATA[Dot notation is used to set the value of an attribute and to read the value.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[A class definition has to start with <code>class</code>, not <code>def</code>.]]></text>
+      <feedback format="html"><text><![CDATA[A class definition has to start with <code>class</code>. A function definition starts with <code>def</code>.]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>TP3-chapter14-q03</text></name>
+    <questiontext format="html"><text><![CDATA[<p>Which of these is a correct description of this function? You can assume that <code>date</code> is a <code>Date</code> object that has a <code>day</code> attribute.</p>
+<pre><code>def increment_day(date):
+    date.day += 1
+    return date
+</code></pre>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-chapter14-q03</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[It is a pure function that returns <code>None</code>.]]></text>
+      <feedback format="html"><text><![CDATA[This function modifies an attribute of the <code>Date</code> object it gets as a parameter, so it is an impure function. And it returns a reference to the same object, not <code>None</code>.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[It is an impure function that returns <code>None</code>.]]></text>
+      <feedback format="html"><text><![CDATA[This function returns a reference to a <code>Date</code> object, not <code>None</code>.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[It is a pure function that returns a <code>Date</code> object.]]></text>
+      <feedback format="html"><text><![CDATA[This function modifies an attribute of the <code>Date</code> object it gets as a parameter, so it is an impure function.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[It is an impure function that returns a <code>Date</code> object.]]></text>
+      <feedback format="html"><text><![CDATA[This function modifies an attribute of the <code>Date</code> object it gets as a parameter, so it is an impure function -- and it returns a reference to the same <code>Date</code> object.]]></text></feedback>
+    </answer>
+  </question>
+</quiz>

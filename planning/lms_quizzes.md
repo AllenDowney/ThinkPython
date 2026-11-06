@@ -2,7 +2,7 @@
 
 **Created:** 2026-11-06
 **Board:** Task 16 in `PROJECT_BOARD.md`
-**Status:** All three exporters written 2026-11-06; QTI 1.2 tested on Canvas, Moodle XML and Brightspace CSV checked but untested. Next: publish to `quizzes/` (step 6)
+**Status:** Published to `quizzes/` on GitHub 2026-11-06; the website page (`jb/quizzes.md`) goes live with the next site publish. Moodle and Brightspace files untested on a real LMS
 
 ## Goal
 
@@ -94,8 +94,13 @@ silently.
 4. **Validate:** `xmllint --noout` on every generated file, in `make tests`.
 5. **Test imports** into Canvas (the only LMS we can test on now). Check
    that the code renders, the right answer is marked and the feedback shows.
-6. **Publish:** decide where instructors find them (below), and retire the broken
-   zips and the hand-made CSV.
+6. **Publish** (done 2026-11-06): `quizzes/` in ThinkPython, built by `quizzes/build.sh`
+   as a fifth `update.py` target (step 1b parses the source and commits the JSON with
+   `soln/`; step 4b exports). The Canvas zips are repacked with fixed timestamps so an
+   unchanged quiz rebuilds byte-identical. Linked from the README and a new website
+   page, `jb/quizzes.md`. The broken zips, the hand-made CSV and
+   `convert_quizzes_to_qti.py` are removed. The Preface still says the quizzes are
+   "available on request"; Allen chose to leave it.
 
 ## Canvas test results (2026-11-06)
 

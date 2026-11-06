@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+  <question type="category">
+    <category><text>$course$/top/Think Python/Think Python, Chapter 13: Files and Databases</text></category>
+    <info format="html"><text><![CDATA[Formative quiz for Chapter 13. From <em>Think Python</em>, 3rd edition, by Allen B. Downey (https://allendowney.github.io/ThinkPython/), CC BY-NC-SA 4.0.]]></text></info>
+  </question>
+  <question type="multichoice">
+    <name><text>TP3-chapter13-q01</text></name>
+    <questiontext format="html"><text><![CDATA[<p>If the current working directory is <code>/home/dinsdale/photos</code> and you open a file using the relative path <code>mar-2023/photo1.jpg</code>, which of these expressions computes the absolute path of the file that gets opened?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-chapter13-q01</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>''.join(['/home/dinsdale/photos', 'mar-2023/photo1.jpg'])</code>]]></text>
+      <feedback format="html"><text><![CDATA[This way of using the string <code>join</code> method does not put a slash between the directories in the path.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>'mar-2023/photo1.jpg' + '/home/dinsdale/photos'</code>]]></text>
+      <feedback format="html"><text><![CDATA[The order of the working directory and the relative path is reversed. Also, this way of using the string concatenation does not put a slash between the directories in the path.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>'/home/dinsdale/photos' + 'mar-2023/photo1.jpg'</code>]]></text>
+      <feedback format="html"><text><![CDATA[This way of using the string concatenation does not put a slash between the directories in the path.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<code>os.path.join('/home/dinsdale/photos', 'mar-2023/photo1.jpg')</code>]]></text>
+      <feedback format="html"><text><![CDATA[The <code>os.path.join</code> function joins the two paths with either a forward or backward slash, depending on which operating system is running.]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>TP3-chapter13-q02</text></name>
+    <questiontext format="html"><text><![CDATA[<p>After these statements run, what is the value of <code>s</code>?</p>
+<pre><code>x = 1
+t = 1,
+s = f'x is an int, {x}. t is a tuple, {t}'
+</code></pre>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-chapter13-q02</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[This is an error because <code>{x}</code> and <code>{t}</code> are not valid dictionaries.]]></text>
+      <feedback format="html"><text><![CDATA[<code>{x}</code> and <code>{t}</code> are not dictionaries -- the curly braces indicate that they are expressions that get replaced with string representations of their values.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[This is an error because a tuple can't be used as a value in an f-string.]]></text>
+      <feedback format="html"><text><![CDATA[Any valid expression can be used in an f-string.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>'x is an int, {x}. t is a tuple, {t}'</code>]]></text>
+      <feedback format="html"><text><![CDATA[Inside the f-string, the expressions in curly braces are replaced with string representations of their values.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<code>'x is an int, 1. t is a tuple, (1,)'</code>]]></text>
+      <feedback format="html"><text><![CDATA[Inside the f-string, the expressions in curly braces are replaced with string representations of their values.]]></text></feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>TP3-chapter13-q03</text></name>
+    <questiontext format="html"><text><![CDATA[<p>After these statements run, what is the value of <code>db[key]</code>?</p>
+<pre><code>db = shelve.open('anagram_map', 'n')
+key = 'opst'
+db[key] = []
+db[key].append('stop')
+</code></pre>]]></text></questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber>TP3-chapter13-q03</idnumber>
+    <single>true</single>
+    <shuffleanswers>1</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>['stop']</code>]]></text>
+      <feedback format="html"><text><![CDATA[The <code>append</code> method does not work as intended here because it modifies only the list in memory, not the one in the database.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>'stop'</code>]]></text>
+      <feedback format="html"><text><![CDATA[The <code>append</code> method does not work as intended here because it modifies only the list in memory, not the one in the database.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>[], 'stop'</code>]]></text>
+      <feedback format="html"><text><![CDATA[The <code>append</code> method does not work as intended here because it modifies only the list in memory, not the one in the database.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<code>[]</code>]]></text>
+      <feedback format="html"><text><![CDATA[The <code>append</code> method does not work as intended here because it modifies only the list in memory, not the one in the database.]]></text></feedback>
+    </answer>
+  </question>
+</quiz>
