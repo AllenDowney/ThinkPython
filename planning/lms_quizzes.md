@@ -2,7 +2,7 @@
 
 **Created:** 2026-11-06
 **Board:** Task 16 in `PROJECT_BOARD.md`
-**Status:** Step 1 (review) and step 2 (decisions) done 2026-11-06. Next: step 3, the exporters
+**Status:** Steps 1 and 2 done; QTI 1.2 exporter written and tested on Canvas 2026-11-06. Next: Moodle XML and Brightspace CSV exporters, then publishing
 
 ## Goal
 
@@ -95,6 +95,40 @@ silently.
    that the code renders, the right answer is marked and the feedback shows.
 6. **Publish:** decide where instructors find them (below), and retire the broken
    zips and the hand-made CSV.
+
+## Canvas test results (2026-11-06)
+
+Imported through the API (content migration, `qti_converter`) into the sandbox course
+629 on Olin's Canvas, then read back what was created:
+
+| Package | Classic Quizzes | New Quizzes |
+|---|---|---|
+| `soln/quizzes_qti.zip` (2025, QTI 2.1) | migration "completed", 0 issues, **nothing created** | same |
+| `soln/quizzes/Chapter_1_qti.zip` (2026, QTI 2.1) | migration "completed", 0 issues, **nothing created** | same |
+| Control: Ch 1 Q1 through `text2qti` (QTI 1.2) | **quiz created**: code as `<code>`, the right answer marked, each choice's rationale as its feedback | setting ignored; made a classic quiz |
+| `export_text2qti.py`: Chapters 3 and 8, summative | **all created**, every question present; code blocks keep their indentation; `$` in the regex patterns survives; answers shuffled; 1 point each; unpublished | not tested |
+
+So the old zips fail silently, exactly as Canvas's docs warn, and QTI 1.2 in the
+shape `text2qti` writes imports cleanly. The New Quizzes path couldn't be tested:
+`settings[import_quizzes_next]` was ignored, presumably because New Quizzes is not
+enabled for course 629.
+
+So the Canvas/Brightspace exporter takes the `text2qti` route (decided 2026-11-06):
+`soln/quizzes/export_text2qti.py` writes each quiz as `text2qti` text from the parsed
+JSON and runs `text2qti`, giving 19 packages in `soln/quizzes/build/qti12/` (ignored).
+All the generated XML passes `xmllint`. `soln/quizzes/canvas_import.py` runs the
+import test against the sandbox course.
+
+Two things the exporter has to do that the source doesn't:
+
+- **Shuffle the answers.** The correct answer is always last in the source, so
+  without `Shuffle answers: true` every answer in Canvas would be (d).
+- **Keep code indentation.** `parse_quizzes.py` used to strip every line, which
+  flattened the code in every question (and in the Google Forms quizzes built from
+  it, which still have flattened code). Fixed 2026-11-06.
+
+Smart quotes: `text2qti` curls the quotes and apostrophes in prose (`can’t`), but not
+inside code.
 
 ## Decisions (2026-11-06)
 
