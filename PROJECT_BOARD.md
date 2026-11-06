@@ -21,6 +21,7 @@ Numbered tasks for tracking work. Each task has a permanent number; add new task
 - **Task 15:** Rename the first-edition branch `master` → `v1` — **done** 2026-10-30.
 - **Task 16:** Quizzes that LMSs can import ([plan](planning/lms_quizzes.md)) — **in progress**; questions fixed, **published** to [`quizzes/`](quizzes/) 2026-11-06; [website page](https://allendowney.github.io/ThinkPython/quizzes.html) live; Moodle and Brightspace untested.
 - **Task 17:** Teaching materials for instructors ([plan](planning/teaching_materials.md)) — **planning**; first step, list what teachers have asked for.
+- **Task 18:** Archive and mine the old Software Design materials ([plan](planning/course_archive.md)) — **planning**; sources surveyed, feeds Task 17.
 
 **No issues or PRs are open** (2026-11-06), in this repo, ThinkPythonSolutions or ThinkPython2.
 
@@ -627,3 +628,21 @@ The book's 82 printed `thinkpython.com/code/…` links go to the **2nd edition's
 - [ ] Pilot slides for one chapter, generated vs. separate decks
 - [ ] Pilot one graded assignment with a private solution and an autograder
 - [ ] Scale up what works
+
+---
+
+## Task 18: Archive and mine the old Software Design materials
+
+**Status:** Planning, started 2026-11-06 — **full plan in [`planning/course_archive.md`](planning/course_archive.md)**. Feeds Task 17.
+
+**Context:** Allen taught Software Design from *Think Python* for years, and the quizzes, exams, homework and solutions are scattered: old course pages for 2004 to 2008 (`~/AllenDowneyCom/allendowney/sd0*`, still public on allendowney.com), Subversion checkouts for Spring 2011 and Fall 2013 (`~/svn`), downloaded Google Sites for 2011 and 2013, and `~/SoftwareDesign`. About 2,000 files, 550 of them named as quizzes, exams or homework. No Software Design quizzes turned up in any Canvas course the API token can see. Everything predates the 3rd edition: Python 2, old chapter numbers, Swampy.
+
+**Approach:** copy everything unchanged into a private archive with a record of where it came from; convert it to text; catalog each question by topic and 3rd-edition chapter; then mine it into public quiz additions, a private exam bank (in the `quizzes.ipynb` format, so the Task 16 exporters work), in-class activities and assignments, each updated to Python 3 and checked by running it.
+
+### Scope
+
+- [ ] Decide where the archive lives (a private repository is recommended; it should not go in either public repo)
+- [ ] Find the Canvas material, and any other terms
+- [ ] Gather the sources, with `SOURCES.md` provenance
+- [ ] Convert to text and catalog the questions
+- [ ] Mine a few chapters at a time; Allen reviews each batch
