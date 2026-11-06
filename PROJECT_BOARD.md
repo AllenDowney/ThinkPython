@@ -21,7 +21,7 @@ Numbered tasks for tracking work. Each task has a permanent number; add new task
 - **Task 15:** Rename the first-edition branch `master` → `v1` — **done** 2026-10-30.
 - **Task 16:** Quizzes that LMSs can import ([plan](planning/lms_quizzes.md)) — **in progress**; questions fixed, **published** to [`quizzes/`](quizzes/) 2026-11-06; [website page](https://allendowney.github.io/ThinkPython/quizzes.html) live; Moodle and Brightspace untested.
 - **Task 17:** Teaching materials for instructors ([plan](planning/teaching_materials.md)) — **planning**; first step, list what teachers have asked for.
-- **Task 18:** Archive and mine the old Software Design materials ([plan](planning/course_archive.md)) — **planning**; sources surveyed (most on an external drive), private repo `ThinkPythonTeaching` created; feeds Task 17.
+- **Task 18:** Archive and mine the old Software Design materials ([plan](planning/course_archive.md)) — **planning**; sources surveyed (most on an external drive), archive gathered (1,863 files, 8 terms) in private repo `ThinkPythonTeaching`; next convert and catalog; feeds Task 17.
 
 **No issues or PRs are open** (2026-11-06), in this repo, ThinkPythonSolutions or ThinkPython2.
 
@@ -644,6 +644,6 @@ The book's 82 printed `thinkpython.com/code/…` links go to the **2nd edition's
 - [x] Decide where the archive lives — private repo [`ThinkPythonTeaching`](https://github.com/AllenDowney/ThinkPythonTeaching), cloned here and gitignored (2026-11-06)
 - [x] Find the material Allen remembered as "on Canvas" — it's the external drive
 - [ ] Look for the 2021 Takeout archives of the classic Google Sites in Drive; find any other terms (2005, 2009, 2010, 2012)
-- [ ] Gather the sources into `ThinkPythonTeaching/archive/`, allowlisting instructor-written material only (no student records), with `SOURCES.md` provenance
+- [x] Gather the sources into `ThinkPythonTeaching/archive/` — 1,863 files from 8 terms (2004–2013), student folders, projects, repos and records skipped and logged only as counts (2026-11-06, `a12e8c1`)
 - [ ] Convert to text and catalog the questions
 - [ ] Mine a few chapters at a time; Allen reviews each batch

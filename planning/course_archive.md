@@ -2,7 +2,7 @@
 
 **Created:** 2026-11-06
 **Board:** Task 18 in `PROJECT_BOARD.md` (feeds Task 17, teaching materials)
-**Status:** Planning; sources surveyed, private repository created (`ThinkPythonTeaching`), nothing copied yet
+**Status:** Step 1 (gather) done 2026-11-06: 1,863 files from 8 terms in `ThinkPythonTeaching/archive/` (`a12e8c1`). Next: step 2, convert to text
 
 ## Goal
 
@@ -100,6 +100,31 @@ ThinkPythonSolutions, which are both public. Options:
 (private), cloned at `~/ThinkPython/ThinkPythonTeaching` and gitignored by this repo.
 Its README says it must stay private and must never hold student data. It will also
 hold Task 17's private exam bank and assignments.
+
+## Gathered (2026-11-06)
+
+`ThinkPythonTeaching/tools/gather.py` built `archive/<term>/<source>/` from the
+sources above: 1,863 files, 64 MB, for 2004 (spring and fall), 2006 to 2008 (spring),
+2011 (spring and fall) and 2013 (fall). By filename, that includes about 165 quiz, 75
+exam, 59 warmup and 69 solution files, plus homework, labs, notes and syllabi.
+`archive/SOURCES.md` records where each folder came from, and `archive/SKIPPED.tsv`
+lists everything left out.
+
+Rules that came out of looking at the data:
+
+- **Student folders** are named `first.last` (including hyphenated surnames):
+  skipped, except `allen.downey`. 7,031 files.
+- **`projects/`** holds student final projects in every term that has it (2004 fall
+  even has crawls of `students.olin.edu`): skipped, 3,152 files. `project/`
+  (singular) is Allen's project handout and is kept. `repos/` (Fall 2011): 2,193 files.
+- **Possible student data** by filename (class lists, grades, address books, email
+  lists, spreadsheets): 79 files skipped.
+- **The log names no students.** Skips in those categories are logged as counts per
+  term only; a check confirmed no email addresses or `first.last` folders in
+  `SKIPPED.tsv` or in the copied paths.
+- Also skipped: 1,415 duplicates across sources, images, build files, backups and
+  version-control folders. Fall 2011 on the drive was entirely student repos; that
+  term's material comes from the Google Site.
 
 ## Steps
 
