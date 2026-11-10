@@ -100,7 +100,7 @@ d2 = {d1: 3}
   <question type="multichoice">
     <name><text>TP3-chapter10-q04</text></name>
     <questiontext format="html"><text><![CDATA[<p>A dictionary is like a list, but more general. Which words complete this sentence?</p>
-<p>"The <strong><em>_</em></strong><em> of a dictionary are like the indices of a list, and the <strong><em>_</em></strong></em> of a dictionary are like the elements of a list."</p>]]></text></questiontext>
+<p>"The ________ of a dictionary are like the indices of a list, and the ________ of a dictionary are like the elements of a list."</p>]]></text></questiontext>
     <generalfeedback format="html"><text></text></generalfeedback>
     <defaultgrade>1</defaultgrade>
     <penalty>0</penalty>

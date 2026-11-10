@@ -530,7 +530,7 @@ NewQuestion,MC
 ID,TP3-chapter10-q04
 Title,"Think Python, Chapter 10: Dictionaries, question 4"
 QuestionText,"<p>A dictionary is like a list, but more general. Which words complete this sentence?</p>
-<p>""The <strong><em>_</em></strong><em> of a dictionary are like the indices of a list, and the <strong><em>_</em></strong></em> of a dictionary are like the elements of a list.""</p>",HTML
+<p>""The ________ of a dictionary are like the indices of a list, and the ________ of a dictionary are like the elements of a list.""</p>",HTML
 Points,1
 Difficulty,1
 Option,0,items; keys,HTML,"An item is a key-value pair, so it's not like an index. The keys play the role of the indices.",HTML
