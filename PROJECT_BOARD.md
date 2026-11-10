@@ -605,6 +605,7 @@ The book's 82 printed `thinkpython.com/code/…` links go to the **2nd edition's
 - [x] Settle the open questions in the plan — downloads in `quizzes/` here; generate the Brightspace CSV too; test on Canvas only
 - [x] QTI 1.2 exporter (`export_text2qti.py`, via `text2qti`), imported cleanly into Canvas 2026-11-06
 - [x] Moodle XML and Brightspace CSV exporter (`export_lms.py`), checked 2026-11-06 but untested on a real Moodle or Brightspace
+- [x] Fill-in blanks (`________`) rendered as bold and italic marks in all three LMS formats (the Chapter 10 analogy question). Fixed in the exporters and republished 2026-11-10
 - [ ] Validate the generated XML in `make tests` (checked by hand with `xmllint` so far)
 - [x] Canvas API access to a sandbox course; the old QTI 2.1 zips shown to fail silently
 - [x] Publish: `quizzes/` built by `update.py`, linked from the README and `jb/quizzes.md`; broken zips, hand-made CSV and `convert_quizzes_to_qti.py` removed (2026-11-06)
